@@ -31,10 +31,10 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
    hromadas). Retrieval fights Cloudflare/anti-bot protection on many municipal
    sites; Wayback Machine is a frequent fallback.
 2. **Structure** — extract into a fixed schema (goals, projects, strengths,
-   challenges, named partners, МСС mentions, source quality) via a cheap external
-   LLM ([scripts/structure-hromada-strategy.ts](scripts/structure-hromada-strategy.ts),
-   Gemini `gemini-2.0-flash`) — kept out of the main conversation loop specifically
-   to control cost (see Cost lessons below).
+   challenges, named partners, МСС mentions, source quality). This is done in-session
+   by the agent (no external LLM API); the resulting JSON is stored via
+   [scripts/structure-hromada-strategy.ts](scripts/structure-hromada-strategy.ts)
+   (see Cost lessons below).
 3. **Match** — compute pairwise similarity on the `Goals` text. Final method: mean-centered,
    sub-goal-level embeddings (`intfloat/multilingual-e5-small`, local, no API cost) —
    materially better than raw TF-IDF or raw (non-centered) embeddings. See
@@ -79,7 +79,7 @@ same guardrails.
 ```
 scripts/
 ├── migrations/setup-hromadas-table.ts   # create/verify the Hromadas NocoDB table
-├── structure-hromada-strategy.ts        # raw strategy text -> structured JSON (Gemini)
+├── structure-hromada-strategy.ts        # store agent-produced structured JSON in NocoDB
 ├── import-hromadas-metadata.ts          # bulk PATCH/POST of KATOTTG+population metadata
 ├── export-hromadas.ts                   # live NocoDB -> data/releases/hromadas.json (the public dataset)
 ├── hromada-output/                      # per-hromada structured JSON (as produced, gitignored pattern removed — kept for provenance)
@@ -110,7 +110,7 @@ source preserved.
 
 ```bash
 yarn install
-cp .env.example .env   # fill in NOCODB_TOKEN + NOCODB_BASE_ID (shared base, ask Max) and GEMINI_API_KEY
+cp .env.example .env   # fill in NOCODB_TOKEN + NOCODB_BASE_ID (shared base, ask Max)
 yarn setup-hromadas    # idempotent — verifies/creates the Hromadas table + Sectors link column
 ```
 
@@ -147,14 +147,15 @@ snapshot as if it were a finished dataset.
 ## Usage
 
 ```bash
-# Structure a raw strategy text file into the schema, print to stdout + scripts/hromada-output/
-yarn structure-hromada --name "Ніжинська громада" --input raw.txt
+# Store an agent-produced structured JSON record: prints to stdout + scripts/hromada-output/
+# (the raw-text -> structured-JSON step is done in-session by the agent, no external LLM)
+yarn structure-hromada --name "Ніжинська громада" --input structured.json
 
 # ...and write it into NocoDB
-yarn structure-hromada --name "Ніжинська громада" --input raw.txt --write
+yarn structure-hromada --name "Ніжинська громада" --input structured.json --write
 
 # Update an existing row instead of inserting
-yarn structure-hromada --name "..." --input raw.txt --write --update 12
+yarn structure-hromada --name "..." --input structured.json --write --update 12
 
 # Bulk metadata import (KATOTTG + population) — one-off, already run for all 1,469
 yarn import-hromadas --updates data/research-log/hromada_updates.json --inserts data/research-log/hromada_inserts.json
@@ -176,7 +177,7 @@ Batch workflow for growing the corpus beyond the current pilot: see
 
 ```bash
 yarn ckan-search --out scripts/retrieval/ckan-candidates.json
-# pick URLs → batch-queue.json → download raw text → yarn structure-hromada --write
+# pick URLs → batch-queue.json → download raw text → agent structures it → yarn structure-hromada --write
 yarn export-hromadas && yarn match
 ```
 

@@ -1,22 +1,25 @@
 /**
- * Structure raw hromada strategy text into the Hromadas NocoDB schema using a cheap
- * external LLM instead of burning main-session tokens.
+ * Store an agent-produced structured hromada strategy record into the Hromadas
+ * NocoDB table.
  *
- * Retrieval (WebSearch/WebFetch/Cloudflare-evasion) still happens in-session — this
- * script only handles the "raw text -> structured JSON" step.
+ * Structuring (raw strategy text -> structured JSON) is done in-session by the
+ * agent. This project no longer calls any external LLM — the Groq and Gemini
+ * providers were removed. This script only normalizes an already-structured JSON
+ * object and (optionally) writes it to NocoDB.
  * See docs/project-history.md ("Cost lesson", 2026-07-22).
  *
- * Provider: Gemini. The free tier is region-gated (Gemini API returns quota=0 for
- * some countries even with a valid key) and needs Google Cloud billing enabled to
- * use reliably. Set GEMINI_API_KEY (and optionally GEMINI_MODEL) in .env.
+ * The input is a JSON object with these keys (strings unless noted):
+ *   goals, projects, strengths, challenges, partners_mentioned, mss_agreements,
+ *   source_quality ("full-strategy" | "partial" | "proxy-info"),
+ *   confidence_notes, donors_programs (array of known program names).
  *
  * Usage:
- *   yarn structure-hromada --name "Ніжинська громада" --input path/to/raw.txt
- *   cat raw.txt | yarn structure-hromada --name "Ніжинська громада"
- *   yarn structure-hromada --name "..." --input raw.txt --write                # also insert into NocoDB
- *   yarn structure-hromada --name "..." --input raw.txt --write --update 12    # update existing row Id 12
+ *   yarn structure-hromada --name "Ніжинська громада" --input path/to/structured.json
+ *   cat structured.json | yarn structure-hromada --name "Ніжинська громада"
+ *   yarn structure-hromada --name "..." --input structured.json --write             # also insert into NocoDB
+ *   yarn structure-hromada --name "..." --input structured.json --write --update 12  # update existing row Id 12
  *
- * Output: prints structured JSON to stdout (and to scripts/hromada-output/<name>.json).
+ * Output: prints the normalized JSON to stdout (and to scripts/hromada-output/<name>.json).
  * Does NOT write to NocoDB unless --write is passed.
  */
 
@@ -28,9 +31,6 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash";
-
 const NC_URL = process.env.NOCODB_URL || "";
 const NC_TOKEN = process.env.NOCODB_TOKEN || "";
 const HROMADAS_TABLE_ID = process.env.NOCODB_TABLE_HROMADAS || "mjtetfuixggp5lg";
@@ -38,26 +38,6 @@ const HROMADAS_TABLE_ID = process.env.NOCODB_TABLE_HROMADAS || "mjtetfuixggp5lg"
 const FIELDS = ["goals", "projects", "strengths", "challenges", "partners_mentioned", "mss_agreements", "source_quality", "confidence_notes", "donors_programs"] as const;
 
 const DONOR_PROGRAM_OPTIONS = ["EGAP", "DOBRE", "GIZ", "U-LEAD", "DECIDE", "ПРООН/UNDP", "МФ Відродження", "Ре:Форм", "DESPRO"] as const;
-
-const SCHEMA = {
-    type: "OBJECT",
-    properties: {
-        goals: { type: "STRING", description: "Strategic goals/priorities (Цілі), summarized but substantive — this is the field used for cross-hromada matching, so keep the actual thematic language, not generic paraphrase." },
-        projects: { type: "STRING", description: "Concrete named projects/initiatives mentioned (Проєкти)." },
-        strengths: { type: "STRING", description: "Stated strengths/advantages of the hromada (SWOT or equivalent)." },
-        challenges: { type: "STRING", description: "Stated challenges/problems/weaknesses." },
-        partners_mentioned: { type: "STRING", description: "Any neighboring hromadas, cities, or organizations explicitly named as partners, collaborators, or agglomeration members — quote or closely paraphrase the source, do not infer." },
-        mss_agreements: { type: "STRING", description: "Any explicit mention of МСС (inter-municipal cooperation) agreements, planned or existing, with named parties." },
-        source_quality: { type: "STRING", enum: ["full-strategy", "partial", "proxy-info"], description: "full-strategy = complete official strategy document; partial = fragment/summary/excerpt; proxy-info = reconstructed from indirect sources (news, program names), not an actual strategy document." },
-        confidence_notes: { type: "STRING", description: "Anything uncertain, missing, contradictory, or that required inference rather than direct extraction. Empty string if none." },
-        donors_programs: { type: "ARRAY", items: { type: "STRING", enum: [...DONOR_PROGRAM_OPTIONS] }, description: `Donor/technical-assistance programs explicitly named as having supported this hromada (funding the strategy itself, or named implementing partners). Only include a program if it is EXPLICITLY named in the source text — never infer from generic "EU support" or "USAID" mentions that don't name one of these specific programs. Pick only from: ${DONOR_PROGRAM_OPTIONS.join(", ")}. Empty array if none of these specific programs are named.` },
-    },
-    required: [...FIELDS],
-};
-
-const SCHEMA_DESCRIPTION = FIELDS.map((f) => `- ${f}: ${(SCHEMA.properties as any)[f].description}`).join("\n");
-
-const PROMPT_PREFIX = `You are structuring a Ukrainian territorial-community (hromada) development strategy document into a fixed JSON schema for a research database. Extract ONLY what is actually stated in the source text below — do not invent, infer beyond what's written, or pad with generic boilerplate. If a field has no real content in the source, return an empty string for it. Keep the original Ukrainian wording for goals/projects/partners (this is used for text-similarity matching later, so paraphrasing away specific language destroys signal).\n\nRespond with a single JSON object containing EXACTLY these keys (all strings, except source_quality which must be one of "full-strategy"/"partial"/"proxy-info"):\n${SCHEMA_DESCRIPTION}\n\nSource text follows:\n\n---\n\n`;
 
 function parseArgs() {
     const args = process.argv.slice(2);
@@ -90,34 +70,6 @@ function normalizeStructured(raw: any): any {
         }
     }
     return out;
-}
-
-async function callGemini(rawText: string): Promise<{ data: any; usage: any }> {
-    if (!GEMINI_API_KEY) {
-        console.error("Missing GEMINI_API_KEY. Get a key at https://aistudio.google.com/apikey and add it to .env");
-        process.exit(1);
-    }
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
-    const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            contents: [{ parts: [{ text: PROMPT_PREFIX + rawText }] }],
-            generationConfig: {
-                responseMimeType: "application/json",
-                responseSchema: SCHEMA,
-                temperature: 0.1,
-            },
-        }),
-    });
-    if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`Gemini API ${res.status}: ${text}`);
-    }
-    const json = await res.json();
-    const text = json.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!text) throw new Error(`Unexpected Gemini response shape: ${JSON.stringify(json)}`);
-    return { data: normalizeStructured(JSON.parse(text)), usage: json.usageMetadata && { promptTokenCount: json.usageMetadata.promptTokenCount, candidatesTokenCount: json.usageMetadata.candidatesTokenCount, totalTokenCount: json.usageMetadata.totalTokenCount } };
 }
 
 async function writeToNocoDB(name: string, structured: any, updateId?: string) {
@@ -159,17 +111,24 @@ async function writeToNocoDB(name: string, structured: any, updateId?: string) {
 async function main() {
     const { name, input, write, updateId } = parseArgs();
     if (!name) {
-        console.error("Usage: yarn structure-hromada --name \"<hromada name>\" --input <path> [--write] [--update <rowId>]");
+        console.error("Usage: yarn structure-hromada --name \"<hromada name>\" --input <structured.json> [--write] [--update <rowId>]");
         process.exit(1);
     }
-    const rawText = input ? fs.readFileSync(input, "utf-8") : await readStdin();
-    if (!rawText.trim()) {
-        console.error("No input text provided (empty file/stdin).");
+    const rawInput = input ? fs.readFileSync(input, "utf-8") : await readStdin();
+    if (!rawInput.trim()) {
+        console.error("No input provided (empty file/stdin). Expected an agent-produced structured JSON object.");
         process.exit(1);
     }
 
-    console.log(`Structuring "${name}" (${rawText.length} chars of source text) via gemini:${GEMINI_MODEL}...`);
-    const { data: structured, usage } = await callGemini(rawText);
+    let parsed: any;
+    try {
+        parsed = JSON.parse(rawInput);
+    } catch {
+        console.error("Input is not valid JSON. This script expects an agent-produced structured JSON object (not raw strategy text).");
+        process.exit(1);
+    }
+
+    const structured = normalizeStructured(parsed);
 
     const outDir = path.join(__dirname, "hromada-output");
     fs.mkdirSync(outDir, { recursive: true });
@@ -178,9 +137,6 @@ async function main() {
 
     console.log(JSON.stringify(structured, null, 2));
     console.log(`\nSaved to ${outPath}`);
-    if (usage) {
-        console.log(`Tokens: ${usage.promptTokenCount} prompt + ${usage.candidatesTokenCount} output = ${usage.totalTokenCount} total`);
-    }
 
     if (write) {
         await writeToNocoDB(name, structured, updateId);

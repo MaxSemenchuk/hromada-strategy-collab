@@ -9,7 +9,7 @@ burning 60–150k agent tokens per hromada on anti-bot retrieval.
 1. yarn ckan-search --out scripts/retrieval/ckan-candidates.json
 2. Pick URLs → add rows to batch-queue.json
 3. Download raw text (PDF/DOC/HTML) → scripts/retrieval/raw/
-4. yarn structure-hromada --name "..." --input raw/....txt --write
+4. Agent structures the raw text into JSON in-session → yarn structure-hromada --name "..." --input structured.json --write
 5. yarn export-hromadas          # refresh data/releases/hromadas.json
 6. yarn match && yarn export-matching-edges
 ```
@@ -49,15 +49,14 @@ Status values: `pending` | `downloaded` | `structured` | `failed`
 ```
 
 Processes queue entries with `status=downloaded` through
-`yarn structure-hromada --write`. Requires `GROQ_API_KEY` and NocoDB
-credentials in `.env`.
+`yarn structure-hromada --write`. Requires NocoDB credentials in `.env`.
 
 ## Cost notes
 
 - **Retrieval** (finding URLs, fighting Cloudflare): still mostly manual or
   agent-assisted — CKAN covers ~123 datasets, not full coverage.
-- **Structuring** (raw text → JSON): offload to Groq (`llama-3.3-70b`,
-  free) via `structure-hromada-strategy.ts` — do not run in main agent loop.
+- **Structuring** (raw text → JSON): done in-session by the agent; no external
+  LLM API. `structure-hromada-strategy.ts` only stores the resulting JSON.
 
 ## Target
 
