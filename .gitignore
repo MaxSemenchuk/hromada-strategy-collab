@@ -10,3 +10,4 @@ __pycache__/
 # Python virtual environment for the optional analysis scripts
 .venv/
 yarn-error.log
+data/cache/
