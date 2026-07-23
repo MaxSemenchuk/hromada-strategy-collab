@@ -7,6 +7,10 @@ __pycache__/
 *.pyc
 .DS_Store
 
+# Python virtual environment for the optional analysis scripts
+.venv/
+yarn-error.log
+
 # Re-fetchable source caches (not part of the public CC BY release)
 data/cache/
 scripts/retrieval/raw/**
