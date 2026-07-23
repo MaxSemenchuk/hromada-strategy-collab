@@ -1,0 +1,4 @@
+{
+  "_comment": "Batch queue for scaling hromada strategy retrieval. status: pending | downloaded | structured | failed | no_strategy",
+  "queue": []
+}

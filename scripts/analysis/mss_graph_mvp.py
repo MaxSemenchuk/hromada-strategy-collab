@@ -1,3 +1,5 @@
+# DEPRECATED: use KSE-Loc-Data-Hub partnerships-hromadas-network.csv instead
+# (see data/sources/kse-pin.json and docs/kse-synergy.md). Kept for research-log provenance.
 import openpyxl, re, json
 import datetime
 
