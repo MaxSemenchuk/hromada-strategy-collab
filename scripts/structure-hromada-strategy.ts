@@ -6,19 +6,15 @@
  * script only handles the "raw text -> structured JSON" step. See
  * See docs/project-history.md ("Cost lesson", 2026-07-22).
  *
- * Providers:
- *   - groq (default) — genuinely free, no billing/card needed. Free key:
- *     https://console.groq.com/keys. Set GROQ_API_KEY.
- *   - gemini — free tier is region-gated (Gemini API returns quota=0 for some
- *     countries even with a valid key); needs Google Cloud billing enabled to
- *     use reliably. Set GEMINI_API_KEY and pass --provider gemini.
+ * Provider: Gemini. The free tier is region-gated (Gemini API returns quota=0 for
+ * some countries even with a valid key) and needs Google Cloud billing enabled to
+ * use reliably. Set GEMINI_API_KEY (and optionally GEMINI_MODEL) in .env.
  *
  * Usage:
  *   yarn structure-hromada --name "Ніжинська громада" --input path/to/raw.txt
  *   cat raw.txt | yarn structure-hromada --name "Ніжинська громада"
  *   yarn structure-hromada --name "..." --input raw.txt --write                # also insert into NocoDB
  *   yarn structure-hromada --name "..." --input raw.txt --write --update 12    # update existing row Id 12
- *   yarn structure-hromada --name "..." --input raw.txt --provider gemini      # use Gemini instead of Groq
  *
  * Output: prints structured JSON to stdout (and to scripts/hromada-output/<name>.json).
  * Does NOT write to NocoDB unless --write is passed.
@@ -34,9 +30,6 @@ const __dirname = path.dirname(__filename);
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash";
-
-const GROQ_API_KEY = process.env.GROQ_API_KEY || "";
-const GROQ_MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
 
 const NC_URL = process.env.NOCODB_URL || "";
 const NC_TOKEN = process.env.NOCODB_TOKEN || "";
@@ -77,7 +70,6 @@ function parseArgs() {
         input: get("--input"),
         write: args.includes("--write"),
         updateId: get("--update"),
-        provider: get("--provider") || process.env.LLM_PROVIDER || "groq",
     };
 }
 
@@ -128,32 +120,6 @@ async function callGemini(rawText: string): Promise<{ data: any; usage: any }> {
     return { data: normalizeStructured(JSON.parse(text)), usage: json.usageMetadata && { promptTokenCount: json.usageMetadata.promptTokenCount, candidatesTokenCount: json.usageMetadata.candidatesTokenCount, totalTokenCount: json.usageMetadata.totalTokenCount } };
 }
 
-async function callGroq(rawText: string): Promise<{ data: any; usage: any }> {
-    if (!GROQ_API_KEY) {
-        console.error("Missing GROQ_API_KEY. Get a free key at https://console.groq.com/keys (no billing/card required) and add it to .env");
-        process.exit(1);
-    }
-    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${GROQ_API_KEY}`, "Content-Type": "application/json" },
-        body: JSON.stringify({
-            model: GROQ_MODEL,
-            messages: [{ role: "user", content: PROMPT_PREFIX + rawText }],
-            response_format: { type: "json_object" },
-            temperature: 0.1,
-        }),
-    });
-    if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`Groq API ${res.status}: ${text}`);
-    }
-    const json = await res.json();
-    const text = json.choices?.[0]?.message?.content;
-    if (!text) throw new Error(`Unexpected Groq response shape: ${JSON.stringify(json)}`);
-    const usage = json.usage && { promptTokenCount: json.usage.prompt_tokens, candidatesTokenCount: json.usage.completion_tokens, totalTokenCount: json.usage.total_tokens };
-    return { data: normalizeStructured(JSON.parse(text)), usage };
-}
-
 async function writeToNocoDB(name: string, structured: any, updateId?: string) {
     if (!NC_URL || !NC_TOKEN) {
         console.error("Missing NOCODB_URL or NOCODB_TOKEN — cannot write. Set them in .env or omit --write.");
@@ -191,13 +157,9 @@ async function writeToNocoDB(name: string, structured: any, updateId?: string) {
 }
 
 async function main() {
-    const { name, input, write, updateId, provider } = parseArgs();
+    const { name, input, write, updateId } = parseArgs();
     if (!name) {
-        console.error("Usage: yarn structure-hromada --name \"<hromada name>\" --input <path> [--write] [--update <rowId>] [--provider groq|gemini]");
-        process.exit(1);
-    }
-    if (provider !== "groq" && provider !== "gemini") {
-        console.error(`Unknown provider "${provider}". Use "groq" or "gemini".`);
+        console.error("Usage: yarn structure-hromada --name \"<hromada name>\" --input <path> [--write] [--update <rowId>]");
         process.exit(1);
     }
     const rawText = input ? fs.readFileSync(input, "utf-8") : await readStdin();
@@ -206,9 +168,8 @@ async function main() {
         process.exit(1);
     }
 
-    const modelName = provider === "groq" ? GROQ_MODEL : GEMINI_MODEL;
-    console.log(`Structuring "${name}" (${rawText.length} chars of source text) via ${provider}:${modelName}...`);
-    const { data: structured, usage } = provider === "groq" ? await callGroq(rawText) : await callGemini(rawText);
+    console.log(`Structuring "${name}" (${rawText.length} chars of source text) via gemini:${GEMINI_MODEL}...`);
+    const { data: structured, usage } = await callGemini(rawText);
 
     const outDir = path.join(__dirname, "hromada-output");
     fs.mkdirSync(outDir, { recursive: true });
