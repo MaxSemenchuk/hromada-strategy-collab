@@ -1,0 +1,40 @@
+---
+description: Hromada strategy collab — project context, data boundaries, methodology guardrails
+alwaysApply: true
+---
+
+# Hromada Strategy Collaboration Mapping
+
+NLP matching of Ukrainian hromada development strategies for МСС candidate discovery.
+Spin-out from w3i-network (2026-07-23); NocoDB `Hromadas` table still shared.
+
+## Read first
+
+- [README.md](../../README.md) — status, setup, commands
+- [docs/project-history.md](../../docs/project-history.md) — full methodology history (replaces Claude memory)
+- [docs/hromadas-schema.md](../../docs/hromadas-schema.md) — field schema
+- [docs/kse-synergy.md](../../docs/kse-synergy.md) — KSE join rules
+
+## Data boundaries
+
+- **Canonical dataset:** `data/releases/` (CC BY 4.0) — export via `yarn export-hromadas`
+- **Provenance only:** `data/research-log/` — dated snapshots, not maintained dataset
+- **Not public:** `internal/` — outreach drafts
+- **Local source caches (gitignored):** `scripts/retrieval/raw/` (strategy PDFs) via `yarn download-raw`; `data/cache/mss/` (МСС registry XLSX) via `yarn fetch-mss-registry` — for re-analysis, not the release
+- **KSE covariates:** fetch at analysis time via `enrich_from_kse.py`; do not vendor KSE CSVs
+
+## Matching pipeline (current)
+
+`yarn match` → `scripts/analysis/match.py` v6:
+`0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`
+
+Goals: mean-centered sub-goal embeddings (`multilingual-e5-small`). After changes, run `yarn test-known-pairs`.
+
+## Hard rules
+
+1. Matching scores are **hypotheses** unless `known: true` (registry-confirmed).
+2. Sector-tag overlap is **not** a matching signal.
+3. `edem_total`: use `edem-data.csv`; missing hromadas ≠ zero.
+4. Batch growth: `scripts/retrieval/` + in-session structuring → `yarn structure-hromada --json … --write`.
+5. Do not inflate CKAN "123 strategies" — mostly unrelated datasets.
+6. Minimize scope; match existing TS/Python conventions in `scripts/`.

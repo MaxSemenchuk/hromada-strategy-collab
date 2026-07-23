@@ -31,10 +31,9 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
    hromadas). Retrieval fights Cloudflare/anti-bot protection on many municipal
    sites; Wayback Machine is a frequent fallback.
 2. **Structure** — extract into a fixed schema (goals, projects, strengths,
-   challenges, named partners, МСС mentions, source quality) via a cheap external
-   LLM ([scripts/structure-hromada-strategy.ts](scripts/structure-hromada-strategy.ts),
-   Groq `llama-3.3-70b-versatile`, genuinely free) — kept out of the main
-   conversation loop specifically to control cost (see Cost lessons below).
+   challenges, named partners, МСС mentions, source quality) in-session, then
+   persist with [scripts/structure-hromada-strategy.ts](scripts/structure-hromada-strategy.ts)
+   (`--json` → NocoDB). No external LLM API in the repo path.
 3. **Match** — compute pairwise similarity on the `Goals` text. Final method: mean-centered,
    sub-goal-level embeddings (`intfloat/multilingual-e5-small`, local, no API cost) —
    materially better than raw TF-IDF or raw (non-centered) embeddings. See
@@ -79,14 +78,16 @@ same guardrails.
 ```
 scripts/
 ├── migrations/setup-hromadas-table.ts   # create/verify the Hromadas NocoDB table
-├── structure-hromada-strategy.ts        # raw strategy text -> structured JSON (Groq/Gemini)
+├── structure-hromada-strategy.ts        # structured JSON -> NocoDB / hromada-output/
 ├── import-hromadas-metadata.ts          # bulk PATCH/POST of KATOTTG+population metadata
 ├── export-hromadas.ts                   # live NocoDB -> data/releases/hromadas.json (the public dataset)
 ├── hromada-output/                      # per-hromada structured JSON (as produced, gitignored pattern removed — kept for provenance)
+├── retrieval/                           # CKAN search, download-raw, fetch-mss-registry, batch queue
 └── analysis/                            # one-off Python: KATOTTG merge, TF-IDF matching, embedding matching, MSS graph MVP
 data/
 ├── sources/       # reference registries (KATOTTG classifier extract, Tags table dump)
 ├── releases/      # THE dataset — canonical, current, CC BY 4.0 (see data/releases/MANIFEST.md)
+├── cache/         # gitignored re-fetchable sources (KSE pulls, МСС registry XLSX, …)
 └── research-log/  # dated growth snapshots (7→13→23→30→46→54 hromadas) — provenance, not the dataset
 docs/
 ├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
@@ -101,16 +102,22 @@ REFERENCES.md                     # theoretical grounding — network governance
 LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see License & data below
 ```
 
-Raw scraped source documents (PDF/DOC/HTML corpora fetched during retrieval) were
-**not** migrated — they're superseded by the structured extraction already stored in
-NocoDB, and mostly re-fetchable from source. Ask if you want a specific hromada's raw
-source preserved.
+Raw strategy PDFs/DOC/HTML and the МСС registry XLSX are kept as a **local
+cache** for re-extraction and alternate analyses — not committed, not part of
+the public release. Populate with:
+
+```bash
+yarn download-raw --all          # queue URLs → scripts/retrieval/raw/ (gitignored)
+yarn fetch-mss-registry          # data.gov.ua registry → data/cache/mss/
+```
+
+See [scripts/retrieval/README.md](scripts/retrieval/README.md).
 
 ## Setup
 
 ```bash
 yarn install
-cp .env.example .env   # fill in NOCODB_TOKEN + NOCODB_BASE_ID (shared base, ask Max) and GROQ_API_KEY (free, console.groq.com/keys)
+cp .env.example .env   # fill in NOCODB_TOKEN + NOCODB_BASE_ID (shared base, ask Max)
 yarn setup-hromadas    # idempotent — verifies/creates the Hromadas table + Sectors link column
 ```
 
@@ -147,14 +154,14 @@ snapshot as if it were a finished dataset.
 ## Usage
 
 ```bash
-# Structure a raw strategy text file into the schema, print to stdout + scripts/hromada-output/
-yarn structure-hromada --name "Ніжинська громада" --input raw.txt
+# Persist in-session structured JSON to hromada-output/ (+ optional NocoDB)
+yarn structure-hromada --name "Ніжинська громада" --json structured.json
 
 # ...and write it into NocoDB
-yarn structure-hromada --name "Ніжинська громада" --input raw.txt --write
+yarn structure-hromada --name "Ніжинська громада" --json structured.json --write
 
 # Update an existing row instead of inserting
-yarn structure-hromada --name "..." --input raw.txt --write --update 12
+yarn structure-hromada --name "..." --json structured.json --write --update 12
 
 # Bulk metadata import (KATOTTG + population) — one-off, already run for all 1,469
 yarn import-hromadas --updates data/research-log/hromada_updates.json --inserts data/research-log/hromada_inserts.json
@@ -176,7 +183,7 @@ Batch workflow for growing the corpus beyond the current pilot: see
 
 ```bash
 yarn ckan-search --out scripts/retrieval/ckan-candidates.json
-# pick URLs → batch-queue.json → download raw text → yarn structure-hromada --write
+# pick URLs → batch-queue.json → download → structure in-session → yarn structure-hromada --json … --write
 yarn export-hromadas && yarn match
 ```
 
@@ -204,8 +211,9 @@ yarn export-hromadas && yarn match
   known cluster on a corpus this small.
 - **Cost control matters.** Full in-session Agent-based retrieval+structuring burns
   60–150k tokens per hromada, mostly fighting anti-bot protection, not reasoning.
-  Splitting retrieval (stays in-session, deterministic) from structuring (offloaded
-  to a free external LLM) is what makes scaling past ~50 hromadas viable.
+  Split retrieval (scripts + deterministic download) from structuring (in-session
+  on already-extracted text, then `yarn structure-hromada --json` to persist).
+  External LLM APIs were tried as a cost stopgap and removed from the repo path.
 
 See [docs/hromadas-schema.md](docs/hromadas-schema.md) for the full field schema and
 [REFERENCES.md](REFERENCES.md) for the theoretical literature this approach draws on.
