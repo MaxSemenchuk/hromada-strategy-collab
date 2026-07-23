@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<title>МСС: повний PIN + matching overlay</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<style>
+  :root {
+    --bg: #14181d; --surface: #1b2027; --ink: #e9e6de; --ink-muted: #a9ac9f;
+    --border: #2d333c; --accent: #57ab9c; --gold: #d9a548; --hyp: #7aa2ff; --rule: #333a44;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .wrap { display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+  @media (max-width: 900px) { .wrap { grid-template-columns: 1fr; } }
+  aside { padding: 1.25rem 1.2rem; border-right: 1px solid var(--rule); background: var(--surface); overflow-y: auto; max-height: 100vh; }
+  h1 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.6rem; line-height: 1.35; }
+  .lede { font-size: 0.85rem; color: var(--ink-muted); margin: 0 0 1rem; line-height: 1.45; }
+  .toggle, .layers {
+    display: grid; gap: 4px; margin: 0 0 1rem;
+    padding: 4px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  }
+  .toggle { grid-template-columns: 1fr 1fr; }
+  .toggle button {
+    appearance: none; border: 0; background: transparent; color: var(--ink-muted);
+    font: inherit; font-size: 0.82rem; font-weight: 600; padding: 0.45rem 0.4rem;
+    border-radius: 6px; cursor: pointer;
+  }
+  .toggle button.active { background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 1px var(--border); }
+  .layers { padding: 0.55rem 0.65rem; gap: 0.35rem; }
+  .layers label {
+    display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--ink-muted); cursor: pointer;
+  }
+  .layers input { accent-color: var(--accent); }
+  .stat { display: flex; justify-content: space-between; font-size: 0.82rem; padding: 0.35rem 0; border-bottom: 1px solid var(--rule); }
+  .stat b { font-variant-numeric: tabular-nums; }
+  .legend { margin-top: 1.1rem; font-size: 0.8rem; color: var(--ink-muted); }
+  .legend div { display: flex; align-items: center; gap: 0.5rem; margin: 0.35rem 0; }
+  .sw { width: 22px; height: 0; border-top: 2px solid; display: inline-block; }
+  .sw.pin { border-color: var(--accent); }
+  .sw.known { border-color: var(--gold); border-top-width: 3px; }
+  .sw.hyp { border-color: var(--hyp); border-top-style: dashed; }
+  .hint { margin-top: 1rem; font-size: 0.78rem; color: var(--ink-muted); line-height: 1.4; }
+  main { position: relative; min-height: 100vh; }
+  #map { position: absolute; inset: 0; display: block; background: #0d1116; }
+  #map.hidden { display: none; }
+  canvas#c { display: none; width: 100%; height: 100vh; cursor: grab; }
+  canvas#c.visible { display: block; }
+  canvas#c:active { cursor: grabbing; }
+  .leaflet-container { background: #0d1116; font: inherit; }
+  .oblast-label {
+    background: transparent; border: 0; box-shadow: none;
+    color: rgba(233,230,222,0.55); font-size: 11px; font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  }
+  #tooltip {
+    display: none; position: absolute; pointer-events: none; z-index: 500;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    padding: 0.55rem 0.7rem; font-size: 0.8rem; max-width: 300px; line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <h1>Усі договори МСС (KSE PIN)</h1>
+    <p class="lede">Повний мережевий шар зареєстрованих угод на реальній карті України + matching-гіпотези.</p>
+    <div class="toggle" role="tablist" aria-label="View mode">
+      <button type="button" id="btn-map" class="active">Карта</button>
+      <button type="button" id="btn-graph">Граф</button>
+    </div>
+    <div class="layers">
+      <label><input type="checkbox" id="layer-pin" checked/> Усі МСС (PIN)</label>
+      <label><input type="checkbox" id="layer-known" checked/> Known validation</label>
+      <label><input type="checkbox" id="layer-hyp" checked/> Matching hypotheses</label>
+      <label><input type="checkbox" id="layer-oblasts" checked/> Межі областей</label>
+      <label><input type="checkbox" id="layer-corpus"/> Підсвітити корпус стратегій</label>
+    </div>
+    <div class="stat"><span>PIN вузлів</span><b id="s-nodes">—</b></div>
+    <div class="stat"><span>PIN ребер</span><b id="s-pin">—</b></div>
+    <div class="stat"><span>З координатами</span><b id="s-geo">—</b></div>
+    <div class="stat"><span>Корпус (Goals)</span><b id="s-corpus">—</b></div>
+    <div class="stat"><span>Known</span><b id="s-known">—</b></div>
+    <div class="stat"><span>Hypotheses</span><b id="s-hyp">—</b></div>
+    <div class="legend">
+      <div><span class="sw pin"></span> зареєстровані МСС</div>
+      <div><span class="sw known"></span> known validation</div>
+      <div><span class="sw hyp"></span> matching hypothesis</div>
+    </div>
+    <p class="hint" id="hint">Карта обрізана контуром України, без підписів на тайлах. Потрібен інтернет для підложки.</p>
+  </aside>
+  <main>
+    <div id="map"></div>
+    <canvas id="c"></canvas>
+    <div id="tooltip"></div>
+  </main>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+const DATA = __DATA__;
+const meta = DATA.meta;
+document.getElementById('s-nodes').textContent = meta.pin_nodes;
+document.getElementById('s-pin').textContent = meta.pin_edges;
+document.getElementById('s-geo').textContent = meta.nodes_with_geo;
+document.getElementById('s-corpus').textContent = meta.corpus_size;
+document.getElementById('s-known').textContent = meta.known_edges;
+document.getElementById('s-hyp').textContent = meta.hypothesis_edges;
+
+const mapEl = document.getElementById('map');
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+const tip = document.getElementById('tooltip');
+const hint = document.getElementById('hint');
+
+let mode = 'map';
+let width = 0, height = 0, dpr = 1;
+let camX = 0, camY = 0, scale = 0.55;
+let dragging = null, panning = false, lastX = 0, lastY = 0;
+let hover = null;
+let layers = { pin: true, known: true, hyp: true, oblasts: true, corpus: false };
+
+const nodes = DATA.nodes.map((n, i) => {
+  const angle = (i / Math.max(DATA.nodes.length, 1)) * Math.PI * 2;
+  const r0 = 280 + (n.degree || 0) * 1.5;
+  return {
+    ...n,
+    x: Math.cos(angle) * r0,
+    y: Math.sin(angle) * r0 * 0.75,
+    vx: 0, vy: 0,
+    fx: null, fy: null,
+  };
+});
+const byId = Object.fromEntries(nodes.map(n => [n.id, n]));
+const edges = DATA.edges
+  .filter(e => byId[e.a] && byId[e.b])
+  .map(e => ({ ...e, source: byId[e.a], target: byId[e.b] }));
+
+// ——— Leaflet map ———
+const map = L.map('map', {
+  center: [48.5, 31.2],
+  zoom: 6,
+  zoomControl: true,
+  attributionControl: true,
+});
+// No place-name labels on basemap
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap &copy; CARTO · межі: Natural Earth',
+  subdomains: 'abcd',
+  maxZoom: 18,
+}).addTo(map);
+
+// Mask everything outside Ukraine (world ring + UA outline as hole)
+function outlineHoles(fc) {
+  const holes = [];
+  const feat = (fc && fc.features && fc.features[0]) || null;
+  if (!feat || !feat.geometry) return holes;
+  const g = feat.geometry;
+  const ringToLatLng = (ring) => ring.map(([lng, lat]) => [lat, lng]);
+  if (g.type === 'Polygon') {
+    holes.push(ringToLatLng(g.coordinates[0]));
+  } else if (g.type === 'MultiPolygon') {
+    for (const poly of g.coordinates) holes.push(ringToLatLng(poly[0]));
+  }
+  return holes;
+}
+const worldRing = [[90, -180], [90, 180], [-90, 180], [-90, -180]];
+const uaHoles = outlineHoles(DATA.ukraine_outline);
+L.polygon([worldRing, ...uaHoles], {
+  stroke: false,
+  fillColor: '#14181d',
+  fillOpacity: 1,
+  interactive: false,
+  pane: 'overlayPane',
+}).addTo(map);
+if (uaHoles.length) {
+  const bounds = L.latLngBounds(uaHoles.flat());
+  map.fitBounds(bounds.pad(0.04));
+  map.setMaxBounds(bounds.pad(0.35));
+}
+
+const oblastLayer = L.geoJSON(DATA.oblasts || { type: 'FeatureCollection', features: [] }, {
+  style: {
+    color: 'rgba(169,172,159,0.7)',
+    weight: 1.1,
+    fill: false,
+  },
+  // no oblast name tooltips / labels
+}).addTo(map);
+
+const pinEdgesLayer = L.layerGroup().addTo(map);
+const knownEdgesLayer = L.layerGroup().addTo(map);
+const hypEdgesLayer = L.layerGroup().addTo(map);
+const nodesLayer = L.layerGroup().addTo(map);
+
+function edgeStyle(kind) {
+  if (kind === 'pin') return { color: '#57ab9c', weight: 1, opacity: 0.28 };
+  if (kind === 'known') return { color: '#d9a548', weight: 3, opacity: 0.95 };
+  return { color: '#7aa2ff', weight: 2, opacity: 0.75, dashArray: '6 5' };
+}
+
+function rebuildMapLayers() {
+  pinEdgesLayer.clearLayers();
+  knownEdgesLayer.clearLayers();
+  hypEdgesLayer.clearLayers();
+  nodesLayer.clearLayers();
+
+  for (const e of edges) {
+    const a = e.source, b = e.target;
+    if (a.lat == null || b.lat == null) continue;
+    const line = L.polyline([[a.lat, a.lon], [b.lat, b.lon]], edgeStyle(e.kind));
+    if (e.kind === 'pin') pinEdgesLayer.addLayer(line);
+    else if (e.kind === 'known') knownEdgesLayer.addLayer(line);
+    else hypEdgesLayer.addLayer(line);
+  }
+
+  for (const n of nodes) {
+    if (n.lat == null) continue;
+    const corpusGlow = layers.corpus && n.in_corpus;
+    const r = 3 + Math.min(n.degree, 24) * 0.15;
+    const marker = L.circleMarker([n.lat, n.lon], {
+      radius: r,
+      color: corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff'),
+      fillColor: corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff'),
+      fillOpacity: 0.85,
+      weight: 1,
+      opacity: 0.9,
+    });
+    const title = n.full_name || n.label;
+    marker.bindTooltip(
+      `<strong>${title}</strong><br/>${n.oblast || ''}<br/>PIN degree ${n.degree}`,
+      { direction: 'top', opacity: 0.95 }
+    );
+    nodesLayer.addLayer(marker);
+  }
+
+  syncLayerVisibility();
+}
+
+function syncLayerVisibility() {
+  if (layers.oblasts) {
+    if (!map.hasLayer(oblastLayer)) map.addLayer(oblastLayer);
+  } else if (map.hasLayer(oblastLayer)) {
+    map.removeLayer(oblastLayer);
+  }
+  const show = (layer, on) => {
+    if (on) { if (!map.hasLayer(layer)) map.addLayer(layer); }
+    else if (map.hasLayer(layer)) map.removeLayer(layer);
+  };
+  show(pinEdgesLayer, layers.pin);
+  show(knownEdgesLayer, layers.known);
+  show(hypEdgesLayer, layers.hyp);
+  // nodes always on when any network layer on
+  show(nodesLayer, layers.pin || layers.known || layers.hyp || layers.corpus);
+}
+
+rebuildMapLayers();
+
+function syncLayers() {
+  layers.pin = document.getElementById('layer-pin').checked;
+  layers.known = document.getElementById('layer-known').checked;
+  layers.hyp = document.getElementById('layer-hyp').checked;
+  layers.oblasts = document.getElementById('layer-oblasts').checked;
+  layers.corpus = document.getElementById('layer-corpus').checked;
+  if (mode === 'map') {
+    rebuildMapLayers();
+  }
+}
+['layer-pin','layer-known','layer-hyp','layer-oblasts','layer-corpus'].forEach(id => {
+  document.getElementById(id).addEventListener('change', syncLayers);
+});
+syncLayers();
+
+function setMode(next) {
+  mode = next;
+  document.getElementById('btn-graph').classList.toggle('active', mode === 'graph');
+  document.getElementById('btn-map').classList.toggle('active', mode === 'map');
+  if (mode === 'map') {
+    mapEl.classList.remove('hidden');
+    canvas.classList.remove('visible');
+    hint.textContent = 'Карта обрізана контуром України, без підписів на тайлах. Потрібен інтернет для підложки.';
+    setTimeout(() => { map.invalidateSize(); }, 50);
+  } else {
+    mapEl.classList.add('hidden');
+    canvas.classList.add('visible');
+    hint.textContent = 'Force-граф усього PIN щільний — краще карта або вимкни PIN.';
+    resizeCanvas();
+  }
+}
+document.getElementById('btn-graph').onclick = () => setMode('graph');
+document.getElementById('btn-map').onclick = () => setMode('map');
+
+// ——— Force graph (canvas) ———
+function resizeCanvas() {
+  dpr = window.devicePixelRatio || 1;
+  width = canvas.clientWidth || mapEl.clientWidth;
+  height = canvas.clientHeight || window.innerHeight;
+  canvas.width = Math.floor(width * dpr);
+  canvas.height = Math.floor(height * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+window.addEventListener('resize', () => {
+  if (mode === 'graph') resizeCanvas();
+  else map.invalidateSize();
+});
+
+function edgeVisible(e) {
+  if (e.kind === 'pin') return layers.pin;
+  if (e.kind === 'known') return layers.known;
+  if (e.kind === 'hypothesis') return layers.hyp;
+  return true;
+}
+
+function worldFromEvent(ev) {
+  const rect = canvas.getBoundingClientRect();
+  const sx = ev.clientX - rect.left;
+  const sy = ev.clientY - rect.top;
+  return {
+    x: (sx - width / 2 - camX) / scale,
+    y: (sy - height / 2 - camY) / scale,
+    sx, sy,
+  };
+}
+
+function findNode(wx, wy) {
+  const hit = 10 / scale;
+  let best = null, bestD = hit * hit;
+  for (const n of nodes) {
+    const dx = n.x - wx, dy = n.y - wy;
+    const d = dx * dx + dy * dy;
+    if (d < bestD) { bestD = d; best = n; }
+  }
+  return best;
+}
+
+canvas.addEventListener('mousedown', (ev) => {
+  if (mode !== 'graph') return;
+  const w = worldFromEvent(ev);
+  const n = findNode(w.x, w.y);
+  if (n) { dragging = n; n.fx = n.x; n.fy = n.y; }
+  else { panning = true; lastX = ev.clientX; lastY = ev.clientY; }
+});
+window.addEventListener('mouseup', () => {
+  if (dragging) { dragging.fx = null; dragging.fy = null; }
+  dragging = null; panning = false;
+});
+window.addEventListener('mousemove', (ev) => {
+  if (mode !== 'graph') return;
+  const w = worldFromEvent(ev);
+  if (dragging) {
+    dragging.fx = w.x; dragging.fy = w.y;
+    dragging.x = w.x; dragging.y = w.y;
+  } else if (panning) {
+    camX += ev.clientX - lastX;
+    camY += ev.clientY - lastY;
+    lastX = ev.clientX; lastY = ev.clientY;
+  }
+  hover = findNode(w.x, w.y);
+  if (hover) {
+    tip.style.display = 'block';
+    tip.style.left = (w.sx + 14) + 'px';
+    tip.style.top = (w.sy + 14) + 'px';
+    const title = hover.full_name || hover.label;
+    tip.innerHTML = `<strong>${title}</strong><br/>${hover.oblast || ''}<br/><span style="color:#a9ac9f">${hover.katottg}</span>`;
+  } else tip.style.display = 'none';
+});
+canvas.addEventListener('wheel', (ev) => {
+  if (mode !== 'graph') return;
+  ev.preventDefault();
+  scale = Math.min(6, Math.max(0.25, scale * (ev.deltaY < 0 ? 1.08 : 0.92)));
+}, { passive: false });
+
+function tickGraph() {
+  const n = nodes.length;
+  const charge = layers.pin ? 420 : 1400;
+  const step = layers.pin ? 3 : 1;
+  for (let i = 0; i < n; i += step) {
+    for (let j = i + step; j < n; j += step) {
+      let dx = nodes[j].x - nodes[i].x;
+      let dy = nodes[j].y - nodes[i].y;
+      let dist2 = dx * dx + dy * dy || 0.01;
+      let dist = Math.sqrt(dist2);
+      const f = charge / Math.max(dist2, 36);
+      const fx = (dx / dist) * f, fy = (dy / dist) * f;
+      nodes[i].vx -= fx; nodes[i].vy -= fy;
+      nodes[j].vx += fx; nodes[j].vy += fy;
+    }
+  }
+  for (const e of edges) {
+    if (!edgeVisible(e)) continue;
+    const a = e.source, b = e.target;
+    let dx = b.x - a.x, dy = b.y - a.y;
+    let dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
+    const rest = e.kind === 'pin' ? 70 : 110;
+    const k = e.kind === 'pin' ? 0.008 : 0.02;
+    const f = k * (dist - rest);
+    const fx = (dx / dist) * f, fy = (dy / dist) * f;
+    a.vx += fx; a.vy += fy;
+    b.vx -= fx; b.vy -= fy;
+  }
+  for (const node of nodes) {
+    node.vx += -node.x * 0.0015;
+    node.vy += -node.y * 0.0015;
+    if (node.fx != null) { node.x = node.fx; node.y = node.fy; node.vx = 0; node.vy = 0; continue; }
+    node.vx *= 0.85; node.vy *= 0.85;
+    node.x += node.vx; node.y += node.vy;
+  }
+}
+
+function strokeEdge(e, ax, ay, bx, by) {
+  ctx.beginPath();
+  ctx.moveTo(ax, ay);
+  ctx.lineTo(bx, by);
+  if (e.kind === 'pin') {
+    ctx.strokeStyle = 'rgba(87,171,156,0.22)';
+    ctx.lineWidth = 0.9 / scale;
+    ctx.setLineDash([]);
+  } else if (e.kind === 'known') {
+    ctx.strokeStyle = 'rgba(217,165,72,0.95)';
+    ctx.lineWidth = 2.6 / scale;
+    ctx.setLineDash([]);
+  } else {
+    ctx.strokeStyle = 'rgba(122,162,255,0.55)';
+    ctx.lineWidth = 1.2 / scale;
+    ctx.setLineDash([5 / scale, 4 / scale]);
+  }
+  ctx.stroke();
+  ctx.setLineDash([]);
+}
+
+function drawGraph() {
+  if (mode !== 'graph') return;
+  tickGraph();
+  ctx.clearRect(0, 0, width, height);
+  ctx.save();
+  ctx.translate(width / 2 + camX, height / 2 + camY);
+  ctx.scale(scale, scale);
+  for (const kind of ['pin', 'hypothesis', 'known']) {
+    for (const e of edges) {
+      if (e.kind !== kind || !edgeVisible(e)) continue;
+      strokeEdge(e, e.source.x, e.source.y, e.target.x, e.target.y);
+    }
+  }
+  for (const n of nodes) {
+    const hi = hover === n;
+    const corpusGlow = layers.corpus && n.in_corpus;
+    const r = ((hi ? 5.5 : 2.2) + Math.min(n.degree, 20) * 0.12) / Math.sqrt(scale);
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+    ctx.fillStyle = corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff');
+    ctx.fill();
+    if (hi) {
+      ctx.font = `${10 / scale}px -apple-system, sans-serif`;
+      ctx.fillStyle = '#e9e6de';
+      ctx.fillText(n.label, n.x + 6 / scale, n.y + 3 / scale);
+    }
+  }
+  ctx.restore();
+}
+
+function loop() {
+  drawGraph();
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+setMode('map');
+</script>
+</body>
+</html>
