@@ -8,11 +8,16 @@ burning 60–150k agent tokens per hromada on anti-bot retrieval.
 ```
 1. yarn ckan-search --out scripts/retrieval/ckan-candidates.json
 2. Pick URLs → add rows to batch-queue.json
-3. Download raw text (PDF/DOC/HTML) → scripts/retrieval/raw/
-4. yarn structure-hromada --name "..." --input raw/....txt --write
-5. yarn export-hromadas          # refresh data/releases/hromadas.json
-6. yarn match && yarn export-matching-edges
+3. yarn download-raw             # PDF/DOC → scripts/retrieval/raw/ (gitignored)
+4. Extract text from raw/ → *.extracted.txt / *.groq.txt; set raw_text_path
+5. yarn structure-hromada --name "..." --input raw/....txt --write
+6. yarn export-hromadas          # refresh data/releases/hromadas.json
+7. yarn match && yarn export-matching-edges
 ```
+
+Local raw files are a **cache for re-analysis** (alternate extractors, full-text
+embeddings, audit) — not part of the public `data/releases/` dataset. Commit
+URLs + queue metadata only.
 
 ## CKAN search
 
@@ -35,12 +40,37 @@ Edit [batch-queue.json](batch-queue.json):
   "katottg": "UA21100090000012128",
   "status": "pending",
   "strategy_url": "https://...",
-  "raw_text_path": "scripts/retrieval/raw/nizhyn.txt",
+  "raw_source_path": "scripts/retrieval/raw/nizhyn.pdf",
+  "raw_text_path": "scripts/retrieval/raw/nizhyn.extracted.txt",
   "notes": ""
 }
 ```
 
-Status values: `pending` | `downloaded` | `structured` | `failed`
+Status values: `pending` | `downloaded` | `structured` | `failed` | `no_strategy`
+
+## Download raw sources
+
+```bash
+yarn download-raw                  # status=pending with strategy_url
+yarn download-raw --all            # every row with strategy_url (skip existing)
+yarn download-raw --force          # re-download
+yarn download-raw --dry-run
+```
+
+Writes binaries under `scripts/retrieval/raw/`, sets `raw_source_path`, and
+appends sha256 metadata to `raw/manifest.json`.
+
+## МСС registry (ground truth)
+
+```bash
+yarn fetch-mss-registry            # → data/cache/mss/mss_registry.xlsx
+yarn fetch-mss-registry --force    # refresh from CKAN
+```
+
+Official registry of inter-municipal cooperation agreements
+([data.gov.ua `912c1ea4-…`](https://data.gov.ua/dataset/912c1ea4-38ea-4648-8306-59fc1df8b51b),
+CC BY 4.0). Tabular XLSX — not individual contract PDFs. Cached under
+`data/cache/` (gitignored), same pattern as KSE covariates.
 
 ## Batch runner
 
