@@ -9,10 +9,11 @@ burning 60–150k agent tokens per hromada on anti-bot retrieval.
 1. yarn ckan-search --out scripts/retrieval/ckan-candidates.json
 2. Pick URLs → add rows to batch-queue.json
 3. yarn download-raw             # PDF/DOC → scripts/retrieval/raw/ (gitignored)
-4. Extract text from raw/ → *.extracted.txt / *.groq.txt; set raw_text_path
-5. yarn structure-hromada --name "..." --input raw/....txt --write
-6. yarn export-hromadas          # refresh data/releases/hromadas.json
-7. yarn match && yarn export-matching-edges
+4. Extract text from raw/ → *.extracted.txt; set raw_text_path
+5. Structure in-session → write `scripts/hromada-output/<name>.json`
+6. yarn structure-hromada --name "..." --json … --write
+7. yarn export-hromadas          # refresh data/releases/hromadas.json
+8. yarn match && yarn export-matching-edges
 ```
 
 Local raw files are a **cache for re-analysis** (alternate extractors, full-text
@@ -78,16 +79,16 @@ CC BY 4.0). Tabular XLSX — not individual contract PDFs. Cached under
 ./scripts/retrieval/run-batch.sh
 ```
 
-Processes queue entries with `status=downloaded` through
-`yarn structure-hromada --write`. Requires `GROQ_API_KEY` and NocoDB
-credentials in `.env`.
+Processes queue entries with `status=downloaded` that already have
+`scripts/hromada-output/<name>.json` (produced in-session). Persists via
+`yarn structure-hromada --json … --write`. Requires NocoDB credentials in `.env`.
 
 ## Cost notes
 
 - **Retrieval** (finding URLs, fighting Cloudflare): still mostly manual or
   agent-assisted — CKAN covers ~123 datasets, not full coverage.
-- **Structuring** (raw text → JSON): offload to Groq (`llama-3.3-70b`,
-  free) via `structure-hromada-strategy.ts` — do not run in main agent loop.
+- **Structuring** (raw text → JSON): done in-session; the yarn script only
+  writes the resulting JSON to NocoDB / `hromada-output/`.
 
 ## Target
 

@@ -6,8 +6,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://obcity.gov.ua/drupal/uploads/2025/07/STRATEGIYA-do-2027-Obukhivska-gromada.pdf",
-      "raw_text_path": "scripts/retrieval/raw/obukhiv-miska.groq.txt",
-      "notes": "source=obukhiv-miska; chars=85007; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/obukhiv-miska.extracted.txt",
+      "notes": "source=obukhiv-miska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/obukhiv-miska.pdf"
     },
     {
@@ -15,8 +15,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://dunrada.gov.ua/sites/dunrada.gov.ua/files/inline-files/strategiyaplan-zakhodiv.pdf",
-      "raw_text_path": "scripts/retrieval/raw/dunayevetska.groq.txt",
-      "notes": "source=dunayevetska; chars=85007; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/dunayevetska.extracted.txt",
+      "notes": "source=dunayevetska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/dunayevetska.pdf"
     },
     {
@@ -24,8 +24,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://vdsr.gov.ua/sites/vdsr.gov.ua/files/inline-files/strategiya-rozvitku-velikodimerskoi-gromadi-do-2027-roku.pdf",
-      "raw_text_path": "scripts/retrieval/raw/velykodymerska.groq.txt",
-      "notes": "source=velykodymerska; chars=85007; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/velykodymerska.extracted.txt",
+      "notes": "source=velykodymerska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/velykodymerska.pdf"
     },
     {
@@ -33,8 +33,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://skalatmr.gov.ua/sites/skalatmr.gov.ua/files/document_files/strategiya-rozvitku-2023-2027-proekt.pdf",
-      "raw_text_path": "scripts/retrieval/raw/skalatska.groq.txt",
-      "notes": "source=skalatska; chars=78076; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/skalatska.extracted.txt",
+      "notes": "source=skalatska; chars=78076; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/skalatska.pdf"
     },
     {
@@ -42,8 +42,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://data.gov.ua/dataset/d84b8c16-f1a9-49af-8844-f4a65da880d1/resource/b5066e3b-af18-4c84-9088-c52d85a9d937/download/strategiya-stalogo-rozvitku-na-2017-2025-roki.pdf",
-      "raw_text_path": "scripts/retrieval/raw/novooleksandrivska.groq.txt",
-      "notes": "source=novooleksandrivska; chars=85007; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/novooleksandrivska.extracted.txt",
+      "notes": "source=novooleksandrivska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/novooleksandrivska.pdf"
     },
     {
@@ -60,8 +60,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://haisyn-municipality.gov.ua/files/222/upload/Економіка/strategiya2030.pdf",
-      "raw_text_path": "scripts/retrieval/raw/haisynska.groq.txt",
-      "notes": "source=haisynska; chars=73401; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/haisynska.extracted.txt",
+      "notes": "source=haisynska; chars=73401; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/haisynska.pdf"
     },
     {
@@ -69,8 +69,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://shepetivka-rada.gov.ua/wp-content/uploads/2024/03/strategiya-rozvytku-shepetivskoyi-mtg-do-2030.pdf",
-      "raw_text_path": "scripts/retrieval/raw/shepetivska.groq.txt",
-      "notes": "source=shepetivska; chars=85007; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/shepetivska.extracted.txt",
+      "notes": "source=shepetivska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/shepetivska.pdf"
     },
     {
@@ -78,8 +78,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://bc75fea2-18c4-4c33-a99e-456439a453d0.filesusr.com/ugd/865f7d_afd6ccb5daf2454f8d469ff90657c6da.pdf",
-      "raw_text_path": "scripts/retrieval/raw/bila-tserkva-2025.groq.txt",
-      "notes": "source=bila-tserkva-2025; chars=85007; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/bila-tserkva-2025.extracted.txt",
+      "notes": "source=bila-tserkva-2025; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/bila-tserkva-2025.pdf"
     },
     {
@@ -87,8 +87,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://bilkigr.gov.ua/wp-content/uploads/sites/25/2024/01/Strategiya-rozvytku-Bilkivskoyi-STG-ta-Plan-vrovadzhennya-do-2027-roku_sajt_Rishennya.pdf",
-      "raw_text_path": "scripts/retrieval/raw/bilkivska.groq.txt",
-      "notes": "source=bilkivska; chars=85007; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/bilkivska.extracted.txt",
+      "notes": "source=bilkivska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/bilkivska.pdf"
     },
     {
@@ -96,8 +96,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://data.gov.ua/dataset/33f327db-a7b3-4fdf-9ca8-b27d01b5aa43/resource/e7e3a807-402d-48fc-b6ab-8f41ca301854/download/vii-36-24-pro-zatverdzhennya-strategiyi-rozvitku-gromadi-na-25-30-roki.docx",
-      "raw_text_path": "scripts/retrieval/raw/zbarazka.groq.txt",
-      "notes": "source=zbarazka; chars=67578; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/zbarazka.extracted.txt",
+      "notes": "source=zbarazka; chars=67578; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/zbarazka.docx"
     },
     {
@@ -105,8 +105,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://drohobych-rada.gov.ua/wp-content/uploads/2024/10/strategiya-21-30-nova-redakcziya-2024.pdf",
-      "raw_text_path": "scripts/retrieval/raw/drogobytska.groq.txt",
-      "notes": "source=drogobytska; chars=67916; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/drogobytska.extracted.txt",
+      "notes": "source=drogobytska; chars=67916; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/drogobytska.pdf"
     },
     {
@@ -114,8 +114,8 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://vbsr.gov.ua/images/Strategia_rozvunky/zatverjena/plan_zahodiv_stratehiia.pdf",
-      "raw_text_path": "scripts/retrieval/raw/velykoberezovytska-plan.groq.txt",
-      "notes": "plan-of-measures PDF; letter-spaced OCR normalized; chars=54948; groq_trim=28000",
+      "raw_text_path": "scripts/retrieval/raw/velykoberezovytska-plan.extracted.txt",
+      "notes": "plan-of-measures PDF; letter-spaced OCR normalized; chars=54948; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/velykoberezovytska-plan.pdf"
     }
   ]

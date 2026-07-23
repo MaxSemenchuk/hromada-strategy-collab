@@ -35,6 +35,6 @@ Goals: mean-centered sub-goal embeddings (`multilingual-e5-small`). After change
 1. Matching scores are **hypotheses** unless `known: true` (registry-confirmed).
 2. Sector-tag overlap is **not** a matching signal.
 3. `edem_total`: use `edem-data.csv`; missing hromadas ≠ zero.
-4. Batch growth: `scripts/retrieval/` + `yarn structure-hromada` (Groq), not full Agent sessions.
+4. Batch growth: `scripts/retrieval/` + in-session structuring → `yarn structure-hromada --json … --write`.
 5. Do not inflate CKAN "123 strategies" — mostly unrelated datasets.
 6. Minimize scope; match existing TS/Python conventions in `scripts/`.

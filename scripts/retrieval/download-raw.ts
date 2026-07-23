@@ -75,7 +75,7 @@ function stemFromItem(item: QueueItem): string {
   if (item.raw_text_path) {
     const base = path.basename(item.raw_text_path);
     return base
-      .replace(/\.(groq|extracted)\.txt$/i, "")
+      .replace(/\.extracted\.txt$/i, "")
       .replace(/\.(txt|md|html)$/i, "");
   }
   return item.name
