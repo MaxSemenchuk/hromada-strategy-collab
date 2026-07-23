@@ -1,0 +1,22 @@
+{
+  "name": "hromada-strategy-collab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Corpus-level NLP matching of Ukrainian hromada development strategies to surface inter-municipal cooperation (МСС) candidates.",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "setup-hromadas": "tsx -r dotenv/config scripts/migrations/setup-hromadas-table.ts",
+    "structure-hromada": "tsx -r dotenv/config scripts/structure-hromada-strategy.ts",
+    "import-hromadas": "tsx -r dotenv/config scripts/import-hromadas-metadata.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsx": "^4.19.1",
+    "typescript": "^5"
+  }
+}

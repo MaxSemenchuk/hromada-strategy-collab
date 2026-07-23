@@ -1,0 +1,241 @@
+<title>Паспорт проєкту — Матчинг громад за стратегіями розвитку</title>
+<style>
+  :root {
+    --bg: #faf7f1; --surface: #f2ede1; --surface-2: #e9e2d2;
+    --ink: #1e232b; --ink-muted: #565b52; --ink-faint: #8a8c7c;
+    --border: #ddd5c2; --accent: #2b6f63; --accent-ink: #f4f9f7;
+    --gold: #a8781f; --gold-soft: #f1e2c2; --rule: #cfc6ae;
+    --shadow: 0 1px 2px rgba(30, 35, 43, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d; --surface: #1b2027; --surface-2: #232a32;
+      --ink: #e9e6de; --ink-muted: #a9ac9f; --ink-faint: #6f7468;
+      --border: #2d333c; --accent: #57ab9c; --accent-ink: #0d1613;
+      --gold: #d9a548; --gold-soft: #33291a; --rule: #333a44;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14181d; --surface: #1b2027; --surface-2: #232a32;
+    --ink: #e9e6de; --ink-muted: #a9ac9f; --ink-faint: #6f7468;
+    --border: #2d333c; --accent: #57ab9c; --accent-ink: #0d1613;
+    --gold: #d9a548; --gold-soft: #33291a; --rule: #333a44;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  :root[data-theme="light"] {
+    --bg: #faf7f1; --surface: #f2ede1; --surface-2: #e9e2d2;
+    --ink: #1e232b; --ink-muted: #565b52; --ink-faint: #8a8c7c;
+    --border: #ddd5c2; --accent: #2b6f63; --accent-ink: #f4f9f7;
+    --gold: #a8781f; --gold-soft: #f1e2c2; --rule: #cfc6ae;
+    --shadow: 0 1px 2px rgba(30, 35, 43, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 820px; margin: 0 auto; padding: 3.2rem 1.5rem 5rem; }
+  h1, h2, h3 { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "URW Palladio L", serif; font-weight: 400; text-wrap: balance; color: var(--ink); }
+  .eyebrow { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 600; display: block; margin-bottom: 0.7rem; }
+  h1 { font-size: clamp(1.6rem, 3.6vw, 2.3rem); line-height: 1.24; margin: 0 0 0.9rem; }
+  .lede { font-size: 1.08rem; color: var(--ink-muted); max-width: 66ch; margin: 0; }
+  header.hero { padding-bottom: 2rem; border-bottom: 1px solid var(--rule); margin-bottom: 2.4rem; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 1.6rem; margin-top: 1.4rem; font-size: 0.85rem; color: var(--ink-faint); }
+  .meta-row strong { color: var(--ink-muted); font-weight: 600; }
+  section { margin-bottom: 2.8rem; }
+  section > h2 { font-size: 1.3rem; margin: 0 0 0.9rem; }
+  .section-kicker { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 0.5rem; }
+  p { margin: 0 0 1rem; max-width: 70ch; }
+  p:last-child { margin-bottom: 0; }
+  ul.plain { margin: 0; padding-left: 1.2rem; max-width: 70ch; }
+  ul.plain li { margin-bottom: 0.5rem; }
+  ul.plain li:last-child { margin-bottom: 0; }
+
+  .box { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1.3rem 1.5rem; box-shadow: var(--shadow); }
+  .box p { max-width: none; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; margin: 1.2rem 0; }
+  @media (max-width: 640px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--surface); padding: 1.1rem 1rem; text-align: center; }
+  .stat .num { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; font-size: 1.7rem; color: var(--ink); display: block; }
+  .stat .label { font-size: 0.74rem; color: var(--ink-muted); margin-top: 0.3rem; display: block; }
+
+  .timeline { display: flex; flex-direction: column; gap: 0; border-left: 2px solid var(--rule); padding-left: 1.3rem; margin: 1.2rem 0 0; }
+  .timeline .step { position: relative; padding-bottom: 1.3rem; }
+  .timeline .step:last-child { padding-bottom: 0; }
+  .timeline .step::before { content: ""; position: absolute; left: -1.75rem; top: 0.3rem; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+  .timeline .step h3 { font-size: 1rem; margin: 0 0 0.3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 600; }
+  .timeline .step p { font-size: 0.92rem; color: var(--ink-muted); margin: 0; }
+
+  .table-wrap { overflow-x: auto; }
+  table.findings { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  table.findings th, table.findings td { padding: 0.65rem 0.9rem; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+  table.findings th { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
+  table.findings tr.confirmed td { background: var(--gold-soft); }
+  table.findings tr.confirmed td:first-child { border-left: 2px solid var(--gold); }
+  table.findings tr.new td:first-child { border-left: 2px solid var(--accent); }
+  .tag { font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 3px; white-space: nowrap; }
+  .tag.confirmed { color: var(--gold); }
+  .tag.new { color: var(--accent); }
+
+  .personas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
+  @media (max-width: 720px) { .personas { grid-template-columns: 1fr; } }
+  .persona { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1.3rem 1.3rem 1.4rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .persona .role { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+  .persona h3 { font-size: 1.05rem; margin: 0; }
+  .persona p { font-size: 0.9rem; color: var(--ink-muted); margin: 0; }
+  .persona ul.plain { font-size: 0.88rem; color: var(--ink-muted); }
+
+  .caveat { font-size: 0.85rem; color: var(--ink-faint); font-style: italic; margin-top: 1rem; padding-top: 0.9rem; border-top: 1px dashed var(--rule); }
+
+  footer.status { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--ink-faint); }
+  footer.status strong { color: var(--ink-muted); }
+</style>
+
+<div class="page">
+
+  <header class="hero">
+    <span class="eyebrow">Паспорт проєкту · W3I · липень 2026</span>
+    <h1>Чи можна автоматично знайти, кому з ким варто співпрацювати серед українських громад?</h1>
+    <p class="lede">Дослідницький пілот: перевіряємо, чи можна системно — а не лише через особисті зв'язки й конференції — знаходити громади зі спільним баченням розвитку, читаючи тексти їхніх стратегій.</p>
+    <div class="meta-row">
+      <span><strong>Статус:</strong> активний пілот, не готовий продукт</span>
+      <span><strong>Дані:</strong> 54 громади, 20 з 24 областей (44 придатні для матчингу — мають реальний текст стратегії)</span>
+      <span><strong>Ініціатор:</strong> W3I</span>
+    </div>
+  </header>
+
+  <section>
+    <p class="section-kicker">Навіщо</p>
+    <h2>Партнерів для громад сьогодні шукають вручну</h2>
+    <p>В Україні ~870 громад мають затверджені стратегії розвитку, і вже існує понад 762 договори про міжмуніципальне співробітництво (МСС). Але всі вони виникли через особисті знайомства, асоціації (АМУ, Конгрес місцевих влад) або донорські програми — не через системний аналіз того, хто фактично пише про одне й те саме. Це означає: збіги, які не потрапили в чиєсь поле зору особисто, просто не знаходяться — незалежно від того, наскільки вони очевидні на папері.</p>
+    <div class="box">
+      <p>Гіпотеза проєкту: якщо прочитати тексти стратегій comп'ютером і порівняти їх між собою, можна системно підказувати, кому варто об'єднувати зусилля — включно з парами, про які ніхто ще не здогадався.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-kicker">Що ми зробили</p>
+    <h2>Шлях пілоту</h2>
+    <div class="timeline">
+      <div class="step">
+        <h3>1. Зібрали реальні стратегії в базу даних</h3>
+        <p>54 громади: частина — навмисно відібрані (реальні угоди МСС для перевірки методу, лідери цифрової трансформації, обласні центри для географії), частина — випадкова стратифікована вибірка з офіційного реєстру КАТОТТГ (Мінрегіон) для перевірки на типовій громаді, частина — цілеспрямоване добирання сусідів уже перевірених громад («snowball»-вибірка) для ефективнішого пошуку. 9 громад не мали доступного тексту стратегії — чесний негативний результат, а не помилка збору.</p>
+      </div>
+      <div class="step">
+        <h3>2. Витягли структуровані дані з кожної стратегії</h3>
+        <p>Цілі розвитку, сектори, сильні й слабкі сторони, згадані партнери, наявні угоди про співпрацю — все в єдину структуру, придатну для порівняння.</p>
+      </div>
+      <div class="step">
+        <h3>3. Перевірили метод на реальних, вже існуючих партнерствах</h3>
+        <p>Не підказуючи системі про існування угод, перевірили: чи знайде вона їх сама, читаючи лише тексти цілей.</p>
+      </div>
+      <div class="step">
+        <h3>4. Навмисно перевірили на хибні збіги</h3>
+        <p>Додали громади зі схожим тегом («туризм»), але іншою суттю (гірський/оздоровчий туризм проти козацько-історичної спадщини) — переконались, що метод не плутає ярлик зі змістом.</p>
+      </div>
+      <div class="step">
+        <h3>5. Знайшли межу методу — і розширили його</h3>
+        <p>Текстова схожість добре ловить спільне БАЧЕННЯ (туризм, промисловість), але не ловить операційну співпрацю (спільний ЦНАП, вивіз сміття) — це підказала реальна перевірена угода, яку текст не знайшов. Додали другий сигнал — географічну близькість — і це виправило пропуск.</p>
+      </div>
+      <div class="step">
+        <h3>6. Прокачали саму технологію матчингу</h3>
+        <p>Перший варіант (пряме текстове співпадіння слів) працював, але завищував схожість у довгих всеохопних документах. Спробували смислові ембединги — вони спочатку провалились (всі державні документи виявились «схожими» просто тому, що написані канцелярською мовою). Виправили це — і отримали точніший метод, який до того ж пояснює, яка саме ціль у кого з ким збігається.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-kicker">Що ми отримали</p>
+    <h2>Результати пілоту в цифрах</h2>
+    <div class="stat-grid">
+      <div class="stat"><span class="num">54</span><span class="label">громад у базі (44 придатні для матчингу)</span></div>
+      <div class="stat"><span class="num">20/24</span><span class="label">областей охоплено</span></div>
+      <div class="stat"><span class="num">~70%</span><span class="label">випадкових малих громад мають реальну стратегію</span></div>
+      <div class="stat"><span class="num">#3–7</span><span class="label">місця трьох пар відомого партнерства серед 946 — знайдено без підказки</span></div>
+    </div>
+    <p>Реальна, вже діюча угода про співробітництво (туристичний кластер трьох громад Чернігівщини) незмінно опинялась у топі результатів — на кожному етапі зростання вибірки, незалежно від того, який саме метод порівняння використовувався. Дві незалежні перевірки на хибні збіги (різні «гірські» туристичні громади) підтвердили: метод розрізняє суть, а не лише тему. Випадкова вибірка з офіційного державного реєстру громад показала: більшість малих сільських громад мають реальні, змістовні стратегії розвитку — покриття кращe, ніж очікувалось. Окремо виявили й виправили артефакт: дві стратегії, написані за однаковим консультаційним шаблоном, спочатку хибно виглядали як найсильніший «збіг» у датасеті — додали прозору перевірку на дослівні текстові збіги.</p>
+  </section>
+
+  <section>
+    <p class="section-kicker">Які можливості ми знайшли</p>
+    <h2>Конкретні кандидати на співпрацю</h2>
+    <div class="table-wrap">
+      <table class="findings">
+        <thead><tr><th>Пара громад</th><th>Впевненість</th><th>Конкретна суть співпраці</th></tr></thead>
+        <tbody>
+          <tr class="confirmed">
+            <td>Ніжин ↔ Батурин ↔ Козелець</td>
+            <td><span class="tag confirmed">✓ реальна угода</span></td>
+            <td>Спільний туристичний кластер «Місцями козацької сили» — вже діє. Знайдено без підказки, підтверджує метод на практиці.</td>
+          </tr>
+          <tr class="new">
+            <td>Галицька ↔ Дубовецька</td>
+            <td><span class="tag new">★★★ сильний кандидат</span></td>
+            <td>Реальні сусіди в одному районі. Дубовецька у власній стратегії вже НАЗИВАЄ конкретний спільний проєкт — мережу централізованого водопостачання «Галич-Бурштин-Маріямпіль» із запланованим підписанням угоди МСС. Це не гіпотеза з тексту, а вже сформульований намір.</td>
+          </tr>
+          <tr class="new">
+            <td>Ужгород ↔ Мукачево</td>
+            <td><span class="tag new">★★ кандидат</span></td>
+            <td>40 км одна від одної, обидві розвивають туристичний продукт окремо (Ужгород — DMO/інфоцентр, Мукачево — замкові маршрути). Мукачево вже планує лікарню, що частково обслуговуватиме Ужгородський район. Конкретно: спільний турмаршрут (мінеральні джерела + замок Паланок), спільна заявка на транскордонний грант, координація щодо аеропортів (щоб не дублювати інвестиції — Мукачево планує свій за 40 км від наявного ужгородського).</td>
+          </tr>
+          <tr class="new">
+            <td>Дніпро ↔ Львів</td>
+            <td><span class="tag new">★★ кандидат (інший тип)</span></td>
+            <td>Не спільний проєкт, а обмін досвідом: обидва будують інституцію управління інноваціями з нуля — у Львова вже є готова модель (Асоціація «Львівська агломерація», 2024), у Дніпра вона в проєктуванні («Інститут міста»). Конкретно: запросити Львів поділитися моделлю з командою Дніпра.</td>
+          </tr>
+          <tr class="new">
+            <td>Новомосковськ ↔ Запоріжжя / Нікополь</td>
+            <td><span class="tag new">★ слабкий кандидат</span></td>
+            <td>Найвищий бал у датасеті чисто статистично, але змістовно найтонший: обидві — промислові громади Дніпропетровщини зі схожими проблемами (застаріла металургія, воєнні пошкодження), без конкретної точки дотику в даних. Швидше «спільна закупівля» (генератори, укриття), ніж партнерство по суті.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caveat">Чесно про метод: після розширення вибірки й перевірки виявили артефакт — дві стратегії (різних, географічно не пов'язаних громад) містили майже дослівно однаковий текст цілей, бо писались за одним і тим самим консультаційним шаблоном. Додали прозору перевірку на дослівні збіги (не приховане перезважування — це двічі ламало реальні знахідки при спробі). Більшість «нових кандидатів» цього раунду виявились саме такими артефактами (громади з різних, не суміжних областей, без жодної правдоподібної причини співпрацювати) і не увійшли до списку вище.</p>
+  </section>
+
+  <section>
+    <p class="section-kicker">Кому це корисно</p>
+    <h2>Стейкхолдери</h2>
+    <div class="personas">
+      <div class="persona">
+        <span class="role">Мінцифри / цифрова трансформація</span>
+        <h3>Поки що — інституційний peer-learning, не спільні е-сервіси</h3>
+        <p>Чесно: жодного випадку «громада А вже побудувала е-послугу, громада Б дублює те саме даремно» метод поки не знайшов — і навіть навпаки, найяскравіший цифровий лідер вибірки (Вінниця, «Стратегія 3.0») текстово не збігається за пріоритетами і не потрапила в жодну знахідку. Те, що реально знайшлося: Дніпро і Львів обидва будують інституцію управління інноваціями з нуля — Львів уже має модель (Асоціація агломерації, 2024), Дніпро її ще проєктує. Це підказує конкретний, вужчий, але реальний крок — обмін управлінською моделлю, не спільний ІТ-продукт.</p>
+      </div>
+      <div class="persona">
+        <span class="role">Мінрегіон / розвиток громад</span>
+        <h3>Більше обґрунтованих угод МСС</h3>
+        <p>Реєстр налічує понад 762 договори — за нашими спостереженнями, здебільшого вони виникають через особисті зв'язки, а не системний аналіз (окремого механізму пошуку партнерів у відкритих джерелах ми не знайшли). Метод здатний системно пропонувати кандидатів із конкретним обґрунтуванням (як-от Галицька-Дубовецька з уже названим спільним проєктом) — це поки перевірено на рівні дослідження, не як готовий сервіс для заявок.</p>
+      </div>
+      <div class="persona">
+        <span class="role">Громада / посадовець</span>
+        <h3>Конкретний список замість здогадок</h3>
+        <p>Замість самостійного пошуку партнера для спільної комунальної служби чи туристичного маршруту — перелік громад поруч, які пишуть про те саме, що і ви.</p>
+      </div>
+      <div class="persona">
+        <span class="role">Донорські програми та фонди</span>
+        <h3>Погляд на весь портфель одразу</h3>
+        <p>USAID (історично — програма DOBRE, Global Communities; фінансування станом на 2026 рік під питанням), Міжнародний фонд «Відродження» (профінансував розробку кількох стратегій у нашій вибірці напряму), Фонд Східна Європа (через EGAP), а також ЄС/U-LEAD, GIZ, ПРООН — усі вже фінансують окремі громади поодинці. Інструмент показує, кого з уже профінансованих громад варто звести для спільного наступного гранту — і дає об'єктивний сигнал, чи заявка на «міжмуніципальне співробітництво» справді спирається на спільні пріоритети, чи це лише декларація.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-kicker">Якщо розгортати повністю</p>
+    <h2>Ціна і вигода</h2>
+    <ul class="plain">
+      <li><strong>Витрати:</strong> єдиної машиночитаної бази стратегій в Україні немає — збір даних частково ручний; потрібен власник/куратор інструменту.</li>
+      <li><strong>Чесний урок про вартість:</strong> збір даних поточним способом (окремий дослідницький пошук на кожну громаду) виявився дорожчим, ніж очікувалось — один раунд збору вичерпав повний 5-годинний ліміт сесії на пошук і опрацювання менше 20 громад, здебільшого через боротьбу з захистом сайтів від ботів, а не змістовну роботу. Для масштабування за межі поточного пілоту потрібно окремо: (1) детермінований пошук/завантаження файлів (без залучення дорогої моделі), (2) структурування тексту — дешевшою моделлю. Поточний підхід «один дорогий агент на все» не масштабується на сотні громад без цієї зміни.</li>
+      <li><strong>Вигоди:</strong> більше обґрунтованих угод МСС → спільна інфраструктура економить бюджет громад; сильніші спільні заявки на гранти; менше дублювання рішень; для донорів — видимість усього профінансованого портфеля одразу.</li>
+    </ul>
+  </section>
+
+  <footer class="status">
+    <strong>Статус:</strong> це дослідницький пілот, не готовий продукт. 54 громади із приблизно 870, що мають затверджені стратегії. Метод пройшов кілька раундів чесної перевірки (на реальних угодах, на контрольних хибних збігах, на випадковій вибірці, на шаблонних артефактах) і кілька ітерацій технології (від прямого текстового збігу до смислових ембедингів з прозорою перевіркою на дослівні копії). Наступний крок — рішення, чи розгортати це далі, і в якому форматі.
+  </footer>
+
+</div>

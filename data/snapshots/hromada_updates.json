@@ -1,0 +1,287 @@
+[
+  {
+    "Id": 35,
+    "KATOTTG": "UA21100090000012128",
+    "Population": 5270
+  },
+  {
+    "Id": 13,
+    "KATOTTG": "UA21040150000092428",
+    "Population": 113637
+  },
+  {
+    "Id": 8,
+    "KATOTTG": "UA21100230000083101",
+    "Population": 134439
+  },
+  {
+    "Id": 39,
+    "KATOTTG": "UA46100070000076013",
+    "Population": 10518
+  },
+  {
+    "Id": 17,
+    "KATOTTG": "UA46060250000025047",
+    "Population": 817539
+  },
+  {
+    "Id": 58,
+    "KATOTTG": "UA07060050000091514",
+    "Population": 8049
+  },
+  {
+    "Id": 32,
+    "KATOTTG": "UA07020090000019505",
+    "Population": 3522
+  },
+  {
+    "Id": 29,
+    "KATOTTG": "UA07080170000013585",
+    "Population": 228311
+  },
+  {
+    "Id": 51,
+    "KATOTTG": "UA26040070000065724",
+    "Population": 23250
+  },
+  {
+    "Id": 52,
+    "KATOTTG": "UA26040010000011271",
+    "Population": 7161
+  },
+  {
+    "Id": 46,
+    "KATOTTG": "UA26040090000025932",
+    "Population": 20721
+  },
+  {
+    "Id": 53,
+    "KATOTTG": "UA26040130000010870",
+    "Population": 7003
+  },
+  {
+    "Id": 54,
+    "KATOTTG": "UA26040270000047749",
+    "Population": 31819
+  },
+  {
+    "Id": 12,
+    "KATOTTG": "UA26120150000021671",
+    "Population": 18143
+  },
+  {
+    "Id": 56,
+    "KATOTTG": "UA61040070000079091",
+    "Population": 24243
+  },
+  {
+    "Id": 57,
+    "KATOTTG": "UA61040110000010646",
+    "Population": 11052
+  },
+  {
+    "Id": 7,
+    "KATOTTG": "UA61040490000035010",
+    "Population": 252372
+  },
+  {
+    "Id": 23,
+    "KATOTTG": "UA56060470000086729",
+    "Population": 230965
+  },
+  {
+    "Id": 48,
+    "KATOTTG": "UA73020010000044067",
+    "Population": 7330
+  },
+  {
+    "Id": 50,
+    "KATOTTG": "UA73020030000022011",
+    "Population": 20642
+  },
+  {
+    "Id": 49,
+    "KATOTTG": "UA73020050000061546",
+    "Population": 8634
+  },
+  {
+    "Id": 36,
+    "KATOTTG": "UA73040010000039325",
+    "Population": 5119
+  },
+  {
+    "Id": 27,
+    "KATOTTG": "UA73020090000031499",
+    "Population": 19802
+  },
+  {
+    "Id": 28,
+    "KATOTTG": "UA18040190000029215",
+    "Population": 230952
+  },
+  {
+    "Id": 45,
+    "KATOTTG": "UA18040370000055940",
+    "Population": 11862
+  },
+  {
+    "Id": 43,
+    "KATOTTG": "UA18060230000071114",
+    "Population": 9030
+  },
+  {
+    "Id": 40,
+    "KATOTTG": "UA05100010000023453",
+    "Population": 8776
+  },
+  {
+    "Id": 20,
+    "KATOTTG": "UA05020030000031457",
+    "Population": 400198
+  },
+  {
+    "Id": 55,
+    "KATOTTG": "UA05100150000050790",
+    "Population": 44348
+  },
+  {
+    "Id": 34,
+    "KATOTTG": "UA32060090000096236",
+    "Population": 12388
+  },
+  {
+    "Id": 3,
+    "KATOTTG": "UA74040010000076097",
+    "Population": 5981
+  },
+  {
+    "Id": 4,
+    "KATOTTG": "UA74100190000086457",
+    "Population": 18660
+  },
+  {
+    "Id": 2,
+    "KATOTTG": "UA74040250000063494",
+    "Population": 61919
+  },
+  {
+    "Id": 11,
+    "KATOTTG": "UA74100390000073425",
+    "Population": 215350
+  },
+  {
+    "Id": 30,
+    "KATOTTG": "UA71080490000022110",
+    "Population": 272027
+  },
+  {
+    "Id": 18,
+    "KATOTTG": "UA51100270000073549",
+    "Population": 845897
+  },
+  {
+    "Id": 44,
+    "KATOTTG": "UA48020050000023194",
+    "Population": 4917
+  },
+  {
+    "Id": 26,
+    "KATOTTG": "UA48060150000071713",
+    "Population": 336983
+  },
+  {
+    "Id": 33,
+    "KATOTTG": "UA35060010000018331",
+    "Population": 2647
+  },
+  {
+    "Id": 31,
+    "KATOTTG": "UA35040210000014072",
+    "Population": 215915
+  },
+  {
+    "Id": 47,
+    "KATOTTG": "UA53060190000015369",
+    "Population": 16872
+  },
+  {
+    "Id": 21,
+    "KATOTTG": "UA53080370000025447",
+    "Population": 311944
+  },
+  {
+    "Id": 38,
+    "KATOTTG": "UA59100090000041284",
+    "Population": 3149
+  },
+  {
+    "Id": 24,
+    "KATOTTG": "UA59080270000073662",
+    "Population": 264851
+  },
+  {
+    "Id": 22,
+    "KATOTTG": "UA65100150000057191",
+    "Population": 58928
+  },
+  {
+    "Id": 37,
+    "KATOTTG": "UA12040010000018960",
+    "Population": 8418
+  },
+  {
+    "Id": 6,
+    "KATOTTG": "UA12020010000033698",
+    "Population": 927882
+  },
+  {
+    "Id": 9,
+    "KATOTTG": "UA12040150000015189",
+    "Population": 226652
+  },
+  {
+    "Id": 5,
+    "KATOTTG": "UA12060170000091033",
+    "Population": 608439
+  },
+  {
+    "Id": 41,
+    "KATOTTG": "UA12040190000056469",
+    "Population": 3803
+  },
+  {
+    "Id": 10,
+    "KATOTTG": "UA12100070000011492",
+    "Population": 68916
+  },
+  {
+    "Id": 14,
+    "KATOTTG": "UA12080050000062712",
+    "Population": 65612
+  },
+  {
+    "Id": 16,
+    "KATOTTG": "UA12020170000068526",
+    "Population": 12623
+  },
+  {
+    "Id": 15,
+    "KATOTTG": "UA12020250000010438",
+    "Population": 28368
+  },
+  {
+    "Id": 19,
+    "KATOTTG": "UA63120270000028556",
+    "Population": 950072
+  },
+  {
+    "Id": 42,
+    "KATOTTG": "UA23060030000037089",
+    "Population": 16660
+  },
+  {
+    "Id": 25,
+    "KATOTTG": "UA23060070000082704",
+    "Population": 673106
+  }
+]
