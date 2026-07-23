@@ -3,8 +3,8 @@
  * external LLM instead of burning main-session tokens.
  *
  * Retrieval (WebSearch/WebFetch/Cloudflare-evasion) still happens in-session — this
- * script only handles the "raw text -> structured JSON" step. See
- * project_hromada_strategy_collab memory, "Cost lesson" (2026-07-22).
+ * script only handles the "raw text -> structured JSON" step.
+ * See docs/project-history.md ("Cost lesson", 2026-07-22).
  *
  * Provider: Gemini. The free tier is region-gated (Gemini API returns quota=0 for
  * some countries even with a valid key) and needs Google Cloud billing enabled to

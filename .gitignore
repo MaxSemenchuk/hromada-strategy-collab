@@ -6,3 +6,8 @@
 __pycache__/
 *.pyc
 .DS_Store
+data/cache/
+
+# Python virtual environment for the optional analysis scripts
+.venv/
+yarn-error.log

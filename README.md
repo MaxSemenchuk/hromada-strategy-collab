@@ -9,6 +9,9 @@ Spun out from the W3I ecosystem project (`w3i-network`) on 2026-07-23 as its own
 codebase. **The NocoDB database is currently shared** with the main W3I base — see
 [Shared database](#shared-database) below.
 
+Code is MIT-licensed; the dataset in [data/releases/](data/releases/) is
+CC BY 4.0 — see [License & data](#license--data) below.
+
 ## Why
 
 A natural extension of W3I's Civic Tech Lab / Digital Democracy Lab work, which
@@ -58,10 +61,18 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
 - No decision yet to build a product/graph layer — this is still pilot /
   concept-validation stage.
 
+**Read this before reusing the data:** the 57-hromada text-mined subset is a
+pilot sample, not a completed sweep of the 1,469 — most rows will have no
+strategy content yet. Every matching score is an **unverified hypothesis**
+unless explicitly marked as a registry-confirmed agreement; treat candidate
+pairs (like Новомосковськ↔Запоріжжя above) as leads to check, not claims about
+real municipal plans.
+
 Full narrative history (every pass, every false start, every honest negative finding)
-lives in Claude Code project memory (`project_hromada_strategy_collab.md`), not
-duplicated here to avoid drift. Ask Claude to pull it up for detail on any specific
-round.
+lives in [docs/project-history.md](docs/project-history.md) — migrated from Claude
+Code project memory on spin-out and kept current here. Cursor agents load
+[.cursor/rules/hromada-project.mdc](.cursor/rules/hromada-project.mdc) for the
+same guardrails.
 
 ## Repo layout
 
@@ -70,17 +81,24 @@ scripts/
 ├── migrations/setup-hromadas-table.ts   # create/verify the Hromadas NocoDB table
 ├── structure-hromada-strategy.ts        # raw strategy text -> structured JSON (Gemini)
 ├── import-hromadas-metadata.ts          # bulk PATCH/POST of KATOTTG+population metadata
+├── export-hromadas.ts                   # live NocoDB -> data/releases/hromadas.json (the public dataset)
 ├── hromada-output/                      # per-hromada structured JSON (as produced, gitignored pattern removed — kept for provenance)
 └── analysis/                            # one-off Python: KATOTTG merge, TF-IDF matching, embedding matching, MSS graph MVP
 data/
-├── sources/     # reference registries (KATOTTG classifier extract, Tags table dump)
-└── snapshots/   # dated growth snapshots of the studied set (7→13→23→30→46→54 hromadas) + matching-edge outputs
+├── sources/       # reference registries (KATOTTG classifier extract, Tags table dump)
+├── releases/      # THE dataset — canonical, current, CC BY 4.0 (see data/releases/MANIFEST.md)
+└── research-log/  # dated growth snapshots (7→13→23→30→46→54 hromadas) — provenance, not the dataset
 docs/
 ├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
+├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub) as candidate enrichment sources
+├── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case
+├── kse-issue-draft.md            # ready-to-paste GitHub issue for KSE cross-link (draft)
 ├── hromada-project-passport.html # stakeholder-facing project brief (Ukrainian)
-├── mss-graph-mvp.html            # early force-graph visualization prototype
-└── outreach-messages.md          # draft stakeholder messages (not yet re-scrutinized for overclaiming)
+└── mss-graph-mvp.html            # early force-graph visualization prototype
+internal/
+└── outreach-messages.md          # draft stakeholder outreach copy — not part of the dataset, not for public reuse
 REFERENCES.md                     # theoretical grounding — network governance, IMC, institutional diversity
+LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see License & data below
 ```
 
 Raw scraped source documents (PDF/DOC/HTML corpora fetched during retrieval) were
@@ -110,6 +128,22 @@ base.
 | Hromadas | `mjtetfuixggp5lg` |
 | Tags (shared with w3i-network) | `moee8ep5561zt76` |
 
+## License & data
+
+Code (`scripts/`) is MIT. The dataset in [data/releases/](data/releases/) is
+**CC BY 4.0** — see [DATA-LICENSE.md](DATA-LICENSE.md) for attribution
+requirements and upstream source credits (data.gov.ua, DREAM, the МСС
+registry). [data/research-log/](data/research-log/) is provenance material,
+not the maintained dataset — read its README before building on it.
+[internal/](internal/) (draft outreach copy) is excluded from both licenses
+and not meant for reuse.
+
+If this repo becomes public: this section, the license files, and the
+`data/releases/` split exist specifically so the repo can be opened as an
+open-data asset (for other researchers or a hromada-data hackathon) without
+also exposing draft outreach material or an unlabeled, partially-complete
+snapshot as if it were a finished dataset.
+
 ## Usage
 
 ```bash
@@ -123,7 +157,27 @@ yarn structure-hromada --name "Ніжинська громада" --input raw.tx
 yarn structure-hromada --name "..." --input raw.txt --write --update 12
 
 # Bulk metadata import (KATOTTG + population) — one-off, already run for all 1,469
-yarn import-hromadas --updates data/snapshots/hromada_updates.json --inserts data/snapshots/hromada_inserts.json
+yarn import-hromadas --updates data/research-log/hromada_updates.json --inserts data/research-log/hromada_inserts.json
+
+# Refresh the public dataset (data/releases/hromadas.json) from live NocoDB
+yarn export-hromadas
+
+# Offline export from research-log snapshot (no NocoDB credentials)
+yarn export-hromadas:snapshot
+
+# Recompute matching edges (v6: goals + KSE geo + KSE mss network)
+yarn match && yarn export-matching-edges && yarn test-known-pairs
+```
+
+## Scaling retrieval
+
+Batch workflow for growing the corpus beyond the current pilot: see
+[scripts/retrieval/README.md](scripts/retrieval/README.md). Quick start:
+
+```bash
+yarn ckan-search --out scripts/retrieval/ckan-candidates.json
+# pick URLs → batch-queue.json → download raw text → yarn structure-hromada --write
+yarn export-hromadas && yarn match
 ```
 
 ## Methodology notes
@@ -155,3 +209,19 @@ yarn import-hromadas --updates data/snapshots/hromada_updates.json --inserts dat
 
 See [docs/hromadas-schema.md](docs/hromadas-schema.md) for the full field schema and
 [REFERENCES.md](REFERENCES.md) for the theoretical literature this approach draws on.
+
+## Related datasets
+
+This project deliberately **does not duplicate** hromada-level covariate work
+already done elsewhere. The primary complement is
+**[KSE-Loc-Data-Hub](https://github.com/kse-ua/KSE-Loc-Data-Hub)** (KSE
+Institute; Zenodo [10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573)) —
+budget, geography, e-dem, existing МСС agreements, war status, and ~130 other
+vars for all 1,469 mainland hromadas. We join on **KATOTTG** and consume those
+covariates at analysis time; KSE does not publish strategy-text extractions or
+goals-similarity candidate pairs — that is what this repo adds.
+
+See [docs/kse-synergy.md](docs/kse-synergy.md) for division of labor, edem
+missingness caveats, what we contribute back, and the W3I Civic Tech Lab outreach
+use case (`edem_total` × goals-similarity). Deep KSE review:
+[docs/external-data-sources.md](docs/external-data-sources.md#kse-loc-data-hub).
