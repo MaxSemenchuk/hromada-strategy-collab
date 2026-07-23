@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-23T17:33:47.923895+00:00",
-  "pairCount": 990,
+  "generatedAt": "2026-07-23T19:07:35.832747+00:00",
+  "pairCount": 1770,
   "knownValidationPairs": 4,
   "method": "v6: 60% goals_cosine + 25% KSE geo + 15% KSE mss_network",
   "model": "intfloat/multilingual-e5-small",
