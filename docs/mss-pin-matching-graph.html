@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<title>МСС: KSE PIN + matching overlay</title>
+<style>
+  :root {
+    --bg: #14181d; --surface: #1b2027; --ink: #e9e6de; --ink-muted: #a9ac9f;
+    --border: #2d333c; --accent: #57ab9c; --gold: #d9a548; --hyp: #7aa2ff; --rule: #333a44;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .wrap { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+  @media (max-width: 900px) { .wrap { grid-template-columns: 1fr; } }
+  aside { padding: 1.25rem 1.2rem; border-right: 1px solid var(--rule); background: var(--surface); }
+  h1 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.6rem; line-height: 1.35; }
+  .lede { font-size: 0.85rem; color: var(--ink-muted); margin: 0 0 1rem; line-height: 1.45; }
+  .stat { display: flex; justify-content: space-between; font-size: 0.82rem; padding: 0.35rem 0; border-bottom: 1px solid var(--rule); }
+  .stat b { font-variant-numeric: tabular-nums; }
+  .legend { margin-top: 1.1rem; font-size: 0.8rem; color: var(--ink-muted); }
+  .legend div { display: flex; align-items: center; gap: 0.5rem; margin: 0.35rem 0; }
+  .sw { width: 22px; height: 0; border-top: 2px solid; display: inline-block; }
+  .sw.pin { border-color: var(--accent); }
+  .sw.known { border-color: var(--gold); border-top-width: 3px; }
+  .sw.hyp { border-color: var(--hyp); border-top-style: dashed; }
+  .hint { margin-top: 1rem; font-size: 0.78rem; color: var(--ink-muted); line-height: 1.4; }
+  main { position: relative; }
+  canvas { display: block; width: 100%; height: 100vh; cursor: grab; }
+  canvas:active { cursor: grabbing; }
+  #tooltip {
+    display: none; position: absolute; pointer-events: none; z-index: 2;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    padding: 0.55rem 0.7rem; font-size: 0.8rem; max-width: 280px; line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <h1>KSE PIN + matching overlay</h1>
+    <p class="lede">Відомі МСС-ребра з KSE (реєстр) поверх нашого корпусу стратегій, плюс топ гіпотез матчера. Без багатосторонніх «плям» з сирого реєстру.</p>
+    <div class="stat"><span>Корпус (з Goals)</span><b id="s-corpus">—</b></div>
+    <div class="stat"><span>Вузлів на графі</span><b id="s-nodes">—</b></div>
+    <div class="stat"><span>PIN (відомі)</span><b id="s-pin">—</b></div>
+    <div class="stat"><span>Known validation</span><b id="s-known">—</b></div>
+    <div class="stat"><span>Hypotheses</span><b id="s-hyp">—</b></div>
+    <div class="legend">
+      <div><span class="sw pin"></span> KSE PIN (реєстр МСС)</div>
+      <div><span class="sw known"></span> known validation pairs</div>
+      <div><span class="sw hyp"></span> matching hypothesis</div>
+    </div>
+    <p class="hint">Тягни полотно мишкою · скрол = zoom · наведи на вузол для назви. Force-layout крутиться в браузері (сильна repulsion), щоб не злипалось.</p>
+  </aside>
+  <main>
+    <canvas id="c"></canvas>
+    <div id="tooltip"></div>
+  </main>
+</div>
+<script>
+const DATA = {"meta": {"corpus_size": 59, "pin_edges": 8, "hypothesis_edges": 25, "known_edges": 4, "pin_source": "KSE-Loc-Data-Hub partnerships-hromadas-network.csv", "matching_source": "data/releases/matching-edges.json", "top_hypotheses": 30, "min_hypothesis_score": 0.15}, "nodes": [{"id": "Батуринська міська територіальна громада", "label": "Батуринська міська", "katottg": "UA74040010000076097", "oblast": "Чернігівська область", "in_pin": true}, {"id": "Брацлавська селищна територіальна громада", "label": "Брацлавська селищна", "katottg": "UA05100010000023453", "oblast": "Вінницька область", "in_pin": false}, {"id": "Бурштинська міська територіальна громада", "label": "Бурштинська міська", "katottg": "UA26040070000065724", "oblast": "Івано-Франківська область", "in_pin": true}, {"id": "Більшівцівська селищна територіальна громада", "label": "Більшівцівська селищна", "katottg": "UA26040010000011271", "oblast": "Івано-Франківська область", "in_pin": false}, {"id": "Великоберезовицька селищна територіальна громада", "label": "Великоберезовицька селищна", "katottg": "UA61040070000079091", "oblast": "Тернопільська область", "in_pin": false}, {"id": "Великогаївська сільська територіальна громада", "label": "Великогаївська сільська", "katottg": "UA61040110000010646", "oblast": "Тернопільська область", "in_pin": false}, {"id": "Великодимерська селищна територіальна громада", "label": "Великодимерська селищна", "katottg": "UA32060070000092009", "oblast": "Київська область", "in_pin": false}, {"id": "Вижницька міська територіальна громада", "label": "Вижницька міська", "katottg": "UA73020090000031499", "oblast": "Чернівецька область", "in_pin": true}, {"id": "Галицька міська територіальна громада", "label": "Галицька міська", "katottg": "UA26040090000025932", "oblast": "Івано-Франківська область", "in_pin": true}, {"id": "Дніпровська міська територіальна громада", "label": "Дніпровська міська", "katottg": "UA12020010000033698", "oblast": "Дніпропетровська область", "in_pin": false}, {"id": "Дубовецька сільська територіальна громада", "label": "Дубовецька сільська", "katottg": "UA26040130000010870", "oblast": "Івано-Франківська область", "in_pin": true}, {"id": "Журавненська селищна територіальна громада", "label": "Журавненська селищна", "katottg": "UA46100070000076013", "oblast": "Львівська область", "in_pin": false}, {"id": "Зазимська сільська територіальна громада", "label": "Зазимська сільська", "katottg": "UA32060090000096236", "oblast": "Київська область", "in_pin": false}, {"id": "Збаразька міська територіальна громада", "label": "Збаразька міська", "katottg": "UA61040150000098181", "oblast": "Тернопільська область", "in_pin": false}, {"id": "Кам'янська міська територіальна громада", "label": "Кам'янська міська", "katottg": "UA12040150000015189", "oblast": "Дніпропетровська область", "in_pin": false}, {"id": "Козелецька селищна територіальна громада", "label": "Козелецька селищна", "katottg": "UA74100190000086457", "oblast": "Чернігівська область", "in_pin": true}, {"id": "Мукачівська міська територіальна громада", "label": "Мукачівська міська", "katottg": "UA21040150000092428", "oblast": "Закарпатська область", "in_pin": false}, {"id": "Новомосковська міська територіальна громада", "label": "Новомосковська міська", "katottg": "UA12100070000011492", "oblast": "Дніпропетровська область", "in_pin": false}, {"id": "Ніжинська міська територіальна громада", "label": "Ніжинська міська", "katottg": "UA74040250000063494", "oblast": "Чернігівська область", "in_pin": true}, {"id": "Обухівська міська територіальна громада", "label": "Обухівська міська", "katottg": "UA12020170000068526", "oblast": "Київська область", "in_pin": true}, {"id": "Обухівська селищна територіальна громада", "label": "Обухівська селищна", "katottg": "UA12020170000068526", "oblast": "Дніпропетровська область", "in_pin": true}, {"id": "Рогатинська міська територіальна громада", "label": "Рогатинська міська", "katottg": "UA26040270000047749", "oblast": "Івано-Франківська область", "in_pin": false}, {"id": "Скалатська міська територіальна громада", "label": "Скалатська міська", "katottg": "UA61040430000018305", "oblast": "Тернопільська область", "in_pin": false}, {"id": "Слобожанська селищна територіальна громада", "label": "Слобожанська селищна", "katottg": "UA12020250000010438", "oblast": "Дніпропетровська область", "in_pin": true}, {"id": "Тернопільська міська територіальна громада", "label": "Тернопільська міська", "katottg": "UA61040490000035010", "oblast": "Тернопільська область", "in_pin": false}, {"id": "Тульчинська міська територіальна громада", "label": "Тульчинська міська", "katottg": "UA05100150000050790", "oblast": "Вінницька область", "in_pin": false}, {"id": "Ужгородська міська територіальна громада", "label": "Ужгородська міська", "katottg": "UA21100230000083101", "oblast": "Закарпатська область", "in_pin": false}, {"id": "Яремчанська міська територіальна громада", "label": "Яремчанська міська", "katottg": "UA26120150000021671", "oblast": "Івано-Франківська область", "in_pin": true}], "edges": [{"a": "Яремчанська міська територіальна громада", "b": "Вижницька міська територіальна громада", "kind": "pin"}, {"a": "Бурштинська міська територіальна громада", "b": "Галицька міська територіальна громада", "kind": "pin"}, {"a": "Бурштинська міська територіальна громада", "b": "Дубовецька сільська територіальна громада", "kind": "pin"}, {"a": "Батуринська міська територіальна громада", "b": "Ніжинська міська територіальна громада", "kind": "pin"}, {"a": "Ніжинська міська територіальна громада", "b": "Козелецька селищна територіальна громада", "kind": "pin"}, {"a": "Батуринська міська територіальна громада", "b": "Козелецька селищна територіальна громада", "kind": "pin"}, {"a": "Обухівська міська територіальна громада", "b": "Слобожанська селищна територіальна громада", "kind": "pin"}, {"a": "Галицька міська територіальна громада", "b": "Дубовецька сільська територіальна громада", "kind": "pin"}, {"a": "Слобожанська селищна територіальна громада", "b": "Обухівська селищна територіальна громада", "kind": "known", "score": 0.382}, {"a": "Ніжинська міська територіальна громада", "b": "Козелецька селищна територіальна громада", "kind": "known", "score": 0.341}, {"a": "Ніжинська міська територіальна громада", "b": "Батуринська міська територіальна громада", "kind": "known", "score": 0.338}, {"a": "Батуринська міська територіальна громада", "b": "Козелецька селищна територіальна громада", "kind": "known", "score": 0.286}, {"a": "Дніпровська міська територіальна громада", "b": "Слобожанська селищна територіальна громада", "kind": "hypothesis", "score": 0.297, "goals_cosine": 0.078}, {"a": "Бурштинська міська територіальна громада", "b": "Більшівцівська селищна територіальна громада", "kind": "hypothesis", "score": 0.294, "goals_cosine": 0.073}, {"a": "Великогаївська сільська територіальна громада", "b": "Великоберезовицька селищна територіальна громада", "kind": "hypothesis", "score": 0.294, "goals_cosine": 0.073}, {"a": "Тернопільська міська територіальна громада", "b": "Великоберезовицька селищна територіальна громада", "kind": "hypothesis", "score": 0.284, "goals_cosine": 0.056}, {"a": "Обухівська селищна територіальна громада", "b": "Обухівська міська територіальна громада", "kind": "hypothesis", "score": 0.284, "goals_cosine": 0.057}, {"a": "Тернопільська міська територіальна громада", "b": "Великогаївська сільська територіальна громада", "kind": "hypothesis", "score": 0.28, "goals_cosine": 0.049}, {"a": "Більшівцівська селищна територіальна громада", "b": "Дубовецька сільська територіальна громада", "kind": "hypothesis", "score": 0.275, "goals_cosine": 0.041}, {"a": "Галицька міська територіальна громада", "b": "Більшівцівська селищна територіальна громада", "kind": "hypothesis", "score": 0.274, "goals_cosine": 0.04}, {"a": "Великоберезовицька селищна територіальна громада", "b": "Великогаївська сільська територіальна громада", "kind": "hypothesis", "score": 0.272, "goals_cosine": 0.037}, {"a": "Журавненська селищна територіальна громада", "b": "Галицька міська територіальна громада", "kind": "hypothesis", "score": 0.267, "goals_cosine": 0.091}, {"a": "Зазимська сільська територіальна громада", "b": "Великодимерська селищна територіальна громада", "kind": "hypothesis", "score": 0.253, "goals_cosine": 0.067}, {"a": "Дніпровська міська територіальна громада", "b": "Новомосковська міська територіальна громада", "kind": "hypothesis", "score": 0.251, "goals_cosine": 0.064}, {"a": "Тернопільська міська територіальна громада", "b": "Великоберезовицька селищна територіальна громада", "kind": "hypothesis", "score": 0.25, "goals_cosine": 0.0}, {"a": "Дніпровська міська територіальна громада", "b": "Кам'янська міська територіальна громада", "kind": "hypothesis", "score": 0.245, "goals_cosine": 0.055}, {"a": "Бурштинська міська територіальна громада", "b": "Рогатинська міська територіальна громада", "kind": "hypothesis", "score": 0.243, "goals_cosine": 0.051}, {"a": "Великоберезовицька селищна територіальна громада", "b": "Великоберезовицька селищна територіальна громада", "kind": "hypothesis", "score": 0.243, "goals_cosine": -0.011}, {"a": "Журавненська селищна територіальна громада", "b": "Рогатинська міська територіальна громада", "kind": "hypothesis", "score": 0.239, "goals_cosine": 0.044}, {"a": "Журавненська селищна територіальна громада", "b": "Більшівцівська селищна територіальна громада", "kind": "hypothesis", "score": 0.238, "goals_cosine": 0.043}, {"a": "Ужгородська міська територіальна громада", "b": "Мукачівська міська територіальна громада", "kind": "hypothesis", "score": 0.237, "goals_cosine": 0.041}, {"a": "Журавненська селищна територіальна громада", "b": "Бурштинська міська територіальна громада", "kind": "hypothesis", "score": 0.237, "goals_cosine": 0.041}, {"a": "Великоберезовицька селищна територіальна громада", "b": "Скалатська міська територіальна громада", "kind": "hypothesis", "score": 0.237, "goals_cosine": 0.041}, {"a": "Тернопільська міська територіальна громада", "b": "Збаразька міська територіальна громада", "kind": "hypothesis", "score": 0.236, "goals_cosine": 0.039}, {"a": "Великогаївська сільська територіальна громада", "b": "Скалатська міська територіальна громада", "kind": "hypothesis", "score": 0.235, "goals_cosine": 0.038}, {"a": "Більшівцівська селищна територіальна громада", "b": "Рогатинська міська територіальна громада", "kind": "hypothesis", "score": 0.233, "goals_cosine": 0.035}, {"a": "Брацлавська селищна територіальна громада", "b": "Тульчинська міська територіальна громада", "kind": "hypothesis", "score": 0.232, "goals_cosine": 0.033}]};
+
+const meta = DATA.meta;
+document.getElementById('s-corpus').textContent = meta.corpus_size;
+document.getElementById('s-nodes').textContent = DATA.nodes.length;
+document.getElementById('s-pin').textContent = meta.pin_edges;
+document.getElementById('s-known').textContent = meta.known_edges;
+document.getElementById('s-hyp').textContent = meta.hypothesis_edges;
+
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+const tip = document.getElementById('tooltip');
+
+const nodes = DATA.nodes.map((n, i) => {
+  const angle = (i / DATA.nodes.length) * Math.PI * 2;
+  return {
+    ...n,
+    x: Math.cos(angle) * 220,
+    y: Math.sin(angle) * 180,
+    vx: 0, vy: 0,
+  };
+});
+const byId = Object.fromEntries(nodes.map(n => [n.id, n]));
+const edges = DATA.edges
+  .filter(e => byId[e.a] && byId[e.b])
+  .map(e => ({ ...e, source: byId[e.a], target: byId[e.b] }));
+
+let width = 0, height = 0, dpr = 1;
+let camX = 0, camY = 0, scale = 1;
+let dragging = null, panning = false, lastX = 0, lastY = 0;
+let hover = null;
+
+function resize() {
+  dpr = window.devicePixelRatio || 1;
+  width = canvas.clientWidth;
+  height = canvas.clientHeight;
+  canvas.width = Math.floor(width * dpr);
+  canvas.height = Math.floor(height * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+resize();
+window.addEventListener('resize', resize);
+
+function worldFromEvent(ev) {
+  const rect = canvas.getBoundingClientRect();
+  const sx = ev.clientX - rect.left;
+  const sy = ev.clientY - rect.top;
+  return {
+    x: (sx - width / 2 - camX) / scale,
+    y: (sy - height / 2 - camY) / scale,
+    sx, sy,
+  };
+}
+
+function findNode(wx, wy) {
+  const hit = 12 / scale;
+  let best = null, bestD = hit * hit;
+  for (const n of nodes) {
+    const dx = n.x - wx, dy = n.y - wy;
+    const d = dx * dx + dy * dy;
+    if (d < bestD) { bestD = d; best = n; }
+  }
+  return best;
+}
+
+canvas.addEventListener('mousedown', (ev) => {
+  const w = worldFromEvent(ev);
+  const n = findNode(w.x, w.y);
+  if (n) {
+    dragging = n;
+    n.fx = n.x; n.fy = n.y;
+  } else {
+    panning = true;
+    lastX = ev.clientX; lastY = ev.clientY;
+  }
+});
+window.addEventListener('mouseup', () => {
+  if (dragging) { dragging.fx = null; dragging.fy = null; }
+  dragging = null; panning = false;
+});
+window.addEventListener('mousemove', (ev) => {
+  const w = worldFromEvent(ev);
+  if (dragging) {
+    dragging.fx = w.x; dragging.fy = w.y;
+    dragging.x = w.x; dragging.y = w.y;
+  } else if (panning) {
+    camX += ev.clientX - lastX;
+    camY += ev.clientY - lastY;
+    lastX = ev.clientX; lastY = ev.clientY;
+  }
+  hover = findNode(w.x, w.y);
+  if (hover) {
+    tip.style.display = 'block';
+    tip.style.left = (w.sx + 14) + 'px';
+    tip.style.top = (w.sy + 14) + 'px';
+    tip.innerHTML = `<strong>${hover.id}</strong><br/>${hover.oblast || ''}<br/><span style="color:#a9ac9f">${hover.katottg}</span>`;
+  } else {
+    tip.style.display = 'none';
+  }
+});
+canvas.addEventListener('wheel', (ev) => {
+  ev.preventDefault();
+  const factor = ev.deltaY < 0 ? 1.08 : 0.92;
+  scale = Math.min(4, Math.max(0.35, scale * factor));
+}, { passive: false });
+
+function tick() {
+  const n = nodes.length;
+  // Strong charge (repulsion) — main anti-clump lever
+  const charge = 1800;
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      let dx = nodes[j].x - nodes[i].x;
+      let dy = nodes[j].y - nodes[i].y;
+      let dist2 = dx * dx + dy * dy || 0.01;
+      let dist = Math.sqrt(dist2);
+      // soft floor so close nodes still push hard
+      const f = charge / Math.max(dist2, 25);
+      const fx = (dx / dist) * f;
+      const fy = (dy / dist) * f;
+      nodes[i].vx -= fx; nodes[i].vy -= fy;
+      nodes[j].vx += fx; nodes[j].vy += fy;
+    }
+  }
+  // Springs — PIN/known tighter than hypotheses
+  for (const e of edges) {
+    const a = e.source, b = e.target;
+    let dx = b.x - a.x, dy = b.y - a.y;
+    let dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
+    const rest = e.kind === 'hypothesis' ? 140 : 95;
+    const k = e.kind === 'hypothesis' ? 0.012 : 0.035;
+    const f = k * (dist - rest);
+    const fx = (dx / dist) * f;
+    const fy = (dy / dist) * f;
+    a.vx += fx; a.vy += fy;
+    b.vx -= fx; b.vy -= fy;
+  }
+  // Weak centering
+  for (const node of nodes) {
+    node.vx += -node.x * 0.002;
+    node.vy += -node.y * 0.002;
+    if (node.fx != null) { node.x = node.fx; node.y = node.fy; node.vx = 0; node.vy = 0; continue; }
+    node.vx *= 0.82; node.vy *= 0.82;
+    node.x += node.vx; node.y += node.vy;
+  }
+}
+
+function draw() {
+  tick();
+  ctx.clearRect(0, 0, width, height);
+  ctx.save();
+  ctx.translate(width / 2 + camX, height / 2 + camY);
+  ctx.scale(scale, scale);
+
+  for (const e of edges) {
+    ctx.beginPath();
+    ctx.moveTo(e.source.x, e.source.y);
+    ctx.lineTo(e.target.x, e.target.y);
+    if (e.kind === 'pin') {
+      ctx.strokeStyle = 'rgba(87,171,156,0.55)';
+      ctx.lineWidth = 1.6 / scale;
+      ctx.setLineDash([]);
+    } else if (e.kind === 'known') {
+      ctx.strokeStyle = 'rgba(217,165,72,0.9)';
+      ctx.lineWidth = 2.4 / scale;
+      ctx.setLineDash([]);
+    } else {
+      ctx.strokeStyle = 'rgba(122,162,255,0.55)';
+      ctx.lineWidth = 1.2 / scale;
+      ctx.setLineDash([5 / scale, 4 / scale]);
+    }
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  for (const n of nodes) {
+    const hi = hover === n;
+    const r = (hi ? 7 : 4.5) / Math.sqrt(scale);
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+    ctx.fillStyle = n.in_pin ? '#57ab9c' : '#7aa2ff';
+    ctx.globalAlpha = hi ? 1 : 0.9;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    if (hi || scale > 1.15) {
+      ctx.font = `${11 / scale}px -apple-system, sans-serif`;
+      ctx.fillStyle = '#e9e6de';
+      ctx.textAlign = 'left';
+      ctx.fillText(n.label, n.x + 8 / scale, n.y + 3 / scale);
+    }
+  }
+  ctx.restore();
+  requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
+</script>
+</body>
+</html>

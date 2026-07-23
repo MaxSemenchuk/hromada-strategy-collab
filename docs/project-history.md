@@ -116,7 +116,8 @@ random small hromadas vs near-100% on curated sample.
 
 | Date | Milestone |
 |------|-----------|
-| 2026-07-22 | `structure-hromada-strategy.ts` — Groq default (`llama-3.3-70b-versatile`); Gemini region-gated for this account |
+| 2026-07-22 | `structure-hromada-strategy.ts` — external LLM structuring tried (Groq then Gemini); both dropped |
+| 2026-07-23 | Structuring is in-session only; yarn script persists `--json` to NocoDB |
 | 2026-07-22 | Cost lesson: split retrieval (in-session) from structuring (cheap external LLM); ~60–150k tokens per full Agent extraction |
 | 2026-07-23 | KATOTTG + population bulk import — **1,469 mainland hromadas** metadata in NocoDB |
 | 2026-07-23 | `DonorsPrograms` field — 174/1469 (12%) tagged; floor not ceiling |
