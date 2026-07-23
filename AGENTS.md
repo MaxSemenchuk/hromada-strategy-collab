@@ -23,9 +23,16 @@ command list; only non-obvious environment caveats are documented here.
 
 ### Credentials (required for the core TS pipeline)
 - `setup-hromadas` / `import-hromadas` need `NOCODB_TOKEN` + `NOCODB_BASE_ID`; `structure-hromada`
-  needs `GROQ_API_KEY` (or `GEMINI_API_KEY`). Copy `.env.example` to `.env` and fill in.
-  Without these the scripts exit early with a clear "Missing ..." message (still proves the
-  runtime works). Add them via the Secrets panel so future runs can exercise write flows.
+  needs `GEMINI_API_KEY`. Without these the scripts exit early with a clear "Missing ..." message
+  (still proves the runtime works). `NOCODB_TOKEN` / `NOCODB_BASE_ID` are provided via the Secrets
+  panel (injected as env vars on VM startup).
+- **Non-obvious:** `NOCODB_URL` is NOT an injected secret, and `setup-hromadas` defaults to
+  `http://localhost:8080`. Create a local `.env` (gitignored) with the shared instance URL from
+  `.env.example` (`NOCODB_URL=https://nocodb-production-9ea4.up.railway.app`). `dotenv` does not
+  override already-set env vars, so the injected `NOCODB_TOKEN` / `NOCODB_BASE_ID` still win.
+- The NocoDB base is **shared production** (same base as `w3i-network`). `setup-hromadas` is
+  idempotent/read-only-safe (skips existing tables/columns). Avoid `import-hromadas` and
+  `structure-hromada --write` unless you intend to mutate real rows.
 
 ### Python analysis (optional, runs fully offline — no secrets needed)
 - Deps are in `requirements-dev.txt`. Set up once: `python3 -m venv .venv && . .venv/bin/activate
