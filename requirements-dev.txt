@@ -1,0 +1,17 @@
+# Python dependencies for the OPTIONAL offline analysis scripts in scripts/analysis/.
+# These are not needed for the core TypeScript pipeline (setup-hromadas / structure-hromada /
+# import-hromadas). Install into a virtualenv:
+#
+#   python3 -m venv .venv
+#   . .venv/bin/activate
+#   pip install -r requirements-dev.txt
+#
+# TF-IDF matching (matching*.py, clusters30.py) needs only numpy + scikit-learn + scipy.
+# Embedding matching (embed_matching*.py) additionally needs sentence-transformers (pulls torch).
+# Graph/spreadsheet helpers (mss_graph_layout.py, build_hromadas.py, mss_analysis.py) need networkx + openpyxl.
+numpy
+scikit-learn
+scipy
+networkx
+openpyxl
+sentence-transformers
