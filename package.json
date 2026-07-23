@@ -9,7 +9,8 @@
   "scripts": {
     "setup-hromadas": "tsx -r dotenv/config scripts/migrations/setup-hromadas-table.ts",
     "structure-hromada": "tsx -r dotenv/config scripts/structure-hromada-strategy.ts",
-    "import-hromadas": "tsx -r dotenv/config scripts/import-hromadas-metadata.ts"
+    "import-hromadas": "tsx -r dotenv/config scripts/import-hromadas-metadata.ts",
+    "export-hromadas": "tsx -r dotenv/config scripts/export-hromadas.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.5"
