@@ -1,0 +1,19 @@
+{
+  "repo": "https://github.com/kse-ua/KSE-Loc-Data-Hub",
+  "zenodo_doi": "10.5281/zenodo.15267573",
+  "license": "MIT",
+  "join_key": "hromada_code",
+  "base_url": "https://raw.githubusercontent.com/kse-ua/KSE-Loc-Data-Hub/main/data/derived",
+  "files": {
+    "hromada": "hromada.csv",
+    "geography": "geography.csv",
+    "edem": "edem-data.csv",
+    "partnerships": "partnerships-hromadas.csv",
+    "partnerships_network": "partnerships-hromadas-network.csv",
+    "war_status": "minregion-war-status.csv"
+  },
+  "notes": {
+    "edem": "Use edem-data.csv only — full_dataset.csv replaces NA with 0 for missing hromadas.",
+    "usage": "Fetched at analysis time via scripts/analysis/enrich_from_kse.py; not vendored in this repo."
+  }
+}

@@ -24,6 +24,12 @@ Upstream sources this data draws on:
   reconstruction-project registry.
 - **МСС (inter-municipal cooperation) agreement registry** — dataset
   `912c1ea4-38ea-4648-8306-59fc1df8b51b` on data.gov.ua.
+- **[KSE-Loc-Data-Hub](https://github.com/kse-ua/KSE-Loc-Data-Hub)**
+  (Zenodo [10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573),
+  MIT) — hromada-level covariates (geography, e-dem, existing partnership
+  network, war status) joined at analysis time via KATOTTG. We do not vend
+  KSE CSV copies in this repo; see [data/sources/kse-pin.json](data/sources/kse-pin.json)
+  and [docs/kse-synergy.md](docs/kse-synergy.md).
 
 The `Goals`, `Projects`, `Strengths`, `Challenges`, `PartnersMentioned`, and
 `MSSAgreements` fields are LLM extractions from the primary strategy

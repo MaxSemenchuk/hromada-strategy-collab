@@ -4,7 +4,7 @@
  *
  * Retrieval (WebSearch/WebFetch/Cloudflare-evasion) still happens in-session — this
  * script only handles the "raw text -> structured JSON" step. See
- * project_hromada_strategy_collab memory, "Cost lesson" (2026-07-22).
+ * See docs/project-history.md ("Cost lesson", 2026-07-22).
  *
  * Providers:
  *   - groq (default) — genuinely free, no billing/card needed. Free key:

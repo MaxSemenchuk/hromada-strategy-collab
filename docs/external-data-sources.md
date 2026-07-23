@@ -8,6 +8,11 @@ per source. Not yet integrated into the `Hromadas` NocoDB table unless noted.
 
 ## KSE-Loc-Data-Hub
 
+> **Synergy doc:** how this project uses KSE without duplicating it — join key,
+> consumed files, edem caveats, and what we contribute back —
+> [kse-synergy.md](kse-synergy.md). Draft cross-link issue for the KSE repo:
+> [kse-issue-draft.md](kse-issue-draft.md).
+
 - **Reviewed:** 2026-07-23
 - **URL:** https://github.com/kse-ua/KSE-Loc-Data-Hub
 - **Zenodo DOI:** [10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573) (v1.0.1, Apr 2025, MIT license)
@@ -117,4 +122,5 @@ moves past pilot stage:
   for interpreting why some hromadas have no findable strategy document.
 
 Not yet pulled into NocoDB or the matching pipeline — this section is a
-research note, not an integration decision.
+research note, not an integration decision. For the integration plan and W3I
+outreach use case, see [kse-synergy.md](kse-synergy.md).
