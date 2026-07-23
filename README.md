@@ -33,8 +33,8 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
 2. **Structure** — extract into a fixed schema (goals, projects, strengths,
    challenges, named partners, МСС mentions, source quality) via a cheap external
    LLM ([scripts/structure-hromada-strategy.ts](scripts/structure-hromada-strategy.ts),
-   Groq `llama-3.3-70b-versatile`, genuinely free) — kept out of the main
-   conversation loop specifically to control cost (see Cost lessons below).
+   Gemini `gemini-2.0-flash`) — kept out of the main conversation loop specifically
+   to control cost (see Cost lessons below).
 3. **Match** — compute pairwise similarity on the `Goals` text. Final method: mean-centered,
    sub-goal-level embeddings (`intfloat/multilingual-e5-small`, local, no API cost) —
    materially better than raw TF-IDF or raw (non-centered) embeddings. See
@@ -79,7 +79,7 @@ same guardrails.
 ```
 scripts/
 ├── migrations/setup-hromadas-table.ts   # create/verify the Hromadas NocoDB table
-├── structure-hromada-strategy.ts        # raw strategy text -> structured JSON (Groq/Gemini)
+├── structure-hromada-strategy.ts        # raw strategy text -> structured JSON (Gemini)
 ├── import-hromadas-metadata.ts          # bulk PATCH/POST of KATOTTG+population metadata
 ├── export-hromadas.ts                   # live NocoDB -> data/releases/hromadas.json (the public dataset)
 ├── hromada-output/                      # per-hromada structured JSON (as produced, gitignored pattern removed — kept for provenance)
@@ -110,7 +110,7 @@ source preserved.
 
 ```bash
 yarn install
-cp .env.example .env   # fill in NOCODB_TOKEN + NOCODB_BASE_ID (shared base, ask Max) and GROQ_API_KEY (free, console.groq.com/keys)
+cp .env.example .env   # fill in NOCODB_TOKEN + NOCODB_BASE_ID (shared base, ask Max) and GEMINI_API_KEY
 yarn setup-hromadas    # idempotent — verifies/creates the Hromadas table + Sectors link column
 ```
 
