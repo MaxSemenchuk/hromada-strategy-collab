@@ -117,6 +117,15 @@
       "raw_text_path": "scripts/retrieval/raw/velykoberezovytska-plan.extracted.txt",
       "notes": "plan-of-measures PDF; letter-spaced OCR normalized; chars=54948; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/velykoberezovytska-plan.pdf"
+    },
+    {
+      "name": "Бердичівська міська територіальна громада",
+      "katottg": "",
+      "status": "structured",
+      "strategy_url": "https://berdychiv-rada.gov.ua/wp-content/uploads/2023/11/%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%86%D0%AF-%D0%91%D0%95%D0%A0%D0%94%D0%98%D0%A7%D0%86%D0%92%D0%A1%D0%AC%D0%9A%D0%90-%D0%9C%D0%A2%D0%93-.pdf",
+      "raw_text_path": "scripts/retrieval/raw/berdychiv-strategy.extracted.txt",
+      "notes": "source=berdychiv-strategy; chars=282607; structured 2026-07-23 with PyPDF2; U-LEAD support",
+      "raw_source_path": "scripts/retrieval/raw/berdychiv-strategy.pdf"
     }
   ]
 }

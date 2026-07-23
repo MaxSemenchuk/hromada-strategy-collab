@@ -1,0 +1,2768 @@
+[
+  {
+    "title": "Стратегія Ніжинської ОТГ 2027.pdf",
+    "hromada_hint": "Виконавчий комітет Ніжинської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/0e6dcf9a-f240-4967-8cbf-9e2bffe8a79d/resource/99379be6-6d0f-4141-9734-fa6531f627f0/download/strategiia-nizhinskoyi-otg-2027.pdf",
+    "format": "PDF"
+  },
+  {
+    "title": "Стратегія Сталого розвитку на 2017-2025 роки",
+    "hromada_hint": "Виконавчий комітет Новоолександрівської сільської ради Дніпровського району Дніпропетровської області",
+    "resource_url": "https://data.gov.ua/dataset/d84b8c16-f1a9-49af-8844-f4a65da880d1/resource/b5066e3b-af18-4c84-9088-c52d85a9d937/download/strategiia-stalogo-rozvitku-na-2017-2025-roki.pdf",
+    "format": "PDF"
+  },
+  {
+    "title": "Стратегія розвитку Донецької області на період до 2027 року.docx",
+    "hromada_hint": "Верхньоторецька селищна рада Ясинуватського району Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/d879e509-bb66-4775-aaf6-2233dd166cdf/resource/ecdddc94-9e82-4d95-ac57-fde94c65516b/download/strategiia-rozvitku-donetskoyi-oblasti-na-period-do-2027-roku.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Анкета",
+    "hromada_hint": "Верхньоторецька селищна рада Ясинуватського району Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/d879e509-bb66-4775-aaf6-2233dd166cdf/resource/d0c284c7-e53a-4a7a-9554-d8a78a873cc0/download/anketa.pdf",
+    "format": "PDF"
+  },
+  {
+    "title": "Програма",
+    "hromada_hint": "Славутська міська рада Хмельницької області",
+    "resource_url": "https://opendata.slavuta-mvk.gov.ua/dataset/14103385-cda5-4c82-a63d-896c56e3f695/resource/b252ee5b-322f-4d96-8c88-4e328401eb97/download/programa.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Рішення міської ради",
+    "hromada_hint": "Славутська міська рада Хмельницької області",
+    "resource_url": "https://opendata.slavuta-mvk.gov.ua/dataset/14103385-cda5-4c82-a63d-896c56e3f695/resource/e3113e5e-73f0-46fe-af4a-80b5a446ac9b/download/rishena.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Показники ефективності реалізації Комплексної стратегії розвитку міста-2010-2025",
+    "hromada_hint": "Львівська міська рада",
+    "resource_url": "https://opendata.city-adm.lviv.ua/dataset/7379910f-34b3-465d-9324-0c088fcd423a/resource/27807802-3196-4481-b7e6-dfe6a8bf64ef/download/strategy.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Показники ефективності реалізації Комплексної стратегії розвитку міста-2010-2024",
+    "hromada_hint": "Львівська міська рада",
+    "resource_url": "https://opendata.city-adm.lviv.ua/dataset/7379910f-34b3-465d-9324-0c088fcd423a/resource/18a4243c-5312-4742-8f77-6a188317d58a/download/strategy.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Structure",
+    "hromada_hint": "Львівська міська рада",
+    "resource_url": "https://opendata.city-adm.lviv.ua/dataset/7379910f-34b3-465d-9324-0c088fcd423a/resource/3dffa81c-cd2e-45a6-a914-1bc23b14a145/download/structure_strategy.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Відомості щодо залучення коштів пайової участі DATA.xlsx",
+    "hromada_hint": "Варвинська селищна рада Прилуцького району Чернігівської області",
+    "resource_url": "https://data.gov.ua/dataset/3a9180e3-ede8-4ff0-a5ff-8374670b854a/resource/974b808e-58a7-4b4d-96c3-dab4939585ab/download/vidomosti-shchodo-zaluchennia-koshtiv-paiovoyi-uchasti-data.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Nabir_danyh_2021.xlsx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/e2a0ae02-5bd0-4b32-bfc7-62874fa9a60c/download/perelik_vidkr_danuh.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "perelik_vidkr_danuh.xlsx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/58c4ec2c-d2cc-4315-b658-c14d3e8786ad/download/perelik_vidkr_danuh.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "perelik_naboriv_danuh.xlsx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/78a6ab8d-cb26-455f-87c2-fa60ec5d18f9/download/perelik_naboriv_danuh.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "perelik_naboriv_danuh.xlsx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/eaf6376a-e8ad-4e68-8c52-ed92815aefff/download/perelik_naboriv_danuh.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "perelik_naboriv_danuh.xlsx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/b578f34f-16e0-42ce-b233-52a407bac321/download/perelik_naboriv_danuh.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток Комплексна програма, освіта.docx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/12aa1742-f12a-4efc-95e8-489f8257c843/download/dodatok-kompleksna-programa-osvita.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток до Комплексної.docx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/769e6a41-f03c-4519-9aa3-65c36982f5dc/download/dodatok-do-kompleksnoyi.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток до Комплексної.docx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/5fad805d-2674-4574-b7c7-f855f9c57ecc/download/dodatok-do-kompleksnoyi.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток до Комплексної.docx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/976e4f9e-8c59-401f-a7ac-8f70d5f6caab/download/dodatok-do-kompleksnoyi.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток до Комплексної, 18.06.2025.docx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/9dddb2a4-a2ce-449d-935a-8fa6b73e0002/download/dodatok-do-kompleksnoyi-18-06-2025.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток до Комплексної, 08.08.2025.docx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/34bc6dee-1d89-46bb-becd-8389e501c6b3/download/dodatok-do-kompleksnoyi-08-08-2025.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток до Комплексної, 26.09.2025.docx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/2162994b-de2d-4d02-baa0-4c9f7c2c5ce6/download/dodatok-do-kompleksnoyi-26-09-2025.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток до Комплексної, 31.10.2025.docx",
+    "hromada_hint": "Департамент освіти Полтавської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/844b4ba6-63f4-4c12-8956-e97e835abe0f/resource/32e901ee-829e-4d3d-9485-133dfa0fb25c/download/dodatok-do-kompleksnoyi-31-10-2025.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Рiшення міської ради від 14 лютого 2020р. № 7-49/2020",
+    "hromada_hint": "Славутська міська рада Хмельницької області",
+    "resource_url": "https://opendata.slavuta-mvk.gov.ua/dataset/12810e17-eab7-4ff3-a6f2-e5eee47543eb/resource/246de9a7-d195-4162-950c-db885129b760/download/7-49-14.02.2020-2020-.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Виконання Програми",
+    "hromada_hint": "Славутська міська рада Хмельницької області",
+    "resource_url": "https://opendata.slavuta-mvk.gov.ua/dataset/12810e17-eab7-4ff3-a6f2-e5eee47543eb/resource/b09c6882-2cd1-4108-bd86-dea780ff5e00/download/1447-5-49-14.02.2020-2019-.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Програма соціально-економічного та культурного розвитку Славутської міської об’єднаної територіальної громади на 2020 рік",
+    "hromada_hint": "Славутська міська рада Хмельницької області",
+    "resource_url": "https://opendata.slavuta-mvk.gov.ua/dataset/12810e17-eab7-4ff3-a6f2-e5eee47543eb/resource/e2ca36c6-928c-400c-bc67-d75d35972a34/download/-2020-.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Програма соціально-економічного та культурного розвитку Покровської міської територіальної громади Дніпропетровської області.doc",
+    "hromada_hint": "Покровська міська рада Дніпропетровської області",
+    "resource_url": "https://data.gov.ua/dataset/4fa94a98-7047-4c34-8ab3-0369c1fea6d5/resource/9601c97a-f31f-4539-8cc1-a417c61e42a3/download/programa-sotsialno-ekonomichnogo-ta-kulturnogo-rozvitku-pokrovskoi-miskoi-teritorialnoi-gr.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "programa-2021.xlsx",
+    "hromada_hint": "Покровська міська рада Дніпропетровської області",
+    "resource_url": "https://data.gov.ua/dataset/cffbdbf3-3657-4a22-8001-81e3fb120c32/resource/0438f354-40a5-4f19-ac0b-5b20fde9a53e/download/programa-2021.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Заходи щодо забезпечення виконання завдань Програми соціально-економічного і культурного розвитку Житомирської міської об'єднаної територіальної громади на 2021 рік",
+    "hromada_hint": "Управління муніципального розвитку Житомирської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/aefeb6da-189f-4b93-80b2-121bce591714/resource/2bc51cc6-0058-4a0d-9426-e22df82d58ba/download/zakhodi-do-pesr-2021.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Заходи до ПЕСР  2022.xlsx",
+    "hromada_hint": "Управління муніципального розвитку Житомирської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/aefeb6da-189f-4b93-80b2-121bce591714/resource/59cca636-d714-4d14-8ba3-fafc57edb27d/download/zakhodi-do-pesr-2022.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Заходи до ПЕСР  2023.pdf",
+    "hromada_hint": "Управління муніципального розвитку Житомирської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/aefeb6da-189f-4b93-80b2-121bce591714/resource/1624d6e3-7141-4114-823b-06d7b481d160/download/zakhodi-do-pesr-2023.pdf",
+    "format": "PDF"
+  },
+  {
+    "title": "Заходи до ПЕСР  2024.pdf",
+    "hromada_hint": "Управління муніципального розвитку Житомирської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/aefeb6da-189f-4b93-80b2-121bce591714/resource/abadb32d-e565-4a01-80aa-20752e4cd097/download/zakhodi-do-pesr-2024.pdf",
+    "format": "PDF"
+  },
+  {
+    "title": "Заходи до ПЕСР  2025.pdf",
+    "hromada_hint": "Управління муніципального розвитку Житомирської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/aefeb6da-189f-4b93-80b2-121bce591714/resource/c5011b08-a8da-4a86-80b0-f2cbd8aca6c0/download/zakhodi-do-pesr-2025.pdf",
+    "format": "PDF"
+  },
+  {
+    "title": "vidomosti-pro-zaluchennia-rozrakhunok-rozmiru-i-vikoristannia-koshtiv-paiovoyi-uchasti-u-rozvit.xlsx",
+    "hromada_hint": "Багачевська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/565c8681-8755-4b0c-9911-1a58ef4577c0/resource/cf787ba6-7912-4a70-99ca-c5d71bf608da/download/vidomosti-pro-zaluchennia-rozrakhunok-rozmiru-i-vikoristannia-koshtiv-paiovoyi-uchasti-u-rozvit.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Відомості про залучення, розрахунок розміру та використання коштів пайової участі у розвиток інфраструктури м.Ватутіне.xlsx",
+    "hromada_hint": "Багачевська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/565c8681-8755-4b0c-9911-1a58ef4577c0/resource/d94f85cc-2205-47ac-ad59-92fd04a6ccff/download/vidomosti-pro-zaluchennia-rozrakhunok-rozmiru-ta-vikoristannia-koshtiv-paiovoyi-uchasti-u-rozvi.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Contracts-2019.xlsx",
+    "hromada_hint": "Багачевська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/565c8681-8755-4b0c-9911-1a58ef4577c0/resource/d04ad969-b4da-4788-b8b9-8ac12180984d/download/contracts-2019.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Contracts-2020.xlsx",
+    "hromada_hint": "Багачевська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/565c8681-8755-4b0c-9911-1a58ef4577c0/resource/91544801-4507-4b23-9e05-fb13fa2423ea/download/contracts-2020.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Contracts-2020-07.xlsx",
+    "hromada_hint": "Багачевська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/565c8681-8755-4b0c-9911-1a58ef4577c0/resource/b9c7ba51-ac8c-414e-8f98-7c5d568d8c59/download/contracts-2020-07.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Contracts-2020-12.xlsx",
+    "hromada_hint": "Багачевська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/565c8681-8755-4b0c-9911-1a58ef4577c0/resource/39affa7b-68ba-4e0f-a6f5-b16fa468db01/download/contracts-2020-12.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Contracts-2021-03.xlsx",
+    "hromada_hint": "Багачевська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/565c8681-8755-4b0c-9911-1a58ef4577c0/resource/7a5d0670-fc91-4311-935f-5cf74c441bd1/download/contracts-2021-03.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Contracts-2021-12.xlsx",
+    "hromada_hint": "Багачевська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/565c8681-8755-4b0c-9911-1a58ef4577c0/resource/b8b55826-92da-4e42-9b02-f07e5da00aa6/download/contracts-2021-12.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "contracts_sts",
+    "hromada_hint": "Львівська обласна державна адміністрація",
+    "resource_url": "https://data.loda.gov.ua/dataset/687c9269-bf7d-4a9f-9a2f-9fce93440d90/resource/bb41edc0-cebb-4826-b700-7d7f07e1cd37/download/contracts_sts.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "База даних щодо ремонту доріг 2019р",
+    "hromada_hint": "Варвинська селищна рада Прилуцького району Чернігівської області",
+    "resource_url": "https://data.gov.ua/dataset/e13a539e-889f-4e31-9c85-4eddbc8c0827/resource/3a11eb3b-4ba4-411d-9286-3f1909ca5995/download/baza-danikh-shchodo-remontu-dorig-2019r-data.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "investportfolio.csv",
+    "hromada_hint": "Олександрійська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/5bbb7eec-3ff2-40fd-a08c-84e2c59c45ef/resource/1fbde4ea-04fb-4fdd-b135-f66ddb5b8ae7/download/investportfolio.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Програма соціально – економічного розвитку Кіптівської сільської ради на 2021 рік",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/4f02e75e5c52984f54f2d8c02e29ed9b.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Програма «Проведення нормативної грошової оцінки земель населених пунктів та розробки проектів землеустрою на території Кіптівської сільської ради на 2021 рік»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/3b80bf4d830fbc9cc521aa6e37314b8c.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Програма «Підтримка військовослужбовців, які звільнені з лав Збройних сил України в 2021 році в зв’язку з закінченням терміну проходження строкової військової служби, на 2021 рік»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/6b0430bcfe42ec9b79ca37aeea3bc02e.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Фінансової підтримки закладів охорони здоров’я на 2021 рік»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/e679112694e24baa0e192f83ed78284c.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Фінансової підтримки закладів охорони здоров’я на 2021 рік»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/e679112694e24baa0e192f83ed78284c.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Забезпечення пожежної безпеки на території Кіптівської сільської ради на 2021 роки»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/1685cbb9be4c3cc125cb0a9143403b8c.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Охорона навколишнього природного середовища Кіптівської сільської ради об’єднаної територіальної громади на 2021-2025роки»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/8f52ae5d26b0bac6884b3c08c3f725ca.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Фінансової підтримки КП «Чайка» на 2021 рік.»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/5c5a195f0590310e6684254b5d211a3a.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Благоустрій території Кіптівської сільської ради об’єднаної територіальної громади на 2021 рік»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/d2965a9a2a15d0b9b75163bae588187e.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Про надання адресної одноразової грошової допомоги на 2021 рік»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/5da514d935709de5dfc28d8b7ab79d74.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Розвиток аматорського мистецтва та культури на території сільської ради на 2020-2023 роки.»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/1cc958b36ff1721db391136674bc3302.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Організації суспільно корисних робіт для порушників, на яких судом накладено адміністративне стягнення у вигляді виконання суспільно – корисних робіт на 2021 рік»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/a0917c1a83094b4d2c6176f2ef75966a.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма організації та проведення у 2021 році громадських робіт для незайнятого населення на території Кіптівської сільської ради на 2021 рік.",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/235428f3adb8edcc9ce3dafcb0947806.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Програма «Відшкодування витрат на здійснення перевезення пільгових категорій громадян пасажирським автомобільним транспортом по території Кіптівської сільської ради на 2021 – 2025 роки»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/0e52ecaebe1abf5838e2d48373118031.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Програма «Надання одноразової допомоги дітям-сиротам і дітям, позбавленим батьківського піклування, яким виповнилося 18 років на 2021 роки»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/181b80d15c611b15ede299b5175726d5.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Програма «Забезпечення препаратами інсуліну хворих на цукровий діабет жителів Кіптівської сільської ради на 2021 рік»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/88f96d506018bd2cca9bf83a38ff7ec2.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма організації харчування дітей у закладах загальної середньої та дошкільної освіти Кіптівської сільської ради на 2021 рік",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/92a33790dcb9d5a762dc6c849fcb5105.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Обдарована молодь» на 2021 -2025 роки",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/99c4fe4e4b3e8646c7ac95018bae8310.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Програма «Доступні платежі на 2021 рік»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/71e1a9eb6b1e7aff438c39365c799e16.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Відшкодування депутатам сільської ради витрат на відрядження для участі в пленарних засіданнях та засіданнях постійних комісій Кіптівської сільської ради на 2021 рік.»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/80d196ff7ce779c5716331280f05477f.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Програма \"Висвітлення діяльності Кіптівської об’єднаної територіальної громади в засобах масової інформації на 2020-2021 роки\"",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/fc3f0be7807cfadba564b4e888a2b3ef.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Фінансового забезпечення нагородження відзнаками Кіптівської сільської ради та відзначення пам’ятних дат, історичних подій, культурних заходів, ювілеїв та вшанування видатних людей Кіптівської сільської ради на 2021 рік.»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/5edfe088e0534f923efa0421270bd3da.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Розвиток фізичної культури і спорту в Кіптівській сільській раді 2017 -2021 роки»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/d28b224314ac8118c49f9519d2aadb4f.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програма «Утримання та ремонт вулиць та доріг комунальної власності Кіптівської сільської ради на 2021-2025 роки»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/f3c6ed666184506231e395c04db7811b.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Програми «Утримання та ремонт вулиць та доріг комунальної власності Кіптівської сільської ради на 2021-2025 роки»",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://rada.info/upload/users_files/04413360/docs/b45515a9db573fec09ffb34540482295.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Про комплексний план просторового розвитку громади.docx",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://data.gov.ua/dataset/5b02a1c1-0a01-4b30-bfda-59d61715b55a/resource/acaff7ee-c6b4-4923-9509-933878fa2759/download/1106-pro-kompleksnii-plan-prostorovogo-rozvitku-gromadi.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "1107 Зміни до Програма-Норм.-грош.оцінки зем.тех док.doc",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://data.gov.ua/dataset/5b02a1c1-0a01-4b30-bfda-59d61715b55a/resource/1b37212f-e33d-4499-bcac-a380a5a18683/download/1107-zmini-do-programa-norm-grosh-otsinki-zem-tekh-dok.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "1107 Зміни до Програма-Норм.-грош.оцінки зем.тех док.doc",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://data.gov.ua/dataset/5b02a1c1-0a01-4b30-bfda-59d61715b55a/resource/863492d7-8e15-4e50-ad6b-307c0fdbfb6c/download/1107-zmini-do-programa-norm-grosh-otsinki-zem-tekh-dok.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "1004 Програма охорони навколишнього середовища.docx",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://data.gov.ua/dataset/5b02a1c1-0a01-4b30-bfda-59d61715b55a/resource/3e55fc69-3737-4150-9ed6-47ef0833ad76/download/1004-programa-okhoroni-navkolishnogo-seredovishcha.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "1107 Зміни до Програма-Норм.-грош.оцінки зем.тех док.doc",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://data.gov.ua/dataset/5b02a1c1-0a01-4b30-bfda-59d61715b55a/resource/172ba78e-25b1-4eca-831c-7532b89d9557/download/1107-zmini-do-programa-norm-grosh-otsinki-zem-tekh-dok.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "1106 ПРОГРАМА розробки Комплексного плану просторового розвитку території територіальної громади.docx",
+    "hromada_hint": "Кіптівська сільська рада",
+    "resource_url": "https://data.gov.ua/dataset/5b02a1c1-0a01-4b30-bfda-59d61715b55a/resource/cea6cd44-11f7-44d5-a8f5-2ad6742ea1d8/download/1106-programa-rozrobki-kompleksnogo-planu-prostorovogo-rozvitku-teritoriyi-teritorialnoyi-groma.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "register",
+    "hromada_hint": "Гребінківська селищна територіальна  громада Білоцерківського району Київської області",
+    "resource_url": "https://data.gov.ua/dataset/0794fe56-9fe6-420e-9a87-93a5d017da5e/resource/ce76d9bf-7edf-4ceb-ad7a-bddc07f292d3/download/register.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "інформація про виконання бюджету Немирівської міської об'єднаної територіальної громади за 2018 рік",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/9e2ba0c3-56c7-4bf8-b9e3-22fe144b3fbe/download/informatsiia-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-ob-iednanoyi-teritorialnoyi-gromadi-z.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Довідка про виконання бюджету Немирівської ОТГ за січень-березень 2019 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/08e72c21-e1dc-488a-b97c-8dae496867e0/download/b63e012802f8136c4a48f44cfe966536.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Довідка про виконання бюджету Немирівської ОТГ за січень - червень 2019 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/aaecb74c-fb41-481c-aafa-3cffcab9a66f/download/dovidka-pro-vikonannia-biudzhetu-nemirivskoyi-otg-za-sichen-cherven-2019-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про вик-ня бюджету Немирів ОТГ за січень-вересень 2019 р.csv",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/d094e4be-2174-4a41-a4f0-187f8b14c17c/download/zvit-pro-vik-nia-biudzhetu-nemiriv-otg-za-sichen-veresen-2019-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Довідка про виконання бюджету Немирівської ОТГ за січень-жовтень 2019 року.csv",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/d58a98d4-1ba1-45ed-bdac-65a44e70c345/download/dovidka-pro-vikonannia-biudzhetu-nemirivskoyi-otg-za-sichen-zhovten-2019-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "звіт про виконання бюджету за січень 2019 року.csv",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/277f59b5-75d9-4824-9bfe-877c51749505/download/zvit-pro-vikonannia-biudzhetu-za-sichen-2019-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "звіт про виконання бюджету за січень - лютий 2019 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/6a2f268d-358e-4c57-a254-0074fc3fe884/download/zvit-pro-vikonnaia-biudzhetu-za-sichen-liutii-2019-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету за січень - квітень 2019 р.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/c20c25e8-5787-4831-b19a-d65151b2d08b/download/zvit-pro-vikonannia-biudzhetu-za-sichen-kviten-2019-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "звіт про виконання бюджету за січень - травень 2019 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/210a6461-9338-4976-a793-2096dfd82d8e/download/zvit-pro-vikonannia-biudzhetu-za-sichen-traven-2019-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "звіт про виконання бюджету за січень - липень 2019 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/ded06d0f-c876-4bb5-bd95-d32de89f9443/download/zvit-pro-vikonannia-biudzhetu-za-sichen-lipen-2019-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету за січень - серпень 2019 .",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/aadd58cb-4eaf-4158-9a0a-27419f3a4b50/download/zvit-pro-vikonannia-biudzhetu-za-sichen-serpen.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету за січень - листопад 2019 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/8fc03152-b6ca-42ea-b8ef-a24caa4d7487/download/zvit-pro-vikonannia-biudzhetu-za-sichen-listopad-2019-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "звіт про виконання бюджету за січень - грудень 2019 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/01459190-326b-4576-ab92-413627fb0735/download/zvit-pro-vikonannia-biudzhetu-za-sichen-gruden-2019-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Інформація про виконання бюджету за 2019 рік",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/4a6e5a71-966e-43e8-bc47-4a5b034bd25f/download/informatsiia-pro-vikonannia-biudzhetu-za-2019-rik.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Інформація щодо виконання бюджету Немирівської ОТГ за 2017-2019 р.р.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/a599835e-81b6-433a-b84a-8b2d75a7b06c/download/vikonannia-biudzhetu-otg_2017_2019.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету за січень 2020 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/48912dbb-d949-4a25-8a46-623c2af25860/download/zvit-pro-vikonannia-biudzhetu-za-sichen-2020-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету за січень - лютий 2020 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/65be33ff-3564-4cd1-ae9f-6cbf04f673a7/download/zvit-pro-vikonannia-biudzhetu-za-sichen-liutii-2020-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "звіт про виконання бюджету за січень-березень 2020 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/c60c6229-ef9e-4d7e-ab3e-efd5c33f9b17/download/zvit-pro-vikonannia-biudzhetu-za-sichen-berezen-2020-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету за січень - квітень 2020 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/757140e4-de63-4840-9b9f-48490bf0617f/download/zvit-pro-vikonannia-biudzhetu-za-sichen-kviten-2020-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Інформація про виконання бюджету Немирівської об'єднаної територіальної громади за 5 місяців 2020 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/be1288f7-39bb-4e43-9984-64b32369c1cf/download/dovidka-pro-vik-nia-biudzhetu-nemiriv-otg-za-5-misiatsiv-2020-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Інформація про виконання бюджету Немирівської об'єднаної територіальної громади за 6 місяців 2020 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/1750514f-adae-4904-9152-1e495f1bee69/download/dovidka-pro-vik-nia-biudzhetu-nemiriv-otg-za-6-misiatsiv-2020-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Інформація про виконання бюджету Немирівської об'єднаної територіальної громади за 7 місяців 2020 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/ff5538a7-512b-44ba-b1db-912bff236d56/download/informatsiia-pro-vikonannia-biudzhetu-nemirivskoyi-ob-iednanoyi-teritorialnoyi-gromadi-za-7-misi.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Довідка про виконання бюджету Немирівської міської об'єднаної територіальної громади за 8 місяців 2020 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/48512c15-b738-4977-8555-1a28e5318b2a/download/dovidka-pro-viko-nia-biudzhetu-za-8-misiatsiv-2020-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Довідка про виконання бюджету за січень - вересень 2020 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/cfe308c9-ce9e-496d-b167-5d9b87d98d60/download/dovidka-pro-vik-nia-biudzhetu-za-sichen-veresen-2020-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Інформація про виконання бюджету Немирівської ОТГ за 10 місяців 2020 р.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/772b3a6e-c10b-49da-9054-be3a9877645d/download/informatsiia-pro-vik-nia-biudzhetu-nemirivskoyi-otg-za-10-misiatsiv-2020-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Інформація про вик-ня бюджету Немирівської ОТГ за 11 місяців 2020 р",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/868f9349-6ad8-4043-ba32-3e1a3ea79d5c/download/informatsiia-pro-vik-nia-biudzhetu-nemirivskoyi-otg-za-11-misiatsiv-2020-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Інформація про виконання бюджету Немирівської ОТГ за січень - грудень 2020 року .",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/d9300e50-9190-42e2-a571-8624f4cfd5e5/download/informatsiia-pro-vikonannia-biudzhetu-nemirivskoyi-otg-za-sichen-gruden-2020-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень 2021 р.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/8c909aea-3f4a-49ab-95f3-d03b3c6b8e2d/download/42e7e5bf0ee5b10c07998c122c83d0df.xls",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за лютий 2021 р. .csv",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/66411f2f-01cf-405e-bfce-517286280ae4/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-liutii-2021-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - березень 2021 р.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/569b88a9-cf64-4c6e-aa2e-3a994972dce7/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-berezen-2021-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - квітень 2021 р.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/fab1801c-4f74-40ad-bc67-8be5c8bf4740/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-kviten-2021-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - травень 2021 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/20c1ea7b-6b33-477d-8b37-32cab7445af0/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-traven-2021-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - червень 2021 р.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/d0369ba2-99b7-41eb-9e7a-3000244b15ab/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-cherven-2021-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - липень 2021 р. .",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/e351b822-82ef-4501-b819-d4b48c8ad01f/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-lipen-2021-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - серпень 2021 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/86c4d434-80e5-40fa-990d-02bceedc0f21/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-serpen-2021-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - вересень 2021 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/f194d24f-e1b0-4696-8449-1998fe898e3c/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-veresen-2021-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - жовтень 2021 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/ebbb0ec2-148d-44fd-a16b-a9678dce08df/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-zhovten-2021-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - листопад 2021 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/7ccccc54-7bc7-444a-acd8-4b4d82752ef5/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-listopad-2021-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - грудень 2021 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/74c43410-91fa-4045-88c8-1b690c078999/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-gruden-2021-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "звіт про виконання бюджету за січень_2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/432bc2a6-1724-4fe8-ad45-85b1696847ee/download/zvit-pro-vikonannia-biudzhetu-za-sichen_2022.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за лютий 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/f7da1e7a-7fdb-4efb-8ccc-c0655f123d6e/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-liutii-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за лютий 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/59d44971-83c4-4e50-a43d-1fe61381ed34/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-liutii-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - березень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/f7dbd386-7d3d-43c4-84b0-90409b0d3cf4/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-berezen-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень-лютий 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/16ddfcb0-5152-4ace-a740-f75cccc33251/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-liutii-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - березень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/78524c5b-ae56-40ba-9686-6de0addbb87a/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-berezen-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - березень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/6b14d553-4e17-4d3b-a0e4-c2cffefd917b/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-berezen-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень-квітень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/147d27c9-13fe-4230-8ff3-e0babb393735/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-kviten-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень-квітень 2022 року.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/98a621dc-c852-4e73-af82-92ba8904447c/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-kviten-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень-квітень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/6fab1bff-921b-42e2-b2aa-3fbf06835144/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-kviten-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень-квітень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/2c04c2a6-fa4a-4628-b89a-061658c154a4/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-kviten-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень-травень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/09f0367e-d0ef-4733-b475-9b4fb646d311/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-traven-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - червень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/4d4b1f7f-ef20-4311-988b-207418ee6dce/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-cherven-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - липень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/faa780b4-7a66-44a6-9116-a37518f9d63c/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-lipen-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень-серпень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/9a8f49bd-7fb8-469d-bb62-657eed240898/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-serpen-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень-серпень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/c9f70a96-ac39-4783-b785-dcad90d3ab3b/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-serpen-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень-вересень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/a6ce8894-5550-4422-9493-c722c69c020a/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-veresen-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень-жовтень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/e54e1aa9-f490-4c38-97f7-890467723c89/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-zhovten-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - грудень 2022 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/4fe9a3dd-df8b-43e5-b69f-2c65f2ee8e59/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-gruden-2022-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - лютий 2023 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/99f8d777-0eb6-4e3a-8e10-239d4f8f04ab/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-liutii-2023-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ  за січень-березень 2023 р.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/696d0e15-dbed-4d7b-b971-7e03fd150663/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-berezen-2023-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ  за січень-березень 2023 р.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/2d837f54-3a20-44d3-a423-3c19ebff52f4/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-berezen-2023-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - квітень 2023 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/b4723683-9fc2-454e-a441-fb055fc0f55d/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-kviten-2023-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - травень 2023 р.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/256f684c-cd54-46cd-ba2d-3ebb5d80869c/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-traven-2023-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - серпень 2023 р.",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/274582a0-9a48-4d00-87b1-abac42199893/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-serpen-2023-r.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету за січень - жовтень 2023 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/13948073-d9ec-4930-8c12-071879c3d9dd/download/zvit-pro-vikonannia-biudzhetu-za-sichen-zhovten-2023-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень 2023 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/b7e0577d-90ee-4c89-bbc4-7f45a2af84c7/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-2023-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Інформація про виконання бюджету Немирівської ТГ за січень - липень 2023 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/2ee2ae64-ac06-44b6-a2d3-26327e264998/download/informatsiia-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-lipen-2023-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - листопад 2023 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/b63f67f4-444d-4890-98b1-7a5de5a38ae5/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-listopad-2023-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за 2023 рік",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/97cc4a46-7489-44ba-a336-f7e9a9782770/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-2023-rik.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади на 2024 рік за січень 2024 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/395eaf9b-7bdb-4eb3-aae3-62e68568f3ad/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-na-2024-rik.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за лютий 2024 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/d4ab96a0-dcb8-4913-a620-0d8002eae868/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-liutii-2024-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за березень 2024 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/4fbaed1b-37a6-427e-80ca-0a5786bb7a81/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-berezen-2024-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за квітень 2024 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/bb3f4124-a0ed-4aae-829e-09ed3eaea199/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-kviten-2024-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за 1 півріччя 2024 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/7ca7a86d-2655-413f-8c09-3019379e6ddb/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-1-pivrichchia-2024-.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "звіт про виконання бюджету за січень-травень 2024 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/9b00cbd7-55e5-42d0-8959-7c2d95223777/download/zvit-pro-vikonannia-biudzhetu-za-sichen-traven-2024-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за жовтень 2024 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/831f1585-7acb-44f4-9ec2-f759910aa066/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-zhovten-2024-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за січень - липень 2024 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/59196431-fff4-4dcb-a14e-9d1d5c1f885a/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-sichen-lipen-2024-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіти про виконання бюджету Немирівської міської територіальної громади за січень-серпень 2024 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/6a62cdee-acdd-4876-bbfc-6ef29e42c932/download/zviti-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-serpen-2024.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської ТГ за 2024 рік .csv",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/8929b3b3-d54e-4f98-971a-f88014d689fd/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-tg-za-2024-rik.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської територіальної громади за січень 2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/9912dc8b-56b8-4132-8d42-d910476abbad/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-teritorialnoyi-gromadi-za-sichen-2025-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - лютий  2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/2c069371-14ae-4fbe-b88d-94ffa237bf69/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-liutii-2025-.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - березень  2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/43e21070-7752-43c2-b434-08711e734e52/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-berezen-202.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - квітень 2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/1fe8ef5b-7efc-4d8c-ba8a-faa102373cbe/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-kviten-2025.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - травень 2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/b732d38f-6824-45ec-9eec-b58518b4510c/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-traven-2025.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - червень 2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/5950b09e-170b-4cd0-a470-9f6f9addaeb8/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-cherven-2025.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - вересень 2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/a1bb1119-97c6-41d2-9f7d-262870a45eab/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-veresen-2025.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - серпень  2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/4bc6603f-1da3-4677-87dd-48c175da99d0/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-serpen-2025.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - серпень  2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/da28ef09-8451-4238-8666-27c0f8853a9f/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-serpen-2025.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - липень  2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/fb4dc5a4-ab59-41f9-8a98-c2142bee556b/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-lipen-2025.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - жовтень 2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/aad21b05-f2c7-483f-bccd-67f9de2c5ef0/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-zhovten-2025.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - листопад 2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/50d9c289-215b-476d-a7a6-4392a69a30c1/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-listopad-202.xls",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень - листопад 2025 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/0aeba32d-3c20-4357-9a08-f5bf61c3207c/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-listopad-202.xls",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за 2025 рік",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/5e44dcea-f8d9-4dea-8a1f-c238b12f4ae8/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-2025-rik.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за 2025 рік",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/cccf7c7a-65c3-4970-8ac8-983c7a841229/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-2025-rik.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень 2026 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/559a8294-c094-440b-a222-27efb49e8f7e/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-2026-roku.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень-лютий 2026 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/889478d7-ba37-4a06-abca-49a92ae0ae8f/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-liutii-2026-.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Звіт про виконання бюджету Немирівської міської територіальної громади за січень-березень 2026 року",
+    "hromada_hint": "Фінансове управління Немирівської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/c0fe7482-bb26-4d6f-8ae6-82559567adfc/resource/04c7dbe3-d82f-4cbe-addb-9356f0f5e361/download/zvit-pro-vikonannia-biudzhetu-nemirivskoyi-miskoyi-teritorialnoyi-gromadi-za-sichen-berezen-2026.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Рішення Звіт про хід і результати виконання Програми соціально-економічного та культурного розвитку  Славутської  міської територіальної громади на 2020 рік .doc",
+    "hromada_hint": "Виконавчий комітет Славутської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/0120296f-a914-4895-a8c7-d9a704232144/resource/7a00a419-aea0-4574-9934-b52dcf8270ad/download/rishennia-zvit-2020.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "ЗВІТ ПРО ХІД ТА РЕЗУЛЬТАТИ ВИКОНАННЯ ПРОГРАМИ СОЦІАЛЬНО-ЕКОНОМІЧНОГО  ТА КУЛЬТУРНОГО РОЗВИТКУ ЗА 2020 РІК",
+    "hromada_hint": "Виконавчий комітет Славутської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/0120296f-a914-4895-a8c7-d9a704232144/resource/6e8ede20-d681-46e0-a1bc-6fdb6fbefed5/download/zvit-2020.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "public_toilet_pereiaslav.csv",
+    "hromada_hint": "Переяславська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/cdc66564-cdaf-479f-b810-91c598c47eb8/resource/70e9d54e-5158-40a2-8893-11bacfda0fda/download/public_toilet_pereiaslav.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "PublicToilets stanom-na-01-01-2022",
+    "hromada_hint": "Бобровицька міська рада",
+    "resource_url": "https://data.gov.ua/dataset/7821e195-287d-426f-bc87-46250278a2f3/resource/630fd149-d61c-42b5-a37f-64696382268a/download/publictoilets-stanom-na-01-01-2022.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "PublicToilets stanom-na-17-08-2023",
+    "hromada_hint": "Бобровицька міська рада",
+    "resource_url": "https://data.gov.ua/dataset/7821e195-287d-426f-bc87-46250278a2f3/resource/9c20bb6b-14ac-472a-a33e-0a45fb878efa/download/publictoilets-stanom-na-17-08-2023.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "PublicToilets stanom_na_01_01_2025",
+    "hromada_hint": "Бобровицька міська рада",
+    "resource_url": "https://data.gov.ua/dataset/7821e195-287d-426f-bc87-46250278a2f3/resource/a27928c9-e065-4176-b6bc-2d8af7dfaeca/download/publictoilets-stanom_na_01_01_2025.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "publicToilets",
+    "hromada_hint": "Бобровицька міська рада",
+    "resource_url": "https://data.gov.ua/dataset/7821e195-287d-426f-bc87-46250278a2f3/resource/e4b35f4b-5668-4e1a-9eb8-605de6a79011/download/publictoilets.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "contracts.json",
+    "hromada_hint": "Броварська міська рада Броварського району Київської області",
+    "resource_url": "https://data.gov.ua/dataset/2b022bb1-005f-4adf-a32c-9320721b6061/resource/b026e156-2862-41c2-865f-93d91e8c1a4f/download/contracts.json",
+    "format": "JSON"
+  },
+  {
+    "title": "objects.json",
+    "hromada_hint": "Броварська міська рада Броварського району Київської області",
+    "resource_url": "https://data.gov.ua/dataset/2b022bb1-005f-4adf-a32c-9320721b6061/resource/f9ecdd56-a87a-43d8-bc6b-cbd025f897ff/download/objects.json",
+    "format": "JSON"
+  },
+  {
+    "title": "contracts.csv",
+    "hromada_hint": "Бедевлянська сільська рада Тячівського району Закарпатської області",
+    "resource_url": "https://data.gov.ua/dataset/33ca824d-273f-4ded-996b-4a679be195d1/resource/916fe898-69b4-4a1c-bfa0-15d6d4393e0c/download/contracts.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "objects.csv",
+    "hromada_hint": "Бедевлянська сільська рада Тячівського району Закарпатської області",
+    "resource_url": "https://data.gov.ua/dataset/33ca824d-273f-4ded-996b-4a679be195d1/resource/e9f4bc4d-193e-4222-b1b5-7331aa0419dd/download/objects.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Перелік укладених договорів про пайову участь в утриманні об'єктів благоустрою",
+    "hromada_hint": "Кременчуцька міська рада",
+    "resource_url": "https://data.gov.ua/dataset/96124e0c-7901-45fc-a442-6ae0b7687473/resource/b823d966-4cdb-4644-bbf5-cb3720ff1894/download/33.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Відомості про залучення, розрахунок розміру і використання коштів пайової участі у розвитку інфраструктури населеного пункту",
+    "hromada_hint": "Кременчуцька міська рада",
+    "resource_url": "https://data.gov.ua/dataset/96124e0c-7901-45fc-a442-6ae0b7687473/resource/7fe34691-736e-46d6-8d61-467ba0a99017/download/24.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "MovableProperty_2025.csv",
+    "hromada_hint": "Вінницька міська рада",
+    "resource_url": "https://opendata.gov.ua/dataset/b72707c6-c20e-4f47-8740-ad80edffb0ec/resource/746bcacb-e3de-476a-8a30-d87d9838a223/download/movableproperty_2025.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "MovableProperty_Structure.csv",
+    "hromada_hint": "Вінницька міська рада",
+    "resource_url": "https://opendata.gov.ua/dataset/b72707c6-c20e-4f47-8740-ad80edffb0ec/resource/c0d647ef-1316-4808-8af5-0a74e999b764/download/movableproperty_structure.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "19092648-Q1-2021",
+    "hromada_hint": "Дніпровська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/8f8daaf9-26fd-4796-bdb8-b9333f90784c/resource/1784546e-f034-4294-b8b1-586b0276d563/download/19092648-q1-2021.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "19092648-Q2-2021",
+    "hromada_hint": "Дніпровська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/8f8daaf9-26fd-4796-bdb8-b9333f90784c/resource/fd352c7a-e936-4174-9a35-1ef10a28e169/download/19092648-q2-2021.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "19092648-Q3-2021",
+    "hromada_hint": "Дніпровська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/8f8daaf9-26fd-4796-bdb8-b9333f90784c/resource/5b41e145-6da5-477b-8092-53f2a79094f6/download/19092648-q3-2021.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "Сontracts",
+    "hromada_hint": "Володимирська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/a1a86ac0-5c5b-4417-8515-092a721e7e86/resource/8b28f7b0-ee79-463b-b70f-8a883d692a0b/download/1-8-contracts.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Objects",
+    "hromada_hint": "Володимирська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/a1a86ac0-5c5b-4417-8515-092a721e7e86/resource/0efce5c9-8f94-4313-8698-99d5140d6c13/download/1-8-objects.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Дані про розміщення громадських вбиралень 32.xlsx",
+    "hromada_hint": "Бучанська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/ef9d3f99-f61f-40b5-9b34-27b9faa467ff/resource/9f8041ae-fc86-47e7-89ac-14a35bab8e33/download/dani-pro-rozmishchennia-gromadskikh-vbiralen-32.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "dani-pro-rozmishchennia-gromadskikh-vbiralen-32.xlsx",
+    "hromada_hint": "Бучанська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/ef9d3f99-f61f-40b5-9b34-27b9faa467ff/resource/1e0ca869-2b78-48be-b9b9-37fd77d29226/download/dani-pro-rozmishchennia-gromadskikh-vbiralen-32.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "publicToilets.json",
+    "hromada_hint": "Красноїльська Селищна рада Чернівецького району Чернівецької області",
+    "resource_url": "https://data.gov.ua/dataset/133fd714-44c5-42ef-92ff-a068b95a375c/resource/bf7ed66a-fd63-4ae6-b1ea-ce2f82f1409a/download/publictoilets.json",
+    "format": "JSON"
+  },
+  {
+    "title": "publicToilets_2024",
+    "hromada_hint": "Вараська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/0d4783ef-c5b5-42ea-a918-0fd69c6f5723/resource/1a080280-f181-4dd0-9518-51a9d3d900b0/download/rozmishchennia-gromadskikh-vbiralen.xlsx",
+    "format": "ХLSX"
+  },
+  {
+    "title": "publicToilets_2026_1_kv",
+    "hromada_hint": "Вараська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/0d4783ef-c5b5-42ea-a918-0fd69c6f5723/resource/17ca2f1d-ded2-4ed3-9240-e0d74932fa47/download/publictoilets_2026_1_kv.json",
+    "format": "JSON"
+  },
+  {
+    "title": "publicToilets.csv",
+    "hromada_hint": "Солотвинська селищна рада",
+    "resource_url": "https://data.gov.ua/dataset/4056cf47-c0cc-4cbf-9284-373a98c21ac7/resource/90ffa226-fed0-4a4f-a009-f1e71505fd17/download/publictoilets.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Додаток 6 до рішення від 20.12.2019 №7/52-27.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/3983dc05-dd39-43db-8108-a1a9f2aab5de/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 5 до рішення від 20.12.2019 №7/52-27.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/bcae174b-7ea0-4c99-918f-d6d7fa0b210b/download/dodatok-5.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 4 до рішення від 20.12.2019 №7/52-27.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/0be431b4-5cd0-460b-a993-42b221c56ec1/download/dodatok-4.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 20.12.2019 №7/52-27.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/ec3e6ba9-b0a0-42b7-af84-ca3b298d6727/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 20.12.2019 №7/52-27.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/7e4a501f-dc3f-4941-8604-a8d5a1d547fd/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 1 до рішення від 20.12.2019 №7/52-27.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/2a839824-ed50-4148-bc59-b7c28a4be32b/download/dodatok-1.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 20.12.2019 № 7/52-27.doc",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/a53ea335-6236-4e84-9a5a-b94eaab9c668/download/rishennia-vid-20-12-2019-no-7-52-27.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Додаток 6 до рішення від 27.12.2019 №7/53-18.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/d9c26400-8642-41aa-89c0-b91230c6aea8/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 4 до рішення від 27.12.2019 №7/53-18.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/dca09c4f-5182-4de4-b4da-415e4a290ed5/download/dodatok-4.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 27.12.2019 №7/53-18. xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/54060fb7-c025-465c-8e21-f1d64a0e1537/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 27.12.2019 №7/53-18.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/543036e4-8c4e-4439-bd0b-429c4f3d37ce/download/rishennia-vid-27-12-2019-no-7-53-18.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток 6 до рішення від 24.01.2020 №7/54-26.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/8380fa19-4320-4f9f-8baf-d273478a7543/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 4 до рішення від 24.01.2020 №7/54-26.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/bdac928f-6c41-41c7-9931-ae453f3df674/download/dodatok-4.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 24.01.2020 №7/54-26.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/5fa58d87-869c-4cce-ac8b-fb7596059e59/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 24.01.2020 №7/54-26.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/cc367033-6a5b-460f-99be-5c2a8524e1a3/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 1 до рішення від 24.01.2020 №7/54-26.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/5db6a1fe-0d00-40e2-89b8-9af0a4070cbe/download/dodatok-1.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 24.01.2020 №7/54-26.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/0c204715-63d8-46ae-9f6f-9043ef898269/download/rishennia-vid-24-01-2020-no-7-54-26.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток 6 до рішення від 21.02.2020 №7/55-36.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/3bf6def3-76d9-43da-b448-cc4fc662468e/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 5 до рішення від 21.02.2020 №7/55-36.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/b155460b-1943-4c2a-9132-a932fb3e5b25/download/dodatok-5.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 21.02.2020 №7/55-36.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/f1d7c03e-2732-42f7-b3ab-7b521a1a203f/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 21.02.2020 №7/55-36.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/308a26a0-37ed-4e70-8ce9-3d8587ce376b/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 21.02.2020 №7/55-36.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/f884e5dc-cff8-4d4e-b7d0-4555edafd3a4/download/rishennia-vid-21-02-2020-no-7-55-36.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток 6 до рішення від 20.03.2020 №7/56-2.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/4101d9bd-c2d5-4383-90de-5d86fa833a3d/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 5 до рішення від 20.03.2020 №7/56-2.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/8e6af3b6-75af-42f0-be47-ed6075fe0cc7/download/dodatok-5.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 4 до рішення від 20.03.2020 №7/56-2.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/578b7fba-232b-4f4d-af0e-4d30dc5b380c/download/dodatok-4.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 20.03.2020 №7/56-2.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/1c716d6a-d45d-4c88-90c6-0e6e5a2a13ef/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 20.03.2020 №7/56-2.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/8d31a4d5-7278-4a8b-b464-1419b147c8b2/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 1 до рішення від 20.03.2020 №7/56-2.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/e8872d18-2282-482f-ae3c-37490e49e103/download/dodatok-1.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 20.03.2020 №7-56-2.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/c05cf0d5-bc2a-4568-aab3-7bc6d030b99b/download/rishennia-vid-20-03-2020-no-7-56-2.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток 6 до рішення від 15.05.2020 №7/57-32.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/0be6aac8-9465-45ce-91ce-82cd299115b8/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 5 до рішення від 15.05.2020 №7/57-32.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/d2507ce9-8181-437a-96ea-57679e58b758/download/dodatok-5.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 4 до рішення від 15.05.2020 №7/57-32.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/cc5192a0-4b67-4556-a5c8-700436ea5fe8/download/dodatok-4.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 15.05.2020 №7/57-32.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/8391825b-74ff-43ea-bbfd-8da58b0327ea/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 15.05.2020 №7/57-32.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/272c61a9-3cd8-4620-90ac-e466bc3bf5b6/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 1 до рішення від 15.05.2020 №7/57-32.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/11c62ad1-307d-487a-a2f5-fee80f489031/download/dodatok-1.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 15.05.2020 №7/57-32.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/dbf81068-c1dc-4073-a6af-21aaa5552997/download/rishennia-vid-15-05-2020-no-7-57-32.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Пояснювальна записка до рішення від 15.05.2020 №7/57-30.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/15f9310b-4e13-4584-a28f-60fcd55b7e55/download/poiasniuvalna-zapiska.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток до рішення від 15.05.2020 №7/57-30.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/08abcb78-fc9e-4a18-8dec-49e533fcde8b/download/dodatok.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 15.05.2020 №7/57-30.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/537411c3-88d0-4846-b80b-41c90bf0d528/download/rishennia-vid-15-05-2020-no-7-57-30.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Фінансування за 1 квартал 2020 року.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/d872f4fd-83b7-45ee-8e86-6143b2866f8f/download/finansuvannia.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 6 до рішення від 26.06.2020 №7/58-40.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/79f1a650-4f3d-4859-acd9-54501442f9bc/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 5 до рішення від 26.06.2020 №7/58-40.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/77c7d872-a4f7-465e-941a-72b2630c8d42/download/dodatok-5.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 4 до рішення від 26.06.2020 №7/58-40.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/ec335660-920d-46f5-b47d-a799c5e028a6/download/dodatok-4.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 26.06.2020 №7/58-40.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/5e0d30e9-d6f5-4adb-acea-b4dfb6db0876/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 26.06.2020 №7/58-40.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/5606c128-cd26-4083-b4de-e81b2f65d8cf/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 1 до рішення від 26.06.2020 №7/58-40.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/c5e69548-7a10-49b3-9409-50c58e17491f/download/dodatok-1.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 26.06.2020 №7/58-40.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/ba1c18ef-522b-4394-b4a1-e00959ac437c/download/rishennia-vid-26-06-2020-no-7-58-40.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток 6 до рішення від 24.07.2020 №7/59-29.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/e03f71a7-d2d7-4cca-8cf7-48c9810987ec/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 5 до рішення від 24.07.2020 №7/59-29.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/62628c9b-b985-4e32-b7fb-95cee6006ec3/download/dodatok-5.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 4 до рішення від 24.07.2020 №7/59-29.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/78ea0d6a-a0d9-4504-9653-fd56061ff8dc/download/dodatok-4.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 24.07.2020 №7/59-29.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/81ae1c16-69e4-4fef-b9a2-1caac1bb38cd/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 24.07.2020 №7/59-29.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/6266626d-1e7f-48b7-9241-1f26192516cd/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 1 до рішення від 24.07.2020 №7/59-29.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/92d2f002-d721-4c05-9caf-9946168dbc70/download/dodatok-1.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від  24.07.2020 №7/59-29.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/37671cdd-2962-4d2d-95bd-319fe6f5a7db/download/rishennia-vid-24-07-2020-no-7-59-29.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток 6 до рішення від 02.10.2020 №7/60-64.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/4238076a-fcc0-4fd9-9109-dad935fd70bd/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 5 до рішення від 02.10.2020 №7/60-64.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/06c0e1be-b861-4764-ad61-aba59bcd1f7e/download/dodatok-5.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 4 до рішення від 02.10.2020 №7/60-64.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/29cfab45-4f25-4a88-9794-346e894bd5f9/download/dodatok-4.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 02.10.2020 №7/60-64.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/d8d76cdd-c274-47c3-8b6e-c3c05c54b602/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 02.10.2020 №7/60-64.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/ae698b60-aff5-48c1-b906-32a9010a8fc9/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 1 до рішення від 02.10.2020 №7/60-64.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/aa9e64c8-d825-44b9-9bde-9793684de8c9/download/dodatok-1.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 02.10.2020 №7/60-64.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/90c6272e-c0c9-471c-8324-c296db5dfd98/download/rishennia-vid-02-10-2020-no-7-60-64.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Пояснювальна записка до рішення від 02.10.2020 №7/60-51.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/a26cf2d9-2a3c-4695-b359-4a2a7ab153e2/download/poiasniuvalna-zapiska.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Звіт до рішення від 02.10.2020 №7/60-51.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/54a231c9-d126-4f3a-aa26-577e52e6863e/download/zvit.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 02.10.2020 №7/60-51.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/045d1bc8-6751-408e-96d9-5b79a4765174/download/rishennia.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Фінансування за 1 півріччя 2020 року.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/3d18440a-aa6f-4b80-b1a5-2d8bccc58979/download/finansuvannia.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 6 до рішення від 23.10.2020 №7/61-25.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/d17783b5-037a-4201-86e3-542f357c0cde/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 5 до рішення від 23.10.2020 №7/61-25.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/20a378be-3756-4fb5-a05b-fab00d917df5/download/dodatok-5.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 4 до рішення від 23.10.2020 №7/61-25.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/6ecf25d1-1802-4e9a-9717-fa39280e1270/download/dodatok-4.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 23.10.2020 №7/61-25.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/95ff9c88-8f49-442e-9d0c-48c92c7ef04c/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 23.10.2020 №7/61-25.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/b9c40a18-697c-452b-8579-0dfaab0ab5da/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 1 до рішення від 23.10.2020 №7/61-25.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/587bec52-f70f-4812-9f3e-0a82d7d775c4/download/dodatok-1.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 23.10.2020 №7/61-25.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/3980d971-16c7-4753-9283-216544e800a0/download/rishennia.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток 6 до рішення від 20.11.2020 №7/62-21.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/6907322b-8d91-427e-811e-af259c52470e/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 4 до рішення від 20.11.2020 №7/62-21.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/4c274155-b147-4d34-bd10-6079cb7cafa0/download/dodatok-4.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 20.11.2020 №7/62-21.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/11a3686c-9c1a-4c53-be30-b0b08147cc45/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 20.11.2020 №7/62-21.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/e2e52986-0d95-4e3a-a7d9-845c1580ad8a/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 1 до рішення від 20.11.2020 №7/62-21.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/816d7da5-65c6-44a2-bc45-ae4c03dfacc0/download/dodatok-1.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 20.11.2020 №7/62-21.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/31edb1a5-12f8-4b61-ade4-2db456ba23fe/download/rishennia.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Пояснювальна записка до рішення від 20.11.2020 №7/62-17.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/f74d1cba-c782-4e93-96e0-3038a9efe406/download/poiasniuvalna-zapiska.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Звіт до рішення від 20.11.2020 №7/62-17.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/ad60685b-c016-4f8d-94dd-60d26de46129/download/zvit.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 20.11.2020 №7/62-17.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/1b3102ee-1c92-4562-a1b0-8a4c11ae43ec/download/rishennia.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Фінансування за 9 місяців 2020 року.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/8579a9f2-9f2d-4278-b53f-935d1bc0331b/download/finansuvannia.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 6 до рішення від 11.12.2020 № 7/63-28.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/e971e95e-75e2-4894-9850-1f6d31174e01/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 4 до рішення від 11.12.2020 № 7/63-28.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/7b2c2fed-1adc-461f-94d6-167f9c471a80/download/dodatok-4.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 11.12.2020 №7/63-28.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/f62ce76d-ea0d-4d6f-aa81-65faf3801cc0/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 11.12.2020 №7/63-28.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/b6aa7563-d2dd-4b31-b390-07c73b54a4fb/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 1 до рішення від 11.12.2020 №7/63-28.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/15a36151-31c1-4d2e-ac49-bc50d3eca07b/download/dodatok-1.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 11.12.2020 № 7/63-28.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/bcd292b8-459a-4548-bfde-d125bc15241d/download/rishennia.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Додаток 6 до рішення від 22.12.2020 №7/64-48.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/f6821efc-3a57-4405-b7fc-6a8fa32960ef/download/dodatok-6.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 3 до рішення від 22.12.2020 №7/64-48.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/95b90620-ddf5-4c5d-b028-aafe7685d214/download/dodatok-3.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 2 до рішення від 22.12.2020 №7/64-48.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/112ecb20-9c34-4087-8d55-710fbb56ce5b/download/dodatok-2.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Додаток 1 до рішення від 22.12.2020 №7/64-48.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/ac833332-b120-4365-a91f-4780920dabdb/download/dodatok-1.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 22.12.2020 №7/64-48.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/2c6a1be1-c3a2-48d8-9398-68a4f42be551/download/rishennia.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Пояснювальна записка до рішення від 19.02.2021 №7/66-27.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/d863de7f-c4a8-4c9b-88da-3b4e84bdb654/download/poiasniuvalna-zapiska.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Звіт до рішення від 19.02.2021 №7/66-27.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/fffb7000-93f9-4287-89ee-85b796cd9156/download/zvit.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Рішення від 19.02.2021 №7/66-27.docx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/bc41fe06-8243-43ae-ab35-fbca48843d3a/download/rishennia.docx",
+    "format": "DOCX"
+  },
+  {
+    "title": "Фінансування за 2020 рік.xlsx",
+    "hromada_hint": "Вугледарське міське фінансове управління Донецької області",
+    "resource_url": "https://data.gov.ua/dataset/553e6201-0a06-4bba-aaf3-97c29eb57905/resource/204377fd-1d4a-48f5-87e1-5bd3f478c979/download/finansuvannia-za-2020r.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Положення про відділ з  розвитку охорони здоров’я, фізичної культури та спорту Шосткинської міської  територіальної громади",
+    "hromada_hint": "Шосткинська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/e71ae27c-c327-42fd-bdc0-d4d3ea23384b/resource/ab6e766d-3cb8-4220-9515-8bb6b7773efc/download/dodatok_3_polozhennia_pro_viddil_okhoroni_zdorov-ia.rtf",
+    "format": "APPLICATION/RTF"
+  },
+  {
+    "title": "Положення про відділ з розвитку охорони здоров’я, фізичної культури та спорту Шосткинської міської територіальної громади",
+    "hromada_hint": "Шосткинська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/e71ae27c-c327-42fd-bdc0-d4d3ea23384b/resource/3aea0493-fd4e-4cdc-b63b-9fe54f739e30/download/dodatok_3_polozhennia_pro_viddil_okhoroni_zdorov-ia.rtf",
+    "format": "APPLICATION/RTF"
+  },
+  {
+    "title": "Структура відділу з  розвитку охорони здоров’я, фізичної культури та спорту Шосткинської міської територіальної громади.csv",
+    "hromada_hint": "Шосткинська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/e71ae27c-c327-42fd-bdc0-d4d3ea23384b/resource/0fd12458-e6c6-4af9-8583-65596e4bd3cd/download/4-struktura-viddilu-z-rozvitku-okhoroni-zdorovia-fizichnoyi-kulturi-ta-sportu-shostkinskoyi-mis.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Інформація про нормативно-правові засади діяльності  Відділу  з розвитку охорони здоров’я, фізичної культури та спорту Шосткинської міської територіальної громади.xlsx",
+    "hromada_hint": "Шосткинська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/e71ae27c-c327-42fd-bdc0-d4d3ea23384b/resource/71fcb92b-2d37-40fc-bef1-6e0e0456e5af/download/2-informatsiia-pro-normativno-pravovi-zasadi-diialnosti-viddilu-z-rozvitku-okhoroni-zdorovia-f.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Положення про відділ з розвитку охорони здоров’я, фізичної культури та спорту Шосткинської міської територіальної громади, м. Шостка, Інформація про нормативно-правові засади діяльності, Довідник відділу",
+    "hromada_hint": "Шосткинська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/e71ae27c-c327-42fd-bdc0-d4d3ea23384b/resource/4431cedf-d876-43c1-9caf-61546f9d0117/download/polozhennia-pro-viddil-z-rozvitku-okhoroni-zdorovia-fizichnoyi-kulturi-ta-sportu-shostkinskoyi-m.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "publicToilets.",
+    "hromada_hint": "Львівська обласна державна адміністрація",
+    "resource_url": "https://data.loda.gov.ua/dataset/01aa08ed-32f4-4600-930e-c469d6942767/resource/a8126dcb-77fd-45e6-bacb-7ff9ee7cbbdd/download/publictoilets-12.24..csv",
+    "format": "CSV"
+  },
+  {
+    "title": "docMaterials.json",
+    "hromada_hint": "Великокучурівська сільська рада Чернівецької області",
+    "resource_url": "https://data.gov.ua/dataset/77c11f53-5e24-4182-9e85-366a986213df/resource/d6467417-eeb0-47c2-a00f-de89b368a709/download/docmaterials.json",
+    "format": "JSON"
+  },
+  {
+    "title": "power_stations-2024-10-29.csv",
+    "hromada_hint": "Чернівецька міська рада",
+    "resource_url": "https://data.gov.ua/dataset/ab03d594-7493-485c-ae39-36ed2614d03b/resource/cf956721-bd17-4c6f-acbb-44683bd174d3/download/power_stations-2024-10-29.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "power_stations-2025-01-30.csv",
+    "hromada_hint": "Чернівецька міська рада",
+    "resource_url": "https://data.gov.ua/dataset/ab03d594-7493-485c-ae39-36ed2614d03b/resource/72f84d21-f745-4382-8d3e-9f83346c913c/download/power_stations-2025-01-30.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "analiz-vukon-doxodiv-Varash-na- 01.02.2020.xlsx",
+    "hromada_hint": "Вараська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/f02a9ae3-59be-40c5-a3cf-660f85c61759/resource/ee7dc478-d81a-4195-915f-67a8f1d1494b/download/analiz-vukon-doxodiv-varash-na-01-02-2020.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Аналіз виконання бюджету Вараської міської об'єднаної територіальної громади",
+    "hromada_hint": "Вараська міська рада",
+    "resource_url": "https://data.gov.ua/dataset/f02a9ae3-59be-40c5-a3cf-660f85c61759/resource/f11d4111-6f5b-4704-9db5-36d728947f73/download/2022.7z",
+    "format": "7Z"
+  },
+  {
+    "title": "Реєстр містобудівних умов",
+    "hromada_hint": "Варвинська селищна рада Прилуцького району Чернігівської області",
+    "resource_url": "https://data.gov.ua/dataset/00f8873c-5eca-4b6b-9e58-cf022be6919b/resource/f49fdad0-eec6-41b4-8c58-29dab3d964ec/download/reiestr-mistobudivnikh-umov.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Дані про надані будівельні паспорти 2022 року",
+    "hromada_hint": "Варвинська селищна рада Прилуцького району Чернігівської області",
+    "resource_url": "https://data.gov.ua/dataset/8ddf11f3-6dfe-445d-8636-195259b3b963/resource/d0439711-d949-446a-a242-bdfa8fcc48c7/download/dani-pro-nadani-budivelni-pasporti-2019.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "реєстр зобов'язань.xlsx",
+    "hromada_hint": "Комунальне підприємство \"Керуюча компанія \"Господар\" Слобожанської селищної ради",
+    "resource_url": "https://data.gov.ua/dataset/2f4817f1-5e15-4501-8534-7f995566972a/resource/5e2bc61a-36b0-4b37-bd7f-fe17b2c11384/download/reiestr-zobov-iazan.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "реєстр зобов'язань 3 кв 2021.xlsx",
+    "hromada_hint": "Комунальне підприємство \"Керуюча компанія \"Господар\" Слобожанської селищної ради",
+    "resource_url": "https://data.gov.ua/dataset/2f4817f1-5e15-4501-8534-7f995566972a/resource/183ae1e6-7356-40e1-89d5-752b95083016/download/reiestr-zobov-iazan-3-kv-2021.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "textMaterials",
+    "hromada_hint": "Львівська обласна державна адміністрація",
+    "resource_url": "https://data.loda.gov.ua/dataset/1848a082-f8d2-4469-890c-018974624d57/resource/96328794-4521-45ce-950c-3a78e0e90ce2/download/textmaterials.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "textMaterials_dp",
+    "hromada_hint": "Львівська обласна державна адміністрація",
+    "resource_url": "https://data.loda.gov.ua/dataset/1848a082-f8d2-4469-890c-018974624d57/resource/5d0e54e8-6c42-4c12-8937-e0972f71c69d/download/textmaterials-dp.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "perelik_orenda_04.07.2019.xls",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://data.gov.ua/dataset/562156f7-c8a5-45ef-80dd-67576e004155/resource/e676f370-327c-4d69-808a-1c03f3d5566d/download/perelik_orenda_04-07-2019.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Переліл обєктів станом на 04.09.2019",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://data.gov.ua/dataset/562156f7-c8a5-45ef-80dd-67576e004155/resource/ec4fb47d-78e7-414d-8951-344a7bb7b831/download/perelik_orenda.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Перелік об'єктів станом на 28.12.2019",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://data.gov.ua/dataset/562156f7-c8a5-45ef-80dd-67576e004155/resource/309c73e7-bbef-4ac4-b60f-e19be6d49748/download/prymischennia1219.xls",
+    "format": "XLSX"
+  },
+  {
+    "title": "Перелік об'єктів станом на 17.02.2020",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://data.gov.ua/dataset/562156f7-c8a5-45ef-80dd-67576e004155/resource/17b96fcb-58c6-4b14-be02-9f22f8826e50/download/17-02-2020.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Перелік об'єктів станом на 01.02.2021",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://data.gov.ua/dataset/562156f7-c8a5-45ef-80dd-67576e004155/resource/34221484-6b2b-4251-b201-413c0d93ecac/download/vp2021.xls",
+    "format": "XLSX"
+  },
+  {
+    "title": "Балансоутримувач - комунальне підприємство \"Керуюча компанія з обслуговування житлового фонду Печерського району м. Києва\" , телефони для довідок: 254 42 24, 254 52 86, 280 44 53",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://pechersk.kyivcity.gov.ua/files/2021/2/8/1.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Балансоутримувач – КНП «Консультативно-діагностичний центр» Печерського району м. Києва (з фото)",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://pechersk.kyivcity.gov.ua/files/2020/9/4/5.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Балансоутримувач – КНП «Центр первинної медико-санітарної допомоги» Печерського району м. Києва (з фото)",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://pechersk.kyivcity.gov.ua/files/2020/9/4/6.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Балансоутримувач – управління освіти та інноваційного розвитку Печерської районної в місті Києві державної адміністрації (з фото)",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://pechersk.kyivcity.gov.ua/files/2020/9/4/7.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Балансоутримувач – Печерська районна в місті Києві державна адміністрація (з фото)",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://pechersk.kyivcity.gov.ua/files/2020/9/4/8.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Балансоутримувач - комунальне підприємство \"Керуюча компанія з обслуговування житлового фонду Печерського району м. Києва\" , телефони для довідок: 254 42 24, 254 52 86, 280 44 53",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://pechersk.kyivcity.gov.ua/files/2021/8/30/perelik123.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Балансоутримувач - комунальне підприємство \"Керуюча компанія з обслуговування житлового фонду Печерського району м. Києва\" (з фото) , телефони для довідок: 254 42 24, 254 52 86, 280 44 53",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://docs.google.com/spreadsheets/d/1bG6kcrgue9ZvR23x4NwE3EbTzbqJz-Jm/edit?usp=sharing&ouid=115408766315500832556&rtpof=true&sd=true",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "05.04.xlsx",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://data.gov.ua/dataset/562156f7-c8a5-45ef-80dd-67576e004155/resource/8a87469f-62e0-4f16-996d-1202eac96b15/download/05-04.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "05.04.xlsx",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://data.gov.ua/dataset/562156f7-c8a5-45ef-80dd-67576e004155/resource/cfefa277-9f16-4629-9392-7ab0b24842fd/download/05-04.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Балансоутримувач - комунальне підприємство \"Керуюча компанія з обслуговування...",
+    "hromada_hint": "Печерська районна в місті Києві державна адміністрація (більше не оновлюється)",
+    "resource_url": "https://data.gov.ua/dataset/562156f7-c8a5-45ef-80dd-67576e004155/resource/c536ae59-674c-4132-81c6-c7a66262377d/download/keruyucha_02-01-24.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "textMaterials.csv",
+    "hromada_hint": "Кадубовецька сільська рада Чернівецького району Чернівецької області",
+    "resource_url": "https://data.gov.ua/dataset/5eee9776-eef9-41d1-b899-26a164a6934e/resource/130bfe1d-018f-4b84-bf00-b37995f0a743/download/textmaterials.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "grafMaterials.csv",
+    "hromada_hint": "Кадубовецька сільська рада Чернівецького району Чернівецької області",
+    "resource_url": "https://data.gov.ua/dataset/5eee9776-eef9-41d1-b899-26a164a6934e/resource/125bf939-bedd-4e02-a9c7-f4eac32762d0/download/grafmaterials.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Fairs-2023",
+    "hromada_hint": "Львівська міська рада",
+    "resource_url": "https://opendata.city-adm.lviv.ua/dataset/fe8e5f24-c5d6-4d67-9503-8a3b76b94781/resource/56fb9906-3f82-4437-af33-9768536c7c3f/download/fairs2023.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Fairs-2023",
+    "hromada_hint": "Львівська міська рада",
+    "resource_url": "https://opendata.city-adm.lviv.ua/dataset/fe8e5f24-c5d6-4d67-9503-8a3b76b94781/resource/f9c8563c-7689-4aff-bedd-386a316f21ed/download/fairs2023.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Fairs-2024",
+    "hromada_hint": "Львівська міська рада",
+    "resource_url": "https://opendata.city-adm.lviv.ua/dataset/fe8e5f24-c5d6-4d67-9503-8a3b76b94781/resource/aa723596-9c19-4e67-9e53-d8f0bf126704/download/fairs16122024.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Fairs-2024",
+    "hromada_hint": "Львівська міська рада",
+    "resource_url": "https://opendata.city-adm.lviv.ua/dataset/fe8e5f24-c5d6-4d67-9503-8a3b76b94781/resource/955fbe26-a4bc-49a5-b930-1648e68d0b07/download/fairs16122024.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Fairs-2025",
+    "hromada_hint": "Львівська міська рада",
+    "resource_url": "https://opendata.city-adm.lviv.ua/dataset/fe8e5f24-c5d6-4d67-9503-8a3b76b94781/resource/68d7a5d0-85fb-443e-b86d-f44870b98eb1/download/fairs12082025.xls",
+    "format": "XLS"
+  },
+  {
+    "title": "Fairs-2025",
+    "hromada_hint": "Львівська міська рада",
+    "resource_url": "https://opendata.city-adm.lviv.ua/dataset/fe8e5f24-c5d6-4d67-9503-8a3b76b94781/resource/d5d8c6c0-2f94-4dcc-9660-86335d01bfe9/download/fairs12082025.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Structure 2023-2024",
+    "hromada_hint": "Львівська міська рада",
+    "resource_url": "https://opendata.city-adm.lviv.ua/dataset/fe8e5f24-c5d6-4d67-9503-8a3b76b94781/resource/a081b075-b4c2-4a93-b54f-c5a6ef58891c/download/structurefairs.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Structure 2025",
+    "hromada_hint": "Львівська міська рада",
+    "resource_url": "https://opendata.city-adm.lviv.ua/dataset/fe8e5f24-c5d6-4d67-9503-8a3b76b94781/resource/7050c702-9104-4cd0-aeae-9a4a2259107f/download/structurefairs2025.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Дислокація літніх сезонних майданчиків на території Жовтоводської міської територіальної громади станом на 01.07.2021 року",
+    "hromada_hint": "Виконавчий комітет Жовтоводської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/58c6782c-7bc9-4e64-bb05-d0b7b03aebef/resource/8266c34d-0da0-47ec-9f46-6502172aac14/download/litni-maidanchiki.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Фінансова звітність ДП \"Іскра\" на 30.09.2018",
+    "hromada_hint": "Фонд державного майна України",
+    "resource_url": "https://data.gov.ua/dataset/7c385bff-c226-4438-b9a4-32f5a5026cc3/resource/274dc52c-3f00-4930-9107-3b932c474499/download/852909.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "Фінансова звітність ДП \"Вінницький завод \"Кристал\" на 30.09.2018",
+    "hromada_hint": "Фонд державного майна України",
+    "resource_url": "https://data.gov.ua/dataset/7c385bff-c226-4438-b9a4-32f5a5026cc3/resource/3e8b8530-0a37-4565-a88e-5d4e8ce53aa0/download/33323245.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "Фінансова звітність ДП \"Лиманське державне виробниче сільськогосподарсько-рибоводне підприємство\" на 30.09.2018",
+    "hromada_hint": "Фонд державного майна України",
+    "resource_url": "https://data.gov.ua/dataset/7c385bff-c226-4438-b9a4-32f5a5026cc3/resource/d4079b21-20e9-48fd-9bcc-0671e27406cd/download/24339861.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "Фінансова звітність ДП Львівський науково-дослідний і проєктний інститут \"ЛьвівбудмНДІпроект\" на 30.09.2018",
+    "hromada_hint": "Фонд державного майна України",
+    "resource_url": "https://data.gov.ua/dataset/7c385bff-c226-4438-b9a4-32f5a5026cc3/resource/bb5635cc-c798-47cb-9919-f93367d5e529/download/5516406.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "Фінансова звітність ДП \"Завод \"Радіореле\" на 30.09.2018",
+    "hromada_hint": "Фонд державного майна України",
+    "resource_url": "https://data.gov.ua/dataset/7c385bff-c226-4438-b9a4-32f5a5026cc3/resource/572810d2-131c-44fb-8c06-2a143a912bc2/download/32444638.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "Фінансова звітність ДП \"Науково-дослідна виробничо-технічна агенція \"Стратегія заЄДРПОУ регіонального розвитку\" на 30.09.2018",
+    "hromada_hint": "Фонд державного майна України",
+    "resource_url": "https://data.gov.ua/dataset/7c385bff-c226-4438-b9a4-32f5a5026cc3/resource/1e069f0b-b332-4105-acb8-c6fc12276fb1/download/35829997.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "Фінансова звітність ДП \"УКРДНТЦАТП\" на 30.09.2018",
+    "hromada_hint": "Фонд державного майна України",
+    "resource_url": "https://data.gov.ua/dataset/7c385bff-c226-4438-b9a4-32f5a5026cc3/resource/1c3cabf0-6689-4126-885f-2d8b4a117901/download/1886767.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "Фінансова звітність за 2018 рік суб’єктів господарювання державного сектору економіки, які належать до сфери управління Фонду державного майна України",
+    "hromada_hint": "Фонд державного майна України",
+    "resource_url": "https://data.gov.ua/dataset/7c385bff-c226-4438-b9a4-32f5a5026cc3/resource/3c32f5a8-08bf-4361-8018-1995a0f367bd/download/fin_zvit_za_2018.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "Фінансова звітність за 2019 рік суб’єктів господарювання державного сектору економіки, які належать до сфери управління Фонду державного майна України",
+    "hromada_hint": "Фонд державного майна України",
+    "resource_url": "https://data.gov.ua/dataset/7c385bff-c226-4438-b9a4-32f5a5026cc3/resource/744e2299-28fb-4ffd-84ef-3d9adf0d65dd/download/fin_zvit_za_2019.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "Фінансова звітність за 2020 рік суб’єктів господарювання державного сектору економіки, які належать до сфери управління Фонду державного майна України",
+    "hromada_hint": "Фонд державного майна України",
+    "resource_url": "https://data.gov.ua/dataset/7c385bff-c226-4438-b9a4-32f5a5026cc3/resource/458fa7eb-1a1e-46ca-9663-ea8b7daab8a3/download/fin_zvit_za_2020.zip",
+    "format": "ZIP"
+  },
+  {
+    "title": "Перелік проектів-переможців 2018 року",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/141119369941373_p18_1o/",
+    "format": "HTML"
+  },
+  {
+    "title": "Рішення від 17.11.2017 №880-20/VІІ \"Про партиципаторне бюджетування (бюджет участі) у місті Кам'янське на 2017-2021 роки\"",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/20118293063840_p18_1o/",
+    "format": "HTML"
+  },
+  {
+    "title": "Підсумковий звіт бюджету участі у 2018 році",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/141119275876716_p18_1o/",
+    "format": "HTML"
+  },
+  {
+    "title": "Реєстр поданих проектів у 2019 році",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/151119580375122_p18_1o/",
+    "format": "HTML"
+  },
+  {
+    "title": "Реєстр проектів на Конкурс 2019 року",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/151119487022298_p18_1o/",
+    "format": "HTML"
+  },
+  {
+    "title": "Перелік проектів-переможців Конкурсу 2019 року",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/151119340926486_p18_1o/",
+    "format": "HTML"
+  },
+  {
+    "title": "Рішення від 04.10.2019 №1550-36/VII \"Про внесення змін до рішення міської ради від 17.11.2017 №880-20/VII \"Про партиципаторне бюджетування (бюджет участі) у місті Кам`янське на 2017-2021 роки\" (зі змінами)\"",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "http://so.kam.gov.ua/ua/osxfile/pg/20719481324862_d1_1o/",
+    "format": "HTML"
+  },
+  {
+    "title": "Перебіг строків циклу бюджету участі у 2020 році",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/281219795554502_p18_1o/",
+    "format": "HTML"
+  },
+  {
+    "title": "Протокол засідання Коордради від 19.02.2020 №01",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/230220240537610_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Реєстр проєктів, категорію яких змінено 2020 рік",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/230220532415102_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Реєстр проєктів, які пройшли попередню перевірку 2020 рік",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/230220743414268_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 19.03.2020 №2",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/200320183528288_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Реєстр проєктів на Конкурс 2020 року",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/200520355858926_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 08.05.2020 №3",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/200520342608035_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 20.05.2020 №4",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/200520181280968_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 16.06.2020 №4",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/170620631217059_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 26.06.2020 №5",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/300620347670885_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Перелік проєктів-переможців 2020 року",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/300620598869517_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 15.02.2021 №1",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/170221919089277_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "План промокампанії бюджету участі на 2021 рік",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/160221423400603_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Перебіг циклу бюджету участі у 2021 році",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/160221245620227_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Рішення від 26.02.2021 № 107-05/VIII  \"Про внесення змін до рішення міської ради від 17.11.2017 №880-20/VІІ зі змінами\"",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/90321770449611_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 12.04.2021 №2",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/150421229696762_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Реєстр поданих проєктів 2021 року",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/150421666762458_p18_2o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 27.04.2021 №3",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/280421675080719_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Реєстр проектів на Конкурс 2021 року",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/280421280565717_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 20.05.2021 №4",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/240521709960537_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Перелік проєктів-переможців  у 2021 році",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/240521223058112_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Рішення від 23.06.2021 № 204-08/VIII \"Про внесення змін до рішення міської ради від 17.11.2017 №880-20/VІІ зі змінами\"",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/20721672253180_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 27.07.2021 №5",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/170221919089277_p18_6o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "План промокампанії пілоту \"Бюджет участі. Діти\" на 2021 рік",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/160221453975593_p18_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 18.08.2021 №6",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/fb65ebef-da01-4c6b-a55c-8629d992c936/resource/98c24ffc-5ae1-4957-9444-4b07daea922d/download/protokol-zasidannia-koordinatsiinoyi-radi-no-6.doc",
+    "format": "DOC"
+  },
+  {
+    "title": "Протокол засідання Коордради від 07.09.2021 №7",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/fb65ebef-da01-4c6b-a55c-8629d992c936/resource/e02248f9-a2ea-4135-9bde-b8cedd12430c/download/protokol-zasidannia-kr-no-07.doc",
+    "format": "HTML"
+  },
+  {
+    "title": "Протокол засідання Коордради від 09.11.2021 №8",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/170221919089277_p18_9o/",
+    "format": "HTML"
+  },
+  {
+    "title": "Перелік шкільних проєктів-переможців у 2021 році",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/111121677591861_p18_1o/",
+    "format": "HTTPS"
+  },
+  {
+    "title": "Рішення №392-14/VІІІ від 22.12.2021 \"Про партиципаторне бюджетування (бюджет участі) Кам’янської міської територіальної громади на 2022–2026 роки\"",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "http://so.kam.gov.ua/ua/osxfile/pg/291221795179770_d1_1o/",
+    "format": "UNKNOWN"
+  },
+  {
+    "title": "Протокол засідання Коордради від 03.02.2022 №1",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://kam.gov.ua/ua/osxfile/pg/310122121695372_p18_1o/",
+    "format": "HTTPS"
+  },
+  {
+    "title": "Рішення міської ради з питань бюджету участі",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/fb65ebef-da01-4c6b-a55c-8629d992c936/resource/e7d80ba0-8181-4b93-a895-f2de5c7fcaf6/download/decisions-bu-2023.csv",
+    "format": "XLS"
+  },
+  {
+    "title": "Проєкти Конкурсу «Бюджет участі. МІСТО» 2022",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/fb65ebef-da01-4c6b-a55c-8629d992c936/resource/9f9a7744-ce4a-46e7-b067-fdc10f303486/download/projects-bum-2022.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Перелік протоколів засідання координаційної ради з питань партиципаторного бюджетування (бюджету участі) за 2023 рік",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/fb65ebef-da01-4c6b-a55c-8629d992c936/resource/cc5c6496-55d7-4b33-bd05-1c8d1eb3f803/download/protocols-coord-council-bu-2023.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "projectsBU.csv",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/fb65ebef-da01-4c6b-a55c-8629d992c936/resource/70317c17-a79d-4e9b-87a0-6e75aca8de8f/download/projectsbu.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "protocols_coord_council_bu_2024.csv",
+    "hromada_hint": "Департамент економічного розвитку Кам'янської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/fb65ebef-da01-4c6b-a55c-8629d992c936/resource/a1f05faa-60b9-4456-a734-c20ece665b9a/download/protocols_coord_council_bu_2024.csv",
+    "format": "CSV"
+  },
+  {
+    "title": "Програма розвитку земельних відносин на території Славутської міської об’єднаної територіальної громади на 2020-2023 роки",
+    "hromada_hint": "Виконавчий комітет Славутської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/6cd2f3a7-8484-4f5c-9a1d-bedef48dfab0/resource/1a613a75-cd72-44c5-8a8e-efd91e96fe6e/download/program.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Перелік цільових програм",
+    "hromada_hint": "Відділ культури і туризму Новоград-Волинської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/46631ba0-e8c4-4489-97d9-17fe9ed01dc7/resource/5894a647-2704-44bb-948b-1e959e9ab141/download/perelik-tsilovikh-program.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "паспорти -biudzhetnikh-program.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/888a1c93-484a-4f07-8ee4-cad9a2fca146/download/pasporti-biudzhetnikh-program.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Зміна  №2  ПАСПОРТ 2019  туризм.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/c9dd5999-0cd7-4723-bfb9-570428d875be/download/zmina-no-2-pasport-2019-turizm.xls",
+    "format": "XLSX"
+  },
+  {
+    "title": "Зміни №4 до ПАСПОРТА   основний 2019.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/7920f1aa-1603-4417-ba01-bd2a9ef1b6a9/download/zmini-no-4-do-pasporta-osnovnii-2019.xls",
+    "format": "XLSX"
+  },
+  {
+    "title": "ПАСПОРТ Стратегія міста  2710180.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/9b00bb7b-d3f6-453b-86ee-3d7edaa246f6/download/pasport-strategiia-mista-2710180.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Основний  ПАСПОРТ 2710160.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/e4272924-fc8b-4cab-bf3d-f2518ca5fabc/download/osnovnii-pasport-2710160.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ПАСПОРТ  Туризм 2717622.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/ea2c3ca3-0687-4edb-ab1b-0c7da39b6233/download/pasport-turizm-2717622.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ПАСПОРТ Енергозаб.   2717640.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/6f98abbd-5abe-48bf-9f24-f963d0fd98e1/download/pasport-energozab-2717640.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ПАСПОРТ основний.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/f106904d-1c7a-4350-9b23-907066494da1/download/pasport-osnovnii.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ПАСПОРТ інформатизації.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/7dfcf6c9-b40b-4010-9e63-f12f98e460f4/download/pasport-informatizatsiyi.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ЗМІНИ  ДО ПАСПОРТА  Туризм 2717622.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/6e301ea8-3ab4-4e8c-ada0-35bdbc5c7a92/download/zmini-do-pasporta-turizm-2717622.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ЗМІНИ  № 1 до ПАСПОРТА    2717520.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/67e18ae1-698d-4ff4-b16e-2a08c7d4aeee/download/zmini-no-1-do-pasporta-2717520.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ЗМІНИ №2 ДО  ПАСПОРТА 2710160.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/331a94de-5944-47b7-903f-92a2d84246e6/download/zmini-no-2-do-pasporta-2710160.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ПАСПОРТ 2717610  xls.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/16a994a6-20e2-4cae-9b20-21465a7fc88c/download/pasport-2717610-xls.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ЗМІНИ  ДО ПАСПОРТА  Туризм 2717622.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/f99c22a5-b44d-4fe5-bbc4-0e77e37b7908/download/zmini-do-pasporta-turizm-2717622.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Зміни до Паспорта програми",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/05cd8304-ddcf-41f8-8336-e3a19d2c9b0b/download/zmini-do-pasporta-turizm-2717622.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ЗМІНИ №3 ДО  ПАСПОРТА 2710160.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/3deb8320-c9d2-4b14-9504-4c638103486b/download/zmini-no-3-do-pasporta-2710160.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "2710160 запит форма 1.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/0f7a32f0-ad57-4f22-8e7e-b1fdf7ce6793/download/2710160-zapit-forma-1.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "BZ_forma3 (1).xls 2710160.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/35aa7636-49f0-4f19-bf4b-66a112bfd22f/download/bz_forma3-1-xls-2710160.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "BZ_forma3 енергозбереження.xls 2717640.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/b0ffce89-0c70-407b-8938-41abd311cf9b/download/bz_forma3-energozberezhennia-xls-2717640.xls",
+    "format": ".XLS"
+  },
+  {
+    "title": "BZ_forma3 інформатизація.xls 2717520.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/fa4cea53-e17f-4c41-b0e2-fecd723271b1/download/bz_forma3-informatizatsiia-xls-2717520.xls",
+    "format": ".XLS"
+  },
+  {
+    "title": "BZ_forma3 підприємництво.xls 2717610  2021 р..xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/7c43b069-9614-456d-b1c5-59448ffaabcc/download/bz_forma3-pidpriiemnitstvo-xls-2717610-2021-r.xls",
+    "format": ".XLS"
+  },
+  {
+    "title": "BZ_forma3 Туризм.xls 27177622.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/d96880cf-cca1-4a5b-ab4e-4a46ebd236ad/download/bz_forma3-turizm-xls-27177622.xls",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Бюджетна пропоз.2021 КПК 2710160.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/6242f38c-ed28-47c2-a4f8-bd92d29d0922/download/biudzhetna-propoz-2021-kpk-2710160.xls",
+    "format": ".XLS"
+  },
+  {
+    "title": "Бюджетний запит інформатизація 2517520 на 2021-202 р.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/137640b4-1514-4e71-bada-e05cc514ac87/download/biudzhetnii-zapit-informatizatsiia-2517520-na-2021-202-r.xls",
+    "format": ".XLS"
+  },
+  {
+    "title": "бюджетні запити. Енергозбереження   2021 рік doc.doc",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/26facb98-fbaa-44c5-8c54-1560d89c92a6/download/biudzhetni-zapiti-energozberezhennia-2021-rik-doc.doc",
+    "format": ".XLS"
+  },
+  {
+    "title": "бюджетні запити. ПІДПРИЄМНИЦТВА   2021 рік doc.doc",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/b61d6bc4-1e75-4ff7-b0c3-320f69fbd6ab/download/biudzhetni-zapiti-pidpriiemnitstva-2021-rik-doc.doc",
+    "format": ".XLSX"
+  },
+  {
+    "title": "бюджетні запити.2021рік 2717622  туризмdoc.doc",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/faa6e9dc-4b1e-4e3c-a929-6370a2413cdc/download/biudzhetni-zapiti-2021rik-2717622-turizmdoc.doc",
+    "format": ".XLS"
+  },
+  {
+    "title": "ПАСПОРТ  2710160  основний.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/88354b75-4b5e-4c63-8274-034ec4a61d73/download/pasport-2710160-osnovnii.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Паспорт  2717622  2021 туризм.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/237d603b-20c9-45b8-86b0-68f748151708/download/pasport-2717622-2021-turizm.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Паспорт  енергозбереження  2021ShablPasport201.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/6beb1a5f-1b33-45d9-85e4-76dc09910b3a/download/pasport-energozberezhennia-2021shablpasport201.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ПАСПОРТ  ІНФОРМАТИЗАЦІЇ  2021 РІКShablPasport201.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/a486b712-60db-4994-8b59-2eb369787e67/download/pasport-informatizatsiyi-2021-rikshablpasport201.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ЗМІНИ ДО  ПАСПОРТА бюджетної програми  2710180.xls",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/d3234f26-a563-4833-b281-15bfb6b23fc9/download/2710180-strategiia.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Зміни до Паспорта бюджетної програми \" Реалізація програм і заходів в галузі туризму та курортів \"(2717622)",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/f507e0a4-570e-47ac-aeba-89f87e82acf4/download/2717622-turizm.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "2717520 ынформатизацыя.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/ac28d1c9-a4c5-4bd2-9a03-3a0aaad6c8b0/download/2717520-ynformatizatsyia.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "2717622 туризм.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/697e85b0-2977-452b-a41a-80fea8404226/download/2717622-turizm.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "2710160 основиний.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/66cf4579-7a78-40cf-98e5-2fe2ff0f089f/download/2710160-osnovinii.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "2717622 туризм зміни.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/3e13e1b5-58eb-40f6-8434-ccf80f102b9d/download/2717622-turizm-zmini.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Бюджетний запит 2710160.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/2c2442c8-96cf-4339-954a-08e62523c5cb/download/biudzhetnii-zapit-2710160.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Бюджетний запит 2717520.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/cbf60fea-fcef-44a7-b4f5-63692b07a59e/download/biudzhetnii-zapit-2717520.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Бюджетний запит 2717622.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/eb08cbaf-fc60-4729-854d-2d9e46b85977/download/biudzhetnii-zapit-2717622.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Бюджетний запит 2717640.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/7ed232df-e7d7-4c7f-b8d4-0b7062ae4e40/download/biudzhetnii-zapit-2717640.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Додаток 3 2710160 керівництво.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/8324beb9-3242-4dc4-bbaa-3a03e0137631/download/dodatok-3-2710160-kerivnitstvo.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Додаток 3 2717520 інформатизація.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/407addda-965c-4e51-8331-11833c85644b/download/dodatok-3-2717520-informatizatsiia.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Додаток 3 2717622 туризм.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/d9bc0c7c-849e-4c58-bed7-7a6db7fc93b9/download/dodatok-3-2717622-turizm.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Додаток 3 2717640 енергозбереження.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/4f423cd1-da6f-49a8-aedd-954c0cb20c34/download/dodatok-3-2717640-energozberezhennia.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Додаток №1.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/e0e8b8f4-9c8e-41e1-ac0d-c4f263cd54bc/download/dodatok-no-1.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Паспорт   2717622  туризм  2021.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/697a33cf-86a7-4c99-89d2-f4381f6bfee7/download/pasport-2717622-turizm-2021.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Паспорт  2717640 енергозбереження docx.docx.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/ae32f535-eb25-47d5-93b1-e0ae20af3590/download/pasport-2717640-energozberezhennia-docx-docx.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "2717622 туризм.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/bd46e0a3-9b31-4ac8-a172-a18a70da38f7/download/2717622-turizm.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "паспорт енергозбереження.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/c3a8289d-7ef2-4b8b-b1c0-b4b433dc8609/download/pasport-energozberezhennia.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "паспорт інформатизації.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/394474ea-f4d1-4028-a0d4-d1be8e5a3f8a/download/pasport-informatizatsiyi.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "паспорт основний.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/f411c58b-d749-4070-b6a0-94d5251b7903/download/pasport-osnovnii.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "МАТЕРІАЛЬНИЙ РЕЗЕРВ.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/f6829fb4-ce2c-4ec6-9ff4-8b4c7eda4310/download/materialnii-rezerv.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "зміни Паспорт 'Керівництво і управління у відповідній сфері у містах (місті Києві), селищах, селах, територіальних громадах  xlsx.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/26c8849b-2aa3-49d8-a2c6-2975812f5cfb/download/zmini-pasport-kerivnitstvo-i-upravlinnia-u-vidpovidnii-sferi-u-mistakh-misti-kiievi-selishchakh.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Зміни до Паспорта Програми  'Заходи із запобігання та ліквідації надзвичайних ситуацій та наслідків стихійного лиха.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/d5beb7d2-3388-447b-8515-fb1dc493ace7/download/pasport-zakhodi-iz-zapobigannia-ta-likvidatsiyi-nadzvichainikh-situatsii-ta-naslidkiv-stikhiino.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "зміни до бюдж.програми на 2022.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/ef016abd-b9b2-46c2-818f-036986ad6b8d/download/zmini-do-biudzh-programi-na-2022.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Національна програма інформатизації на 2023 рік",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/a56e8985-0492-4b1e-99a1-7bea3781c081/download/pasport-2717520.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "ПАСПОРТ   Програми розвитку туризму на 2023 рік",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/be6b099c-b22d-473e-adfc-dbcf9b49b5bb/download/pasport-2717622-201.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Бюджетна Програма 'Керівництво і управління у відповідній сфері у містах (місті Києві), селищах, селах, територіальних громадах\" на 2023 рік",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/dc6b7d78-85aa-4e2a-a527-01339f0a5dbb/download/pasport-2710160.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "паспорт бюджетної програми 'Заходи із запобігання та ліквідації надзвичайних ситуацій та наслідків стихійного лиха\" на 2023 рік",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/0907615c-85e3-4337-b11a-905d5497213f/download/pasport-2718110.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Програма Сприяння розвитку малого та середнього підприємництва на 2023 рік",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/b2048274-4702-440c-9ffe-332854394f67/download/pasport-2717610.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Керівництво і управління у відповідній сфері у містах (місті Києві), селищах, селах, територіальних громадах",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/1f2373b3-91fb-428d-8d35-fab512d5486b/download/2710160.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "2717520.xlsx",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/ff389af7-5c06-4b1e-af75-972a639c6da8/download/2717520.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Сприяння розвитку малого та середнього підприємництва",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/da3ba2fc-115c-427a-a611-f18555c0b355/download/2717610.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Реалізація програм і заходів в галузі туризму та курортів",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/52662605-a6d2-47c0-afbd-51beda309995/download/2717622.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Заходи із запобігання та ліквідації надзвичайних ситуацій та наслідків стихійного лиха",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/070c8fea-c0dd-4a38-a7cd-34865e46b63d/download/2718110.xlsx",
+    "format": ".XLSX"
+  },
+  {
+    "title": "Сприяння розвитку малого та середнього підприємництва",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/d1bde49c-8f51-4f87-a9e7-a05517eec65b/download/2717610.xlsx",
+    "format": "XLSX"
+  },
+  {
+    "title": "Заходи із запобігання та ліквідації надзвичайних ситуацій та наслідків стихійного лиха",
+    "hromada_hint": "Управління економічного розвитку міста Ужгородської міської ради",
+    "resource_url": "https://data.gov.ua/dataset/2daa6441-f673-4224-bd27-cc3782dada0b/resource/fdfe8648-e68f-4fc7-a027-8f93f7da41e8/download/2718110.xlsx",
+    "format": "XLSX"
+  }
+]
