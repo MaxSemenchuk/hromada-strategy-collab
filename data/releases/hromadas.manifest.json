@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-23T19:38:00.049Z",
+  "generatedAt": "2026-07-23T19:47:05.553Z",
   "source": "nocodb:live",
-  "totalRows": 1480,
-  "textMinedRows": 79,
+  "totalRows": 1482,
+  "textMinedRows": 81,
   "schema": "see docs/hromadas-schema.md",
   "license": "CC BY 4.0 — see DATA-LICENSE.md"
 }
