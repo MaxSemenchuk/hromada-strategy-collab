@@ -83,10 +83,12 @@ scripts/
 ├── import-hromadas-metadata.ts          # bulk PATCH/POST of KATOTTG+population metadata
 ├── export-hromadas.ts                   # live NocoDB -> data/releases/hromadas.json (the public dataset)
 ├── hromada-output/                      # per-hromada structured JSON (as produced, gitignored pattern removed — kept for provenance)
+├── retrieval/                           # CKAN search, download-raw, fetch-mss-registry, batch queue
 └── analysis/                            # one-off Python: KATOTTG merge, TF-IDF matching, embedding matching, MSS graph MVP
 data/
 ├── sources/       # reference registries (KATOTTG classifier extract, Tags table dump)
 ├── releases/      # THE dataset — canonical, current, CC BY 4.0 (see data/releases/MANIFEST.md)
+├── cache/         # gitignored re-fetchable sources (KSE pulls, МСС registry XLSX, …)
 └── research-log/  # dated growth snapshots (7→13→23→30→46→54 hromadas) — provenance, not the dataset
 docs/
 ├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
@@ -101,10 +103,16 @@ REFERENCES.md                     # theoretical grounding — network governance
 LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see License & data below
 ```
 
-Raw scraped source documents (PDF/DOC/HTML corpora fetched during retrieval) were
-**not** migrated — they're superseded by the structured extraction already stored in
-NocoDB, and mostly re-fetchable from source. Ask if you want a specific hromada's raw
-source preserved.
+Raw strategy PDFs/DOC/HTML and the МСС registry XLSX are kept as a **local
+cache** for re-extraction and alternate analyses — not committed, not part of
+the public release. Populate with:
+
+```bash
+yarn download-raw --all          # queue URLs → scripts/retrieval/raw/ (gitignored)
+yarn fetch-mss-registry          # data.gov.ua registry → data/cache/mss/
+```
+
+See [scripts/retrieval/README.md](scripts/retrieval/README.md).
 
 ## Setup
 
