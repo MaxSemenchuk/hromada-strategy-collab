@@ -93,9 +93,8 @@ docs/
 ├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
 ├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub) as candidate enrichment sources
 ├── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case
-├── kse-issue-draft.md            # ready-to-paste GitHub issue for KSE cross-link (draft)
-├── hromada-project-passport.html # stakeholder-facing project brief (Ukrainian)
-└── mss-graph-mvp.html            # early force-graph visualization prototype
+├── hromada-project-passport.html # stakeholder-facing project brief (UK/EN language switch)
+└── mss-graph-mvp.html            # early force-graph visualization prototype (UK/EN)
 internal/
 └── outreach-messages.md          # draft stakeholder outreach copy — not part of the dataset, not for public reuse
 REFERENCES.md                     # theoretical grounding — network governance, IMC, institutional diversity

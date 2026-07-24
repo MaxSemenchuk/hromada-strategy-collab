@@ -189,7 +189,7 @@ Run `yarn test-known-pairs` after changing the matcher.
 
 ## Open threads (as of 2026-07-23)
 
-- [ ] File cross-link issue on KSE repo ([kse-issue-draft.md](kse-issue-draft.md))
+- [x] File cross-link issue on KSE repo — [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) (2026-07-24)
 - [ ] Re-scrutinize `internal/outreach-messages.md` for overclaims
 - [ ] Resolve 5–7 snowball retrieval targets or accept ~57-hromada pilot cap
 - [ ] Length-normalization / hub-hromada handling (Poltava-Zhytomyr-type risk)
