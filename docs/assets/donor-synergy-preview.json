@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T08:35:34.241394+00:00",
+  "generatedAt": "2026-07-24T09:12:23.991354+00:00",
   "method": "v6 matching edges × DonorsPrograms tags",
   "caveat": "Matching scores are hypotheses unless known=true. DonorsPrograms absence means not found in tagging pass, not 'no program'. Pilot corpus: only text-mined Goals enter matching.",
   "totals": {
@@ -29,7 +29,7 @@
           "short": "Великогаївська",
           "oblast": "Тернопільська область",
           "degree": 67,
-          "source_quality": "partial"
+          "source_quality": "full-strategy"
         },
         {
           "name": "Вижницька міська територіальна громада",
@@ -969,7 +969,7 @@
           "short": "Тульчинська",
           "oblast": "Вінницька область",
           "degree": 67,
-          "source_quality": "partial"
+          "source_quality": "full-strategy"
         }
       ],
       "within_portfolio": [
@@ -1258,7 +1258,7 @@
           "short": "Тульчинська",
           "oblast": "Вінницька область",
           "degree": 67,
-          "source_quality": "partial"
+          "source_quality": "full-strategy"
         },
         {
           "name": "Харківська міська територіальна громада",
@@ -1756,7 +1756,7 @@
           "short": "Батуринська",
           "oblast": "Чернігівська область",
           "degree": 67,
-          "source_quality": "partial"
+          "source_quality": "full-strategy"
         },
         {
           "name": "Бердичівська міська територіальна громада",
@@ -2084,7 +2084,7 @@
           "short": "Тульчинська",
           "oblast": "Вінницька область",
           "degree": 67,
-          "source_quality": "partial"
+          "source_quality": "full-strategy"
         }
       ],
       "within_portfolio": [

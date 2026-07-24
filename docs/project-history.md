@@ -269,6 +269,22 @@ co-sharers. v6 mixes them — strong signal, easy to misread.**
 
 ---
 
+
+### Manual strategy ingest (2026-07-24)
+
+User downloaded Cloudflare-blocked sources into a local folder and uploaded 13 files.
+Mapped and structured in-session:
+
+| Hromada | Change |
+|---------|--------|
+| Тульчинська | partial → **full-strategy** (Strategy 2030, 4 goals) |
+| Лихівська | partial (1 priority) → **full-strategy** (3 priorities) |
+| Великогаївська | partial → **full-strategy** (DOBRE DOCX enrich) |
+| Батуринська | partial → **full-strategy** (full DOC body) |
+| Вінницька | Goals expanded to all 6 Strategy 3.0 priorities |
+
+Also cached (already full in release): Кривий Ріг (broken PDF text layer), Луцьк, Мукачево, Слобожанська, Вижницька (PDF+DOC), Херсон (PESR programme 2026–28, not template strategy). Missing from upload: Зноб-Новгородська, Новомосковська. Inventory: `scripts/retrieval/manual-ingest-2026-07-24.json`.
+
 ## Open threads (as of 2026-07-24)
 
 - [ ] File cross-link issue on KSE repo ([kse-issue-draft.md](kse-issue-draft.md))

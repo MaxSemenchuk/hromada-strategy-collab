@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T08:35:34.241394+00:00",
+  "generatedAt": "2026-07-24T09:12:23.991354+00:00",
   "method": "v6 matching edges × DonorsPrograms tags",
   "caveat": "Matching scores are hypotheses unless known=true. DonorsPrograms absence means not found in tagging pass, not 'no program'. Pilot corpus: only text-mined Goals enter matching.",
   "totals": {
@@ -28,7 +28,7 @@
           "name": "Великогаївська сільська територіальна громада",
           "short": "Великогаївська",
           "oblast": "Тернопільська область",
-          "source_quality": "partial",
+          "source_quality": "full-strategy",
           "degree": 67
         },
         {
@@ -66,7 +66,7 @@
           "short": "Великогаївська",
           "oblast": "Тернопільська область",
           "degree": 67,
-          "source_quality": "partial"
+          "source_quality": "full-strategy"
         },
         {
           "name": "Вижницька міська територіальна громада",
@@ -1707,7 +1707,7 @@
           "name": "Тульчинська міська територіальна громада",
           "short": "Тульчинська",
           "oblast": "Вінницька область",
-          "source_quality": "partial",
+          "source_quality": "full-strategy",
           "degree": 67
         },
         {
@@ -1766,7 +1766,7 @@
           "short": "Тульчинська",
           "oblast": "Вінницька область",
           "degree": 67,
-          "source_quality": "partial"
+          "source_quality": "full-strategy"
         },
         {
           "name": "Херсонська міська територіальна громада",
@@ -2246,7 +2246,7 @@
           "name": "Тульчинська міська територіальна громада",
           "short": "Тульчинська",
           "oblast": "Вінницька область",
-          "source_quality": "partial",
+          "source_quality": "full-strategy",
           "degree": 67
         },
         {
@@ -2277,7 +2277,7 @@
           "short": "Тульчинська",
           "oblast": "Вінницька область",
           "degree": 67,
-          "source_quality": "partial"
+          "source_quality": "full-strategy"
         },
         {
           "name": "Харківська міська територіальна громада",
@@ -3136,7 +3136,7 @@
           "name": "Батуринська міська територіальна громада",
           "short": "Батуринська",
           "oblast": "Чернігівська область",
-          "source_quality": "partial",
+          "source_quality": "full-strategy",
           "degree": 67
         },
         {
@@ -3188,7 +3188,7 @@
           "short": "Батуринська",
           "oblast": "Чернігівська область",
           "degree": 67,
-          "source_quality": "partial"
+          "source_quality": "full-strategy"
         },
         {
           "name": "Бердичівська міська територіальна громада",
@@ -3705,7 +3705,7 @@
           "name": "Тульчинська міська територіальна громада",
           "short": "Тульчинська",
           "oblast": "Вінницька область",
-          "source_quality": "partial",
+          "source_quality": "full-strategy",
           "degree": 67
         }
       ],
@@ -3750,7 +3750,7 @@
           "short": "Тульчинська",
           "oblast": "Вінницька область",
           "degree": 67,
-          "source_quality": "partial"
+          "source_quality": "full-strategy"
         }
       ],
       "within_portfolio": [
