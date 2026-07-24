@@ -205,16 +205,17 @@
   canvas#c:active { cursor: grabbing; }
   .leaflet-container { background: var(--map-bg); font: inherit; }
   .leaflet-popup-content-wrapper {
-    background: var(--site-surface);
-    color: var(--site-ink);
-    border: 1px solid var(--site-border);
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
     border-radius: 10px;
-    box-shadow: var(--site-shadow);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(37, 99, 235, 0.12);
   }
-  .leaflet-popup-tip { background: var(--site-surface); }
-  .leaflet-popup-content { margin: 0.65rem 0.8rem; font-size: 0.82rem; line-height: 1.4; }
-  .leaflet-popup-content a { color: var(--site-accent); }
-  .leaflet-popup-content .meta { color: var(--site-muted); font-size: 0.75rem; }
+  .leaflet-popup-tip { background: #ffffff; }
+  .leaflet-popup-content { margin: 0.65rem 0.8rem; font-size: 0.82rem; line-height: 1.4; color: #0f172a; }
+  .leaflet-popup-content strong { color: #0f172a; }
+  .leaflet-popup-content a { color: #2563eb; }
+  .leaflet-popup-content .meta { color: #475569; font-size: 0.75rem; }
   .oblast-label {
     background: transparent; border: 0; box-shadow: none;
     color: rgba(233,230,222,0.55); font-size: 11px; font-weight: 600;
@@ -222,10 +223,18 @@
   }
   #tooltip {
     display: none; position: absolute; pointer-events: none; z-index: 500;
-    background: var(--site-surface); border: 1px solid var(--site-border); border-radius: 8px;
-    color: var(--site-ink); box-shadow: var(--site-shadow);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #0f172a;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(37, 99, 235, 0.12);
     padding: 0.55rem 0.7rem; font-size: 0.8rem; max-width: 300px; line-height: 1.35;
   }
+  #tooltip strong { color: #0f172a; font-weight: 700; }
+  #tooltip .tip-meta { color: #475569; font-size: 0.75rem; }
+  #tooltip .tip-id { color: #64748b; font-size: 0.72rem; font-variant-numeric: tabular-nums; }
+  #tooltip .tip-links { color: #2563eb; font-size: 0.72rem; margin-top: 0.25rem; display: block; }
+  canvas#c { background: #0d1116; }
 </style>
 </head>
 <body>
@@ -662,11 +671,19 @@ window.addEventListener('mousemove', (ev) => {
     tip.style.left = (w.sx + 14) + 'px';
     tip.style.top = (w.sy + 14) + 'px';
     const title = hover.full_name || hover.label;
+    const metaBits = [];
+    if (hover.oblast) metaBits.push(hover.oblast);
+    if (hover.type) metaBits.push(hover.type);
+    if (hover.in_pin) metaBits.push('є угода МСС');
+    if (hover.in_corpus) metaBits.push('стратегія в корпусі');
+    if (hover.degree) metaBits.push(hover.degree + ' звʼязків у реєстрі');
     const links = [];
-    if (hover.portal_url) links.push('портал: ' + hover.portal_url);
-    if (hover.strategy_url) links.push('стратегія: ' + hover.strategy_url);
-    tip.innerHTML = `<strong>${esc(title)}</strong><br/>${esc(hover.oblast || '')}<br/><span style="color:var(--site-faint)">${esc(hover.katottg)}</span>`
-      + (links.length ? `<br/><span style="color:var(--site-accent);font-size:0.72rem">${esc(links.join(' · '))}</span>` : '');
+    if (hover.portal_url) links.push('Портал громади');
+    if (hover.strategy_url) links.push('Стратегія / джерело');
+    tip.innerHTML = `<strong>${esc(title)}</strong>`
+      + (metaBits.length ? `<div class="tip-meta">${esc(metaBits.join(' · '))}</div>` : '')
+      + (hover.katottg ? `<div class="tip-id">${esc(hover.katottg)}</div>` : '')
+      + (links.length ? `<span class="tip-links">${esc(links.join(' · '))}</span>` : '');
   } else tip.style.display = 'none';
 });
 canvas.addEventListener('wheel', (ev) => {
@@ -745,7 +762,8 @@ function strokeEdge(e, ax, ay, bx, by) {
 function drawGraph() {
   if (mode !== 'graph') return;
   tickGraph();
-  ctx.clearRect(0, 0, width, height);
+  ctx.fillStyle = '#0d1116';
+  ctx.fillRect(0, 0, width, height);
   ctx.save();
   ctx.translate(width / 2 + camX, height / 2 + camY);
   ctx.scale(scale, scale);
@@ -764,9 +782,14 @@ function drawGraph() {
     ctx.fillStyle = corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff');
     ctx.fill();
     if (hi) {
-      ctx.font = `${10 / scale}px -apple-system, sans-serif`;
-      ctx.fillStyle = '#e9e6de';
-      ctx.fillText(n.label, n.x + 6 / scale, n.y + 3 / scale);
+      const label = n.full_name || n.label || '';
+      const fs = 11 / scale;
+      ctx.font = `600 ${fs}px Manrope, "Segoe UI", sans-serif`;
+      ctx.lineWidth = 3 / scale;
+      ctx.strokeStyle = 'rgba(13, 17, 22, 0.92)';
+      ctx.fillStyle = '#f8fafc';
+      ctx.strokeText(label, n.x + 7 / scale, n.y + 3 / scale);
+      ctx.fillText(label, n.x + 7 / scale, n.y + 3 / scale);
     }
   }
   ctx.restore();
