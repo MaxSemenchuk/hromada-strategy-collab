@@ -180,9 +180,16 @@
       if (x == null || Number.isNaN(x)) return "—";
       return (x * 100).toFixed(1) + "%";
     }
+    function trackLabel(t) {
+      if (t === "thematic") return "похожа стратегія";
+      if (t === "operational") return "зручний сусід";
+      if (t === "mixed") return "mixed";
+      return t || "—";
+    }
     function row(p) {
       return "<tr>"
         + "<td><span class=\"pair\">" + p.a_short + " ↔ " + p.b_short + "</span></td>"
+        + "<td>" + trackLabel(p.track) + "</td>"
         + "<td class=\"num\">" + pct(p.score) + "</td>"
         + "<td class=\"num\">" + pct(p.goals_cosine) + "</td>"
         + "<td class=\"num\">" + pct(p.geo_score) + "</td>"
@@ -192,14 +199,22 @@
     fetch("assets/matches-preview.json")
       .then(function (r) { return r.json(); })
       .then(function (data) {
+        var trackNote = "";
+        if (data.tracks && data.tracks.counts) {
+          trackNote = "<br/><strong>Треки:</strong> thematic "
+            + data.tracks.counts.thematic + " · operational "
+            + data.tracks.counts.operational + " · mixed "
+            + data.tracks.counts.mixed
+            + " — один score не означає «strategy match».";
+        }
         document.getElementById("method-box").innerHTML =
           "<strong>Метод:</strong> <code>" + data.method + "</code><br/>"
           + "Пар у релізі: <strong>" + data.pairCount + "</strong> · знімок: "
-          + (data.generatedAt || "—");
+          + (data.generatedAt || "—") + trackNote;
         document.getElementById("known-body").innerHTML =
-          data.known.map(row).join("") || "<tr><td colspan=\"5\">Немає</td></tr>";
+          data.known.map(row).join("") || "<tr><td colspan=\"6\">Немає</td></tr>";
         document.getElementById("top-body").innerHTML =
-          data.top.map(row).join("") || "<tr><td colspan=\"5\">Немає</td></tr>";
+          data.top.map(row).join("") || "<tr><td colspan=\"6\">Немає</td></tr>";
       })
       .catch(function (err) {
         document.getElementById("method-box").textContent =
