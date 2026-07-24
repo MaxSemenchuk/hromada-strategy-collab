@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Синергія для фондів — портфель і мережевий ефект</title>
+  <meta name="description" content="Де інвестиція фонду в громади / стратегії дає найбільший мережевий ефект: спільні наступні гранти всередині портфеля і мости до сусідніх кластерів."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/site.css"/>
+  <style>
+    body {
+      background:
+        radial-gradient(820px 440px at 0% -10%, rgba(37, 99, 235, 0.10), transparent 55%),
+        radial-gradient(640px 380px at 100% 0%, rgba(2, 132, 199, 0.08), transparent 50%),
+        var(--site-bg);
+      color: var(--site-ink);
+      font-family: var(--site-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { max-width: 920px; margin: 0 auto; padding: 2.4rem 1.5rem 2rem; }
+    .eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--site-accent); font-weight: 700; display: block; margin-bottom: 0.7rem;
+    }
+    h1 {
+      font-family: var(--site-font); font-weight: 750; letter-spacing: -0.02em;
+      font-size: clamp(1.55rem, 3.4vw, 2.15rem); line-height: 1.22; margin: 0 0 0.75rem;
+      max-width: 18ch; text-wrap: balance;
+    }
+    .lede { color: var(--site-muted); max-width: 62ch; margin: 0 0 1.35rem; }
+    .lenses {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;
+      margin-bottom: 1.8rem;
+    }
+    @media (max-width: 760px) { .lenses { grid-template-columns: 1fr; } }
+    .lens {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 12px; padding: 0.95rem 1rem; box-shadow: var(--site-shadow);
+    }
+    .lens .kicker {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--site-secondary); font-weight: 750; margin-bottom: 0.35rem;
+    }
+    .lens h2 {
+      font-family: var(--site-font); font-weight: 700; font-size: 1.02rem;
+      letter-spacing: -0.02em; margin: 0 0 0.35rem;
+    }
+    .lens p { margin: 0; font-size: 0.88rem; color: var(--site-muted); }
+
+    .panel {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 14px; padding: 1.1rem 1.15rem 1.25rem;
+      box-shadow: var(--site-shadow); margin-bottom: 1.6rem;
+    }
+    .panel label {
+      display: block; font-size: 0.72rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--site-faint); font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    select {
+      width: 100%; max-width: 28rem; font: inherit; font-weight: 650;
+      padding: 0.65rem 0.8rem; border-radius: 10px;
+      border: 1px solid var(--site-border); background: #fff; color: var(--site-ink);
+    }
+    .coverage {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.55rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 640px) { .coverage { grid-template-columns: repeat(2, 1fr); } }
+    .cov {
+      text-align: center; padding: 0.7rem 0.45rem;
+      border-radius: 10px; background: var(--site-accent-soft);
+      border: 1px solid color-mix(in srgb, var(--site-accent) 18%, var(--site-border));
+    }
+    .cov .num {
+      display: block; font-variant-numeric: tabular-nums;
+      font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em;
+    }
+    .cov .lbl { font-size: 0.72rem; color: var(--site-muted); }
+
+    section { margin-bottom: 2rem; }
+    .section-kicker {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--site-faint); margin: 0 0 0.35rem;
+    }
+    h2.sec {
+      font-family: var(--site-font); font-weight: 750; letter-spacing: -0.02em;
+      font-size: 1.22rem; margin: 0 0 0.45rem;
+    }
+    .sec-lede { color: var(--site-muted); font-size: 0.92rem; margin: 0 0 0.9rem; max-width: 58ch; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td {
+      padding: 0.6rem 0.65rem; border-bottom: 1px solid var(--site-rule);
+      text-align: left; vertical-align: top;
+    }
+    th {
+      font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--site-faint); font-weight: 700;
+    }
+    td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+    .pair { font-weight: 650; color: var(--site-ink); }
+    .tag {
+      font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase;
+      font-weight: 700; white-space: nowrap;
+    }
+    .tag.known { color: var(--site-secondary); }
+    .tag.hyp { color: var(--site-accent); }
+    .empty {
+      font-size: 0.92rem; color: var(--site-muted);
+      padding: 0.85rem 0; border-top: 1px dashed var(--site-rule);
+    }
+    .caveat {
+      font-size: 0.85rem; color: var(--site-faint); font-style: italic;
+      margin-top: 1rem; padding-top: 0.85rem; border-top: 1px dashed var(--site-rule);
+    }
+    .members {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.35rem;
+    }
+    .chip {
+      font-size: 0.78rem; padding: 0.28rem 0.55rem; border-radius: 8px;
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      color: var(--site-muted);
+    }
+    .chip strong { color: var(--site-ink); font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="eyebrow">Для фондів і донорських програм</span>
+    <h1>Де інвестиція дає мережевий ефект</h1>
+    <p class="lede">
+      Фонди вже фінансують громади — часто саме розробку стратегій.
+      Той самий корпус стратегій + мережа МСС підказує, <em>де наступний грант
+      підсилить уже вкладене</em>: спільний проєкт між «своїми» громадами
+      або міст до кластера, з яким портфель ще не з’єднаний.
+    </p>
+
+    <div class="lenses" aria-label="Три лінзи аналізу">
+      <div class="lens">
+        <div class="kicker">1 · Портфель</div>
+        <h2>Всередині програми</h2>
+        <p>Пари вже профінансованих громад зі схожими цілями — кандидати на спільний наступний грант / МСС.</p>
+      </div>
+      <div class="lens">
+        <div class="kicker">2 · Міст</div>
+        <h2>За межі портфеля</h2>
+        <p>Сильний матч, де одна громада — ваша, друга — ні. Інвестиція може закрити «дірку» в мережі.</p>
+      </div>
+      <div class="lens">
+        <div class="kicker">3 · Хаб</div>
+        <h2>Точки важеля</h2>
+        <p>Громади з багатьма гіпотетичними зв’язками в matching-графі — пріоритет для peer-learning / anchor-партнера.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <label for="program-select">Програма / фонд (теги DonorsPrograms)</label>
+      <select id="program-select" disabled>
+        <option>Завантаження…</option>
+      </select>
+      <div class="coverage" id="coverage" aria-live="polite">
+        <div class="cov"><span class="num" id="c-tagged">—</span><span class="lbl">позначено в базі</span></div>
+        <div class="cov"><span class="num" id="c-goals">—</span><span class="lbl">зі стратегією (Goals)</span></div>
+        <div class="cov"><span class="num" id="c-within">—</span><span class="lbl">пар усередині</span></div>
+        <div class="cov"><span class="num" id="c-bridge">—</span><span class="lbl">мостових пар</span></div>
+      </div>
+    </div>
+
+    <section>
+      <p class="section-kicker">Лінза 1</p>
+      <h2 class="sec">Синергія всередині портфеля</h2>
+      <p class="sec-lede">Обидві громади вже в програмі — логічний наступний крок: спільна заявка, а не два паралельні проєкти.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Пара</th>
+              <th>Статус</th>
+              <th>Трек</th>
+              <th class="num">Score</th>
+              <th class="num">Goals</th>
+            </tr>
+          </thead>
+          <tbody id="within-body"><tr><td colspan="5">Завантаження…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-kicker">Лінза 2</p>
+      <h2 class="sec">Мости — куди варто розширити портфель</h2>
+      <p class="sec-lede">Одна сторона вже у вас; друга — сильний кандидат за стратегією / географією / мережею МСС. Це про важіль, не про «покрити всіх».</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>У портфелі</th>
+              <th>Зовні</th>
+              <th>Статус</th>
+              <th>Трек</th>
+              <th class="num">Score</th>
+              <th class="num">Goals</th>
+            </tr>
+          </thead>
+          <tbody id="bridge-body"><tr><td colspan="6">Завантаження…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-kicker">Лінза 3</p>
+      <h2 class="sec">Хаби в matching-графі</h2>
+      <p class="sec-lede" id="hubs-lede">Громади програми з найбільшою кількістю ребер у пілотному matching (не МСС-реєстр).</p>
+      <div class="members" id="hubs"></div>
+      <p class="section-kicker" style="margin-top:1.2rem">У корпусі з Goals</p>
+      <div class="members" id="members"></div>
+    </section>
+
+    <p class="caveat" id="caveat">
+      Matching scores — гіпотези, доки <code>known: true</code>. Відсутність тега програми ≠ «громада без донора»
+      (підлога покриття тегів). Для повного портфеля потрібне ширше покриття стратегій саме «ваших» громад —
+      зараз це демонстрація підходу на пілотній вибірці.
+    </p>
+  </div>
+
+  <p class="site-footer-note">
+    Дані: <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases">donor-synergy.json</a> ·
+    <a href="matches.html">Кандидати</a> ·
+    <a href="hromada-project-passport.html">Паспорт</a>
+  </p>
+
+  <script src="assets/nav.js" data-active="funds"></script>
+  <script>
+    function pct(x) {
+      if (x == null || Number.isNaN(x)) return "—";
+      return (x * 100).toFixed(1) + "%";
+    }
+    function trackLabel(t) {
+      if (t === "thematic") return "похожа стратегія";
+      if (t === "operational") return "зручний сусід";
+      if (t === "mixed") return "mixed";
+      return t || "—";
+    }
+    function statusTag(known) {
+      return known
+        ? '<span class="tag known">✓ known</span>'
+        : '<span class="tag hyp">гіпотеза</span>';
+    }
+    function esc(s) {
+      return String(s == null ? "" : s)
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    var DATA = null;
+
+    function renderProgram(prog) {
+      document.getElementById("c-tagged").textContent = prog.tagged;
+      document.getElementById("c-goals").textContent = prog.with_goals;
+      document.getElementById("c-within").textContent = prog.within_edge_count;
+      document.getElementById("c-bridge").textContent = prog.bridge_edge_count;
+
+      var within = prog.within_portfolio || [];
+      var bridges = prog.bridges || [];
+
+      document.getElementById("within-body").innerHTML = within.length
+        ? within.map(function (e) {
+            return "<tr>"
+              + "<td><span class=\"pair\">" + esc(e.a_short) + " ↔ " + esc(e.b_short) + "</span></td>"
+              + "<td>" + statusTag(e.known) + "</td>"
+              + "<td>" + esc(trackLabel(e.track)) + "</td>"
+              + "<td class=\"num\">" + pct(e.score) + "</td>"
+              + "<td class=\"num\">" + pct(e.goals_cosine) + "</td>"
+              + "</tr>";
+          }).join("")
+        : "<tr><td colspan=\"5\"><div class=\"empty\">Немає пар у пілотному matching між позначеними громадами цієї програми"
+          + (prog.with_goals === 0 ? " — у корпусі ще немає їхніх Goals." : ".")
+          + "</div></td></tr>";
+
+      document.getElementById("bridge-body").innerHTML = bridges.length
+        ? bridges.map(function (e) {
+            return "<tr>"
+              + "<td><span class=\"pair\">" + esc(e.in_portfolio_short) + "</span></td>"
+              + "<td><span class=\"pair\">" + esc(e.outside_short) + "</span></td>"
+              + "<td>" + statusTag(e.known) + "</td>"
+              + "<td>" + esc(trackLabel(e.track)) + "</td>"
+              + "<td class=\"num\">" + pct(e.score) + "</td>"
+              + "<td class=\"num\">" + pct(e.goals_cosine) + "</td>"
+              + "</tr>";
+          }).join("")
+        : "<tr><td colspan=\"6\"><div class=\"empty\">Немає мостових гіпотез для цієї програми в поточному корпусі.</div></td></tr>";
+
+      var hubs = prog.hubs || [];
+      document.getElementById("hubs").innerHTML = hubs.length
+        ? hubs.map(function (h) {
+            return '<span class="chip"><strong>' + esc(h.short) + "</strong> · deg "
+              + h.degree + (h.oblast ? " · " + esc(h.oblast.replace(" область", "")) : "")
+              + "</span>";
+          }).join("")
+        : '<span class="chip">Немає громад програми в matching-графі</span>';
+
+      var members = prog.members_with_goals || [];
+      document.getElementById("members").innerHTML = members.length
+        ? members.map(function (m) {
+            return '<span class="chip"><strong>' + esc(m.short) + "</strong>"
+              + (m.oblast ? " · " + esc(m.oblast.replace(" область", "")) : "")
+              + "</span>";
+          }).join("")
+        : '<span class="chip">Поки немає позначених громад із Goals у пілоті</span>';
+    }
+
+    fetch("assets/donor-synergy-preview.json")
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        DATA = data;
+        var sel = document.getElementById("program-select");
+        sel.innerHTML = "";
+        data.programs.forEach(function (p, i) {
+          var opt = document.createElement("option");
+          opt.value = String(i);
+          opt.textContent = p.program + " · " + p.tagged + " громад"
+            + (p.with_goals ? " · " + p.with_goals + " у корпусі" : " · немає Goals у пілоті");
+          sel.appendChild(opt);
+        });
+        sel.disabled = false;
+        // Prefer a program with rich pilot overlap for first view
+        var prefer = data.programs.findIndex(function (p) {
+          return p.program === "GIZ" && p.with_goals > 0;
+        });
+        if (prefer < 0) {
+          prefer = data.programs.findIndex(function (p) { return p.with_goals > 0; });
+        }
+        if (prefer < 0) prefer = 0;
+        sel.value = String(prefer);
+        renderProgram(data.programs[prefer]);
+        sel.addEventListener("change", function () {
+          renderProgram(data.programs[Number(sel.value)]);
+        });
+        if (data.caveat) {
+          document.getElementById("caveat").textContent = data.caveat
+            + " Повний шар: data/releases/donor-synergy.json.";
+        }
+      })
+      .catch(function (err) {
+        document.getElementById("within-body").innerHTML =
+          "<tr><td colspan=\"5\">Не вдалося завантажити donor-synergy-preview.json: "
+          + esc(String(err)) + "</td></tr>";
+      });
+  </script>
+</body>
+</html>

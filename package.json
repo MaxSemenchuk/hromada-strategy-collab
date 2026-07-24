@@ -17,6 +17,7 @@
     "fetch-mss-registry": "tsx scripts/retrieval/fetch-mss-registry.ts",
     "match": "python3 scripts/analysis/match.py",
     "export-matching-edges": "python3 scripts/analysis/export_edges.py",
+    "donor-synergy": "python3 scripts/analysis/donor_synergy.py",
     "test-known-pairs": "python3 scripts/analysis/test_known_pairs.py",
     "test-tracks": "python3 scripts/analysis/test_tracks.py",
     "graph-pin-matching": "python3 scripts/analysis/build_pin_matching_graph.py"

@@ -1,0 +1,8 @@
+{
+  "generatedAt": "2026-07-24T08:35:34.241394+00:00",
+  "source": "hromadas.json DonorsPrograms + matching-edges.json",
+  "programCount": 9,
+  "taggedHromadas": 172,
+  "license": "CC BY 4.0 — see DATA-LICENSE.md",
+  "warning": "Matching scores are hypotheses unless known=true. DonorsPrograms absence means not found in tagging pass, not 'no program'. Pilot corpus: only text-mined Goals enter matching."
+}
