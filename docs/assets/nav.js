@@ -3,13 +3,11 @@
     { href: "index.html", id: "home", label: "Огляд" },
     { href: "hromada-project-passport.html", id: "passport", label: "Паспорт" },
     { href: "matches.html", id: "matches", label: "Кандидати" },
-    { href: "mss-pin-matching-graph.html", id: "map", label: "Карта МСС" },
-    { href: "mss-graph-mvp.html", id: "graph", label: "Граф (MVP)" }
+    { href: "mss-pin-matching-graph.html", id: "map", label: "Карта МСС" }
   ];
 
   var script = document.currentScript;
   var active = (script && script.getAttribute("data-active")) || "home";
-  var theme = (script && script.getAttribute("data-theme")) || "light";
 
   function fileName(path) {
     var parts = (path || "").split("/");
@@ -24,7 +22,7 @@
   });
 
   var nav = document.createElement("nav");
-  nav.className = "site-nav" + (theme === "dark" ? " theme-dark" : "");
+  nav.className = "site-nav";
   nav.setAttribute("aria-label", "Розділи сайту");
 
   var brand = document.createElement("a");
