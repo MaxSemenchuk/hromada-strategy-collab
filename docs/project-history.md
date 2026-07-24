@@ -332,7 +332,7 @@ Added derived **`PortalUrl`** on release rows (official hromada homepage when
 ## Stakeholder artifacts
 
 Canonical leave-behind is the **GitHub Pages site** rooted at [`docs/`](./)
-(shared nav: О проєкті · кандидати · фонди · карта):
+(shared nav: О проєкті · кандидати · фонди · карта · outreach):
 
 **https://maxsemenchuk.github.io/hromada-strategy-collab/**
 
@@ -341,6 +341,7 @@ Canonical leave-behind is the **GitHub Pages site** rooted at [`docs/`](./)
 | Landing («О проєкті») | [index.html](index.html) |
 | Matching candidates | [matches.html](matches.html) |
 | Funds portfolio | [funds.html](funds.html) |
+| Outreach drafts (all audiences) | [outreach.html](outreach.html) |
 | PIN map + overlays | [mss-pin-matching-graph.html](mss-pin-matching-graph.html) |
 | Legacy passport URL | [hromada-project-passport.html](hromada-project-passport.html) → redirects to index |
 

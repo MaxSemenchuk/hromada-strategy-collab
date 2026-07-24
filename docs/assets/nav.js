@@ -3,7 +3,8 @@
     { href: "index.html", id: "home", label: "О проєкті" },
     { href: "matches.html", id: "matches", label: "Кандидати" },
     { href: "funds.html", id: "funds", label: "Фонди" },
-    { href: "mss-pin-matching-graph.html", id: "map", label: "Карта МСС" }
+    { href: "mss-pin-matching-graph.html", id: "map", label: "Карта МСС" },
+    { href: "outreach.html", id: "outreach", label: "Outreach" }
   ];
 
   var script = document.currentScript;
