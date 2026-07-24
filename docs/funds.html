@@ -147,9 +147,9 @@
 </head>
 <body>
   <div class="page">
-    <span class="eyebrow">Для фондів і донорських програм</span>
-    <h1>Куди не фінансувати двічі</h1>
-    <p class="lede">
+    <span class="eyebrow" data-i18n="eyebrow">Для фондів і донорських програм</span>
+    <h1 data-i18n="h1">Куди не фінансувати двічі</h1>
+    <p class="lede" data-i18n-html="lede">
       «Синергія» тут — не красиве слово. Це конкретна логіка грошей:
       якщо ви вже вклали в громади A і B (навіть лише в їхні стратегії),
       а їхні цілі збігаються — наступний грант часто має сенс як <em>один спільний</em>,
@@ -157,15 +157,15 @@
     </p>
 
     <div class="example">
-      <h2>Приклад без жаргону</h2>
-      <p>
+      <h2 data-i18n="ex.h2">Приклад без жаргону</h2>
+      <p data-i18n-html="ex.p1">
         Уявімо: програма профінансувала розробку стратегій у Ніжині й Козельці.
         Обидві пишуть про туризм на козацькій спадщині — і вже мають реальну угоду МСС
         («Місцями козацької сили»). <strong>Синергія всередині портфеля</strong> =
         наступний грант на спільний турмаршрут / інфоцентр для пари, а не окремі
         «розвиток туризму» в кожній громаді.
       </p>
-      <p>
+      <p data-i18n-html="ex.p2">
         <strong>Міст:</strong> Батурин у тій самій угоді, але умовно ще не в портфелі.
         Додати Батурин — не «ще одна громада», а закрити дірку в уже працюючому кластері.
         <strong>Хаб:</strong> громада з багатьма гіпотетичними зв’язками — зручний
@@ -173,117 +173,243 @@
       </p>
     </div>
 
-    <div class="lenses" aria-label="Три способи читати портфель">
+    <div class="lenses" data-i18n-aria="lenses.aria" aria-label="Три способи читати портфель">
       <div class="lens">
-        <div class="kicker">1 · Усередині</div>
-        <h2>Спільний наступний грант</h2>
-        <p>Обидві громади вже «ваші» і схожі за цілями → один проєкт / МСС замість дублювання.</p>
+        <div class="kicker" data-i18n="lens1.k">1 · Усередині</div>
+        <h2 data-i18n="lens1.h">Спільний наступний грант</h2>
+        <p data-i18n="lens1.p">Обидві громади вже «ваші» і схожі за цілями → один проєкт / МСС замість дублювання.</p>
       </div>
       <div class="lens">
-        <div class="kicker">2 · Міст</div>
-        <h2>Куди розширитись</h2>
-        <p>Сильний матч portfolio↔зовні: нова інвестиція з’єднує кластери, а не додає ізольовану точку.</p>
+        <div class="kicker" data-i18n="lens2.k">2 · Міст</div>
+        <h2 data-i18n="lens2.h">Куди розширитись</h2>
+        <p data-i18n="lens2.p">Сильний матч portfolio↔зовні: нова інвестиція з’єднує кластери, а не додає ізольовану точку.</p>
       </div>
       <div class="lens">
-        <div class="kicker">3 · Хаб</div>
-        <h2>Якір у мережі</h2>
-        <p>Громада з багатьма зв’язками в matching — пріоритет для навчання інших у портфелі.</p>
+        <div class="kicker" data-i18n="lens3.k">3 · Хаб</div>
+        <h2 data-i18n="lens3.h">Якір у мережі</h2>
+        <p data-i18n="lens3.p">Громада з багатьма зв’язками в matching — пріоритет для навчання інших у портфелі.</p>
       </div>
     </div>
 
     <div class="panel">
-      <label for="program-select">Програма / фонд (теги DonorsPrograms)</label>
+      <label for="program-select" data-i18n="select.label">Програма / фонд (теги DonorsPrograms)</label>
       <select id="program-select" disabled>
-        <option>Завантаження…</option>
+        <option data-i18n="loading">Завантаження…</option>
       </select>
       <div class="coverage" id="coverage" aria-live="polite">
-        <div class="cov"><span class="num" id="c-tagged">—</span><span class="lbl">позначено в базі</span></div>
-        <div class="cov"><span class="num" id="c-goals">—</span><span class="lbl">зі стратегією (Goals)</span></div>
-        <div class="cov"><span class="num" id="c-within">—</span><span class="lbl">пар усередині</span></div>
-        <div class="cov"><span class="num" id="c-bridge">—</span><span class="lbl">мостових пар</span></div>
+        <div class="cov"><span class="num" id="c-tagged">—</span><span class="lbl" data-i18n="cov.tagged">позначено в базі</span></div>
+        <div class="cov"><span class="num" id="c-goals">—</span><span class="lbl" data-i18n="cov.goals">зі стратегією (Goals)</span></div>
+        <div class="cov"><span class="num" id="c-within">—</span><span class="lbl" data-i18n="cov.within">пар усередині</span></div>
+        <div class="cov"><span class="num" id="c-bridge">—</span><span class="lbl" data-i18n="cov.bridge">мостових пар</span></div>
       </div>
     </div>
 
     <section>
-      <p class="section-kicker">Лінза 1</p>
-      <h2 class="sec">Пари всередині портфеля</h2>
-      <p class="sec-lede">Обидві вже профінансовані. Питання: чи є сенс у спільному наступному гранті / МСС замість двох окремих.</p>
+      <p class="section-kicker" data-i18n="s1.k">Лінза 1</p>
+      <h2 class="sec" data-i18n="s1.h">Пари всередині портфеля</h2>
+      <p class="sec-lede" data-i18n="s1.lede">Обидві вже профінансовані. Питання: чи є сенс у спільному наступному гранті / МСС замість двох окремих.</p>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Пара</th>
-              <th>Статус</th>
-              <th>Трек</th>
-              <th class="num">Score</th>
-              <th class="num">Goals</th>
+              <th data-i18n="th.pair">Пара</th>
+              <th data-i18n="th.status">Статус</th>
+              <th data-i18n="th.track">Трек</th>
+              <th class="num" data-i18n="th.score">Score</th>
+              <th class="num" data-i18n="th.goals">Goals</th>
             </tr>
           </thead>
-          <tbody id="within-body"><tr><td colspan="5">Завантаження…</td></tr></tbody>
+          <tbody id="within-body"><tr><td colspan="5" data-i18n="loading">Завантаження…</td></tr></tbody>
         </table>
       </div>
     </section>
 
     <section>
-      <p class="section-kicker">Лінза 2</p>
-      <h2 class="sec">Мости — куди варто розширити портфель</h2>
-      <p class="sec-lede">Одна сторона вже у вас; друга — сильний кандидат за стратегією / географією / мережею МСС. Це про важіль, не про «покрити всіх».</p>
+      <p class="section-kicker" data-i18n="s2.k">Лінза 2</p>
+      <h2 class="sec" data-i18n="s2.h">Мости — куди варто розширити портфель</h2>
+      <p class="sec-lede" data-i18n="s2.lede">Одна сторона вже у вас; друга — сильний кандидат за стратегією / географією / мережею МСС. Це про важіль, не про «покрити всіх».</p>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>У портфелі</th>
-              <th>Зовні</th>
-              <th>Статус</th>
-              <th>Трек</th>
-              <th class="num">Score</th>
-              <th class="num">Goals</th>
+              <th data-i18n="th.in">У портфелі</th>
+              <th data-i18n="th.out">Зовні</th>
+              <th data-i18n="th.status">Статус</th>
+              <th data-i18n="th.track">Трек</th>
+              <th class="num" data-i18n="th.score">Score</th>
+              <th class="num" data-i18n="th.goals">Goals</th>
             </tr>
           </thead>
-          <tbody id="bridge-body"><tr><td colspan="6">Завантаження…</td></tr></tbody>
+          <tbody id="bridge-body"><tr><td colspan="6" data-i18n="loading">Завантаження…</td></tr></tbody>
         </table>
       </div>
     </section>
 
     <section>
-      <p class="section-kicker">Лінза 3</p>
-      <h2 class="sec">Хаби в matching-графі</h2>
-      <p class="sec-lede" id="hubs-lede">Громади програми з найбільшою кількістю ребер у пілотному matching (не МСС-реєстр).</p>
+      <p class="section-kicker" data-i18n="s3.k">Лінза 3</p>
+      <h2 class="sec" data-i18n="s3.h">Хаби в matching-графі</h2>
+      <p class="sec-lede" id="hubs-lede" data-i18n="s3.lede">Громади програми з найбільшою кількістю ребер у пілотному matching (не МСС-реєстр).</p>
       <div class="members" id="hubs"></div>
-      <p class="section-kicker" style="margin-top:1.2rem">У корпусі з Goals</p>
+      <p class="section-kicker" style="margin-top:1.2rem" data-i18n="s3.members">У корпусі з Goals</p>
       <div class="members" id="members"></div>
     </section>
 
-    <p class="caveat" id="caveat">
+    <p class="caveat" id="caveat" data-i18n-html="caveat">
       Matching scores — гіпотези, доки <code>known: true</code>. Відсутність тега програми ≠ «громада без донора»
       (підлога покриття тегів). Для повного портфеля потрібне ширше покриття стратегій саме «ваших» громад —
       зараз це демонстрація підходу на пілотній вибірці.
     </p>
   </div>
 
-  <p class="site-footer-note">
+  <p class="site-footer-note" data-i18n-html="footer.note">
     Дані: <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases">donor-synergy.json</a> ·
     <a href="matches.html">Кандидати</a> ·
     <a href="index.html#for-funds">Цінність</a> ·
     <a href="index.html">О проєкті</a>
   </p>
 
+  <script>
+window.PAGE_I18N = {
+  uk: {
+    "doc.title": "Для фондів — куди не фінансувати двічі",
+    "eyebrow": "Для фондів і донорських програм",
+    "h1": "Куди не фінансувати двічі",
+    "lede": "«Синергія» тут — не красиве слово. Це конкретна логіка грошей: якщо ви вже вклали в громади A і B (навіть лише в їхні стратегії), а їхні цілі збігаються — наступний грант часто має сенс як <em>один спільний</em>, а не два паралельні. Нижче — три способи це побачити на вашому портфелі.",
+    "ex.h2": "Приклад без жаргону",
+    "ex.p1": "Уявімо: програма профінансувала розробку стратегій у Ніжині й Козельці. Обидві пишуть про туризм на козацькій спадщині — і вже мають реальну угоду МСС («Місцями козацької сили»). <strong>Синергія всередині портфеля</strong> = наступний грант на спільний турмаршрут / інфоцентр для пари, а не окремі «розвиток туризму» в кожній громаді.",
+    "ex.p2": "<strong>Міст:</strong> Батурин у тій самій угоді, але умовно ще не в портфелі. Додати Батурин — не «ще одна громада», а закрити дірку в уже працюючому кластері. <strong>Хаб:</strong> громада з багатьма гіпотетичними зв’язками — зручний якір для peer-learning між вашими грантоотримувачами.",
+    "lenses.aria": "Три способи читати портфель",
+    "lens1.k": "1 · Усередині",
+    "lens1.h": "Спільний наступний грант",
+    "lens1.p": "Обидві громади вже «ваші» і схожі за цілями → один проєкт / МСС замість дублювання.",
+    "lens2.k": "2 · Міст",
+    "lens2.h": "Куди розширитись",
+    "lens2.p": "Сильний матч portfolio↔зовні: нова інвестиція з’єднує кластери, а не додає ізольовану точку.",
+    "lens3.k": "3 · Хаб",
+    "lens3.h": "Якір у мережі",
+    "lens3.p": "Громада з багатьма зв’язками в matching — пріоритет для навчання інших у портфелі.",
+    "select.label": "Програма / фонд (теги DonorsPrograms)",
+    "loading": "Завантаження…",
+    "cov.tagged": "позначено в базі",
+    "cov.goals": "зі стратегією (Goals)",
+    "cov.within": "пар усередині",
+    "cov.bridge": "мостових пар",
+    "s1.k": "Лінза 1",
+    "s1.h": "Пари всередині портфеля",
+    "s1.lede": "Обидві вже профінансовані. Питання: чи є сенс у спільному наступному гранті / МСС замість двох окремих.",
+    "s2.k": "Лінза 2",
+    "s2.h": "Мости — куди варто розширити портфель",
+    "s2.lede": "Одна сторона вже у вас; друга — сильний кандидат за стратегією / географією / мережею МСС. Це про важіль, не про «покрити всіх».",
+    "s3.k": "Лінза 3",
+    "s3.h": "Хаби в matching-графі",
+    "s3.lede": "Громади програми з найбільшою кількістю ребер у пілотному matching (не МСС-реєстр).",
+    "s3.members": "У корпусі з Goals",
+    "th.pair": "Пара",
+    "th.status": "Статус",
+    "th.track": "Трек",
+    "th.score": "Score",
+    "th.goals": "Goals",
+    "th.in": "У портфелі",
+    "th.out": "Зовні",
+    "track.thematic": "похожа стратегія",
+    "track.operational": "зручний сусід",
+    "track.mixed": "mixed",
+    "tag.hyp": "гіпотеза",
+    "empty.within": "Немає пар у пілотному matching між позначеними громадами цієї програми",
+    "empty.within.noGoals": " — у корпусі ще немає їхніх Goals.",
+    "empty.within.dot": ".",
+    "empty.bridge": "Немає мостових гіпотез для цієї програми в поточному корпусі.",
+    "empty.hubs": "Немає громад програми в matching-графі",
+    "empty.members": "Поки немає позначених громад із Goals у пілоті",
+    "opt.hromadas": "громад",
+    "opt.inCorpus": "у корпусі",
+    "opt.noGoals": "немає Goals у пілоті",
+    "caveat": "Matching scores — гіпотези, доки <code>known: true</code>. Відсутність тега програми ≠ «громада без донора» (підлога покриття тегів). Для повного портфеля потрібне ширше покриття стратегій саме «ваших» громад — зараз це демонстрація підходу на пілотній вибірці.",
+    "caveat.suffix": " Повний шар: data/releases/donor-synergy.json.",
+    "err.load": "Не вдалося завантажити donor-synergy-preview.json: ",
+    "footer.note": "Дані: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">donor-synergy.json</a> · <a href=\"matches.html\">Кандидати</a> · <a href=\"index.html#for-funds\">Цінність</a> · <a href=\"index.html\">О проєкті</a>"
+  },
+  en: {
+    "doc.title": "For funds — where not to fund twice",
+    "eyebrow": "For funds and donor programmes",
+    "h1": "Where not to fund twice",
+    "lede": "“Synergy” here is not a buzzword. It is money logic: if you already invested in hromadas A and B (even only in their strategies) and their goals align, the next grant often makes more sense as <em>one joint</em> project than two parallel ones. Below — three ways to see that on your portfolio.",
+    "ex.h2": "Example without jargon",
+    "ex.p1": "Imagine a programme funded strategy drafting in Nizhyn and Kozelets. Both write about tourism on Cossack heritage — and already have a real IMC agreement (“Along the Cossack Strength Trail”). <strong>Within-portfolio synergy</strong> = a next grant for a joint tour route / info centre for the pair, not separate “tourism development” in each hromada.",
+    "ex.p2": "<strong>Bridge:</strong> Baturyn is in the same agreement but not yet in the portfolio. Adding Baturyn is not “one more hromada” — it closes a gap in an already working cluster. <strong>Hub:</strong> a hromada with many hypothetical links — a natural peer-learning anchor among your grantees.",
+    "lenses.aria": "Three ways to read a portfolio",
+    "lens1.k": "1 · Inside",
+    "lens1.h": "Shared next grant",
+    "lens1.p": "Both hromadas are already “yours” and similar on goals → one project / IMC instead of duplication.",
+    "lens2.k": "2 · Bridge",
+    "lens2.h": "Where to expand",
+    "lens2.p": "Strong portfolio↔outside match: a new investment connects clusters instead of adding an isolated point.",
+    "lens3.k": "3 · Hub",
+    "lens3.h": "Network anchor",
+    "lens3.p": "A hromada with many matching links — priority for teaching others in the portfolio.",
+    "select.label": "Programme / fund (DonorsPrograms tags)",
+    "loading": "Loading…",
+    "cov.tagged": "tagged in the base",
+    "cov.goals": "with strategy (Goals)",
+    "cov.within": "within pairs",
+    "cov.bridge": "bridge pairs",
+    "s1.k": "Lens 1",
+    "s1.h": "Pairs inside the portfolio",
+    "s1.lede": "Both already funded. Question: does a joint next grant / IMC make sense instead of two separate ones?",
+    "s2.k": "Lens 2",
+    "s2.h": "Bridges — where to expand the portfolio",
+    "s2.lede": "One side is already yours; the other is a strong candidate by strategy / geography / IMC network. This is about leverage, not “cover everyone”.",
+    "s3.k": "Lens 3",
+    "s3.h": "Hubs in the matching graph",
+    "s3.lede": "Programme hromadas with the most edges in pilot matching (not the IMC registry).",
+    "s3.members": "In the Goals corpus",
+    "th.pair": "Pair",
+    "th.status": "Status",
+    "th.track": "Track",
+    "th.score": "Score",
+    "th.goals": "Goals",
+    "th.in": "In portfolio",
+    "th.out": "Outside",
+    "track.thematic": "similar strategy",
+    "track.operational": "handy neighbour",
+    "track.mixed": "mixed",
+    "tag.hyp": "hypothesis",
+    "empty.within": "No pilot-matching pairs among tagged hromadas of this programme",
+    "empty.within.noGoals": " — their Goals are not in the corpus yet.",
+    "empty.within.dot": ".",
+    "empty.bridge": "No bridge hypotheses for this programme in the current corpus.",
+    "empty.hubs": "No programme hromadas in the matching graph",
+    "empty.members": "No tagged hromadas with Goals in the pilot yet",
+    "opt.hromadas": "hromadas",
+    "opt.inCorpus": "in corpus",
+    "opt.noGoals": "no Goals in pilot",
+    "caveat": "Matching scores are hypotheses until <code>known: true</code>. Missing a programme tag ≠ “hromada without a donor” (tag coverage floor). A full portfolio needs broader strategy coverage of <em>your</em> hromadas — this is a method demo on the pilot sample.",
+    "caveat.suffix": " Full layer: data/releases/donor-synergy.json.",
+    "err.load": "Failed to load donor-synergy-preview.json: ",
+    "footer.note": "Data: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">donor-synergy.json</a> · <a href=\"matches.html\">Candidates</a> · <a href=\"index.html#for-funds\">Value</a> · <a href=\"index.html\">About</a>"
+  }
+};
+  </script>
+  <script src="assets/i18n.js"></script>
   <script src="assets/nav.js" data-active="funds"></script>
   <script>
+    function t(key) {
+      return window.HromadaI18n ? HromadaI18n.t(key) : key;
+    }
     function pct(x) {
       if (x == null || Number.isNaN(x)) return "—";
       return (x * 100).toFixed(1) + "%";
     }
-    function trackLabel(t) {
-      if (t === "thematic") return "похожа стратегія";
-      if (t === "operational") return "зручний сусід";
-      if (t === "mixed") return "mixed";
-      return t || "—";
+    function trackLabel(tr) {
+      if (tr === "thematic") return t("track.thematic");
+      if (tr === "operational") return t("track.operational");
+      if (tr === "mixed") return t("track.mixed");
+      return tr || "—";
     }
     function statusTag(known) {
       return known
         ? '<span class="tag known">✓ known</span>'
-        : '<span class="tag hyp">гіпотеза</span>';
+        : '<span class="tag hyp">' + t("tag.hyp") + "</span>";
     }
     function esc(s) {
       return String(s == null ? "" : s)
@@ -291,6 +417,7 @@
     }
 
     var DATA = null;
+    var selectedIdx = 0;
 
     function renderProgram(prog) {
       document.getElementById("c-tagged").textContent = prog.tagged;
@@ -311,8 +438,8 @@
               + "<td class=\"num\">" + pct(e.goals_cosine) + "</td>"
               + "</tr>";
           }).join("")
-        : "<tr><td colspan=\"5\"><div class=\"empty\">Немає пар у пілотному matching між позначеними громадами цієї програми"
-          + (prog.with_goals === 0 ? " — у корпусі ще немає їхніх Goals." : ".")
+        : "<tr><td colspan=\"5\"><div class=\"empty\">" + t("empty.within")
+          + (prog.with_goals === 0 ? t("empty.within.noGoals") : t("empty.within.dot"))
           + "</div></td></tr>";
 
       document.getElementById("bridge-body").innerHTML = bridges.length
@@ -326,7 +453,7 @@
               + "<td class=\"num\">" + pct(e.goals_cosine) + "</td>"
               + "</tr>";
           }).join("")
-        : "<tr><td colspan=\"6\"><div class=\"empty\">Немає мостових гіпотез для цієї програми в поточному корпусі.</div></td></tr>";
+        : "<tr><td colspan=\"6\"><div class=\"empty\">" + t("empty.bridge") + "</div></td></tr>";
 
       var hubs = prog.hubs || [];
       document.getElementById("hubs").innerHTML = hubs.length
@@ -335,7 +462,7 @@
               + h.degree + (h.oblast ? " · " + esc(h.oblast.replace(" область", "")) : "")
               + "</span>";
           }).join("")
-        : '<span class="chip">Немає громад програми в matching-графі</span>';
+        : '<span class="chip">' + t("empty.hubs") + "</span>";
 
       var members = prog.members_with_goals || [];
       document.getElementById("members").innerHTML = members.length
@@ -344,24 +471,46 @@
               + (m.oblast ? " · " + esc(m.oblast.replace(" область", "")) : "")
               + "</span>";
           }).join("")
-        : '<span class="chip">Поки немає позначених громад із Goals у пілоті</span>';
+        : '<span class="chip">' + t("empty.members") + "</span>";
     }
+
+    function fillSelect() {
+      if (!DATA) return;
+      var sel = document.getElementById("program-select");
+      sel.innerHTML = "";
+      DATA.programs.forEach(function (p, i) {
+        var opt = document.createElement("option");
+        opt.value = String(i);
+        opt.textContent = p.program + " · " + p.tagged + " " + t("opt.hromadas")
+          + (p.with_goals ? " · " + p.with_goals + " " + t("opt.inCorpus") : " · " + t("opt.noGoals"));
+        sel.appendChild(opt);
+      });
+      sel.disabled = false;
+      sel.value = String(selectedIdx);
+    }
+
+    function refreshCaveat() {
+      var el = document.getElementById("caveat");
+      if (DATA && DATA.caveat) {
+        el.textContent = DATA.caveat + t("caveat.suffix");
+      } else if (window.HromadaI18n) {
+        HromadaI18n.apply();
+      }
+    }
+
+    function rerender() {
+      fillSelect();
+      if (DATA && DATA.programs[selectedIdx]) renderProgram(DATA.programs[selectedIdx]);
+      refreshCaveat();
+    }
+
+    document.addEventListener("hromada-lang", rerender);
+    if (window.HromadaI18n && HromadaI18n.onChange) HromadaI18n.onChange(rerender);
 
     fetch("assets/donor-synergy-preview.json")
       .then(function (r) { return r.json(); })
       .then(function (data) {
         DATA = data;
-        var sel = document.getElementById("program-select");
-        sel.innerHTML = "";
-        data.programs.forEach(function (p, i) {
-          var opt = document.createElement("option");
-          opt.value = String(i);
-          opt.textContent = p.program + " · " + p.tagged + " громад"
-            + (p.with_goals ? " · " + p.with_goals + " у корпусі" : " · немає Goals у пілоті");
-          sel.appendChild(opt);
-        });
-        sel.disabled = false;
-        // Prefer a program with rich pilot overlap for first view
         var prefer = data.programs.findIndex(function (p) {
           return p.program === "GIZ" && p.with_goals > 0;
         });
@@ -369,20 +518,19 @@
           prefer = data.programs.findIndex(function (p) { return p.with_goals > 0; });
         }
         if (prefer < 0) prefer = 0;
-        sel.value = String(prefer);
+        selectedIdx = prefer;
+        var sel = document.getElementById("program-select");
+        fillSelect();
         renderProgram(data.programs[prefer]);
         sel.addEventListener("change", function () {
-          renderProgram(data.programs[Number(sel.value)]);
+          selectedIdx = Number(sel.value);
+          renderProgram(data.programs[selectedIdx]);
         });
-        if (data.caveat) {
-          document.getElementById("caveat").textContent = data.caveat
-            + " Повний шар: data/releases/donor-synergy.json.";
-        }
+        refreshCaveat();
       })
       .catch(function (err) {
         document.getElementById("within-body").innerHTML =
-          "<tr><td colspan=\"5\">Не вдалося завантажити donor-synergy-preview.json: "
-          + esc(String(err)) + "</td></tr>";
+          "<tr><td colspan=\"5\">" + t("err.load") + esc(String(err)) + "</td></tr>";
       });
   </script>
 </body>
