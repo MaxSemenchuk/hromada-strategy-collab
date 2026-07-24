@@ -18,12 +18,10 @@ known МСС ranks **#5–#11**. PIN map: **430** nodes / **918** edges from KSE
 
 Shared chrome: [`assets/site.css`](assets/site.css), [`assets/nav.js`](assets/nav.js).
 
-`mss-graph-mvp.html` is kept in the repo as an early prototype but **not** linked in the site nav.
-
 ## Enable once
 
-Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-Push to `main` (or run **Deploy GitHub Pages** workflow manually).
+Repo **Settings → Pages → Deploy from a branch**: `main` / `/docs`
+(or GitHub Actions via `.github/workflows/deploy-pages.yml`).
 
 Local preview:
 

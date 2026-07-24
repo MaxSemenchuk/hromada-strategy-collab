@@ -84,7 +84,7 @@ scripts/
 ├── export-hromadas.ts                   # live NocoDB -> data/releases/hromadas.json (the public dataset)
 ├── hromada-output/                      # per-hromada structured JSON (as produced, gitignored pattern removed — kept for provenance)
 ├── retrieval/                           # CKAN search, download-raw, fetch-mss-registry, batch queue
-└── analysis/                            # one-off Python: KATOTTG merge, TF-IDF matching, embedding matching, MSS graph MVP
+└── analysis/                            # one-off Python: KATOTTG merge, matching, PIN map build
 data/
 ├── sources/       # reference registries (KATOTTG classifier extract, Tags table dump)
 ├── releases/      # THE dataset — canonical, current, CC BY 4.0 (see data/releases/MANIFEST.md)
