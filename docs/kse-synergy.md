@@ -138,7 +138,7 @@ claim. Tune weights after the first outreach cohort.
 | KSE reviewed, documented in `external-data-sources.md` | Done (2026-07-23) |
 | `kse-pin.json` + `enrich_from_kse.py` lazy join | Done (2026-07-23) |
 | `match.py` v6 (goals + geo + mss network) | Done (2026-07-23) |
-| Cross-link issue on KSE repo | Draft in [kse-issue-draft.md](kse-issue-draft.md) — not yet filed |
+| Cross-link issue on KSE repo | Filed 2026-07-24: [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) |
 | KSE attribution in `DATA-LICENSE.md` | Check [DATA-LICENSE.md](../DATA-LICENSE.md) |
 
 Matching reads `data/releases/hromadas.json` and attaches KSE covariates at runtime

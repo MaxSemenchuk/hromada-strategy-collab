@@ -284,6 +284,7 @@ oblast, frontline) — grow the strategy corpus there first.
 One line: **strategies find like-minded partners; geography finds service
 co-sharers. v6 mixes them — strong signal, easy to misread.**
 
+
 ---
 
 
@@ -316,7 +317,7 @@ release row with KSE lat/lon (~1 418); PIN/matching stay on top. Popups link
 
 ## Open threads (as of 2026-07-24)
 
-- [ ] File cross-link issue on KSE repo ([kse-issue-draft.md](kse-issue-draft.md))
+- [x] File cross-link issue on KSE repo — [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) (2026-07-24)
 - [x] Stakeholder site under `docs/` + shared nav (GitHub Pages workflow)
 - [x] Re-scrutinize `internal/outreach-messages.md` numbers / overclaims (2026-07-24)
 - [ ] Resolve remaining snowball retrieval targets or accept ~77-hromada pilot cap
