@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MVP: граф реального реєстру МСС</title>
 <style>
   :root {
@@ -58,60 +63,86 @@
   table.cats { width: 100%; border-collapse: collapse; font-size: 0.87rem; }
   table.cats th, table.cats td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--rule); text-align: left; }
   table.cats td.num, table.cats th.num { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; text-align: right; }
+
+  body { margin: 0; }
+  .lang-switch {
+    position: fixed; top: 0.9rem; right: 0.9rem; z-index: 40;
+    display: inline-grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    padding: 3px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; box-shadow: var(--shadow);
+  }
+  .lang-switch button {
+    appearance: none; border: 0; background: transparent; color: var(--ink-faint);
+    font: inherit; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+    padding: 0.35rem 0.55rem; border-radius: 6px; cursor: pointer;
+  }
+  .lang-switch button.active { background: var(--bg); color: var(--ink); box-shadow: inset 0 0 0 1px var(--border); }
+  @media (max-width: 600px) {
+    .lang-switch { top: 0.6rem; right: 0.6rem; }
+    .page { padding-top: 3.6rem; }
+  }
+
   footer { margin-top: 2.4rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.83rem; color: var(--ink-faint); }
 </style>
+</head>
+<body>
+
+<div class="lang-switch" role="group" aria-label="Language">
+  <button type="button" data-lang="uk" class="active">UK</button>
+  <button type="button" data-lang="en">EN</button>
+</div>
 
 <div class="page">
   <header>
-    <span class="eyebrow">MVP · крок 1 · граф МСС</span>
-    <h1>Що якщо реально побудувати граф усіх угод МСС?</h1>
-    <p class="lede">Перший, свідомо неповний зріз: лише угоди, внесені до реєстру у 2021–2022 роках (найновіші, тому сторони вже названі сучасними громадами — без потреби в перехідній таблиці КОАТУУ↔КАТОТТГ). Мета — подивитись, чи взагалі є на що дивитись, перш ніж інвестувати в повний парсинг усіх 899 записів з 2014 року.</p>
+    <span class="eyebrow" data-i18n="eyebrow">MVP · крок 1 · граф МСС</span>
+    <h1 data-i18n="title">Що якщо реально побудувати граф усіх угод МСС?</h1>
+    <p class="lede" data-i18n="lede">Перший, свідомо неповний зріз: лише угоди, внесені до реєстру у 2021–2022 роках (найновіші, тому сторони вже названі сучасними громадами — без потреби в перехідній таблиці КОАТУУ↔КАТОТТГ). Мета — подивитись, чи взагалі є на що дивитись, перш ніж інвестувати в повний парсинг усіх 899 записів з 2014 року.</p>
   </header>
 
   <section>
-    <p class="section-kicker">Що вийшло навіть на цьому шматку</p>
+    <p class="section-kicker" data-i18n="stats.kicker">Що вийшло навіть на цьому шматку</p>
     <div class="stat-grid">
-      <div class="stat"><span class="num">268</span><span class="label">угод внесено у 2021-2022</span></div>
-      <div class="stat"><span class="num">381</span><span class="label">унікальних громад-сторін</span></div>
-      <div class="stat"><span class="num">1099</span><span class="label">унікальних пар-зв'язків</span></div>
-      <div class="stat"><span class="num">3/3</span><span class="label">наші snowball-громади знайдені як хаби</span></div>
+      <div class="stat"><span class="num">268</span><span class="label" data-i18n="stats.s1">угод внесено у 2021-2022</span></div>
+      <div class="stat"><span class="num">381</span><span class="label" data-i18n="stats.s2">унікальних громад-сторін</span></div>
+      <div class="stat"><span class="num">1099</span><span class="label" data-i18n="stats.s3">унікальних пар-зв'язків</span></div>
+      <div class="stat"><span class="num">3/3</span><span class="label" data-i18n="stats.s4">наші snowball-громади знайдені як хаби</span></div>
     </div>
-    <p>Це вже вдвічі більше пар, ніж увесь наш датасет стратегій (46-54 громади). І це лише 2 роки з 8+ років історії реєстру.</p>
+    <p data-i18n="stats.p">Це вже вдвічі більше пар, ніж увесь наш датасет стратегій (46-54 громади). І це лише 2 роки з 8+ років історії реєстру.</p>
   </section>
 
   <section>
-    <p class="section-kicker">Візуальний фрагмент</p>
-    <h2>Найщільніший кластер (69 громад, переважно Івано-Франківщина)</h2>
+    <p class="section-kicker" data-i18n="viz.kicker">Візуальний фрагмент</p>
+    <h2 data-i18n="viz.h2">Найщільніший кластер (69 громад, переважно Івано-Франківщина)</h2>
     <div class="evidence">
       <canvas id="net" width="720" height="520"></canvas>
       <div class="legend">
-        <span><span class="swatch" style="background:var(--gold);"></span> наші вже зібрані громади (Дубовецька, Бурштинська, Галицька)</span>
-        <span><span class="swatch" style="background:var(--accent);"></span> інші громади з реєстру</span>
+        <span><span class="swatch" style="background:var(--gold);"></span> <span data-i18n="viz.leg1">наші вже зібрані громади (Дубовецька, Бурштинська, Галицька)</span></span>
+        <span><span class="swatch" style="background:var(--accent);"></span> <span data-i18n="viz.leg2">інші громади з реєстру</span></span>
       </div>
-      <p class="caveat">Важлива чесна деталь: ця щільність — не сотні окремих двосторонніх домовленостей. Схоже, що це переважно ОДНА велика багатостороння рамкова угода (десятки громад області підписали спільний проєкт одночасно, судячи з категорії «Відходи» серед зв'язків) — тому граф виглядає як майже суцільна плямa, а не мереживо окремих партнерств. Це не помилка парсингу, а реальна структура: багатосторонні обласні програми створюють саме такі «надгустi» кластери в реєстрі.</p>
+      <p class="caveat" data-i18n="viz.caveat">Важлива чесна деталь: ця щільність — не сотні окремих двосторонніх домовленостей. Схоже, що це переважно ОДНА велика багатостороння рамкова угода (десятки громад області підписали спільний проєкт одночасно, судячи з категорії «Відходи» серед зв'язків) — тому граф виглядає як майже суцільна плямa, а не мереживо окремих партнерств. Це не помилка парсингу, а реальна структура: багатосторонні обласні програми створюють саме такі «надгустi» кластери в реєстрі.</p>
     </div>
   </section>
 
   <section>
-    <p class="section-kicker">За типом (весь зріз 2021-2022, не лише візуальний фрагмент)</p>
+    <p class="section-kicker" data-i18n="cats.kicker">За типом (весь зріз 2021-2022, не лише візуальний фрагмент)</p>
     <div class="table-wrap">
       <table class="cats">
-        <thead><tr><th>Тип співробітництва</th><th class="num">Записів</th></tr></thead>
+        <thead><tr><th data-i18n="cats.th1">Тип співробітництва</th><th class="num" data-i18n="cats.th2">Записів</th></tr></thead>
         <tbody id="cat-table-body"></tbody>
       </table>
     </div>
   </section>
 
   <section>
-    <p class="section-kicker">Що далі, якщо це варте продовження</p>
+    <p class="section-kicker" data-i18n="next.kicker">Що далі, якщо це варте продовження</p>
     <ul class="plain">
-      <li><strong>Крок 2:</strong> те саме на 2018-2020 роках (176+226+106 = 508 записів) — тут вже будуть старі сільради, потрібна перехідна таблиця КОАТУУ↔КАТОТТГ (є в природі — сервіс vishibaylo.com чи офіційний Укрстат).</li>
-      <li><strong>Крок 3:</strong> позначити на графі, які пари вже є і в нашому датасеті стратегій — побачити, скільки з наших текстових "нових кандидатів" насправді вже мають реальну угоду, яку ми просто не знайшли текстом.</li>
-      <li><strong>Крок 4:</strong> віддiлити багатосторонні "рамкові" угоди (як цей щільний кластер) від справжніх двосторонніх партнерств — інакше граф оманливо виглядає щільнішим, ніж є.</li>
+      <li data-i18n-html="next.li1"><strong>Крок 2:</strong> те саме на 2018-2020 роках (176+226+106 = 508 записів) — тут вже будуть старі сільради, потрібна перехідна таблиця КОАТУУ↔КАТОТТГ (є в природі — сервіс vishibaylo.com чи офіційний Укрстат).</li>
+      <li data-i18n-html="next.li2"><strong>Крок 3:</strong> позначити на графі, які пари вже є і в нашому датасеті стратегій — побачити, скільки з наших текстових "нових кандидатів" насправді вже мають реальну угоду, яку ми просто не знайшли текстом.</li>
+      <li data-i18n-html="next.li3"><strong>Крок 4:</strong> віддiлити багатосторонні "рамкові" угоди (як цей щільний кластер) від справжніх двосторонніх партнерств — інакше граф оманливо виглядає щільнішим, ніж є.</li>
     </ul>
   </section>
 
-  <footer>
+  <footer data-i18n="footer">
     Дані: офіційний реєстр Мінрегіону (data.gov.ua), знімок станом на 28.12.2022. MVP, не остаточний аналіз — задача була перевірити, чи є сенс продовжувати парсинг, а не дати повну картину.
   </footer>
 </div>
@@ -178,10 +209,120 @@ const HIGHLIGHT = new Set(["Дубовецька сільська", "Буршт�
   new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 })();
 
-// render category table
-(function() {
+const LANG_KEY = 'hromada-docs-lang';
+const CAT_EN = {
+  'Спільне фінансування установ': 'Joint institution funding',
+  'Спільний проект (інше)': 'Joint project (other)',
+  'Освіта': 'Education',
+  'Медицина': 'Healthcare',
+  'Відходи': 'Waste',
+  'Адмінпослуги': 'Admin services',
+  'Дороги': 'Roads',
+  'Пожежна охорона': 'Fire protection',
+  'Туризм': 'Tourism',
+  'Вода': 'Water',
+  'Спільне КП': 'Joint municipal enterprise',
+  'Реєстрація актів': 'Civil registration'
+};
+const I18N = {
+  uk: {
+    'doc.title': 'MVP: граф реального реєстру МСС',
+    eyebrow: 'MVP · крок 1 · граф МСС',
+    title: 'Що якщо реально побудувати граф усіх угод МСС?',
+    lede: 'Перший, свідомо неповний зріз: лише угоди, внесені до реєстру у 2021–2022 роках (найновіші, тому сторони вже названі сучасними громадами — без потреби в перехідній таблиці КОАТУУ↔КАТОТТГ). Мета — подивитись, чи взагалі є на що дивитись, перш ніж інвестувати в повний парсинг усіх 899 записів з 2014 року.',
+    'stats.kicker': 'Що вийшло навіть на цьому шматку',
+    'stats.s1': 'угод внесено у 2021-2022',
+    'stats.s2': 'унікальних громад-сторін',
+    'stats.s3': "унікальних пар-зв'язків",
+    'stats.s4': 'наші snowball-громади знайдені як хаби',
+    'stats.p': 'Це вже вдвічі більше пар, ніж увесь наш датасет стратегій (46-54 громади). І це лише 2 роки з 8+ років історії реєстру.',
+    'viz.kicker': 'Візуальний фрагмент',
+    'viz.h2': 'Найщільніший кластер (69 громад, переважно Івано-Франківщина)',
+    'viz.leg1': 'наші вже зібрані громади (Дубовецька, Бурштинська, Галицька)',
+    'viz.leg2': 'інші громади з реєстру',
+    'viz.caveat': null,
+    'cats.kicker': 'За типом (весь зріз 2021-2022, не лише візуальний фрагмент)',
+    'cats.th1': 'Тип співробітництва',
+    'cats.th2': 'Записів',
+    'next.kicker': 'Що далі, якщо це варте продовження',
+    'next.li1': null,
+    'next.li2': null,
+    'next.li3': null,
+    footer: 'Дані: офіційний реєстр Мінрегіону (data.gov.ua), знімок станом на 28.12.2022. MVP, не остаточний аналіз — задача була перевірити, чи є сенс продовжувати парсинг, а не дати повну картину.'
+  },
+  en: {
+    'doc.title': 'MVP: real IMC registry graph',
+    eyebrow: 'MVP · step 1 · IMC graph',
+    title: 'What if we actually built a graph of all IMC agreements?',
+    lede: 'A first, deliberately incomplete slice: only agreements entered in the registry in 2021–2022 (the newest, so parties already use current hromada names — no KOATUU↔KATOTTG transition table needed). Goal — see whether there is anything to look at before investing in a full parse of all 899 records since 2014.',
+    'stats.kicker': 'What even this slice already shows',
+    'stats.s1': 'agreements entered in 2021–2022',
+    'stats.s2': 'unique party hromadas',
+    'stats.s3': 'unique pair links',
+    'stats.s4': 'our snowball hromadas found as hubs',
+    'stats.p': 'That is already twice as many pairs as our whole strategy dataset (46–54 hromadas). And this is only 2 years of 8+ years of registry history.',
+    'viz.kicker': 'Visual fragment',
+    'viz.h2': 'Densest cluster (69 hromadas, mostly Ivano-Frankivsk oblast)',
+    'viz.leg1': 'hromadas we already collected (Dubovetska, Burshtynska, Halytska)',
+    'viz.leg2': 'other registry hromadas',
+    'viz.caveat': 'An important honest detail: this density is not hundreds of separate bilateral deals. It looks mostly like ONE large multilateral framework agreement (dozens of oblast hromadas signing a joint project at once, judging by “Waste” among the links) — so the graph looks almost solid rather than a lace of separate partnerships. That is not a parsing error but real structure: multilateral oblast programmes create exactly these “hyper-dense” clusters in the registry.',
+    'cats.kicker': 'By type (full 2021–2022 slice, not only the visual fragment)',
+    'cats.th1': 'Cooperation type',
+    'cats.th2': 'Records',
+    'next.kicker': 'What next, if this is worth continuing',
+    'next.li1': '<strong>Step 2:</strong> the same for 2018–2020 (176+226+106 = 508 records) — older village councils appear here, so a KOATUU↔KATOTTG transition table is needed (exists in the wild — vishibaylo.com or official Ukrstat).',
+    'next.li2': '<strong>Step 3:</strong> mark on the graph which pairs are also in our strategy dataset — see how many of our textual “new candidates” already have a real agreement we simply never found in the text.',
+    'next.li3': '<strong>Step 4:</strong> separate multilateral “framework” agreements (like this dense cluster) from true bilateral partnerships — otherwise the graph looks denser than it is.',
+    footer: 'Data: official MinRegion registry (data.gov.ua), snapshot as of 28.12.2022. MVP, not final analysis — the task was to check whether continuing the parse makes sense, not to deliver the full picture.'
+  }
+};
+
+// Keep Ukrainian source text in HTML as fallback; only overwrite when EN (or when key is set for UK)
+I18N.uk['viz.caveat'] = document.querySelector('[data-i18n="viz.caveat"]').textContent.trim();
+I18N.uk['next.li1'] = document.querySelector('[data-i18n-html="next.li1"]').innerHTML;
+I18N.uk['next.li2'] = document.querySelector('[data-i18n-html="next.li2"]').innerHTML;
+I18N.uk['next.li3'] = document.querySelector('[data-i18n-html="next.li3"]').innerHTML;
+
+function catLabel(key, lang) {
+  return lang === 'en' ? (CAT_EN[key] || key) : key;
+}
+
+function renderCats(lang) {
   const tbody = document.getElementById('cat-table-body');
   const entries = Object.entries(GRAPH.full_stats.category_counts).sort((a,b) => b[1]-a[1]);
-  tbody.innerHTML = entries.map(([k,v]) => `<tr><td>${k}</td><td class="num">${v}</td></tr>`).join('');
+  tbody.innerHTML = entries.map(([k,v]) => `<tr><td>${catLabel(k, lang)}</td><td class="num">${v}</td></tr>`).join('');
+}
+
+function applyLang(lang) {
+  const dict = I18N[lang] || I18N.uk;
+  document.documentElement.lang = lang;
+  if (dict['doc.title']) document.title = dict['doc.title'];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] != null) el.textContent = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (dict[key] != null) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+  renderCats(lang);
+  try { localStorage.setItem(LANG_KEY, lang); } catch (_) {}
+}
+
+(function initLang() {
+  let lang = 'uk';
+  try {
+    const saved = localStorage.getItem(LANG_KEY);
+    if (saved === 'uk' || saved === 'en') lang = saved;
+  } catch (_) {}
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+  });
+  applyLang(lang);
 })();
 </script>
+</body>
+</html>

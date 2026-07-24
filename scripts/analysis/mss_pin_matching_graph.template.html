@@ -59,36 +59,53 @@
     background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
     padding: 0.55rem 0.7rem; font-size: 0.8rem; max-width: 300px; line-height: 1.35;
   }
+  .lang-switch {
+    display: inline-grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    margin: 0 0 0.9rem; padding: 3px; width: 100%;
+    background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  }
+  .lang-switch button {
+    appearance: none; border: 0; background: transparent; color: var(--ink-muted);
+    font: inherit; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+    padding: 0.35rem 0.55rem; border-radius: 6px; cursor: pointer;
+  }
+  .lang-switch button.active {
+    background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 1px var(--border);
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
   <aside>
-    <h1>Усі договори МСС (KSE PIN)</h1>
-    <p class="lede">Повний мережевий шар зареєстрованих угод на реальній карті України + matching-гіпотези.</p>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="uk" class="active">UK</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <h1 data-i18n="title">Усі договори МСС (KSE PIN)</h1>
+    <p class="lede" data-i18n="lede">Повний мережевий шар зареєстрованих угод на реальній карті України + matching-гіпотези.</p>
     <div class="toggle" role="tablist" aria-label="View mode">
-      <button type="button" id="btn-map" class="active">Карта</button>
-      <button type="button" id="btn-graph">Граф</button>
+      <button type="button" id="btn-map" class="active" data-i18n="btn.map">Карта</button>
+      <button type="button" id="btn-graph" data-i18n="btn.graph">Граф</button>
     </div>
     <div class="layers">
-      <label><input type="checkbox" id="layer-pin" checked/> Усі МСС (PIN)</label>
-      <label><input type="checkbox" id="layer-known" checked/> Known validation</label>
-      <label><input type="checkbox" id="layer-hyp" checked/> Matching hypotheses</label>
-      <label><input type="checkbox" id="layer-oblasts" checked/> Межі областей</label>
-      <label><input type="checkbox" id="layer-corpus"/> Підсвітити корпус стратегій</label>
+      <label><input type="checkbox" id="layer-pin" checked/> <span data-i18n="layer.pin">Усі МСС (PIN)</span></label>
+      <label><input type="checkbox" id="layer-known" checked/> <span data-i18n="layer.known">Known validation</span></label>
+      <label><input type="checkbox" id="layer-hyp" checked/> <span data-i18n="layer.hyp">Matching hypotheses</span></label>
+      <label><input type="checkbox" id="layer-oblasts" checked/> <span data-i18n="layer.oblasts">Межі областей</span></label>
+      <label><input type="checkbox" id="layer-corpus"/> <span data-i18n="layer.corpus">Підсвітити корпус стратегій</span></label>
     </div>
-    <div class="stat"><span>PIN вузлів</span><b id="s-nodes">—</b></div>
-    <div class="stat"><span>PIN ребер</span><b id="s-pin">—</b></div>
-    <div class="stat"><span>З координатами</span><b id="s-geo">—</b></div>
-    <div class="stat"><span>Корпус (Goals)</span><b id="s-corpus">—</b></div>
-    <div class="stat"><span>Known</span><b id="s-known">—</b></div>
-    <div class="stat"><span>Hypotheses</span><b id="s-hyp">—</b></div>
+    <div class="stat"><span data-i18n="stat.nodes">PIN вузлів</span><b id="s-nodes">—</b></div>
+    <div class="stat"><span data-i18n="stat.pin">PIN ребер</span><b id="s-pin">—</b></div>
+    <div class="stat"><span data-i18n="stat.geo">З координатами</span><b id="s-geo">—</b></div>
+    <div class="stat"><span data-i18n="stat.corpus">Корпус (Goals)</span><b id="s-corpus">—</b></div>
+    <div class="stat"><span data-i18n="stat.known">Known</span><b id="s-known">—</b></div>
+    <div class="stat"><span data-i18n="stat.hyp">Hypotheses</span><b id="s-hyp">—</b></div>
     <div class="legend">
-      <div><span class="sw pin"></span> зареєстровані МСС</div>
-      <div><span class="sw known"></span> known validation</div>
-      <div><span class="sw hyp"></span> matching hypothesis</div>
+      <div><span class="sw pin"></span> <span data-i18n="leg.pin">зареєстровані МСС</span></div>
+      <div><span class="sw known"></span> <span data-i18n="leg.known">known validation</span></div>
+      <div><span class="sw hyp"></span> <span data-i18n="leg.hyp">matching hypothesis</span></div>
     </div>
-    <p class="hint" id="hint">Карта обрізана контуром України, без підписів на тайлах. Потрібен інтернет для підложки.</p>
+    <p class="hint" id="hint" data-i18n="hint.map">Карта обрізана контуром України, без підписів на тайлах. Потрібен інтернет для підложки.</p>
   </aside>
   <main>
     <div id="map"></div>
@@ -99,6 +116,88 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
+const LANG_KEY = 'hromada-docs-lang';
+const I18N = {
+  uk: {
+    'doc.title': 'МСС: повний PIN + matching overlay',
+    title: 'Усі договори МСС (KSE PIN)',
+    lede: 'Повний мережевий шар зареєстрованих угод на реальній карті України + matching-гіпотези.',
+    'btn.map': 'Карта',
+    'btn.graph': 'Граф',
+    'layer.pin': 'Усі МСС (PIN)',
+    'layer.known': 'Known validation',
+    'layer.hyp': 'Matching hypotheses',
+    'layer.oblasts': 'Межі областей',
+    'layer.corpus': 'Підсвітити корпус стратегій',
+    'stat.nodes': 'PIN вузлів',
+    'stat.pin': 'PIN ребер',
+    'stat.geo': 'З координатами',
+    'stat.corpus': 'Корпус (Goals)',
+    'stat.known': 'Known',
+    'stat.hyp': 'Hypotheses',
+    'leg.pin': 'зареєстровані МСС',
+    'leg.known': 'known validation',
+    'leg.hyp': 'matching hypothesis',
+    'hint.map': 'Карта обрізана контуром України, без підписів на тайлах. Потрібен інтернет для підложки.',
+    'hint.graph': 'Force-граф усього PIN щільний — краще карта або вимкни PIN.',
+    'tip.degree': 'PIN degree'
+  },
+  en: {
+    'doc.title': 'IMC: full PIN + matching overlay',
+    title: 'All IMC agreements (KSE PIN)',
+    lede: 'Full network layer of registered agreements on a real map of Ukraine + matching hypotheses.',
+    'btn.map': 'Map',
+    'btn.graph': 'Graph',
+    'layer.pin': 'All IMC (PIN)',
+    'layer.known': 'Known validation',
+    'layer.hyp': 'Matching hypotheses',
+    'layer.oblasts': 'Oblast borders',
+    'layer.corpus': 'Highlight strategy corpus',
+    'stat.nodes': 'PIN nodes',
+    'stat.pin': 'PIN edges',
+    'stat.geo': 'With coordinates',
+    'stat.corpus': 'Corpus (Goals)',
+    'stat.known': 'Known',
+    'stat.hyp': 'Hypotheses',
+    'leg.pin': 'registered IMC',
+    'leg.known': 'known validation',
+    'leg.hyp': 'matching hypothesis',
+    'hint.map': 'Map clipped to Ukraine’s outline, unlabeled basemap tiles. Needs internet for the basemap.',
+    'hint.graph': 'Force-graph of the full PIN is dense — prefer the map, or turn PIN off.',
+    'tip.degree': 'PIN degree'
+  }
+};
+let currentLang = 'uk';
+
+function t(key) {
+  return (I18N[currentLang] && I18N[currentLang][key]) || I18N.uk[key] || key;
+}
+
+function applyLang(lang) {
+  currentLang = (lang === 'en' || lang === 'uk') ? lang : 'uk';
+  const dict = I18N[currentLang];
+  document.documentElement.lang = currentLang;
+  if (dict['doc.title']) document.title = dict['doc.title'];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] != null) el.textContent = dict[key];
+  });
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
+  });
+  const hintEl = document.getElementById('hint');
+  if (hintEl) hintEl.textContent = t(mode === 'graph' ? 'hint.graph' : 'hint.map');
+  if (typeof rebuildMapLayers === 'function' && mode === 'map') rebuildMapLayers();
+  try { localStorage.setItem(LANG_KEY, currentLang); } catch (_) {}
+}
+
+(function initLangEarly() {
+  try {
+    const saved = localStorage.getItem(LANG_KEY);
+    if (saved === 'uk' || saved === 'en') currentLang = saved;
+  } catch (_) {}
+})();
+
 const DATA = __DATA__;
 const meta = DATA.meta;
 document.getElementById('s-nodes').textContent = meta.pin_nodes;
@@ -229,7 +328,7 @@ function rebuildMapLayers() {
     });
     const title = n.full_name || n.label;
     marker.bindTooltip(
-      `<strong>${title}</strong><br/>${n.oblast || ''}<br/>PIN degree ${n.degree}`,
+      `<strong>${title}</strong><br/>${n.oblast || ''}<br/>${t('tip.degree')} ${n.degree}`,
       { direction: 'top', opacity: 0.95 }
     );
     nodesLayer.addLayer(marker);
@@ -279,12 +378,12 @@ function setMode(next) {
   if (mode === 'map') {
     mapEl.classList.remove('hidden');
     canvas.classList.remove('visible');
-    hint.textContent = 'Карта обрізана контуром України, без підписів на тайлах. Потрібен інтернет для підложки.';
+    hint.textContent = t('hint.map');
     setTimeout(() => { map.invalidateSize(); }, 50);
   } else {
     mapEl.classList.add('hidden');
     canvas.classList.add('visible');
-    hint.textContent = 'Force-граф усього PIN щільний — краще карта або вимкни PIN.';
+    hint.textContent = t('hint.graph');
     resizeCanvas();
   }
 }
@@ -465,6 +564,10 @@ function loop() {
 }
 requestAnimationFrame(loop);
 setMode('map');
+document.querySelectorAll('.lang-switch button').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+});
+applyLang(currentLang);
 </script>
 </body>
 </html>

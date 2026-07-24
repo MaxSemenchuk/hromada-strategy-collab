@@ -94,7 +94,8 @@ docs/
 ├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub) as candidate enrichment sources
 ├── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case
 ├── hromada-project-passport.html # stakeholder-facing project brief (UK/EN language switch)
-└── mss-graph-mvp.html            # early force-graph visualization prototype (UK/EN)
+├── mss-graph-mvp.html            # early force-graph visualization prototype (UK/EN)
+└── mss-pin-matching-graph.html   # full PIN map + matching overlay (UK/EN; rebuild via yarn graph-pin-matching)
 internal/
 └── outreach-messages.md          # draft stakeholder outreach copy — not part of the dataset, not for public reuse
 REFERENCES.md                     # theoretical grounding — network governance, IMC, institutional diversity
