@@ -41,5 +41,14 @@
       ],
       "note": "Neighbours not already linked in the KSE \u041c\u0421\u0421 network"
     }
+  },
+  "pinCorpusOverlap": {
+    "path": "matching-edges.pin-corpus.json",
+    "count": 10,
+    "curatedKnown": 4,
+    "otherPinCorpus": 6,
+    "inTopN": 10,
+    "topN": 50,
+    "note": "All mss_network>0 pairs with Goals on both sides. Curated known=true stays the hard regression set; this file is the broader KSE check."
   }
 }

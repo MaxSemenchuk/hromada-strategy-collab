@@ -62,6 +62,7 @@
     }
     .tag.known { color: var(--site-secondary); }
     .tag.hyp { color: var(--site-accent); }
+    .tag.pin-corpus { color: #c45c40; }
     .pair { font-weight: 600; color: var(--site-ink); }
     .caveat {
       font-size: 0.85rem; color: var(--site-faint); font-style: italic;
@@ -126,6 +127,10 @@
     <section>
       <p class="kicker">Валідація</p>
       <h2>Known МСС у matching-edges</h2>
+      <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem">
+        Кураторський ground truth для регресії матчера (<code>known: true</code>) —
+        не всі угоди з реєстру KSE.
+      </p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -139,6 +144,31 @@
             </tr>
           </thead>
           <tbody id="known-body"><tr><td colspan="6">Завантаження…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <p class="kicker">Ширша KSE-перевірка</p>
+      <h2>PIN ∩ корпус (<code>mss_network&gt;0</code>)</h2>
+      <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem">
+        Усі пари з Goals з обох боків, які вже є в мережі МСС KSE.
+        Rank — місце за combined score; score уже містить 15% <code>mss_network</code>
+        (частково циклічно). Не замінює known-регресію.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Пара</th>
+              <th>Тип</th>
+              <th class="num">Rank</th>
+              <th class="num">Score</th>
+              <th class="num">Goals</th>
+              <th class="num">Geo</th>
+            </tr>
+          </thead>
+          <tbody id="pin-corpus-body"><tr><td colspan="6">Завантаження…</td></tr></tbody>
         </table>
       </div>
     </section>
@@ -196,6 +226,20 @@
         + "<td class=\"num\">" + pct(p.mss_network) + "</td>"
         + "</tr>";
     }
+    function pinCorpusRow(p) {
+      var kind = p.known
+        ? "<span class=\"tag known\">known</span>"
+        : "<span class=\"tag pin-corpus\">PIN∩корпус</span>";
+      var rk = p.rank != null ? "#" + p.rank : "—";
+      return "<tr>"
+        + "<td><span class=\"pair\">" + p.a_short + " ↔ " + p.b_short + "</span></td>"
+        + "<td>" + kind + "</td>"
+        + "<td class=\"num\">" + rk + "</td>"
+        + "<td class=\"num\">" + pct(p.score) + "</td>"
+        + "<td class=\"num\">" + pct(p.goals_cosine) + "</td>"
+        + "<td class=\"num\">" + pct(p.geo_score) + "</td>"
+        + "</tr>";
+    }
     fetch("assets/matches-preview.json")
       .then(function (r) { return r.json(); })
       .then(function (data) {
@@ -213,6 +257,9 @@
           + (data.generatedAt || "—") + trackNote;
         document.getElementById("known-body").innerHTML =
           data.known.map(row).join("") || "<tr><td colspan=\"6\">Немає</td></tr>";
+        var pc = data.pinCorpus || [];
+        document.getElementById("pin-corpus-body").innerHTML =
+          pc.map(pinCorpusRow).join("") || "<tr><td colspan=\"6\">Немає — спочатку yarn report-pin-corpus</td></tr>";
         document.getElementById("top-body").innerHTML =
           data.top.map(row).join("") || "<tr><td colspan=\"6\">Немає</td></tr>";
       })

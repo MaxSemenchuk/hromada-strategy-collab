@@ -19,8 +19,11 @@
     "export-matching-edges": "python3 scripts/analysis/export_edges.py",
     "donor-synergy": "python3 scripts/analysis/donor_synergy.py",
     "test-known-pairs": "python3 scripts/analysis/test_known_pairs.py",
+    "report-pin-corpus": "python3 scripts/analysis/report_pin_corpus.py",
+    "priority-corpus-growth": "python3 scripts/analysis/priority_corpus_growth.py",
     "test-tracks": "python3 scripts/analysis/test_tracks.py",
-    "graph-pin-matching": "python3 scripts/analysis/build_pin_matching_graph.py"
+    "graph-pin-matching": "python3 scripts/analysis/build_pin_matching_graph.py",
+    "build-matches-preview": "python3 scripts/analysis/build_matches_preview.py"
   },
   "dependencies": {
     "dotenv": "^16.4.5"

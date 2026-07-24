@@ -54,7 +54,7 @@ do not vend copies of KSE CSVs in `data/releases/`.
 |----------|-------------|----------------------|
 | `geography.csv` | Distance to Russia/Belarus/EU border, frontline proximity, travel time to oblast center | Proximity signal alongside oblast/rayon adjacency in weighted matching (operational/back-office МСС pairs need geography, not just text similarity) |
 | `edem-data.csv` | `edem_petitions`, `edem_consultations`, `edem_participatory_budget`, `edem_open_hromada`, `edem_total` (0–4) | Civic-tech maturity proxy for W3I outreach prioritization (see [W3I use case](#w3i-use-case-civic-tech-lab-outreach) below) |
-| `partnerships-hromadas.csv` | Existing inter-municipal agreement counts and partner lists | Ground-truth validation (`known: true` edges) and sanity-check against our candidate hypotheses |
+| `partnerships-hromadas.csv` | Existing inter-municipal agreement counts and partner lists | Curated ground-truth (`known: true`) **and** broader PIN∩corpus report (`mss_network>0` → `matching-edges.pin-corpus.json`); sanity-check against hypotheses |
 | `minregion-war-status.csv` | Occupation / frontline / LMA status | Context for missing or stale strategy documents; filter or annotate hromadas where retrieval is impossible or misleading |
 
 We also use `hromada.csv` as the KSE row index when joining — not for fields we
@@ -89,7 +89,7 @@ Items KSE does not currently publish that we can cross-link or share on request:
 | Asset | Location | What it adds for KSE-side research |
 |-------|----------|-------------------------------------|
 | **Strategy extractions** | NocoDB `Hromadas` table → `data/releases/hromadas.json` | Structured `Goals`, `Projects`, `Strengths`, `Challenges`, `PartnersMentioned`, `MSSAgreements` from the actual strategy PDF — narrative intent beyond covariate proxies |
-| **Matching edges (hypotheses)** | `data/releases/matching-edges.json` | Pairwise goals-cosine scores over the text-mined corpus; `known: true` marks registry-confirmed agreements for method validation; all other pairs are *candidates*, not facts |
+| **Matching edges (hypotheses)** | `data/releases/matching-edges.json` | Pairwise goals-cosine scores over the text-mined corpus; `known: true` marks a curated registry-confirmed subset for method regression; `matching-edges.pin-corpus.json` lists all `mss_network>0` overlaps; other pairs are *candidates*, not facts |
 | **Retrieval nulls** | `SourceQuality = none` rows | Honest record of hromadas where no findable strategy exists — useful when interpreting gaps in text-based outcomes |
 
 We do **not** claim our candidate pairs are real МСС plans. KSE's
