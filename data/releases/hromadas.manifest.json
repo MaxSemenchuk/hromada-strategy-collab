@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-24T05:50:15.817Z",
-  "source": "nocodb:live",
+  "generatedAt": "2026-07-24T09:12:23.811695Z",
+  "source": "merge: main strategy upgrades + branch DonorsPrograms",
   "totalRows": 1469,
   "textMinedRows": 77,
   "schema": "see docs/hromadas-schema.md",
