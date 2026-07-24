@@ -23,9 +23,25 @@ and self-describing, not a growth history.
   yarn match
   yarn export-matching-edges
   yarn test-known-pairs
+  yarn test-tracks
   ```
 
   `known: true` marks registry-confirmed МСС agreements used for validation.
+
+  **Combined `score` is not a pure strategy match.** Each edge also has
+  `track`:
+
+  | `track` | Meaning | Typical use |
+  |---------| |---------| | ------------- |
+  | `thematic` | high goals-cosine, low geo | cold-start vision partners |
+  | `operational` | high geo (not thematic) | convenient service co-sharers |
+  | `mixed` | everything else | browse / combined ranking |
+
+  Ranked slices (top 50, exclude `known`; operational also excludes pairs
+  already in the KSE МСС network):
+
+  - `matching-edges.thematic.json` — ranked by `goals_cosine`
+  - `matching-edges.operational.json` — ranked by combined `score`
 
 ## Coverage, read before using
 

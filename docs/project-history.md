@@ -3,8 +3,9 @@
 Chronological record of methodology decisions, validation results, and honest
 negative findings. Migrated from Claude Code project memory
 (`project_hromada_strategy_collab.md`, w3i-network phase) on spin-out
-(2026-07-23) and updated through KSE integration. **Prefer this file over
-Claude memory** — it stays in-repo and tracks post-spin-out work.
+(2026-07-23) and updated through KSE integration and the 2026-07-24 МСС
+registry geography/types read. **Prefer this file over Claude memory** — it
+stays in-repo and tracks post-spin-out work.
 
 For current status and setup, see [README.md](../README.md). For field schema,
 see [hromadas-schema.md](hromadas-schema.md). For KSE division of labor, see
@@ -276,8 +277,9 @@ co-sharers. v6 mixes them — strong signal, easy to misread.**
 - [ ] Length-normalization / hub-hromada handling (Poltava-Zhytomyr-type risk)
 - [ ] Product/graph layer decision still pending — pilot validation stage
 - [ ] Split NocoDB base if project grows into standalone product
-- [ ] Split matcher outputs into thematic vs operational ranked lists (see МСС
-      registry section above)
+- [x] Split matcher outputs into thematic vs operational ranked lists
+      (`track` on edges + `matching-edges.thematic.json` /
+      `matching-edges.operational.json`; scoring unchanged) — 2026-07-24
 - [ ] Multi-way / community view for 3+ party clusters (Nizhyn-5, Dnister-22)
 
 ---
