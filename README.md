@@ -94,7 +94,6 @@ docs/                             # GitHub Pages site root (see docs/README.md)
 ├── index.html                    # landing «О проєкті» (all stakeholder audiences)
 ├── matches.html                  # known pairs + top matching hypotheses
 ├── funds.html                    # donor portfolio: shared next grant / bridges / hubs
-├── outreach.html                 # draft outreach copy for all four audiences
 ├── mss-pin-matching-graph.html   # full PIN map + matching overlay
 ├── hromada-project-passport.html # legacy redirect → index.html
 ├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
@@ -160,9 +159,8 @@ Code (`scripts/`) is MIT. The dataset in [data/releases/](data/releases/) is
 requirements and upstream source credits (data.gov.ua, DREAM, the МСС
 registry). [data/research-log/](data/research-log/) is provenance material,
 not the maintained dataset — read its README before building on it.
-[internal/](internal/) holds working copies of outreach drafts; the public
-version is [`docs/outreach.html`](docs/outreach.html). Other files under
-`internal/` remain excluded from reuse.
+[internal/](internal/) holds private outreach drafts (`outreach-messages.md`;
+optional local `outreach.html` is gitignored — not on GitHub Pages).
 
 If this repo becomes public: this section, the license files, and the
 `data/releases/` split exist specifically so the repo can be opened as an
