@@ -126,6 +126,51 @@
       "raw_text_path": "scripts/retrieval/raw/berdychiv-strategy.extracted.txt",
       "notes": "source=berdychiv-strategy; chars=282607; structured 2026-07-23 with PyPDF2; U-LEAD support",
       "raw_source_path": "scripts/retrieval/raw/berdychiv-strategy.pdf"
+    },
+    {
+      "name": "Тульчинська міська територіальна громада",
+      "katottg": "UA05100150000050790",
+      "status": "structured",
+      "strategy_url": "https://tulchynska-gromada.gov.ua/strategiya-rozvitku-gromadi-12-08-18-04-12-2017/",
+      "raw_source_path": "scripts/retrieval/raw/manual/4315-strategiya-2030.pdf",
+      "raw_text_path": "scripts/retrieval/raw/manual/extracted/4315-strategiya-2030.txt",
+      "notes": "manual upload 2026-07-24; UPGRADE partial→full Strategy 2030"
+    },
+    {
+      "name": "Лихівська селищна територіальна громада",
+      "katottg": "UA12040190000056469",
+      "status": "structured",
+      "strategy_url": "https://lykhivska.otg.dp.gov.ua/rishennya-gromadi/stratehiia-rozvytku-lykhivskoi-selyshchnoi-terytorialnoi-hromady-na-2023-2027-rr",
+      "raw_source_path": "scripts/retrieval/raw/manual/lykhivska.pdf",
+      "raw_text_path": "scripts/retrieval/raw/manual/extracted/lykhivska.txt",
+      "notes": "manual upload 2026-07-24; UPGRADE partial→full 3 priorities"
+    },
+    {
+      "name": "Великогаївська сільська територіальна громада",
+      "katottg": "UA61040110000010646",
+      "status": "structured",
+      "strategy_url": "https://velykogaivska-gromada.gov.ua/starategiya-rozvitku-gromadi-12-01-47-07-02-2017/",
+      "raw_source_path": "scripts/retrieval/raw/manual/a9532.docx",
+      "raw_text_path": "scripts/retrieval/raw/manual/extracted/a9532.txt",
+      "notes": "manual upload 2026-07-24; DOBRE DOCX; UPGRADE partial→full"
+    },
+    {
+      "name": "Батуринська міська територіальна громада",
+      "katottg": "UA74040010000076097",
+      "status": "structured",
+      "strategy_url": "https://baturyn-rada.gov.ua/strategiya-rozvitku-09-43-36-04-01-2019/",
+      "raw_source_path": "scripts/retrieval/raw/manual/336fe.doc",
+      "raw_text_path": "scripts/retrieval/raw/manual/extracted/336fe.txt",
+      "notes": "manual upload 2026-07-24; full strategy DOC; decision-only twin 6f692.doc ignored"
+    },
+    {
+      "name": "Вінницька міська територіальна громада",
+      "katottg": "",
+      "status": "structured",
+      "strategy_url": "https://www.vmr.gov.ua/media/Сервіси/Стратегія3.0/Стратегія розвитку ВМТГ до 2030 року - Стратегія 3.0.pdf",
+      "raw_source_path": "scripts/retrieval/raw/manual/vinnytsia.pdf",
+      "raw_text_path": "scripts/retrieval/raw/manual/extracted/vinnytsia.txt",
+      "notes": "manual upload 2026-07-24; Goals expanded to 6 priorities"
     }
   ]
 }
