@@ -43,9 +43,10 @@ We attribute KSE via Zenodo [10.5281/zenodo.15267573](https://doi.org/10.5281/ze
 
 ### What we can offer back
 
-- **`data/releases/hromadas.json`** — strategy extractions (`Goals`, `Projects`, `Strengths`, `Challenges`, `PartnersMentioned`, `MSSAgreements`) for ~57 hromadas so far (pilot; scaling toward full corpus)
-- **`data/releases/matching-edges.json`** — pairwise goals-cosine scores; edges marked `known: true` align with your `partnerships-hromadas.csv` for method validation; other edges are explicit *hypotheses*, not claims of real agreements
-- Documented honest nulls (`SourceQuality = none`) where no strategy PDF could be found
+- **`data/releases/hromadas.json`** — strategy extractions (`Goals`, `Projects`, `Strengths`, `Challenges`, `PartnersMentioned`, `MSSAgreements`) for **~77** hromadas so far (pilot; **68** with Goals text; scaling toward full corpus)
+- **`data/releases/matching-edges.json`** — pairwise v6 scores (**2,278** edges); edges marked `known: true` align with your `partnerships-hromadas.csv` for method validation; other edges are explicit *hypotheses*, not claims of real agreements
+- Documented honest nulls (`SourceQuality` empty / none) where no strategy PDF could be found
+- Stakeholder site: https://maxsemenchuk.github.io/hromada-strategy-collab/ (passport · matches · PIN map)
 
 Happy to discuss a lightweight cross-link (README badge, "Related datasets" section, or a row in `data/derived/README.md`) — no merge of repos required.
 
@@ -70,6 +71,6 @@ Project docs: https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/
 
 ## Notes for submitter
 
-- Review pilot coverage numbers before filing (currently ~57 text-mined hromadas) — update the issue body if export has run since draft date.
+- Review pilot coverage numbers before filing (currently ~77 text-mined / ~68 with Goals) — update the issue body if export has run since draft date.
 - Consider @-mentioning maintainers listed in KSE README (e.g. Tymofii Brik / team) if appropriate.
 - Keep tone collaborative; KSE is the covariate authority, we are the text-semantics layer.

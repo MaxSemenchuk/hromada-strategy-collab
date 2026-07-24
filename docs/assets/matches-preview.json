@@ -2,6 +2,8 @@
   "generatedAt": "2026-07-24T05:50:41.843123+00:00",
   "method": "v6: 60% goals_cosine + 25% KSE geo + 15% KSE mss_network",
   "pairCount": 2278,
+  "corpusGoals": 68,
+  "textMinedRows": 77,
   "known": [
     {
       "a": "Слобожанська селищна територіальна громада",

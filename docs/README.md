@@ -5,6 +5,10 @@ the public URL is:
 
 **https://maxsemenchuk.github.io/hromada-strategy-collab/**
 
+Coverage reflected on the site (2026-07-24 release): **1,469** metadata rows,
+**77** text-mined strategies (**68** with Goals), **2,278** matching-edges (v6),
+known МСС ranks **#5–#11**. PIN map: **430** nodes / **918** edges from KSE.
+
 | Path | Content |
 |------|---------|
 | [`index.html`](index.html) | Overview / hub |

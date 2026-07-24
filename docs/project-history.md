@@ -187,14 +187,16 @@ Run `yarn test-known-pairs` after changing the matcher.
 
 ---
 
-## Open threads (as of 2026-07-23)
+## Open threads (as of 2026-07-24)
 
 - [ ] File cross-link issue on KSE repo ([kse-issue-draft.md](kse-issue-draft.md))
-- [ ] Re-scrutinize `internal/outreach-messages.md` for overclaims
-- [ ] Resolve 5–7 snowball retrieval targets or accept ~57-hromada pilot cap
+- [x] Stakeholder site under `docs/` + shared nav (GitHub Pages workflow)
+- [x] Re-scrutinize `internal/outreach-messages.md` numbers / overclaims (2026-07-24)
+- [ ] Resolve remaining snowball retrieval targets or accept ~77-hromada pilot cap
 - [ ] Length-normalization / hub-hromada handling (Poltava-Zhytomyr-type risk)
-- [ ] Product/graph layer decision still pending — pilot validation stage
+- [ ] Product decision after first stakeholder conversations (open-data vs matchmaking vs W3I-internal)
 - [ ] Split NocoDB base if project grows into standalone product
+- [ ] Export `DonorsPrograms` into public `hromadas.json` when ready for donor outreach slices
 
 ---
 
