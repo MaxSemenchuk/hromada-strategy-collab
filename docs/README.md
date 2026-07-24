@@ -7,7 +7,9 @@ the public URL is:
 
 Coverage reflected on the site (2026-07-24 release): **1,469** metadata rows,
 **77** text-mined strategies (**68** with Goals), **2,278** matching-edges (v6),
-known МСС ranks **#5–#11**. PIN map: **430** nodes / **918** edges from KSE.
+known МСС ranks **#5–#11**. PIN map: **~447** PIN nodes / **918** edges from KSE; underlay **~1 418** mainland
+hromadas with coordinates (metadata — not the strategy corpus). Click a point for
+`PortalUrl` / `StrategyUrl` when present in the release.
 
 | Path | Content |
 |------|---------|
