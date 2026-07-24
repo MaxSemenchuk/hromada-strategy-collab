@@ -9,15 +9,27 @@ Sources:
   - docs/geo/ukraine-oblasts.geojson  (Natural Earth admin-1, simplified)
 
 Writes docs/mss-pin-matching-graph.html
+
+Overlay policy (2026-07-24):
+  Do NOT paint top-N by combined score — that collapses to geo neighbours in a
+  sparse strategy corpus. Split tracks instead:
+
+    thematic    — high goals_cosine  → «похожа стратегія» (default ON)
+    operational — high geo           → «зручний сусід»   (default OFF)
+    known       — registry validation pairs only
 """
 
 from __future__ import annotations
 
 import csv
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+from tracks import operational_slice, thematic_slice  # noqa: E402
+
 PIN = ROOT / "data/cache/kse/partnerships-hromadas-network.csv"
 GEO = ROOT / "data/cache/kse/geography.csv"
 EDGES = ROOT / "data/releases/matching-edges.json"
@@ -27,8 +39,8 @@ OUTLINE = ROOT / "docs/geo/ukraine-outline.geojson"
 TEMPLATE = Path(__file__).with_name("mss_pin_matching_graph.template.html")
 OUT = ROOT / "docs/mss-pin-matching-graph.html"
 
-TOP_HYPOTHESES = 40
-MIN_HYPOTHESIS_SCORE = 0.15
+TOP_THEMATIC = 40
+TOP_OPERATIONAL = 40
 
 
 def load_geo() -> dict[str, dict]:
@@ -76,6 +88,33 @@ def short_label(full: str) -> str:
     return " ".join(parts[:2]) if len(parts) >= 2 else full
 
 
+def encode_overlay(
+    rows: list[dict],
+    *,
+    kind: str,
+    name_to_code: dict[str, str],
+    pin_keys: set[tuple[str, str]],
+) -> list[dict]:
+    """Map matching-edge names → KATOTTG overlay edges; skip pairs already in PIN."""
+    out: list[dict] = []
+    for e in rows:
+        ca, cb = name_to_code[e["a"]], name_to_code[e["b"]]
+        if tuple(sorted((ca, cb))) in pin_keys:
+            continue
+        out.append(
+            {
+                "a": ca,
+                "b": cb,
+                "kind": kind,
+                "score": e["score"],
+                "goals_cosine": e.get("goals_cosine"),
+                "geo_score": e.get("geo_score"),
+                "track": e.get("track"),
+            }
+        )
+    return out
+
+
 def build_payload() -> dict:
     geo = load_geo()
     pin_nodes, pin_edges = load_pin()
@@ -91,37 +130,31 @@ def build_payload() -> dict:
         e for e in matching if e["a"] in name_to_code and e["b"] in name_to_code
     ]
     known = [e for e in corpus_matching if e.get("known")]
-    hypotheses = sorted(
-        (
-            e
-            for e in corpus_matching
-            if not e.get("known") and e["score"] >= MIN_HYPOTHESIS_SCORE
-        ),
-        key=lambda e: -e["score"],
-    )[:TOP_HYPOTHESES]
+    thematic = thematic_slice(corpus_matching, limit=TOP_THEMATIC)
+    operational = operational_slice(corpus_matching, limit=TOP_OPERATIONAL)
 
     pin_keys = {tuple(sorted((e["a"], e["b"]))) for e in pin_edges}
 
     known_edges = [
-        {"a": name_to_code[e["a"]], "b": name_to_code[e["b"]], "kind": "known", "score": e["score"]}
+        {
+            "a": name_to_code[e["a"]],
+            "b": name_to_code[e["b"]],
+            "kind": "known",
+            "score": e["score"],
+            "goals_cosine": e.get("goals_cosine"),
+            "geo_score": e.get("geo_score"),
+            "track": e.get("track"),
+        }
         for e in known
     ]
-    hyp_edges = []
-    for e in hypotheses:
-        ca, cb = name_to_code[e["a"]], name_to_code[e["b"]]
-        if tuple(sorted((ca, cb))) in pin_keys:
-            continue
-        hyp_edges.append(
-            {
-                "a": ca,
-                "b": cb,
-                "kind": "hypothesis",
-                "score": e["score"],
-                "goals_cosine": e.get("goals_cosine"),
-            }
-        )
+    thematic_edges = encode_overlay(
+        thematic, kind="thematic", name_to_code=name_to_code, pin_keys=pin_keys
+    )
+    operational_edges = encode_overlay(
+        operational, kind="operational", name_to_code=name_to_code, pin_keys=pin_keys
+    )
 
-    for e in known_edges + hyp_edges:
+    for e in known_edges + thematic_edges + operational_edges:
         for code in (e["a"], e["b"]):
             if code not in pin_nodes:
                 pin_nodes[code] = {
@@ -172,8 +205,11 @@ def build_payload() -> dict:
             "corpus_size": len(corpus),
             "pin_edges": len(pin_edges),
             "pin_nodes": len(nodes),
-            "hypothesis_edges": len(hyp_edges),
+            "thematic_edges": len(thematic_edges),
+            "operational_edges": len(operational_edges),
             "known_edges": len(known_edges),
+            # legacy alias: thematic only (combined-score hyp layer removed)
+            "hypothesis_edges": len(thematic_edges),
             "nodes_with_geo": with_geo,
             "oblasts": len(oblasts.get("features", [])),
             "pin_source": "KSE-Loc-Data-Hub partnerships-hromadas-network.csv",
@@ -181,13 +217,17 @@ def build_payload() -> dict:
             "oblasts_source": "Natural Earth admin-1 → docs/geo/ukraine-oblasts.geojson",
             "outline_source": "docs/geo/ukraine-outline.geojson (mask outside UA)",
             "matching_source": "data/releases/matching-edges.json",
-            "top_hypotheses": TOP_HYPOTHESES,
-            "min_hypothesis_score": MIN_HYPOTHESIS_SCORE,
+            "top_thematic": TOP_THEMATIC,
+            "top_operational": TOP_OPERATIONAL,
+            "overlay_policy": (
+                "thematic=goals_cosine track; operational=geo neighbours; "
+                "no combined-score hyp layer"
+            ),
         },
         "oblasts": oblasts,
         "ukraine_outline": outline,
         "nodes": nodes,
-        "edges": pin_edges + known_edges + hyp_edges,
+        "edges": pin_edges + known_edges + thematic_edges + operational_edges,
     }
 
 
@@ -204,7 +244,8 @@ def main() -> None:
     print(
         f"Wrote {OUT.relative_to(ROOT)} — "
         f"PIN {m['pin_nodes']}n/{m['pin_edges']}e · oblasts={m['oblasts']} · "
-        f"known={m['known_edges']} hyp={m['hypothesis_edges']}"
+        f"known={m['known_edges']} thematic={m['thematic_edges']} "
+        f"operational={m['operational_edges']}"
     )
 
 

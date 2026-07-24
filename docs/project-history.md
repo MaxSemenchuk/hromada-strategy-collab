@@ -282,6 +282,12 @@ co-sharers. v6 mixes them — strong signal, easy to misread.**
 - [x] Split matcher outputs into thematic vs operational ranked lists
       (`track` on edges + `matching-edges.thematic.json` /
       `matching-edges.operational.json`; scoring unchanged) — 2026-07-24
+- [x] PIN map overlay: stop painting combined-score top-N as one
+      «hypothesis» layer; show thematic (default ON) and operational
+      («зручний сусід», default OFF) separately —
+      `yarn graph-pin-matching` / `build_pin_matching_graph.py` — 2026-07-24
+- [ ] Densify strategy corpus in low-МСС / under-sampled oblasts so
+      operational neighbours are not an artifact of who got text-mined
 - [ ] Multi-way / community view for 3+ party clusters (Nizhyn-5, Dnister-22)
 
 ---
