@@ -1,0 +1,326 @@
+[
+  {
+    "Name": "Батуринська міська територіальна громада",
+    "Katottg": "UA74040010000076097",
+    "Oblast": "Чернігівська область",
+    "Population": 5981,
+    "PortalUrl": "https://baturyn-rada.gov.ua/",
+    "StrategyUrl": "https://baturyn-rada.gov.ua/strategiya-rozvitku-09-43-36-04-01-2019/",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Більшівцівська селищна територіальна громада",
+    "Katottg": "UA26040010000011271",
+    "Oblast": "Івано-Франківська область",
+    "Population": 7161,
+    "PortalUrl": "https://bilshivcivskagromada.if.gov.ua/",
+    "StrategyUrl": "https://bilshivcivskagromada.if.gov.ua/old/wp-content/uploads/2023/04/strategiya-1.doc",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Великоберезовицька селищна територіальна громада",
+    "Katottg": "UA61040070000079091",
+    "Oblast": "Тернопільська область",
+    "Population": 24243,
+    "PortalUrl": "https://vbsr.gov.ua/",
+    "StrategyUrl": "https://vbsr.gov.ua/images/Strategia_rozvunky/zatverjena/Stratehiia_rozvytku_VBSR_do_2027.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Великогаївська сільська територіальна громада",
+    "Katottg": "UA61040110000010646",
+    "Oblast": "Тернопільська область",
+    "Population": 11052,
+    "PortalUrl": "https://velykogaivska-gromada.gov.ua/",
+    "StrategyUrl": "https://velykogaivska-gromada.gov.ua/starategiya-rozvitku-gromadi-12-01-47-07-02-2017/",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Вижницька міська територіальна громада",
+    "Katottg": "UA73020090000031499",
+    "Oblast": "Чернівецька область",
+    "Population": 19802,
+    "PortalUrl": "https://vnmiscrada.gov.ua/",
+    "StrategyUrl": "https://vnmiscrada.gov.ua/strategiya-rozvitku-10-22-46-14-02-2022/",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Вінницька міська територіальна громада",
+    "Katottg": "UA05020030000031457",
+    "Oblast": "Вінницька область",
+    "Population": 400198,
+    "PortalUrl": "https://www.vmr.gov.ua/",
+    "StrategyUrl": "https://www.vmr.gov.ua/media/Сервіси/Стратегія3.0/Стратегія розвитку ВМТГ до 2030 року - Стратегія 3.0.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Галицька міська територіальна громада",
+    "Katottg": "UA26040090000025932",
+    "Oblast": "Івано-Франківська область",
+    "Population": 20721,
+    "PortalUrl": "https://galycka-gromada.golos.net.ua/",
+    "StrategyUrl": "https://galycka-gromada.golos.net.ua/files/pdf/679.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Дніпровська міська територіальна громада",
+    "Katottg": "UA12020010000033698",
+    "Oblast": "Дніпропетровська область",
+    "Population": 927882,
+    "PortalUrl": "https://dniprorada.gov.ua/",
+    "StrategyUrl": "https://dniprorada.gov.ua/upload/editor/strategiya_osnovnij_dokument_1.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Житомирська міська територіальна громада",
+    "Katottg": "UA18040190000029215",
+    "Oblast": "Житомирська область",
+    "Population": 230952,
+    "PortalUrl": "https://zt-rada.gov.ua/",
+    "StrategyUrl": "https://zt-rada.gov.ua/files/upload/sitefiles/doc1783501443.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Зазимська сільська територіальна громада",
+    "Katottg": "UA32060090000096236",
+    "Oblast": "Київська область",
+    "Population": 12388,
+    "PortalUrl": "https://zotg.gov.ua/",
+    "StrategyUrl": "https://zotg.gov.ua/wp-content/uploads/2024/09/strategiya-rozvytku-zazymskoyi-silskoyi-terytorialnoyi-gromady.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Зноб-Новгородська селищна територіальна громада",
+    "Katottg": "UA59100090000041284",
+    "Oblast": "Сумська область",
+    "Population": 3149,
+    "PortalUrl": "https://zn-otg.gov.ua/",
+    "StrategyUrl": "https://zn-otg.gov.ua/strategiya-rozvitku-znobnovgorodskoi-selischnoi-radi-na-20192025-roki-15-04-11-23-08-2018/",
+    "SourceQuality": "partial"
+  },
+  {
+    "Name": "Кам'янська міська територіальна громада",
+    "Katottg": "UA12040150000015189",
+    "Oblast": "Дніпропетровська область",
+    "Population": 226652,
+    "PortalUrl": "https://kam.gov.ua/",
+    "StrategyUrl": "https://kam.gov.ua/ua/main-mediafunc-osxfile.file/pg/100307130893174_p18_1o/1852654016.docx",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Козелецька селищна територіальна громада",
+    "Katottg": "UA74100190000086457",
+    "Oblast": "Чернігівська область",
+    "Population": 18660,
+    "PortalUrl": "https://kozsr.gov.ua/",
+    "StrategyUrl": "https://kozsr.gov.ua/files/Strategy%20rozvitky.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Криворізька міська територіальна громада",
+    "Katottg": "UA12060170000091033",
+    "Oblast": "Дніпропетровська область",
+    "Population": 608439,
+    "PortalUrl": "https://kr.gov.ua/",
+    "StrategyUrl": "https://kr.gov.ua/api/uploads/3819_vid_30_07_2025_Strategiya_97d639c4f1.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Кропивницька міська територіальна громада",
+    "Katottg": "UA35040210000014072",
+    "Oblast": "Кіровоградська область",
+    "Population": 215915,
+    "PortalUrl": "https://www.kr-rada.gov.ua/",
+    "StrategyUrl": "https://www.kr-rada.gov.ua/uploads/documents/47120-pr_rish_2374_09-12-2024.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Литовезька сільська територіальна громада",
+    "Katottg": "UA07020090000019505",
+    "Oblast": "Волинська область",
+    "Population": 3522,
+    "PortalUrl": "https://lotg.gov.ua/",
+    "StrategyUrl": "https://lotg.gov.ua/wp-content/uploads/2026/05/Lytovezka-STG_Strategiya-rozvytku-nova-1.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Лихівська селищна територіальна громада",
+    "Katottg": "UA12040190000056469",
+    "Oblast": "Дніпропетровська область",
+    "Population": 3803,
+    "PortalUrl": "https://lykhivska.otg.dp.gov.ua/",
+    "StrategyUrl": "https://lykhivska.otg.dp.gov.ua/rishennya-gromadi/stratehiia-rozvytku-lykhivskoi-selyshchnoi-terytorialnoi-hromady-na-2023-2027-rr",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Луцька міська територіальна громада",
+    "Katottg": "UA07080170000013585",
+    "Oblast": "Волинська область",
+    "Population": 228311,
+    "PortalUrl": "https://www.lutskrada.gov.ua/",
+    "StrategyUrl": "https://www.lutskrada.gov.ua/static/content/files/g/hz/b7zvppwouctgd4wict4cwpgyahclahzg.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Львівська міська територіальна громада",
+    "Katottg": "UA46060250000025047",
+    "Oblast": "Львівська область",
+    "Population": 817539,
+    "PortalUrl": "https://city-adm.lviv.ua/",
+    "StrategyUrl": "https://city-adm.lviv.ua/lmr/strategija",
+    "SourceQuality": "partial"
+  },
+  {
+    "Name": "Миколаївська міська територіальна громада",
+    "Katottg": "UA48060150000071713",
+    "Oblast": "Миколаївська область",
+    "Population": 336983,
+    "PortalUrl": "https://mkrada.gov.ua/",
+    "StrategyUrl": "https://mkrada.gov.ua/content/strategiya-rozvitku-mista.html",
+    "SourceQuality": "partial"
+  },
+  {
+    "Name": "Мукачівська міська територіальна громада",
+    "Katottg": "UA21040150000092428",
+    "Oblast": "Закарпатська область",
+    "Population": 113637,
+    "PortalUrl": "https://mukachevo-rada.gov.ua/",
+    "StrategyUrl": "https://mukachevo-rada.gov.ua/storage/app/media/uploaded-files/strategija-2027.doc",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Ніжинська міська територіальна громада",
+    "Katottg": "UA74040250000063494",
+    "Oblast": "Чернігівська область",
+    "Population": 61919,
+    "PortalUrl": "https://nizhynrada.gov.ua/",
+    "StrategyUrl": "https://data.gov.ua/dataset/0e6dcf9a-f240-4967-8cbf-9e2bffe8a79d",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Нікопольська міська територіальна громада",
+    "Katottg": "UA12080050000062712",
+    "Oblast": "Дніпропетровська область",
+    "Population": 65612,
+    "PortalUrl": "http://www.nikopol-mrada.dp.gov.ua/",
+    "StrategyUrl": "https://web.archive.org/web/20220310194435/http://www.nikopol-mrada.dp.gov.ua/ekonomika/2020_11_03_strateg_razvitiya/strateg.zip",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Новомосковська міська територіальна громада",
+    "Katottg": "UA12100070000011492",
+    "Oblast": "Дніпропетровська область",
+    "Population": 68916,
+    "PortalUrl": "http://novomoskovsk-rada.gov.ua/",
+    "StrategyUrl": "http://novomoskovsk-rada.gov.ua/sites/default/files/flies_adittions/1221_dodatok.doc",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Одеська міська територіальна громада",
+    "Katottg": "UA51100270000073549",
+    "Oblast": "Одеська область",
+    "Population": 845897,
+    "PortalUrl": "https://omr.gov.ua/",
+    "StrategyUrl": "https://omr.gov.ua/Files/2026/Ekonomika/Strategiya-OD2027.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Полтавська міська територіальна громада",
+    "Katottg": "UA53080370000025447",
+    "Oblast": "Полтавська область",
+    "Population": 311944,
+    "PortalUrl": "https://rada-poltava.gov.ua/",
+    "StrategyUrl": "https://rada-poltava.gov.ua/strapi/uploads/strat_1157b9a322.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Рівненська міська територіальна громада",
+    "Katottg": "UA56060470000086729",
+    "Oblast": "Рівненська область",
+    "Population": 230965,
+    "PortalUrl": "https://rivnerada.gov.ua/",
+    "StrategyUrl": "https://rivnerada.gov.ua/portal-files/portal/Стратегія_розвитку_Рівненської_територіальної_громади_до_2027_року.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Рогатинська міська територіальна громада",
+    "Katottg": "UA26040270000047749",
+    "Oblast": "Івано-Франківська область",
+    "Population": 31819,
+    "PortalUrl": "https://rmtg.gov.ua/",
+    "StrategyUrl": "https://rmtg.gov.ua/Files/Uploads5/8702/f31672f7a4fcedc.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Слобожанська селищна територіальна громада",
+    "Katottg": "UA12020250000010438",
+    "Oblast": "Дніпропетровська область",
+    "Population": 28368,
+    "PortalUrl": "https://slobozhanska-gromada.gov.ua/",
+    "StrategyUrl": "https://slobozhanska-gromada.gov.ua/upload/content/320/Стратегія розвитку громади Слобожанської ТГ на 2023-2027 роки.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Тернопільська міська територіальна громада",
+    "Katottg": "UA61040490000035010",
+    "Oblast": "Тернопільська область",
+    "Population": 252372,
+    "PortalUrl": "https://ternopilcity.gov.ua/",
+    "StrategyUrl": "https://ternopilcity.gov.ua/app11/%D0%A1%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D1%96%D1%8F%20%D0%A2%D0%B5%D1%80%D0%BD%D0%BE%D0%BF%D1%96%D0%BB%D1%8C%2005052025.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Тульчинська міська територіальна громада",
+    "Katottg": "UA05100150000050790",
+    "Oblast": "Вінницька область",
+    "Population": 44348,
+    "PortalUrl": "https://tulchynska-gromada.gov.ua/",
+    "StrategyUrl": "https://tulchynska-gromada.gov.ua/strategiya-rozvitku-gromadi-12-08-18-04-12-2017/",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Ужгородська міська територіальна громада",
+    "Katottg": "UA21100230000083101",
+    "Oblast": "Закарпатська область",
+    "Population": 134439,
+    "PortalUrl": "https://rada-uzhgorod.gov.ua/",
+    "StrategyUrl": "https://rada-uzhgorod.gov.ua/media/2023/11/01/10-34-22_Проєкт_Стратегії_і_План_заходів_Ужгородська_МТГ__2_.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Харківська міська територіальна громада",
+    "Katottg": "UA63120270000028556",
+    "Oblast": "Харківська область",
+    "Population": 950072,
+    "PortalUrl": "https://www.city.kharkov.ua/",
+    "StrategyUrl": "https://www.city.kharkov.ua/assets/files/docs/zakon/strategy2411.pdf",
+    "SourceQuality": "partial"
+  },
+  {
+    "Name": "Херсонська міська територіальна громада",
+    "Katottg": "UA65100150000057191",
+    "Oblast": "Херсонська область",
+    "Population": 58928,
+    "PortalUrl": "https://miskrada-ks.gov.ua/",
+    "StrategyUrl": "https://miskrada-ks.gov.ua/wp-content/uploads/2025/11/programa-ekonom.-i-soczialn.-rozvytku-hmtg-na-2026-2028.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Черкаська міська територіальна громада",
+    "Katottg": "UA71080490000022110",
+    "Oblast": "Черкаська область",
+    "Population": 272027,
+    "PortalUrl": "https://chmr.gov.ua/",
+    "StrategyUrl": "https://chmr.gov.ua/myrada/app/305092.pdf",
+    "SourceQuality": "full-strategy"
+  },
+  {
+    "Name": "Чернігівська міська територіальна громада",
+    "Katottg": "UA74100390000073425",
+    "Oblast": "Чернігівська область",
+    "Population": 215350,
+    "PortalUrl": "https://www.chernigiv-rada.gov.ua/",
+    "StrategyUrl": "https://www.chernigiv-rada.gov.ua/storage/files/21/29/23/15/e3e0a58b69781c29ee6e1fe5a479011e.pdf",
+    "SourceQuality": "full-strategy"
+  }
+]

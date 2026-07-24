@@ -297,6 +297,14 @@ Mapped and structured in-session:
 
 Also cached (already full in release): Кривий Ріг (broken PDF text layer), Луцьк, Мукачево, Слобожанська, Вижницька (PDF+DOC), Херсон (PESR programme 2026–28, not template strategy). Missing from upload: Зноб-Новгородська, Новомосковська. Inventory: `scripts/retrieval/manual-ingest-2026-07-24.json`.
 
+### PortalUrl field (2026-07-24)
+
+Added derived **`PortalUrl`** on release rows (official hromada homepage when
+`StrategyUrl` is on a municipal host; aggregators stay null). Offline
+`yarn enrich-portal-urls`; also written on `yarn export-hromadas`. Compact index:
+`data/releases/hromada-portals.json`. Manual fixes:
+`data/sources/portal-url-overrides.json` (e.g. Ніжин via data.gov.ua).
+
 ## Open threads (as of 2026-07-24)
 
 - [ ] File cross-link issue on KSE repo ([kse-issue-draft.md](kse-issue-draft.md))

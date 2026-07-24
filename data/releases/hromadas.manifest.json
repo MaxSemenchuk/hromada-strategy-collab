@@ -4,5 +4,7 @@
   "totalRows": 1469,
   "textMinedRows": 77,
   "schema": "see docs/hromadas-schema.md",
-  "license": "CC BY 4.0 — see DATA-LICENSE.md"
+  "license": "CC BY 4.0 — see DATA-LICENSE.md",
+  "portalUrlRows": 36,
+  "portalUrlEnrichedAt": "2026-07-24T10:48:57.446Z"
 }

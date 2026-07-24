@@ -15,6 +15,7 @@ Two-layer output graph: громада↔громада + громада↔W3I e
 | Type | SingleSelect | міська / селищна / сільська |
 | Population | Number | Населення |
 | StrategyUrl | URL | Ссылка на PDF/страницу стратегии |
+| PortalUrl | URL | Homepage офіційного порталу громади (derived at export from `StrategyUrl` when host is municipal; aggregators → null; overrides in `data/sources/portal-url-overrides.json`) |
 | StrategyYear | Number | Горизонт/год принятия стратегии |
 | StrategyPeriod | SingleLineText | напр. 2021–2027 |
 | Goals | LongText | 3–5 стратегічних цілей (извлечено LLM) |

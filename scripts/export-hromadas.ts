@@ -14,10 +14,12 @@
 
 import { readFileSync, writeFileSync } from "fs";
 import { join } from "path";
+import { loadPortalOverrides, resolvePortalUrl } from "./lib/portal-url";
 
 const NC_URL = process.env.NOCODB_URL || "http://localhost:8080";
 const NC_TOKEN = process.env.NOCODB_TOKEN || "";
 const HROMADAS_TABLE_ID = process.env.NOCODB_TABLE_HROMADAS || "";
+const portalOverrides = loadPortalOverrides(join(__dirname, ".."));
 
 function argValue(flag: string): string | undefined {
     const idx = process.argv.indexOf(flag);
@@ -40,14 +42,23 @@ type RawRecord = Record<string, unknown>;
 
 function normalizeRecord(r: RawRecord) {
     const sectors = r.Sectors;
+    const strategyUrl = (r.StrategyUrl as string | null | undefined) ?? null;
+    const katottg = (r.Katottg ?? r["Koatuu / Katottg"] ?? r.KATOTTG ?? null) as string | null;
+    const name = (r.Name as string | null | undefined) ?? null;
     return {
-        Name: r.Name ?? null,
-        Katottg: r.Katottg ?? r["Koatuu / Katottg"] ?? r.KATOTTG ?? null,
+        Name: name,
+        Katottg: katottg,
         Oblast: r.Oblast ?? null,
         Rayon: r.Rayon ?? null,
         Type: r.Type ?? null,
         Population: r.Population ?? null,
-        StrategyUrl: r.StrategyUrl ?? null,
+        StrategyUrl: strategyUrl,
+        PortalUrl: resolvePortalUrl({
+            strategyUrl,
+            katottg,
+            name,
+            overrides: portalOverrides,
+        }),
         StrategyYear: r.StrategyYear ?? null,
         StrategyPeriod: r.StrategyPeriod ?? null,
         Goals: r.Goals ?? null,
@@ -83,22 +94,39 @@ function normalizeRecord(r: RawRecord) {
 
 function writeRelease(cleaned: ReturnType<typeof normalizeRecord>[], source: string) {
     const textMined = cleaned.filter((r) => r.SourceQuality != null).length;
+    const withPortal = cleaned.filter((r) => r.PortalUrl).length;
 
     const manifest = {
         generatedAt: new Date().toISOString(),
         source,
         totalRows: cleaned.length,
         textMinedRows: textMined,
+        portalUrlRows: withPortal,
         schema: "see docs/hromadas-schema.md",
         license: "CC BY 4.0 — see DATA-LICENSE.md",
     };
 
+    const portalsIndex = cleaned
+        .filter((r) => r.PortalUrl)
+        .map((r) => ({
+            Name: r.Name,
+            Katottg: r.Katottg,
+            Oblast: r.Oblast,
+            Population: r.Population,
+            PortalUrl: r.PortalUrl,
+            StrategyUrl: r.StrategyUrl,
+            SourceQuality: r.SourceQuality,
+        }))
+        .sort((a, b) => String(a.Name || "").localeCompare(String(b.Name || ""), "uk"));
+
     const outDir = join(__dirname, "..", "data", "releases");
     writeFileSync(join(outDir, "hromadas.json"), JSON.stringify(cleaned, null, 2));
     writeFileSync(join(outDir, "hromadas.manifest.json"), JSON.stringify(manifest, null, 2));
+    writeFileSync(join(outDir, "hromada-portals.json"), JSON.stringify(portalsIndex, null, 2));
 
-    console.log(`  Wrote data/releases/hromadas.json (${cleaned.length} rows, ${textMined} text-mined).`);
+    console.log(`  Wrote data/releases/hromadas.json (${cleaned.length} rows, ${textMined} text-mined, ${withPortal} with PortalUrl).`);
     console.log("  Wrote data/releases/hromadas.manifest.json.");
+    console.log(`  Wrote data/releases/hromada-portals.json (${portalsIndex.length} portals).`);
 }
 
 async function nc(endpoint: string) {
@@ -167,6 +195,18 @@ function enrichKatottg(cleaned: ReturnType<typeof normalizeRecord>[]) {
     }
 }
 
+/** Recompute PortalUrl after Katottg enrichment so by_katottg overrides apply. */
+function enrichPortalUrl(cleaned: ReturnType<typeof normalizeRecord>[]) {
+    for (const row of cleaned) {
+        row.PortalUrl = resolvePortalUrl({
+            strategyUrl: row.StrategyUrl,
+            katottg: row.Katottg,
+            name: row.Name,
+            overrides: portalOverrides,
+        });
+    }
+}
+
 async function main() {
     let cleaned: ReturnType<typeof normalizeRecord>[];
     let source: string;
@@ -186,6 +226,7 @@ async function main() {
     }
 
     enrichKatottg(cleaned);
+    enrichPortalUrl(cleaned);
 
     writeRelease(cleaned, source);
 }

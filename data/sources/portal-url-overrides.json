@@ -1,0 +1,10 @@
+{
+  "_comment": "Manual PortalUrl overrides when StrategyUrl is on an aggregator (data.gov.ua, rada.info, toolkit, Wayback→dead, …) or when the derived host is wrong. Keys: KATOTTG (preferred) or exact Name. portal_url should be the official homepage.",
+  "by_katottg": {
+    "UA74040250000063494": {
+      "portal_url": "https://nizhynrada.gov.ua/",
+      "note": "StrategyUrl is data.gov.ua dataset; official portal confirmed 2026-07-24"
+    }
+  },
+  "by_name": {}
+}
