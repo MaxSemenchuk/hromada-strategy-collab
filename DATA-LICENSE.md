@@ -39,6 +39,7 @@ substitute for the source PDF (linked in `StrategyUrl` where known).
 ## What this license does *not* cover
 
 - `internal/` — draft outreach copy, not part of the dataset.
-- `docs/hromada-project-passport.html` — a stakeholder brief, not a data
+- `docs/index.html` — stakeholder landing («О проєкті»), not a data
   file; reuse it as you would any other document on this repo (MIT-adjacent,
-  ask first for anything beyond quoting).
+  ask first for anything beyond quoting). Legacy
+  `docs/hromada-project-passport.html` redirects here.

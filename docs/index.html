@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Матчинг громад за стратегіями — W3I</title>
-  <meta name="description" content="Дослідницький пілот: NLP-матчинг стратегій розвитку українських громад для пошуку кандидатів на міжмуніципальне співробітництво (МСС)."/>
+  <title>О проєкті — Матчинг громад за стратегіями · W3I</title>
+  <meta name="description" content="Дослідницький пілот W3I: NLP-матчинг стратегій розвитку українських громад для пошуку кандидатів на міжмуніципальне співробітництво (МСС). Для Мінрегіону, Мінцифри, громад і донорських фондів."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -12,215 +12,384 @@
   <style>
     body {
       background:
-        radial-gradient(900px 480px at 8% -8%, rgba(37, 99, 235, 0.12), transparent 55%),
-        radial-gradient(700px 420px at 100% 0%, rgba(14, 165, 233, 0.10), transparent 50%),
-        var(--site-bg);
+        radial-gradient(1100px 520px at 12% -12%, rgba(37, 99, 235, 0.14), transparent 58%),
+        radial-gradient(780px 420px at 100% 0%, rgba(14, 165, 233, 0.10), transparent 52%),
+        linear-gradient(180deg, #eef4fb 0%, var(--site-bg) 42%);
       color: var(--site-ink);
       font-family: var(--site-sans);
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
+    .page { max-width: 920px; margin: 0 auto; padding: 0 1.5rem 3.5rem; }
+
     .hero {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 3.4rem 1.5rem 2rem;
+      padding: 3.2rem 0 2.4rem;
+      animation: rise 0.7s ease both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
     }
     .eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--site-accent);
-      font-weight: 750;
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--site-accent); font-weight: 750; display: block; margin-bottom: 0.85rem;
+    }
+    .brand-hero {
+      font-family: var(--site-font);
+      font-weight: 800;
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      letter-spacing: -0.045em;
+      line-height: 1;
+      margin: 0 0 1.1rem;
+      color: var(--site-ink);
+    }
+    .brand-hero span {
       display: block;
-      margin-bottom: 0.85rem;
+      font-size: 0.38em;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--site-secondary);
+      margin-top: 0.45rem;
     }
     h1 {
-      font-family: var(--site-font);
-      font-weight: 750;
-      font-size: clamp(1.85rem, 4vw, 2.55rem);
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin: 0 0 1rem;
-      max-width: 16ch;
-      text-wrap: balance;
+      font-family: var(--site-font); font-weight: 750;
+      font-size: clamp(1.45rem, 3.2vw, 1.95rem);
+      line-height: 1.25; letter-spacing: -0.025em;
+      margin: 0 0 0.85rem; max-width: 22ch; text-wrap: balance;
     }
     .lede {
-      font-size: 1.05rem;
-      color: var(--site-muted);
-      max-width: 56ch;
-      margin: 0 0 1.5rem;
+      font-size: 1.05rem; color: var(--site-muted);
+      max-width: 54ch; margin: 0 0 1.35rem;
     }
     .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.82rem;
-      color: var(--site-muted);
-      border: 1px solid var(--site-border);
-      background: var(--site-surface);
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      margin-bottom: 1.35rem;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-size: 0.82rem; color: var(--site-muted);
+      border: 1px solid var(--site-border); background: var(--site-surface);
+      padding: 0.35rem 0.75rem; border-radius: 999px; margin-bottom: 1.2rem;
     }
     .status-pill i {
       width: 8px; height: 8px; border-radius: 50%;
-      background: var(--site-secondary);
-      display: inline-block;
+      background: var(--site-secondary); display: inline-block;
     }
     .cta-row { display: flex; flex-wrap: wrap; gap: 0.65rem; }
     .btn {
       display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.7rem 1.05rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.92rem;
-      border: 1px solid transparent;
+      padding: 0.7rem 1.05rem; border-radius: 10px; text-decoration: none;
+      font-weight: 700; font-size: 0.92rem; border: 1px solid transparent;
       transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
     }
     .btn-primary { background: var(--site-accent); color: var(--site-accent-ink); }
     .btn-primary:hover { background: var(--site-accent-hover); transform: translateY(-1px); }
     .btn-ghost {
-      background: var(--site-surface);
-      color: var(--site-ink);
-      border-color: var(--site-border);
+      background: var(--site-surface); color: var(--site-ink); border-color: var(--site-border);
     }
     .btn-ghost:hover { border-color: var(--site-accent); color: var(--site-accent); }
 
-    .grid {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 0 1.5rem 3rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.9rem;
+    section { margin: 2.8rem 0; animation: rise 0.65s ease both; }
+    section:nth-of-type(2) { animation-delay: 0.05s; }
+    section:nth-of-type(3) { animation-delay: 0.1s; }
+    .section-kicker {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--site-faint); margin: 0 0 0.4rem;
     }
-    @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+    h2 {
+      font-family: var(--site-font); font-weight: 750; letter-spacing: -0.02em;
+      font-size: clamp(1.2rem, 2.4vw, 1.45rem); margin: 0 0 0.75rem; text-wrap: balance;
+    }
+    p { margin: 0 0 1rem; max-width: 68ch; color: var(--site-ink); }
+    p.muted { color: var(--site-muted); }
+    ul.plain { margin: 0; padding-left: 1.15rem; max-width: 68ch; }
+    ul.plain li { margin-bottom: 0.45rem; color: var(--site-muted); }
+    ul.plain li strong { color: var(--site-ink); }
 
-    .card-link {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      background: var(--site-surface);
-      border: 1px solid var(--site-border);
-      border-radius: 14px;
-      padding: 1.2rem 1.25rem 1.3rem;
-      box-shadow: var(--site-shadow);
-      transition: border-color 0.15s ease, transform 0.15s ease;
+    .box {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 12px; padding: 1.15rem 1.25rem; box-shadow: var(--site-shadow);
+      margin: 1rem 0 0;
     }
-    .card-link:hover {
-      border-color: color-mix(in srgb, var(--site-accent) 45%, var(--site-border));
-      transform: translateY(-2px);
-    }
-    .card-link .kicker {
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--site-secondary);
-      font-weight: 750;
-      margin-bottom: 0.45rem;
-    }
-    .card-link h2 {
-      font-family: var(--site-font);
-      font-weight: 700;
-      font-size: 1.12rem;
-      letter-spacing: -0.02em;
-      margin: 0 0 0.4rem;
-      color: var(--site-ink);
-    }
-    .card-link p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--site-muted);
-    }
+    .box p { margin: 0; max-width: none; color: var(--site-muted); }
 
     .stats {
-      max-width: 920px;
-      margin: 0 auto 1.4rem;
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.65rem;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.65rem;
+      margin: 1.15rem 0;
     }
     @media (max-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } }
     .stat {
-      background: var(--site-surface);
-      border: 1px solid var(--site-border);
-      border-radius: 12px;
-      padding: 1rem 0.85rem;
-      text-align: center;
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 12px; padding: 1rem 0.85rem; text-align: center;
       box-shadow: var(--site-shadow);
     }
     .stat .num {
-      font-variant-numeric: tabular-nums;
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      display: block;
-      color: var(--site-ink);
+      font-variant-numeric: tabular-nums; font-size: 1.45rem; font-weight: 800;
+      letter-spacing: -0.03em; display: block; color: var(--site-ink);
     }
     .stat .label {
-      font-size: 0.74rem;
-      color: var(--site-muted);
-      margin-top: 0.25rem;
-      display: block;
+      font-size: 0.74rem; color: var(--site-muted); margin-top: 0.25rem; display: block;
     }
+
+    .timeline { border-left: 2px solid var(--site-rule); padding-left: 1.2rem; margin: 1rem 0 0; }
+    .timeline .step { position: relative; padding-bottom: 1.05rem; }
+    .timeline .step:last-child { padding-bottom: 0; }
+    .timeline .step::before {
+      content: ""; position: absolute; left: -1.55rem; top: 0.35rem;
+      width: 9px; height: 9px; border-radius: 50%; background: var(--site-accent);
+    }
+    .timeline h3 { font-size: 0.98rem; margin: 0 0 0.25rem; font-weight: 700; }
+    .timeline p { font-size: 0.92rem; color: var(--site-muted); margin: 0; }
+
+    .table-wrap { overflow-x: auto; margin-top: 0.75rem; }
+    table.findings { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    table.findings th, table.findings td {
+      padding: 0.65rem 0.7rem; border-bottom: 1px solid var(--site-rule);
+      text-align: left; vertical-align: top;
+    }
+    table.findings th {
+      font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--site-faint); font-weight: 700;
+    }
+    table.findings tr.confirmed td { background: #e0f2fe; }
+    .tag {
+      font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase;
+      font-weight: 700; white-space: nowrap;
+    }
+    .tag.confirmed { color: var(--site-secondary); }
+    .tag.new { color: var(--site-accent); }
+
+    .audiences {
+      display: grid; grid-template-columns: 1fr; gap: 1.1rem;
+    }
+    .audience {
+      padding: 1.15rem 0 0;
+      border-top: 1px solid var(--site-rule);
+    }
+    .audience:first-child { border-top: 0; padding-top: 0; }
+    .audience .role {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--site-secondary); font-weight: 750; display: block; margin-bottom: 0.35rem;
+    }
+    .audience h3 {
+      font-family: var(--site-font); font-size: 1.08rem; font-weight: 700;
+      letter-spacing: -0.02em; margin: 0 0 0.4rem;
+    }
+    .audience p { margin: 0 0 0.65rem; color: var(--site-muted); font-size: 0.95rem; }
+    .audience .go {
+      font-size: 0.88rem; font-weight: 700; color: var(--site-accent); text-decoration: none;
+    }
+    .audience .go:hover { text-decoration: underline; }
+
+    .tools {
+      display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 0.85rem;
+    }
+    .tools a {
+      display: inline-flex; align-items: center;
+      padding: 0.55rem 0.85rem; border-radius: 10px;
+      border: 1px solid var(--site-border); background: var(--site-surface);
+      color: var(--site-ink); text-decoration: none; font-weight: 650; font-size: 0.88rem;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    .tools a:hover { border-color: var(--site-accent); color: var(--site-accent); }
+
+    .caveat {
+      font-size: 0.85rem; color: var(--site-faint); font-style: italic;
+      margin-top: 1rem; padding-top: 0.85rem; border-top: 1px dashed var(--site-rule);
+    }
+    footer.status {
+      margin-top: 2.5rem; padding-top: 1.3rem; border-top: 1px solid var(--site-rule);
+      font-size: 0.85rem; color: var(--site-faint);
+    }
+    footer.status strong { color: var(--site-muted); }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <span class="eyebrow">W3I · Civic Tech Lab · липень 2026</span>
-    <div class="status-pill"><i></i> Дослідницький пілот · method v6 · не готовий продукт</div>
-    <h1>Кому з ким варто співпрацювати серед українських громад?</h1>
-    <p class="lede">
-      Системний NLP-матчинг офіційних стратегій розвитку — щоб знаходити кандидатів
-      на міжмуніципальне співробітництво (МСС) не лише через особисті зв’язки.
-      Зараз: підказки пар, карта реєстру МСС, відкриті дані.
-    </p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="hromada-project-passport.html">Читати паспорт</a>
-      <a class="btn btn-ghost" href="matches.html">Дивитись кандидатів</a>
-      <a class="btn btn-ghost" href="funds.html">Для фондів</a>
-      <a class="btn btn-ghost" href="mss-pin-matching-graph.html">Відкрити карту МСС</a>
-    </div>
-  </header>
+  <div class="page">
+    <header class="hero">
+      <span class="eyebrow">Civic Tech Lab · липень 2026</span>
+      <p class="brand-hero">W3I<span>Матчинг громад за стратегіями</span></p>
+      <div class="status-pill"><i></i> Дослідницький пілот · method v6 · не готовий продукт</div>
+      <h1>Кому з ким варто співпрацювати серед українських громад?</h1>
+      <p class="lede">
+        Читаємо офіційні стратегії розвитку комп’ютером і підказуємо кандидатів
+        на міжмуніципальне співробітництво — не лише через особисті знайомства.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="matches.html">Дивитись кандидатів</a>
+        <a class="btn btn-ghost" href="funds.html">Для фондів</a>
+        <a class="btn btn-ghost" href="mss-pin-matching-graph.html">Карта МСС</a>
+      </div>
+    </header>
 
-  <div class="stats" aria-label="Ключові цифри">
-    <div class="stat"><span class="num">1 469</span><span class="label">громад у метаданих</span></div>
-    <div class="stat"><span class="num">77</span><span class="label">зі стратегією (68 з Goals)</span></div>
-    <div class="stat"><span class="num">2 278</span><span class="label">пар matching v6</span></div>
-    <div class="stat"><span class="num">#5–11</span><span class="label">ранг known МСС-пар</span></div>
+    <section>
+      <p class="section-kicker">Навіщо</p>
+      <h2>Партнерів для громад сьогодні шукають вручну</h2>
+      <p class="muted">
+        В Україні ~870 громад мають затверджені стратегії, і вже існують сотні договорів МСС.
+        Майже всі вони виникли через знайомства, асоціації або донорські програми —
+        не через системний розбір того, хто пише про одне й те саме.
+        Збіги поза чиїмось полем зору просто не знаходяться.
+      </p>
+      <div class="box">
+        <p>
+          <strong style="color:var(--site-ink)">Гіпотеза:</strong>
+          якщо порівняти тексти стратегій між собою, можна системно підказувати,
+          кому варто об’єднувати зусилля — включно з парами, про які ще ніхто не здогадався.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-kicker">Що зробили</p>
+      <h2>Шлях пілоту</h2>
+      <div class="timeline">
+        <div class="step">
+          <h3>Зібрали стратегії в базу</h3>
+          <p>77 громад зі структурованою стратегією + метадані всіх 1 469 материкових громад за КАТОТТГ. Чесні nulls там, де документ не знайшли.</p>
+        </div>
+        <div class="step">
+          <h3>Витягли порівнянну структуру</h3>
+          <p>Цілі, проєкти, сильні/слабкі сторони, згадані партнери, наявні угоди МСС.</p>
+        </div>
+        <div class="step">
+          <h3>Перевірили на відомих угодах</h3>
+          <p>Без підказки моделі: чи знайде вона реальні партнерства, читаючи лише тексти цілей.</p>
+        </div>
+        <div class="step">
+          <h3>Додали географію й мережу МСС</h3>
+          <p>Чистий текст добре ловить спільне бачення, але пропускає операційні угоди (ЦНАП, сміття). Method v6: 60 % цілі + 25 % гео + 15 % наявна мережа.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-kicker">Результати</p>
+      <h2>Що вже видно на пілотній вибірці</h2>
+      <div class="stats" aria-label="Ключові цифри">
+        <div class="stat"><span class="num">1 469</span><span class="label">громад у метаданих</span></div>
+        <div class="stat"><span class="num">77</span><span class="label">зі стратегією (68 Goals)</span></div>
+        <div class="stat"><span class="num">2 278</span><span class="label">пар matching v6</span></div>
+        <div class="stat"><span class="num">#5–11</span><span class="label">ранг known МСС-пар</span></div>
+      </div>
+      <p class="muted">
+        Туристична угода Ніжин–Батурин–Козелець і операційна пара Слобожанська–Обухівська
+        лишаються в топі без підказки моделі. Шаблонні стратегії від одного консультанта
+        дають хибні дослівні збіги — тому в публічних матеріалах показуємо лише пари після ручного розбору.
+      </p>
+
+      <div class="table-wrap">
+        <table class="findings">
+          <thead><tr><th>Пара</th><th>Статус</th><th>Суть</th></tr></thead>
+          <tbody>
+            <tr class="confirmed">
+              <td>Ніжин ↔ Батурин ↔ Козелець</td>
+              <td><span class="tag confirmed">✓ реальна угода</span></td>
+              <td>Туристичний кластер «Місцями козацької сили» — валідація методу.</td>
+            </tr>
+            <tr>
+              <td>Галицька ↔ Дубовецька</td>
+              <td><span class="tag new">★★★ сильний</span></td>
+              <td>У тексті вже названо спільне водопостачання «Галич–Бурштин–Маріямпіль».</td>
+            </tr>
+            <tr>
+              <td>Ужгород ↔ Мукачево</td>
+              <td><span class="tag new">★★ кандидат</span></td>
+              <td>~40 км; окремий турпродукт + можлива координація медпослуг / грантів.</td>
+            </tr>
+            <tr>
+              <td>Дніпро ↔ Львів</td>
+              <td><span class="tag new">★★ peer-learning</span></td>
+              <td>Обмін моделлю управління інноваціями / агломерацією, не спільний ІТ-продукт.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caveat">Повний автотоп і known-пари — у розділі <a href="matches.html">Кандидати</a>. Бали matching — гіпотези, доки <code>known: true</code>.</p>
+    </section>
+
+    <section id="stakeholders">
+      <p class="section-kicker">Кому це корисно</p>
+      <h2>Чотири аудиторії — чотири різні питання</h2>
+      <div class="audiences">
+        <article class="audience" id="for-minregion">
+          <span class="role">Мінрегіон / розвиток громад</span>
+          <h3>Аналітичний шар над реєстром МСС</h3>
+          <p>
+            Текст ловить тематичні / проєктні збіги; операційні угоди — через географію й уже наявну мережу.
+            Пілот показує, як пропонувати кандидатів із обґрунтуванням — це дослідження, не сервіс заявок.
+          </p>
+          <a class="go" href="mss-pin-matching-graph.html">Відкрити карту PIN + гіпотези →</a>
+        </article>
+        <article class="audience" id="for-mincifry">
+          <span class="role">Мінцифри / цифрова трансформація</span>
+          <h3>Поки що — інституційний peer-learning</h3>
+          <p>
+            Випадків «громада А уже збудувала е-послугу, громада Б дублює даремно» метод ще не знайшов.
+            Реальний цифровий кут у вибірці: Дніпро й Львів обидва будують інституцію управління інноваціями —
+            Львів уже має модель агломерації, Дніпро її проєктує.
+          </p>
+          <a class="go" href="matches.html">Дивитись пари з поясненням →</a>
+        </article>
+        <article class="audience" id="for-hromada">
+          <span class="role">Громада / посадовець</span>
+          <h3>Короткий список замість здогадок</h3>
+          <p>
+            Замість самостійного пошуку партнера — кілька громад зі схожими цілями (і, де доречно, сусідів).
+            Кожна пара потребує вашої перевірки: чи є спільний проєкт, чи лише спільна тема.
+          </p>
+          <a class="go" href="matches.html">Переглянути кандидатів →</a>
+        </article>
+        <article class="audience" id="for-funds">
+          <span class="role">Донорські програми та фонди</span>
+          <h3>Не «нова синергія», а куди не витрачати двічі</h3>
+          <p>
+            Якщо ви вже фінансували стратегії / роботу з громадами A і B, а їхні цілі збігаються —
+            логічніший наступний грант часто один спільний, а не два паралельні.
+            «Міст» — коли сильний матч є з громадою поза портфелем: розширення закриває дірку в мережі,
+            а не просто додає ще одну ізольовану точку.
+          </p>
+          <a class="go" href="funds.html">Розібрати на прикладі портфеля →</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-kicker">Що можна зробити зараз</p>
+      <h2>Можливості пілоту — і чого не обіцяємо</h2>
+      <ul class="plain">
+        <li><strong>2–5 пар для outreach</strong> з коротким обґрунтуванням (Галич–Дубівці, Ужгород–Мукачево) — не національний реєстр партнерів.</li>
+        <li><strong>Портфельний зріз для фонду</strong> — кого звести всередині програми і куди розширитись (див. Фонди).</li>
+        <li><strong>Карта</strong> відомих угод МСС (KSE PIN) поруч із гіпотезами.</li>
+        <li><strong>Open data</strong> (<code>data/releases/</code>, CC BY 4.0) з join на KATOTTG до KSE-Loc-Data-Hub.</li>
+        <li><strong>Не обіцяємо:</strong> повне покриття ~870 стратегій, готовий сервіс заявок МСС, автомат «цифровий twin» е-послуг.</li>
+      </ul>
+      <div class="tools" aria-label="Розділи сайту">
+        <a href="matches.html">Кандидати</a>
+        <a href="funds.html">Фонди</a>
+        <a href="mss-pin-matching-graph.html">Карта МСС</a>
+        <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases">Дані CC BY 4.0</a>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-kicker">Якщо розгортати далі</p>
+      <h2>Ціна і вигода</h2>
+      <ul class="plain">
+        <li><strong>Витрати:</strong> єдиної машиночитаної бази стратегій немає — збір частково ручний; потрібен куратор.</li>
+        <li><strong>Урок вартості:</strong> повний агентний пошук на кожну громаду дорогий. Масштаб — через <code>scripts/retrieval/</code> + структурування вже витягнутого тексту.</li>
+        <li><strong>Вигоди:</strong> більше обґрунтованих угод МСС; сильніші спільні заявки; менше дублювання інвестицій у портфелі донора.</li>
+      </ul>
+    </section>
+
+    <footer class="status">
+      <strong>Статус:</strong> дослідницький пілот. 77 стратегій з ~870 затверджених; 1 469 у метаданих.
+      Method v6 валідований на known МСС. Наступний крок — реакція стейкхолдерів і формат розгортання.
+    </footer>
   </div>
-
-  <section class="grid" aria-label="Розділи сайту">
-    <a class="card-link" href="hromada-project-passport.html">
-      <div class="kicker">Інфо</div>
-      <h2>Паспорт проєкту</h2>
-      <p>Навіщо, що зробили, результати пілоту й чесні обмеження — короткий бриф.</p>
-    </a>
-    <a class="card-link" href="matches.html">
-      <div class="kicker">Матчинг</div>
-      <h2>Кандидати</h2>
-      <p>Known угоди для валідації й топ кандидатів за треками «похожа стратегія» / «зручний сусід».</p>
-    </a>
-    <a class="card-link" href="mss-pin-matching-graph.html">
-      <div class="kicker">Карта</div>
-      <h2>МСС на карті</h2>
-      <p>Повний PIN зареєстрованих угод + окремо «похожа стратегія» і «зручний сусід» (не combined score).</p>
-    </a>
-    <a class="card-link" href="funds.html">
-      <div class="kicker">Фонди</div>
-      <h2>Синергія портфеля</h2>
-      <p>Де наступна інвестиція підсилить уже вкладене: пари всередині програми й мости до сусідніх кластерів.</p>
-    </a>
-  </section>
 
   <p class="site-footer-note">
     Дані: <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases">data/releases/</a> (CC BY 4.0).
     Matching scores — гіпотези, доки не позначені <code>known: true</code>.
   </p>
-
   <script src="assets/nav.js" data-active="home"></script>
 </body>
 </html>

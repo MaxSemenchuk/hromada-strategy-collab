@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Синергія для фондів — портфель і мережевий ефект</title>
-  <meta name="description" content="Де інвестиція фонду в громади / стратегії дає найбільший мережевий ефект: спільні наступні гранти всередині портфеля і мости до сусідніх кластерів."/>
+  <title>Для фондів — куди не фінансувати двічі</title>
+  <meta name="description" content="Портфельний погляд: спільний наступний грант між уже профінансованими громадами, мости для розширення портфеля, хаби для peer-learning."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -32,6 +32,22 @@
       max-width: 18ch; text-wrap: balance;
     }
     .lede { color: var(--site-muted); max-width: 62ch; margin: 0 0 1.35rem; }
+    .example {
+      background: var(--site-surface);
+      border: 1px solid var(--site-border);
+      border-left: 3px solid var(--site-accent);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin: 0 0 1.6rem;
+      box-shadow: var(--site-shadow);
+    }
+    .example h2 {
+      font-family: var(--site-font); font-weight: 700; font-size: 1.02rem;
+      letter-spacing: -0.02em; margin: 0 0 0.45rem;
+    }
+    .example p { margin: 0 0 0.55rem; font-size: 0.9rem; color: var(--site-muted); }
+    .example p:last-child { margin-bottom: 0; }
+    .example strong { color: var(--site-ink); }
     .lenses {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;
       margin-bottom: 1.8rem;
@@ -132,29 +148,46 @@
 <body>
   <div class="page">
     <span class="eyebrow">Для фондів і донорських програм</span>
-    <h1>Де інвестиція дає мережевий ефект</h1>
+    <h1>Куди не фінансувати двічі</h1>
     <p class="lede">
-      Фонди вже фінансують громади — часто саме розробку стратегій.
-      Той самий корпус стратегій + мережа МСС підказує, <em>де наступний грант
-      підсилить уже вкладене</em>: спільний проєкт між «своїми» громадами
-      або міст до кластера, з яким портфель ще не з’єднаний.
+      «Синергія» тут — не красиве слово. Це конкретна логіка грошей:
+      якщо ви вже вклали в громади A і B (навіть лише в їхні стратегії),
+      а їхні цілі збігаються — наступний грант часто має сенс як <em>один спільний</em>,
+      а не два паралельні. Нижче — три способи це побачити на вашому портфелі.
     </p>
 
-    <div class="lenses" aria-label="Три лінзи аналізу">
+    <div class="example">
+      <h2>Приклад без жаргону</h2>
+      <p>
+        Уявімо: програма профінансувала розробку стратегій у Ніжині й Козельці.
+        Обидві пишуть про туризм на козацькій спадщині — і вже мають реальну угоду МСС
+        («Місцями козацької сили»). <strong>Синергія всередині портфеля</strong> =
+        наступний грант на спільний турмаршрут / інфоцентр для пари, а не окремі
+        «розвиток туризму» в кожній громаді.
+      </p>
+      <p>
+        <strong>Міст:</strong> Батурин у тій самій угоді, але умовно ще не в портфелі.
+        Додати Батурин — не «ще одна громада», а закрити дірку в уже працюючому кластері.
+        <strong>Хаб:</strong> громада з багатьма гіпотетичними зв’язками — зручний
+        якір для peer-learning між вашими грантоотримувачами.
+      </p>
+    </div>
+
+    <div class="lenses" aria-label="Три способи читати портфель">
       <div class="lens">
-        <div class="kicker">1 · Портфель</div>
-        <h2>Всередині програми</h2>
-        <p>Пари вже профінансованих громад зі схожими цілями — кандидати на спільний наступний грант / МСС.</p>
+        <div class="kicker">1 · Усередині</div>
+        <h2>Спільний наступний грант</h2>
+        <p>Обидві громади вже «ваші» і схожі за цілями → один проєкт / МСС замість дублювання.</p>
       </div>
       <div class="lens">
         <div class="kicker">2 · Міст</div>
-        <h2>За межі портфеля</h2>
-        <p>Сильний матч, де одна громада — ваша, друга — ні. Інвестиція може закрити «дірку» в мережі.</p>
+        <h2>Куди розширитись</h2>
+        <p>Сильний матч portfolio↔зовні: нова інвестиція з’єднує кластери, а не додає ізольовану точку.</p>
       </div>
       <div class="lens">
         <div class="kicker">3 · Хаб</div>
-        <h2>Точки важеля</h2>
-        <p>Громади з багатьма гіпотетичними зв’язками в matching-графі — пріоритет для peer-learning / anchor-партнера.</p>
+        <h2>Якір у мережі</h2>
+        <p>Громада з багатьма зв’язками в matching — пріоритет для навчання інших у портфелі.</p>
       </div>
     </div>
 
@@ -173,8 +206,8 @@
 
     <section>
       <p class="section-kicker">Лінза 1</p>
-      <h2 class="sec">Синергія всередині портфеля</h2>
-      <p class="sec-lede">Обидві громади вже в програмі — логічний наступний крок: спільна заявка, а не два паралельні проєкти.</p>
+      <h2 class="sec">Пари всередині портфеля</h2>
+      <p class="sec-lede">Обидві вже профінансовані. Питання: чи є сенс у спільному наступному гранті / МСС замість двох окремих.</p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -231,7 +264,7 @@
   <p class="site-footer-note">
     Дані: <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases">donor-synergy.json</a> ·
     <a href="matches.html">Кандидати</a> ·
-    <a href="hromada-project-passport.html">Паспорт</a>
+    <a href="index.html">О проєкті</a>
   </p>
 
   <script src="assets/nav.js" data-active="funds"></script>

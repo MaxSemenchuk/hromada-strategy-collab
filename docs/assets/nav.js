@@ -1,7 +1,6 @@
 (function () {
   var PAGES = [
-    { href: "index.html", id: "home", label: "Огляд" },
-    { href: "hromada-project-passport.html", id: "passport", label: "Паспорт" },
+    { href: "index.html", id: "home", label: "О проєкті" },
     { href: "matches.html", id: "matches", label: "Кандидати" },
     { href: "funds.html", id: "funds", label: "Фонди" },
     { href: "mss-pin-matching-graph.html", id: "map", label: "Карта МСС" }
