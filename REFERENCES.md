@@ -10,7 +10,10 @@ reasonable one, and where its limits are likely to sit.
 1. **OECD — *Rebuilding Ukraine by Reinforcing Regional and Municipal Governance*.**
    Direct policy framing for why municipal-governance capacity (of which
    inter-municipal cooperation is one lever) matters specifically for Ukraine's
-   reconstruction, not decentralization in the abstract.
+   reconstruction, not decentralization in the abstract. Large volume — for this
+   project, read surgically: Ch.1 Assessment & recommendations (IMC bullets) and
+   the IMC subsection of Ch.6; skip fiscal/amalgamation depth unless doing
+   separate policy work.
 
 2. **OECD — *How to Make Inter-Municipal Co-operation Work* (2026).**
    Practitioner-facing OECD guidance on IMC design choices (voluntary vs.
@@ -18,7 +21,60 @@ reasonable one, and where its limits are likely to sit.
    which of the collaboration types this project's matching method can plausibly
    detect (thematic/strategic overlap) versus which it can't (administrative/
    back-office arrangements — see the "Methodology notes" section in the
-   [README](README.md)).
+   [README](README.md)). Read this before the large 2022 Ukraine volume; the
+   typology and enabling conditions map directly onto our two product tracks
+   (below).
+
+## How IMC typologies map onto this project's method
+
+Two OECD / network-governance ladders sit behind the split already shipped as
+`похожа стратегія` (thematic) vs `зручний сусід` (operational). They are not
+competing frameworks — one describes **depth of the arrangement**, the other
+**who runs it**.
+
+### Ladder A — depth of cooperation (OECD IMC 2026)
+
+| Form | What it is | Example in our corpus | Which signal finds it |
+|------|------------|------------------------|------------------------|
+| Handshake / ad hoc | Informal coordination, no contract | Peer learning Дніпро↔Львів (innovation institution) | Soft thematic; not in МСС registry |
+| Single-purpose | One shared service or asset | Слобожанська↔Обухівська (shared ЦНАП); planned water network Галич–Бурштин–Маріямпіль | Mostly **geo / neighbourhood** (`зручний сусід`); text only if the strategy names the shared asset |
+| Multi-purpose / thematic cluster | Several linked products or a joint development agenda | Tourism: Ніжин–Батурин–Козелець («Місцями козацької сили»); candidate Ужгород↔Мукачево | **Goals-cosine** (`похожа стратегія`); geo optional — can be same corridor, not always next door |
+| NAO-like / dedicated body | Separate admin entity for the network | Асоціація «Львівська агломерація»; large multi-party PIN deals (Дністровський каньйон, 22 parties) | Matching finds *candidates*; Provan & Kenis (below) says what governance form should follow |
+
+**Tourism** sits high on this ladder: rare in the registry (~0.6% of titled agreements) but where NLP adds the most — multi-party, sometimes cross-oblast, vision written into Goals. Sell as joint route / DMO / grant, not as “you are neighbours.”
+
+**Water / waste / fire / CNAP** sit low on the ladder: natural single-purpose sharing with **adjacent** hromadas. Strategies rarely describe them; when they do (Дубовецька names the Галич water project), text confirms an operational neighbour, it does not replace geography. Sell as `зручний сусід`, not as strategy twin.
+
+### Ladder B — who governs the network (Provan & Kenis 2008)
+
+| Mode | Fit when | Ukraine-flavoured example |
+|------|----------|---------------------------|
+| Shared participant | Small N, high trust, high goal consensus | Bilateral ЦНАП or two-hromada utility |
+| Lead organization | One capable hub + smaller partners | Oblast-centre or large miska anchoring a corridor |
+| Network administrative organization (NAO) | Large N, need network-level competence | Tourism / canyon / ethnos clusters with 5–22 parties |
+
+Contingencies that decide the mode: trust density, network size, goal consensus,
+need for network-level skills. Matching does not pick the mode — it only surfaces
+who should be in the room.
+
+### Enabling conditions (OECD) → product implications
+
+- **Trust / incremental path** — start with a narrow shared service, expand later;
+  or for cold-start vision pairs, start with a joint grant/route before a legal
+  multi-purpose body.
+- **Data & monitoring** — our open edges + PIN overlay are exactly the “reliable
+  data / monitoring” enabling condition OECD lists; keep hypotheses labeled, do
+  not present combined `score` as one “strategy match.”
+- **Sector fit** — capital-intensive networks (water, waste, transport) and
+  cross-boundary development (tourism, spatial planning) are where IMC is
+  “natural”; do not oversell generic sector-tag overlap (already useless as a
+  matching signal in this corpus).
+
+### One-line method reminder
+
+**Goals text → like-minded partners (tourism / clusters). Geography + existing
+PIN → service co-sharers next door (water, ЦНАП, waste). v6 mixes both — strong
+combined signal, easy to mis-sell.**
 
 ## Institutional and network-governance theory
 

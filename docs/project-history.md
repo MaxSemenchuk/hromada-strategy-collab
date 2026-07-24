@@ -262,7 +262,12 @@ List A = “who thinks like us.” List B = “who is convenient to share a serv
 Few tourism contracts, yet they are the large multi-party (sometimes
 cross-oblast) deals. Pairwise matching is enough for bilateral operational МСС;
 clusters need multi-way / community view (the Nizhyn “trio” is really five
-parties in KSE).
+parties in KSE). **Sell tourism as `похожа стратегія` / joint product** (route,
+DMO, grant) — not as neighbour convenience. Contrast: **water/utilities are
+`зручний сусід`** — Halytska↔Dubovetska works because they are adjacent *and*
+the strategy names a shared network; geography is doing the heavy lifting.
+Full IMC-ladder mapping (handshake → single-purpose → multi-purpose → NAO-like)
+lives in [REFERENCES.md](../REFERENCES.md#how-imc-typologies-map-onto-this-projects-method).
 
 **5. Where the whitespace is.**  
 Dense МСС oblasts (Poltava, Lviv, Vinnytsia) mostly yield “already
