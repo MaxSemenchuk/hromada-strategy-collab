@@ -272,11 +272,13 @@ co-sharers. v6 mixes them — strong signal, easy to misread.**
 ## Open threads (as of 2026-07-24)
 
 - [ ] File cross-link issue on KSE repo ([kse-issue-draft.md](kse-issue-draft.md))
-- [ ] Re-scrutinize `internal/outreach-messages.md` for overclaims
-- [ ] Resolve 5–7 snowball retrieval targets or accept ~57-hromada pilot cap
+- [x] Stakeholder site under `docs/` + shared nav (GitHub Pages workflow)
+- [x] Re-scrutinize `internal/outreach-messages.md` numbers / overclaims (2026-07-24)
+- [ ] Resolve remaining snowball retrieval targets or accept ~77-hromada pilot cap
 - [ ] Length-normalization / hub-hromada handling (Poltava-Zhytomyr-type risk)
-- [ ] Product/graph layer decision still pending — pilot validation stage
+- [ ] Product decision after first stakeholder conversations (open-data vs matchmaking vs W3I-internal)
 - [ ] Split NocoDB base if project grows into standalone product
+- [ ] Export `DonorsPrograms` into public `hromadas.json` when ready for donor outreach slices
 - [x] Split matcher outputs into thematic vs operational ranked lists
       (`track` on edges + `matching-edges.thematic.json` /
       `matching-edges.operational.json`; scoring unchanged) — 2026-07-24
@@ -284,10 +286,22 @@ co-sharers. v6 mixes them — strong signal, easy to misread.**
 
 ---
 
-## Stakeholder artifacts (Claude Code)
+## Stakeholder artifacts
 
-- [Матчинг громад за стратегіями розвитку](https://claude.ai/code/artifact/6913283b-0450-477b-88fa-bcc0ed3775e9) — Ukrainian brief
-- [Паспорт проєкту](https://claude.ai/code/artifact/f67810d5-dc4e-4291-937e-c3db24e452c5) — confidence-tiered findings
+Canonical leave-behind is the **GitHub Pages site** rooted at [`docs/`](./)
+(shared nav: overview · passport · matches · map · graph MVP):
 
-Local HTML copies: [hromada-project-passport.html](hromada-project-passport.html),
-[mss-graph-mvp.html](mss-graph-mvp.html).
+**https://maxsemenchuk.github.io/hromada-strategy-collab/**
+
+| Page | File |
+|------|------|
+| Overview | [index.html](index.html) |
+| Passport (UA brief) | [hromada-project-passport.html](hromada-project-passport.html) |
+| Matching candidates | [matches.html](matches.html) |
+| PIN map + matching | [mss-pin-matching-graph.html](mss-pin-matching-graph.html) |
+| Registry graph MVP | [mss-graph-mvp.html](mss-graph-mvp.html) |
+
+Legacy Claude Code artifact URLs (superseded by Pages):
+
+- [Матчинг громад…](https://claude.ai/code/artifact/6913283b-0450-477b-88fa-bcc0ed3775e9)
+- [Паспорт проєкту](https://claude.ai/code/artifact/f67810d5-dc4e-4291-937e-c3db24e452c5)

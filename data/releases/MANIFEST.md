@@ -45,9 +45,10 @@ and self-describing, not a growth history.
 
 ## Coverage, read before using
 
-- The snapshot export covers the **54-hromada text-mined pilot subset**, not
-  all 1,469 mainland hromadas. Live NocoDB export includes full metadata rows.
-- Only ~57 hromadas have actual strategy-text extraction — the rest show
-  `null` in text fields. This is pilot-stage, not a completed sweep.
+- Live export covers **1,469** metadata rows; **77** have strategy extractions
+  (`SourceQuality` full/partial/proxy). About **68** have non-empty `Goals`.
+- This is pilot-stage, not a completed sweep of mainland Ukraine.
 - KSE covariates are **not duplicated** here — joined at analysis time; see
   [docs/kse-synergy.md](../../docs/kse-synergy.md).
+- Matching: **2,278** pairs, method v6; only `known: true` edges are
+  registry-confirmed.

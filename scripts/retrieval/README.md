@@ -1,6 +1,6 @@
 # Retrieval batch workflow
 
-Scale strategy extraction beyond the current ~57-hromada pilot without
+Scale strategy extraction beyond the current ~77-hromada pilot without
 burning 60–150k agent tokens per hromada on anti-bot retrieval.
 
 ## Pipeline

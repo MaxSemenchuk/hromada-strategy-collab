@@ -75,7 +75,7 @@ When joining edem covariates:
 1. Read **`edem-data.csv`**, not the edem columns in `full_dataset.csv`.
 2. Treat hromadas absent from `edem-data.csv` as **missing**, not as
    `edem_total = 0`.
-3. Document coverage in any downstream score (e.g. "edem known for 331/57
+3. Document coverage in any downstream score (e.g. "edem known for 331/77
    text-mined hromadas").
 
 Attribution: KSE-Loc-Data-Hub, Zenodo [10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573), MIT license — used at analysis time, not redistributed.
