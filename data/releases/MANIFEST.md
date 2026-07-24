@@ -8,12 +8,20 @@ and self-describing, not a growth history.
 ## Contents
 
 - **`hromadas.json`** — canonical hromada rows (metadata + LLM-extracted strategy
-  fields). Regenerate with:
+  fields). Includes derived **`PortalUrl`** (official site homepage when known).
+  Regenerate with:
 
   ```bash
   yarn export-hromadas                    # live NocoDB (needs .env)
   yarn export-hromadas:snapshot           # offline from research-log snapshot
+  yarn enrich-portal-urls                 # offline: recompute PortalUrl on current release
   ```
+
+- **`hromada-portals.json`** — compact index of rows with non-null `PortalUrl`
+  (Name, Katottg, PortalUrl, StrategyUrl, …). Same license as the release.
+  Built by `yarn export-hromadas` / `yarn enrich-portal-urls`.
+  Overrides for aggregator-only StrategyUrls:
+  `data/sources/portal-url-overrides.json`.
 
 - **`matching-edges.json`** — pairwise similarity scores (unverified hypotheses
   unless `known: true`). Method v6: 60% goals-cosine + 25% KSE geography +

@@ -12,6 +12,7 @@
     "import-hromadas": "tsx -r dotenv/config scripts/import-hromadas-metadata.ts",
     "export-hromadas": "tsx -r dotenv/config scripts/export-hromadas.ts",
     "export-hromadas:snapshot": "tsx scripts/export-hromadas.ts --from-snapshot data/research-log/hromadas_full54.json",
+    "enrich-portal-urls": "tsx scripts/enrich-portal-urls.ts",
     "ckan-search": "tsx scripts/retrieval/ckan-search.ts",
     "download-raw": "tsx scripts/retrieval/download-raw.ts",
     "fetch-mss-registry": "tsx scripts/retrieval/fetch-mss-registry.ts",
