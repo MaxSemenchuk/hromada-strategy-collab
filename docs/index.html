@@ -213,32 +213,32 @@
 <body>
   <div class="page">
     <header class="hero">
-      <span class="eyebrow">Civic Tech Lab · липень 2026</span>
-      <p class="brand-hero">W3I<span>Матчинг громад за стратегіями</span></p>
-      <div class="status-pill"><i></i> Дослідницький пілот · method v6 · не готовий продукт</div>
-      <h1>Кому з ким варто співпрацювати серед українських громад?</h1>
-      <p class="lede">
+      <span class="eyebrow" data-i18n="hero.eyebrow">Civic Tech Lab · липень 2026</span>
+      <p class="brand-hero" data-i18n-html="hero.brand">W3I<span>Матчинг громад за стратегіями</span></p>
+      <div class="status-pill"><i></i> <span data-i18n="hero.status">Дослідницький пілот · method v6 · не готовий продукт</span></div>
+      <h1 data-i18n="hero.h1">Кому з ким варто співпрацювати серед українських громад?</h1>
+      <p class="lede" data-i18n="hero.lede">
         Читаємо офіційні стратегії розвитку комп’ютером і підказуємо кандидатів
         на міжмуніципальне співробітництво — не лише через особисті знайомства.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="matches.html">Дивитись кандидатів</a>
-        <a class="btn btn-ghost" href="funds.html">Для фондів</a>
-        <a class="btn btn-ghost" href="mss-pin-matching-graph.html">Карта МСС</a>
+        <a class="btn btn-primary" href="matches.html" data-i18n="hero.cta.matches">Дивитись кандидатів</a>
+        <a class="btn btn-ghost" href="funds.html" data-i18n="hero.cta.funds">Для фондів</a>
+        <a class="btn btn-ghost" href="mss-pin-matching-graph.html" data-i18n="hero.cta.map">Карта МСС</a>
       </div>
     </header>
 
     <section>
-      <p class="section-kicker">Навіщо</p>
-      <h2>Партнерів для громад сьогодні шукають вручну</h2>
-      <p class="muted">
+      <p class="section-kicker" data-i18n="why.kicker">Навіщо</p>
+      <h2 data-i18n="why.h2">Партнерів для громад сьогодні шукають вручну</h2>
+      <p class="muted" data-i18n="why.p">
         В Україні ~870 громад мають затверджені стратегії, і вже існують сотні договорів МСС.
         Майже всі вони виникли через знайомства, асоціації або донорські програми —
         не через системний розбір того, хто пише про одне й те саме.
         Збіги поза чиїмось полем зору просто не знаходяться.
       </p>
       <div class="box">
-        <p>
+        <p data-i18n-html="why.box">
           <strong style="color:var(--site-ink)">Гіпотеза:</strong>
           якщо порівняти тексти стратегій між собою, можна системно підказувати,
           кому варто об’єднувати зусилля — включно з парами, про які ще ніхто не здогадався.
@@ -247,38 +247,38 @@
     </section>
 
     <section>
-      <p class="section-kicker">Що зробили</p>
-      <h2>Шлях пілоту</h2>
+      <p class="section-kicker" data-i18n="path.kicker">Що зробили</p>
+      <h2 data-i18n="path.h2">Шлях пілоту</h2>
       <div class="timeline">
         <div class="step">
-          <h3>Зібрали стратегії в базу</h3>
-          <p>77 громад зі структурованою стратегією + метадані всіх 1 469 материкових громад за КАТОТТГ. Чесні nulls там, де документ не знайшли.</p>
+          <h3 data-i18n="path.s1.h">Зібрали стратегії в базу</h3>
+          <p data-i18n="path.s1.p">77 громад зі структурованою стратегією + метадані всіх 1 469 материкових громад за КАТОТТГ. Чесні nulls там, де документ не знайшли.</p>
         </div>
         <div class="step">
-          <h3>Витягли порівнянну структуру</h3>
-          <p>Цілі, проєкти, сильні/слабкі сторони, згадані партнери, наявні угоди МСС.</p>
+          <h3 data-i18n="path.s2.h">Витягли порівнянну структуру</h3>
+          <p data-i18n="path.s2.p">Цілі, проєкти, сильні/слабкі сторони, згадані партнери, наявні угоди МСС.</p>
         </div>
         <div class="step">
-          <h3>Перевірили на відомих угодах</h3>
-          <p>Без підказки моделі: чи знайде вона реальні партнерства, читаючи лише тексти цілей.</p>
+          <h3 data-i18n="path.s3.h">Перевірили на відомих угодах</h3>
+          <p data-i18n="path.s3.p">Без підказки моделі: чи знайде вона реальні партнерства, читаючи лише тексти цілей.</p>
         </div>
         <div class="step">
-          <h3>Додали географію й мережу МСС</h3>
-          <p>Чистий текст добре ловить спільне бачення, але пропускає операційні угоди (ЦНАП, сміття). Method v6: 60 % цілі + 25 % гео + 15 % наявна мережа.</p>
+          <h3 data-i18n="path.s4.h">Додали географію й мережу МСС</h3>
+          <p data-i18n="path.s4.p">Чистий текст добре ловить спільне бачення, але пропускає операційні угоди (ЦНАП, сміття). Method v6: 60 % цілі + 25 % гео + 15 % наявна мережа.</p>
         </div>
       </div>
     </section>
 
     <section>
-      <p class="section-kicker">Результати</p>
-      <h2>Що вже видно на пілотній вибірці</h2>
-      <div class="stats" aria-label="Ключові цифри">
-        <div class="stat"><span class="num">1 469</span><span class="label">громад у метаданих</span></div>
-        <div class="stat"><span class="num">77</span><span class="label">зі стратегією (68 Goals)</span></div>
-        <div class="stat"><span class="num">2 278</span><span class="label">пар matching v6</span></div>
-        <div class="stat"><span class="num">#5–11</span><span class="label">ранг known МСС-пар</span></div>
+      <p class="section-kicker" data-i18n="results.kicker">Результати</p>
+      <h2 data-i18n="results.h2">Що вже видно на пілотній вибірці</h2>
+      <div class="stats" data-i18n-aria="results.stats.aria" aria-label="Ключові цифри">
+        <div class="stat"><span class="num">1 469</span><span class="label" data-i18n="results.stat1">громад у метаданих</span></div>
+        <div class="stat"><span class="num">77</span><span class="label" data-i18n="results.stat2">зі стратегією (68 Goals)</span></div>
+        <div class="stat"><span class="num">2 278</span><span class="label" data-i18n="results.stat3">пар matching v6</span></div>
+        <div class="stat"><span class="num">#5–11</span><span class="label" data-i18n="results.stat4">ранг known МСС-пар</span></div>
       </div>
-      <p class="muted">
+      <p class="muted" data-i18n="results.p">
         Туристична угода Ніжин–Батурин–Козелець і операційна пара Слобожанська–Обухівська
         лишаються в топі без підказки моделі. Шаблонні стратегії від одного консультанта
         дають хибні дослівні збіги — тому в публічних матеріалах показуємо лише пари після ручного розбору.
@@ -286,145 +286,344 @@
 
       <div class="table-wrap">
         <table class="findings">
-          <thead><tr><th>Пара</th><th>Статус</th><th>Суть</th></tr></thead>
+          <thead><tr>
+            <th data-i18n="results.th.pair">Пара</th>
+            <th data-i18n="results.th.status">Статус</th>
+            <th data-i18n="results.th.gist">Суть</th>
+          </tr></thead>
           <tbody>
             <tr class="confirmed">
               <td>Ніжин ↔ Батурин ↔ Козелець</td>
-              <td><span class="tag confirmed">✓ реальна угода</span></td>
-              <td>Туристичний кластер «Місцями козацької сили» — валідація методу.</td>
+              <td><span class="tag confirmed" data-i18n="results.r1.status">✓ реальна угода</span></td>
+              <td data-i18n="results.r1.gist">Туристичний кластер «Місцями козацької сили» — валідація методу.</td>
             </tr>
             <tr>
               <td>Галицька ↔ Дубовецька</td>
-              <td><span class="tag new">★★★ сильний</span></td>
-              <td>У тексті вже названо спільне водопостачання «Галич–Бурштин–Маріямпіль».</td>
+              <td><span class="tag new" data-i18n="results.r2.status">★★★ сильний</span></td>
+              <td data-i18n="results.r2.gist">У тексті вже названо спільне водопостачання «Галич–Бурштин–Маріямпіль».</td>
             </tr>
             <tr>
               <td>Ужгород ↔ Мукачево</td>
-              <td><span class="tag new">★★ кандидат</span></td>
-              <td>~40 км; окремий турпродукт + можлива координація медпослуг / грантів.</td>
+              <td><span class="tag new" data-i18n="results.r3.status">★★ кандидат</span></td>
+              <td data-i18n="results.r3.gist">~40 км; окремий турпродукт + можлива координація медпослуг / грантів.</td>
             </tr>
             <tr>
               <td>Дніпро ↔ Львів</td>
-              <td><span class="tag new">★★ peer-learning</span></td>
-              <td>Обмін моделлю управління інноваціями / агломерацією, не спільний ІТ-продукт.</td>
+              <td><span class="tag new" data-i18n="results.r4.status">★★ peer-learning</span></td>
+              <td data-i18n="results.r4.gist">Обмін моделлю управління інноваціями / агломерацією, не спільний ІТ-продукт.</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="caveat">Повний автотоп і known-пари — у розділі <a href="matches.html">Кандидати</a>. Бали matching — гіпотези, доки <code>known: true</code>.</p>
+      <p class="caveat" data-i18n-html="results.caveat">Повний автотоп і known-пари — у розділі <a href="matches.html">Кандидати</a>. Бали matching — гіпотези, доки <code>known: true</code>.</p>
     </section>
 
     <section id="stakeholders">
-      <p class="section-kicker">Кому це корисно</p>
-      <h2>Чотири аудиторії — чотири різні цінності</h2>
+      <p class="section-kicker" data-i18n="aud.kicker">Кому це корисно</p>
+      <h2 data-i18n="aud.h2">Чотири аудиторії — чотири різні цінності</h2>
       <div class="audiences">
         <article class="audience" id="for-minregion">
-          <span class="role">Мінрегіон / розвиток громад</span>
-          <h3>Аналітичний шар над реєстром МСС</h3>
-          <p>
+          <span class="role" data-i18n="aud.minregion.role">Мінрегіон / розвиток громад</span>
+          <h3 data-i18n="aud.minregion.h3">Аналітичний шар над реєстром МСС</h3>
+          <p data-i18n="aud.minregion.p">
             Текст ловить тематичні / проєктні збіги; операційні угоди — через географію й уже наявну мережу.
             Пілот показує, як пропонувати кандидатів із обґрунтуванням — це дослідження, не сервіс заявок.
           </p>
           <ul class="values">
-            <li><strong>Кандидати з поясненням</strong> — не лише факт угоди в реєстрі, а «чому саме ці дві громади».</li>
-            <li><strong>Два треки:</strong> «похожа стратегія» vs «зручний сусід» — різні типи МСС потребують різного сигналу.</li>
-            <li><strong>Карта PIN + гіпотези</strong> поруч — зручно для методологічної розмови.</li>
+            <li data-i18n-html="aud.minregion.v1"><strong>Кандидати з поясненням</strong> — не лише факт угоди в реєстрі, а «чому саме ці дві громади».</li>
+            <li data-i18n-html="aud.minregion.v2"><strong>Два треки:</strong> «похожа стратегія» vs «зручний сусід» — різні типи МСС потребують різного сигналу.</li>
+            <li data-i18n-html="aud.minregion.v3"><strong>Карта PIN + гіпотези</strong> поруч — зручно для методологічної розмови.</li>
           </ul>
           <div class="links">
-            <a class="go" href="mss-pin-matching-graph.html">Карта PIN + гіпотези →</a>
+            <a class="go" href="mss-pin-matching-graph.html" data-i18n="aud.minregion.go">Карта PIN + гіпотези →</a>
           </div>
         </article>
         <article class="audience" id="for-mincifry">
-          <span class="role">Мінцифри / цифрова трансформація</span>
-          <h3>Поки що — інституційний peer-learning</h3>
-          <p>
+          <span class="role" data-i18n="aud.mincifry.role">Мінцифри / цифрова трансформація</span>
+          <h3 data-i18n="aud.mincifry.h3">Поки що — інституційний peer-learning</h3>
+          <p data-i18n="aud.mincifry.p">
             Випадків «громада А уже збудувала е-послугу, громада Б дублює даремно» метод ще не знайшов.
             Реальний цифровий кут у вибірці: Дніпро й Львів обидва будують інституцію управління інноваціями —
             Львів уже має модель агломерації, Дніпро її проєктує.
           </p>
           <ul class="values">
-            <li><strong>Чесна межа:</strong> не обіцяємо пошук дубльованих е-сервісів на пілоті.</li>
-            <li><strong>Конкретний кейс:</strong> обмін управлінською моделлю (Дніпро↔Львів), не спільний ІТ-продукт.</li>
-            <li><strong>Питання до вас:</strong> чи варто копати далі саме в цьому вузькому напрямку.</li>
+            <li data-i18n-html="aud.mincifry.v1"><strong>Чесна межа:</strong> не обіцяємо пошук дубльованих е-сервісів на пілоті.</li>
+            <li data-i18n-html="aud.mincifry.v2"><strong>Конкретний кейс:</strong> обмін управлінською моделлю (Дніпро↔Львів), не спільний ІТ-продукт.</li>
+            <li data-i18n-html="aud.mincifry.v3"><strong>Питання до вас:</strong> чи варто копати далі саме в цьому вузькому напрямку.</li>
           </ul>
           <div class="links">
-            <a class="go" href="matches.html">Пари з поясненням →</a>
+            <a class="go" href="matches.html" data-i18n="aud.mincifry.go">Пари з поясненням →</a>
           </div>
         </article>
         <article class="audience" id="for-hromada">
-          <span class="role">Громада / посадовець</span>
-          <h3>Короткий список замість здогадок</h3>
-          <p>
+          <span class="role" data-i18n="aud.hromada.role">Громада / посадовець</span>
+          <h3 data-i18n="aud.hromada.h3">Короткий список замість здогадок</h3>
+          <p data-i18n="aud.hromada.p">
             Замість самостійного пошуку партнера — кілька громад зі схожими цілями (і, де доречно, сусідів).
             Кожна пара потребує вашої перевірки: чи є спільний проєкт, чи лише спільна тема.
           </p>
           <ul class="values">
-            <li><strong>Гіпотеза з відкритих стратегій</strong> — конкретна пара й суть співпраці, не загальний каталог.</li>
-            <li><strong>Ваша перевірка обов’язкова</strong> — ми не підписуємо угоду за вас.</li>
-            <li><strong>Outreach під конкретну пару</strong> — шаблон у <code>internal/outreach-messages.md</code> (не на публічному сайті).</li>
+            <li data-i18n-html="aud.hromada.v1"><strong>Гіпотеза з відкритих стратегій</strong> — конкретна пара й суть співпраці, не загальний каталог.</li>
+            <li data-i18n-html="aud.hromada.v2"><strong>Ваша перевірка обов’язкова</strong> — ми не підписуємо угоду за вас.</li>
+            <li data-i18n-html="aud.hromada.v3"><strong>Outreach під конкретну пару</strong> — шаблон у <code>internal/outreach-messages.md</code> (не на публічному сайті).</li>
           </ul>
           <div class="links">
-            <a class="go" href="matches.html">Переглянути кандидатів →</a>
+            <a class="go" href="matches.html" data-i18n="aud.hromada.go">Переглянути кандидатів →</a>
           </div>
         </article>
         <article class="audience" id="for-funds">
-          <span class="role">Донорські програми та фонди</span>
-          <h3>Куди не фінансувати двічі</h3>
-          <p>
+          <span class="role" data-i18n="aud.funds.role">Донорські програми та фонди</span>
+          <h3 data-i18n="aud.funds.h3">Куди не фінансувати двічі</h3>
+          <p data-i18n="aud.funds.p">
             Фонди вже інвестують у громади — часто саме в стратегії. Цінність пілоту для вас —
             побачити, де наступний грант підсилює вже вкладене, а не додає ізольовану точку.
           </p>
           <ul class="values">
-            <li><strong>Спільний наступний грант:</strong> дві «ваші» громади зі схожими цілями → один проєкт / МСС замість двох паралельних.</li>
-            <li><strong>Мости:</strong> сильний матч portfolio↔зовні — куди розширитись, щоб закрити дірку в мережі.</li>
-            <li><strong>Хаби:</strong> якорі peer-learning між грантоотримувачами.</li>
-            <li><strong>Чесно:</strong> зараз демонстрація на пілоті (~77 стратегій, ~172 з тегом програми); повний портфель потребує ширшого покриття «ваших» громад.</li>
+            <li data-i18n-html="aud.funds.v1"><strong>Спільний наступний грант:</strong> дві «ваші» громади зі схожими цілями → один проєкт / МСС замість двох паралельних.</li>
+            <li data-i18n-html="aud.funds.v2"><strong>Мости:</strong> сильний матч portfolio↔зовні — куди розширитись, щоб закрити дірку в мережі.</li>
+            <li data-i18n-html="aud.funds.v3"><strong>Хаби:</strong> якорі peer-learning між грантоотримувачами.</li>
+            <li data-i18n-html="aud.funds.v4"><strong>Чесно:</strong> зараз демонстрація на пілоті (~77 стратегій, ~172 з тегом програми); повний портфель потребує ширшого покриття «ваших» громад.</li>
           </ul>
           <div class="links">
-            <a class="go" href="funds.html">Портфельний зріз →</a>
+            <a class="go" href="funds.html" data-i18n="aud.funds.go">Портфельний зріз →</a>
           </div>
         </article>
       </div>
     </section>
 
     <section>
-      <p class="section-kicker">Що можна зробити зараз</p>
-      <h2>Можливості пілоту — і чого не обіцяємо</h2>
+      <p class="section-kicker" data-i18n="now.kicker">Що можна зробити зараз</p>
+      <h2 data-i18n="now.h2">Можливості пілоту — і чого не обіцяємо</h2>
       <ul class="plain">
-        <li><strong>2–5 пар для outreach</strong> з коротким обґрунтуванням (Галич–Дубівці, Ужгород–Мукачево) — не національний реєстр партнерів.</li>
-        <li><strong>Портфельний зріз для фонду</strong> — кого звести всередині програми і куди розширитись (див. Фонди).</li>
-        <li><strong>Карта</strong> відомих угод МСС (KSE PIN) поруч із гіпотезами.</li>
-        <li><strong>Open data</strong> (<code>data/releases/</code>, CC BY 4.0) з join на KATOTTG до KSE-Loc-Data-Hub.</li>
-        <li><strong>Не обіцяємо:</strong> повне покриття ~870 стратегій, готовий сервіс заявок МСС, автомат «цифровий twin» е-послуг.</li>
+        <li data-i18n-html="now.l1"><strong>2–5 пар для outreach</strong> з коротким обґрунтуванням (Галич–Дубівці, Ужгород–Мукачево) — не національний реєстр партнерів.</li>
+        <li data-i18n-html="now.l2"><strong>Портфельний зріз для фонду</strong> — кого звести всередині програми і куди розширитись (див. Фонди).</li>
+        <li data-i18n-html="now.l3"><strong>Карта</strong> відомих угод МСС (KSE PIN) поруч із гіпотезами.</li>
+        <li data-i18n-html="now.l4"><strong>Open data</strong> (<code>data/releases/</code>, CC BY 4.0) з join на KATOTTG до KSE-Loc-Data-Hub.</li>
+        <li data-i18n-html="now.l5"><strong>Не обіцяємо:</strong> повне покриття ~870 стратегій, готовий сервіс заявок МСС, автомат «цифровий twin» е-послуг.</li>
       </ul>
-      <div class="tools" aria-label="Розділи сайту">
-        <a href="matches.html">Кандидати</a>
-        <a href="funds.html">Фонди</a>
-        <a href="mss-pin-matching-graph.html">Карта МСС</a>
-        <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases">Дані CC BY 4.0</a>
+      <div class="tools" data-i18n-aria="now.tools.aria" aria-label="Розділи сайту">
+        <a href="matches.html" data-i18n="now.tools.matches">Кандидати</a>
+        <a href="funds.html" data-i18n="now.tools.funds">Фонди</a>
+        <a href="mss-pin-matching-graph.html" data-i18n="now.tools.map">Карта МСС</a>
+        <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases" data-i18n="now.tools.data">Дані CC BY 4.0</a>
       </div>
     </section>
 
     <section>
-      <p class="section-kicker">Якщо розгортати далі</p>
-      <h2>Ціна і вигода</h2>
+      <p class="section-kicker" data-i18n="scale.kicker">Якщо розгортати далі</p>
+      <h2 data-i18n="scale.h2">Ціна і вигода</h2>
       <ul class="plain">
-        <li><strong>Витрати:</strong> єдиної машиночитаної бази стратегій немає — збір частково ручний; потрібен куратор.</li>
-        <li><strong>Урок вартості:</strong> повний агентний пошук на кожну громаду дорогий. Масштаб — через <code>scripts/retrieval/</code> + структурування вже витягнутого тексту.</li>
-        <li><strong>Вигоди:</strong> більше обґрунтованих угод МСС; сильніші спільні заявки; менше дублювання інвестицій у портфелі донора.</li>
+        <li data-i18n-html="scale.l1"><strong>Витрати:</strong> єдиної машиночитаної бази стратегій немає — збір частково ручний; потрібен куратор.</li>
+        <li data-i18n-html="scale.l2"><strong>Урок вартості:</strong> повний агентний пошук на кожну громаду дорогий. Масштаб — через <code>scripts/retrieval/</code> + структурування вже витягнутого тексту.</li>
+        <li data-i18n-html="scale.l3"><strong>Вигоди:</strong> більше обґрунтованих угод МСС; сильніші спільні заявки; менше дублювання інвестицій у портфелі донора.</li>
       </ul>
     </section>
 
-    <footer class="status">
+    <footer class="status" data-i18n-html="footer.status">
       <strong>Статус:</strong> дослідницький пілот. 77 стратегій з ~870 затверджених; 1 469 у метаданих.
       Method v6 валідований на known МСС. Наступний крок — реакція стейкхолдерів і формат розгортання.
     </footer>
   </div>
 
-  <p class="site-footer-note">
+  <p class="site-footer-note" data-i18n-html="footer.note">
     Дані: <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases">data/releases/</a> (CC BY 4.0).
     Matching scores — гіпотези, доки не позначені <code>known: true</code>.
   </p>
+  <script>
+window.PAGE_I18N = {
+  uk: {
+  "doc.title": "О проєкті — Матчинг громад за стратегіями · W3I",
+  "hero.eyebrow": "Civic Tech Lab · липень 2026",
+  "hero.brand": "W3I<span>Матчинг громад за стратегіями</span>",
+  "hero.status": "Дослідницький пілот · method v6 · не готовий продукт",
+  "hero.h1": "Кому з ким варто співпрацювати серед українських громад?",
+  "hero.lede": "Читаємо офіційні стратегії розвитку комп’ютером і підказуємо кандидатів на міжмуніципальне співробітництво — не лише через особисті знайомства.",
+  "hero.cta.matches": "Дивитись кандидатів",
+  "hero.cta.funds": "Для фондів",
+  "hero.cta.map": "Карта МСС",
+  "why.kicker": "Навіщо",
+  "why.h2": "Партнерів для громад сьогодні шукають вручну",
+  "why.p": "В Україні ~870 громад мають затверджені стратегії, і вже існують сотні договорів МСС. Майже всі вони виникли через знайомства, асоціації або донорські програми — не через системний розбір того, хто пише про одне й те саме. Збіги поза чиїмось полем зору просто не знаходяться.",
+  "why.box": "<strong style=\"color:var(--site-ink)\">Гіпотеза:</strong> якщо порівняти тексти стратегій між собою, можна системно підказувати, кому варто об’єднувати зусилля — включно з парами, про які ще ніхто не здогадався.",
+  "path.kicker": "Що зробили",
+  "path.h2": "Шлях пілоту",
+  "path.s1.h": "Зібрали стратегії в базу",
+  "path.s1.p": "77 громад зі структурованою стратегією + метадані всіх 1 469 материкових громад за КАТОТТГ. Чесні nulls там, де документ не знайшли.",
+  "path.s2.h": "Витягли порівнянну структуру",
+  "path.s2.p": "Цілі, проєкти, сильні/слабкі сторони, згадані партнери, наявні угоди МСС.",
+  "path.s3.h": "Перевірили на відомих угодах",
+  "path.s3.p": "Без підказки моделі: чи знайде вона реальні партнерства, читаючи лише тексти цілей.",
+  "path.s4.h": "Додали географію й мережу МСС",
+  "path.s4.p": "Чистий текст добре ловить спільне бачення, але пропускає операційні угоди (ЦНАП, сміття). Method v6: 60 % цілі + 25 % гео + 15 % наявна мережа.",
+  "results.kicker": "Результати",
+  "results.h2": "Що вже видно на пілотній вибірці",
+  "results.stats.aria": "Ключові цифри",
+  "results.stat1": "громад у метаданих",
+  "results.stat2": "зі стратегією (68 Goals)",
+  "results.stat3": "пар matching v6",
+  "results.stat4": "ранг known МСС-пар",
+  "results.p": "Туристична угода Ніжин–Батурин–Козелець і операційна пара Слобожанська–Обухівська лишаються в топі без підказки моделі. Шаблонні стратегії від одного консультанта дають хибні дослівні збіги — тому в публічних матеріалах показуємо лише пари після ручного розбору.",
+  "results.th.pair": "Пара",
+  "results.th.status": "Статус",
+  "results.th.gist": "Суть",
+  "results.r1.status": "✓ реальна угода",
+  "results.r1.gist": "Туристичний кластер «Місцями козацької сили» — валідація методу.",
+  "results.r2.status": "★★★ сильний",
+  "results.r2.gist": "У тексті вже названо спільне водопостачання «Галич–Бурштин–Маріямпіль».",
+  "results.r3.status": "★★ кандидат",
+  "results.r3.gist": "~40 км; окремий турпродукт + можлива координація медпослуг / грантів.",
+  "results.r4.status": "★★ peer-learning",
+  "results.r4.gist": "Обмін моделлю управління інноваціями / агломерацією, не спільний ІТ-продукт.",
+  "results.caveat": "Повний автотоп і known-пари — у розділі <a href=\"matches.html\">Кандидати</a>. Бали matching — гіпотези, доки <code>known: true</code>.",
+  "aud.kicker": "Кому це корисно",
+  "aud.h2": "Чотири аудиторії — чотири різні цінності",
+  "aud.minregion.role": "Мінрегіон / розвиток громад",
+  "aud.minregion.h3": "Аналітичний шар над реєстром МСС",
+  "aud.minregion.p": "Текст ловить тематичні / проєктні збіги; операційні угоди — через географію й уже наявну мережу. Пілот показує, як пропонувати кандидатів із обґрунтуванням — це дослідження, не сервіс заявок.",
+  "aud.minregion.v1": "<strong>Кандидати з поясненням</strong> — не лише факт угоди в реєстрі, а «чому саме ці дві громади».",
+  "aud.minregion.v2": "<strong>Два треки:</strong> «похожа стратегія» vs «зручний сусід» — різні типи МСС потребують різного сигналу.",
+  "aud.minregion.v3": "<strong>Карта PIN + гіпотези</strong> поруч — зручно для методологічної розмови.",
+  "aud.minregion.go": "Карта PIN + гіпотези →",
+  "aud.mincifry.role": "Мінцифри / цифрова трансформація",
+  "aud.mincifry.h3": "Поки що — інституційний peer-learning",
+  "aud.mincifry.p": "Випадків «громада А уже збудувала е-послугу, громада Б дублює даремно» метод ще не знайшов. Реальний цифровий кут у вибірці: Дніпро й Львів обидва будують інституцію управління інноваціями — Львів уже має модель агломерації, Дніпро її проєктує.",
+  "aud.mincifry.v1": "<strong>Чесна межа:</strong> не обіцяємо пошук дубльованих е-сервісів на пілоті.",
+  "aud.mincifry.v2": "<strong>Конкретний кейс:</strong> обмін управлінською моделлю (Дніпро↔Львів), не спільний ІТ-продукт.",
+  "aud.mincifry.v3": "<strong>Питання до вас:</strong> чи варто копати далі саме в цьому вузькому напрямку.",
+  "aud.mincifry.go": "Пари з поясненням →",
+  "aud.hromada.role": "Громада / посадовець",
+  "aud.hromada.h3": "Короткий список замість здогадок",
+  "aud.hromada.p": "Замість самостійного пошуку партнера — кілька громад зі схожими цілями (і, де доречно, сусідів). Кожна пара потребує вашої перевірки: чи є спільний проєкт, чи лише спільна тема.",
+  "aud.hromada.v1": "<strong>Гіпотеза з відкритих стратегій</strong> — конкретна пара й суть співпраці, не загальний каталог.",
+  "aud.hromada.v2": "<strong>Ваша перевірка обов’язкова</strong> — ми не підписуємо угоду за вас.",
+  "aud.hromada.v3": "<strong>Outreach під конкретну пару</strong> — шаблон у <code>internal/outreach-messages.md</code> (не на публічному сайті).",
+  "aud.hromada.go": "Переглянути кандидатів →",
+  "aud.funds.role": "Донорські програми та фонди",
+  "aud.funds.h3": "Куди не фінансувати двічі",
+  "aud.funds.p": "Фонди вже інвестують у громади — часто саме в стратегії. Цінність пілоту для вас — побачити, де наступний грант підсилює вже вкладене, а не додає ізольовану точку.",
+  "aud.funds.v1": "<strong>Спільний наступний грант:</strong> дві «ваші» громади зі схожими цілями → один проєкт / МСС замість двох паралельних.",
+  "aud.funds.v2": "<strong>Мости:</strong> сильний матч portfolio↔зовні — куди розширитись, щоб закрити дірку в мережі.",
+  "aud.funds.v3": "<strong>Хаби:</strong> якорі peer-learning між грантоотримувачами.",
+  "aud.funds.v4": "<strong>Чесно:</strong> зараз демонстрація на пілоті (~77 стратегій, ~172 з тегом програми); повний портфель потребує ширшого покриття «ваших» громад.",
+  "aud.funds.go": "Портфельний зріз →",
+  "now.kicker": "Що можна зробити зараз",
+  "now.h2": "Можливості пілоту — і чого не обіцяємо",
+  "now.l1": "<strong>2–5 пар для outreach</strong> з коротким обґрунтуванням (Галич–Дубівці, Ужгород–Мукачево) — не національний реєстр партнерів.",
+  "now.l2": "<strong>Портфельний зріз для фонду</strong> — кого звести всередині програми і куди розширитись (див. Фонди).",
+  "now.l3": "<strong>Карта</strong> відомих угод МСС (KSE PIN) поруч із гіпотезами.",
+  "now.l4": "<strong>Open data</strong> (<code>data/releases/</code>, CC BY 4.0) з join на KATOTTG до KSE-Loc-Data-Hub.",
+  "now.l5": "<strong>Не обіцяємо:</strong> повне покриття ~870 стратегій, готовий сервіс заявок МСС, автомат «цифровий twin» е-послуг.",
+  "now.tools.aria": "Розділи сайту",
+  "now.tools.matches": "Кандидати",
+  "now.tools.funds": "Фонди",
+  "now.tools.map": "Карта МСС",
+  "now.tools.data": "Дані CC BY 4.0",
+  "scale.kicker": "Якщо розгортати далі",
+  "scale.h2": "Ціна і вигода",
+  "scale.l1": "<strong>Витрати:</strong> єдиної машиночитаної бази стратегій немає — збір частково ручний; потрібен куратор.",
+  "scale.l2": "<strong>Урок вартості:</strong> повний агентний пошук на кожну громаду дорогий. Масштаб — через <code>scripts/retrieval/</code> + структурування вже витягнутого тексту.",
+  "scale.l3": "<strong>Вигоди:</strong> більше обґрунтованих угод МСС; сильніші спільні заявки; менше дублювання інвестицій у портфелі донора.",
+  "footer.status": "<strong>Статус:</strong> дослідницький пілот. 77 стратегій з ~870 затверджених; 1 469 у метаданих. Method v6 валідований на known МСС. Наступний крок — реакція стейкхолдерів і формат розгортання.",
+  "footer.note": "Дані: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">data/releases/</a> (CC BY 4.0). Matching scores — гіпотези, доки не позначені <code>known: true</code>."
+},
+  en: {
+  "doc.title": "About — Matching hromadas by strategies · W3I",
+  "hero.eyebrow": "Civic Tech Lab · July 2026",
+  "hero.brand": "W3I<span>Matching hromadas by strategies</span>",
+  "hero.status": "Research pilot · method v6 · not a finished product",
+  "hero.h1": "Which Ukrainian hromadas should work together?",
+  "hero.lede": "We read official development strategies with NLP and surface candidates for inter-municipal cooperation (IMC) — not only through personal networks.",
+  "hero.cta.matches": "See candidates",
+  "hero.cta.funds": "For funds",
+  "hero.cta.map": "IMC map",
+  "why.kicker": "Why",
+  "why.h2": "Partners for hromadas are still found by hand",
+  "why.p": "In Ukraine ~870 hromadas have approved strategies, and hundreds of IMC agreements already exist. Almost all of them grew out of acquaintances, associations, or donor programmes — not from a systematic read of who writes about the same things. Matches outside someone’s field of view simply stay invisible.",
+  "why.box": "<strong style=\"color:var(--site-ink)\">Hypothesis:</strong> comparing strategy texts can systematically suggest who should join forces — including pairs nobody has thought of yet.",
+  "path.kicker": "What we did",
+  "path.h2": "Pilot path",
+  "path.s1.h": "Built a strategy corpus",
+  "path.s1.p": "77 hromadas with a structured strategy + metadata for all 1 469 mainland hromadas by KATOTTG. Honest nulls where no document was found.",
+  "path.s2.h": "Extracted a comparable structure",
+  "path.s2.p": "Goals, projects, strengths/weaknesses, mentioned partners, existing IMC agreements.",
+  "path.s3.h": "Checked against known agreements",
+  "path.s3.p": "Without tipping the model: can it find real partnerships by reading goal texts alone?",
+  "path.s4.h": "Added geography and the IMC network",
+  "path.s4.p": "Text alone catches shared vision but misses operational deals (ASCs, waste). Method v6: 60% goals + 25% geo + 15% existing network.",
+  "results.kicker": "Results",
+  "results.h2": "What the pilot sample already shows",
+  "results.stats.aria": "Key figures",
+  "results.stat1": "hromadas in metadata",
+  "results.stat2": "with a strategy (68 Goals)",
+  "results.stat3": "matching v6 pairs",
+  "results.stat4": "rank of known IMC pairs",
+  "results.p": "The tourism agreement Nizhyn–Baturyn–Kozelets and the operational pair Slobozhanska–Obukhivska stay near the top without tipping the model. Template strategies from one consultant create false literal matches — so public materials only show pairs after manual review.",
+  "results.th.pair": "Pair",
+  "results.th.status": "Status",
+  "results.th.gist": "Gist",
+  "results.r1.status": "✓ real agreement",
+  "results.r1.gist": "Tourism cluster “Along the Cossack Strength Trail” — method validation.",
+  "results.r2.status": "★★★ strong",
+  "results.r2.gist": "The text already names shared water supply “Halych–Burshtyn–Mariiampil”.",
+  "results.r3.status": "★★ candidate",
+  "results.r3.gist": "~40 km; a distinct tourism product + possible health-service / grant coordination.",
+  "results.r4.status": "★★ peer-learning",
+  "results.r4.gist": "Exchange of an innovation / agglomeration governance model — not a shared IT product.",
+  "results.caveat": "Full auto-top and known pairs — in <a href=\"matches.html\">Candidates</a>. Matching scores are hypotheses until <code>known: true</code>.",
+  "aud.kicker": "Who it’s for",
+  "aud.h2": "Four audiences — four different values",
+  "aud.minregion.role": "Ministry for Communities / regional development",
+  "aud.minregion.h3": "An analytics layer on top of the IMC registry",
+  "aud.minregion.p": "Text catches thematic / project overlap; operational deals come through geography and the existing network. The pilot shows how to propose candidates with a rationale — research, not an application desk.",
+  "aud.minregion.v1": "<strong>Candidates with a why</strong> — not only that an agreement exists in the registry, but “why these two hromadas”.",
+  "aud.minregion.v2": "<strong>Two tracks:</strong> “similar strategy” vs “convenient neighbour” — different IMC types need different signals.",
+  "aud.minregion.v3": "<strong>PIN map + hypotheses</strong> side by side — useful for a methodology conversation.",
+  "aud.minregion.go": "PIN map + hypotheses →",
+  "aud.mincifry.role": "Ministry of Digital Transformation",
+  "aud.mincifry.h3": "For now — institutional peer-learning",
+  "aud.mincifry.p": "Cases of “hromada A already built an e-service, hromada B is duplicating it for nothing” are not in the sample yet. The real digital angle here: Dnipro and Lviv are both building an innovation-governance institution — Lviv already has an agglomeration model; Dnipro is designing one.",
+  "aud.mincifry.v1": "<strong>Honest limit:</strong> we are not promising a search for duplicated e-services on this pilot.",
+  "aud.mincifry.v2": "<strong>Concrete case:</strong> exchange of a governance model (Dnipro↔Lviv), not a shared IT product.",
+  "aud.mincifry.v3": "<strong>Question for you:</strong> is this narrow direction worth digging further?",
+  "aud.mincifry.go": "Pairs with explanation →",
+  "aud.hromada.role": "Hromada / official",
+  "aud.hromada.h3": "A shortlist instead of guesswork",
+  "aud.hromada.p": "Instead of hunting for a partner alone — a few hromadas with similar goals (and neighbours where it fits). Each pair still needs your check: shared project, or only a shared theme?",
+  "aud.hromada.v1": "<strong>A hypothesis from open strategies</strong> — a concrete pair and cooperation gist, not a general catalogue.",
+  "aud.hromada.v2": "<strong>Your review is required</strong> — we do not sign an agreement for you.",
+  "aud.hromada.v3": "<strong>Outreach for a specific pair</strong> — template in <code>internal/outreach-messages.md</code> (not on the public site).",
+  "aud.hromada.go": "Browse candidates →",
+  "aud.funds.role": "Donor programmes and funds",
+  "aud.funds.h3": "Where not to fund twice",
+  "aud.funds.p": "Funds already invest in hromadas — often in strategies themselves. The pilot’s value for you is seeing where the next grant reinforces what is already in, instead of adding an isolated point.",
+  "aud.funds.v1": "<strong>Shared next grant:</strong> two of “your” hromadas with similar goals → one project / IMC instead of two parallel ones.",
+  "aud.funds.v2": "<strong>Bridges:</strong> a strong portfolio↔outside match — where to expand to close a gap in the network.",
+  "aud.funds.v3": "<strong>Hubs:</strong> anchors for peer-learning among grantees.",
+  "aud.funds.v4": "<strong>Honestly:</strong> this is a pilot demo (~77 strategies, ~172 with a programme tag); a full portfolio needs broader coverage of “your” hromadas.",
+  "aud.funds.go": "Portfolio slice →",
+  "now.kicker": "What you can do now",
+  "now.h2": "Pilot opportunities — and what we do not promise",
+  "now.l1": "<strong>2–5 outreach pairs</strong> with a short rationale (Halych–Dubivtsi, Uzhhorod–Mukachevo) — not a national partner registry.",
+  "now.l2": "<strong>A portfolio slice for a fund</strong> — whom to connect inside a programme and where to expand (see Funds).",
+  "now.l3": "<strong>A map</strong> of known IMC agreements (KSE PIN) next to hypotheses.",
+  "now.l4": "<strong>Open data</strong> (<code>data/releases/</code>, CC BY 4.0) with a KATOTTG join to KSE-Loc-Data-Hub.",
+  "now.l5": "<strong>We do not promise:</strong> full coverage of ~870 strategies, a ready IMC application service, or an automatic “digital twin” of e-services.",
+  "now.tools.aria": "Site sections",
+  "now.tools.matches": "Candidates",
+  "now.tools.funds": "Funds",
+  "now.tools.map": "IMC map",
+  "now.tools.data": "Data CC BY 4.0",
+  "scale.kicker": "If this scales further",
+  "scale.h2": "Cost and upside",
+  "scale.l1": "<strong>Costs:</strong> there is no single machine-readable strategy base — collection is partly manual; a curator is needed.",
+  "scale.l2": "<strong>Cost lesson:</strong> a full agent search per hromada is expensive. Scale via <code>scripts/retrieval/</code> + structuring already extracted text.",
+  "scale.l3": "<strong>Upside:</strong> more reasoned IMC agreements; stronger joint proposals; less duplicated investment in a donor portfolio.",
+  "footer.status": "<strong>Status:</strong> research pilot. 77 strategies of ~870 approved; 1 469 in metadata. Method v6 validated on known IMC. Next step — stakeholder reaction and a rollout format.",
+  "footer.note": "Data: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">data/releases/</a> (CC BY 4.0). Matching scores are hypotheses until marked <code>known: true</code>."
+}
+};
+  </script>
+  <script src="assets/i18n.js"></script>
   <script src="assets/nav.js" data-active="home"></script>
 </body>
 </html>
