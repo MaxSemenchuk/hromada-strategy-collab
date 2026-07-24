@@ -9,8 +9,8 @@
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <style>
   :root {
-    --bg: #14181d; --surface: #1b2027; --ink: #e9e6de; --ink-muted: #a9ac9f;
-    --border: #2d333c; --accent: #57ab9c; --gold: #d9a548; --hyp: #7aa2ff; --ops: #c47a6a; --rule: #333a44;
+    --bg: #0b1220; --surface: #111827; --ink: #e5eefb; --ink-muted: #94a3b8;
+    --border: #1e293b; --accent: #3b82f6; --gold: #38bdf8; --hyp: #93c5fd; --ops: #fb923c; --rule: #1e293b;
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
@@ -206,7 +206,7 @@ const nodesLayer = L.layerGroup().addTo(map);
 function edgeStyle(kind) {
   if (kind === 'pin') return { color: '#57ab9c', weight: 1, opacity: 0.28 };
   if (kind === 'known') return { color: '#d9a548', weight: 3, opacity: 0.95 };
-  if (kind === 'operational') return { color: '#c47a6a', weight: 2, opacity: 0.7, dashArray: '2 6' };
+  if (kind === 'operational') return { color: '#fb923c', weight: 2, opacity: 0.7, dashArray: '2 6' };
   // thematic (and legacy hypothesis)
   return { color: '#7aa2ff', weight: 2, opacity: 0.75, dashArray: '6 5' };
 }
@@ -437,7 +437,7 @@ function strokeEdge(e, ax, ay, bx, by) {
     ctx.lineWidth = 2.6 / scale;
     ctx.setLineDash([]);
   } else if (e.kind === 'operational') {
-    ctx.strokeStyle = 'rgba(196,122,106,0.65)';
+    ctx.strokeStyle = 'rgba(251,146,60,0.65)';
     ctx.lineWidth = 1.3 / scale;
     ctx.setLineDash([2 / scale, 5 / scale]);
   } else {
@@ -487,6 +487,6 @@ function loop() {
 requestAnimationFrame(loop);
 setMode('map');
 </script>
-<script src="assets/nav.js" data-active="map" data-theme="dark"></script>
+<script src="assets/nav.js" data-active="map"></script>
 </body>
 </html>

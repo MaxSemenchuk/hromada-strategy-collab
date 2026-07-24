@@ -295,7 +295,7 @@ co-sharers. v6 mixes them — strong signal, easy to misread.**
 ## Stakeholder artifacts
 
 Canonical leave-behind is the **GitHub Pages site** rooted at [`docs/`](./)
-(shared nav: overview · passport · matches · map · graph MVP):
+(shared nav: overview · passport · matches · map):
 
 **https://maxsemenchuk.github.io/hromada-strategy-collab/**
 
@@ -305,7 +305,6 @@ Canonical leave-behind is the **GitHub Pages site** rooted at [`docs/`](./)
 | Passport (UA brief) | [hromada-project-passport.html](hromada-project-passport.html) |
 | Matching candidates | [matches.html](matches.html) |
 | PIN map + matching | [mss-pin-matching-graph.html](mss-pin-matching-graph.html) |
-| Registry graph MVP | [mss-graph-mvp.html](mss-graph-mvp.html) |
 
 Legacy Claude Code artifact URLs (superseded by Pages):
 
