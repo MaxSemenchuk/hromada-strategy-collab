@@ -60,7 +60,7 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
   project in source text). Auto top score also surfaces neighbors like
   Вижницька↔Косівська — treat as hypotheses until manually checked.
 - Stakeholder site under [`docs/`](docs/) (GitHub Pages): passport · matches ·
-  PIN map · graph MVP. Product/graph *product* decision still open — this remains
+  PIN map. Product/graph *product* decision still open — this remains
   pilot / concept-validation stage.
 
 **Read this before reusing the data:** the 77-hromada text-mined subset is a
@@ -95,7 +95,7 @@ docs/                             # GitHub Pages site root (see docs/README.md)
 ├── hromada-project-passport.html # stakeholder-facing project brief (Ukrainian)
 ├── matches.html                  # known pairs + top matching hypotheses
 ├── mss-pin-matching-graph.html   # full PIN map + matching overlay
-├── mss-graph-mvp.html            # early force-graph visualization prototype
+├── mss-pin-matching-graph.html   # PIN map + matching overlay (site nav)
 ├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
 ├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub)
 ├── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case
