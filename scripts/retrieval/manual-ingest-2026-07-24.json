@@ -1,0 +1,82 @@
+{
+  "ingested_at": "2026-07-24T08:33:38.691160+00:00",
+  "source": "user manual Downloads → chat upload",
+  "files": [
+    {
+      "file": "3819_vid_30_07_2025_Strategiya…pdf",
+      "slug": "kryvyi-rih.pdf",
+      "hromada": "Криворізька міська територіальна громада",
+      "status": "cached; text layer broken (CID/encoding) — existing Goals kept; OCR needed for re-extract"
+    },
+    {
+      "file": "b7zvppwouctgd4wict4cwpgyahclahzg.pdf",
+      "slug": "lutsk.pdf",
+      "hromada": "Луцька міська територіальна громада",
+      "status": "cached; existing full-strategy Goals consistent with PDF (5 стратегічних цілей)"
+    },
+    {
+      "file": "programa-ekonom…hmtg…pdf",
+      "slug": "kherson-programa.pdf",
+      "hromada": "Херсонська міська територіальна громада",
+      "status": "cached; це ПРОГРАМА економ./соц. розвитку 2026–2028, не класична стратегія Мінрегіон-шаблону — quality лишається як у релізі"
+    },
+    {
+      "file": "strategija-2027.doc",
+      "slug": "mukachevo.doc",
+      "hromada": "Мукачівська міська територіальна громада",
+      "status": "cached; existing Goals match DOC (5 стратегічних цілей)"
+    },
+    {
+      "file": "Стратегія…Слобожанської…pdf",
+      "slug": "slobozhanska.pdf",
+      "hromada": "Слобожанська селищна територіальна громада",
+      "status": "cached; DOBRE; existing Goals match"
+    },
+    {
+      "file": "Стратегія…ВМТГ…3.0.pdf",
+      "slug": "vinnytsia.pdf",
+      "hromada": "Вінницька міська територіальна громада",
+      "status": "restructured — Goals expanded to 6 priorities"
+    },
+    {
+      "file": "4315.1 Стратегія 2030.pdf",
+      "slug": "4315-strategiya-2030.pdf",
+      "hromada": "Тульчинська міська територіальна громада",
+      "status": "UPGRADE partial→full-strategy (2030)"
+    },
+    {
+      "file": "СТРАТЕГІЯ…Лихівської…pdf",
+      "slug": "lykhivska.pdf",
+      "hromada": "Лихівська селищна територіальна громада",
+      "status": "UPGRADE partial→full-strategy"
+    },
+    {
+      "file": "a9532….docx",
+      "slug": "a9532.docx",
+      "hromada": "Великогаївська сільська територіальна громада",
+      "status": "UPGRADE partial→full-strategy (enrich)"
+    },
+    {
+      "file": "336fe….doc",
+      "slug": "336fe.doc",
+      "hromada": "Батуринська міська територіальна громада",
+      "status": "UPGRADE partial→full-strategy (confirm body)"
+    },
+    {
+      "file": "6f692….doc",
+      "slug": "6f692.doc",
+      "hromada": "Батуринська міська територіальна громада",
+      "status": "decision-only (№25), not strategy body"
+    },
+    {
+      "file": "0468….pdf + 1171d….doc",
+      "slug": "0468.pdf / 1171d.doc",
+      "hromada": "Вижницька міська територіальна громада",
+      "status": "cached duplicates of DOBRE 2021–2029; existing full-strategy OK"
+    }
+  ],
+  "missing_from_upload": [
+    "Зноб-Новгородська (Goals empty)",
+    "Новомосковська (DNS dead on source URL)"
+  ]
+}
