@@ -11,11 +11,11 @@ known МСС ranks **#5–#11**. PIN map: **430** nodes / **918** edges from KSE
 
 | Path | Content |
 |------|---------|
-| [`index.html`](index.html) | Overview / hub |
-| [`hromada-project-passport.html`](hromada-project-passport.html) | Project passport (UA brief) |
+| [`index.html`](index.html) | Landing / «О проєкті» (merged former passport) |
 | [`matches.html`](matches.html) | Known pairs + top hypotheses |
-| [`funds.html`](funds.html) | Donor/fund portfolio synergy (within / bridges / hubs) |
+| [`funds.html`](funds.html) | Donor portfolio: shared next grant / bridges / hubs |
 | [`mss-pin-matching-graph.html`](mss-pin-matching-graph.html) | Full PIN map + thematic / operational overlays |
+| [`hromada-project-passport.html`](hromada-project-passport.html) | Redirect → `index.html` (legacy URL) |
 
 Shared chrome: [`assets/site.css`](assets/site.css), [`assets/nav.js`](assets/nav.js).
 
