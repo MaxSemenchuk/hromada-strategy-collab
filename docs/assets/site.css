@@ -86,6 +86,41 @@
 }
 .site-nav .nav-links::-webkit-scrollbar { display: none; }
 
+/* Compact UK|EN switch — matches map mode pill */
+.site-nav .lang-switch {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin: 0 0.2rem 0 0.45rem;
+  padding: 3px;
+  background: var(--site-bg);
+  border: 1px solid var(--site-border);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.site-nav .lang-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--site-muted);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  padding: 0.32rem 0.55rem;
+  border-radius: 7px;
+  cursor: pointer;
+  line-height: 1;
+}
+.site-nav .lang-btn:hover {
+  color: var(--site-ink);
+}
+.site-nav .lang-btn.active {
+  background: var(--site-surface);
+  color: var(--site-accent);
+  box-shadow: var(--site-shadow);
+}
+
 .site-nav .menu-toggle {
   display: none;
   appearance: none;
