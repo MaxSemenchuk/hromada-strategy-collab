@@ -5,6 +5,11 @@ Pairwise hromada matching v6 — goals embeddings + KSE covariates.
 Combines mean-centered sub-goal embeddings (v5 DF-weighting) with KSE enrichment:
   60% goals_cosine + 25% geo + 15% mss_network
 
+Each edge also gets a dual-track label (scoring unchanged):
+  thematic    — high goals, low geo  → cold-start vision partners
+  operational — high geo             → convenient service co-sharers
+  mixed       — otherwise
+
 Usage:
   python scripts/analysis/match.py
   python scripts/analysis/match.py --input data/releases/hromadas.json --out data/releases/matching-edges.json
@@ -24,6 +29,7 @@ from sentence_transformers import SentenceTransformer
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 from enrich_from_kse import geo_score, mss_network_score  # noqa: E402
+from tracks import assign_tracks  # noqa: E402
 
 KNOWN_PAIRS = {
     frozenset(["Ніжинська міська територіальна громада", "Козелецька селищна територіальна громада"]),
@@ -165,15 +171,26 @@ def main() -> None:
 
     model = SentenceTransformer("intfloat/multilingual-e5-small")
     edges = match_all(records, model)
+    meta = assign_tracks(edges)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(edges, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {len(edges)} edges to {args.out}")
+    print(
+        f"Tracks: thematic={meta['counts']['thematic']} "
+        f"operational={meta['counts']['operational']} "
+        f"mixed={meta['counts']['mixed']} "
+        f"(goals p{meta['goalsPercentile']} floor={meta['goalsFloor']})"
+    )
 
-    print("\nTop 10:")
+    print("\nTop 10 (by combined score — not a pure strategy match):")
     for idx, e in enumerate(edges[:10], 1):
         tag = " KNOWN" if e["known"] else ""
-        print(f"{idx:>2}. {e['score']:.3f} ({e['goals_cosine']}/{e['geo_score']}/{e['mss_network']}) {e['a'][:28]} <-> {e['b'][:28]}{tag}")
+        print(
+            f"{idx:>2}. {e['score']:.3f} [{e['track']}] "
+            f"({e['goals_cosine']}/{e['geo_score']}/{e['mss_network']}) "
+            f"{e['a'][:28]} <-> {e['b'][:28]}{tag}"
+        )
 
 
 if __name__ == "__main__":

@@ -1,9 +1,45 @@
 {
-  "generatedAt": "2026-07-24T05:50:41.843123+00:00",
+  "generatedAt": "2026-07-24T05:58:59.455401+00:00",
   "pairCount": 2278,
   "knownValidationPairs": 4,
   "method": "v6: 60% goals_cosine + 25% KSE geo + 15% KSE mss_network",
   "model": "intfloat/multilingual-e5-small",
-  "license": "CC BY 4.0 — see DATA-LICENSE.md",
-  "warning": "Unverified hypotheses unless known=true"
+  "license": "CC BY 4.0 \u2014 see DATA-LICENSE.md",
+  "warning": "Unverified hypotheses unless known=true. Combined score is not a pure strategy match \u2014 use track / slice files.",
+  "tracks": {
+    "thematic": "goals_cosine >= p90 (0.072) and geo_score <= 0.35 \u2014 cold-start vision partners",
+    "operational": "geo_score >= 0.85 and not thematic \u2014 convenient service co-sharers",
+    "mixed": "all other pairs",
+    "counts": {
+      "thematic": 221,
+      "operational": 46,
+      "mixed": 2011
+    },
+    "goalsFloor": 0.072,
+    "goalsPercentile": 90,
+    "geoThematicMax": 0.35,
+    "geoOperationalMin": 0.85
+  },
+  "slices": {
+    "thematic": {
+      "path": "matching-edges.thematic.json",
+      "limit": 50,
+      "count": 50,
+      "rankBy": "goals_cosine",
+      "excludes": [
+        "known=true"
+      ]
+    },
+    "operational": {
+      "path": "matching-edges.operational.json",
+      "limit": 50,
+      "count": 40,
+      "rankBy": "score",
+      "excludes": [
+        "known=true",
+        "mss_network>0"
+      ],
+      "note": "Neighbours not already linked in the KSE \u041c\u0421\u0421 network"
+    }
+  }
 }
