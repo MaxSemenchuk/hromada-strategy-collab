@@ -1,9 +1,23 @@
 {
-  "generatedAt": "2026-07-24T05:50:41.843123+00:00",
+  "generatedAt": "2026-07-24T05:58:59.455401+00:00",
   "method": "v6: 60% goals_cosine + 25% KSE geo + 15% KSE mss_network",
   "pairCount": 2278,
   "corpusGoals": 68,
   "textMinedRows": 77,
+  "tracks": {
+    "thematic": "goals_cosine >= p90 (0.072) and geo_score <= 0.35 — cold-start vision partners",
+    "operational": "geo_score >= 0.85 and not thematic — convenient service co-sharers",
+    "mixed": "all other pairs",
+    "counts": {
+      "thematic": 221,
+      "operational": 46,
+      "mixed": 2011
+    },
+    "goalsFloor": 0.072,
+    "goalsPercentile": 90,
+    "geoThematicMax": 0.35,
+    "geoOperationalMin": 0.85
+  },
   "known": [
     {
       "a": "Слобожанська селищна територіальна громада",
@@ -13,6 +27,7 @@
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": true,
+      "track": "operational",
       "a_short": "Слобожанська",
       "b_short": "Обухівська"
     },
@@ -24,6 +39,7 @@
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": true,
+      "track": "mixed",
       "a_short": "Ніжинська",
       "b_short": "Козелецька"
     },
@@ -35,6 +51,7 @@
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": true,
+      "track": "mixed",
       "a_short": "Ніжинська",
       "b_short": "Батуринська"
     },
@@ -46,6 +63,7 @@
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": true,
+      "track": "thematic",
       "a_short": "Батуринська",
       "b_short": "Козелецька"
     }
@@ -59,6 +77,7 @@
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
+      "track": "operational",
       "a_short": "Галицька",
       "b_short": "Дубовецька"
     },
@@ -70,6 +89,7 @@
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
+      "track": "operational",
       "a_short": "Вижницька",
       "b_short": "Косівська"
     },
@@ -81,6 +101,7 @@
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
+      "track": "operational",
       "a_short": "Галицька",
       "b_short": "Бурштинська"
     },
@@ -92,6 +113,7 @@
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
+      "track": "operational",
       "a_short": "Бурштинська",
       "b_short": "Дубовецька"
     },
@@ -103,6 +125,7 @@
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
+      "track": "operational",
       "a_short": "Слобожанська",
       "b_short": "Обухівська"
     },
@@ -114,6 +137,7 @@
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
+      "track": "mixed",
       "a_short": "Яремчанська",
       "b_short": "Косівська"
     },
@@ -125,6 +149,7 @@
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
+      "track": "mixed",
       "a_short": "Яремчанська",
       "b_short": "Вижницька"
     },
@@ -136,6 +161,7 @@
       "geo_score": 1.0,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Тернопільська",
       "b_short": "Великогаївська"
     },
@@ -147,6 +173,7 @@
       "geo_score": 1.0,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Обухівська",
       "b_short": "Обухівська"
     },
@@ -158,6 +185,7 @@
       "geo_score": 1.0,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Великоберезовицька",
       "b_short": "Великогаївська"
     },
@@ -169,6 +197,7 @@
       "geo_score": 1.0,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Більшівцівська",
       "b_short": "Дубовецька"
     },
@@ -180,6 +209,7 @@
       "geo_score": 1.0,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Галицька",
       "b_short": "Більшівцівська"
     },
@@ -191,6 +221,7 @@
       "geo_score": 1.0,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Бурштинська",
       "b_short": "Більшівцівська"
     },
@@ -202,6 +233,7 @@
       "geo_score": 0.85,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Бурштинська",
       "b_short": "Рогатинська"
     },
@@ -213,6 +245,7 @@
       "geo_score": 1.0,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Тернопільська",
       "b_short": "Великоберезовицька"
     },
@@ -224,6 +257,7 @@
       "geo_score": 0.85,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Журавненська",
       "b_short": "Бурштинська"
     },
@@ -235,6 +269,7 @@
       "geo_score": 1.0,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Дніпровська",
       "b_short": "Слобожанська"
     },
@@ -246,6 +281,7 @@
       "geo_score": 0.85,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Дубовецька",
       "b_short": "Рогатинська"
     },
@@ -257,6 +293,7 @@
       "geo_score": 0.85,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Дніпровська",
       "b_short": "Новомосковська"
     },
@@ -268,6 +305,7 @@
       "geo_score": 0.85,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Дніпровська",
       "b_short": "Обухівська"
     },
@@ -279,6 +317,7 @@
       "geo_score": 0.85,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Великогаївська",
       "b_short": "Збаразька"
     },
@@ -290,6 +329,7 @@
       "geo_score": 0.85,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Тернопільська",
       "b_short": "Збаразька"
     },
@@ -301,6 +341,7 @@
       "geo_score": 0.85,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Більшівцівська",
       "b_short": "Рогатинська"
     },
@@ -312,6 +353,7 @@
       "geo_score": 0.85,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Новомосковська",
       "b_short": "Слобожанська"
     },
@@ -323,6 +365,7 @@
       "geo_score": 0.85,
       "mss_network": 0.0,
       "known": false,
+      "track": "operational",
       "a_short": "Ужгородська",
       "b_short": "Мукачівська"
     }

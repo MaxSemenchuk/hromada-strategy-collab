@@ -189,8 +189,13 @@ yarn export-hromadas
 yarn export-hromadas:snapshot
 
 # Recompute matching edges (v6: goals + KSE geo + KSE mss network)
-yarn match && yarn export-matching-edges && yarn test-known-pairs
+# Combined score ≠ pure strategy match — also writes track labels + dual slices
+yarn match && yarn export-matching-edges && yarn test-known-pairs && yarn test-tracks
 ```
+
+Track labels on each edge (`thematic` / `operational` / `mixed`) and ranked
+slices `matching-edges.thematic.json` / `matching-edges.operational.json` are
+documented in [data/releases/MANIFEST.md](data/releases/MANIFEST.md).
 
 ## Scaling retrieval
 
