@@ -174,6 +174,14 @@
       letter-spacing: -0.02em; margin: 0 0 0.4rem;
     }
     .audience p { margin: 0 0 0.65rem; color: var(--site-muted); font-size: 0.95rem; }
+    .audience .values {
+      margin: 0 0 0.75rem; padding-left: 1.1rem; max-width: 68ch;
+    }
+    .audience .values li {
+      margin-bottom: 0.35rem; color: var(--site-muted); font-size: 0.9rem;
+    }
+    .audience .values li strong { color: var(--site-ink); font-weight: 650; }
+    .audience .links { display: flex; flex-wrap: wrap; gap: 0.85rem 1.1rem; }
     .audience .go {
       font-size: 0.88rem; font-weight: 700; color: var(--site-accent); text-decoration: none;
     }
@@ -308,7 +316,7 @@
 
     <section id="stakeholders">
       <p class="section-kicker">Кому це корисно</p>
-      <h2>Чотири аудиторії — чотири різні питання</h2>
+      <h2>Чотири аудиторії — чотири різні цінності</h2>
       <div class="audiences">
         <article class="audience" id="for-minregion">
           <span class="role">Мінрегіон / розвиток громад</span>
@@ -317,7 +325,15 @@
             Текст ловить тематичні / проєктні збіги; операційні угоди — через географію й уже наявну мережу.
             Пілот показує, як пропонувати кандидатів із обґрунтуванням — це дослідження, не сервіс заявок.
           </p>
-          <a class="go" href="mss-pin-matching-graph.html">Відкрити карту PIN + гіпотези →</a>
+          <ul class="values">
+            <li><strong>Кандидати з поясненням</strong> — не лише факт угоди в реєстрі, а «чому саме ці дві громади».</li>
+            <li><strong>Два треки:</strong> «похожа стратегія» vs «зручний сусід» — різні типи МСС потребують різного сигналу.</li>
+            <li><strong>Карта PIN + гіпотези</strong> поруч — зручно для методологічної розмови.</li>
+          </ul>
+          <div class="links">
+            <a class="go" href="mss-pin-matching-graph.html">Карта PIN + гіпотези →</a>
+            <a class="go" href="outreach.html#minregion">Чернетка outreach →</a>
+          </div>
         </article>
         <article class="audience" id="for-mincifry">
           <span class="role">Мінцифри / цифрова трансформація</span>
@@ -327,7 +343,15 @@
             Реальний цифровий кут у вибірці: Дніпро й Львів обидва будують інституцію управління інноваціями —
             Львів уже має модель агломерації, Дніпро її проєктує.
           </p>
-          <a class="go" href="matches.html">Дивитись пари з поясненням →</a>
+          <ul class="values">
+            <li><strong>Чесна межа:</strong> не обіцяємо пошук дубльованих е-сервісів на пілоті.</li>
+            <li><strong>Конкретний кейс:</strong> обмін управлінською моделлю (Дніпро↔Львів), не спільний ІТ-продукт.</li>
+            <li><strong>Питання до вас:</strong> чи варто копати далі саме в цьому вузькому напрямку.</li>
+          </ul>
+          <div class="links">
+            <a class="go" href="matches.html">Пари з поясненням →</a>
+            <a class="go" href="outreach.html#mincifry">Чернетка outreach →</a>
+          </div>
         </article>
         <article class="audience" id="for-hromada">
           <span class="role">Громада / посадовець</span>
@@ -336,18 +360,33 @@
             Замість самостійного пошуку партнера — кілька громад зі схожими цілями (і, де доречно, сусідів).
             Кожна пара потребує вашої перевірки: чи є спільний проєкт, чи лише спільна тема.
           </p>
-          <a class="go" href="matches.html">Переглянути кандидатів →</a>
+          <ul class="values">
+            <li><strong>Гіпотеза з відкритих стратегій</strong> — конкретна пара й суть співпраці, не загальний каталог.</li>
+            <li><strong>Ваша перевірка обов’язкова</strong> — ми не підписуємо угоду за вас.</li>
+            <li><strong>Шаблон outreach</strong> адаптується під кожну пару (приклад: Ужгород↔Мукачево).</li>
+          </ul>
+          <div class="links">
+            <a class="go" href="matches.html">Переглянути кандидатів →</a>
+            <a class="go" href="outreach.html#hromada">Чернетка outreach →</a>
+          </div>
         </article>
         <article class="audience" id="for-funds">
           <span class="role">Донорські програми та фонди</span>
-          <h3>Не «нова синергія», а куди не витрачати двічі</h3>
+          <h3>Куди не фінансувати двічі</h3>
           <p>
-            Якщо ви вже фінансували стратегії / роботу з громадами A і B, а їхні цілі збігаються —
-            логічніший наступний грант часто один спільний, а не два паралельні.
-            «Міст» — коли сильний матч є з громадою поза портфелем: розширення закриває дірку в мережі,
-            а не просто додає ще одну ізольовану точку.
+            Фонди вже інвестують у громади — часто саме в стратегії. Цінність пілоту для вас —
+            побачити, де наступний грант підсилює вже вкладене, а не додає ізольовану точку.
           </p>
-          <a class="go" href="funds.html">Розібрати на прикладі портфеля →</a>
+          <ul class="values">
+            <li><strong>Спільний наступний грант:</strong> дві «ваші» громади зі схожими цілями → один проєкт / МСС замість двох паралельних.</li>
+            <li><strong>Мости:</strong> сильний матч portfolio↔зовні — куди розширитись, щоб закрити дірку в мережі.</li>
+            <li><strong>Хаби:</strong> якорі peer-learning між грантоотримувачами.</li>
+            <li><strong>Чесно:</strong> зараз демонстрація на пілоті (~77 стратегій, ~172 з тегом програми); повний портфель потребує ширшого покриття «ваших» громад.</li>
+          </ul>
+          <div class="links">
+            <a class="go" href="funds.html">Портфельний зріз →</a>
+            <a class="go" href="outreach.html#funds">Чернетка outreach →</a>
+          </div>
         </article>
       </div>
     </section>
