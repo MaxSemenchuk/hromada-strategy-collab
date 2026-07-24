@@ -46,6 +46,7 @@
   .sw.pin-corpus { border-color: var(--pin-corpus); border-top-width: 2.5px; }
   .sw.hyp { border-color: var(--hyp); border-top-style: dashed; }
   .sw.ops { border-color: var(--ops); border-top-style: dotted; }
+  .sw.universe { width: 8px; height: 8px; border-radius: 50%; background: rgba(148,163,184,0.55); border: 0; }
   .hint { margin-top: 1rem; font-size: 0.78rem; color: var(--ink-muted); line-height: 1.4; }
   main { position: relative; min-height: calc(100vh - var(--site-nav-h, 52px)); }
   #map { position: absolute; inset: 0; display: block; background: #0d1116; }
@@ -54,6 +55,14 @@
   canvas#c.visible { display: block; }
   canvas#c:active { cursor: grabbing; }
   .leaflet-container { background: #0d1116; font: inherit; }
+  .leaflet-popup-content-wrapper {
+    background: var(--surface); color: var(--ink); border: 1px solid var(--border);
+    border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+  .leaflet-popup-tip { background: var(--surface); }
+  .leaflet-popup-content { margin: 0.65rem 0.8rem; font-size: 0.82rem; line-height: 1.4; }
+  .leaflet-popup-content a { color: #7dd3fc; }
+  .leaflet-popup-content .meta { color: var(--ink-muted); font-size: 0.75rem; }
   .oblast-label {
     background: transparent; border: 0; box-shadow: none;
     color: rgba(233,230,222,0.55); font-size: 11px; font-weight: 600;
@@ -70,12 +79,13 @@
 <div class="wrap">
   <aside>
     <h1>Усі договори МСС (KSE PIN)</h1>
-    <p class="lede">Зареєстровані угоди на карті України + matching-шари (схожі стратегії / зручні сусіди) + PIN∩корпус. Combined score на overlay немає.</p>
+    <p class="lede">Усі материкові громади (метадані) + мережа зареєстрованих МСС (KSE PIN) + matching-шари. У попапі — портал / стратегія, коли є посилання.</p>
     <div class="toggle" role="tablist" aria-label="View mode">
       <button type="button" id="btn-map" class="active">Карта</button>
       <button type="button" id="btn-graph">Граф</button>
     </div>
     <div class="layers">
+      <label><input type="checkbox" id="layer-universe" checked/> Усі громади (метадані)</label>
       <label><input type="checkbox" id="layer-pin" checked/> Усі МСС (PIN)</label>
       <label><input type="checkbox" id="layer-known" checked/> Known validation</label>
       <label><input type="checkbox" id="layer-pin-corpus" checked/> PIN ∩ корпус</label>
@@ -84,22 +94,25 @@
       <label><input type="checkbox" id="layer-oblasts" checked/> Межі областей</label>
       <label><input type="checkbox" id="layer-corpus"/> Підсвітити корпус стратегій</label>
     </div>
+    <div class="stat"><span>Усі громади (з гео)</span><b id="s-universe">—</b></div>
+    <div class="stat"><span>З PortalUrl</span><b id="s-portal">—</b></div>
     <div class="stat"><span>PIN вузлів</span><b id="s-nodes">—</b></div>
     <div class="stat"><span>PIN ребер</span><b id="s-pin">—</b></div>
-    <div class="stat"><span>З координатами</span><b id="s-geo">—</b></div>
+    <div class="stat"><span>PIN з координатами</span><b id="s-geo">—</b></div>
     <div class="stat"><span>Корпус (Goals)</span><b id="s-corpus">—</b></div>
     <div class="stat"><span>Known</span><b id="s-known">—</b></div>
     <div class="stat"><span>PIN ∩ корпус</span><b id="s-pin-corpus">—</b></div>
     <div class="stat"><span>Похожа стратегія</span><b id="s-thematic">—</b></div>
     <div class="stat"><span>Зручний сусід</span><b id="s-operational">—</b></div>
     <div class="legend">
+      <div><span class="sw universe"></span> усі громади (метадані)</div>
       <div><span class="sw pin"></span> зареєстровані МСС</div>
       <div><span class="sw known"></span> known validation (кураторські)</div>
       <div><span class="sw pin-corpus"></span> PIN ∩ корпус (ширша KSE-перевірка)</div>
       <div><span class="sw hyp"></span> похожа стратегія (thematic)</div>
       <div><span class="sw ops"></span> зручний сусід (operational)</div>
     </div>
-    <p class="hint" id="hint">Карта обрізана контуром України, без підписів на тайлах. Потрібен інтернет для підложки. Known ≠ усі PIN: лише контрольні пари для регресії матчера.</p>
+    <p class="hint" id="hint">Шар «усі громади» = 1 469 метаданих з координатами KSE, не корпус стратегій. Клік по точці відкриває портал/PDF, якщо є. Known ≠ усі PIN.</p>
   </aside>
   <main>
     <div id="map"></div>
@@ -112,6 +125,8 @@
 <script>
 const DATA = __DATA__;
 const meta = DATA.meta;
+document.getElementById('s-universe').textContent = meta.universe_nodes ?? (DATA.universe || []).length;
+document.getElementById('s-portal').textContent = meta.universe_with_portal ?? 0;
 document.getElementById('s-nodes').textContent = meta.pin_nodes;
 document.getElementById('s-pin').textContent = meta.pin_edges;
 document.getElementById('s-geo').textContent = meta.nodes_with_geo;
@@ -132,7 +147,42 @@ let width = 0, height = 0, dpr = 1;
 let camX = 0, camY = 0, scale = 0.55;
 let dragging = null, panning = false, lastX = 0, lastY = 0;
 let hover = null;
-let layers = { pin: true, known: true, pinCorpus: true, thematic: true, operational: false, oblasts: true, corpus: false };
+let layers = {
+  universe: true, pin: true, known: true, pinCorpus: true,
+  thematic: true, operational: false, oblasts: true, corpus: false,
+};
+
+function esc(s) {
+  return String(s || '').replace(/[&<>"']/g, (c) => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+  ));
+}
+
+function popupHtml(n) {
+  const title = esc(n.full_name || n.label);
+  const bits = [];
+  if (n.oblast) bits.push(esc(n.oblast));
+  if (n.type) bits.push(esc(n.type));
+  if (n.population != null) bits.push(esc(String(n.population)) + ' осіб');
+  const links = [];
+  if (n.portal_url) {
+    links.push(`<a href="${esc(n.portal_url)}" target="_blank" rel="noopener">Портал громади</a>`);
+  }
+  if (n.strategy_url) {
+    links.push(`<a href="${esc(n.strategy_url)}" target="_blank" rel="noopener">Стратегія / джерело</a>`);
+  }
+  const flags = [];
+  if (n.in_pin) flags.push('у PIN МСС');
+  if (n.in_corpus) flags.push('у корпусі Goals');
+  if (n.source_quality) flags.push(esc(n.source_quality));
+  return (
+    `<strong>${title}</strong>`
+    + (bits.length ? `<div class="meta">${bits.join(' · ')}</div>` : '')
+    + (flags.length ? `<div class="meta">${flags.join(' · ')}</div>` : '')
+    + (n.degree ? `<div class="meta">PIN degree ${n.degree}</div>` : '')
+    + (links.length ? `<div style="margin-top:0.35rem">${links.join(' · ')}</div>` : '<div class="meta" style="margin-top:0.35rem">Немає PortalUrl / StrategyUrl у релізі</div>')
+  );
+}
 
 const nodes = DATA.nodes.map((n, i) => {
   const angle = (i / Math.max(DATA.nodes.length, 1)) * Math.PI * 2;
@@ -149,6 +199,7 @@ const byId = Object.fromEntries(nodes.map(n => [n.id, n]));
 const edges = DATA.edges
   .filter(e => byId[e.a] && byId[e.b])
   .map(e => ({ ...e, source: byId[e.a], target: byId[e.b] }));
+const universe = DATA.universe || [];
 
 // ——— Leaflet map ———
 const map = L.map('map', {
@@ -207,6 +258,7 @@ const knownEdgesLayer = L.layerGroup().addTo(map);
 const pinCorpusEdgesLayer = L.layerGroup().addTo(map);
 const thematicEdgesLayer = L.layerGroup().addTo(map);
 const operationalEdgesLayer = L.layerGroup(); // default OFF — add on toggle
+const universeLayer = L.layerGroup().addTo(map);
 const nodesLayer = L.layerGroup().addTo(map);
 
 function edgeStyle(kind) {
@@ -224,6 +276,7 @@ function rebuildMapLayers() {
   pinCorpusEdgesLayer.clearLayers();
   thematicEdgesLayer.clearLayers();
   operationalEdgesLayer.clearLayers();
+  universeLayer.clearLayers();
   nodesLayer.clearLayers();
 
   for (const e of edges) {
@@ -237,10 +290,25 @@ function rebuildMapLayers() {
     else if (e.kind === 'thematic' || e.kind === 'hypothesis') thematicEdgesLayer.addLayer(line);
   }
 
+  // Faint universe underlay (all mainland hromadas with KSE geo)
+  for (const n of universe) {
+    if (n.lat == null) continue;
+    const marker = L.circleMarker([n.lat, n.lon], {
+      radius: 2.2,
+      color: '#64748b',
+      fillColor: n.in_corpus ? '#94a3b8' : '#475569',
+      fillOpacity: 0.45,
+      weight: 0.5,
+      opacity: 0.55,
+    });
+    marker.bindPopup(popupHtml(n), { maxWidth: 280 });
+    universeLayer.addLayer(marker);
+  }
+
   for (const n of nodes) {
     if (n.lat == null) continue;
     const corpusGlow = layers.corpus && n.in_corpus;
-    const r = 3 + Math.min(n.degree, 24) * 0.15;
+    const r = 3 + Math.min(n.degree || 0, 24) * 0.15;
     const marker = L.circleMarker([n.lat, n.lon], {
       radius: r,
       color: corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff'),
@@ -249,11 +317,7 @@ function rebuildMapLayers() {
       weight: 1,
       opacity: 0.9,
     });
-    const title = n.full_name || n.label;
-    marker.bindTooltip(
-      `<strong>${title}</strong><br/>${n.oblast || ''}<br/>PIN degree ${n.degree}`,
-      { direction: 'top', opacity: 0.95 }
-    );
+    marker.bindPopup(popupHtml(n), { maxWidth: 280 });
     nodesLayer.addLayer(marker);
   }
 
@@ -270,18 +334,20 @@ function syncLayerVisibility() {
     if (on) { if (!map.hasLayer(layer)) map.addLayer(layer); }
     else if (map.hasLayer(layer)) map.removeLayer(layer);
   };
+  show(universeLayer, layers.universe);
   show(pinEdgesLayer, layers.pin);
   show(knownEdgesLayer, layers.known);
   show(pinCorpusEdgesLayer, layers.pinCorpus);
   show(thematicEdgesLayer, layers.thematic);
   show(operationalEdgesLayer, layers.operational);
-  // nodes always on when any network layer on
+  // network nodes on when any network / corpus highlight layer is on
   show(nodesLayer, layers.pin || layers.known || layers.pinCorpus || layers.thematic || layers.operational || layers.corpus);
 }
 
 rebuildMapLayers();
 
 function syncLayers() {
+  layers.universe = document.getElementById('layer-universe').checked;
   layers.pin = document.getElementById('layer-pin').checked;
   layers.known = document.getElementById('layer-known').checked;
   layers.pinCorpus = document.getElementById('layer-pin-corpus').checked;
@@ -293,7 +359,7 @@ function syncLayers() {
     rebuildMapLayers();
   }
 }
-['layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-oblasts','layer-corpus'].forEach(id => {
+['layer-universe','layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-oblasts','layer-corpus'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
@@ -305,12 +371,12 @@ function setMode(next) {
   if (mode === 'map') {
     mapEl.classList.remove('hidden');
     canvas.classList.remove('visible');
-    hint.textContent = 'Карта обрізана контуром України, без підписів на тайлах. Потрібен інтернет для підложки.';
+    hint.textContent = 'Шар «усі громади» = метадані з координатами KSE (не корпус стратегій). Клік → портал/PDF, якщо є в релізі.';
     setTimeout(() => { map.invalidateSize(); }, 50);
   } else {
     mapEl.classList.add('hidden');
     canvas.classList.add('visible');
-    hint.textContent = 'Force-граф усього PIN щільний — краще карта або вимкни PIN.';
+    hint.textContent = 'Force-граф лише PIN/matching (не всі 1 469). Для повної карти — режим «Карта».';
     resizeCanvas();
   }
 }
@@ -390,7 +456,11 @@ window.addEventListener('mousemove', (ev) => {
     tip.style.left = (w.sx + 14) + 'px';
     tip.style.top = (w.sy + 14) + 'px';
     const title = hover.full_name || hover.label;
-    tip.innerHTML = `<strong>${title}</strong><br/>${hover.oblast || ''}<br/><span style="color:#a9ac9f">${hover.katottg}</span>`;
+    const links = [];
+    if (hover.portal_url) links.push('портал: ' + hover.portal_url);
+    if (hover.strategy_url) links.push('стратегія: ' + hover.strategy_url);
+    tip.innerHTML = `<strong>${esc(title)}</strong><br/>${esc(hover.oblast || '')}<br/><span style="color:#a9ac9f">${esc(hover.katottg)}</span>`
+      + (links.length ? `<br/><span style="color:#7dd3fc;font-size:0.72rem">${esc(links.join(' · '))}</span>` : '');
   } else tip.style.display = 'none';
 });
 canvas.addEventListener('wheel', (ev) => {

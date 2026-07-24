@@ -305,6 +305,10 @@ Added derived **`PortalUrl`** on release rows (official hromada homepage when
 `data/releases/hromada-portals.json`. Manual fixes:
 `data/sources/portal-url-overrides.json` (e.g. Ніжин via data.gov.ua).
 
+Map (`yarn graph-pin-matching`): layer **«Усі громади (метадані)»** plots every
+release row with KSE lat/lon (~1 418); PIN/matching stay on top. Popups link
+`PortalUrl` / `StrategyUrl` when present (36 portals in current release).
+
 ## Open threads (as of 2026-07-24)
 
 - [ ] File cross-link issue on KSE repo ([kse-issue-draft.md](kse-issue-draft.md))

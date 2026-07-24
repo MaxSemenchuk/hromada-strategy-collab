@@ -5,7 +5,7 @@ Sources:
   - data/cache/kse/partnerships-hromadas-network.csv
   - data/cache/kse/geography.csv
   - data/releases/matching-edges.json
-  - data/releases/hromadas.json
+  - data/releases/hromadas.json  (PortalUrl / StrategyUrl / Goals)
   - docs/geo/ukraine-oblasts.geojson  (Natural Earth admin-1, simplified)
 
 Writes docs/mss-pin-matching-graph.html
@@ -18,6 +18,7 @@ Overlay policy (2026-07-24):
     operational — high geo           → «зручний сусід»   (default OFF)
     known       — curated registry validation pairs
     pin_corpus  — broader KSE PIN ∩ Goals corpus (mss_network>0, not known)
+    universe    — all release hromadas with KSE lat/lon (metadata underlay)
 """
 
 from __future__ import annotations
@@ -155,6 +156,22 @@ def build_payload() -> dict:
     pin_nodes, pin_edges = load_pin()
 
     hromadas = json.loads(HROMADAS.read_text(encoding="utf-8"))
+    # Full metadata index (1,469) — portals / names / corpus flags by KATOTTG
+    by_code: dict[str, dict] = {}
+    for r in hromadas:
+        code = r.get("Katottg")
+        if not code:
+            continue
+        by_code[code] = {
+            "full_name": r.get("Name"),
+            "portal_url": r.get("PortalUrl") or None,
+            "strategy_url": r.get("StrategyUrl") or None,
+            "in_corpus": bool(r.get("Goals")),
+            "source_quality": r.get("SourceQuality"),
+            "type": r.get("Type"),
+            "population": r.get("Population"),
+        }
+
     corpus = [r for r in hromadas if r.get("Goals") and r.get("Katottg")]
     name_to_code = {r["Name"]: r["Katottg"] for r in corpus}
     code_to_full = {r["Katottg"]: r["Name"] for r in corpus}
@@ -203,36 +220,73 @@ def build_payload() -> dict:
                     "label": short_label(code_to_full.get(code, code)),
                 }
 
+    pin_member = {e["a"] for e in pin_edges} | {e["b"] for e in pin_edges}
+
     degree: dict[str, int] = {c: 0 for c in pin_nodes}
     for e in pin_edges:
         degree[e["a"]] = degree.get(e["a"], 0) + 1
         degree[e["b"]] = degree.get(e["b"], 0) + 1
 
-    nodes = []
-    with_geo = 0
-    for code, base in sorted(pin_nodes.items(), key=lambda x: x[1]["label"]):
+    def enrich(code: str, label_fallback: str) -> dict:
         g = geo.get(code)
+        meta = by_code.get(code) or {}
         lat = lon = oblast = None
-        label = base["label"]
+        label = label_fallback
         if g:
             lat, lon = g["lat"], g["lon"]
             oblast = g["oblast"]
             label = g["name_short"] or label
+        return {
+            "id": code,
+            "label": label,
+            "full_name": meta.get("full_name") or code_to_full.get(code),
+            "katottg": code,
+            "oblast": oblast,
+            "lat": lat,
+            "lon": lon,
+            "degree": degree.get(code, 0),
+            "in_corpus": code in corpus_codes or bool(meta.get("in_corpus")),
+            "in_pin": code in pin_member,
+            "portal_url": meta.get("portal_url"),
+            "strategy_url": meta.get("strategy_url"),
+            "source_quality": meta.get("source_quality"),
+            "type": meta.get("type"),
+            "population": meta.get("population"),
+        }
+
+    nodes = []
+    with_geo = 0
+    for code, base in sorted(pin_nodes.items(), key=lambda x: x[1]["label"]):
+        n = enrich(code, base["label"])
+        if n["lat"] is not None:
             with_geo += 1
-        nodes.append(
+        nodes.append(n)
+
+    # Universe layer: every release hromada with KSE lat/lon (≈ full mainland set)
+    universe: list[dict] = []
+    for code, meta in by_code.items():
+        g = geo.get(code)
+        if not g:
+            continue
+        universe.append(
             {
                 "id": code,
-                "label": label,
-                "full_name": code_to_full.get(code),
+                "label": g.get("name_short") or short_label(meta.get("full_name") or code),
+                "full_name": meta.get("full_name"),
                 "katottg": code,
-                "oblast": oblast,
-                "lat": lat,
-                "lon": lon,
-                "degree": degree.get(code, 0),
-                "in_corpus": code in corpus_codes,
-                "in_pin": any(code in (e["a"], e["b"]) for e in pin_edges),
+                "oblast": g.get("oblast"),
+                "lat": g["lat"],
+                "lon": g["lon"],
+                "in_corpus": bool(meta.get("in_corpus")),
+                "in_pin": code in pin_member,
+                "portal_url": meta.get("portal_url"),
+                "strategy_url": meta.get("strategy_url"),
+                "source_quality": meta.get("source_quality"),
+                "type": meta.get("type"),
+                "population": meta.get("population"),
             }
         )
+    universe.sort(key=lambda n: n.get("full_name") or n["label"] or n["id"])
 
     if not OBLASTS.exists():
         raise SystemExit(f"Missing {OBLASTS}")
@@ -241,11 +295,15 @@ def build_payload() -> dict:
     oblasts = json.loads(OBLASTS.read_text(encoding="utf-8"))
     outline = json.loads(OUTLINE.read_text(encoding="utf-8"))
 
+    portal_on_map = sum(1 for n in universe if n.get("portal_url"))
+
     return {
         "meta": {
             "corpus_size": len(corpus),
             "pin_edges": len(pin_edges),
             "pin_nodes": len(nodes),
+            "universe_nodes": len(universe),
+            "universe_with_portal": portal_on_map,
             "thematic_edges": len(thematic_edges),
             "operational_edges": len(operational_edges),
             "known_edges": len(known_edges),
@@ -259,16 +317,19 @@ def build_payload() -> dict:
             "oblasts_source": "Natural Earth admin-1 → docs/geo/ukraine-oblasts.geojson",
             "outline_source": "docs/geo/ukraine-outline.geojson (mask outside UA)",
             "matching_source": "data/releases/matching-edges.json",
+            "hromadas_source": "data/releases/hromadas.json (PortalUrl/StrategyUrl)",
             "top_thematic": TOP_THEMATIC,
             "top_operational": TOP_OPERATIONAL,
             "overlay_policy": (
                 "thematic=goals_cosine track; operational=geo neighbours; "
-                "pin_corpus=mss_network>0 not known; no combined-score hyp layer"
+                "pin_corpus=mss_network>0 not known; no combined-score hyp layer; "
+                "universe=all release rows with KSE geo (metadata layer)"
             ),
         },
         "oblasts": oblasts,
         "ukraine_outline": outline,
         "nodes": nodes,
+        "universe": universe,
         "edges": pin_edges + known_edges + pin_corpus_edges + thematic_edges + operational_edges,
     }
 
@@ -285,7 +346,9 @@ def main() -> None:
     m = payload["meta"]
     print(
         f"Wrote {OUT.relative_to(ROOT)} — "
-        f"PIN {m['pin_nodes']}n/{m['pin_edges']}e · oblasts={m['oblasts']} · "
+        f"PIN {m['pin_nodes']}n/{m['pin_edges']}e · "
+        f"universe={m['universe_nodes']} (portal={m['universe_with_portal']}) · "
+        f"oblasts={m['oblasts']} · "
         f"known={m['known_edges']} pin∩corpus={m['pin_corpus_edges']} "
         f"thematic={m['thematic_edges']} operational={m['operational_edges']}"
     )
