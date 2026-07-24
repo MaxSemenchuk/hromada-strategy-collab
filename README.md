@@ -98,8 +98,7 @@ docs/                             # GitHub Pages site root (see docs/README.md)
 ├── hromada-project-passport.html # legacy redirect → index.html
 ├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
 ├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub)
-├── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case
-└── kse-issue-draft.md            # ready-to-paste GitHub issue for KSE cross-link (draft)
+└── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case
 internal/
 └── outreach-messages.md          # draft stakeholder outreach copy — not part of the dataset, not for public reuse
 REFERENCES.md                     # theoretical grounding — network governance, IMC, institutional diversity

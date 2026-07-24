@@ -10,8 +10,8 @@ per source. Not yet integrated into the `Hromadas` NocoDB table unless noted.
 
 > **Synergy doc:** how this project uses KSE without duplicating it — join key,
 > consumed files, edem caveats, and what we contribute back —
-> [kse-synergy.md](kse-synergy.md). Draft cross-link issue for the KSE repo:
-> [kse-issue-draft.md](kse-issue-draft.md).
+> [kse-synergy.md](kse-synergy.md). Cross-link issue:
+> [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25).
 
 - **Reviewed:** 2026-07-23
 - **URL:** https://github.com/kse-ua/KSE-Loc-Data-Hub
