@@ -15,9 +15,10 @@ known МСС ranks **#5–#11**. PIN map: **430** nodes / **918** edges from KSE
 | [`hromada-project-passport.html`](hromada-project-passport.html) | Project passport (UA brief) |
 | [`matches.html`](matches.html) | Known pairs + top hypotheses |
 | [`mss-pin-matching-graph.html`](mss-pin-matching-graph.html) | Full PIN map + matching overlay |
-| [`mss-graph-mvp.html`](mss-graph-mvp.html) | Early registry graph MVP |
 
 Shared chrome: [`assets/site.css`](assets/site.css), [`assets/nav.js`](assets/nav.js).
+
+`mss-graph-mvp.html` is kept in the repo as an early prototype but **not** linked in the site nav.
 
 ## Enable once
 

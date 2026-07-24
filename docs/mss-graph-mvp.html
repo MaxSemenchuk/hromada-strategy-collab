@@ -7,10 +7,10 @@
 <link rel="stylesheet" href="assets/site.css"/>
 <style>
   :root {
-    --bg: #faf7f1; --surface: #f2ede1; --surface-2: #e9e2d2;
-    --ink: #1e232b; --ink-muted: #565b52; --ink-faint: #8a8c7c;
-    --border: #ddd5c2; --accent: #2b6f63; --accent-ink: #f4f9f7;
-    --gold: #a8781f; --gold-soft: #f1e2c2; --rule: #cfc6ae;
+    --bg: #f5f8fc; --surface: #ffffff; --surface-2: #eff6ff;
+    --ink: #0f172a; --ink-muted: #475569; --ink-faint: #94a3b8;
+    --border: #e2e8f0; --accent: #2563eb; --accent-ink: #f4f9f7;
+    --gold: #0284c7; --gold-soft: #e0f2fe; --rule: #e2e8f0;
     --shadow: 0 1px 2px rgba(30, 35, 43, 0.06);
   }
   @media (prefers-color-scheme: dark) {
@@ -30,10 +30,10 @@
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   }
   :root[data-theme="light"] {
-    --bg: #faf7f1; --surface: #f2ede1; --surface-2: #e9e2d2;
-    --ink: #1e232b; --ink-muted: #565b52; --ink-faint: #8a8c7c;
-    --border: #ddd5c2; --accent: #2b6f63; --accent-ink: #f4f9f7;
-    --gold: #a8781f; --gold-soft: #f1e2c2; --rule: #cfc6ae;
+    --bg: #f5f8fc; --surface: #ffffff; --surface-2: #eff6ff;
+    --ink: #0f172a; --ink-muted: #475569; --ink-faint: #94a3b8;
+    --border: #e2e8f0; --accent: #2563eb; --accent-ink: #f4f9f7;
+    --gold: #0284c7; --gold-soft: #e0f2fe; --rule: #e2e8f0;
     --shadow: 0 1px 2px rgba(30, 35, 43, 0.06);
   }
   * { box-sizing: border-box; }
@@ -69,6 +69,10 @@
 </head>
 <body>
 <div class="page">
+  <p class="superseded-note" style="background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af;border-radius:12px;padding:0.85rem 1rem;margin:0 0 1.4rem;font-size:0.92rem;">
+    Це ранній прототип (угоди 2021–2022). Актуальна візуалізація — на
+    <a href="mss-pin-matching-graph.html" style="color:#2563eb;font-weight:700;">карті МСС</a>.
+  </p>
   <header>
     <span class="eyebrow">MVP · крок 1 · граф МСС</span>
     <h1>Що якщо реально побудувати граф усіх угод МСС?</h1>
@@ -197,6 +201,6 @@ const HIGHLIGHT = new Set(["Дубовецька сільська", "Буршт�
   Ранній прототип · повніша карта:
   <a href="mss-pin-matching-graph.html">PIN + matching overlay</a>
 </p>
-<script src="assets/nav.js" data-active="graph"></script>
+<script src="assets/nav.js" data-active="map"></script>
 </body>
 </html>

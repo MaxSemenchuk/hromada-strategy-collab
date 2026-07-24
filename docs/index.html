@@ -7,14 +7,14 @@
   <meta name="description" content="Дослідницький пілот: NLP-матчинг стратегій розвитку українських громад для пошуку кандидатів на міжмуніципальне співробітництво (МСС)."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/site.css"/>
   <style>
     body {
       background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(43, 111, 99, 0.14), transparent 55%),
-        radial-gradient(900px 500px at 100% 0%, rgba(168, 120, 31, 0.12), transparent 50%),
-        linear-gradient(180deg, #f4efe4 0%, var(--site-bg) 40%);
+        radial-gradient(900px 480px at 8% -8%, rgba(37, 99, 235, 0.12), transparent 55%),
+        radial-gradient(700px 420px at 100% 0%, rgba(14, 165, 233, 0.10), transparent 50%),
+        var(--site-bg);
       color: var(--site-ink);
       font-family: var(--site-sans);
       font-size: 16px;
@@ -24,31 +24,32 @@
     .hero {
       max-width: 920px;
       margin: 0 auto;
-      padding: 3.2rem 1.5rem 2.2rem;
+      padding: 3.4rem 1.5rem 2rem;
     }
     .eyebrow {
       font-size: 0.72rem;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--site-accent);
-      font-weight: 700;
+      font-weight: 750;
       display: block;
       margin-bottom: 0.85rem;
     }
     h1 {
       font-family: var(--site-font);
-      font-weight: 400;
-      font-size: clamp(1.85rem, 4.2vw, 2.7rem);
-      line-height: 1.18;
+      font-weight: 750;
+      font-size: clamp(1.85rem, 4vw, 2.55rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
       margin: 0 0 1rem;
-      max-width: 18ch;
+      max-width: 16ch;
       text-wrap: balance;
     }
     .lede {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: var(--site-muted);
-      max-width: 58ch;
-      margin: 0 0 1.6rem;
+      max-width: 56ch;
+      margin: 0 0 1.5rem;
     }
     .status-pill {
       display: inline-flex;
@@ -57,30 +58,31 @@
       font-size: 0.82rem;
       color: var(--site-muted);
       border: 1px solid var(--site-border);
-      background: color-mix(in srgb, var(--site-surface) 80%, white);
-      padding: 0.35rem 0.7rem;
+      background: var(--site-surface);
+      padding: 0.35rem 0.75rem;
       border-radius: 999px;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.35rem;
     }
     .status-pill i {
       width: 8px; height: 8px; border-radius: 50%;
-      background: var(--site-gold);
+      background: var(--site-secondary);
       display: inline-block;
     }
     .cta-row { display: flex; flex-wrap: wrap; gap: 0.65rem; }
     .btn {
       display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.65rem 1rem;
-      border-radius: 6px;
+      padding: 0.7rem 1.05rem;
+      border-radius: 10px;
       text-decoration: none;
-      font-weight: 650;
+      font-weight: 700;
       font-size: 0.92rem;
       border: 1px solid transparent;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
     }
-    .btn-primary { background: var(--site-accent); color: #f4f9f7; }
-    .btn-primary:hover { filter: brightness(1.05); }
+    .btn-primary { background: var(--site-accent); color: var(--site-accent-ink); }
+    .btn-primary:hover { background: var(--site-accent-hover); transform: translateY(-1px); }
     .btn-ghost {
-      background: transparent;
+      background: var(--site-surface);
       color: var(--site-ink);
       border-color: var(--site-border);
     }
@@ -91,68 +93,70 @@
       margin: 0 auto;
       padding: 0 1.5rem 3rem;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
     }
-    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+    @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
 
     .card-link {
       display: block;
       text-decoration: none;
       color: inherit;
-      background: color-mix(in srgb, var(--site-surface) 88%, white);
+      background: var(--site-surface);
       border: 1px solid var(--site-border);
-      border-radius: 8px;
-      padding: 1.25rem 1.3rem 1.35rem;
+      border-radius: 14px;
+      padding: 1.2rem 1.25rem 1.3rem;
+      box-shadow: var(--site-shadow);
       transition: border-color 0.15s ease, transform 0.15s ease;
     }
     .card-link:hover {
-      border-color: var(--site-accent);
-      transform: translateY(-1px);
+      border-color: color-mix(in srgb, var(--site-accent) 45%, var(--site-border));
+      transform: translateY(-2px);
     }
     .card-link .kicker {
       font-size: 0.68rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--site-gold);
-      font-weight: 700;
+      color: var(--site-secondary);
+      font-weight: 750;
       margin-bottom: 0.45rem;
     }
     .card-link h2 {
       font-family: var(--site-font);
-      font-weight: 400;
-      font-size: 1.25rem;
-      margin: 0 0 0.45rem;
+      font-weight: 700;
+      font-size: 1.12rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.4rem;
       color: var(--site-ink);
     }
     .card-link p {
       margin: 0;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--site-muted);
     }
 
     .stats {
       max-width: 920px;
-      margin: 0 auto 1.5rem;
+      margin: 0 auto 1.4rem;
       padding: 0 1.5rem;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--site-rule);
-      border: 1px solid var(--site-rule);
-      border-radius: 8px;
-      overflow: hidden;
+      gap: 0.65rem;
     }
     @media (max-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } }
     .stat {
       background: var(--site-surface);
+      border: 1px solid var(--site-border);
+      border-radius: 12px;
       padding: 1rem 0.85rem;
       text-align: center;
+      box-shadow: var(--site-shadow);
     }
     .stat .num {
       font-variant-numeric: tabular-nums;
-      font-size: 1.55rem;
-      font-weight: 650;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
       display: block;
       color: var(--site-ink);
     }
@@ -172,10 +176,10 @@
     <p class="lede">
       Системний NLP-матчинг офіційних стратегій розвитку — щоб знаходити кандидатів
       на міжмуніципальне співробітництво (МСС) не лише через особисті зв’язки.
-      Зараз: підказки пар, карта реєстру МСС, відкриті дані — не національний сервіс.
+      Зараз: підказки пар, карта реєстру МСС, відкриті дані.
     </p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="hromada-project-passport.html">Читати паспорт проєкту</a>
+      <a class="btn btn-primary" href="hromada-project-passport.html">Читати паспорт</a>
       <a class="btn btn-ghost" href="matches.html">Дивитись кандидатів</a>
       <a class="btn btn-ghost" href="mss-pin-matching-graph.html">Відкрити карту МСС</a>
     </div>
@@ -192,29 +196,23 @@
     <a class="card-link" href="hromada-project-passport.html">
       <div class="kicker">Інфо</div>
       <h2>Паспорт проєкту</h2>
-      <p>Навіщо, що зробили, результати пілоту, стейкхолдери — короткий бриф українською.</p>
+      <p>Навіщо, що зробили, результати пілоту й чесні обмеження — короткий бриф.</p>
     </a>
     <a class="card-link" href="matches.html">
       <div class="kicker">Матчинг</div>
-      <h2>Кандидати на співпрацю</h2>
-      <p>Відомі угоди (валідація методу) і топ гіпотез зі score — з явним disclaimer.</p>
+      <h2>Кандидати</h2>
+      <p>Known угоди для валідації й топ гіпотез із треками «похожа стратегія» / «зручний сусід».</p>
     </a>
     <a class="card-link" href="mss-pin-matching-graph.html">
       <div class="kicker">Карта</div>
-      <h2>Повний PIN + matching</h2>
-      <p>Усі зареєстровані угоди МСС на карті України й overlay наших гіпотез.</p>
-    </a>
-    <a class="card-link" href="mss-graph-mvp.html">
-      <div class="kicker">Прототип</div>
-      <h2>Граф реєстру (MVP)</h2>
-      <p>Ранній зріз угод 2021–2022: чи є взагалі на що дивитись у мережі МСС.</p>
+      <h2>МСС на карті</h2>
+      <p>Повний PIN зареєстрованих угод + overlay наших matching-гіпотез.</p>
     </a>
   </section>
 
   <p class="site-footer-note">
     Дані: <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases">data/releases/</a> (CC BY 4.0).
     Matching scores — гіпотези, доки не позначені <code>known: true</code>.
-    Репозиторій: <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab">hromada-strategy-collab</a>.
   </p>
 
   <script src="assets/nav.js" data-active="home"></script>
