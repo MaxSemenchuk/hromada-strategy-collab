@@ -10,7 +10,7 @@
 <style>
   :root {
     --bg: #14181d; --surface: #1b2027; --ink: #e9e6de; --ink-muted: #a9ac9f;
-    --border: #2d333c; --accent: #57ab9c; --gold: #d9a548; --hyp: #7aa2ff; --rule: #333a44;
+    --border: #2d333c; --accent: #57ab9c; --gold: #d9a548; --pin-corpus: #e07a5f; --hyp: #7aa2ff; --rule: #333a44;
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
@@ -43,6 +43,7 @@
   .sw { width: 22px; height: 0; border-top: 2px solid; display: inline-block; }
   .sw.pin { border-color: var(--accent); }
   .sw.known { border-color: var(--gold); border-top-width: 3px; }
+  .sw.pin-corpus { border-color: var(--pin-corpus); border-top-width: 2.5px; }
   .sw.hyp { border-color: var(--hyp); border-top-style: dashed; }
   .hint { margin-top: 1rem; font-size: 0.78rem; color: var(--ink-muted); line-height: 1.4; }
   main { position: relative; min-height: calc(100vh - var(--site-nav-h, 52px)); }
@@ -76,6 +77,7 @@
     <div class="layers">
       <label><input type="checkbox" id="layer-pin" checked/> Усі МСС (PIN)</label>
       <label><input type="checkbox" id="layer-known" checked/> Known validation</label>
+      <label><input type="checkbox" id="layer-pin-corpus" checked/> PIN ∩ корпус</label>
       <label><input type="checkbox" id="layer-hyp" checked/> Matching hypotheses</label>
       <label><input type="checkbox" id="layer-oblasts" checked/> Межі областей</label>
       <label><input type="checkbox" id="layer-corpus"/> Підсвітити корпус стратегій</label>
@@ -85,13 +87,15 @@
     <div class="stat"><span>З координатами</span><b id="s-geo">—</b></div>
     <div class="stat"><span>Корпус (Goals)</span><b id="s-corpus">—</b></div>
     <div class="stat"><span>Known</span><b id="s-known">—</b></div>
+    <div class="stat"><span>PIN ∩ корпус</span><b id="s-pin-corpus">—</b></div>
     <div class="stat"><span>Hypotheses</span><b id="s-hyp">—</b></div>
     <div class="legend">
       <div><span class="sw pin"></span> зареєстровані МСС</div>
-      <div><span class="sw known"></span> known validation</div>
+      <div><span class="sw known"></span> known validation (кураторські)</div>
+      <div><span class="sw pin-corpus"></span> PIN ∩ корпус (ширша KSE-перевірка)</div>
       <div><span class="sw hyp"></span> matching hypothesis</div>
     </div>
-    <p class="hint" id="hint">Карта обрізана контуром України, без підписів на тайлах. Потрібен інтернет для підложки.</p>
+    <p class="hint" id="hint">Карта обрізана контуром України, без підписів на тайлах. Потрібен інтернет для підложки. Known ≠ усі PIN: лише контрольні пари для регресії матчера.</p>
   </aside>
   <main>
     <div id="map"></div>
@@ -109,6 +113,7 @@ document.getElementById('s-pin').textContent = meta.pin_edges;
 document.getElementById('s-geo').textContent = meta.nodes_with_geo;
 document.getElementById('s-corpus').textContent = meta.corpus_size;
 document.getElementById('s-known').textContent = meta.known_edges;
+document.getElementById('s-pin-corpus').textContent = meta.pin_corpus_edges ?? 0;
 document.getElementById('s-hyp').textContent = meta.hypothesis_edges;
 
 const mapEl = document.getElementById('map');
@@ -122,7 +127,7 @@ let width = 0, height = 0, dpr = 1;
 let camX = 0, camY = 0, scale = 0.55;
 let dragging = null, panning = false, lastX = 0, lastY = 0;
 let hover = null;
-let layers = { pin: true, known: true, hyp: true, oblasts: true, corpus: false };
+let layers = { pin: true, known: true, pinCorpus: true, hyp: true, oblasts: true, corpus: false };
 
 const nodes = DATA.nodes.map((n, i) => {
   const angle = (i / Math.max(DATA.nodes.length, 1)) * Math.PI * 2;
@@ -194,18 +199,21 @@ const oblastLayer = L.geoJSON(DATA.oblasts || { type: 'FeatureCollection', featu
 
 const pinEdgesLayer = L.layerGroup().addTo(map);
 const knownEdgesLayer = L.layerGroup().addTo(map);
+const pinCorpusEdgesLayer = L.layerGroup().addTo(map);
 const hypEdgesLayer = L.layerGroup().addTo(map);
 const nodesLayer = L.layerGroup().addTo(map);
 
 function edgeStyle(kind) {
   if (kind === 'pin') return { color: '#57ab9c', weight: 1, opacity: 0.28 };
   if (kind === 'known') return { color: '#d9a548', weight: 3, opacity: 0.95 };
+  if (kind === 'pin_corpus') return { color: '#e07a5f', weight: 2.5, opacity: 0.9 };
   return { color: '#7aa2ff', weight: 2, opacity: 0.75, dashArray: '6 5' };
 }
 
 function rebuildMapLayers() {
   pinEdgesLayer.clearLayers();
   knownEdgesLayer.clearLayers();
+  pinCorpusEdgesLayer.clearLayers();
   hypEdgesLayer.clearLayers();
   nodesLayer.clearLayers();
 
@@ -215,6 +223,7 @@ function rebuildMapLayers() {
     const line = L.polyline([[a.lat, a.lon], [b.lat, b.lon]], edgeStyle(e.kind));
     if (e.kind === 'pin') pinEdgesLayer.addLayer(line);
     else if (e.kind === 'known') knownEdgesLayer.addLayer(line);
+    else if (e.kind === 'pin_corpus') pinCorpusEdgesLayer.addLayer(line);
     else hypEdgesLayer.addLayer(line);
   }
 
@@ -253,9 +262,10 @@ function syncLayerVisibility() {
   };
   show(pinEdgesLayer, layers.pin);
   show(knownEdgesLayer, layers.known);
+  show(pinCorpusEdgesLayer, layers.pinCorpus);
   show(hypEdgesLayer, layers.hyp);
   // nodes always on when any network layer on
-  show(nodesLayer, layers.pin || layers.known || layers.hyp || layers.corpus);
+  show(nodesLayer, layers.pin || layers.known || layers.pinCorpus || layers.hyp || layers.corpus);
 }
 
 rebuildMapLayers();
@@ -263,6 +273,7 @@ rebuildMapLayers();
 function syncLayers() {
   layers.pin = document.getElementById('layer-pin').checked;
   layers.known = document.getElementById('layer-known').checked;
+  layers.pinCorpus = document.getElementById('layer-pin-corpus').checked;
   layers.hyp = document.getElementById('layer-hyp').checked;
   layers.oblasts = document.getElementById('layer-oblasts').checked;
   layers.corpus = document.getElementById('layer-corpus').checked;
@@ -270,7 +281,7 @@ function syncLayers() {
     rebuildMapLayers();
   }
 }
-['layer-pin','layer-known','layer-hyp','layer-oblasts','layer-corpus'].forEach(id => {
+['layer-pin','layer-known','layer-pin-corpus','layer-hyp','layer-oblasts','layer-corpus'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
@@ -311,6 +322,7 @@ window.addEventListener('resize', () => {
 function edgeVisible(e) {
   if (e.kind === 'pin') return layers.pin;
   if (e.kind === 'known') return layers.known;
+  if (e.kind === 'pin_corpus') return layers.pinCorpus;
   if (e.kind === 'hypothesis') return layers.hyp;
   return true;
 }
@@ -423,6 +435,10 @@ function strokeEdge(e, ax, ay, bx, by) {
     ctx.strokeStyle = 'rgba(217,165,72,0.95)';
     ctx.lineWidth = 2.6 / scale;
     ctx.setLineDash([]);
+  } else if (e.kind === 'pin_corpus') {
+    ctx.strokeStyle = 'rgba(224,122,95,0.9)';
+    ctx.lineWidth = 2.2 / scale;
+    ctx.setLineDash([]);
   } else {
     ctx.strokeStyle = 'rgba(122,162,255,0.55)';
     ctx.lineWidth = 1.2 / scale;
@@ -439,7 +455,7 @@ function drawGraph() {
   ctx.save();
   ctx.translate(width / 2 + camX, height / 2 + camY);
   ctx.scale(scale, scale);
-  for (const kind of ['pin', 'hypothesis', 'known']) {
+  for (const kind of ['pin', 'hypothesis', 'pin_corpus', 'known']) {
     for (const e of edges) {
       if (e.kind !== kind || !edgeVisible(e)) continue;
       strokeEdge(e, e.source.x, e.source.y, e.target.x, e.target.y);

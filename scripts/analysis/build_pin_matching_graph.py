@@ -91,25 +91,55 @@ def build_payload() -> dict:
         e for e in matching if e["a"] in name_to_code and e["b"] in name_to_code
     ]
     known = [e for e in corpus_matching if e.get("known")]
+    # Broader KSE check: mss_network>0 but not curated known (dedupe by KATOTTG).
+    pin_corpus_by_codes: dict[tuple[str, str], dict] = {}
+    for e in corpus_matching:
+        if e.get("known") or float(e.get("mss_network") or 0) <= 0:
+            continue
+        ca, cb = name_to_code[e["a"]], name_to_code[e["b"]]
+        if ca == cb:
+            continue
+        key = tuple(sorted((ca, cb)))
+        prev = pin_corpus_by_codes.get(key)
+        if prev is None or float(e["score"]) > float(prev["score"]):
+            pin_corpus_by_codes[key] = e
+
+    pin_corpus_keys = set(pin_corpus_by_codes)
+    known_code_keys = {
+        tuple(sorted((name_to_code[e["a"]], name_to_code[e["b"]]))) for e in known
+    }
+
     hypotheses = sorted(
         (
             e
             for e in corpus_matching
-            if not e.get("known") and e["score"] >= MIN_HYPOTHESIS_SCORE
+            if not e.get("known")
+            and float(e.get("mss_network") or 0) <= 0
+            and e["score"] >= MIN_HYPOTHESIS_SCORE
         ),
         key=lambda e: -e["score"],
     )[:TOP_HYPOTHESES]
-
-    pin_keys = {tuple(sorted((e["a"], e["b"]))) for e in pin_edges}
 
     known_edges = [
         {"a": name_to_code[e["a"]], "b": name_to_code[e["b"]], "kind": "known", "score": e["score"]}
         for e in known
     ]
+    pin_corpus_edges = [
+        {
+            "a": key[0],
+            "b": key[1],
+            "kind": "pin_corpus",
+            "score": e["score"],
+            "goals_cosine": e.get("goals_cosine"),
+        }
+        for key, e in sorted(pin_corpus_by_codes.items())
+        if key not in known_code_keys
+    ]
     hyp_edges = []
     for e in hypotheses:
         ca, cb = name_to_code[e["a"]], name_to_code[e["b"]]
-        if tuple(sorted((ca, cb))) in pin_keys:
+        key = tuple(sorted((ca, cb)))
+        if key in pin_corpus_keys or key in known_code_keys:
             continue
         hyp_edges.append(
             {
@@ -121,7 +151,7 @@ def build_payload() -> dict:
             }
         )
 
-    for e in known_edges + hyp_edges:
+    for e in known_edges + pin_corpus_edges + hyp_edges:
         for code in (e["a"], e["b"]):
             if code not in pin_nodes:
                 pin_nodes[code] = {
@@ -174,6 +204,7 @@ def build_payload() -> dict:
             "pin_nodes": len(nodes),
             "hypothesis_edges": len(hyp_edges),
             "known_edges": len(known_edges),
+            "pin_corpus_edges": len(pin_corpus_edges),
             "nodes_with_geo": with_geo,
             "oblasts": len(oblasts.get("features", [])),
             "pin_source": "KSE-Loc-Data-Hub partnerships-hromadas-network.csv",
@@ -187,7 +218,7 @@ def build_payload() -> dict:
         "oblasts": oblasts,
         "ukraine_outline": outline,
         "nodes": nodes,
-        "edges": pin_edges + known_edges + hyp_edges,
+        "edges": pin_edges + known_edges + pin_corpus_edges + hyp_edges,
     }
 
 
@@ -204,7 +235,7 @@ def main() -> None:
     print(
         f"Wrote {OUT.relative_to(ROOT)} — "
         f"PIN {m['pin_nodes']}n/{m['pin_edges']}e · oblasts={m['oblasts']} · "
-        f"known={m['known_edges']} hyp={m['hypothesis_edges']}"
+        f"known={m['known_edges']} pin∩corpus={m['pin_corpus_edges']} hyp={m['hypothesis_edges']}"
     )
 
 
