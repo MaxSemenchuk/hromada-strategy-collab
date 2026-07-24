@@ -72,6 +72,21 @@ function normalizeRecord(r: RawRecord) {
         Challenges: r.Challenges ?? null,
         PartnersMentioned: r.PartnersMentioned ?? null,
         MSSAgreements: r.MSSAgreements ?? null,
+        // Comma-separated controlled vocab (see structure-hromada-strategy.ts).
+        // Absence = "not found in tagging pass," not "no program." Floor coverage.
+        DonorsPrograms: (() => {
+            const raw = r.DonorsPrograms;
+            if (raw == null || raw === "") return [];
+            if (Array.isArray(raw)) {
+                return raw
+                    .map((x) => (typeof x === "string" ? x : (x as { Title?: string })?.Title))
+                    .filter(Boolean) as string[];
+            }
+            return String(raw)
+                .split(/[,;]/)
+                .map((s) => s.trim())
+                .filter(Boolean);
+        })(),
         SourceQuality: r.SourceQuality ?? null,
         ExtractedAt: r.ExtractedAt ?? null,
     };

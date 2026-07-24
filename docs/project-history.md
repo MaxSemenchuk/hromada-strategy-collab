@@ -314,7 +314,8 @@ Added derived **`PortalUrl`** on release rows (official hromada homepage when
 - [ ] Length-normalization / hub-hromada handling (Poltava-Zhytomyr-type risk)
 - [ ] Product decision after first stakeholder conversations (open-data vs matchmaking vs W3I-internal)
 - [ ] Split NocoDB base if project grows into standalone product
-- [ ] Export `DonorsPrograms` into public `hromadas.json` when ready for donor outreach slices
+- [x] Export `DonorsPrograms` into public `hromadas.json` + `donor-synergy.json`
+      / docs `funds.html` portfolio lenses (within / bridges / hubs) — 2026-07-24
 - [x] Split matcher outputs into thematic vs operational ranked lists
       (`track` on edges + `matching-edges.thematic.json` /
       `matching-edges.operational.json`; scoring unchanged) — 2026-07-24

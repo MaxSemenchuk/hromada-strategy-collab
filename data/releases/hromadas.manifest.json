@@ -1,10 +1,14 @@
 {
-  "generatedAt": "2026-07-24T05:50:15.817Z",
-  "source": "nocodb:live",
+  "generatedAt": "2026-07-24T09:12:23.811695Z",
+  "source": "merge: main strategy upgrades + branch DonorsPrograms",
   "totalRows": 1469,
   "textMinedRows": 77,
   "schema": "see docs/hromadas-schema.md",
+<<<<<<< HEAD
   "license": "CC BY 4.0 — see DATA-LICENSE.md",
   "portalUrlRows": 36,
   "portalUrlEnrichedAt": "2026-07-24T10:48:57.446Z"
+=======
+  "license": "CC BY 4.0 — see DATA-LICENSE.md"
+>>>>>>> origin/main
 }

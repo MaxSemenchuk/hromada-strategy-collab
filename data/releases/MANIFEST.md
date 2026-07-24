@@ -63,6 +63,11 @@ and self-describing, not a growth history.
   - `matching-edges.thematic.json` — ranked by `goals_cosine`
   - `matching-edges.operational.json` — ranked by combined `score`
 
+- **`donor-synergy.json`** — per-program portfolio slices from `DonorsPrograms`
+  tags × matching edges (within-portfolio pairs, bridge pairs, hub degrees).
+  Regenerate with `yarn donor-synergy` after exporting hromadas. Hypotheses
+  only; tag absence ≠ “no program.”
+
 ## Coverage, read before using
 
 - Live export covers **1,469** metadata rows; **77** have strategy extractions
