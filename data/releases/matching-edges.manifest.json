@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-23T19:07:35.832747+00:00",
-  "pairCount": 1770,
+  "generatedAt": "2026-07-24T05:50:41.843123+00:00",
+  "pairCount": 2278,
   "knownValidationPairs": 4,
   "method": "v6: 60% goals_cosine + 25% KSE geo + 15% KSE mss_network",
   "model": "intfloat/multilingual-e5-small",
-  "license": "CC BY 4.0 \u2014 see DATA-LICENSE.md",
+  "license": "CC BY 4.0 — see DATA-LICENSE.md",
   "warning": "Unverified hypotheses unless known=true"
 }
