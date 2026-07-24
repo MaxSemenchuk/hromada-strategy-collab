@@ -198,10 +198,22 @@ Run `yarn test-known-pairs` after changing the matcher.
 
 ---
 
-## Stakeholder artifacts (Claude Code)
+## Stakeholder artifacts
 
-- [Матчинг громад за стратегіями розвитку](https://claude.ai/code/artifact/6913283b-0450-477b-88fa-bcc0ed3775e9) — Ukrainian brief
-- [Паспорт проєкту](https://claude.ai/code/artifact/f67810d5-dc4e-4291-937e-c3db24e452c5) — confidence-tiered findings
+Canonical leave-behind is the **GitHub Pages site** rooted at [`docs/`](./)
+(shared nav: overview · passport · matches · map · graph MVP):
 
-Local HTML copies: [hromada-project-passport.html](hromada-project-passport.html),
-[mss-graph-mvp.html](mss-graph-mvp.html).
+**https://maxsemenchuk.github.io/hromada-strategy-collab/**
+
+| Page | File |
+|------|------|
+| Overview | [index.html](index.html) |
+| Passport (UA brief) | [hromada-project-passport.html](hromada-project-passport.html) |
+| Matching candidates | [matches.html](matches.html) |
+| PIN map + matching | [mss-pin-matching-graph.html](mss-pin-matching-graph.html) |
+| Registry graph MVP | [mss-graph-mvp.html](mss-graph-mvp.html) |
+
+Legacy Claude Code artifact URLs (superseded by Pages):
+
+- [Матчинг громад…](https://claude.ai/code/artifact/6913283b-0450-477b-88fa-bcc0ed3775e9)
+- [Паспорт проєкту](https://claude.ai/code/artifact/f67810d5-dc4e-4291-937e-c3db24e452c5)

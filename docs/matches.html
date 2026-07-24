@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Кандидати на співпрацю — матчинг стратегій</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/site.css"/>
+  <style>
+    body {
+      background: var(--site-bg);
+      color: var(--site-ink);
+      font-family: var(--site-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { max-width: 920px; margin: 0 auto; padding: 2.4rem 1.5rem 2rem; }
+    .eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--site-accent); font-weight: 700; display: block; margin-bottom: 0.7rem;
+    }
+    h1 {
+      font-family: var(--site-font); font-weight: 400;
+      font-size: clamp(1.55rem, 3.4vw, 2.15rem); line-height: 1.22; margin: 0 0 0.75rem;
+    }
+    .lede { color: var(--site-muted); max-width: 62ch; margin: 0 0 1.2rem; }
+    .method {
+      font-size: 0.88rem; color: var(--site-muted);
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 6px; padding: 0.85rem 1rem; margin-bottom: 1.8rem;
+    }
+    .method code { font-size: 0.84em; }
+    h2 {
+      font-family: var(--site-font); font-weight: 400; font-size: 1.25rem;
+      margin: 0 0 0.7rem;
+    }
+    section { margin-bottom: 2.2rem; }
+    .kicker {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--site-faint); margin: 0 0 0.35rem;
+    }
+    table {
+      width: 100%; border-collapse: collapse; font-size: 0.9rem;
+    }
+    th, td {
+      padding: 0.65rem 0.7rem; border-bottom: 1px solid var(--site-rule);
+      text-align: left; vertical-align: top;
+    }
+    th {
+      font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--site-faint); font-weight: 700;
+    }
+    td.num, th.num {
+      font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap;
+    }
+    .tag {
+      font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase;
+      font-weight: 700; white-space: nowrap;
+    }
+    .tag.known { color: var(--site-gold); }
+    .tag.hyp { color: var(--site-accent); }
+    .pair { font-weight: 600; color: var(--site-ink); }
+    .caveat {
+      font-size: 0.85rem; color: var(--site-faint); font-style: italic;
+      margin-top: 1rem; padding-top: 0.85rem; border-top: 1px dashed var(--site-rule);
+    }
+    .curated {
+      display: grid; gap: 0.85rem;
+    }
+    .item {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 6px; padding: 1rem 1.1rem;
+    }
+    .item .pair { margin-bottom: 0.25rem; display: block; }
+    .item p { margin: 0; font-size: 0.9rem; color: var(--site-muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="eyebrow">Матчинг · method v6</span>
+    <h1>Кандидати на міжмуніципальну співпрацю</h1>
+    <p class="lede">
+      Пари громад за схожістю цілей стратегій (і географією / наявною мережею МСС).
+      Усі бали — <strong>гіпотези</strong>, доки пара не підтверджена реєстром (<code>known: true</code>).
+    </p>
+    <div class="method" id="method-box">
+      Завантаження методу…
+    </div>
+
+    <section>
+      <p class="kicker">Ручний розбір</p>
+      <h2>Кандидати з паспорта (з поясненням)</h2>
+      <div class="curated">
+        <div class="item">
+          <span class="tag known">✓ реальна угода</span>
+          <span class="pair">Ніжин ↔ Батурин ↔ Козелець</span>
+          <p>Туристичний кластер «Місцями козацької сили» — уже діє. Метод знаходить без підказки; валідація підходу.</p>
+        </div>
+        <div class="item">
+          <span class="tag hyp">★★★ сильний кандидат</span>
+          <span class="pair">Галицька ↔ Дубовецька</span>
+          <p>Сусідні громади; у тексті стратегії вже названо спільний проєкт водопостачання «Галич–Бурштин–Маріямпіль».</p>
+        </div>
+        <div class="item">
+          <span class="tag hyp">★★ кандидат</span>
+          <span class="pair">Ужгород ↔ Мукачево</span>
+          <p>~40 км; окремий туристичний продукт + можлива координація медпослуг / транскордонних грантів.</p>
+        </div>
+        <div class="item">
+          <span class="tag hyp">★★ peer-learning</span>
+          <span class="pair">Дніпро ↔ Львів</span>
+          <p>Не спільний проєкт, а обмін моделлю управління інноваціями / агломерацією.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="kicker">Валідація</p>
+      <h2>Known МСС у matching-edges</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Пара</th>
+              <th class="num">Score</th>
+              <th class="num">Goals</th>
+              <th class="num">Geo</th>
+              <th class="num">Мережа</th>
+            </tr>
+          </thead>
+          <tbody id="known-body"><tr><td colspan="5">Завантаження…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <p class="kicker">Автоматичний топ</p>
+      <h2>Найвищі гіпотези (ще не known)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Пара</th>
+              <th class="num">Score</th>
+              <th class="num">Goals</th>
+              <th class="num">Geo</th>
+              <th class="num">Мережа</th>
+            </tr>
+          </thead>
+          <tbody id="top-body"><tr><td colspan="5">Завантаження…</td></tr></tbody>
+        </table>
+      </div>
+      <p class="caveat">
+        Високий score ≠ готовність до угоди. Шаблонні стратегії й «хаб»-документи можуть завищувати схожість —
+        перед outreach перевіряйте зміст і географію. Повний шар: файл
+        <code>data/releases/matching-edges.json</code> у репозиторії.
+      </p>
+    </section>
+  </div>
+
+  <p class="site-footer-note">
+    Див. також <a href="hromada-project-passport.html">паспорт проєкту</a>
+    і <a href="mss-pin-matching-graph.html">карту МСС</a>.
+  </p>
+
+  <script src="assets/nav.js" data-active="matches"></script>
+  <script>
+    function pct(x) {
+      if (x == null || Number.isNaN(x)) return "—";
+      return (x * 100).toFixed(1) + "%";
+    }
+    function row(p) {
+      return "<tr>"
+        + "<td><span class=\"pair\">" + p.a_short + " ↔ " + p.b_short + "</span></td>"
+        + "<td class=\"num\">" + pct(p.score) + "</td>"
+        + "<td class=\"num\">" + pct(p.goals_cosine) + "</td>"
+        + "<td class=\"num\">" + pct(p.geo_score) + "</td>"
+        + "<td class=\"num\">" + pct(p.mss_network) + "</td>"
+        + "</tr>";
+    }
+    fetch("assets/matches-preview.json")
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        document.getElementById("method-box").innerHTML =
+          "<strong>Метод:</strong> <code>" + data.method + "</code><br/>"
+          + "Пар у релізі: <strong>" + data.pairCount + "</strong> · знімок: "
+          + (data.generatedAt || "—");
+        document.getElementById("known-body").innerHTML =
+          data.known.map(row).join("") || "<tr><td colspan=\"5\">Немає</td></tr>";
+        document.getElementById("top-body").innerHTML =
+          data.top.map(row).join("") || "<tr><td colspan=\"5\">Немає</td></tr>";
+      })
+      .catch(function (err) {
+        document.getElementById("method-box").textContent =
+          "Не вдалося завантажити matches-preview.json: " + err;
+      });
+  </script>
+</body>
+</html>

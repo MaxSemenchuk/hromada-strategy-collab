@@ -1,4 +1,10 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MVP: граф реального реєстру МСС</title>
+<link rel="stylesheet" href="assets/site.css"/>
 <style>
   :root {
     --bg: #faf7f1; --surface: #f2ede1; --surface-2: #e9e2d2;
@@ -60,7 +66,8 @@
   table.cats td.num, table.cats th.num { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; text-align: right; }
   footer { margin-top: 2.4rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.83rem; color: var(--ink-faint); }
 </style>
-
+</head>
+<body>
 <div class="page">
   <header>
     <span class="eyebrow">MVP · крок 1 · граф МСС</span>
@@ -185,3 +192,11 @@ const HIGHLIGHT = new Set(["Дубовецька сільська", "Буршт�
   tbody.innerHTML = entries.map(([k,v]) => `<tr><td>${k}</td><td class="num">${v}</td></tr>`).join('');
 })();
 </script>
+
+<p class="site-footer-note">
+  Ранній прототип · повніша карта:
+  <a href="mss-pin-matching-graph.html">PIN + matching overlay</a>
+</p>
+<script src="assets/nav.js" data-active="graph"></script>
+</body>
+</html>

@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Паспорт проєкту — Матчинг громад за стратегіями розвитку</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/site.css"/>
 <style>
   :root {
     --bg: #faf7f1; --surface: #f2ede1; --surface-2: #e9e2d2;
@@ -93,7 +102,13 @@
   footer.status { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--ink-faint); }
   footer.status strong { color: var(--ink-muted); }
 </style>
-
+<style>
+  /* Prefer shared fonts when available */
+  body { font-family: var(--site-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  h1, h2, h3 { font-family: var(--site-font), Georgia, "Iowan Old Style", "Palatino Linotype", serif; }
+</style>
+</head>
+<body>
 <div class="page">
 
   <header class="hero">
@@ -239,3 +254,13 @@
   </footer>
 
 </div>
+
+<p class="site-footer-note">
+  Частина сайту артефактів W3I ·
+  <a href="index.html">Огляд</a> ·
+  <a href="matches.html">Кандидати</a> ·
+  <a href="mss-pin-matching-graph.html">Карта МСС</a>
+</p>
+<script src="assets/nav.js" data-active="passport"></script>
+</body>
+</html>

@@ -89,18 +89,33 @@ data/
 ├── releases/      # THE dataset — canonical, current, CC BY 4.0 (see data/releases/MANIFEST.md)
 ├── cache/         # gitignored re-fetchable sources (KSE pulls, МСС registry XLSX, …)
 └── research-log/  # dated growth snapshots (7→13→23→30→46→54 hromadas) — provenance, not the dataset
-docs/
-├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
-├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub) as candidate enrichment sources
-├── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case
-├── kse-issue-draft.md            # ready-to-paste GitHub issue for KSE cross-link (draft)
+docs/                             # GitHub Pages site root (see docs/README.md)
+├── index.html                    # hub: passport / matches / map / graph
 ├── hromada-project-passport.html # stakeholder-facing project brief (Ukrainian)
-└── mss-graph-mvp.html            # early force-graph visualization prototype
+├── matches.html                  # known pairs + top matching hypotheses
+├── mss-pin-matching-graph.html   # full PIN map + matching overlay
+├── mss-graph-mvp.html            # early force-graph visualization prototype
+├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
+├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub)
+├── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case
+└── kse-issue-draft.md            # ready-to-paste GitHub issue for KSE cross-link (draft)
 internal/
 └── outreach-messages.md          # draft stakeholder outreach copy — not part of the dataset, not for public reuse
 REFERENCES.md                     # theoretical grounding — network governance, IMC, institutional diversity
 LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see License & data below
 ```
+
+## Stakeholder site (GitHub Pages)
+
+Static site in [`docs/`](docs/) — passport, matching candidates, МСС map/graph, shared top menu.
+
+**URL (after Pages is enabled):** https://maxsemenchuk.github.io/hromada-strategy-collab/
+
+One-time setup: repo **Settings → Pages → Source: GitHub Actions**, then push to `main`
+(or run the **Deploy GitHub Pages** workflow). Local preview: `cd docs && python3 -m http.server 8765`.
+
+> The repository is currently private — public Pages needs a public repo (or GitHub Pro
+> for private Pages). Collaborators with repo access can still use the workflow URL once enabled.
 
 Raw strategy PDFs/DOC/HTML and the МСС registry XLSX are kept as a **local
 cache** for re-extraction and alternate analyses — not committed, not part of

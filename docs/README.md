@@ -1,0 +1,31 @@
+# Stakeholder site (GitHub Pages)
+
+Static site rooted at this folder. After Pages is enabled (Actions source),
+the public URL is:
+
+**https://maxsemenchuk.github.io/hromada-strategy-collab/**
+
+| Path | Content |
+|------|---------|
+| [`index.html`](index.html) | Overview / hub |
+| [`hromada-project-passport.html`](hromada-project-passport.html) | Project passport (UA brief) |
+| [`matches.html`](matches.html) | Known pairs + top hypotheses |
+| [`mss-pin-matching-graph.html`](mss-pin-matching-graph.html) | Full PIN map + matching overlay |
+| [`mss-graph-mvp.html`](mss-graph-mvp.html) | Early registry graph MVP |
+
+Shared chrome: [`assets/site.css`](assets/site.css), [`assets/nav.js`](assets/nav.js).
+
+## Enable once
+
+Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+Push to `main` (or run **Deploy GitHub Pages** workflow manually).
+
+Local preview:
+
+```bash
+cd docs && python3 -m http.server 8765
+# open http://127.0.0.1:8765/
+```
+
+Markdown files in this folder (`*.md`) are research docs for the repo, not
+nav pages — they are still served as raw text if opened by URL.
