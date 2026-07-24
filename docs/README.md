@@ -19,7 +19,7 @@ hromadas with coordinates (metadata — not the strategy corpus). Click a point 
 | [`mss-pin-matching-graph.html`](mss-pin-matching-graph.html) | Full PIN map + thematic / operational overlays |
 | [`hromada-project-passport.html`](hromada-project-passport.html) | Redirect → `index.html` (legacy URL) |
 
-Shared chrome: [`assets/site.css`](assets/site.css), [`assets/nav.js`](assets/nav.js).
+Shared chrome: [`assets/site.css`](assets/site.css), [`assets/nav.js`](assets/nav.js), [`assets/i18n.js`](assets/i18n.js). UK/EN language switch lives in the site nav.
 
 ## Enable once
 

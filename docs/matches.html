@@ -81,9 +81,9 @@
 </head>
 <body>
   <div class="page">
-    <span class="eyebrow">Матчинг · method v6</span>
-    <h1>Кандидати на міжмуніципальну співпрацю</h1>
-    <p class="lede">
+    <span class="eyebrow" data-i18n="eyebrow">Матчинг · method v6</span>
+    <h1 data-i18n="h1">Кандидати на міжмуніципальну співпрацю</h1>
+    <p class="lede" data-i18n-html="lede">
       Пари громад за схожістю цілей стратегій (і географією / наявною мережею МСС).
       Корпус зараз: <strong>~77</strong> стратегій, <strong>~68</strong> з текстом Goals.
       Усі бали — <strong>гіпотези</strong>, доки пара не підтверджена реєстром (<code>known: true</code>).
@@ -93,41 +93,41 @@
     </div>
 
     <section>
-      <p class="kicker">Ручний розбір</p>
-      <h2>Кандидати з поясненням</h2>
+      <p class="kicker" data-i18n="curated.kicker">Ручний розбір</p>
+      <h2 data-i18n="curated.h2">Кандидати з поясненням</h2>
       <div class="curated">
         <div class="item">
-          <span class="tag known">✓ реальна угода</span>
+          <span class="tag known" data-i18n="curated.c1.tag">✓ реальна угода</span>
           <span class="pair">Ніжин ↔ Батурин ↔ Козелець</span>
-          <p>Туристичний кластер «Місцями козацької сили» — уже діє. Метод знаходить без підказки; валідація підходу.</p>
+          <p data-i18n="curated.c1.p">Туристичний кластер «Місцями козацької сили» — уже діє. Метод знаходить без підказки; валідація підходу.</p>
         </div>
         <div class="item">
-          <span class="tag hyp">★★★ сильний кандидат</span>
+          <span class="tag hyp" data-i18n="curated.c2.tag">★★★ сильний кандидат</span>
           <span class="pair">Галицька ↔ Дубовецька</span>
-          <p>Сусідні громади; у тексті стратегії вже названо спільний проєкт водопостачання «Галич–Бурштин–Маріямпіль».</p>
+          <p data-i18n="curated.c2.p">Сусідні громади; у тексті стратегії вже названо спільний проєкт водопостачання «Галич–Бурштин–Маріямпіль».</p>
         </div>
         <div class="item">
-          <span class="tag hyp">★★ кандидат</span>
+          <span class="tag hyp" data-i18n="curated.c3.tag">★★ кандидат</span>
           <span class="pair">Ужгород ↔ Мукачево</span>
-          <p>~40 км; окремий туристичний продукт + можлива координація медпослуг / транскордонних грантів.</p>
+          <p data-i18n="curated.c3.p">~40 км; окремий туристичний продукт + можлива координація медпослуг / транскордонних грантів.</p>
         </div>
         <div class="item">
-          <span class="tag hyp">★★ peer-learning</span>
+          <span class="tag hyp" data-i18n="curated.c4.tag">★★ peer-learning</span>
           <span class="pair">Дніпро ↔ Львів</span>
-          <p>Не спільний проєкт, а обмін моделлю управління інноваціями / агломерацією.</p>
+          <p data-i18n="curated.c4.p">Не спільний проєкт, а обмін моделлю управління інноваціями / агломерацією.</p>
         </div>
         <div class="item">
-          <span class="tag hyp">★★ топ score — перевірити</span>
+          <span class="tag hyp" data-i18n="curated.c5.tag">★★ топ score — перевірити</span>
           <span class="pair">Вижницька ↔ Косівська</span>
-          <p>Високий combined score (сусіди, туризм). Потрібна ручна перевірка: спільний продукт чи лише тема + географія.</p>
+          <p data-i18n="curated.c5.p">Високий combined score (сусіди, туризм). Потрібна ручна перевірка: спільний продукт чи лише тема + географія.</p>
         </div>
       </div>
     </section>
 
     <section>
-      <p class="kicker">Валідація</p>
-      <h2>Known МСС у matching-edges</h2>
-      <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem">
+      <p class="kicker" data-i18n="known.kicker">Валідація</p>
+      <h2 data-i18n="known.h2">Known МСС у matching-edges</h2>
+      <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem" data-i18n-html="known.lede">
         Кураторський ground truth для регресії матчера (<code>known: true</code>) —
         не всі угоди з реєстру KSE.
       </p>
@@ -135,23 +135,23 @@
         <table>
           <thead>
             <tr>
-              <th>Пара</th>
-              <th>Трек</th>
-              <th class="num">Score</th>
-              <th class="num">Goals</th>
-              <th class="num">Geo</th>
-              <th class="num">Мережа</th>
+              <th data-i18n="th.pair">Пара</th>
+              <th data-i18n="th.track">Трек</th>
+              <th class="num" data-i18n="th.score">Score</th>
+              <th class="num" data-i18n="th.goals">Goals</th>
+              <th class="num" data-i18n="th.geo">Geo</th>
+              <th class="num" data-i18n="th.network">Мережа</th>
             </tr>
           </thead>
-          <tbody id="known-body"><tr><td colspan="6">Завантаження…</td></tr></tbody>
+          <tbody id="known-body"><tr><td colspan="6" data-i18n="loading">Завантаження…</td></tr></tbody>
         </table>
       </div>
     </section>
 
     <section>
-      <p class="kicker">Ширша KSE-перевірка</p>
-      <h2>PIN ∩ корпус (<code>mss_network&gt;0</code>)</h2>
-      <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem">
+      <p class="kicker" data-i18n="pin.kicker">Ширша KSE-перевірка</p>
+      <h2 data-i18n-html="pin.h2">PIN ∩ корпус (<code>mss_network&gt;0</code>)</h2>
+      <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem" data-i18n-html="pin.lede">
         Усі пари з Goals з обох боків, які вже є в мережі МСС KSE.
         Rank — місце за combined score; score уже містить 15% <code>mss_network</code>
         (частково циклічно). Не замінює known-регресію.
@@ -160,38 +160,38 @@
         <table>
           <thead>
             <tr>
-              <th>Пара</th>
-              <th>Тип</th>
-              <th class="num">Rank</th>
-              <th class="num">Score</th>
-              <th class="num">Goals</th>
-              <th class="num">Geo</th>
+              <th data-i18n="th.pair">Пара</th>
+              <th data-i18n="th.kind">Тип</th>
+              <th class="num" data-i18n="th.rank">Rank</th>
+              <th class="num" data-i18n="th.score">Score</th>
+              <th class="num" data-i18n="th.goals">Goals</th>
+              <th class="num" data-i18n="th.geo">Geo</th>
             </tr>
           </thead>
-          <tbody id="pin-corpus-body"><tr><td colspan="6">Завантаження…</td></tr></tbody>
+          <tbody id="pin-corpus-body"><tr><td colspan="6" data-i18n="loading">Завантаження…</td></tr></tbody>
         </table>
       </div>
     </section>
 
     <section>
-      <p class="kicker">Автоматичний топ</p>
-      <h2>Найвищі гіпотези (ще не known)</h2>
+      <p class="kicker" data-i18n="top.kicker">Автоматичний топ</p>
+      <h2 data-i18n="top.h2">Найвищі гіпотези (ще не known)</h2>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Пара</th>
-              <th>Трек</th>
-              <th class="num">Score</th>
-              <th class="num">Goals</th>
-              <th class="num">Geo</th>
-              <th class="num">Мережа</th>
+              <th data-i18n="th.pair">Пара</th>
+              <th data-i18n="th.track">Трек</th>
+              <th class="num" data-i18n="th.score">Score</th>
+              <th class="num" data-i18n="th.goals">Goals</th>
+              <th class="num" data-i18n="th.geo">Geo</th>
+              <th class="num" data-i18n="th.network">Мережа</th>
             </tr>
           </thead>
-          <tbody id="top-body"><tr><td colspan="6">Завантаження…</td></tr></tbody>
+          <tbody id="top-body"><tr><td colspan="6" data-i18n="loading">Завантаження…</td></tr></tbody>
         </table>
       </div>
-      <p class="caveat">
+      <p class="caveat" data-i18n-html="caveat">
         Високий score ≠ готовність до угоди. Шаблонні стратегії й «хаб»-документи можуть завищувати схожість —
         перед outreach перевіряйте зміст і географію. Повний шар: файл
         <code>data/releases/matching-edges.json</code> у репозиторії.
@@ -199,23 +199,137 @@
     </section>
   </div>
 
-  <p class="site-footer-note">
+  <p class="site-footer-note" data-i18n-html="footer.note">
     Див. також <a href="index.html">О проєкті</a>
     і <a href="mss-pin-matching-graph.html">карту МСС</a>.
   </p>
 
+  <script>
+window.PAGE_I18N = {
+  uk: {
+    "doc.title": "Кандидати на співпрацю — матчинг стратегій",
+    "eyebrow": "Матчинг · method v6",
+    "h1": "Кандидати на міжмуніципальну співпрацю",
+    "lede": "Пари громад за схожістю цілей стратегій (і географією / наявною мережею МСС). Корпус зараз: <strong>~77</strong> стратегій, <strong>~68</strong> з текстом Goals. Усі бали — <strong>гіпотези</strong>, доки пара не підтверджена реєстром (<code>known: true</code>).",
+    "method.loading": "Завантаження методу…",
+    "method.label": "Метод:",
+    "method.pairs": "Пар у релізі:",
+    "method.snapshot": "знімок:",
+    "method.tracks": "Треки:",
+    "method.trackNote": "— один score не означає «strategy match».",
+    "method.error": "Не вдалося завантажити matches-preview.json: ",
+    "curated.kicker": "Ручний розбір",
+    "curated.h2": "Кандидати з поясненням",
+    "curated.c1.tag": "✓ реальна угода",
+    "curated.c1.p": "Туристичний кластер «Місцями козацької сили» — уже діє. Метод знаходить без підказки; валідація підходу.",
+    "curated.c2.tag": "★★★ сильний кандидат",
+    "curated.c2.p": "Сусідні громади; у тексті стратегії вже названо спільний проєкт водопостачання «Галич–Бурштин–Маріямпіль».",
+    "curated.c3.tag": "★★ кандидат",
+    "curated.c3.p": "~40 км; окремий туристичний продукт + можлива координація медпослуг / транскордонних грантів.",
+    "curated.c4.tag": "★★ peer-learning",
+    "curated.c4.p": "Не спільний проєкт, а обмін моделлю управління інноваціями / агломерацією.",
+    "curated.c5.tag": "★★ топ score — перевірити",
+    "curated.c5.p": "Високий combined score (сусіди, туризм). Потрібна ручна перевірка: спільний продукт чи лише тема + географія.",
+    "known.kicker": "Валідація",
+    "known.h2": "Known МСС у matching-edges",
+    "known.lede": "Кураторський ground truth для регресії матчера (<code>known: true</code>) — не всі угоди з реєстру KSE.",
+    "pin.kicker": "Ширша KSE-перевірка",
+    "pin.h2": "PIN ∩ корпус (<code>mss_network&gt;0</code>)",
+    "pin.lede": "Усі пари з Goals з обох боків, які вже є в мережі МСС KSE. Rank — місце за combined score; score уже містить 15% <code>mss_network</code> (частково циклічно). Не замінює known-регресію.",
+    "top.kicker": "Автоматичний топ",
+    "top.h2": "Найвищі гіпотези (ще не known)",
+    "th.pair": "Пара",
+    "th.track": "Трек",
+    "th.kind": "Тип",
+    "th.rank": "Rank",
+    "th.score": "Score",
+    "th.goals": "Goals",
+    "th.geo": "Geo",
+    "th.network": "Мережа",
+    "loading": "Завантаження…",
+    "empty": "Немає",
+    "empty.pin": "Немає — спочатку yarn report-pin-corpus",
+    "track.thematic": "похожа стратегія",
+    "track.operational": "зручний сусід",
+    "track.mixed": "mixed",
+    "tag.pinCorpus": "PIN∩корпус",
+    "caveat": "Високий score ≠ готовність до угоди. Шаблонні стратегії й «хаб»-документи можуть завищувати схожість — перед outreach перевіряйте зміст і географію. Повний шар: файл <code>data/releases/matching-edges.json</code> у репозиторії.",
+    "footer.note": "Див. також <a href=\"index.html\">О проєкті</a> і <a href=\"mss-pin-matching-graph.html\">карту МСС</a>."
+  },
+  en: {
+    "doc.title": "Cooperation candidates — strategy matching",
+    "eyebrow": "Matching · method v6",
+    "h1": "Candidates for inter-municipal cooperation",
+    "lede": "Hromada pairs by strategy-goal similarity (plus geography / existing IMC network). Corpus now: <strong>~77</strong> strategies, <strong>~68</strong> with Goals text. All scores are <strong>hypotheses</strong> until a pair is registry-confirmed (<code>known: true</code>).",
+    "method.loading": "Loading method…",
+    "method.label": "Method:",
+    "method.pairs": "Pairs in release:",
+    "method.snapshot": "snapshot:",
+    "method.tracks": "Tracks:",
+    "method.trackNote": "— one score does not mean “strategy match”.",
+    "method.error": "Failed to load matches-preview.json: ",
+    "curated.kicker": "Manual review",
+    "curated.h2": "Candidates with explanation",
+    "curated.c1.tag": "✓ real agreement",
+    "curated.c1.p": "Tourism cluster “Along the Cossack Strength Trail” — already active. The method finds it without a tip; approach validation.",
+    "curated.c2.tag": "★★★ strong candidate",
+    "curated.c2.p": "Neighbouring hromadas; the strategy text already names a shared water-supply project “Halych–Burshtyn–Mariiampil”.",
+    "curated.c3.tag": "★★ candidate",
+    "curated.c3.p": "~40 km; a distinct tourism product + possible health-service / cross-border grant coordination.",
+    "curated.c4.tag": "★★ peer-learning",
+    "curated.c4.p": "Not a shared project, but exchange of an innovation / agglomeration governance model.",
+    "curated.c5.tag": "★★ top score — verify",
+    "curated.c5.p": "High combined score (neighbours, tourism). Needs manual check: shared product, or only theme + geography?",
+    "known.kicker": "Validation",
+    "known.h2": "Known IMC in matching-edges",
+    "known.lede": "Curated ground truth for matcher regression (<code>known: true</code>) — not every agreement from the KSE registry.",
+    "pin.kicker": "Broader KSE check",
+    "pin.h2": "PIN ∩ corpus (<code>mss_network&gt;0</code>)",
+    "pin.lede": "All pairs with Goals on both sides that already appear in the KSE IMC network. Rank — place by combined score; the score already includes 15% <code>mss_network</code> (partly circular). Does not replace known-pair regression.",
+    "top.kicker": "Automatic top",
+    "top.h2": "Highest hypotheses (not yet known)",
+    "th.pair": "Pair",
+    "th.track": "Track",
+    "th.kind": "Type",
+    "th.rank": "Rank",
+    "th.score": "Score",
+    "th.goals": "Goals",
+    "th.geo": "Geo",
+    "th.network": "Network",
+    "loading": "Loading…",
+    "empty": "None",
+    "empty.pin": "None — run yarn report-pin-corpus first",
+    "track.thematic": "similar strategy",
+    "track.operational": "handy neighbour",
+    "track.mixed": "mixed",
+    "tag.pinCorpus": "PIN∩corpus",
+    "caveat": "A high score ≠ readiness for an agreement. Template strategies and “hub” documents can inflate similarity — check content and geography before outreach. Full layer: <code>data/releases/matching-edges.json</code> in the repository.",
+    "footer.note": "See also <a href=\"index.html\">About</a> and the <a href=\"mss-pin-matching-graph.html\">IMC map</a>."
+  }
+};
+  </script>
+  <script src="assets/i18n.js"></script>
   <script src="assets/nav.js" data-active="matches"></script>
   <script>
+    var previewData = null;
+    var loadError = null;
+
+    function t(key) {
+      return window.HromadaI18n ? HromadaI18n.t(key) : key;
+    }
+
     function pct(x) {
       if (x == null || Number.isNaN(x)) return "—";
       return (x * 100).toFixed(1) + "%";
     }
-    function trackLabel(t) {
-      if (t === "thematic") return "похожа стратегія";
-      if (t === "operational") return "зручний сусід";
-      if (t === "mixed") return "mixed";
-      return t || "—";
+
+    function trackLabel(track) {
+      if (track === "thematic") return t("track.thematic");
+      if (track === "operational") return t("track.operational");
+      if (track === "mixed") return t("track.mixed");
+      return track || "—";
     }
+
     function row(p) {
       return "<tr>"
         + "<td><span class=\"pair\">" + p.a_short + " ↔ " + p.b_short + "</span></td>"
@@ -226,10 +340,11 @@
         + "<td class=\"num\">" + pct(p.mss_network) + "</td>"
         + "</tr>";
     }
+
     function pinCorpusRow(p) {
       var kind = p.known
         ? "<span class=\"tag known\">known</span>"
-        : "<span class=\"tag pin-corpus\">PIN∩корпус</span>";
+        : "<span class=\"tag pin-corpus\">" + t("tag.pinCorpus") + "</span>";
       var rk = p.rank != null ? "#" + p.rank : "—";
       return "<tr>"
         + "<td><span class=\"pair\">" + p.a_short + " ↔ " + p.b_short + "</span></td>"
@@ -240,32 +355,59 @@
         + "<td class=\"num\">" + pct(p.geo_score) + "</td>"
         + "</tr>";
     }
+
+    function renderMethod(data) {
+      var trackNote = "";
+      if (data.tracks && data.tracks.counts) {
+        trackNote = "<br/><strong>" + t("method.tracks") + "</strong> thematic "
+          + data.tracks.counts.thematic + " · operational "
+          + data.tracks.counts.operational + " · mixed "
+          + data.tracks.counts.mixed
+          + " " + t("method.trackNote");
+      }
+      document.getElementById("method-box").innerHTML =
+        "<strong>" + t("method.label") + "</strong> <code>" + data.method + "</code><br/>"
+        + t("method.pairs") + " <strong>" + data.pairCount + "</strong> · "
+        + t("method.snapshot") + " "
+        + (data.generatedAt || "—") + trackNote;
+    }
+
+    function renderTables(data) {
+      document.getElementById("known-body").innerHTML =
+        data.known.map(row).join("") || "<tr><td colspan=\"6\">" + t("empty") + "</td></tr>";
+      var pc = data.pinCorpus || [];
+      document.getElementById("pin-corpus-body").innerHTML =
+        pc.map(pinCorpusRow).join("") || "<tr><td colspan=\"6\">" + t("empty.pin") + "</td></tr>";
+      document.getElementById("top-body").innerHTML =
+        data.top.map(row).join("") || "<tr><td colspan=\"6\">" + t("empty") + "</td></tr>";
+    }
+
+    function renderAll() {
+      if (loadError) {
+        document.getElementById("method-box").textContent =
+          t("method.error") + loadError;
+        return;
+      }
+      if (!previewData) {
+        document.getElementById("method-box").textContent = t("method.loading");
+        return;
+      }
+      renderMethod(previewData);
+      renderTables(previewData);
+    }
+
+    document.addEventListener("hromada-lang", renderAll);
+    renderAll();
+
     fetch("assets/matches-preview.json")
       .then(function (r) { return r.json(); })
       .then(function (data) {
-        var trackNote = "";
-        if (data.tracks && data.tracks.counts) {
-          trackNote = "<br/><strong>Треки:</strong> thematic "
-            + data.tracks.counts.thematic + " · operational "
-            + data.tracks.counts.operational + " · mixed "
-            + data.tracks.counts.mixed
-            + " — один score не означає «strategy match».";
-        }
-        document.getElementById("method-box").innerHTML =
-          "<strong>Метод:</strong> <code>" + data.method + "</code><br/>"
-          + "Пар у релізі: <strong>" + data.pairCount + "</strong> · знімок: "
-          + (data.generatedAt || "—") + trackNote;
-        document.getElementById("known-body").innerHTML =
-          data.known.map(row).join("") || "<tr><td colspan=\"6\">Немає</td></tr>";
-        var pc = data.pinCorpus || [];
-        document.getElementById("pin-corpus-body").innerHTML =
-          pc.map(pinCorpusRow).join("") || "<tr><td colspan=\"6\">Немає — спочатку yarn report-pin-corpus</td></tr>";
-        document.getElementById("top-body").innerHTML =
-          data.top.map(row).join("") || "<tr><td colspan=\"6\">Немає</td></tr>";
+        previewData = data;
+        renderAll();
       })
       .catch(function (err) {
-        document.getElementById("method-box").textContent =
-          "Не вдалося завантажити matches-preview.json: " + err;
+        loadError = String(err);
+        renderAll();
       });
   </script>
 </body>
