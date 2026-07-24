@@ -187,7 +187,88 @@ Run `yarn test-known-pairs` after changing the matcher.
 
 ---
 
-## Open threads (as of 2026-07-23)
+## МСС registry geography & types → matching implications (2026-07-24)
+
+One-off read of the official registry (Мінрегіон XLSX via `yarn fetch-mss-registry`,
+899 agreements as of Dec 2022) joined with KSE
+`partnerships-hromadas(-network).csv` (~2.4k edges; 614/1,469 hromadas with ≥1
+agreement). Purpose: what the real agreement stock looks like, and what that
+means for strategy-text matching.
+
+### What the registry actually contains
+
+**Legal forms (Law 1508-VII):** ~57% joint projects, ~25% joint financing /
+shared upkeep of institutions, ~14% task delegation, &lt;3% joint municipal
+enterprises or joint governing bodies.
+
+**Themes (keyworded titles; ~half of titles are form-templates with no topic):**
+CNAP/admin services ~11%; health + social services + education ~20%; waste +
+fire + archbud ~10%; **tourism only ~5 named agreements (~0.6%)** — but those
+few include the largest multi-party deals.
+
+**Party structure:** bilateral dominates (~520), but **one-third have 3+
+parties** — a distinct class (clusters / shared utilities), not noise.
+
+**Geography (KSE network, reliable join on KATOTTG):**
+- ~82% of edges same-oblast; of those, ~78% same-raion.
+- Cross-oblast ~18% — almost all along natural corridors (Dnister canyon
+  IF–Chernivtsi; Carpathian / Hutsul ethnos), not random long-range pairs.
+- Coverage uneven: Poltava ~90% of hromadas have ≥1 МСС, Lviv ~85%, Vinnytsia
+  ~75% vs Odesa ~18% and frontline oblasts in single digits.
+- High-degree “hubs” are often members of **one large multi-party agreement**,
+  not star brokers: e.g. reg#721 «Дністровський каньйон» (22 parties), #696
+  «Гуцул етнос» (14), #659 waste-sorting plant (15), #752 «Місцями козацької
+  сили» (5 — Nizhyn cluster plus Сухополов’янська and Парафіївська).
+
+### Practical conclusions (plain language)
+
+**1. “Similar strategies” ≠ “good CNAP neighbours.”**  
+Most real МСС is operational back-office next door (CNAP, fire, waste, shared
+school/social facility). Strategies rarely describe that. Goals-cosine targets
+a rarer class: shared *development vision* (tourism, clusters). Do not sell one
+score as answering both questions.
+
+**2. v6 combined score often praises people we already know.**  
+`0.60×goals + 0.25×geo + 0.15×mss_network` pushes same-oblast / already-linked
+pairs up. Top combined ranks (Галицька↔Дубовецька↔Бурштинська) sit inside
+reg#721; high score with goals ~0.05–0.07 is network+geo recognition, not a
+new strategy discovery. Empirically on the pilot edges: top-50 by goals → only
+1/50 same-oblast and 0/50 already in KSE network; top-50 by combined → 36/50
+same-oblast and 9/50 already linked.
+
+**3. Ship two ranked lists, not one.**  
+
+| List | Signal | Use |
+|------|--------|-----|
+| **A — thematic** | high goals, geo can be low | cold-start vision partners; W3I outreach |
+| **B — operational** | high geo / neighbourhood, goals may be low | CNAP / utilities / shared institutions |
+
+List A = “who thinks like us.” List B = “who is convenient to share a service with.”
+
+**4. Tourism / cluster МСС is rare in the registry but where NLP adds the most.**  
+Few tourism contracts, yet they are the large multi-party (sometimes
+cross-oblast) deals. Pairwise matching is enough for bilateral operational МСС;
+clusters need multi-way / community view (the Nizhyn “trio” is really five
+parties in KSE).
+
+**5. Where the whitespace is.**  
+Dense МСС oblasts (Poltava, Lviv, Vinnytsia) mostly yield “already
+cooperating.” More matchmaking value in low-coverage oblasts (Odesa, Kyiv
+oblast, frontline) — grow the strategy corpus there first.
+
+**6. Near-term product rules.**  
+- Do not present a single `score` as “strategy match.”  
+- Label outputs `похожа стратегія` vs `зручний сусід`.  
+- Keep `known: true` for method validation only — not as “new recommendations.”  
+- Surface 3+ clusters, not only pairs.  
+- Prioritise retrieval in low-МСС-coverage oblasts.
+
+One line: **strategies find like-minded partners; geography finds service
+co-sharers. v6 mixes them — strong signal, easy to misread.**
+
+---
+
+## Open threads (as of 2026-07-24)
 
 - [ ] File cross-link issue on KSE repo ([kse-issue-draft.md](kse-issue-draft.md))
 - [ ] Re-scrutinize `internal/outreach-messages.md` for overclaims
@@ -195,6 +276,9 @@ Run `yarn test-known-pairs` after changing the matcher.
 - [ ] Length-normalization / hub-hromada handling (Poltava-Zhytomyr-type risk)
 - [ ] Product/graph layer decision still pending — pilot validation stage
 - [ ] Split NocoDB base if project grows into standalone product
+- [ ] Split matcher outputs into thematic vs operational ranked lists (see МСС
+      registry section above)
+- [ ] Multi-way / community view for 3+ party clusters (Nizhyn-5, Dnister-22)
 
 ---
 
