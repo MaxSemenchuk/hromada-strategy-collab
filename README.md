@@ -60,7 +60,7 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
   project in source text). Auto top score also surfaces neighbors like
   Вижницька↔Косівська — treat as hypotheses until manually checked.
 - Stakeholder site under [`docs/`](docs/) (GitHub Pages): passport · matches ·
-  PIN map · graph MVP. Product/graph *product* decision still open — this remains
+  PIN map. Product/graph *product* decision still open — this remains
   pilot / concept-validation stage.
 
 **Read this before reusing the data:** the 77-hromada text-mined subset is a
@@ -84,7 +84,7 @@ scripts/
 ├── export-hromadas.ts                   # live NocoDB -> data/releases/hromadas.json (the public dataset)
 ├── hromada-output/                      # per-hromada structured JSON (as produced, gitignored pattern removed — kept for provenance)
 ├── retrieval/                           # CKAN search, download-raw, fetch-mss-registry, batch queue
-└── analysis/                            # one-off Python: KATOTTG merge, TF-IDF matching, embedding matching, MSS graph MVP
+└── analysis/                            # one-off Python: KATOTTG merge, matching, PIN map build
 data/
 ├── sources/       # reference registries (KATOTTG classifier extract, Tags table dump)
 ├── releases/      # THE dataset — canonical, current, CC BY 4.0 (see data/releases/MANIFEST.md)
@@ -95,7 +95,7 @@ docs/                             # GitHub Pages site root (see docs/README.md)
 ├── hromada-project-passport.html # stakeholder-facing project brief (Ukrainian)
 ├── matches.html                  # known pairs + top matching hypotheses
 ├── mss-pin-matching-graph.html   # full PIN map + matching overlay
-├── mss-graph-mvp.html            # early force-graph visualization prototype
+├── mss-pin-matching-graph.html   # PIN map + matching overlay (site nav)
 ├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
 ├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub)
 ├── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case

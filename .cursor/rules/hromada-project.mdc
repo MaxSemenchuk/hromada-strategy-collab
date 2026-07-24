@@ -31,6 +31,9 @@ Spin-out from w3i-network (2026-07-23); NocoDB `Hromadas` table still shared.
 
 Goals: mean-centered sub-goal embeddings (`multilingual-e5-small`). After changes, run `yarn test-known-pairs` and `yarn report-pin-corpus` (broader KSE PIN∩corpus check — not a second known set).
 
+PIN map (`yarn graph-pin-matching`): paint **thematic** and **operational**
+overlays separately — never top-N by combined `score` (sparse corpus → geo bias).
+
 ## Hard rules
 
 1. Matching scores are **hypotheses** unless `known: true` (curated registry-confirmed). Do not set `known: true` on all PIN edges — use `matching-edges.pin-corpus.json` for the broader overlap.
@@ -39,3 +42,5 @@ Goals: mean-centered sub-goal embeddings (`multilingual-e5-small`). After change
 4. Batch growth: `scripts/retrieval/` + in-session structuring → `yarn structure-hromada --json … --write`. Prefer `yarn priority-corpus-growth` when expanding PIN∩corpus validation coverage.
 5. Do not inflate CKAN "123 strategies" — mostly unrelated datasets.
 6. Minimize scope; match existing TS/Python conventions in `scripts/`.
+7. Do not present a single combined `score` as «strategy match»; label
+   `похожа стратегія` (thematic) vs `зручний сусід` (operational).

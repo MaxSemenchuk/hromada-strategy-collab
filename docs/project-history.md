@@ -294,6 +294,12 @@ co-sharers. v6 mixes them — strong signal, easy to misread.**
 - [x] Split matcher outputs into thematic vs operational ranked lists
       (`track` on edges + `matching-edges.thematic.json` /
       `matching-edges.operational.json`; scoring unchanged) — 2026-07-24
+- [x] PIN map overlay: stop painting combined-score top-N as one
+      «hypothesis» layer; show thematic (default ON) and operational
+      («зручний сусід», default OFF) separately —
+      `yarn graph-pin-matching` / `build_pin_matching_graph.py` — 2026-07-24
+- [ ] Densify strategy corpus in low-МСС / under-sampled oblasts so
+      operational neighbours are not an artifact of who got text-mined
 - [ ] Multi-way / community view for 3+ party clusters (Nizhyn-5, Dnister-22)
 
 ---
@@ -301,7 +307,7 @@ co-sharers. v6 mixes them — strong signal, easy to misread.**
 ## Stakeholder artifacts
 
 Canonical leave-behind is the **GitHub Pages site** rooted at [`docs/`](./)
-(shared nav: overview · passport · matches · map · graph MVP):
+(shared nav: overview · passport · matches · map):
 
 **https://maxsemenchuk.github.io/hromada-strategy-collab/**
 
@@ -311,7 +317,6 @@ Canonical leave-behind is the **GitHub Pages site** rooted at [`docs/`](./)
 | Passport (UA brief) | [hromada-project-passport.html](hromada-project-passport.html) |
 | Matching candidates | [matches.html](matches.html) |
 | PIN map + matching | [mss-pin-matching-graph.html](mss-pin-matching-graph.html) |
-| Registry graph MVP | [mss-graph-mvp.html](mss-graph-mvp.html) |
 
 Legacy Claude Code artifact URLs (superseded by Pages):
 

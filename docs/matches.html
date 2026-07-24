@@ -6,7 +6,7 @@
   <title>Кандидати на співпрацю — матчинг стратегій</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/site.css"/>
   <style>
     body {
@@ -23,18 +23,18 @@
       color: var(--site-accent); font-weight: 700; display: block; margin-bottom: 0.7rem;
     }
     h1 {
-      font-family: var(--site-font); font-weight: 400;
+      font-family: var(--site-font); font-weight: 750; letter-spacing: -0.02em;
       font-size: clamp(1.55rem, 3.4vw, 2.15rem); line-height: 1.22; margin: 0 0 0.75rem;
     }
     .lede { color: var(--site-muted); max-width: 62ch; margin: 0 0 1.2rem; }
     .method {
       font-size: 0.88rem; color: var(--site-muted);
       background: var(--site-surface); border: 1px solid var(--site-border);
-      border-radius: 6px; padding: 0.85rem 1rem; margin-bottom: 1.8rem;
+      border-radius: 12px; padding: 0.85rem 1rem; margin-bottom: 1.8rem; box-shadow: var(--site-shadow);
     }
     .method code { font-size: 0.84em; }
     h2 {
-      font-family: var(--site-font); font-weight: 400; font-size: 1.25rem;
+      font-family: var(--site-font); font-weight: 750; letter-spacing: -0.02em; font-size: 1.25rem;
       margin: 0 0 0.7rem;
     }
     section { margin-bottom: 2.2rem; }
@@ -60,7 +60,7 @@
       font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase;
       font-weight: 700; white-space: nowrap;
     }
-    .tag.known { color: var(--site-gold); }
+    .tag.known { color: var(--site-secondary); }
     .tag.hyp { color: var(--site-accent); }
     .tag.pin-corpus { color: #c45c40; }
     .pair { font-weight: 600; color: var(--site-ink); }
@@ -73,7 +73,7 @@
     }
     .item {
       background: var(--site-surface); border: 1px solid var(--site-border);
-      border-radius: 6px; padding: 1rem 1.1rem;
+      border-radius: 12px; padding: 1rem 1.1rem; box-shadow: var(--site-shadow);
     }
     .item .pair { margin-bottom: 0.25rem; display: block; }
     .item p { margin: 0; font-size: 0.9rem; color: var(--site-muted); }
