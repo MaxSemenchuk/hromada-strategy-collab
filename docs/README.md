@@ -17,7 +17,6 @@ hromadas with coordinates (metadata — not the strategy corpus). Click a point 
 | [`matches.html`](matches.html) | Known pairs + top hypotheses |
 | [`funds.html`](funds.html) | Donor portfolio: shared next grant / bridges / hubs |
 | [`mss-pin-matching-graph.html`](mss-pin-matching-graph.html) | Full PIN map + thematic / operational overlays |
-| [`outreach.html`](outreach.html) | Draft outreach copy for all four stakeholder groups |
 | [`hromada-project-passport.html`](hromada-project-passport.html) | Redirect → `index.html` (legacy URL) |
 
 Shared chrome: [`assets/site.css`](assets/site.css), [`assets/nav.js`](assets/nav.js).

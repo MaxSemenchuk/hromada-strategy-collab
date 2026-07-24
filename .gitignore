@@ -15,3 +15,6 @@ yarn-error.log
 data/cache/
 scripts/retrieval/raw/**
 !scripts/retrieval/raw/.gitkeep
+
+# Local convenience only — not published on GitHub Pages
+internal/outreach.html

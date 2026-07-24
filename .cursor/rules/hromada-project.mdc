@@ -20,9 +20,9 @@ Spin-out from w3i-network (2026-07-23); NocoDB `Hromadas` table still shared.
 
 - **Canonical dataset:** `data/releases/` (CC BY 4.0) — export via `yarn export-hromadas`
 - **Provenance only:** `data/research-log/` — dated snapshots, not maintained dataset
-- **Not public (except published drafts):** `internal/` — private working notes;
-  stakeholder outreach drafts that are ready to share live on
-  [`docs/outreach.html`](../../docs/outreach.html) (keep `internal/outreach-messages.md` in sync).
+- **Not public:** `internal/` — outreach drafts (`outreach-messages.md`;
+  optional convenience HTML `internal/outreach.html` is gitignored and must
+  not be published under `docs/`).
 - **Local source caches (gitignored):** `scripts/retrieval/raw/` (strategy PDFs) via `yarn download-raw`; `data/cache/mss/` (МСС registry XLSX) via `yarn fetch-mss-registry` — for re-analysis, not the release
 - **KSE covariates:** fetch at analysis time via `enrich_from_kse.py`; do not vendor KSE CSVs
 
