@@ -356,29 +356,37 @@ function esc(s) {
   ));
 }
 
+function t(key) {
+  return (window.HromadaI18n && window.HromadaI18n.t)
+    ? window.HromadaI18n.t(key)
+    : key;
+}
+
 function popupHtml(n) {
   const title = esc(n.full_name || n.label);
   const bits = [];
   if (n.oblast) bits.push(esc(n.oblast));
   if (n.type) bits.push(esc(n.type));
-  if (n.population != null) bits.push(esc(String(n.population)) + ' осіб');
+  if (n.population != null) bits.push(esc(String(n.population)) + ' ' + t('popup.people'));
   const links = [];
   if (n.portal_url) {
-    links.push(`<a href="${esc(n.portal_url)}" target="_blank" rel="noopener">Портал громади</a>`);
+    links.push(`<a href="${esc(n.portal_url)}" target="_blank" rel="noopener">${esc(t('popup.portal'))}</a>`);
   }
   if (n.strategy_url) {
-    links.push(`<a href="${esc(n.strategy_url)}" target="_blank" rel="noopener">Стратегія / джерело</a>`);
+    links.push(`<a href="${esc(n.strategy_url)}" target="_blank" rel="noopener">${esc(t('popup.strategy'))}</a>`);
   }
   const flags = [];
-  if (n.in_pin) flags.push('є угода МСС');
-  if (n.in_corpus) flags.push('стратегія в корпусі');
+  if (n.in_pin) flags.push(t('popup.inPin'));
+  if (n.in_corpus) flags.push(t('popup.inCorpus'));
   if (n.source_quality) flags.push(esc(n.source_quality));
   return (
     `<strong>${title}</strong>`
     + (bits.length ? `<div class="meta">${bits.join(' · ')}</div>` : '')
     + (flags.length ? `<div class="meta">${flags.join(' · ')}</div>` : '')
-    + (n.degree ? `<div class="meta">${n.degree} звʼязків у реєстрі МСС</div>` : '')
-    + (links.length ? `<div style="margin-top:0.35rem">${links.join(' · ')}</div>` : '<div class="meta" style="margin-top:0.35rem">Немає посилання на портал або стратегію</div>')
+    + (n.degree ? `<div class="meta">${n.degree} ${esc(t('popup.degree'))}</div>` : '')
+    + (links.length
+      ? `<div style="margin-top:0.35rem">${links.join(' · ')}</div>`
+      : `<div class="meta" style="margin-top:0.35rem">${esc(t('popup.noLink'))}</div>`)
   );
 }
 
@@ -575,7 +583,16 @@ function setMode(next) {
 }
 document.getElementById('btn-graph').onclick = () => setMode('graph');
 document.getElementById('btn-map').onclick = () => setMode('map');
-document.addEventListener('hromada-lang', refreshHint);
+document.addEventListener('hromada-lang', () => {
+  refreshHint();
+  if (mode === 'map' && typeof rebuildMapLayers === 'function') rebuildMapLayers();
+});
+if (window.HromadaI18n && window.HromadaI18n.onChange) {
+  window.HromadaI18n.onChange(() => {
+    refreshHint();
+    if (mode === 'map' && typeof rebuildMapLayers === 'function') rebuildMapLayers();
+  });
+}
 
 // ——— Force graph (canvas) ———
 function resizeCanvas() {
@@ -653,12 +670,12 @@ window.addEventListener('mousemove', (ev) => {
     const metaBits = [];
     if (hover.oblast) metaBits.push(hover.oblast);
     if (hover.type) metaBits.push(hover.type);
-    if (hover.in_pin) metaBits.push('є угода МСС');
-    if (hover.in_corpus) metaBits.push('стратегія в корпусі');
-    if (hover.degree) metaBits.push(hover.degree + ' звʼязків у реєстрі');
+    if (hover.in_pin) metaBits.push(t('popup.inPin'));
+    if (hover.in_corpus) metaBits.push(t('popup.inCorpus'));
+    if (hover.degree) metaBits.push(hover.degree + ' ' + t('popup.degreeShort'));
     const links = [];
-    if (hover.portal_url) links.push('Портал громади');
-    if (hover.strategy_url) links.push('Стратегія / джерело');
+    if (hover.portal_url) links.push(t('popup.portal'));
+    if (hover.strategy_url) links.push(t('popup.strategy'));
     tip.innerHTML = `<strong>${esc(title)}</strong>`
       + (metaBits.length ? `<div class="tip-meta">${esc(metaBits.join(' · '))}</div>` : '')
       + (hover.katottg ? `<div class="tip-id">${esc(hover.katottg)}</div>` : '')
@@ -819,7 +836,15 @@ window.PAGE_I18N = {
     "stat.thematic": "Гіпотез «похожа стратегія»",
     "stat.operational": "Гіпотез «зручний сусід»",
     "hint.map": "Сірі точки — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клік по точці відкриває портал або PDF, якщо є посилання.",
-    "hint.graph": "Режим «Граф» показує лише мережу угод і гіпотез. Для повної карти з усіма громадами перемкніть на «Карта»."
+    "hint.graph": "Режим «Граф» показує лише мережу угод і гіпотез. Для повної карти з усіма громадами перемкніть на «Карта».",
+    "popup.people": "осіб",
+    "popup.portal": "Портал громади",
+    "popup.strategy": "Стратегія / джерело",
+    "popup.inPin": "є угода МСС",
+    "popup.inCorpus": "стратегія в корпусі",
+    "popup.degree": "звʼязків у реєстрі МСС",
+    "popup.degreeShort": "звʼязків у реєстрі",
+    "popup.noLink": "Немає посилання на портал або стратегію"
   },
   en: {
     "doc.title": "IMC map — hromada matching · W3I",
@@ -857,7 +882,15 @@ window.PAGE_I18N = {
     "stat.thematic": "“Similar strategy” hypotheses",
     "stat.operational": "“Convenient neighbour” hypotheses",
     "hint.map": "Grey dots are all hromadas with coordinates, not only those whose strategies we have already parsed. Click a point to open the portal or PDF when a link is available.",
-    "hint.graph": "Graph mode shows only the agreement and hypothesis network. Switch to Map for the full map with all hromadas."
+    "hint.graph": "Graph mode shows only the agreement and hypothesis network. Switch to Map for the full map with all hromadas.",
+    "popup.people": "people",
+    "popup.portal": "Hromada portal",
+    "popup.strategy": "Strategy / source",
+    "popup.inPin": "has IMC agreement",
+    "popup.inCorpus": "strategy in corpus",
+    "popup.degree": "links in the IMC registry",
+    "popup.degreeShort": "registry links",
+    "popup.noLink": "No portal or strategy link"
   }
 };
 </script>
