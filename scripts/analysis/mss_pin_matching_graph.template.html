@@ -163,10 +163,6 @@
     background: var(--dot-corpus); box-shadow: 0 0 0 3px rgba(217, 165, 72, 0.28);
     border: 0; margin-top: 0.4rem; margin-left: 6px; margin-right: 7px;
   }
-  .sw.oblasts {
-    width: 18px; height: 12px; border: 1.5px solid rgba(148, 163, 184, 0.85);
-    border-radius: 2px; background: transparent; margin-top: 0.35rem; margin-left: 2px; margin-right: 2px;
-  }
   .stats {
     display: grid;
     gap: 0;
@@ -216,11 +212,6 @@
   .leaflet-popup-content strong { color: #0f172a; }
   .leaflet-popup-content a { color: #2563eb; }
   .leaflet-popup-content .meta { color: #475569; font-size: 0.75rem; }
-  .oblast-label {
-    background: transparent; border: 0; box-shadow: none;
-    color: rgba(233,230,222,0.55); font-size: 11px; font-weight: 600;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-  }
   #tooltip {
     display: none; position: absolute; pointer-events: none; z-index: 500;
     background: #ffffff;
@@ -298,14 +289,6 @@
         </span>
       </label>
       <label>
-        <input type="checkbox" id="layer-oblasts" checked/>
-        <span class="sw oblasts" aria-hidden="true"></span>
-        <span class="layer-copy">
-          <span class="layer-title">Межі областей</span>
-          <span class="layer-desc">Контури областей для орієнтира на карті</span>
-        </span>
-      </label>
-      <label>
         <input type="checkbox" id="layer-corpus"/>
         <span class="sw corpus" aria-hidden="true"></span>
         <span class="layer-copy">
@@ -364,7 +347,7 @@ let dragging = null, panning = false, lastX = 0, lastY = 0;
 let hover = null;
 let layers = {
   universe: true, pin: true, known: true, pinCorpus: true,
-  thematic: true, operational: false, oblasts: true, corpus: false,
+  thematic: true, operational: false, corpus: false,
 };
 
 function esc(s) {
@@ -459,15 +442,6 @@ if (uaHoles.length) {
   map.setMaxBounds(bounds.pad(0.35));
 }
 
-const oblastLayer = L.geoJSON(DATA.oblasts || { type: 'FeatureCollection', features: [] }, {
-  style: {
-    color: 'rgba(169,172,159,0.7)',
-    weight: 1.1,
-    fill: false,
-  },
-  // no oblast name tooltips / labels
-}).addTo(map);
-
 const pinEdgesLayer = L.layerGroup().addTo(map);
 const knownEdgesLayer = L.layerGroup().addTo(map);
 const pinCorpusEdgesLayer = L.layerGroup().addTo(map);
@@ -540,11 +514,6 @@ function rebuildMapLayers() {
 }
 
 function syncLayerVisibility() {
-  if (layers.oblasts) {
-    if (!map.hasLayer(oblastLayer)) map.addLayer(oblastLayer);
-  } else if (map.hasLayer(oblastLayer)) {
-    map.removeLayer(oblastLayer);
-  }
   const show = (layer, on) => {
     if (on) { if (!map.hasLayer(layer)) map.addLayer(layer); }
     else if (map.hasLayer(layer)) map.removeLayer(layer);
@@ -568,13 +537,12 @@ function syncLayers() {
   layers.pinCorpus = document.getElementById('layer-pin-corpus').checked;
   layers.thematic = document.getElementById('layer-thematic').checked;
   layers.operational = document.getElementById('layer-operational').checked;
-  layers.oblasts = document.getElementById('layer-oblasts').checked;
   layers.corpus = document.getElementById('layer-corpus').checked;
   if (mode === 'map') {
     rebuildMapLayers();
   }
 }
-['layer-universe','layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-oblasts','layer-corpus'].forEach(id => {
+['layer-universe','layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-corpus'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
