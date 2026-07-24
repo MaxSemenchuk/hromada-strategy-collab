@@ -60,7 +60,7 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
   project in source text). Auto top score also surfaces neighbors like
   Вижницька↔Косівська — treat as hypotheses until manually checked.
 - Stakeholder site under [`docs/`](docs/) (GitHub Pages): passport · matches ·
-  PIN map. Product/graph *product* decision still open — this remains
+  funds · PIN map. Product/graph *product* decision still open — this remains
   pilot / concept-validation stage.
 
 **Read this before reusing the data:** the 77-hromada text-mined subset is a
@@ -91,11 +91,11 @@ data/
 ├── cache/         # gitignored re-fetchable sources (KSE pulls, МСС registry XLSX, …)
 └── research-log/  # dated growth snapshots (7→13→23→30→46→54 hromadas) — provenance, not the dataset
 docs/                             # GitHub Pages site root (see docs/README.md)
-├── index.html                    # hub: passport / matches / map / graph
+├── index.html                    # hub: passport / matches / funds / map
 ├── hromada-project-passport.html # stakeholder-facing project brief (Ukrainian)
 ├── matches.html                  # known pairs + top matching hypotheses
+├── funds.html                    # donor/fund portfolio synergy (within / bridges / hubs)
 ├── mss-pin-matching-graph.html   # full PIN map + matching overlay
-├── mss-pin-matching-graph.html   # PIN map + matching overlay (site nav)
 ├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
 ├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub)
 ├── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case
@@ -108,7 +108,8 @@ LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see Licens
 
 ## Stakeholder site (GitHub Pages)
 
-Static site in [`docs/`](docs/) — passport, matching candidates, МСС map/graph, shared top menu.
+Static site in [`docs/`](docs/) — passport, matching candidates, fund portfolio
+synergy, МСС map/graph, shared top menu.
 
 **URL (after Pages is enabled):** https://maxsemenchuk.github.io/hromada-strategy-collab/
 
@@ -191,6 +192,9 @@ yarn export-hromadas:snapshot
 # Recompute matching edges (v6: goals + KSE geo + KSE mss network)
 # Combined score ≠ pure strategy match — also writes track labels + dual slices
 yarn match && yarn export-matching-edges && yarn test-known-pairs && yarn report-pin-corpus && yarn test-tracks && yarn build-matches-preview
+
+# Donor/fund portfolio synergy slices (needs DonorsPrograms in hromadas.json)
+yarn donor-synergy
 ```
 
 Track labels on each edge (`thematic` / `operational` / `mixed`) and ranked
@@ -198,6 +202,9 @@ slices `matching-edges.thematic.json` / `matching-edges.operational.json` are
 documented in [data/releases/MANIFEST.md](data/releases/MANIFEST.md).
 `yarn report-pin-corpus` writes the broader KSE PIN∩corpus check;
 `yarn priority-corpus-growth` lists next strategy extractions that add overlap.
+
+Fund portfolio lenses (within-program pairs, bridge pairs, hubs) live in
+`donor-synergy.json` and on the stakeholder site at [`docs/funds.html`](docs/funds.html).
 
 ## Scaling retrieval
 
