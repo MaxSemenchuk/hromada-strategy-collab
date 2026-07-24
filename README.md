@@ -42,30 +42,31 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
    own ranking. If a real agreement doesn't rank near the top, that's a finding about
    the method's limits, not noise to explain away.
 
-## Status (as of 2026-07-23)
+## Status (as of 2026-07-24)
 
 - **1,469 mainland hromadas** in the metadata layer (KATOTTG code, oblast, rayon,
   type, population) — effectively the full universe, not a sample.
-- **57 hromadas** text-mined for actual strategy content: 40 full-strategy, 8 partial,
-  9 confirmed to have no findable strategy (an honest null, not a gap).
-- **174 hromadas** (12%) tagged with at least one donor/technical-assistance program
-  (DOBRE, DECIDE, GIZ, ПРООН/UNDP, EGAP, DESPRO, МФ Відродження, U-LEAD, Ре:Форм) —
-  a floor, not a ceiling; see caveats in [docs/hromadas-schema.md](docs/hromadas-schema.md).
-- Known ground-truth trio (Ніжинська↔Козелецька↔Батуринська, a real registered МСС
-  agreement) independently ranks in the top 2–5 of every matching pass run so far,
-  from 7 hromadas up through the current 54–57-hromada corpus — the core validation
-  signal for the whole approach.
-- Best new (unverified) candidate found by the method: Новомосковськ↔Запоріжжя,
-  cosine 0.571, rank #1 of 1,035 pairs at the 46-hromada stage.
-- No decision yet to build a product/graph layer — this is still pilot /
-  concept-validation stage.
+- **77 hromadas** text-mined for strategy content: **55** full-strategy, **13**
+  partial, **9** proxy-info; **68** have non-empty `Goals` for matching. (Honest
+  retrieval nulls are recorded separately where no strategy could be found.)
+- **174 hromadas** (12%) tagged in NocoDB with at least one donor/technical-assistance
+  program (DOBRE, DECIDE, GIZ, ПРООН/UNDP, EGAP, DESPRO, МФ Відродження, U-LEAD,
+  Ре:Форм) — a floor, not a ceiling; field is not yet in the public JSON export.
+- Matching **v6** (`0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`):
+  **2,278** edges in `data/releases/matching-edges.json`. Known validation pairs
+  rank **#5–#11** of that list (tourism trio + Slobozhanske↔Obukhivka recovered
+  via geo/network weights).
+- Strongest hand-reviewed new lead: **Галицька↔Дубовецька** (named shared water
+  project in source text). Auto top score also surfaces neighbors like
+  Вижницька↔Косівська — treat as hypotheses until manually checked.
+- Stakeholder site under [`docs/`](docs/) (GitHub Pages): passport · matches ·
+  PIN map · graph MVP. Product/graph *product* decision still open — this remains
+  pilot / concept-validation stage.
 
-**Read this before reusing the data:** the 57-hromada text-mined subset is a
+**Read this before reusing the data:** the 77-hromada text-mined subset is a
 pilot sample, not a completed sweep of the 1,469 — most rows will have no
 strategy content yet. Every matching score is an **unverified hypothesis**
-unless explicitly marked as a registry-confirmed agreement; treat candidate
-pairs (like Новомосковськ↔Запоріжжя above) as leads to check, not claims about
-real municipal plans.
+unless explicitly marked as a registry-confirmed agreement (`known: true`).
 
 Full narrative history (every pass, every false start, every honest negative finding)
 lives in [docs/project-history.md](docs/project-history.md) — migrated from Claude
@@ -89,18 +90,33 @@ data/
 ├── releases/      # THE dataset — canonical, current, CC BY 4.0 (see data/releases/MANIFEST.md)
 ├── cache/         # gitignored re-fetchable sources (KSE pulls, МСС registry XLSX, …)
 └── research-log/  # dated growth snapshots (7→13→23→30→46→54 hromadas) — provenance, not the dataset
-docs/
-├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
-├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub) as candidate enrichment sources
-├── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case
-├── kse-issue-draft.md            # ready-to-paste GitHub issue for KSE cross-link (draft)
+docs/                             # GitHub Pages site root (see docs/README.md)
+├── index.html                    # hub: passport / matches / map / graph
 ├── hromada-project-passport.html # stakeholder-facing project brief (Ukrainian)
-└── mss-graph-mvp.html            # early force-graph visualization prototype
+├── matches.html                  # known pairs + top matching hypotheses
+├── mss-pin-matching-graph.html   # full PIN map + matching overlay
+├── mss-graph-mvp.html            # early force-graph visualization prototype
+├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
+├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub)
+├── kse-synergy.md                # division of labor vs KSE, join key, W3I outreach use case
+└── kse-issue-draft.md            # ready-to-paste GitHub issue for KSE cross-link (draft)
 internal/
 └── outreach-messages.md          # draft stakeholder outreach copy — not part of the dataset, not for public reuse
 REFERENCES.md                     # theoretical grounding — network governance, IMC, institutional diversity
 LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see License & data below
 ```
+
+## Stakeholder site (GitHub Pages)
+
+Static site in [`docs/`](docs/) — passport, matching candidates, МСС map/graph, shared top menu.
+
+**URL (after Pages is enabled):** https://maxsemenchuk.github.io/hromada-strategy-collab/
+
+One-time setup: repo **Settings → Pages → Source: GitHub Actions**, then push to `main`
+(or run the **Deploy GitHub Pages** workflow). Local preview: `cd docs && python3 -m http.server 8765`.
+
+> The repository is currently private — public Pages needs a public repo (or GitHub Pro
+> for private Pages). Collaborators with repo access can still use the workflow URL once enabled.
 
 Raw strategy PDFs/DOC/HTML and the МСС registry XLSX are kept as a **local
 cache** for re-extraction and alternate analyses — not committed, not part of

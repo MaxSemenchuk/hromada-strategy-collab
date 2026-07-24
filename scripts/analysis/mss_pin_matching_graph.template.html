@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <title>МСС: повний PIN + matching overlay</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="assets/site.css"/>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <style>
@@ -12,9 +14,10 @@
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-  .wrap { display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+  /* site-nav layout */
+  .wrap { display: grid; grid-template-columns: 300px 1fr; min-height: calc(100vh - var(--site-nav-h, 52px)); }
   @media (max-width: 900px) { .wrap { grid-template-columns: 1fr; } }
-  aside { padding: 1.25rem 1.2rem; border-right: 1px solid var(--rule); background: var(--surface); overflow-y: auto; max-height: 100vh; }
+  aside { padding: 1.25rem 1.2rem; border-right: 1px solid var(--rule); background: var(--surface); overflow-y: auto; max-height: calc(100vh - var(--site-nav-h, 52px)); }
   h1 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.6rem; line-height: 1.35; }
   .lede { font-size: 0.85rem; color: var(--ink-muted); margin: 0 0 1rem; line-height: 1.45; }
   .toggle, .layers {
@@ -42,10 +45,10 @@
   .sw.known { border-color: var(--gold); border-top-width: 3px; }
   .sw.hyp { border-color: var(--hyp); border-top-style: dashed; }
   .hint { margin-top: 1rem; font-size: 0.78rem; color: var(--ink-muted); line-height: 1.4; }
-  main { position: relative; min-height: 100vh; }
+  main { position: relative; min-height: calc(100vh - var(--site-nav-h, 52px)); }
   #map { position: absolute; inset: 0; display: block; background: #0d1116; }
   #map.hidden { display: none; }
-  canvas#c { display: none; width: 100%; height: 100vh; cursor: grab; }
+  canvas#c { display: none; width: 100%; height: calc(100vh - var(--site-nav-h, 52px)); cursor: grab; }
   canvas#c.visible { display: block; }
   canvas#c:active { cursor: grabbing; }
   .leaflet-container { background: #0d1116; font: inherit; }
@@ -466,5 +469,6 @@ function loop() {
 requestAnimationFrame(loop);
 setMode('map');
 </script>
+<script src="assets/nav.js" data-active="map" data-theme="dark"></script>
 </body>
 </html>
