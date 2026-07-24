@@ -190,12 +190,14 @@ yarn export-hromadas:snapshot
 
 # Recompute matching edges (v6: goals + KSE geo + KSE mss network)
 # Combined score ≠ pure strategy match — also writes track labels + dual slices
-yarn match && yarn export-matching-edges && yarn test-known-pairs && yarn test-tracks
+yarn match && yarn export-matching-edges && yarn test-known-pairs && yarn report-pin-corpus && yarn test-tracks && yarn build-matches-preview
 ```
 
 Track labels on each edge (`thematic` / `operational` / `mixed`) and ranked
 slices `matching-edges.thematic.json` / `matching-edges.operational.json` are
 documented in [data/releases/MANIFEST.md](data/releases/MANIFEST.md).
+`yarn report-pin-corpus` writes the broader KSE PIN∩corpus check;
+`yarn priority-corpus-growth` lists next strategy extractions that add overlap.
 
 ## Scaling retrieval
 

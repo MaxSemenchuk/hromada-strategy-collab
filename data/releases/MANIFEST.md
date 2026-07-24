@@ -23,10 +23,22 @@ and self-describing, not a growth history.
   yarn match
   yarn export-matching-edges
   yarn test-known-pairs
+  yarn report-pin-corpus
   yarn test-tracks
+  yarn build-matches-preview
+  yarn graph-pin-matching   # needs data/cache/kse/ (lazy via enrich_from_kse)
+  yarn priority-corpus-growth
   ```
 
-  `known: true` marks registry-confirmed МСС agreements used for validation.
+  `known: true` marks a **curated** registry-confirmed subset used for hard
+  regression (`yarn test-known-pairs`). Broader KSE check: every
+  `mss_network>0` pair with Goals on both sides →
+  `matching-edges.pin-corpus.json` (`yarn report-pin-corpus`) and the
+  **PIN ∩ корпус** layer on the map. Do not promote all PIN edges to
+  `known: true` (score already includes `mss_network`; circular).
+
+  Next extractions that add PIN∩corpus coverage:
+  `yarn priority-corpus-growth` → `corpus-growth-priority.json`.
 
   **Combined `score` is not a pure strategy match.** Each edge also has
   `track`:

@@ -172,6 +172,18 @@ on highly shared subgoal lines. KSE covariates fetched lazily via
 
 Run `yarn test-known-pairs` after changing the matcher.
 
+**PIN ∩ corpus (broader KSE check, not hard regression):** every matching edge
+with `mss_network>0` (both sides have Goals). Curated `known: true` stays a
+subset. Soft report: `yarn report-pin-corpus` →
+`data/releases/matching-edges.pin-corpus.json`. Map layer **PIN ∩ корпус**
+(coral) vs gold known. Score already includes 15% `mss_network` — ranks are
+partly circular; use this as coverage diagnostics, not as a second known set.
+
+**Corpus growth for more overlap:** `yarn priority-corpus-growth` lists PIN
+neighbours of the Goals corpus that still lack strategy text
+(`data/releases/corpus-growth-priority.json`). Distinct from low-МСС oblast
+prioritisation for *discovery* whitespace (see § Practical conclusions).
+
 ---
 
 ## Methodology guardrails (do not regress)

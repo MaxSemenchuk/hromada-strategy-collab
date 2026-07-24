@@ -16,7 +16,8 @@ Overlay policy (2026-07-24):
 
     thematic    — high goals_cosine  → «похожа стратегія» (default ON)
     operational — high geo           → «зручний сусід»   (default OFF)
-    known       — registry validation pairs only
+    known       — curated registry validation pairs
+    pin_corpus  — broader KSE PIN ∩ Goals corpus (mss_network>0, not known)
 """
 
 from __future__ import annotations
@@ -115,6 +116,40 @@ def encode_overlay(
     return out
 
 
+def pin_corpus_overlay(
+    corpus_matching: list[dict],
+    *,
+    name_to_code: dict[str, str],
+    known_code_keys: set[tuple[str, str]],
+) -> list[dict]:
+    """Broader KSE check: mss_network>0 but not curated known (dedupe by KATOTTG)."""
+    by_codes: dict[tuple[str, str], dict] = {}
+    for e in corpus_matching:
+        if e.get("known") or float(e.get("mss_network") or 0) <= 0:
+            continue
+        ca, cb = name_to_code[e["a"]], name_to_code[e["b"]]
+        if ca == cb:
+            continue
+        key = tuple(sorted((ca, cb)))
+        if key in known_code_keys:
+            continue
+        prev = by_codes.get(key)
+        if prev is None or float(e["score"]) > float(prev["score"]):
+            by_codes[key] = e
+    return [
+        {
+            "a": key[0],
+            "b": key[1],
+            "kind": "pin_corpus",
+            "score": e["score"],
+            "goals_cosine": e.get("goals_cosine"),
+            "geo_score": e.get("geo_score"),
+            "track": e.get("track"),
+        }
+        for key, e in sorted(by_codes.items())
+    ]
+
+
 def build_payload() -> dict:
     geo = load_geo()
     pin_nodes, pin_edges = load_pin()
@@ -134,6 +169,9 @@ def build_payload() -> dict:
     operational = operational_slice(corpus_matching, limit=TOP_OPERATIONAL)
 
     pin_keys = {tuple(sorted((e["a"], e["b"]))) for e in pin_edges}
+    known_code_keys = {
+        tuple(sorted((name_to_code[e["a"]], name_to_code[e["b"]]))) for e in known
+    }
 
     known_edges = [
         {
@@ -147,6 +185,9 @@ def build_payload() -> dict:
         }
         for e in known
     ]
+    pin_corpus_edges = pin_corpus_overlay(
+        corpus_matching, name_to_code=name_to_code, known_code_keys=known_code_keys
+    )
     thematic_edges = encode_overlay(
         thematic, kind="thematic", name_to_code=name_to_code, pin_keys=pin_keys
     )
@@ -154,7 +195,7 @@ def build_payload() -> dict:
         operational, kind="operational", name_to_code=name_to_code, pin_keys=pin_keys
     )
 
-    for e in known_edges + thematic_edges + operational_edges:
+    for e in known_edges + pin_corpus_edges + thematic_edges + operational_edges:
         for code in (e["a"], e["b"]):
             if code not in pin_nodes:
                 pin_nodes[code] = {
@@ -208,6 +249,7 @@ def build_payload() -> dict:
             "thematic_edges": len(thematic_edges),
             "operational_edges": len(operational_edges),
             "known_edges": len(known_edges),
+            "pin_corpus_edges": len(pin_corpus_edges),
             # legacy alias: thematic only (combined-score hyp layer removed)
             "hypothesis_edges": len(thematic_edges),
             "nodes_with_geo": with_geo,
@@ -221,13 +263,13 @@ def build_payload() -> dict:
             "top_operational": TOP_OPERATIONAL,
             "overlay_policy": (
                 "thematic=goals_cosine track; operational=geo neighbours; "
-                "no combined-score hyp layer"
+                "pin_corpus=mss_network>0 not known; no combined-score hyp layer"
             ),
         },
         "oblasts": oblasts,
         "ukraine_outline": outline,
         "nodes": nodes,
-        "edges": pin_edges + known_edges + thematic_edges + operational_edges,
+        "edges": pin_edges + known_edges + pin_corpus_edges + thematic_edges + operational_edges,
     }
 
 
@@ -244,8 +286,8 @@ def main() -> None:
     print(
         f"Wrote {OUT.relative_to(ROOT)} — "
         f"PIN {m['pin_nodes']}n/{m['pin_edges']}e · oblasts={m['oblasts']} · "
-        f"known={m['known_edges']} thematic={m['thematic_edges']} "
-        f"operational={m['operational_edges']}"
+        f"known={m['known_edges']} pin∩corpus={m['pin_corpus_edges']} "
+        f"thematic={m['thematic_edges']} operational={m['operational_edges']}"
     )
 
 
