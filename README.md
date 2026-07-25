@@ -232,7 +232,7 @@ yarn export-hromadas && yarn match
   rank #132 of 253 on pure cosine — that kind of back-office cooperation needs a
   proximity/capacity signal, not text similarity. A disclosed weighted combination
   (60% goals-cosine + 40% oblast/rayon-adjacency) recovered it to rank #6.
-  Same split in product language: **tourism / clusters** → `похожа стратегія`
+  Same split in product language: **tourism / clusters** → `схожа стратегія`
   (multi-purpose IMC; NLP’s comparative advantage); **water / ЦНАП / waste** →
   `зручний сусід` (single-purpose with neighbours; geo does the work, text only
   confirms when a shared asset is named). IMC-ladder mapping in

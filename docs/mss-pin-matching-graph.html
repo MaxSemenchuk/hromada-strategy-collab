@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
 <meta charset="utf-8"/>
-<title>Карта МСС — матчинг громад · W3I</title>
+<title>Мапа МСС — матчинг громад · W3I</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -231,21 +231,21 @@
 <body>
 <div class="wrap">
   <aside>
-    <span class="eyebrow" data-i18n="sidebar.eyebrow">Матчинг · карта</span>
-    <h1 data-i18n="sidebar.h1">Міжмуніципальна співпраця на карті</h1>
-    <p class="lede" data-i18n="sidebar.lede">Зареєстровані угоди МСС поруч із гіпотезами, де громади можуть співпрацювати далі. Клік по точці — портал або стратегія, якщо є посилання.</p>
+    <span class="eyebrow" data-i18n="sidebar.eyebrow">Матчинг · мапа</span>
+    <h1 data-i18n="sidebar.h1">Міжмуніципальна співпраця на мапі</h1>
+    <p class="lede" data-i18n="sidebar.lede">Зареєстровані угоди МСС поруч із гіпотезами, де громади можуть співпрацювати далі. Клац по ноді — портал або стратегія, якщо є посилання.</p>
     <div class="toggle" role="tablist" data-i18n-aria="mode.aria" aria-label="Режим перегляду">
-      <button type="button" id="btn-map" class="active" data-i18n="mode.map">Карта</button>
+      <button type="button" id="btn-map" class="active" data-i18n="mode.map">Мапа</button>
       <button type="button" id="btn-graph" data-i18n="mode.graph">Граф</button>
     </div>
-    <p class="section-label" data-i18n="layers.label">Шари карти</p>
-    <div class="layers" role="group" data-i18n-aria="layers.aria" aria-label="Шари карти">
+    <p class="section-label" data-i18n="layers.label">Шари мапи</p>
+    <div class="layers" role="group" data-i18n-aria="layers.aria" aria-label="Шари мапи">
       <label>
         <input type="checkbox" id="layer-universe" checked/>
         <span class="sw universe" aria-hidden="true"></span>
         <span class="layer-copy">
           <span class="layer-title" data-i18n="layer.universe.title">Усі громади</span>
-          <span class="layer-desc" data-i18n="layer.universe.desc">Сірі точки — материкові громади з координатами</span>
+          <span class="layer-desc" data-i18n="layer.universe.desc">Сірі ноди — материкові громади з координатами</span>
         </span>
       </label>
       <label>
@@ -253,7 +253,7 @@
         <span class="sw pin" aria-hidden="true"></span>
         <span class="layer-copy">
           <span class="layer-title" data-i18n="layer.pin.title">Зареєстровані угоди МСС</span>
-          <span class="layer-desc" data-i18n="layer.pin.desc">Бірюзові лінії — уже укладені договори між громадами</span>
+          <span class="layer-desc" data-i18n="layer.pin.desc">Бірюзові лінії — вже укладені договори між громадами</span>
         </span>
       </label>
       <label>
@@ -276,7 +276,7 @@
         <input type="checkbox" id="layer-thematic" checked/>
         <span class="sw hyp" aria-hidden="true"></span>
         <span class="layer-copy">
-          <span class="layer-title" data-i18n="layer.thematic.title">Похожа стратегія</span>
+          <span class="layer-title" data-i18n="layer.thematic.title">Схожа стратегія</span>
           <span class="layer-desc" data-i18n="layer.thematic.desc">Пунктир — гіпотези за схожістю цілей у стратегіях</span>
         </span>
       </label>
@@ -299,7 +299,7 @@
     </div>
     <p class="section-label" data-i18n="stats.label">Цифри</p>
     <div class="stats">
-      <div class="stat"><span data-i18n="stat.universe">Громад на карті</span><b id="s-universe">—</b></div>
+      <div class="stat"><span data-i18n="stat.universe">Громад на мапі</span><b id="s-universe">—</b></div>
       <div class="stat"><span data-i18n="stat.portal">З посиланням на портал</span><b id="s-portal">—</b></div>
       <div class="stat"><span data-i18n="stat.nodes">Громад з угодами МСС</span><b id="s-nodes">—</b></div>
       <div class="stat"><span data-i18n="stat.pin">Зареєстрованих угод</span><b id="s-pin">—</b></div>
@@ -307,10 +307,10 @@
       <div class="stat"><span data-i18n="stat.corpus">Стратегій у корпусі</span><b id="s-corpus">—</b></div>
       <div class="stat"><span data-i18n="stat.known">Перевірених прикладів</span><b id="s-known">—</b></div>
       <div class="stat"><span data-i18n="stat.pinCorpus">Угод у корпусі</span><b id="s-pin-corpus">—</b></div>
-      <div class="stat"><span data-i18n="stat.thematic">Гіпотез «похожа стратегія»</span><b id="s-thematic">—</b></div>
+      <div class="stat"><span data-i18n="stat.thematic">Гіпотез «схожа стратегія»</span><b id="s-thematic">—</b></div>
       <div class="stat"><span data-i18n="stat.operational">Гіпотез «зручний сусід»</span><b id="s-operational">—</b></div>
     </div>
-    <p class="hint" id="hint">Сірі точки — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клік по точці відкриває портал або PDF, якщо є посилання.</p>
+    <p class="hint" id="hint">Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по ноді відкриває портал або PDF, якщо є посилання.</p>
   </aside>
   <main>
     <div id="map"></div>
@@ -558,8 +558,8 @@ syncLayers();
 function refreshHint() {
   const key = mode === 'graph' ? 'hint.graph' : 'hint.map';
   const fallback = mode === 'graph'
-    ? 'Режим «Граф» показує лише мережу угод і гіпотез. Для повної карти з усіма громадами перемкніть на «Карта».'
-    : 'Сірі точки — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клік по точці відкриває портал або PDF, якщо є посилання.';
+    ? 'Режим «Граф» показує лише мережу угод і гіпотез. Для повної мапи з усіма громадами перемкніть на «Мапу».'
+    : 'Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по ноді відкриває портал або PDF, якщо є посилання.';
   hint.textContent = (window.HromadaI18n && window.HromadaI18n.t)
     ? window.HromadaI18n.t(key)
     : fallback;
@@ -801,31 +801,31 @@ setMode('map');
 <script>
 window.PAGE_I18N = {
   uk: {
-    "doc.title": "Карта МСС — матчинг громад · W3I",
-    "sidebar.eyebrow": "Матчинг · карта",
-    "sidebar.h1": "Міжмуніципальна співпраця на карті",
-    "sidebar.lede": "Зареєстровані угоди МСС поруч із гіпотезами, де громади можуть співпрацювати далі. Клік по точці — портал або стратегія, якщо є посилання.",
+    "doc.title": "Мапа МСС — матчинг громад · W3I",
+    "sidebar.eyebrow": "Матчинг · мапа",
+    "sidebar.h1": "Міжмуніципальна співпраця на мапі",
+    "sidebar.lede": "Зареєстровані угоди МСС поруч із гіпотезами, де громади можуть співпрацювати далі. Клац по ноді — портал або стратегія, якщо є посилання.",
     "mode.aria": "Режим перегляду",
-    "mode.map": "Карта",
+    "mode.map": "Мапа",
     "mode.graph": "Граф",
-    "layers.label": "Шари карти",
-    "layers.aria": "Шари карти",
+    "layers.label": "Шари мапи",
+    "layers.aria": "Шари мапи",
     "layer.universe.title": "Усі громади",
-    "layer.universe.desc": "Сірі точки — материкові громади з координатами",
+    "layer.universe.desc": "Сірі ноди — материкові громади з координатами",
     "layer.pin.title": "Зареєстровані угоди МСС",
-    "layer.pin.desc": "Бірюзові лінії — уже укладені договори між громадами",
+    "layer.pin.desc": "Бірюзові лінії — вже укладені договори між громадами",
     "layer.known.title": "Перевірені приклади",
     "layer.known.desc": "Золоті товсті лінії — кураторські пари для перевірки методу",
     "layer.pinCorpus.title": "Угоди в нашому корпусі",
     "layer.pinCorpus.desc": "Фіолетові — реєстрові МСС між громадами, чиї стратегії ми читали",
-    "layer.thematic.title": "Похожа стратегія",
+    "layer.thematic.title": "Схожа стратегія",
     "layer.thematic.desc": "Пунктир — гіпотези за схожістю цілей у стратегіях",
     "layer.operational.title": "Зручний сусід",
     "layer.operational.desc": "Крапкові лінії — гіпотези для спільних послуг із сусідами",
     "layer.corpus.title": "Громади зі стратегіями",
     "layer.corpus.desc": "Підсвітити громади, чиї тексти вже в аналізі",
     "stats.label": "Цифри",
-    "stat.universe": "Громад на карті",
+    "stat.universe": "Громад на мапі",
     "stat.portal": "З посиланням на портал",
     "stat.nodes": "Громад з угодами МСС",
     "stat.pin": "Зареєстрованих угод",
@@ -833,10 +833,10 @@ window.PAGE_I18N = {
     "stat.corpus": "Стратегій у корпусі",
     "stat.known": "Перевірених прикладів",
     "stat.pinCorpus": "Угод у корпусі",
-    "stat.thematic": "Гіпотез «похожа стратегія»",
+    "stat.thematic": "Гіпотез «схожа стратегія»",
     "stat.operational": "Гіпотез «зручний сусід»",
-    "hint.map": "Сірі точки — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клік по точці відкриває портал або PDF, якщо є посилання.",
-    "hint.graph": "Режим «Граф» показує лише мережу угод і гіпотез. Для повної карти з усіма громадами перемкніть на «Карта».",
+    "hint.map": "Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по ноді відкриває портал або PDF, якщо є посилання.",
+    "hint.graph": "Режим «Граф» показує лише мережу угод і гіпотез. Для повної мапи з усіма громадами перемкніть на «Мапу».",
     "popup.people": "осіб",
     "popup.portal": "Портал громади",
     "popup.strategy": "Стратегія / джерело",
@@ -850,14 +850,14 @@ window.PAGE_I18N = {
     "doc.title": "IMC map — hromada matching · W3I",
     "sidebar.eyebrow": "Matching · map",
     "sidebar.h1": "Intermunicipal cooperation on the map",
-    "sidebar.lede": "Registered IMC agreements alongside hypotheses for further collaboration. Click a point for the portal or strategy when a link is available.",
+    "sidebar.lede": "Registered IMC agreements alongside hypotheses for further collaboration. Click a node for the portal or strategy when a link is available.",
     "mode.aria": "View mode",
     "mode.map": "Map",
     "mode.graph": "Graph",
     "layers.label": "Map layers",
     "layers.aria": "Map layers",
     "layer.universe.title": "All hromadas",
-    "layer.universe.desc": "Grey dots — mainland hromadas with coordinates",
+    "layer.universe.desc": "Grey nodes — mainland hromadas with coordinates",
     "layer.pin.title": "Registered IMC agreements",
     "layer.pin.desc": "Teal lines — agreements already concluded between hromadas",
     "layer.known.title": "Validated examples",
@@ -881,7 +881,7 @@ window.PAGE_I18N = {
     "stat.pinCorpus": "Agreements in the corpus",
     "stat.thematic": "“Similar strategy” hypotheses",
     "stat.operational": "“Convenient neighbour” hypotheses",
-    "hint.map": "Grey dots are all hromadas with coordinates, not only those whose strategies we have already parsed. Click a point to open the portal or PDF when a link is available.",
+    "hint.map": "Grey nodes are all hromadas with coordinates, not only those whose strategies we have already parsed. Click a node to open the portal or PDF when a link is available.",
     "hint.graph": "Graph mode shows only the agreement and hypothesis network. Switch to Map for the full map with all hromadas.",
     "popup.people": "people",
     "popup.portal": "Hromada portal",

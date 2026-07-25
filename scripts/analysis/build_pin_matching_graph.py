@@ -14,7 +14,7 @@ Overlay policy (2026-07-24):
   Do NOT paint top-N by combined score — that collapses to geo neighbours in a
   sparse strategy corpus. Split tracks instead:
 
-    thematic    — high goals_cosine  → «похожа стратегія» (default ON)
+    thematic    — high goals_cosine  → «схожа стратегія» (default ON)
     operational — high geo           → «зручний сусід»   (default OFF)
     known       — curated registry validation pairs
     pin_corpus  — broader KSE PIN ∩ Goals corpus (mss_network>0, not known)

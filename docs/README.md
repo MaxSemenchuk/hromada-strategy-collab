@@ -13,7 +13,7 @@ hromadas with coordinates (metadata — not the strategy corpus). Click a point 
 
 | Path | Content |
 |------|---------|
-| [`index.html`](index.html) | Landing / «О проєкті» (all stakeholder audiences) |
+| [`index.html`](index.html) | Landing / «Про проєкт» (all stakeholder audiences) |
 | [`matches.html`](matches.html) | Known pairs + top hypotheses |
 | [`funds.html`](funds.html) | Donor portfolio: shared next grant / bridges / hubs |
 | [`mss-pin-matching-graph.html`](mss-pin-matching-graph.html) | Full PIN map + thematic / operational overlays |
