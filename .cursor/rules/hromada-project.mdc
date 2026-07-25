@@ -45,4 +45,4 @@ overlays separately — never top-N by combined `score` (sparse corpus → geo b
 5. Do not inflate CKAN "123 strategies" — mostly unrelated datasets.
 6. Minimize scope; match existing TS/Python conventions in `scripts/`.
 7. Do not present a single combined `score` as «strategy match»; label
-   `похожа стратегія` (thematic) vs `зручний сусід` (operational).
+   `схожа стратегія` (thematic) vs `зручний сусід` (operational).

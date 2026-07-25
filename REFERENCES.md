@@ -28,7 +28,7 @@ reasonable one, and where its limits are likely to sit.
 ## How IMC typologies map onto this project's method
 
 Two OECD / network-governance ladders sit behind the split already shipped as
-`похожа стратегія` (thematic) vs `зручний сусід` (operational). They are not
+`схожа стратегія` (thematic) vs `зручний сусід` (operational). They are not
 competing frameworks — one describes **depth of the arrangement**, the other
 **who runs it**.
 
@@ -38,7 +38,7 @@ competing frameworks — one describes **depth of the arrangement**, the other
 |------|------------|------------------------|------------------------|
 | Handshake / ad hoc | Informal coordination, no contract | Peer learning Дніпро↔Львів (innovation institution) | Soft thematic; not in МСС registry |
 | Single-purpose | One shared service or asset | Слобожанська↔Обухівська (shared ЦНАП); planned water network Галич–Бурштин–Маріямпіль | Mostly **geo / neighbourhood** (`зручний сусід`); text only if the strategy names the shared asset |
-| Multi-purpose / thematic cluster | Several linked products or a joint development agenda | Tourism: Ніжин–Батурин–Козелець («Місцями козацької сили»); candidate Ужгород↔Мукачево | **Goals-cosine** (`похожа стратегія`); geo optional — can be same corridor, not always next door |
+| Multi-purpose / thematic cluster | Several linked products or a joint development agenda | Tourism: Ніжин–Батурин–Козелець («Місцями козацької сили»); candidate Ужгород↔Мукачево | **Goals-cosine** (`схожа стратегія`); geo optional — can be same corridor, not always next door |
 | NAO-like / dedicated body | Separate admin entity for the network | Асоціація «Львівська агломерація»; large multi-party PIN deals (Дністровський каньйон, 22 parties) | Matching finds *candidates*; Provan & Kenis (below) says what governance form should follow |
 
 **Tourism** sits high on this ladder: rare in the registry (~0.6% of titled agreements) but where NLP adds the most — multi-party, sometimes cross-oblast, vision written into Goals. Sell as joint route / DMO / grant, not as “you are neighbours.”

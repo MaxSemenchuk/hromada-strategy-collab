@@ -262,7 +262,7 @@ List A = “who thinks like us.” List B = “who is convenient to share a serv
 Few tourism contracts, yet they are the large multi-party (sometimes
 cross-oblast) deals. Pairwise matching is enough for bilateral operational МСС;
 clusters need multi-way / community view (the Nizhyn “trio” is really five
-parties in KSE). **Sell tourism as `похожа стратегія` / joint product** (route,
+parties in KSE). **Sell tourism as `схожа стратегія` / joint product** (route,
 DMO, grant) — not as neighbour convenience. Contrast: **water/utilities are
 `зручний сусід`** — Halytska↔Dubovetska works because they are adjacent *and*
 the strategy names a shared network; geography is doing the heavy lifting.
@@ -276,7 +276,7 @@ oblast, frontline) — grow the strategy corpus there first.
 
 **6. Near-term product rules.**  
 - Do not present a single `score` as “strategy match.”  
-- Label outputs `похожа стратегія` vs `зручний сусід`.  
+- Label outputs `схожа стратегія` vs `зручний сусід`.  
 - Keep `known: true` for method validation only — not as “new recommendations.”  
 - Surface 3+ clusters, not only pairs.  
 - Prioritise retrieval in low-МСС-coverage oblasts.
@@ -342,13 +342,13 @@ release row with KSE lat/lon (~1 418); PIN/matching stay on top. Popups link
 ## Stakeholder artifacts
 
 Canonical leave-behind is the **GitHub Pages site** rooted at [`docs/`](./)
-(shared nav: О проєкті · кандидати · фонди · карта):
+(shared nav: Про проєкт · кандидати · фонди · мапа):
 
 **https://maxsemenchuk.github.io/hromada-strategy-collab/**
 
 | Page | File |
 |------|------|
-| Landing («О проєкті») | [index.html](index.html) |
+| Landing («Про проєкт») | [index.html](index.html) |
 | Matching candidates | [matches.html](matches.html) |
 | Funds portfolio | [funds.html](funds.html) |
 | PIN map + overlays | [mss-pin-matching-graph.html](mss-pin-matching-graph.html) |

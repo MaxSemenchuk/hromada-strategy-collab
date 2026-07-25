@@ -3,7 +3,7 @@
     {
       href: "index.html",
       id: "home",
-      label: { uk: "О проєкті", en: "About" }
+      label: { uk: "Про проєкт", en: "About" }
     },
     {
       href: "matches.html",
@@ -18,7 +18,7 @@
     {
       href: "mss-pin-matching-graph.html",
       id: "map",
-      label: { uk: "Карта МСС", en: "IMC map" }
+      label: { uk: "Мапа МСС", en: "IMC map" }
     }
   ];
 
