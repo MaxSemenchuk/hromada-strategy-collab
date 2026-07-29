@@ -19,9 +19,6 @@ ROOT = Path(__file__).resolve().parents[2]
 RESOURCES = ROOT / "data" / "releases" / "hromada-resources.json"
 DREAM = ROOT / "data" / "releases" / "dream-priorities.json"
 OUT = ROOT / "docs" / "assets" / "resources-preview.json"
-OUT_V2 = ROOT / "docs" / "assets" / "resources-preview.v2.json"
-OUT_V3 = ROOT / "docs" / "assets" / "resources-preview.v3.json"
-OUT_V4 = ROOT / "docs" / "assets" / "resources-preview.v4.json"
 
 
 def short_name(name: str | None) -> str:
@@ -178,10 +175,9 @@ def main() -> None:
     }
 
     text = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
-    for path in (OUT, OUT_V2, OUT_V3, OUT_V4):
-        path.write_text(text, encoding="utf-8")
+    OUT.write_text(text, encoding="utf-8")
     print(
-        f"Wrote {OUT.relative_to(ROOT)} (+ .v2/.v3/.v4) — {len(rows)} rows "
+        f"Wrote {OUT.relative_to(ROOT)} — {len(rows)} rows "
         f"(dream {with_dream}, pcap {with_pcap}, ~{OUT.stat().st_size // 1024} KB)"
     )
 

@@ -528,7 +528,7 @@ window.PAGE_I18N = {
         : '<tr><td colspan="6"><div class="empty">' + esc(t(activeSector ? "empty.sector" : "empty")) + "</div></td></tr>";
     }
 
-    fetch("assets/resources-preview.v4.json")
+    fetch("assets/resources-preview.json", { cache: "no-store" })
       .then(function (r) {
         if (!r.ok) throw new Error(r.status + " " + r.statusText);
         return r.json();

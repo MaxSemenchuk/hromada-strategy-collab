@@ -7,7 +7,8 @@ the public URL is:
 
 Coverage reflected on the site (2026-07-29 release): **1,469** metadata rows,
 **77** text-mined strategies (**68** with Goals), **2,278** matching-edges (v7),
-known МСС ranks **#6–#14**. Extra layers: complementary, explicit-ask, resources/DREAM.
+known МСС ranks **#6–#14**. Extra layers: complementary, explicit-ask, resources/DREAM
+(~1,000 hromadas with DREAM projects; KSE resource proxies).
 PIN map: **~459** PIN nodes / **918** edges from KSE; underlay **~1 418** mainland
 hromadas with coordinates (metadata — not the strategy corpus). Click a point for
 `PortalUrl` / `StrategyUrl` when present in the release.
