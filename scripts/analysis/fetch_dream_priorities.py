@@ -338,10 +338,13 @@ def aggregate(items: list[dict], limit: int | None) -> None:
                 names[code] = row.get("Name") or ""
 
     per: dict[str, dict] = {}
+    # Flat catalog for the stakeholder UI (title + code + hromada), capped later.
+    sector_catalog: dict[str, list[dict]] = defaultdict(list)
     skipped_no_loc = 0
     skipped_unmap = 0
     processed = 0
     activeish = 0
+    SAMPLE_PER_SECTOR = 5
 
     scope = items[:limit] if limit is not None else items
     for row in scope:
@@ -378,6 +381,7 @@ def aggregate(items: list[dict], limit: int | None) -> None:
         purpose = cdu.get("purpose")
         ptype = cdu.get("type")
         code = (detail.get("internal") or {}).get("code") or row.get("code")
+        title_short = (title or "")[:180]
 
         for hcode in hromada_codes:
             bucket = per.setdefault(
@@ -391,17 +395,31 @@ def aggregate(items: list[dict], limit: int | None) -> None:
                     "types": Counter(),
                     "sample_titles": [],
                     "project_codes": [],
+                    "sector_samples": defaultdict(list),
                 },
             )
             bucket["project_count"] += 1
             for s in sectors:
                 bucket["sectors"][s] += 1
+                samples = bucket["sector_samples"][s]
+                if title_short and len(samples) < SAMPLE_PER_SECTOR:
+                    samples.append({"title": title_short, "code": code})
+                # One catalog row per (project, hromada, sector) — UI dedupes by code.
+                if title_short:
+                    sector_catalog[s].append(
+                        {
+                            "katottg": hcode,
+                            "name": names.get(hcode) or "",
+                            "title": title_short,
+                            "code": code,
+                        }
+                    )
             if purpose:
                 bucket["purposes"][str(purpose)] += 1
             if ptype:
                 bucket["types"][str(ptype)] += 1
-            if title and len(bucket["sample_titles"]) < 5:
-                bucket["sample_titles"].append(title[:180])
+            if title_short and len(bucket["sample_titles"]) < 5:
+                bucket["sample_titles"].append(title_short)
             if code and len(bucket["project_codes"]) < 20:
                 bucket["project_codes"].append(code)
 
@@ -409,6 +427,11 @@ def aggregate(items: list[dict], limit: int | None) -> None:
     for hcode, bucket in sorted(per.items(), key=lambda kv: (-kv[1]["project_count"], kv[0])):
         sector_counts = dict(bucket["sectors"].most_common())
         top_sectors = [s for s, _ in bucket["sectors"].most_common(5)]
+        sector_samples = {
+            s: list(samples)
+            for s, samples in bucket["sector_samples"].items()
+            if samples
+        }
         rows.append(
             {
                 "katottg": hcode,
@@ -420,8 +443,28 @@ def aggregate(items: list[dict], limit: int | None) -> None:
                 "type_counts": dict(bucket["types"]),
                 "sample_titles": bucket["sample_titles"],
                 "sample_project_codes": bucket["project_codes"],
+                "sector_samples": sector_samples,
             }
         )
+
+    # Keep all projects for sparse sectors; cap dense ones for release size.
+    CATALOG_CAP = 80
+    SPARSE_KEEP_ALL = 40
+    sector_projects: dict[str, list[dict]] = {}
+    for sector, entries in sector_catalog.items():
+        # Prefer unique project codes (first hromada wins for multi-location ideas).
+        seen_codes: set[str] = set()
+        unique: list[dict] = []
+        for e in entries:
+            key = str(e.get("code") or e.get("title") or "")
+            if not key or key in seen_codes:
+                continue
+            seen_codes.add(key)
+            unique.append(e)
+        if len(unique) <= SPARSE_KEEP_ALL:
+            sector_projects[sector] = unique
+        else:
+            sector_projects[sector] = unique[:CATALOG_CAP]
 
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     payload = {
@@ -435,6 +478,7 @@ def aggregate(items: list[dict], limit: int | None) -> None:
                 "Е-врядування = ЦНАП/Дія/е-послуги only; IT / цифровізація = digital component (excl. med imaging).",
                 "Cancelled ideas excluded. Settlement codes mapped to hromada via KSE ua-admin-map.",
                 "Hypothesis layer — do not treat as approved municipal strategy.",
+                "sector_projects / sector_samples are title samples for UI — not a full project dump for dense sectors.",
             ],
         },
         "coverage": {
@@ -446,6 +490,7 @@ def aggregate(items: list[dict], limit: int | None) -> None:
             "unmapped_location_hits": skipped_unmap,
             "details_cached": sum(1 for p in DETAILS_DIR.glob("*.json")),
         },
+        "sector_projects": sector_projects,
         "hromadas": rows,
     }
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
