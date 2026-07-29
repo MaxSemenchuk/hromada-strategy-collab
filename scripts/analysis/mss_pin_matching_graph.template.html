@@ -382,6 +382,79 @@
     line-height: 1.4;
   }
   .detail-why-list li { margin: 0.12rem 0; }
+  .detail-agreements {
+    margin: 0.15rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.28rem;
+  }
+  .detail-agreements li {
+    margin: 0;
+    padding: 0.35rem 0.45rem;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--site-accent) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--site-accent) 18%, transparent);
+  }
+  .detail-agreements .agr-title {
+    display: block;
+    font-size: 0.74rem;
+    color: var(--site-text);
+    line-height: 1.35;
+    font-weight: 550;
+  }
+  .detail-agreements .agr-meta {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.66rem;
+    color: var(--site-faint);
+    line-height: 1.3;
+  }
+  .detail-themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 0.15rem;
+  }
+  .detail-theme {
+    font-size: 0.66rem;
+    padding: 0.12rem 0.4rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, #5b8def 16%, transparent);
+    color: var(--site-text);
+    border: 1px solid color-mix(in srgb, #5b8def 28%, transparent);
+  }
+  .detail-goal-pairs {
+    margin: 0.15rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.28rem;
+  }
+  .detail-goal-pairs li {
+    margin: 0;
+    padding: 0.35rem 0.45rem;
+    border-radius: 6px;
+    background: color-mix(in srgb, #5b8def 8%, transparent);
+    border: 1px solid color-mix(in srgb, #5b8def 18%, transparent);
+    font-size: 0.72rem;
+    color: var(--site-text);
+    line-height: 1.35;
+  }
+  .detail-goal-pairs .gp-same {
+    font-weight: 550;
+  }
+  .detail-goal-pairs .gp-a,
+  .detail-goal-pairs .gp-b {
+    display: block;
+  }
+  .detail-goal-pairs .gp-approx {
+    display: block;
+    margin: 0.12rem 0;
+    font-size: 0.64rem;
+    color: var(--site-faint);
+    letter-spacing: 0.02em;
+  }
   .detail-signals {
     display: flex;
     flex-wrap: wrap;
@@ -707,7 +780,10 @@ function neighborsOf(id) {
       score: e.score,
       kind,
       theme: e.theme,
+      themes: e.themes || [],
       reasons: e.reasons || [],
+      agreements: e.agreements || [],
+      goal_pairs: e.goal_pairs || [],
       goals_cosine: e.goals_cosine,
       geo_score: e.geo_score,
       dream_overlap: e.dream_overlap,
@@ -735,7 +811,11 @@ function edgeBlurb(item) {
   if (kind === 'operational') return t('explain.operational');
   if (kind === 'known') return t('explain.known');
   if (kind === 'pin_corpus') return t('explain.pinCorpus');
-  if (kind === 'pin') return t('explain.pin');
+  if (kind === 'pin') {
+    const n = (item.agreements || []).length;
+    if (n > 1) return t('explain.pinMany').replace('{n}', String(n));
+    return t('explain.pin');
+  }
   return '';
 }
 
@@ -750,19 +830,95 @@ function edgeSignals(item) {
   if (dream) out.push(t('explain.sigDream').replace('{n}', dream));
   if (fiscal) out.push(t('explain.sigFiscal').replace('{n}', fiscal));
   if (item.same_oblast) out.push(t('explain.sameOblast'));
-  if (item.theme && item.kind !== 'explicit_ask') out.push(item.theme);
+  // Themes / agreement form shown in dedicated blocks.
+  if (
+    item.theme
+    && item.kind !== 'explicit_ask'
+    && item.kind !== 'pin'
+    && !(item.themes && item.themes.length)
+  ) {
+    out.push(item.theme);
+  }
   return out;
+}
+
+function themesHtml(item) {
+  const themes = (item.themes || []).slice(0, 6);
+  if (!themes.length) return '';
+  return (
+    `<div class="detail-themes" aria-label="${esc(t('explain.sharedThemes'))}">`
+    + themes.map((th) => `<span class="detail-theme">${esc(th)}</span>`).join('')
+    + `</div>`
+  );
+}
+
+function goalPairsHtml(item) {
+  const pairs = (item.goal_pairs || []).slice(0, 3);
+  if (!pairs.length) return '';
+  return (
+    `<ul class="detail-goal-pairs">`
+    + pairs.map((p) => {
+      if (p.text) {
+        return `<li><span class="gp-same">${esc(t('explain.sharedGoal').replace('{g}', p.text))}</span></li>`;
+      }
+      return (
+        `<li>`
+        + `<span class="gp-a">${esc(p.a || '')}</span>`
+        + `<span class="gp-approx">${esc(t('explain.goalApprox'))}</span>`
+        + `<span class="gp-b">${esc(p.b || '')}</span>`
+        + `</li>`
+      );
+    }).join('')
+    + `</ul>`
+  );
+}
+
+function agreementsHtml(item) {
+  const list = (item.agreements || []).slice(0, 4);
+  if (!list.length) return '';
+  return (
+    `<ul class="detail-agreements">`
+    + list.map((a) => {
+      const meta = [];
+      if (a.n) meta.push(t('explain.regNo').replace('{n}', String(a.n)));
+      const title = String(a.title || '');
+      const form = String(a.form || '');
+      // Skip form when it restates the same subject already in the title.
+      if (form) {
+        const tNorm = title.toLowerCase();
+        const fNorm = form.toLowerCase();
+        const overlap = tNorm && fNorm && (fNorm.includes(tNorm.slice(0, 24)) || tNorm.includes(fNorm.slice(0, 24)));
+        if (!overlap) meta.push(form);
+      }
+      return (
+        `<li>`
+        + `<span class="agr-title">${esc(title)}</span>`
+        + (meta.length ? `<span class="agr-meta">${esc(meta.join(' · '))}</span>` : '')
+        + `</li>`
+      );
+    }).join('')
+    + `</ul>`
+  );
 }
 
 function neighborCardHtml(item) {
   const score = item.score != null ? Number(item.score).toFixed(2) : '';
   const blurb = edgeBlurb(item);
   const signals = edgeSignals(item);
-  const reasons = (item.reasons || []).slice(0, 4);
+  const agr = agreementsHtml(item);
+  const themes = themesHtml(item);
+  const pairs = goalPairsHtml(item);
+  // Avoid duplicating theme/pair lines already rendered above.
+  const reasons = (agr || themes || pairs)
+    ? []
+    : (item.reasons || []).slice(0, 4);
   return (
     `<div class="detail-neighbor-card">`
     + `<button type="button" class="detail-neighbor" data-id="${esc(item.id)}"><span>${esc(item.label)}</span>${score ? `<b>${esc(score)}</b>` : ''}</button>`
     + (blurb ? `<p class="detail-why">${esc(blurb)}</p>` : '')
+    + agr
+    + themes
+    + pairs
     + (signals.length
       ? `<div class="detail-signals">${signals.map((s) => `<span class="detail-signal">${esc(s)}</span>`).join('')}</div>`
       : '')
@@ -1428,6 +1584,11 @@ window.PAGE_I18N = {
     "explain.known": "Кураторський приклад із реєстру МСС для перевірки методу",
     "explain.pinCorpus": "Угода МСС у реєстрі між громадами з нашого корпусу стратегій",
     "explain.pin": "Зареєстрована угода МСС",
+    "explain.pinMany": "Зареєстровані угоди МСС ({n})",
+    "explain.regNo": "№{n}",
+    "explain.sharedThemes": "Спільні теми стратегій",
+    "explain.sharedGoal": "Спільна ціль: {g}",
+    "explain.goalApprox": "схожі формулювання",
     "explain.sigGoals": "цілі {n}",
     "explain.sigGeo": "гео {n}",
     "explain.sigDream": "DREAM {n}",
@@ -1504,6 +1665,11 @@ window.PAGE_I18N = {
     "explain.known": "Curated IMC-registry example used to validate the method",
     "explain.pinCorpus": "Registry IMC between hromadas whose strategies are in our corpus",
     "explain.pin": "Registered IMC agreement",
+    "explain.pinMany": "Registered IMC agreements ({n})",
+    "explain.regNo": "No. {n}",
+    "explain.sharedThemes": "Shared strategy themes",
+    "explain.sharedGoal": "Shared goal: {g}",
+    "explain.goalApprox": "similar wording",
     "explain.sigGoals": "goals {n}",
     "explain.sigGeo": "geo {n}",
     "explain.sigDream": "DREAM {n}",
