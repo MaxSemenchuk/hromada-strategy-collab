@@ -137,7 +137,14 @@
 
 @media (max-width: 760px) {
   .site-nav { flex-wrap: wrap; height: auto; min-height: var(--site-nav-h); padding: 0.5rem 0.85rem; }
-  .site-nav .menu-toggle { display: inline-flex; margin-left: auto; }
+  .site-nav .brand { margin-right: 0.25rem; padding-right: 0.55rem; max-width: calc(100% - 5.5rem); }
+  .site-nav .brand span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .site-nav .menu-toggle { display: inline-flex; margin-left: auto; flex-shrink: 0; }
   .site-nav .nav-links {
     display: none;
     width: 100%;
@@ -146,6 +153,7 @@
     padding: 0.4rem 0 0.15rem;
   }
   .site-nav.is-open .nav-links { display: flex; }
+  .site-nav .lang-switch { margin: 0.35rem 0 0; align-self: flex-start; }
   .site-nav .spacer { display: none; }
 }
 
