@@ -1,0 +1,4542 @@
+{
+  "generatedAt": "2026-07-29T12:58:42.526309+00:00",
+  "warning": "UA–EU twinning layer — separate from domestic МСС. SKEW links are registry-sourced (DE–UA); Cities4Cities pairs come from news titles (hypotheses); strategy mentions are hypotheses. c4c_url marks listing in the C4C municipality database (seeking partners), not a confirmed twinning. Not folded into matching score.",
+  "sources": [
+    {
+      "id": "skew",
+      "name": "SKEW German–Ukrainian municipal partnerships",
+      "url": "https://skew.engagement-global.de/landkarte-deutsch-ukrainischer-kommunalbeziehungen.html",
+      "list_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?stateDe=&stateUa=&type="
+    },
+    {
+      "id": "cities4cities",
+      "name": "Cities4Cities news pairs + municipality markers",
+      "url": "https://cities4cities.eu/",
+      "markers_url": "https://cities4cities.eu/wp-content/themes/%5B2.0%5D%20sitegist-theme/markers/markers.json"
+    },
+    {
+      "id": "strategy",
+      "name": "Named foreign partners in strategy extractions",
+      "path": "data/releases/hromadas.json"
+    }
+  ],
+  "coverage": {
+    "skew_edges_raw": 268,
+    "skew_edges_linked": 179,
+    "hromadas_with_partners": 178,
+    "strategy_partners_added": 4,
+    "cities4cities_partners_added": 11,
+    "cities4cities_partner_rows": 11,
+    "cities4cities_listed": 90,
+    "cities4cities_news_pairs_raw": 14,
+    "cities4cities_news_unmatched": 1,
+    "unmatched_skew": 88,
+    "resolve_stats": {
+      "alias": 150,
+      "unmatched": 60,
+      "rajon": 19,
+      "translit": 30,
+      "kyiv_city": 4,
+      "non_hromada": 5
+    }
+  },
+  "hromadas": [
+    {
+      "name": "Полтавська міська територіальна громада",
+      "short": "Полтавська",
+      "katottg": "UA53080370000025447",
+      "oblast": "Полтавська область",
+      "partners": [
+        {
+          "partner_name": "Leinfelden-Echterdingen",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "1988",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
+          "confidence": "registry",
+          "ua_name_de": "Poltawa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Filderstadt",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "1988",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
+          "confidence": "registry",
+          "ua_name_de": "Poltawa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Ostfildern",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "1988",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
+          "confidence": "registry",
+          "ua_name_de": "Poltawa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Mönchengladbach",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
+          "confidence": "registry",
+          "ua_name_de": "Poltawa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Калмар",
+          "partner_country": "SE",
+          "partner_region": null,
+          "type": "strategy_mention",
+          "since": null,
+          "source": "strategy",
+          "source_url": "https://rada-poltava.gov.ua/strapi/uploads/strat_1157b9a322.pdf",
+          "confidence": "strategy_mention",
+          "quote": "м. Калмар"
+        },
+        {
+          "partner_name": "Велико-Тирново",
+          "partner_country": "BG",
+          "partner_region": null,
+          "type": "strategy_mention",
+          "since": null,
+          "source": "strategy",
+          "source_url": "https://rada-poltava.gov.ua/strapi/uploads/strat_1157b9a322.pdf",
+          "confidence": "strategy_mention",
+          "quote": "\nм. Велико-Тирново"
+        },
+        {
+          "partner_name": "Kalmar",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2025",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/poltava-and-kalmar-a-partnership-success-story/",
+          "confidence": "news_mention",
+          "quote": "Poltava and Kalmar: a partnership success story",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/poltava-territorial-community/",
+      "partner_count": 7
+    },
+    {
+      "name": "Івано-Франківська міська територіальна громада",
+      "short": "Івано-Франківська",
+      "katottg": "UA26040190000081578",
+      "oblast": "Івано-Франківська область",
+      "partners": [
+        {
+          "partner_name": "Dorsten",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=200",
+          "confidence": "registry",
+          "ua_name_de": "Iwano-Frankiwsk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Potsdam",
+          "partner_country": "DE",
+          "partner_region": "Brandenburg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=200",
+          "confidence": "registry",
+          "ua_name_de": "Iwano-Frankiwsk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Erfurt",
+          "partner_country": "DE",
+          "partner_region": "Thüringen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=200",
+          "confidence": "registry",
+          "ua_name_de": "Iwano-Frankiwsk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Koblenz",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=200",
+          "confidence": "registry",
+          "ua_name_de": "Iwano-Frankiwsk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Mülheim (Ruhr)",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=200",
+          "confidence": "registry",
+          "ua_name_de": "Iwano-Frankiwsk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Luleå",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2025",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/ivano-frankivsk-and-lulea-have-become-partner-cities-agreement-signed-in-sweden/",
+          "confidence": "news_mention",
+          "quote": "Ivano-Frankivsk and Luleå have become partner cities: agreement signed in Sweden",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/ivano-frankivsk-territorial-community/",
+      "partner_count": 6
+    },
+    {
+      "name": "Львівська міська територіальна громада",
+      "short": "Львівська",
+      "katottg": "UA46060250000025047",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Leipzig",
+          "partner_country": "DE",
+          "partner_region": "Sachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "1990",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=56",
+          "confidence": "registry",
+          "ua_name_de": "Lwiw",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Würzburg",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2017",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=56",
+          "confidence": "registry",
+          "ua_name_de": "Lwiw",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Freiburg im Breisgau",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "1989",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=56",
+          "confidence": "registry",
+          "ua_name_de": "Lwiw",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Frankfurt am Main",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=56",
+          "confidence": "registry",
+          "ua_name_de": "Lwiw",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Uppsala",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2025",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/lviv-and-uppsala/",
+          "confidence": "news_mention",
+          "quote": "Lviv and the Swedish city of Uppsala became twin cities",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 5
+    },
+    {
+      "name": "Жовківська міська територіальна громада",
+      "short": "Жовківська",
+      "katottg": "UA46060130000059055",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Delitzsch",
+          "partner_country": "DE",
+          "partner_region": "Sachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2013",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=129",
+          "confidence": "registry",
+          "ua_name_de": "Schowkwa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Wolfsburg",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=129",
+          "confidence": "registry",
+          "ua_name_de": "Schowkwa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Altdorf bei Nürnberg",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=129",
+          "confidence": "registry",
+          "ua_name_de": "Schowkwa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Weimar",
+          "partner_country": "DE",
+          "partner_region": "Thüringen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=129",
+          "confidence": "registry",
+          "ua_name_de": "Schowkwa",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 4
+    },
+    {
+      "name": "Миколаївська міська територіальна громада",
+      "short": "Миколаївська",
+      "katottg": "UA48060150000071713",
+      "oblast": "Миколаївська область",
+      "partners": [
+        {
+          "partner_name": "Hannover",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=192",
+          "confidence": "registry",
+          "ua_name_de": "Mykolajiw",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Bedburg",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=192",
+          "confidence": "registry",
+          "ua_name_de": "Mykolajiw",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Sindelfingen",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=192",
+          "confidence": "registry",
+          "ua_name_de": "Mykolajiw",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Berlin Tempelhof-Schöneberg",
+          "partner_country": "DE",
+          "partner_region": "Berlin",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=192",
+          "confidence": "registry",
+          "ua_name_de": "Mykolajiw",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/mykolaiv-territorial-community/",
+      "partner_count": 4
+    },
+    {
+      "name": "Одеська міська територіальна громада",
+      "short": "Одеська",
+      "katottg": "UA51100270000073549",
+      "oblast": "Одеська область",
+      "partners": [
+        {
+          "partner_name": "Regensburg",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "1990",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=76",
+          "confidence": "registry",
+          "ua_name_de": "Odessa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Bremen",
+          "partner_country": "DE",
+          "partner_region": "Bremen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=359",
+          "confidence": "registry",
+          "ua_name_de": "Odessa (Oblast)",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Berlin-Lichtenberg",
+          "partner_country": "DE",
+          "partner_region": "Berlin",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=76",
+          "confidence": "registry",
+          "ua_name_de": "Odessa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Mainz",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=76",
+          "confidence": "registry",
+          "ua_name_de": "Odessa",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/odesa-territorial-community/",
+      "partner_count": 4
+    },
+    {
+      "name": "Бродівська міська територіальна громада",
+      "short": "Бродівська",
+      "katottg": "UA46040010000033885",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Wolfratshausen",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2009",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=14",
+          "confidence": "registry",
+          "ua_name_de": "Brody",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Bendorf",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=14",
+          "confidence": "registry",
+          "ua_name_de": "Brody",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Buchholz",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=14",
+          "confidence": "registry",
+          "ua_name_de": "Brody",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/brody-territorial-community/",
+      "partner_count": 3
+    },
+    {
+      "name": "Калуська міська територіальна громада",
+      "short": "Калуська",
+      "katottg": "UA26060170000091466",
+      "oblast": "Івано-Франківська область",
+      "partners": [
+        {
+          "partner_name": "München",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2026",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=25",
+          "confidence": "registry",
+          "ua_name_de": "Kalusch",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Lippstadt",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=25",
+          "confidence": "registry",
+          "ua_name_de": "Kalusch",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Lahr (Schwarzwald)",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=25",
+          "confidence": "registry",
+          "ua_name_de": "Kalusch",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/kalush-territorial-community/",
+      "partner_count": 3
+    },
+    {
+      "name": "Ковельська міська територіальна громада",
+      "short": "Ковельська",
+      "katottg": "UA07060190000036342",
+      "oblast": "Волинська область",
+      "partners": [
+        {
+          "partner_name": "Barsinghausen",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2008",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=23",
+          "confidence": "registry",
+          "ua_name_de": "Kowel",
+          "match": "translit"
+        },
+        {
+          "partner_name": "Walsrode",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2003",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=23",
+          "confidence": "registry",
+          "ua_name_de": "Kowel",
+          "match": "translit"
+        },
+        {
+          "partner_name": "Saarbrücken",
+          "partner_country": "DE",
+          "partner_region": "Saarland",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=23",
+          "confidence": "registry",
+          "ua_name_de": "Kowel",
+          "match": "translit"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/kovel-territorial-community/",
+      "partner_count": 3
+    },
+    {
+      "name": "Луцька міська територіальна громада",
+      "short": "Луцька",
+      "katottg": "UA07080170000013585",
+      "oblast": "Волинська область",
+      "partners": [
+        {
+          "partner_name": "Lippe (Landkreis)",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2015",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=16",
+          "confidence": "registry",
+          "ua_name_de": "Luzk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Würzburg",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=16",
+          "confidence": "registry",
+          "ua_name_de": "Luzk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Schweinfurt",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=16",
+          "confidence": "registry",
+          "ua_name_de": "Luzk",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 3
+    },
+    {
+      "name": "Мукачівська міська територіальна громада",
+      "short": "Мукачівська",
+      "katottg": "UA21040150000092428",
+      "oblast": "Закарпатська область",
+      "partners": [
+        {
+          "partner_name": "Hanau",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=264",
+          "confidence": "registry",
+          "ua_name_de": "Mukatschewo",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Neustadt an der Weinstraße",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=264",
+          "confidence": "registry",
+          "ua_name_de": "Mukatschewo",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Bamberg",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=264",
+          "confidence": "registry",
+          "ua_name_de": "Mukatschewo",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 3
+    },
+    {
+      "name": "Нововолинська міська територіальна громада",
+      "short": "Нововолинська",
+      "katottg": "UA07020130000036300",
+      "oblast": "Волинська область",
+      "partners": [
+        {
+          "partner_name": "Neumünster",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=306",
+          "confidence": "registry",
+          "ua_name_de": "Nowowolynsk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Hoyerswerda",
+          "partner_country": "DE",
+          "partner_region": "Sachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=306",
+          "confidence": "registry",
+          "ua_name_de": "Nowowolynsk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Obertshausen",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=306",
+          "confidence": "registry",
+          "ua_name_de": "Nowowolynsk",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 3
+    },
+    {
+      "name": "Ніжинська міська територіальна громада",
+      "short": "Ніжинська",
+      "katottg": "UA74040250000063494",
+      "oblast": "Чернігівська область",
+      "partners": [
+        {
+          "partner_name": "Neustadt in Holstein",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=365",
+          "confidence": "registry",
+          "ua_name_de": "Nischyn",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Frankenthal (Pfalz)",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=365",
+          "confidence": "registry",
+          "ua_name_de": "Nischyn",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Wolfsburg",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=365",
+          "confidence": "registry",
+          "ua_name_de": "Nischyn",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 3
+    },
+    {
+      "name": "Первомайська міська територіальна громада",
+      "short": "Первомайська",
+      "katottg": "UA48080130000028458",
+      "oblast": "Миколаївська область",
+      "partners": [
+        {
+          "partner_name": "Bad Kreuznach (Landkreis)",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=302",
+          "confidence": "registry",
+          "ua_name_de": "Perwomajsk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Augsburg",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=302",
+          "confidence": "registry",
+          "ua_name_de": "Perwomajsk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Berlin-Neukölln",
+          "partner_country": "DE",
+          "partner_region": "Berlin",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=302",
+          "confidence": "registry",
+          "ua_name_de": "Perwomajsk",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 3
+    },
+    {
+      "name": "Рівненська міська територіальна громада",
+      "short": "Рівненська",
+      "katottg": "UA56060470000086729",
+      "oblast": "Рівненська область",
+      "partners": [
+        {
+          "partner_name": "Oberviechtach",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "1990",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=140",
+          "confidence": "registry",
+          "ua_name_de": "Riwne",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Essen",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=140",
+          "confidence": "registry",
+          "ua_name_de": "Riwne",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Berlin-Pankow",
+          "partner_country": "DE",
+          "partner_region": "Berlin",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=140",
+          "confidence": "registry",
+          "ua_name_de": "Riwne",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 3
+    },
+    {
+      "name": "Тернопільська міська територіальна громада",
+      "short": "Тернопільська",
+      "katottg": "UA61040490000035010",
+      "oblast": "Тернопільська область",
+      "partners": [
+        {
+          "partner_name": "Iserlohn",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=27",
+          "confidence": "registry",
+          "ua_name_de": "Ternopil",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Erftstadt",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=27",
+          "confidence": "registry",
+          "ua_name_de": "Ternopil",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Ronneby",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2026",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/swedish-ronneby-brings-entrepreneurship-expertise-to-ternopil-its-partner-city/",
+          "confidence": "news_mention",
+          "quote": "Swedish Ronneby brings entrepreneurship expertise to Ternopil, its partner city",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 3
+    },
+    {
+      "name": "Трускавецька міська територіальна громада",
+      "short": "Трускавецька",
+      "katottg": "UA46020090000057315",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Barth",
+          "partner_country": "DE",
+          "partner_region": "Mecklenburg-Vorpommern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2017",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=26",
+          "confidence": "registry",
+          "ua_name_de": "Truskawez",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Wathlingen (Samtgemeinde)",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2005",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=26",
+          "confidence": "registry",
+          "ua_name_de": "Truskawez",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Wathlingen (Samtgemeinde)",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2016",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=26",
+          "confidence": "registry",
+          "ua_name_de": "Truskawez",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 3
+    },
+    {
+      "name": "Уманська міська територіальна громада",
+      "short": "Уманська",
+      "katottg": "UA71060210000032972",
+      "oblast": "Черкаська область",
+      "partners": [
+        {
+          "partner_name": "Koblenz",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=377",
+          "confidence": "registry",
+          "ua_name_de": "Uman",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Norderstedt",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=377",
+          "confidence": "registry",
+          "ua_name_de": "Uman",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Kristianstad",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2025",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/swedish-kristianstad-and-ukrainian-uman-are-officially-twin-cities/",
+          "confidence": "news_mention",
+          "quote": "Swedish Kristianstad and Ukrainian Uman are officially twin cities",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/uman-territorial-community/",
+      "partner_count": 3
+    },
+    {
+      "name": "Херсонська міська територіальна громада",
+      "short": "Херсонська",
+      "katottg": "UA65100150000057191",
+      "oblast": "Херсонська область",
+      "partners": [
+        {
+          "partner_name": "Bonn",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=281",
+          "confidence": "registry",
+          "ua_name_de": "Cherson",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Kiel",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=281",
+          "confidence": "registry",
+          "ua_name_de": "Cherson",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Norrköping",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2025",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/kherson-and-norrkoping-deepen-cooperation-from-innovation-to-inclusion/",
+          "confidence": "news_mention",
+          "quote": "Kherson and Norrköping deepen cooperation: from innovation to inclusion",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/kherson-territorial-community/",
+      "partner_count": 3
+    },
+    {
+      "name": "Хотинська міська територіальна громада",
+      "short": "Хотинська",
+      "katottg": "UA73040190000062796",
+      "oblast": "Чернівецька область",
+      "partners": [
+        {
+          "partner_name": "Teltow",
+          "partner_country": "DE",
+          "partner_region": "Brandenburg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=271",
+          "confidence": "registry",
+          "ua_name_de": "Chotyn",
+          "match": "translit"
+        },
+        {
+          "partner_name": "Ahlen",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=271",
+          "confidence": "registry",
+          "ua_name_de": "Chotyn",
+          "match": "translit"
+        },
+        {
+          "partner_name": "Eslöv",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2025",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/khotyn-and-eslov-become-sister-cities-a-new-swedish-ukrainian-partnership/",
+          "confidence": "news_mention",
+          "quote": "Khotyn and Eslöv become sister cities: a new Swedish-Ukrainian partnership",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 3
+    },
+    {
+      "name": "Чернівецька міська територіальна громада",
+      "short": "Чернівецька",
+      "katottg": "UA73060610000066784",
+      "oblast": "Чернівецька область",
+      "partners": [
+        {
+          "partner_name": "Schwaben (Bezirk)",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "1997",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=53",
+          "confidence": "registry",
+          "ua_name_de": "Tscherniwzi (Oblast)",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Mannheim",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2016",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=55",
+          "confidence": "registry",
+          "ua_name_de": "Tscherniwzi",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Düsseldorf",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=55",
+          "confidence": "registry",
+          "ua_name_de": "Tscherniwzi",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 3
+    },
+    {
+      "name": "Бердичівська міська територіальна громада",
+      "short": "Бердичівська",
+      "katottg": "UA18020030000035625",
+      "oblast": "Житомирська область",
+      "partners": [
+        {
+          "partner_name": "Konstanz",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=400",
+          "confidence": "registry",
+          "ua_name_de": "Berdytschiw",
+          "match": "translit"
+        },
+        {
+          "partner_name": "Buchholz",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=400",
+          "confidence": "registry",
+          "ua_name_de": "Berdytschiw",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Броварська міська територіальна громада",
+      "short": "Броварська",
+      "katottg": "UA32060050000030591",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Jena",
+          "partner_country": "DE",
+          "partner_region": "Thüringen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=222",
+          "confidence": "registry",
+          "ua_name_de": "Browary",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Erlangen",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=222",
+          "confidence": "registry",
+          "ua_name_de": "Browary",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Білогородська сільська територіальна громада",
+      "short": "Білогородська",
+      "katottg": "UA32080010000060215",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Lohmen",
+          "partner_country": "DE",
+          "partner_region": "Mecklenburg-Vorpommern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=153",
+          "confidence": "registry",
+          "ua_name_de": "Bilohorodka",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Bures-sur-Yvette",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2026",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/bilohorodka-and-bures-sur-yvette-have-signed-a-cooperation-agreement/",
+          "confidence": "news_mention",
+          "quote": "Bilohorodka and Bures-sur-Yvette have signed a cooperation agreement",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/bilohorodka-community/",
+      "partner_count": 2
+    },
+    {
+      "name": "Білоцерківська міська територіальна громада",
+      "short": "Білоцерківська",
+      "katottg": "UA53060010000060316",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Braunschweig",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=202",
+          "confidence": "registry",
+          "ua_name_de": "Bila Zerkwa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Lüneburg",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=202",
+          "confidence": "registry",
+          "ua_name_de": "Bila Zerkwa",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Вишгородська міська територіальна громада",
+      "short": "Вишгородська",
+      "katottg": "UA32100010000094393",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Lörrach",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "1999",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=66",
+          "confidence": "registry",
+          "ua_name_de": "Wyschhorod",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Eichenau",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "1992",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=66",
+          "confidence": "registry",
+          "ua_name_de": "Wyschhorod",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Вознесенська міська територіальна громада",
+      "short": "Вознесенська",
+      "katottg": "UA48040070000056126",
+      "oblast": "Миколаївська область",
+      "partners": [
+        {
+          "partner_name": "Ditzingen",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=455",
+          "confidence": "registry",
+          "ua_name_de": "Wosnesensk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Geldern",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=545",
+          "confidence": "registry",
+          "ua_name_de": "Wosnessensk",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Володимир-Волинська міська територіальна громада",
+      "short": "Володимир-Волинська",
+      "katottg": "UA07020010000096841",
+      "oblast": "Волинська область",
+      "partners": [
+        {
+          "partner_name": "Zwickau",
+          "partner_country": "DE",
+          "partner_region": "Sachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2013",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=74",
+          "confidence": "registry",
+          "ua_name_de": "Wolodymyr",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Monheim am Rhein",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=74",
+          "confidence": "registry",
+          "ua_name_de": "Wolodymyr",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Житомирська міська територіальна громада",
+      "short": "Житомирська",
+      "katottg": "UA18040190000029215",
+      "oblast": "Житомирська область",
+      "partners": [
+        {
+          "partner_name": "Dortmund",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=198",
+          "confidence": "registry",
+          "ua_name_de": "Schytomyr",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Kassel",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=198",
+          "confidence": "registry",
+          "ua_name_de": "Schytomyr",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/zhytomyr-territorial-community/",
+      "partner_count": 2
+    },
+    {
+      "name": "Запорізька міська територіальна громада",
+      "short": "Запорізька",
+      "katottg": "UA23060070000082704",
+      "oblast": "Запорізька область",
+      "partners": [
+        {
+          "partner_name": "Oberhausen",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "1986",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=54",
+          "confidence": "registry",
+          "ua_name_de": "Saporischschja",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Magdeburg",
+          "partner_country": "DE",
+          "partner_region": "Sachsen-Anhalt",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=54",
+          "confidence": "registry",
+          "ua_name_de": "Saporischschja",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Кам’янець-Подільська міська територіальна громада",
+      "short": "Кам’янець-Подільська",
+      "katottg": "UA68020110000071202",
+      "oblast": "Хмельницька область",
+      "partners": [
+        {
+          "partner_name": "Wiesbaden",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "1991",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=94",
+          "confidence": "registry",
+          "ua_name_de": "Kamjanez-Podilskyj",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Esslingen am Neckar",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=94",
+          "confidence": "registry",
+          "ua_name_de": "Kamjanez-Podilskyj",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Кам’янка-Бузька міська територіальна громада",
+      "short": "Кам’янка-Бузька",
+      "katottg": "UA46060190000038354",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Alzenau",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2019",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=218",
+          "confidence": "registry",
+          "ua_name_de": "Kamjanka-Buska",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Großenkneten",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=218",
+          "confidence": "registry",
+          "ua_name_de": "Kamjanka-Buska",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Коблівська сільська територіальна громада",
+      "short": "Коблівська",
+      "katottg": "UA48060090000097375",
+      "oblast": "Миколаївська область",
+      "partners": [
+        {
+          "partner_name": "Ostseebad Heringsdorf",
+          "partner_country": "DE",
+          "partner_region": "Mecklenburg-Vorpommern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2020",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=137",
+          "confidence": "registry",
+          "ua_name_de": "Koblewe",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Endingen am Kaiserstuhl",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=137",
+          "confidence": "registry",
+          "ua_name_de": "Koblewe",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Коломийська міська територіальна громада",
+      "short": "Коломийська",
+      "katottg": "UA26080070000092582",
+      "oblast": "Івано-Франківська область",
+      "partners": [
+        {
+          "partner_name": "Lüdinghausen",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=152",
+          "confidence": "registry",
+          "ua_name_de": "Kolomyja",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Ingelheim am Rhein",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=474",
+          "confidence": "registry",
+          "ua_name_de": "Kolomyja",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Кременчуцька міська територіальна громада",
+      "short": "Кременчуцька",
+      "katottg": "UA53020110000092487",
+      "oblast": "Полтавська область",
+      "partners": [
+        {
+          "partner_name": "Gelsenkirchen",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=262",
+          "confidence": "registry",
+          "ua_name_de": "Krementschuk",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Tübingen",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=262",
+          "confidence": "registry",
+          "ua_name_de": "Krementschuk",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Новомосковська міська територіальна громада",
+      "short": "Новомосковська",
+      "katottg": "UA12100070000011492",
+      "oblast": "Дніпропетровська область",
+      "partners": [
+        {
+          "partner_name": "Wesel",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=294",
+          "confidence": "registry",
+          "ua_name_de": "Samar",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Brandenburg an der Havel",
+          "partner_country": "DE",
+          "partner_region": "Brandenburg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=294",
+          "confidence": "registry",
+          "ua_name_de": "Samar",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Пирятинська міська територіальна громада",
+      "short": "Пирятинська",
+      "katottg": "UA53040090000048649",
+      "oblast": "Полтавська область",
+      "partners": [
+        {
+          "partner_name": "Pfungstadt",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=532",
+          "confidence": "registry",
+          "ua_name_de": "Pyrjatyn",
+          "match": "translit"
+        },
+        {
+          "partner_name": "Wedemark",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=532",
+          "confidence": "registry",
+          "ua_name_de": "Pyrjatyn",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Тлумацька міська територіальна громада",
+      "short": "Тлумацька",
+      "katottg": "UA26040350000024417",
+      "oblast": "Івано-Франківська область",
+      "partners": [
+        {
+          "partner_name": "Kirchlinteln",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=511",
+          "confidence": "registry",
+          "ua_name_de": "Tlumatsch",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Einbeck",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=511",
+          "confidence": "registry",
+          "ua_name_de": "Tlumatsch",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Ужгородська міська територіальна громада",
+      "short": "Ужгородська",
+      "katottg": "UA21100230000083101",
+      "oblast": "Закарпатська область",
+      "partners": [
+        {
+          "partner_name": "Darmstadt",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "1992",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=19",
+          "confidence": "registry",
+          "ua_name_de": "Uschhorod",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Fürth",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=19",
+          "confidence": "registry",
+          "ua_name_de": "Uschhorod",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Фастівська міська територіальна громада",
+      "short": "Фастівська",
+      "katottg": "UA32140150000040954",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Meerbusch",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=339",
+          "confidence": "registry",
+          "ua_name_de": "Fastiw",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Kempten",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=339",
+          "confidence": "registry",
+          "ua_name_de": "Fastiw",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Хмельницька міська територіальна громада",
+      "short": "Хмельницька",
+      "katottg": "UA68040470000053519",
+      "oblast": "Хмельницька область",
+      "partners": [
+        {
+          "partner_name": "Stuttgart",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=270",
+          "confidence": "registry",
+          "ua_name_de": "Chmelnyzkyj",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Dresden",
+          "partner_country": "DE",
+          "partner_region": "Sachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=270",
+          "confidence": "registry",
+          "ua_name_de": "Chmelnyzkyj",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Черкаська міська територіальна громада",
+      "short": "Черкаська",
+      "katottg": "UA71080490000022110",
+      "oblast": "Черкаська область",
+      "partners": [
+        {
+          "partner_name": "Bielefeld",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=196",
+          "confidence": "registry",
+          "ua_name_de": "Tscherkassy",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Steinfurt (Kreis)",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=196",
+          "confidence": "registry",
+          "ua_name_de": "Tscherkassy",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Чернігівська міська територіальна громада",
+      "short": "Чернігівська",
+      "katottg": "UA74100390000073425",
+      "oblast": "Чернігівська область",
+      "partners": [
+        {
+          "partner_name": "Memmingen",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "1991",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=35",
+          "confidence": "registry",
+          "ua_name_de": "Tschernihiw",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Aachen",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=35",
+          "confidence": "registry",
+          "ua_name_de": "Tschernihiw",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Чугуївська міська територіальна громада",
+      "short": "Чугуївська",
+      "katottg": "UA63140170000087785",
+      "oblast": "Харківська область",
+      "partners": [
+        {
+          "partner_name": "Nordhorn",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=434",
+          "confidence": "registry",
+          "ua_name_de": "Tschuhujiw",
+          "match": "translit"
+        },
+        {
+          "partner_name": "Danderyd",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2025",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/chuhuiv-and-danderyd-become-partners-a-new-ukrainian-swedish-municipal-partnership/",
+          "confidence": "news_mention",
+          "quote": "Chuhuiv and Danderyd become partners: a new Ukrainian-Swedish municipal partnership",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Шепетівська міська територіальна громада",
+      "short": "Шепетівська",
+      "katottg": "UA68060330000029010",
+      "oblast": "Хмельницька область",
+      "partners": [
+        {
+          "partner_name": "Wetzlar",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=417",
+          "confidence": "registry",
+          "ua_name_de": "Schepetiwka",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Ловіч",
+          "partner_country": "PL",
+          "partner_region": "Польща",
+          "type": "strategy_mention",
+          "since": null,
+          "source": "strategy",
+          "source_url": null,
+          "confidence": "strategy_mention",
+          "quote": "місто Ловіч (Польща)"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Яворівська міська територіальна громада",
+      "short": "Яворівська",
+      "katottg": "UA46140110000063568",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Uffenheim",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2017",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=97",
+          "confidence": "registry",
+          "ua_name_de": "Jaworiw",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Winzer",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=97",
+          "confidence": "registry",
+          "ua_name_de": "Jaworiw",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Яремчанська міська територіальна громада",
+      "short": "Яремчанська",
+      "katottg": "UA26120150000021671",
+      "oblast": "Івано-Франківська область",
+      "partners": [
+        {
+          "partner_name": "Todtmoos",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=415",
+          "confidence": "registry",
+          "ua_name_de": "Jaremtsche",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Niebüll",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=415",
+          "confidence": "registry",
+          "ua_name_de": "Jaremtsche",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 2
+    },
+    {
+      "name": "Ізюмська міська територіальна громада",
+      "short": "Ізюмська",
+      "katottg": "UA63040090000021240",
+      "oblast": "Харківська область",
+      "partners": [
+        {
+          "partner_name": "Trier",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=470",
+          "confidence": "registry",
+          "ua_name_de": "Isjum",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Ірпінська міська територіальна громада",
+      "short": "Ірпінська",
+      "katottg": "UA32080150000035443",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Borna",
+          "partner_country": "DE",
+          "partner_region": "Sachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "1976",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=37",
+          "confidence": "registry",
+          "ua_name_de": "Irpin",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/irpin-territorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Ічнянська міська територіальна громада",
+      "short": "Ічнянська",
+      "katottg": "UA74080030000040714",
+      "oblast": "Чернігівська область",
+      "partners": [
+        {
+          "partner_name": "Grevesmühlen",
+          "partner_country": "DE",
+          "partner_region": "Mecklenburg-Vorpommern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=550",
+          "confidence": "registry",
+          "ua_name_de": "Itschnja",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Арцизька міська територіальна громада",
+      "short": "Арцизька",
+      "katottg": "UA51060010000033212",
+      "oblast": "Одеська область",
+      "partners": [
+        {
+          "partner_name": "Metzingen, Bad Urach, Dettingen an der Erms (Viereckpartnerschaft)",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=468",
+          "confidence": "registry",
+          "ua_name_de": "Arzys",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Барська міська територіальна громада",
+      "short": "Барська",
+      "katottg": "UA05060010000053179",
+      "oblast": "Вінницька область",
+      "partners": [
+        {
+          "partner_name": "Dorsten",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=199",
+          "confidence": "registry",
+          "ua_name_de": "Bar",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Баштанська міська територіальна громада",
+      "short": "Баштанська",
+      "katottg": "UA48020010000091496",
+      "oblast": "Миколаївська область",
+      "partners": [
+        {
+          "partner_name": "Korntal-Münchlingen",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=289",
+          "confidence": "registry",
+          "ua_name_de": "Baschtanka",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Берегівська міська територіальна громада",
+      "short": "Берегівська",
+      "katottg": "UA21020030000019624",
+      "oblast": "Закарпатська область",
+      "partners": [
+        {
+          "partner_name": "Offenbach (Landkreis)",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=313",
+          "confidence": "registry",
+          "ua_name_de": "Berehowe",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Бериславська міська територіальна громада",
+      "short": "Бериславська",
+      "katottg": "UA65020010000060480",
+      "oblast": "Херсонська область",
+      "partners": [
+        {
+          "partner_name": "Eutin",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=513",
+          "confidence": "registry",
+          "ua_name_de": "Beryslaw",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Боратинська сільська територіальна громада",
+      "short": "Боратинська",
+      "katottg": "UA07080030000051738",
+      "oblast": "Волинська область",
+      "partners": [
+        {
+          "partner_name": "Sprendlingen-Gensingen",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2021",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=113",
+          "confidence": "registry",
+          "ua_name_de": "Boratyn",
+          "match": "translit"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/boratyn-territorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Бориспільська міська територіальна громада",
+      "short": "Бориспільська",
+      "katottg": "UA32040010000010116",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Flensburg",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=321",
+          "confidence": "registry",
+          "ua_name_de": "Boryspil",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Боярська міська територіальна громада",
+      "short": "Боярська",
+      "katottg": "UA32140030000074165",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Reinbek",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2026",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=577",
+          "confidence": "registry",
+          "ua_name_de": "Bojarka",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Буська міська територіальна громада",
+      "short": "Буська",
+      "katottg": "UA46040030000058332",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Homberg (Efze)",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=343",
+          "confidence": "registry",
+          "ua_name_de": "Busk",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Бучанська міська територіальна громада",
+      "short": "Бучанська",
+      "katottg": "UA32080070000050759",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Bergisch-Gladbach",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=28",
+          "confidence": "registry",
+          "ua_name_de": "Butscha",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Бучацька міська територіальна громада",
+      "short": "Бучацька",
+      "katottg": "UA61060070000098188",
+      "oblast": "Тернопільська область",
+      "partners": [
+        {
+          "partner_name": "Altenstadt",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=580",
+          "confidence": "registry",
+          "ua_name_de": "Butschatsch",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Білгород-Дністровська міська територіальна громада",
+      "short": "Білгород-Дністровська",
+      "katottg": "UA51040010000016896",
+      "oblast": "Одеська область",
+      "partners": [
+        {
+          "partner_name": "Ulm / Neu Ulm",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=329",
+          "confidence": "registry",
+          "ua_name_de": "Bilhorod-Dnistrowskyj",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Васильківська міська територіальна громада",
+      "short": "Васильківська",
+      "katottg": "UA32120030000030458",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Oberursel (Taunus)",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=568",
+          "confidence": "registry",
+          "ua_name_de": "Wassylkiw",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Верховинська селищна територіальна громада",
+      "short": "Верховинська",
+      "katottg": "UA26020030000088465",
+      "oblast": "Івано-Франківська область",
+      "partners": [
+        {
+          "partner_name": "Radolfshausen (Samtgemeinde)",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=333",
+          "confidence": "registry",
+          "ua_name_de": "Werchowyna",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Воловецька селищна територіальна громада",
+      "short": "Воловецька",
+      "katottg": "UA21040050000032164",
+      "oblast": "Закарпатська область",
+      "partners": [
+        {
+          "partner_name": "Bad Endorf",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2001",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=217",
+          "confidence": "registry",
+          "ua_name_de": "Wolowez",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Вільховецька сільська територіальна громада",
+      "short": "Вільховецька",
+      "katottg": "UA21080050000056542",
+      "oblast": "Закарпатська область",
+      "partners": [
+        {
+          "partner_name": "Ettenheim",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=370",
+          "confidence": "registry",
+          "ua_name_de": "Wilchowezka",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Горохівська міська територіальна громада",
+      "short": "Горохівська",
+      "katottg": "UA07080070000052255",
+      "oblast": "Волинська область",
+      "partners": [
+        {
+          "partner_name": "Rupertwinkel (Region)",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=402",
+          "confidence": "registry",
+          "ua_name_de": "Horochiw",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Горішньоплавнівська міська територіальна громада",
+      "short": "Горішньоплавнівська",
+      "katottg": "UA53020030000081709",
+      "oblast": "Полтавська область",
+      "partners": [
+        {
+          "partner_name": "Friedrichshafen",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=488",
+          "confidence": "registry",
+          "ua_name_de": "Horischni Plawni",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Гусятинська селищна територіальна громада",
+      "short": "Гусятинська",
+      "katottg": "UA61060130000045755",
+      "oblast": "Тернопільська область",
+      "partners": [
+        {
+          "partner_name": "Baruth/Mark",
+          "partner_country": "DE",
+          "partner_region": "Brandenburg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=287",
+          "confidence": "registry",
+          "ua_name_de": "Husjatyn",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Гірська міська територіальна громада",
+      "short": "Гірська",
+      "katottg": "UA44120010000044132",
+      "oblast": "Луганська область",
+      "partners": [
+        {
+          "partner_name": "Vörstetten",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=292",
+          "confidence": "registry",
+          "ua_name_de": "Hirska",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/hirska-territorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Дніпровська міська територіальна громада",
+      "short": "Дніпровська",
+      "katottg": "UA12020010000033698",
+      "oblast": "Дніпропетровська область",
+      "partners": [
+        {
+          "partner_name": "Köln",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=186",
+          "confidence": "registry",
+          "ua_name_de": "Dnipro",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/dnipro-territorial-community-2/",
+      "partner_count": 1
+    },
+    {
+      "name": "Дніпрорудненська міська територіальна громада",
+      "short": "Дніпрорудненська",
+      "katottg": "UA23040090000031823",
+      "oblast": "Запорізька область",
+      "partners": [
+        {
+          "partner_name": "Bad Oldesloe",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=547",
+          "confidence": "registry",
+          "ua_name_de": "Dniprorudne",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/dniprorudne-territorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Доброславська селищна територіальна громада",
+      "short": "Доброславська",
+      "katottg": "UA51100170000087238",
+      "oblast": "Одеська область",
+      "partners": [
+        {
+          "partner_name": "Schwentinental",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=381",
+          "confidence": "registry",
+          "ua_name_de": "Dobroslaw",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Долинська міська територіальна громада",
+      "short": "Долинська",
+      "katottg": "UA26060130000047466",
+      "oblast": "Івано-Франківська область",
+      "partners": [
+        {
+          "partner_name": "Flecken Delligsen",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=516",
+          "confidence": "registry",
+          "ua_name_de": "Dolyna",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/dolynske-territorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Дрогобицька міська територіальна громада",
+      "short": "Дрогобицька",
+      "katottg": "UA46020030000019252",
+      "oblast": null,
+      "partners": [
+        {
+          "partner_name": "Greifswald",
+          "partner_country": "DE",
+          "partner_region": "Mecklenburg-Vorpommern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2017",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=67",
+          "confidence": "registry",
+          "ua_name_de": "Drohobytsch",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/drohobych-territorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Звягельська міська територіальна громада",
+      "short": "Звягельська",
+      "katottg": null,
+      "oblast": "Житомирська область",
+      "partners": [
+        {
+          "partner_name": "Ludwigshafen am Rhein",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=267",
+          "confidence": "registry",
+          "ua_name_de": "Swjahel",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Золочівська міська територіальна громада",
+      "short": "Золочівська",
+      "katottg": "UA46040070000032075",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Schöningen",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "1996",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=116",
+          "confidence": "registry",
+          "ua_name_de": "Solotschiw",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Кам’янська міська територіальна громада",
+      "short": "Кам’янська",
+      "katottg": "UA12040150000015189",
+      "oblast": "Дніпропетровська область",
+      "partners": [
+        {
+          "partner_name": "Вупперталь",
+          "partner_country": "DE",
+          "partner_region": "Німеччина, побратимство SKEW",
+          "type": "strategy_mention",
+          "since": null,
+          "source": "strategy",
+          "source_url": "https://kam.gov.ua/ua/main-mediafunc-osxfile.file/pg/100307130893174_p18_1o/1852654016.docx",
+          "confidence": "strategy_mention",
+          "quote": "\nМісто Вупперталь (Німеччина, побратимство SKEW)"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Канівська міська територіальна громада",
+      "short": "Канівська",
+      "katottg": "UA71080150000071745",
+      "oblast": "Черкаська область",
+      "partners": [
+        {
+          "partner_name": "Viersen",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "1993",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=51",
+          "confidence": "registry",
+          "ua_name_de": "Kaniw",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Кобеляцька міська територіальна громада",
+      "short": "Кобеляцька",
+      "katottg": "UA53080130000014699",
+      "oblast": "Полтавська область",
+      "partners": [
+        {
+          "partner_name": "Singen (Hohentwiel)",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "1993",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=114",
+          "confidence": "registry",
+          "ua_name_de": "Kobeljaky",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Козелецька селищна територіальна громада",
+      "short": "Козелецька",
+      "katottg": "UA74100190000086457",
+      "oblast": "Чернігівська область",
+      "partners": [
+        {
+          "partner_name": "Schwetzingen, Oftersheim, Plankstadt (Viereckpartnerschaft)",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=472",
+          "confidence": "registry",
+          "ua_name_de": "Koselez",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Корсунь-Шевченківська міська територіальна громада",
+      "short": "Корсунь-Шевченківська",
+      "katottg": "UA71080170000080118",
+      "oblast": "Черкаська область",
+      "partners": [
+        {
+          "partner_name": "Gifhorn",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "1989",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=12",
+          "confidence": "registry",
+          "ua_name_de": "Korsun-Schewtschenkiwskyj",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Кременецька міська територіальна громада",
+      "short": "Кременецька",
+      "katottg": "UA61020070000092368",
+      "oblast": "Тернопільська область",
+      "partners": [
+        {
+          "partner_name": "Ilsenburg",
+          "partner_country": "DE",
+          "partner_region": "Sachsen-Anhalt",
+          "type": "Kommunalpartnerschaft",
+          "since": "2018",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=22",
+          "confidence": "registry",
+          "ua_name_de": "Kremenez",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Криворізька міська територіальна громада",
+      "short": "Криворізька",
+      "katottg": "UA12060170000091033",
+      "oblast": "Дніпропетровська область",
+      "partners": [
+        {
+          "partner_name": "Duisburg",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=283",
+          "confidence": "registry",
+          "ua_name_de": "Krywyj Rih",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Кропивницька міська територіальна громада",
+      "short": "Кропивницька",
+      "katottg": "UA35040210000014072",
+      "oblast": "Кіровоградська область",
+      "partners": [
+        {
+          "partner_name": "Krefeld",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=298",
+          "confidence": "registry",
+          "ua_name_de": "Kropywnyzkyj",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Кіцманська міська територіальна громада",
+      "short": "Кіцманська",
+      "katottg": "UA73060290000034305",
+      "oblast": "Чернівецька область",
+      "partners": [
+        {
+          "partner_name": "Kaufbeuren",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2018",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=57",
+          "confidence": "registry",
+          "ua_name_de": "Kizman",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Лубенська міська територіальна громада",
+      "short": "Лубенська",
+      "katottg": "UA53040030000088898",
+      "oblast": "Полтавська область",
+      "partners": [
+        {
+          "partner_name": "Raunheim",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=269",
+          "confidence": "registry",
+          "ua_name_de": "Lubny",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Люботинська міська територіальна громада",
+      "short": "Люботинська",
+      "katottg": "UA63120110000043456",
+      "oblast": "Харківська область",
+      "partners": [
+        {
+          "partner_name": "Chaumont",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2025",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/french-chaumont-and-ukrainian-lubotyn-in-kharkiv-region-become-twin-cities/",
+          "confidence": "news_mention",
+          "quote": "French Chaumont and Ukrainian Lubotyn in Kharkiv region become twin cities",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Макарівська селищна територіальна громада",
+      "short": "Макарівська",
+      "katottg": "UA32080190000081428",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Wandlitz",
+          "partner_country": "DE",
+          "partner_region": "Brandenburg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=95",
+          "confidence": "registry",
+          "ua_name_de": "Makariw",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Малинська міська територіальна громада",
+      "short": "Малинська",
+      "katottg": "UA18060130000061781",
+      "oblast": "Житомирська область",
+      "partners": [
+        {
+          "partner_name": "Billerbeck",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=331",
+          "confidence": "registry",
+          "ua_name_de": "Malyn",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/malyn-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Миргородська міська територіальна громада",
+      "short": "Миргородська",
+      "katottg": "UA53060230000098362",
+      "oblast": "Полтавська область",
+      "partners": [
+        {
+          "partner_name": "Langenlonsheim-Stromberg (Verbandsgemeinde)",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=185",
+          "confidence": "registry",
+          "ua_name_de": "Myrhorod",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/myrhorod-terrytorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Моршинська міська територіальна громада",
+      "short": "Моршинська",
+      "katottg": "UA46100130000048262",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Schwalmstadt",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=509",
+          "confidence": "registry",
+          "ua_name_de": "Morschyn",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Мостиська міська територіальна громада",
+      "short": "Мостиська",
+      "katottg": "UA46140030000023506",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Haßberge (Landkreis)",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=556",
+          "confidence": "registry",
+          "ua_name_de": "Mostyska",
+          "match": "translit"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/mostyska-territorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Нікопольська міська територіальна громада",
+      "short": "Нікопольська",
+      "katottg": "UA12080050000062712",
+      "oblast": "Дніпропетровська область",
+      "partners": [
+        {
+          "partner_name": "Leverkusen",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=290",
+          "confidence": "registry",
+          "ua_name_de": "Nikopol",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/nikopol-urban-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Обухівська міська територіальна громада",
+      "short": "Обухівська",
+      "katottg": "UA12020170000068526",
+      "oblast": null,
+      "partners": [
+        {
+          "partner_name": "Radebeul",
+          "partner_country": "DE",
+          "partner_region": "Sachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "1999",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=120",
+          "confidence": "registry",
+          "ua_name_de": "Obuchiw",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Овідіопольська селищна територіальна громада",
+      "short": "Овідіопольська",
+      "katottg": "UA51100250000055079",
+      "oblast": "Одеська область",
+      "partners": [
+        {
+          "partner_name": "Hohenlohekreis (Landkreis)",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=266",
+          "confidence": "registry",
+          "ua_name_de": "Owidiopol",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Остерська міська територіальна громада",
+      "short": "Остерська",
+      "katottg": "UA74100310000091595",
+      "oblast": "Чернігівська область",
+      "partners": [
+        {
+          "partner_name": "Kaltenkirchen",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2026",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=585",
+          "confidence": "registry",
+          "ua_name_de": "Oster",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Охтирська міська територіальна громада",
+      "short": "Охтирська",
+      "katottg": "UA59040110000026694",
+      "oblast": "Сумська область",
+      "partners": [
+        {
+          "partner_name": "Göttingen",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=396",
+          "confidence": "registry",
+          "ua_name_de": "Ochtyrka",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Павлоградська міська територіальна громада",
+      "short": "Павлоградська",
+      "katottg": "UA12120070000057518",
+      "oblast": "Дніпропетровська область",
+      "partners": [
+        {
+          "partner_name": "Rhein-Kreis Neuss (Landkreis)",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=335",
+          "confidence": "registry",
+          "ua_name_de": "Pawlohrad",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Перемишлянська міська територіальна громада",
+      "short": "Перемишлянська",
+      "katottg": "UA46060330000065074",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Hürth",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2018",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=187",
+          "confidence": "registry",
+          "ua_name_de": "Peremyschljany",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Підкамінська селищна територіальна громада",
+      "short": "Підкамінська",
+      "katottg": "UA46040110000093394",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Schäftlarn",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=524",
+          "confidence": "registry",
+          "ua_name_de": "Pidkamin",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Радомишльська міська територіальна громада",
+      "short": "Радомишльська",
+      "katottg": "UA18040450000079138",
+      "oblast": "Житомирська область",
+      "partners": [
+        {
+          "partner_name": "Lindlar",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=155",
+          "confidence": "registry",
+          "ua_name_de": "Radomyschl",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Рахівська міська територіальна громада",
+      "short": "Рахівська",
+      "katottg": "UA21060050000029937",
+      "oblast": "Закарпатська область",
+      "partners": [
+        {
+          "partner_name": "Hörselberg-Hainich",
+          "partner_country": "DE",
+          "partner_region": "Thüringen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2018",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=188",
+          "confidence": "registry",
+          "ua_name_de": "Rachiw",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Самбірська міська територіальна громада",
+      "short": "Самбірська",
+      "katottg": "UA46080130000077112",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Breisach",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2025",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=560",
+          "confidence": "registry",
+          "ua_name_de": "Sambir",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/sambir-territorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Саратська селищна територіальна громада",
+      "short": "Саратська",
+      "katottg": "UA51040190000058077",
+      "oblast": "Одеська область",
+      "partners": [
+        {
+          "partner_name": "Kirchheim unter Teck",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=460",
+          "confidence": "registry",
+          "ua_name_de": "Sarata",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Славутицька міська територіальна громада",
+      "short": "Славутицька",
+      "katottg": "UA32100130000093505",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Franconville",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2025",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/franconville-and-slavutych-partnership/",
+          "confidence": "news_mention",
+          "quote": "Franconville and Slavutych – a New French–Ukrainian Partnership",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/slavutych-urban-territorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Смідинська сільська територіальна громада",
+      "short": "Смідинська",
+      "katottg": "UA07060390000098670",
+      "oblast": "Волинська область",
+      "partners": [
+        {
+          "partner_name": "Albersdorf",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=442",
+          "confidence": "registry",
+          "ua_name_de": "Smidyn",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Сокальська міська територіальна громада",
+      "short": "Сокальська",
+      "katottg": "UA46120110000062257",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Alfter",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=562",
+          "confidence": "registry",
+          "ua_name_de": "Sokal",
+          "match": "translit"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Стрийська міська територіальна громада",
+      "short": "Стрийська",
+      "katottg": "UA46100230000047305",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Düren",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2001",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=197",
+          "confidence": "registry",
+          "ua_name_de": "Stryj",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Сумська міська територіальна громада",
+      "short": "Сумська",
+      "katottg": "UA59080270000073662",
+      "oblast": "Сумська область",
+      "partners": [
+        {
+          "partner_name": "Celle",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "1990",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=201",
+          "confidence": "registry",
+          "ua_name_de": "Sumy",
+          "match": "alias"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/sumy-territorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Харківська міська територіальна громада",
+      "short": "Харківська",
+      "katottg": "UA63120270000028556",
+      "oblast": "Харківська область",
+      "partners": [
+        {
+          "partner_name": "Nürnberg",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "1990",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=44",
+          "confidence": "registry",
+          "ua_name_de": "Charkiw",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Чигиринська міська територіальна громада",
+      "short": "Чигиринська",
+      "katottg": "UA71080510000028067",
+      "oblast": "Черкаська область",
+      "partners": [
+        {
+          "partner_name": "Mayen",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=285",
+          "confidence": "registry",
+          "ua_name_de": "Tschyhyryn",
+          "match": "translit"
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/chyhyryn-territorial-community/",
+      "partner_count": 1
+    },
+    {
+      "name": "Чортківська міська територіальна громада",
+      "short": "Чортківська",
+      "katottg": "UA61060430000094264",
+      "oblast": "Тернопільська область",
+      "partners": [
+        {
+          "partner_name": "Bad Soden-Salmünster",
+          "partner_country": "DE",
+          "partner_region": "Hessen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=304",
+          "confidence": "registry",
+          "ua_name_de": "Tschortkiw",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Шосткинська міська територіальна громада",
+      "short": "Шосткинська",
+      "katottg": "UA59100170000093676",
+      "oblast": "Сумська область",
+      "partners": [
+        {
+          "partner_name": "Frankfurt (Oder)",
+          "partner_country": "DE",
+          "partner_region": "Brandenburg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=276",
+          "confidence": "registry",
+          "ua_name_de": "Schostka",
+          "match": "alias"
+        }
+      ],
+      "partner_count": 1
+    },
+    {
+      "name": "Антонінська селищна територіальна громада",
+      "short": "Антонінська",
+      "katottg": "UA68040010000025276",
+      "oblast": "Хмельницька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/antoniny-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Бабинська сільська територіальна громада",
+      "short": "Бабинська",
+      "katottg": "UA56060010000018261",
+      "oblast": "Рівненська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/babyn-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Балтська міська територіальна громада",
+      "short": "Балтська",
+      "katottg": "UA51120030000075494",
+      "oblast": "Одеська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/balta/",
+      "partner_count": 0
+    },
+    {
+      "name": "Берегометська селищна територіальна громада",
+      "short": "Берегометська",
+      "katottg": "UA73020030000022011",
+      "oblast": "Чернівецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/berehomet-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Бородінська селищна територіальна громада",
+      "short": "Бородінська",
+      "katottg": "UA51060050000061243",
+      "oblast": "Одеська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/borodino-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Брусницька сільська територіальна громада",
+      "short": "Брусницька",
+      "katottg": "UA73020050000061546",
+      "oblast": "Чернівецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/brusnytsia-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Буринська міська територіальна громада",
+      "short": "Буринська",
+      "katottg": "UA59020030000072865",
+      "oblast": "Сумська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/buryn-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Білицька селищна територіальна громада",
+      "short": "Білицька",
+      "katottg": "UA53080010000088479",
+      "oblast": "Полтавська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/bilyaivka-2/",
+      "partner_count": 0
+    },
+    {
+      "name": "Білолуцька селищна територіальна громада",
+      "short": "Білолуцька",
+      "katottg": "UA44140030000070201",
+      "oblast": "Луганська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/bilolutsk-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Білопільська міська територіальна громада",
+      "short": "Білопільська",
+      "katottg": "UA59080030000075526",
+      "oblast": "Сумська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/bilopillia-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Більмацька селищна територіальна громада",
+      "short": "Більмацька",
+      "katottg": "UA23100010000094236",
+      "oblast": "Запорізька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/bilmak-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Галицька міська територіальна громада",
+      "short": "Галицька",
+      "katottg": "UA26040090000025932",
+      "oblast": "Івано-Франківська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/halytsynove-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Глибоцька селищна територіальна громада",
+      "short": "Глибоцька",
+      "katottg": "UA73060150000088691",
+      "oblast": "Чернівецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/hlyboka-settlement-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Глобинська міська територіальна громада",
+      "short": "Глобинська",
+      "katottg": "UA53020010000035494",
+      "oblast": "Полтавська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/hlobyne-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Голобська селищна територіальна громада",
+      "short": "Голобська",
+      "katottg": "UA07060070000063773",
+      "oblast": "Волинська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/holobsk-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Городоцька міська територіальна громада",
+      "short": "Городоцька",
+      "katottg": "UA46060070000047720",
+      "oblast": "Львівська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/horodok-urban-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Губиниська селищна територіальна громада",
+      "short": "Губиниська",
+      "katottg": "UA12100010000093577",
+      "oblast": "Дніпропетровська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/hubynykha-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Добромильська міська територіальна громада",
+      "short": "Добромильська",
+      "katottg": "UA46080050000015399",
+      "oblast": "Львівська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/dobromyl-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Добропільська міська територіальна громада",
+      "short": "Добропільська",
+      "katottg": "UA14160070000097326",
+      "oblast": "Донецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/dobropillia-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Донецька міська територіальна громада",
+      "short": "Донецька",
+      "katottg": "UA63040070000092606",
+      "oblast": "Донецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/donets/",
+      "partner_count": 0
+    },
+    {
+      "name": "Енергодарська міська територіальна громада",
+      "short": "Енергодарська",
+      "katottg": "UA23040110000019947",
+      "oblast": "Запорізька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/enerhodar-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Есманьська селищна територіальна громада",
+      "short": "Есманьська",
+      "katottg": "UA59100070000019079",
+      "oblast": "Сумська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/esman-settlement-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Кагарлицька міська територіальна громада",
+      "short": "Кагарлицька",
+      "katottg": "UA32120050000067577",
+      "oblast": "Київська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/kaharlyk-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Катеринопільська селищна територіальна громада",
+      "short": "Катеринопільська",
+      "katottg": "UA71020150000082849",
+      "oblast": "Черкаська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/katerynopil-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Кодимська міська територіальна громада",
+      "short": "Кодимська",
+      "katottg": "UA51120090000035170",
+      "oblast": "Одеська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/kodyma-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Комарська сільська територіальна громада",
+      "short": "Комарська",
+      "katottg": "UA14040070000032181",
+      "oblast": "Донецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/komarno-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Конотопська міська територіальна громада",
+      "short": "Конотопська",
+      "katottg": "UA59020070000032449",
+      "oblast": "Сумська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/konotop-urban-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Корецька міська територіальна громада",
+      "short": "Корецька",
+      "katottg": "UA56060310000066585",
+      "oblast": "Рівненська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/korets-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Коростенська міська територіальна громада",
+      "short": "Коростенська",
+      "katottg": "UA18060090000061708",
+      "oblast": "Житомирська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/korosten-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Космацька сільська територіальна громада",
+      "short": "Космацька",
+      "katottg": "UA26100030000012148",
+      "oblast": "Івано-Франківська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/kosmach-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Костопільська міська територіальна громада",
+      "short": "Костопільська",
+      "katottg": "UA56060350000045909",
+      "oblast": "Рівненська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/kostopil-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Краматорська міська територіальна громада",
+      "short": "Краматорська",
+      "katottg": "UA14120090000098500",
+      "oblast": "Донецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/kramatorsk-city-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Красноградська міська територіальна громада",
+      "short": "Красноградська",
+      "katottg": "UA63060050000033240",
+      "oblast": "Харківська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/krasnohrad-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Краснокутська селищна територіальна громада",
+      "short": "Краснокутська",
+      "katottg": "UA63020090000096294",
+      "oblast": "Харківська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/krasnokutsk-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Красносільська сільська територіальна громада",
+      "short": "Красносільська",
+      "katottg": "UA51100190000060999",
+      "oblast": "Одеська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/krasnosilka-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Курненська сільська територіальна громада",
+      "short": "Курненська",
+      "katottg": "UA18040270000050167",
+      "oblast": "Житомирська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/kurne-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Лебединська міська територіальна громада",
+      "short": "Лебединська",
+      "katottg": "UA59080110000034361",
+      "oblast": "Сумська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/lebedyn-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Лиманська міська територіальна громада",
+      "short": "Лиманська",
+      "katottg": "UA14120110000031497",
+      "oblast": "Донецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/lyman-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Лисецька селищна територіальна громада",
+      "short": "Лисецька",
+      "katottg": "UA26040210000094444",
+      "oblast": "Івано-Франківська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/lysets-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Локницька сільська територіальна громада",
+      "short": "Локницька",
+      "katottg": "UA56020110000024586",
+      "oblast": "Рівненська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/loknytsia-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Літинська селищна територіальна громада",
+      "short": "Літинська",
+      "katottg": "UA05020130000056031",
+      "oblast": "Вінницька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/lityn-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Марганецька міська територіальна громада",
+      "short": "Марганецька",
+      "katottg": "UA12080010000029838",
+      "oblast": "Дніпропетровська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/marhanets-urban-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Маріупольська міська територіальна громада",
+      "short": "Маріупольська",
+      "katottg": "UA14140050000020560",
+      "oblast": "Донецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/mariupol-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Мелітопольська міська територіальна громада",
+      "short": "Мелітопольська",
+      "katottg": "UA23080070000068953",
+      "oblast": "Запорізька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/melitopol-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Монастириська міська територіальна громада",
+      "short": "Монастириська",
+      "katottg": "UA61060310000061998",
+      "oblast": "Тернопільська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/monastyryshche-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Народицька селищна територіальна громада",
+      "short": "Народицька",
+      "katottg": "UA18060150000038188",
+      "oblast": "Житомирська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/narodychi/",
+      "partner_count": 0
+    },
+    {
+      "name": "Наталинська сільська територіальна громада",
+      "short": "Наталинська",
+      "katottg": "UA63060070000031032",
+      "oblast": "Харківська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/natalyne-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Паланська сільська територіальна громада",
+      "short": "Паланська",
+      "katottg": "UA71060190000086831",
+      "oblast": "Черкаська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/palanka-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Прилуцька міська територіальна громада",
+      "short": "Прилуцька",
+      "katottg": "UA74080130000060606",
+      "oblast": "Чернігівська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/pryluky-urban-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Пролісненська селищна територіальна громада",
+      "short": "Пролісненська",
+      "katottg": null,
+      "oblast": "Харківська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/prolisne-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Путильська селищна територіальна громада",
+      "short": "Путильська",
+      "katottg": "UA73020130000092871",
+      "oblast": "Чернівецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/putyla-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Роганська селищна територіальна громада",
+      "short": "Роганська",
+      "katottg": "UA63120230000080742",
+      "oblast": "Харківська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/rohan-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Рогатинська міська територіальна громада",
+      "short": "Рогатинська",
+      "katottg": "UA26040270000047749",
+      "oblast": "Івано-Франківська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/rohatyn-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Садівська сільська територіальна громада",
+      "short": "Садівська",
+      "katottg": "UA59080230000084731",
+      "oblast": "Сумська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/sad-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Сокільницька сільська територіальна громада",
+      "short": "Сокільницька",
+      "katottg": "UA46060410000052681",
+      "oblast": "Львівська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/sokilnyky-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Соледарська міська територіальна громада",
+      "short": "Соледарська",
+      "katottg": "UA14020090000073988",
+      "oblast": "Донецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/soledar-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Сосницька селищна територіальна громада",
+      "short": "Сосницька",
+      "katottg": "UA74020070000037186",
+      "oblast": "Чернігівська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/sosnytsia-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Спаська сільська територіальна громада",
+      "short": "Спаська",
+      "katottg": "UA26060250000064599",
+      "oblast": "Івано-Франківська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/spas-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Степанська селищна територіальна громада",
+      "short": "Степанська",
+      "katottg": "UA56080210000074337",
+      "oblast": "Рівненська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/stepantsi-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Теофіпольська селищна територіальна громада",
+      "short": "Теофіпольська",
+      "katottg": "UA68040450000097735",
+      "oblast": "Хмельницька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/teofipol-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Теплодарська міська територіальна громада",
+      "short": "Теплодарська",
+      "katottg": "UA51100310000010196",
+      "oblast": "Одеська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/teplodar-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Токмацька міська територіальна громада",
+      "short": "Токмацька",
+      "katottg": "UA23100270000073418",
+      "oblast": "Запорізька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/tokmak-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Усть-Путильська сільська територіальна громада",
+      "short": "Усть-Путильська",
+      "katottg": "UA73020170000016631",
+      "oblast": "Чернівецька область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/ust-putyla-territorial-community/",
+      "partner_count": 0
+    },
+    {
+      "name": "Фонтанська сільська територіальна громада",
+      "short": "Фонтанська",
+      "katottg": "UA51100350000087099",
+      "oblast": "Одеська область",
+      "partners": [],
+      "c4c_url": "https://cities4cities.eu/community/fontanka-territorial-community/",
+      "partner_count": 0
+    }
+  ],
+  "unmatched": [
+    {
+      "ua_name_de": "Jalta",
+      "ua_oblast_lat": "Autonome Republik Krim",
+      "de_name": "Baden-Baden",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Schyroke",
+      "ua_oblast_lat": "Saporiska",
+      "de_name": "Barleben",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Kalusch (Rajon)",
+      "ua_oblast_lat": "Iwano-Frankiwska",
+      "de_name": "Saalfeld-Rudolstadt (Landkreis)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Baryschiwka (Rajon)",
+      "ua_oblast_lat": "Kyjiwska",
+      "de_name": "Pullach im Isartal",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Machniwka",
+      "ua_oblast_lat": "Winnyzka",
+      "de_name": "Mittenwalde",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Onokiwzi",
+      "ua_oblast_lat": "Sakarpatska",
+      "de_name": "Mühlingen",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Schtschyrez",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Gudensberg",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Kyjiw",
+      "ua_oblast_lat": "Kyjiw (Stadt)",
+      "de_name": "Leipzig",
+      "reason": "kyiv_city"
+    },
+    {
+      "ua_name_de": "Wylkowe",
+      "ua_oblast_lat": "Odeska",
+      "de_name": "Furtwangen",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Iwanytschi",
+      "ua_oblast_lat": "Wolynska",
+      "de_name": "Erzhausen",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Kijiw-Petschersk",
+      "ua_oblast_lat": "Kyjiw (Stadt)",
+      "de_name": "Berlin-Charlottenburg-Wilmersdorf",
+      "reason": "non_hromada"
+    },
+    {
+      "ua_name_de": "Kyjiw",
+      "ua_oblast_lat": "Kyjiw (Stadt)",
+      "de_name": "München",
+      "reason": "kyiv_city"
+    },
+    {
+      "ua_name_de": "Woloka",
+      "ua_oblast_lat": "Tscherkasska",
+      "de_name": "Thierhaupten",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Luzk (Rajon)",
+      "ua_oblast_lat": "Wolynska",
+      "de_name": "Stendal (Landkreis)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Solotonoscha",
+      "ua_oblast_lat": "Tscherkasska",
+      "de_name": "Plauen / Stollberg",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Obroschyne",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Schwäbisch Gmünd",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Lwiw (Rajon)",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Saarpfalz (Landkreis)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Tscherniwzi (Rajon)",
+      "ua_oblast_lat": "Tscherniwezka",
+      "de_name": "Rendsburg-Eckernförde (Landkreis)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Sastawna",
+      "ua_oblast_lat": "Tscherniwezka",
+      "de_name": "Heidenrod",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Owrutsch",
+      "ua_oblast_lat": "Schytomyrska",
+      "de_name": "Oberndorf an der Oste",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Winnyzja (Rajon)",
+      "ua_oblast_lat": "Winnyzka",
+      "de_name": "Münster",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Jewpatorija",
+      "ua_oblast_lat": "Autonome Republik Krim",
+      "de_name": "Ludwigsburg",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Semeniwka",
+      "ua_oblast_lat": "Odeska",
+      "de_name": "Ludwigsburg",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Laniwzi",
+      "ua_oblast_lat": "Ternopilska",
+      "de_name": "Lingen",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Winnyzja (Rajon)",
+      "ua_oblast_lat": "Winnyzka",
+      "de_name": "Karlsruhe",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Trostjanez",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Hofstetten",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Jurkiwzi",
+      "ua_oblast_lat": "Tscherniwezka",
+      "de_name": "Herzlake",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Simferopol",
+      "ua_oblast_lat": "Autonome Republik Krim",
+      "de_name": "Heidelberg",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Kyjiw",
+      "ua_oblast_lat": "Kyjiw (Stadt)",
+      "de_name": "Hamburg",
+      "reason": "kyiv_city"
+    },
+    {
+      "ua_name_de": "Solone",
+      "ua_oblast_lat": "Dnipropetrowska",
+      "de_name": "Groß-Gerau",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Winnyzja (Rajon)",
+      "ua_oblast_lat": "Winnyzka",
+      "de_name": "Burgenlandkreis",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Schazk",
+      "ua_oblast_lat": "Wolynska",
+      "de_name": "Brake (Unterweser)",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Donezk",
+      "ua_oblast_lat": "Donezka",
+      "de_name": "Bochum",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Charkiw-Industrialnyj",
+      "ua_oblast_lat": "Charkiwska",
+      "de_name": "Berlin-Steglitz-Zehlendorf",
+      "reason": "non_hromada"
+    },
+    {
+      "ua_name_de": "Kyjiw-Darnyzja",
+      "ua_oblast_lat": "Kyjiw (Stadt)",
+      "de_name": "Berlin-Friedrichshain-Kreuzberg",
+      "reason": "non_hromada"
+    },
+    {
+      "ua_name_de": "Kyjiw",
+      "ua_oblast_lat": "Kyjiw (Stadt)",
+      "de_name": "Berlin",
+      "reason": "kyiv_city"
+    },
+    {
+      "ua_name_de": "Mena",
+      "ua_oblast_lat": "Tschernihiwska",
+      "de_name": "Friedberg",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Tairow",
+      "ua_oblast_lat": "Odeska",
+      "de_name": "Günzburg (Landkreis)",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Nowa Uschyzja",
+      "ua_oblast_lat": "Chmelnytska",
+      "de_name": "Hersbruck",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Tscherwonohrad",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Oldenburg",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Korjukiwka",
+      "ua_oblast_lat": "Tschernihiwska",
+      "de_name": "Waldkirch",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Podilsk",
+      "ua_oblast_lat": "Odeska",
+      "de_name": "Borken",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Trostjanets",
+      "ua_oblast_lat": "Sumy",
+      "de_name": "Montabaur",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Magdalyniwka",
+      "ua_oblast_lat": "Dnipropetrowska",
+      "de_name": "Klixbüll",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Turijsk",
+      "ua_oblast_lat": "Wolynska",
+      "de_name": "Bad Nenndorf",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Tschornomorsk",
+      "ua_oblast_lat": "Odeska",
+      "de_name": "Wismar",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Swenyhorodka",
+      "ua_oblast_lat": "Tscherkasska",
+      "de_name": "Eltville am Rhein",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Zymna Woda",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Ravensburg",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Nadwirna",
+      "ua_oblast_lat": "Iwano-Frankiwska",
+      "de_name": "Northeim",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Nikopol (Rajon)",
+      "ua_oblast_lat": "Dnipropetrowska",
+      "de_name": "Heinsberg (Landkreis)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Rozwadiw",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Niedenstein",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Sabolotzi",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Wabern",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Hluchiwzi",
+      "ua_oblast_lat": "Winnyzka",
+      "de_name": "Haiger",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Kyjiw-Darnyzja",
+      "ua_oblast_lat": "Kyjiw (Stadt)",
+      "de_name": "Berlin-Pankow",
+      "reason": "non_hromada"
+    },
+    {
+      "ua_name_de": "Krasne",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Melsungen",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Perwomajskyj",
+      "ua_oblast_lat": "Charkiwska",
+      "de_name": "Hoyerswerda",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Tschernihiw (Rajon)",
+      "ua_oblast_lat": "Tschernihiwska",
+      "de_name": "Gießen (Landkreis)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Schyroke",
+      "ua_oblast_lat": "Saporiska",
+      "de_name": "Stockelsdorf",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Mykhailo-Kotsjubynske",
+      "ua_oblast_lat": "Tschernihiwska",
+      "de_name": "Spießen-Elversberg",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Perwomajskyj",
+      "ua_oblast_lat": "Charkiwska",
+      "de_name": "Weser-Aue Samtgemeinde",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Werchniodniprowsk",
+      "ua_oblast_lat": "Dnipropetrowska",
+      "de_name": "Bocholt",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Lwiw (Rajon)",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Aachen (Bezirk)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Welyka Dymerka",
+      "ua_oblast_lat": "Kyjiwska",
+      "de_name": "Bad Mergentheim",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Schabo",
+      "ua_oblast_lat": "Odeska",
+      "de_name": "Bad Mergentheim",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Kalusch (Rajon)",
+      "ua_oblast_lat": "Iwano-Frankiwska",
+      "de_name": "Trier-Saarburg (Landkreis)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Iwano-Frankiwsk (Rajon)",
+      "ua_oblast_lat": "Iwano-Frankiwska",
+      "de_name": "Altenkirchen (Landkreis)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Schowti Wody",
+      "ua_oblast_lat": "Dnipropetrowska",
+      "de_name": "Hochtaunuskreis (Landkreis)",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Switlowodsk",
+      "ua_oblast_lat": "Kirowohradska",
+      "de_name": "Schorndorf",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Marhanez",
+      "ua_oblast_lat": "Dnipropetrowska",
+      "de_name": "Brühl",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Mayaky",
+      "ua_oblast_lat": "Odeska",
+      "de_name": "Klein-Winternheim",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Obuchiw (Rajon)",
+      "ua_oblast_lat": "Kyjiwska",
+      "de_name": "Hannover (Region)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Kyjiw-Schewtschenkiwskyj",
+      "ua_oblast_lat": "Kyjiw (Stadt)",
+      "de_name": "Berlin-Mitte",
+      "reason": "non_hromada"
+    },
+    {
+      "ua_name_de": "Nowojaworiwsk",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Troisdorf",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Mamajiwzi",
+      "ua_oblast_lat": "Tscherniwezka",
+      "de_name": "Buchloe",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Saporischschja (Rajon)",
+      "ua_oblast_lat": "Saporiska",
+      "de_name": "Bergheim",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Sarny (Rajon)",
+      "ua_oblast_lat": "Riwnenska",
+      "de_name": "Borken (Landkreis)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Krasnosilka",
+      "ua_oblast_lat": "Odeska",
+      "de_name": "Bad Bentheim",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Krywe Osero",
+      "ua_oblast_lat": "Mykolajiwska",
+      "de_name": "Hambergen, Samtgemeinde",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Schidnyzja",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Bad Camberg",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Pidberesiwzi",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Edertal",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Lytovezh",
+      "ua_oblast_lat": "Wolynska",
+      "de_name": "Saerbeck",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Kopychyntsi",
+      "ua_oblast_lat": "Ternopilska",
+      "de_name": "Rosdorf",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Sbarasch",
+      "ua_oblast_lat": "Ternopilska",
+      "de_name": "Werdau",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Kolomyja, Rajon",
+      "ua_oblast_lat": "Iwano-Frankiwska",
+      "de_name": "Bodenseekreis",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Rudky",
+      "ua_oblast_lat": "Lwiwska",
+      "de_name": "Plankenfels",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Winnyzja (Rajon)",
+      "ua_oblast_lat": "Winnyzka",
+      "de_name": "Karlsruhe (Landkreis)",
+      "reason": "rajon"
+    },
+    {
+      "ua_name_de": "Swaniwka",
+      "ua_oblast_lat": "Donezka",
+      "de_name": "Kahl am Main",
+      "reason": "unmatched"
+    },
+    {
+      "ua_name_de": "Tschernihiw (Rajon)",
+      "ua_oblast_lat": "Tschernihiwska",
+      "de_name": "Segeberg (Landkreis)",
+      "reason": "rajon"
+    }
+  ],
+  "unmatched_cities4cities": [
+    {
+      "ua_name_en": "Ulster County",
+      "partner_name": "Chernivtsi Region",
+      "alt_ua_name_en": "Chernivtsi Region",
+      "alt_partner_name": "Ulster County",
+      "title": "Ulster County and Chernivtsi Region become sister communities",
+      "date": "2025-04-29",
+      "source_url": "https://cities4cities.eu/ulster-county-and-chernivtsi-region-become-sister-communities/",
+      "source": "cities4cities",
+      "confidence": "news_mention",
+      "type": "Cities4Cities partnership",
+      "reason": "unmatched"
+    }
+  ]
+}
