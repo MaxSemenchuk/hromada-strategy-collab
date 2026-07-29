@@ -1,0 +1,24 @@
+{
+  "file": "dream-priorities.json",
+  "generated_at": "2026-07-29T09:30:13Z",
+  "coverage": {
+    "ideas_indexed": 16171,
+    "details_processed": 16171,
+    "ideas_kept_non_cancelled": 14782,
+    "hromadas_with_projects": 1027,
+    "skipped_no_location": 3817,
+    "unmapped_location_hits": 700,
+    "details_cached": 16171
+  },
+  "source": {
+    "api": "https://public-api.dream.gov.ua/marketplace/public/dream",
+    "docs": "https://open-contracting.github.io/dream-api-docs/",
+    "notes": [
+      "Revealed priorities from DREAM project locations (UA-CATOTTG), not strategy PDF text.",
+      "Sectors: WB-ECO (except bare Public Admin B/BH) + title keywords → controlled vocabulary.",
+      "Е-врядування = ЦНАП/Дія/е-послуги only; IT / цифровізація = digital component (excl. med imaging).",
+      "Cancelled ideas excluded. Settlement codes mapped to hromada via KSE ua-admin-map.",
+      "Hypothesis layer — do not treat as approved municipal strategy."
+    ]
+  }
+}

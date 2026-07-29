@@ -18,17 +18,36 @@ Two-layer output graph: громада↔громада + громада↔W3I e
 | PortalUrl | URL | Homepage офіційного порталу громади (derived at export from `StrategyUrl` when host is municipal; aggregators → null; overrides in `data/sources/portal-url-overrides.json`) |
 | StrategyYear | Number | Горизонт/год принятия стратегии |
 | StrategyPeriod | SingleLineText | напр. 2021–2027 |
-| Goals | LongText | 3–5 стратегічних цілей (извлечено LLM) |
+| Goals | LongText | 3–5 стратегічних цілей (і опційно оперативні рядки `N.M`); для matching v7 краще також sidecar `goals-hierarchy.json` |
 | Sectors | LinkToTags | Контролируемый словарь секторов (связь с Tags) |
 | Projects | LongText | Конкретні проєкти из стратегии + ДФРР/Prozorro |
 | Strengths | LongText | Сильні сторони / ресурси |
 | Challenges | LongText | Проблеми / виклики |
 | PartnersMentioned | LongText | Донори, сусідні громади, згадані в стратегії |
-| DonorsPrograms | MultiSelect / CSV | Контрольований словник програм (DOBRE, DECIDE, GIZ, U-LEAD, …). У публічному JSON — масив рядків. Відсутність ≠ «немає програми» (підлога покриття). |
+| DonorsPrograms | MultiSelect / CSV | Контрольований словник: DOBRE, DECIDE, GIZ, U-LEAD, EGAP, DESPRO, ПРООН/UNDP, МФ Відродження, Ре:Форм, JICA, ЄІБ, ЄБРР, AFD. У публічному JSON — масив рядків. Відсутність ≠ «немає програми» (підлога покриття). |
 | MSSAgreements | LongText | Існуючі договори МСС (если найдены) |
 | SourceQuality | SingleSelect | full-strategy / dfrr-proxy / partial / none |
 | ExtractedAt | DateTime | Когда прогнали extraction |
 | RawTextRef | URL/Attachment | Ссылка на исходный PDF/текст |
+
+### Hierarchy sidecar (local structuring JSON + release)
+
+In-session / `scripts/hromada-output/*.json` may include:
+
+```json
+{
+  "strategic_goals": [{"id": "1", "text": "…"}],
+  "operational_goals": [{"parent": "1", "text": "1.1 …"}],
+  "mss_intents": [{"quote": "…", "theme": "вода", "field": "curated"}],
+  "goals": "flattened newline string for NocoDB"
+}
+```
+
+`yarn structure-hromada` flattens hierarchy into `Goals` for NocoDB. Curated gold:
+`data/sources/goals-hierarchy-overrides.json` → `yarn build-goals-hierarchy`.
+Explicit МСС quotes across the corpus: `yarn extract-mss-intents`.
+
+See also [strategy-writing-guide.md](./strategy-writing-guide.md).
 
 ## Controlled sector vocabulary (draft — теги Category=Hromada Sector)
 

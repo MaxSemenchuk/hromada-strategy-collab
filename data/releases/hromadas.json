@@ -95,7 +95,8 @@
     "PartnersMentioned": "GIZ, BMZ (проєкт SUR), ЄБРР, UNICEF, USAID, МВФ, Ukraine Facility (ЄС), ДФРР, НСЗУ",
     "MSSAgreements": null,
     "DonorsPrograms": [
-      "GIZ"
+      "GIZ",
+      "ЄБРР"
     ],
     "SourceQuality": "full-strategy",
     "ExtractedAt": null
@@ -118,7 +119,9 @@
     "Challenges": "Місто розділене річками, обмежена мобільність\nБлизькість до зони бойових дій\nЗастарілі технології промисловості, значні викиди\nЗношеність ЖКГ\nСильна суб'єктність ФПГ у рішеннях\nВідсутність стратегічних інституцій до Стратегії\nПросадні ґрунти, крутий рельєф",
     "PartnersMentioned": "ЄБРР та банки-партнери\nIT-Dnipro Community\nСусідні міста агломерації: Кам'янське, Новомосковськ\nКП «Агентство розвитку Дніпра»",
     "MSSAgreements": null,
-    "DonorsPrograms": [],
+    "DonorsPrograms": [
+      "ЄБРР"
+    ],
     "SourceQuality": "full-strategy",
     "ExtractedAt": null
   },
@@ -189,7 +192,8 @@
     "MSSAgreements": "Текст стратегії Кам'янського НЕ підтверджує агломераційну співпрацю з Дніпром/Новомосковськом — Дніпро згадується лише географічно. Загальна фраза про \"розбудову партнерств, міжмуніципальне співробітництво\" є лише в обласній стратегії, без прив'язки до конкретних громад. Це важливий нюанс: зв'язок Дніпро→Кам'янське односторонній (є в тексті Дніпра, немає у тексті Кам'янського).",
     "DonorsPrograms": [
       "GIZ",
-      "ПРООН/UNDP"
+      "ПРООН/UNDP",
+      "ЄІБ"
     ],
     "SourceQuality": "full-strategy",
     "ExtractedAt": null
@@ -402,7 +406,11 @@
     "MSSAgreements": "Формальної угоди МСС немає — лише перспективний план формалізації «Одеської агломерації» із сусідніми громадами Одеського району, що залежить від закону про агломерації.",
     "DonorsPrograms": [
       "GIZ",
-      "ПРООН/UNDP"
+      "ПРООН/UNDP",
+      "JICA",
+      "ЄІБ",
+      "ЄБРР",
+      "AFD"
     ],
     "SourceQuality": "full-strategy",
     "ExtractedAt": null
@@ -500,7 +508,8 @@
     "PartnersMentioned": "JICA, UNDP, VNG International (Нідерланди) + АМУ\nСоюз Балтійських Міст (UBC), мережа Cities4Cities",
     "MSSAgreements": null,
     "DonorsPrograms": [
-      "ПРООН/UNDP"
+      "ПРООН/UNDP",
+      "JICA"
     ],
     "SourceQuality": "full-strategy",
     "ExtractedAt": null
@@ -671,7 +680,10 @@
     "Challenges": "Низькі доходи населення, низька експортна орієнтація\nЗастаріла ЖКГ, переповнений полігон\nВідсутність єдиної політики реінтеграції ветеранів\nВійськова загроза з півночі",
     "PartnersMentioned": "Рада Європи (розробник стратегії), ЄІБ, ЄБРР\nCEDOS, «Алгоритм Дій»",
     "MSSAgreements": null,
-    "DonorsPrograms": [],
+    "DonorsPrograms": [
+      "ЄІБ",
+      "ЄБРР"
+    ],
     "SourceQuality": "full-strategy",
     "ExtractedAt": null
   },
@@ -694,7 +706,8 @@
     "PartnersMentioned": "ЄБРР, Світовий банк, Посольство Франції, НЕФКО, GIZ/BMZ\n12 міст-побратимів (Бидгощ, Гірін, Мадаба та ін.)",
     "MSSAgreements": "Формальних договорів МСС із сусідніми українськими громадами не знайдено — лише міжнародні побратимські угоди.",
     "DonorsPrograms": [
-      "GIZ"
+      "GIZ",
+      "ЄБРР"
     ],
     "SourceQuality": "full-strategy",
     "ExtractedAt": null

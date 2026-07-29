@@ -35,33 +35,32 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
    persist with [scripts/structure-hromada-strategy.ts](scripts/structure-hromada-strategy.ts)
    (`--json` → NocoDB). No external LLM API in the repo path.
 3. **Match** — compute pairwise similarity on the `Goals` text. Final method: mean-centered,
-   sub-goal-level embeddings (`intfloat/multilingual-e5-small`, local, no API cost) —
-   materially better than raw TF-IDF or raw (non-centered) embeddings. See
+   sub-goal-level embeddings (`intfloat/multilingual-e5-small`, local, no API cost),
+   hierarchy-aware when operational lines exist (`goals-hierarchy.json`). See
    [Methodology notes](#methodology-notes) for why the simpler approaches failed.
 4. **Validate** — score known, registry-confirmed МСС agreements against the model's
    own ranking. If a real agreement doesn't rank near the top, that's a finding about
    the method's limits, not noise to explain away.
 
-## Status (as of 2026-07-24)
+## Status (as of 2026-07-29)
 
 - **1,469 mainland hromadas** in the metadata layer (KATOTTG code, oblast, rayon,
   type, population) — effectively the full universe, not a sample.
-- **77 hromadas** text-mined for strategy content: **55** full-strategy, **13**
+- **77 hromadas** text-mined for strategy content: **59** full-strategy, **9**
   partial, **9** proxy-info; **68** have non-empty `Goals` for matching. (Honest
   retrieval nulls are recorded separately where no strategy could be found.)
 - **174 hromadas** (12%) tagged in NocoDB with at least one donor/technical-assistance
   program (DOBRE, DECIDE, GIZ, ПРООН/UNDP, EGAP, DESPRO, МФ Відродження, U-LEAD,
-  Ре:Форм) — a floor, not a ceiling; field is not yet in the public JSON export.
-- Matching **v6** (`0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`):
-  **2,278** edges in `data/releases/matching-edges.json`. Known validation pairs
-  rank **#5–#11** of that list (tourism trio + Slobozhanske↔Obukhivka recovered
-  via geo/network weights).
-- Strongest hand-reviewed new lead: **Галицька↔Дубовецька** (named shared water
-  project in source text). Auto top score also surfaces neighbors like
-  Вижницька↔Косівська — treat as hypotheses until manually checked.
+  Ре:Форм, JICA, ЄІБ, ЄБРР, AFD) — a floor, not a ceiling.
+- Matching **v7** (`0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`):
+  goals_cosine prefers operational lines when hierarchy is present
+  (`goals-hierarchy.json`). Combined score weights unchanged from v6.
+- Extra layers (not folded into combined `score`):
+  **complementary** (resource/DREAM ↔ Challenges), **explicit-ask** (МСС language
+  in strategy text), **resources** / **DREAM priorities** releases.
 - Stakeholder site under [`docs/`](docs/) (GitHub Pages): landing · matches ·
-  funds · PIN map. Product decision still open — this remains
-  pilot / concept-validation stage.
+  funds · resources · PIN map (four hypothesis overlays). Product decision still
+  open — this remains pilot / concept-validation stage.
 
 **Read this before reusing the data:** the 77-hromada text-mined subset is a
 pilot sample, not a completed sweep of the 1,469 — most rows will have no
@@ -86,15 +85,18 @@ scripts/
 ├── retrieval/                           # CKAN search, download-raw, fetch-mss-registry, batch queue
 └── analysis/                            # one-off Python: KATOTTG merge, matching, PIN map build
 data/
-├── sources/       # reference registries (KATOTTG classifier extract, Tags table dump)
+├── sources/       # reference registries (KATOTTG classifier extract, Tags table dump, hierarchy overrides)
 ├── releases/      # THE dataset — canonical, current, CC BY 4.0 (see data/releases/MANIFEST.md)
 ├── cache/         # gitignored re-fetchable sources (KSE pulls, МСС registry XLSX, …)
 └── research-log/  # dated growth snapshots (7→13→23→30→46→54 hromadas) — provenance, not the dataset
 docs/                             # GitHub Pages site root (see docs/README.md)
 ├── index.html                    # landing «О проєкті» (all stakeholder audiences)
-├── matches.html                  # known pairs + top matching hypotheses
+├── matches.html                  # known pairs + thematic/operational/complementary/explicit-ask
 ├── funds.html                    # donor portfolio: shared next grant / bridges / hubs
-├── mss-pin-matching-graph.html   # full PIN map + matching overlay
+├── resources.html                # KSE resource proxies × DREAM priorities
+├── strategy-writing-guide.md     # how to write strategies that surface МСС signals
+├── corpus-growth.md              # priority corpus growth checklist
+├── mss-pin-matching-graph.html   # full PIN map + matching overlays
 ├── hromada-project-passport.html # legacy redirect → index.html
 ├── hromadas-schema.md            # field schema, controlled vocab, data-source notes
 ├── external-data-sources.md      # findings on external datasets (e.g. KSE-Loc-Data-Hub)
@@ -190,20 +192,37 @@ yarn export-hromadas:snapshot
 
 # Recompute matching edges (v6: goals + KSE geo + KSE mss network)
 # Combined score ≠ pure strategy match — also writes track labels + dual slices
+# export-matching-edges also adds fiscal/DREAM operational boost fields (score unchanged)
 yarn match && yarn export-matching-edges && yarn test-known-pairs && yarn report-pin-corpus && yarn test-tracks && yarn build-matches-preview
 
-# Donor/fund portfolio synergy slices (needs DonorsPrograms in hromadas.json)
-yarn donor-synergy
+# Hierarchy + explicit МСС language + complementary (separate from combined score)
+yarn build-goals-hierarchy
+yarn extract-mss-intents
+yarn complementary-match
+yarn graph-pin-matching
+
+# Structural proxies (KSE budget/DFRR/competence/health) + DREAM revealed priorities
+yarn hromada-resources
+yarn fetch-dream                 # ~16k ideas; resumes data/cache/dream/
+yarn fetch-dream --limit 200     # smoke test
+yarn build-resources-preview
 ```
 
 Track labels on each edge (`thematic` / `operational` / `mixed`) and ranked
 slices `matching-edges.thematic.json` / `matching-edges.operational.json` are
 documented in [data/releases/MANIFEST.md](data/releases/MANIFEST.md).
 `yarn report-pin-corpus` writes the broader KSE PIN∩corpus check;
-`yarn priority-corpus-growth` lists next strategy extractions that add overlap.
+`yarn priority-corpus-growth` lists next strategy extractions that add overlap
+([docs/corpus-growth.md](docs/corpus-growth.md)).
 
 Fund portfolio lenses (within-program pairs, bridge pairs, hubs) live in
 `donor-synergy.json` and on the stakeholder site at [`docs/funds.html`](docs/funds.html).
+Resource / competence covariates: `hromada-resources.json`; DREAM project
+priorities: `dream-priorities.json`; complementary / explicit-ask edges:
+`matching-edges.complementary.json` / `matching-edges.explicit-ask.json`
+(see [docs/external-data-sources.md](docs/external-data-sources.md) and
+[matches.html](docs/matches.html)). Writing guide:
+[docs/strategy-writing-guide.md](docs/strategy-writing-guide.md).
 
 ## Scaling retrieval
 

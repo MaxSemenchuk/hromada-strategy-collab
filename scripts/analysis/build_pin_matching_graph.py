@@ -10,15 +10,17 @@ Sources:
 
 Writes docs/mss-pin-matching-graph.html
 
-Overlay policy (2026-07-24):
+Overlay policy (2026-07-24 / layers 2026-07-29):
   Do NOT paint top-N by combined score — that collapses to geo neighbours in a
   sparse strategy corpus. Split tracks instead:
 
-    thematic    — high goals_cosine  → «схожа стратегія» (default ON)
-    operational — high geo           → «зручний сусід»   (default OFF)
-    known       — curated registry validation pairs
-    pin_corpus  — broader KSE PIN ∩ Goals corpus (mss_network>0, not known)
-    universe    — all release hromadas with KSE lat/lon (metadata underlay)
+    thematic      — high goals_cosine  → «схожа стратегія» (default ON)
+    operational   — high geo           → «зручний сусід»   (default OFF)
+    complementary — resource/DREAM ↔ Challenges (default OFF)
+    explicit_ask  — МСС language in strategy text (default OFF)
+    known         — curated registry validation pairs
+    pin_corpus    — broader KSE PIN ∩ Goals corpus (mss_network>0, not known)
+    universe      — all release hromadas with KSE lat/lon (metadata underlay)
 """
 
 from __future__ import annotations
@@ -35,6 +37,8 @@ from tracks import operational_slice, thematic_slice  # noqa: E402
 PIN = ROOT / "data/cache/kse/partnerships-hromadas-network.csv"
 GEO = ROOT / "data/cache/kse/geography.csv"
 EDGES = ROOT / "data/releases/matching-edges.json"
+COMPLEMENTARY = ROOT / "data/releases/matching-edges.complementary.json"
+EXPLICIT_ASK = ROOT / "data/releases/matching-edges.explicit-ask.json"
 HROMADAS = ROOT / "data/releases/hromadas.json"
 OBLASTS = ROOT / "docs/geo/ukraine-oblasts.geojson"
 OUTLINE = ROOT / "docs/geo/ukraine-outline.geojson"
@@ -43,6 +47,8 @@ OUT = ROOT / "docs/mss-pin-matching-graph.html"
 
 TOP_THEMATIC = 40
 TOP_OPERATIONAL = 40
+TOP_COMPLEMENTARY = 40
+TOP_EXPLICIT_ASK = 40
 
 
 def load_geo() -> dict[str, dict]:
@@ -151,6 +157,53 @@ def pin_corpus_overlay(
     ]
 
 
+def encode_named_overlay(
+    rows: list[dict],
+    *,
+    kind: str,
+    name_to_code: dict[str, str],
+    score_key: str,
+    limit: int,
+    prefer_same_oblast: bool = False,
+) -> list[dict]:
+    """Map complementary / explicit-ask edges (name-keyed) onto KATOTTG codes."""
+    ranked = list(rows)
+    if prefer_same_oblast:
+        ranked = sorted(
+            ranked,
+            key=lambda e: (
+                -float(e.get(score_key) or 0),
+                -int(bool(e.get("same_oblast"))),
+            ),
+        )
+    else:
+        ranked = sorted(ranked, key=lambda e: -float(e.get(score_key) or 0))
+    out: list[dict] = []
+    for e in ranked:
+        ca = name_to_code.get(e.get("a") or "")
+        cb = name_to_code.get(e.get("b") or "")
+        if not ca or not cb or ca == cb:
+            # try katottg fields when present
+            ca = ca or e.get("a_katottg")
+            cb = cb or e.get("b_katottg")
+        if not ca or not cb or ca == cb:
+            continue
+        out.append(
+            {
+                "a": ca,
+                "b": cb,
+                "kind": kind,
+                "score": e.get(score_key),
+                "track": e.get("track") or kind,
+                "same_oblast": e.get("same_oblast"),
+                "theme": e.get("theme"),
+            }
+        )
+        if len(out) >= limit:
+            break
+    return out
+
+
 def build_payload() -> dict:
     geo = load_geo()
     pin_nodes, pin_edges = load_pin()
@@ -212,12 +265,46 @@ def build_payload() -> dict:
         operational, kind="operational", name_to_code=name_to_code, pin_keys=pin_keys
     )
 
-    for e in known_edges + pin_corpus_edges + thematic_edges + operational_edges:
+    complementary_edges: list[dict] = []
+    if COMPLEMENTARY.exists():
+        complementary_edges = encode_named_overlay(
+            json.loads(COMPLEMENTARY.read_text(encoding="utf-8")),
+            kind="complementary",
+            name_to_code=name_to_code,
+            score_key="complementary_score",
+            limit=TOP_COMPLEMENTARY,
+            prefer_same_oblast=True,
+        )
+
+    explicit_ask_edges: list[dict] = []
+    if EXPLICIT_ASK.exists():
+        # Expand name_to_code to all hromadas (intents may cite non-Goals rows)
+        all_name_to_code = {
+            r["Name"]: r["Katottg"]
+            for r in hromadas
+            if r.get("Name") and r.get("Katottg")
+        }
+        explicit_ask_edges = encode_named_overlay(
+            json.loads(EXPLICIT_ASK.read_text(encoding="utf-8")),
+            kind="explicit_ask",
+            name_to_code=all_name_to_code,
+            score_key="explicit_ask_score",
+            limit=TOP_EXPLICIT_ASK,
+        )
+
+    for e in (
+        known_edges
+        + pin_corpus_edges
+        + thematic_edges
+        + operational_edges
+        + complementary_edges
+        + explicit_ask_edges
+    ):
         for code in (e["a"], e["b"]):
             if code not in pin_nodes:
                 pin_nodes[code] = {
                     "id": code,
-                    "label": short_label(code_to_full.get(code, code)),
+                    "label": short_label(code_to_full.get(code) or by_code.get(code, {}).get("full_name") or code),
                 }
 
     pin_member = {e["a"] for e in pin_edges} | {e["b"] for e in pin_edges}
@@ -306,6 +393,8 @@ def build_payload() -> dict:
             "universe_with_portal": portal_on_map,
             "thematic_edges": len(thematic_edges),
             "operational_edges": len(operational_edges),
+            "complementary_edges": len(complementary_edges),
+            "explicit_ask_edges": len(explicit_ask_edges),
             "known_edges": len(known_edges),
             "pin_corpus_edges": len(pin_corpus_edges),
             # legacy alias: thematic only (combined-score hyp layer removed)
@@ -320,8 +409,11 @@ def build_payload() -> dict:
             "hromadas_source": "data/releases/hromadas.json (PortalUrl/StrategyUrl)",
             "top_thematic": TOP_THEMATIC,
             "top_operational": TOP_OPERATIONAL,
+            "top_complementary": TOP_COMPLEMENTARY,
+            "top_explicit_ask": TOP_EXPLICIT_ASK,
             "overlay_policy": (
                 "thematic=goals_cosine track; operational=geo neighbours; "
+                "complementary=resource/DREAM↔Challenges; explicit_ask=МСС language; "
                 "pin_corpus=mss_network>0 not known; no combined-score hyp layer; "
                 "universe=all release rows with KSE geo (metadata layer)"
             ),
@@ -330,7 +422,15 @@ def build_payload() -> dict:
         "ukraine_outline": outline,
         "nodes": nodes,
         "universe": universe,
-        "edges": pin_edges + known_edges + pin_corpus_edges + thematic_edges + operational_edges,
+        "edges": (
+            pin_edges
+            + known_edges
+            + pin_corpus_edges
+            + thematic_edges
+            + operational_edges
+            + complementary_edges
+            + explicit_ask_edges
+        ),
     }
 
 
@@ -350,7 +450,8 @@ def main() -> None:
         f"universe={m['universe_nodes']} (portal={m['universe_with_portal']}) · "
         f"oblasts={m['oblasts']} · "
         f"known={m['known_edges']} pin∩corpus={m['pin_corpus_edges']} "
-        f"thematic={m['thematic_edges']} operational={m['operational_edges']}"
+        f"thematic={m['thematic_edges']} operational={m['operational_edges']} "
+        f"complementary={m['complementary_edges']} explicit_ask={m['explicit_ask_edges']}"
     )
 
 

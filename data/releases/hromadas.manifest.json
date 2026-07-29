@@ -6,5 +6,13 @@
   "schema": "see docs/hromadas-schema.md",
   "license": "CC BY 4.0 — see DATA-LICENSE.md",
   "portalUrlRows": 36,
-  "portalUrlEnrichedAt": "2026-07-24T10:48:57.446Z"
+  "portalUrlEnrichedAt": "2026-07-24T10:48:57.446Z",
+  "donorsProgramsTaggedRows": 174,
+  "donorsProgramsVocabExtendedAt": "2026-07-27T15:30:12Z",
+  "donorsProgramsAdded": [
+    "JICA",
+    "ЄІБ",
+    "ЄБРР",
+    "AFD"
+  ]
 }

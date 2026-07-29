@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
-Pairwise hromada matching v6 — goals embeddings + KSE covariates.
+Pairwise hromada matching v7 — hierarchy-aware goals + KSE covariates.
 
 Combines mean-centered sub-goal embeddings (v5 DF-weighting) with KSE enrichment:
   60% goals_cosine + 25% geo + 15% mss_network
 
-Each edge also gets a dual-track label (scoring unchanged):
+v7 goals_cosine: when both sides have operational lines (from goals-hierarchy.json
+or parsed Goals text), blend 0.65×operational_sim + 0.35×strategic_sim; else
+fall back to all lines (v6 behaviour). Combined score weights unchanged.
+
+Each edge also gets a dual-track label (scoring weights unchanged):
   thematic    — high goals, low geo  → cold-start vision partners
   operational — high geo             → convenient service co-sharers
   mixed       — otherwise
@@ -19,7 +23,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 import sys
 from pathlib import Path
 
@@ -29,6 +32,7 @@ from sentence_transformers import SentenceTransformer
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 from enrich_from_kse import geo_score, mss_network_score  # noqa: E402
+from goals_hierarchy import load_hierarchy_index, record_subgoals  # noqa: E402
 from tracks import assign_tracks  # noqa: E402
 
 KNOWN_PAIRS = {
@@ -41,6 +45,9 @@ KNOWN_PAIRS = {
 WEIGHT_GOALS = 0.60
 WEIGHT_GEO = 0.25
 WEIGHT_MSS = 0.15
+# When both sides have operational goals
+WEIGHT_OPS_IN_GOALS = 0.65
+WEIGHT_STRAT_IN_GOALS = 0.35
 
 
 def load_hromadas(path: Path) -> list[dict]:
@@ -55,42 +62,57 @@ def load_hromadas(path: Path) -> list[dict]:
 
 
 def build_records(hromadas: list[dict]) -> list[dict]:
+    hierarchy = load_hierarchy_index()
     records = []
     for r in hromadas:
         goals = (r.get("Goals") or "").strip()
-        lines = [l.strip(" \t-•\n") for l in re.split(r"\n", goals)]
-        lines = [l for l in lines if len(l) > 15]
+        name = r.get("Name") or ""
+        katottg = r.get("Katottg") or r.get("KATOTTG") or r.get("Koatuu / Katottg")
+        strat, ops, all_lines = record_subgoals(name, katottg, goals, hierarchy)
         records.append(
             {
-                "name": r.get("Name") or "",
-                "katottg": r.get("Katottg") or r.get("KATOTTG") or r.get("Koatuu / Katottg"),
+                "name": name,
+                "katottg": katottg,
                 "oblast": r.get("Oblast"),
                 "rayon": r.get("Rayon"),
                 "goals": goals,
-                "subgoals": lines,
+                "strategic": strat,
+                "operational": ops,
+                "subgoals": all_lines if all_lines else [goals],
             }
         )
     return records
 
 
-def goals_similarity(records: list[dict], model: SentenceTransformer) -> np.ndarray:
+def _indexed_similarity(
+    records: list[dict],
+    model: SentenceTransformer,
+    line_key: str,
+) -> np.ndarray:
+    """Pairwise DF-weighted mean-centered cosine over record[line_key] lines."""
     all_subgoals: list[str] = []
     subgoal_owner: list[int] = []
     for i, r in enumerate(records):
-        sg = r["subgoals"] if r["subgoals"] else [r["goals"]]
+        sg = r.get(line_key) or []
+        if not sg:
+            continue
         for s in sg:
             all_subgoals.append("query: " + s)
             subgoal_owner.append(i)
+
+    n = len(records)
+    scores = np.zeros((n, n))
+    if not all_subgoals:
+        return scores
 
     sub_emb = model.encode(all_subgoals, show_progress_bar=False, normalize_embeddings=True, batch_size=64)
     mean_vec = sub_emb.mean(axis=0)
     centered = sub_emb - mean_vec
     centered = centered / np.clip(np.linalg.norm(centered, axis=1, keepdims=True), 1e-8, None)
 
-    n = len(records)
     N = len(all_subgoals)
     owner_arr = np.array(subgoal_owner)
-    sub_idx = {i: [] for i in range(n)}
+    sub_idx: dict[int, list[int]] = {i: [] for i in range(n)}
     for k, owner in enumerate(subgoal_owner):
         sub_idx[owner].append(k)
 
@@ -111,10 +133,32 @@ def goals_similarity(records: list[dict], model: SentenceTransformer) -> np.ndar
         best_j = sims.max(axis=0)
         return float((np.average(best_i, weights=wi) + np.average(best_j, weights=wj)) / 2)
 
-    scores = np.zeros((n, n))
     for i in range(n):
         for j in range(i + 1, n):
             s = pair_score(i, j)
+            scores[i, j] = scores[j, i] = s
+    return scores
+
+
+def goals_similarity(records: list[dict], model: SentenceTransformer) -> np.ndarray:
+    all_mat = _indexed_similarity(records, model, "subgoals")
+    ops_mat = _indexed_similarity(records, model, "operational")
+    strat_mat = _indexed_similarity(records, model, "strategic")
+
+    n = len(records)
+    scores = np.zeros((n, n))
+    for i in range(n):
+        for j in range(i + 1, n):
+            has_ops = bool(records[i]["operational"] and records[j]["operational"])
+            has_strat = bool(records[i]["strategic"] and records[j]["strategic"])
+            if has_ops and has_strat:
+                s = WEIGHT_OPS_IN_GOALS * float(ops_mat[i, j]) + WEIGHT_STRAT_IN_GOALS * float(
+                    strat_mat[i, j]
+                )
+            elif has_ops:
+                s = float(ops_mat[i, j])
+            else:
+                s = float(all_mat[i, j])
             scores[i, j] = scores[j, i] = s
     return scores
 
