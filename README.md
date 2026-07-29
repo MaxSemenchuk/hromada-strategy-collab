@@ -57,7 +57,8 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
   (`goals-hierarchy.json`). Combined score weights unchanged from v6.
 - Extra layers (not folded into combined `score`):
   **complementary** (resource/DREAM ↔ Challenges), **explicit-ask** (МСС language
-  in strategy text), **resources** / **DREAM priorities** releases.
+  in strategy text), **resources** / **DREAM priorities**, **twinning** (UA–EU
+  sister cities via SKEW + strategy mentions — `yarn twinning`).
 - Stakeholder site under [`docs/`](docs/) (GitHub Pages): landing · matches ·
   funds · resources · PIN map (four hypothesis overlays). Product decision still
   open — this remains pilot / concept-validation stage.
@@ -199,6 +200,8 @@ yarn match && yarn export-matching-edges && yarn test-known-pairs && yarn report
 yarn build-goals-hierarchy
 yarn extract-mss-intents
 yarn complementary-match
+yarn twinning                    # UA–EU twinning (SKEW cache + strategy mentions)
+yarn twinning --offline          # rebuild from data/cache/twinning/ only
 yarn graph-pin-matching
 
 # Structural proxies (KSE budget/DFRR/competence/health) + DREAM revealed priorities
@@ -219,7 +222,8 @@ Fund portfolio lenses (within-program pairs, bridge pairs, hubs) live in
 `donor-synergy.json` and on the stakeholder site at [`docs/funds.html`](docs/funds.html).
 Resource / competence covariates: `hromada-resources.json`; DREAM project
 priorities: `dream-priorities.json`; complementary / explicit-ask edges:
-`matching-edges.complementary.json` / `matching-edges.explicit-ask.json`
+`matching-edges.complementary.json` / `matching-edges.explicit-ask.json`;
+UA–EU twinning: `twinning-partners.json`
 (see [docs/external-data-sources.md](docs/external-data-sources.md) and
 [matches.html](docs/matches.html)). Writing guide:
 [docs/strategy-writing-guide.md](docs/strategy-writing-guide.md).

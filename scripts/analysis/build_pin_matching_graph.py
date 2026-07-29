@@ -18,6 +18,7 @@ Overlay policy (2026-07-24 / layers 2026-07-29):
     operational   — high geo           → «зручний сусід»   (default OFF)
     complementary — resource/DREAM ↔ Challenges (default OFF)
     explicit_ask  — МСС language in strategy text (default OFF)
+    twinning      — UA–EU sister cities from SKEW / strategy (node highlight, default OFF)
     known         — curated registry validation pairs
     pin_corpus    — broader KSE PIN ∩ Goals corpus (mss_network>0, not known)
     universe      — all release hromadas with KSE lat/lon (metadata underlay)
@@ -43,6 +44,7 @@ MSS_REGISTRY = ROOT / "data/cache/mss/mss_registry.xlsx"
 EDGES = ROOT / "data/releases/matching-edges.json"
 COMPLEMENTARY = ROOT / "data/releases/matching-edges.complementary.json"
 EXPLICIT_ASK = ROOT / "data/releases/matching-edges.explicit-ask.json"
+TWINNING = ROOT / "data/releases/twinning-partners.json"
 HROMADAS = ROOT / "data/releases/hromadas.json"
 OBLASTS = ROOT / "docs/geo/ukraine-oblasts.geojson"
 OUTLINE = ROOT / "docs/geo/ukraine-outline.geojson"
@@ -575,6 +577,31 @@ def build_payload() -> dict:
 
     pin_member = {e["a"] for e in pin_edges} | {e["b"] for e in pin_edges}
 
+    twinning_by_code: dict[str, list[dict]] = {}
+    if TWINNING.exists():
+        twin_payload = json.loads(TWINNING.read_text(encoding="utf-8"))
+        for h in twin_payload.get("hromadas") or []:
+            code = (h.get("katottg") or "").strip()
+            if not code:
+                continue
+            partners = []
+            for p in h.get("partners") or []:
+                partners.append(
+                    {
+                        "name": p.get("partner_name"),
+                        "country": p.get("partner_country"),
+                        "region": p.get("partner_region"),
+                        "type": p.get("type"),
+                        "since": p.get("since"),
+                        "source": p.get("source"),
+                        "url": p.get("source_url"),
+                    }
+                )
+            twinning_by_code[code] = {
+                "partners": partners,
+                "c4c_url": h.get("c4c_url"),
+            }
+
     degree: dict[str, int] = {c: 0 for c in pin_nodes}
     for e in pin_edges:
         degree[e["a"]] = degree.get(e["a"], 0) + 1
@@ -589,6 +616,8 @@ def build_payload() -> dict:
             lat, lon = g["lat"], g["lon"]
             oblast = g["oblast"]
             label = g["name_short"] or label
+        twin = twinning_by_code.get(code) or {}
+        twin_partners = twin.get("partners") or []
         return {
             "id": code,
             "label": label,
@@ -602,9 +631,12 @@ def build_payload() -> dict:
             "in_pin": code in pin_member,
             "portal_url": meta.get("portal_url"),
             "strategy_url": meta.get("strategy_url"),
+            "c4c_url": twin.get("c4c_url"),
             "source_quality": meta.get("source_quality"),
             "type": meta.get("type"),
             "population": meta.get("population"),
+            "twinning_count": len(twin_partners),
+            "twinning_partners": twin_partners[:12],
         }
 
     nodes = []
@@ -621,6 +653,8 @@ def build_payload() -> dict:
         g = geo.get(code)
         if not g:
             continue
+        twin = twinning_by_code.get(code) or {}
+        twin_partners = twin.get("partners") or []
         universe.append(
             {
                 "id": code,
@@ -634,9 +668,12 @@ def build_payload() -> dict:
                 "in_pin": code in pin_member,
                 "portal_url": meta.get("portal_url"),
                 "strategy_url": meta.get("strategy_url"),
+                "c4c_url": twin.get("c4c_url"),
                 "source_quality": meta.get("source_quality"),
                 "type": meta.get("type"),
                 "population": meta.get("population"),
+                "twinning_count": len(twin_partners),
+                "twinning_partners": twin_partners[:12],
             }
         )
     universe.sort(key=lambda n: n.get("full_name") or n["label"] or n["id"])
@@ -649,6 +686,7 @@ def build_payload() -> dict:
     outline = json.loads(OUTLINE.read_text(encoding="utf-8"))
 
     portal_on_map = sum(1 for n in universe if n.get("portal_url"))
+    twinning_on_map = sum(1 for n in universe if n.get("twinning_count") or n.get("c4c_url"))
 
     return {
         "meta": {
@@ -657,6 +695,9 @@ def build_payload() -> dict:
             "pin_nodes": len(nodes),
             "universe_nodes": len(universe),
             "universe_with_portal": portal_on_map,
+            "twinning_hromadas": twinning_on_map,
+            "twinning_partners": sum(len(v.get("partners") or []) for v in twinning_by_code.values()),
+            "cities4cities_listed": sum(1 for v in twinning_by_code.values() if v.get("c4c_url")),
             "thematic_edges": len(thematic_edges),
             "operational_edges": len(operational_edges),
             "complementary_edges": len(complementary_edges),
@@ -681,6 +722,11 @@ def build_payload() -> dict:
             "outline_source": "docs/geo/ukraine-outline.geojson (mask outside UA)",
             "matching_source": "data/releases/matching-edges.json",
             "hromadas_source": "data/releases/hromadas.json (PortalUrl/StrategyUrl)",
+            "twinning_source": (
+                "data/releases/twinning-partners.json (SKEW + strategy)"
+                if twinning_by_code
+                else None
+            ),
             "top_thematic": TOP_THEMATIC,
             "top_operational": TOP_OPERATIONAL,
             "top_complementary": TOP_COMPLEMENTARY,
@@ -688,6 +734,7 @@ def build_payload() -> dict:
             "overlay_policy": (
                 "thematic=goals_cosine track; operational=geo neighbours; "
                 "complementary=resource/DREAM↔Challenges; explicit_ask=МСС language; "
+                "twinning=UA–EU sister cities (node highlight); "
                 "pin_corpus=mss_network>0 not known; no combined-score hyp layer; "
                 "universe=all release rows with KSE geo (metadata layer)"
             ),
@@ -726,7 +773,8 @@ def main() -> None:
         f"oblasts={m['oblasts']} · "
         f"known={m['known_edges']} pin∩corpus={m['pin_corpus_edges']} "
         f"thematic={m['thematic_edges']} operational={m['operational_edges']} "
-        f"complementary={m['complementary_edges']} explicit_ask={m['explicit_ask_edges']}"
+        f"complementary={m['complementary_edges']} explicit_ask={m['explicit_ask_edges']} "
+        f"twinning={m.get('twinning_hromadas', 0)}"
     )
 
 

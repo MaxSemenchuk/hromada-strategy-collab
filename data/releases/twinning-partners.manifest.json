@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-07-29T12:58:42.526309+00:00",
+  "hromadasWithPartners": 178,
+  "skewEdgesLinked": 179,
+  "skewEdgesRaw": 268,
+  "strategyPartnersAdded": 4,
+  "cities4citiesPartnersAdded": 11,
+  "cities4citiesListed": 90,
+  "unmatchedSkew": 88,
+  "method": "SKEW + Cities4Cities news/markers + strategy mentions; aliases in twinning-name-aliases.json"
+}

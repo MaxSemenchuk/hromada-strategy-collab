@@ -23,6 +23,7 @@
     --line-ask: #f472b6;
     --dot-universe: #94a3b8;
     --dot-corpus: #d9a548;
+    --dot-twinning: #6366f1;
   }
   * { box-sizing: border-box; }
   body {
@@ -607,6 +608,14 @@
           <span class="layer-desc" data-i18n="layer.corpus.desc">Підсвітити громади, чиї тексти вже в аналізі</span>
         </span>
       </label>
+      <label class="layer">
+        <input type="checkbox" id="layer-twinning"/>
+        <span class="sw twinning" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="layer.twinning.title">Міста-побратими ЄС</span>
+          <span class="layer-desc" data-i18n="layer.twinning.desc">Індиго — громади з UA–EU twinning (SKEW / стратегія)</span>
+        </span>
+      </label>
     </div>
     <p class="section-label" data-i18n="stats.label">Цифри</p>
     <div class="stats">
@@ -622,6 +631,7 @@
       <div class="stat"><span data-i18n="stat.operational">Гіпотез «зручний сусід»</span><b id="s-operational">—</b></div>
       <div class="stat"><span data-i18n="stat.complementary">Гіпотез «доповнення»</span><b id="s-complementary">—</b></div>
       <div class="stat"><span data-i18n="stat.explicitAsk">Явних запитів МСС</span><b id="s-explicit-ask">—</b></div>
+      <div class="stat"><span data-i18n="stat.twinning">З побратимами ЄС</span><b id="s-twinning">—</b></div>
     </div>
     <p class="hint" id="hint">Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по громаді відкриває картку з деталями.</p>
   </aside>
@@ -648,6 +658,7 @@ document.getElementById('s-thematic').textContent = meta.thematic_edges;
 document.getElementById('s-operational').textContent = meta.operational_edges;
 document.getElementById('s-complementary').textContent = meta.complementary_edges ?? 0;
 document.getElementById('s-explicit-ask').textContent = meta.explicit_ask_edges ?? 0;
+document.getElementById('s-twinning').textContent = meta.twinning_hromadas ?? 0;
 
 const mapEl = document.getElementById('map');
 const canvas = document.getElementById('c');
@@ -671,7 +682,7 @@ let resourcesByCode = null;
 let resourcesPromise = null;
 let layers = {
   universe: true, pin: true, known: true, pinCorpus: true,
-  thematic: true, operational: false, complementary: false, explicitAsk: false, corpus: false,
+  thematic: true, operational: false, complementary: false, explicitAsk: false, corpus: false, twinning: false,
 };
 
 function esc(s) {
@@ -949,6 +960,7 @@ function renderDetail(n) {
   if (n.in_corpus) badges.push(t('popup.inCorpus'));
   if (n.source_quality) badges.push(n.source_quality);
   if (n.degree) badges.push(n.degree + ' ' + t('popup.degreeShort'));
+  if (n.twinning_count) badges.push(n.twinning_count + ' ' + t('popup.twinning'));
 
   const links = [];
   if (n.portal_url) {
@@ -956,6 +968,9 @@ function renderDetail(n) {
   }
   if (n.strategy_url) {
     links.push(`<a href="${esc(n.strategy_url)}" target="_blank" rel="noopener">${esc(t('popup.strategy'))}</a>`);
+  }
+  if (n.c4c_url) {
+    links.push(`<a href="${esc(n.c4c_url)}" target="_blank" rel="noopener">${esc(t('popup.c4c'))}</a>`);
   }
 
   const res = resourcesByCode && resourcesByCode[n.id];
@@ -1004,6 +1019,29 @@ function renderDetail(n) {
     }).join('')}</div>`;
   }
 
+
+  const twins = n.twinning_partners || [];
+  let twinningHtml = '';
+  if (!twins.length) {
+    twinningHtml = `<p class="detail-empty">${esc(t('detail.noTwinning'))}</p>`;
+  } else {
+    twinningHtml = `<div class="detail-twins">${twins.map((p) => {
+      const meta = [
+        p.country || null,
+        p.region || null,
+        p.since ? (t('detail.since') + ' ' + p.since) : null,
+        p.source === 'skew' ? 'SKEW' : (p.source === 'cities4cities' ? 'Cities4Cities' : (p.source === 'strategy' ? t('detail.strategyMention') : p.source)),
+      ].filter(Boolean).join(' · ');
+      const link = p.url
+        ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(t('detail.twinningSource'))}</a>`
+        : '';
+      return `<div class="detail-twin"><strong>${esc(p.name || '—')}</strong>`
+        + (meta ? `<div class="twin-meta">${esc(meta)}</div>` : '')
+        + link
+        + `</div>`;
+    }).join('')}</div>`;
+  }
+
   detailBody.innerHTML =
     (bits.length ? `<div class="detail-meta">${bits.join(' · ')}</div>` : '')
     + (n.katottg || n.id ? `<div class="detail-id">${esc(n.katottg || n.id)}</div>` : '')
@@ -1011,6 +1049,7 @@ function renderDetail(n) {
     + (links.length
       ? `<div class="detail-actions">${links.join('')}</div>`
       : `<p class="detail-empty">${esc(t('popup.noLink'))}</p>`)
+    + `<p class="detail-section-label">${esc(t('detail.twinning'))}</p>${twinningHtml}`
     + `<p class="detail-section-label">${esc(t('detail.resources'))}</p>${resourcesHtml}`
     + `<p class="detail-section-label">${esc(t('detail.neighbors'))}</p>${neighborsHtml}`;
 
@@ -1144,12 +1183,13 @@ function rebuildMapLayers() {
   for (const n of universe) {
     if (n.lat == null) continue;
     const selected = selectedId === n.id;
+    const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
     const marker = L.circleMarker([n.lat, n.lon], {
-      radius: selected ? 5.5 : 2.2,
-      color: selected ? '#f8fafc' : '#64748b',
-      fillColor: selected ? '#2563eb' : (n.in_corpus ? '#94a3b8' : '#475569'),
-      fillOpacity: selected ? 0.95 : 0.45,
-      weight: selected ? 2 : 0.5,
+      radius: selected ? 5.5 : (twinGlow ? 4.2 : 2.2),
+      color: selected ? '#f8fafc' : (twinGlow ? '#6366f1' : '#64748b'),
+      fillColor: selected ? '#2563eb' : (twinGlow ? '#6366f1' : (n.in_corpus ? '#94a3b8' : '#475569')),
+      fillOpacity: selected ? 0.95 : (twinGlow ? 0.85 : 0.45),
+      weight: selected ? 2 : (twinGlow ? 1.5 : 0.5),
       opacity: selected ? 1 : 0.55,
     });
     bindSelect(marker, n);
@@ -1159,12 +1199,13 @@ function rebuildMapLayers() {
   for (const n of nodes) {
     if (n.lat == null) continue;
     const corpusGlow = layers.corpus && n.in_corpus;
+    const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
     const selected = selectedId === n.id;
-    const r = (selected ? 6.5 : 3) + Math.min(n.degree || 0, 24) * 0.15;
+    const r = (selected ? 6.5 : 3) + Math.min(n.degree || 0, 24) * 0.15 + (twinGlow ? 1.2 : 0);
     const marker = L.circleMarker([n.lat, n.lon], {
       radius: r,
-      color: selected ? '#f8fafc' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff')),
-      fillColor: selected ? '#2563eb' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff')),
+      color: selected ? '#f8fafc' : (twinGlow ? '#6366f1' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff'))),
+      fillColor: selected ? '#2563eb' : (twinGlow ? '#6366f1' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff'))),
       fillOpacity: 0.9,
       weight: selected ? 2.5 : 1,
       opacity: 0.95,
@@ -1190,7 +1231,7 @@ function syncLayerVisibility() {
   show(complementaryEdgesLayer, layers.complementary);
   show(explicitAskEdgesLayer, layers.explicitAsk);
   // network nodes on when any network / corpus highlight layer is on
-  show(nodesLayer, layers.pin || layers.known || layers.pinCorpus || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus);
+  show(nodesLayer, layers.pin || layers.known || layers.pinCorpus || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus || layers.twinning);
 }
 
 rebuildMapLayers();
@@ -1205,11 +1246,12 @@ function syncLayers() {
   layers.complementary = document.getElementById('layer-complementary').checked;
   layers.explicitAsk = document.getElementById('layer-explicit-ask').checked;
   layers.corpus = document.getElementById('layer-corpus').checked;
+  layers.twinning = document.getElementById('layer-twinning').checked;
   if (mode === 'map') {
     rebuildMapLayers();
   }
 }
-['layer-universe','layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-corpus'].forEach(id => {
+['layer-universe','layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-corpus','layer-twinning'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
@@ -1370,6 +1412,7 @@ window.addEventListener('mousemove', (ev) => {
     if (hover.type) metaBits.push(hover.type);
     if (hover.in_pin) metaBits.push(t('popup.inPin'));
     if (hover.in_corpus) metaBits.push(t('popup.inCorpus'));
+    if (hover.twinning_count) metaBits.push(hover.twinning_count + ' ' + t('popup.twinning'));
     if (hover.degree) metaBits.push(hover.degree + ' ' + t('popup.degreeShort'));
     const links = [];
     if (hover.portal_url) links.push(t('popup.portal'));
@@ -1478,11 +1521,12 @@ function drawGraph() {
   for (const n of nodes) {
     const hi = hover === n || selectedId === n.id;
     const corpusGlow = layers.corpus && n.in_corpus;
+    const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
     const selected = selectedId === n.id;
     const r = ((hi ? 5.5 : 2.2) + Math.min(n.degree, 20) * 0.12) / Math.sqrt(scale);
     ctx.beginPath();
     ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
-    ctx.fillStyle = selected ? '#2563eb' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff'));
+    ctx.fillStyle = selected ? '#2563eb' : (twinGlow ? '#6366f1' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff')));
     ctx.fill();
     if (selected) {
       ctx.beginPath();

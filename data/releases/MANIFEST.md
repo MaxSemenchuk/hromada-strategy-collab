@@ -92,6 +92,13 @@ and self-describing, not a growth history.
   Site preview: `yarn build-resources-preview` → `docs/assets/resources-preview.json`
   (`docs/resources.html`).
 
+- **`twinning-partners.json`** — **UA–EU municipal twinning** (separate from
+  domestic МСС). Sources: SKEW German–Ukrainian registry (`yarn twinning`,
+  cache `data/cache/twinning/`); Cities4Cities news-title pairs + municipality
+  `markers.json` (`c4c_url` = listed for matchmaking); strategy named cities.
+  Aliases: `data/sources/twinning-name-aliases.json`. Does **not** fold into
+  matching `score`. Preview: `docs/assets/twinning-preview.json`.
+
 ## Coverage, read before using
 
 - Live export covers **1,469** metadata rows; **77** have strategy extractions

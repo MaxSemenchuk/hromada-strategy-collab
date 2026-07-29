@@ -23,7 +23,7 @@ Two-layer output graph: громада↔громада + громада↔W3I e
 | Projects | LongText | Конкретні проєкти из стратегии + ДФРР/Prozorro |
 | Strengths | LongText | Сильні сторони / ресурси |
 | Challenges | LongText | Проблеми / виклики |
-| PartnersMentioned | LongText | Донори, сусідні громади, згадані в стратегії |
+| PartnersMentioned | LongText | Донори, сусідні громади, згадані в стратегії. Для UA–EU twinning див. окремий шар `twinning-partners.json` (`yarn twinning`) |
 | DonorsPrograms | MultiSelect / CSV | Контрольований словник: DOBRE, DECIDE, GIZ, U-LEAD, EGAP, DESPRO, ПРООН/UNDP, МФ Відродження, Ре:Форм, JICA, ЄІБ, ЄБРР, AFD. У публічному JSON — масив рядків. Відсутність ≠ «немає програми» (підлога покриття). |
 | MSSAgreements | LongText | Існуючі договори МСС (если найдены) |
 | SourceQuality | SingleSelect | full-strategy / dfrr-proxy / partial / none |

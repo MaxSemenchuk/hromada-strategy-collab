@@ -136,6 +136,34 @@ settlement locations + WB-ECO sector codes. Aggregated to hromada level by
 
 ---
 
+## SKEW — German–Ukrainian municipal partnerships (twinning)
+
+- **Reviewed:** 2026-07-29
+- **Map:** https://skew.engagement-global.de/landkarte-deutsch-ukrainischer-kommunalbeziehungen.html
+- **List:** https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html
+- **Operator:** Servicestelle Kommunen in der Einen Welt (Engagement Global / BMZ)
+
+Authoritative registry of **DE↔UA** municipal partnerships (~250+, Kommunal-
+and Betreiberpartnerschaften). No public CSV/API — HTML map embeds `MAPDATA`
+(Leaflet points with partner links + oblast labels); list table adds partnership
+type. Integrated as a **separate** release layer (not in v7 `score`):
+
+```bash
+yarn twinning                 # fetch HTML → data/cache/twinning/ + build release
+yarn twinning --offline       # rebuild from cache
+yarn fetch-twinning           # refresh cache only
+```
+
+→ `data/releases/twinning-partners.json`. Latin UA names resolved via
+transliteration + `data/sources/twinning-name-aliases.json`. Strategy-text
+foreign cities (Kalmar, Łowicz, …) merge in with `confidence: strategy_mention`.
+Skips Kyiv city, raions, utilities. Cities4Cities (~100 partnerships, multi-EU) is integrated via news-title
+pair extraction + `markers.json` profile URLs (`yarn twinning`). Not a bulk
+partnership registry like SKEW — confirmed pairs are hypotheses from press
+titles; `c4c_url` means «listed in C4C municipality DB» (seeking partners).
+
+---
+
 ## Own revenues (data.gov.ua) — caveat
 
 CKAN packages titled «Власні доходи громад … на одиницю населення» are often
