@@ -325,7 +325,7 @@ window.PAGE_I18N = {
     "empty.sector": "Немає громад із цим сектором у зрізі.",
     "proj.k": "Проєкти сектору",
     "proj.h": "Назви з DREAM — «{sector}»",
-    "proj.lede": "Усі (або вибірка) ідей/проєктів у цьому секторі. Посилання відкриває пошук за кодом на dream.gov.ua.",
+    "proj.lede": "Усі (або вибірка) ідей/проєктів у цьому секторі. Посилання веде на картку проєкту на dream.gov.ua (код DREAM-UA-…).",
     "proj.empty": "Немає назв проєктів для цього сектору в зрізі.",
     "proj.more": "У щільних секторах — вибірка до {n} назв; повний шар у dream-priorities.json.",
     "top.k": "Топ за кількістю проєктів",
@@ -378,7 +378,7 @@ window.PAGE_I18N = {
     "empty.sector": "No hromadas with this sector in the slice.",
     "proj.k": "Sector projects",
     "proj.h": "DREAM titles — “{sector}”",
-    "proj.lede": "All (or a sample of) ideas/projects in this sector. Links open a code search on dream.gov.ua.",
+    "proj.lede": "All (or a sample of) ideas/projects in this sector. Links open the project profile on dream.gov.ua (DREAM-UA-… code).",
     "proj.empty": "No project titles for this sector in the slice.",
     "proj.more": "Dense sectors show up to {n} titles; full layer is in dream-priorities.json.",
     "top.k": "Top by project count",
@@ -451,7 +451,12 @@ window.PAGE_I18N = {
 
     function dreamLink(code) {
       if (!code) return null;
-      return "https://dream.gov.ua/spp-pipeline?filter=" + encodeURIComponent(code);
+      var c = String(code).trim();
+      if (!c) return null;
+      // Public portal deep link: /project/DREAM-UA-{code}/profile
+      // (spp-pipeline is the State Single Project Pipeline, not a per-idea search.)
+      if (!/^DREAM-UA-/i.test(c)) c = "DREAM-UA-" + c;
+      return "https://dream.gov.ua/ua/project/" + encodeURIComponent(c) + "/profile";
     }
 
     function sampleListHtml(samples) {
