@@ -368,7 +368,14 @@
   main { position: relative; min-height: calc(100vh - var(--site-nav-h, 56px)); background: var(--map-bg); }
   #map { position: absolute; inset: 0; display: block; background: var(--map-bg); }
   #map.hidden { display: none; }
-  canvas#c { display: none; width: 100%; height: calc(100vh - var(--site-nav-h, 56px)); cursor: grab; }
+  canvas#c {
+    display: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+  }
   canvas#c.visible { display: block; }
   canvas#c:active { cursor: grabbing; }
   .leaflet-container { background: var(--map-bg); font: inherit; }
@@ -546,7 +553,9 @@ let mode = 'map';
 let width = 0, height = 0, dpr = 1;
 let camX = 0, camY = 0, scale = 0.55;
 let dragging = null, panning = false, lastX = 0, lastY = 0;
-let dragMoved = false, pendingSelect = null;
+let pointerDown = false, dragMoved = false, pendingSelect = null;
+let downX = 0, downY = 0;
+const DRAG_THRESHOLD_PX = 10;
 let hover = null;
 let selectedId = null;
 let resourcesByCode = null;
@@ -1023,15 +1032,18 @@ function worldFromEvent(ev) {
   const rect = canvas.getBoundingClientRect();
   const sx = ev.clientX - rect.left;
   const sy = ev.clientY - rect.top;
+  // Prefer live layout size so hit-testing matches the drawn camera center
+  const cw = rect.width || width;
+  const ch = rect.height || height;
   return {
-    x: (sx - width / 2 - camX) / scale,
-    y: (sy - height / 2 - camY) / scale,
+    x: (sx - cw / 2 - camX) / scale,
+    y: (sy - ch / 2 - camY) / scale,
     sx, sy,
   };
 }
 
 function findNode(wx, wy) {
-  const hit = 10 / scale;
+  const hit = Math.max(14, 12 / scale);
   let best = null, bestD = hit * hit;
   for (const n of nodes) {
     const dx = n.x - wx, dy = n.y - wy;
@@ -1041,32 +1053,53 @@ function findNode(wx, wy) {
   return best;
 }
 
-canvas.addEventListener('mousedown', (ev) => {
-  if (mode !== 'graph') return;
-  const w = worldFromEvent(ev);
-  const n = findNode(w.x, w.y);
-  dragMoved = false;
-  pendingSelect = n || null;
-  lastX = ev.clientX;
-  lastY = ev.clientY;
-  if (n) { dragging = n; n.fx = n.x; n.fy = n.y; }
-  else { panning = true; }
-});
-window.addEventListener('mouseup', () => {
-  if (mode === 'graph' && pendingSelect && !dragMoved) {
-    selectHromada(pendingSelect);
-  } else if (mode === 'graph' && !pendingSelect && !dragMoved) {
-    clearSelection();
+function endGraphPointer() {
+  if (mode === 'graph' && pointerDown && !dragMoved) {
+    if (pendingSelect) selectHromada(pendingSelect);
+    else clearSelection();
   }
   if (dragging) { dragging.fx = null; dragging.fy = null; }
-  dragging = null; panning = false; pendingSelect = null;
+  pointerDown = false;
+  dragging = null;
+  panning = false;
+  pendingSelect = null;
+  dragMoved = false;
+}
+
+canvas.addEventListener('mousedown', (ev) => {
+  if (mode !== 'graph' || ev.button !== 0) return;
+  pointerDown = true;
+  dragMoved = false;
+  dragging = null;
+  panning = false;
+  downX = lastX = ev.clientX;
+  downY = lastY = ev.clientY;
+  const w = worldFromEvent(ev);
+  pendingSelect = findNode(w.x, w.y) || null;
+});
+window.addEventListener('mouseup', (ev) => {
+  if (!pointerDown) return;
+  if (ev.button != null && ev.button !== 0) return;
+  endGraphPointer();
 });
 window.addEventListener('mousemove', (ev) => {
   if (mode !== 'graph') return;
-  if ((dragging || panning) && (Math.abs(ev.clientX - lastX) > 4 || Math.abs(ev.clientY - lastY) > 4)) {
-    dragMoved = true;
-  }
   const w = worldFromEvent(ev);
+  if (pointerDown && !dragMoved) {
+    const dist = Math.hypot(ev.clientX - downX, ev.clientY - downY);
+    if (dist > DRAG_THRESHOLD_PX) {
+      dragMoved = true;
+      if (pendingSelect) {
+        dragging = pendingSelect;
+        dragging.fx = dragging.x;
+        dragging.fy = dragging.y;
+      } else {
+        panning = true;
+        lastX = ev.clientX;
+        lastY = ev.clientY;
+      }
+    }
+  }
   if (dragging) {
     dragging.fx = w.x; dragging.fy = w.y;
     dragging.x = w.x; dragging.y = w.y;
@@ -1349,7 +1382,7 @@ window.PAGE_I18N = {
     "detail.neighbors": "Links on the map",
     "detail.loading": "Loading resources…",
     "detail.noResources": "No resource data for this hromada",
-    "detail.noNeighbors": "No links on the current layers",
+    "detail.noNeighbors": "No links in the map network",
     "detail.income": "Own income / capita",
     "detail.dream": "DREAM projects",
     "detail.dfrr": "DFRR (executed)",
