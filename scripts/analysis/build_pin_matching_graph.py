@@ -27,15 +27,19 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+from goal_overlap import explain_goal_overlap  # noqa: E402
 from tracks import operational_slice, thematic_slice  # noqa: E402
 
 PIN = ROOT / "data/cache/kse/partnerships-hromadas-network.csv"
 GEO = ROOT / "data/cache/kse/geography.csv"
+MSS_REGISTRY = ROOT / "data/cache/mss/mss_registry.xlsx"
 EDGES = ROOT / "data/releases/matching-edges.json"
 COMPLEMENTARY = ROOT / "data/releases/matching-edges.complementary.json"
 EXPLICIT_ASK = ROOT / "data/releases/matching-edges.explicit-ask.json"
@@ -49,6 +53,39 @@ TOP_THEMATIC = 40
 TOP_OPERATIONAL = 40
 TOP_COMPLEMENTARY = 40
 TOP_EXPLICIT_ASK = 40
+MAX_AGREEMENTS_PER_EDGE = 6
+AGREEMENT_TITLE_MAX = 140
+
+# Registry titles are noisy: legal boilerplate, typos (теритріальн*), genitive forms.
+_TITLE_BOILERPLATE = re.compile(
+    r"^(?:"
+    r"Договір\s+(?:про\s+)?співробітництв[оа]\s+"
+    r")?"
+    r"(?:терит\w*\s+громад(?:и)?\s+)?"
+    r"(?:у\s+формі\s+)?"
+    r"(?:в\s+частині\s+)?",
+    re.IGNORECASE | re.UNICODE,
+)
+_QUOTED_NAME = re.compile(r"[«\"„]([^»\"“]{4,160})[»\"“]")
+_GENERIC_JOINT_PROJECT = re.compile(
+    r"^реалізаці[яї]\s+спільн\w*\s+про[еє]кт\w*"
+    r"(?:,\s*що\s+передбачає.*)?$",
+    re.IGNORECASE | re.UNICODE,
+)
+_GENERIC_JOINT_FINANCE = re.compile(
+    r"^спільного\s+фінансування(?:\s*\(утримання\))?"
+    r"(?:\s+суб.єктами\s+співробітництва)?"
+    r"(?:\s+(?:підприємств|установ|організацій)"
+    r"(?:\s+комунальної\s+форми\s+власності)?"
+    r"(?:\s*[-–—,]?\s*інфраструктурних\s+об.єктів)?)?"
+    r"$",
+    re.IGNORECASE | re.UNICODE,
+)
+_GENERIC_DELEGATION = re.compile(
+    r"^делегування\s+виконання\s+окремих\s+завдань"
+    r"(?:\s+(?:з|що|через|у)\b.*)?$",
+    re.IGNORECASE | re.UNICODE,
+)
 
 
 def load_geo() -> dict[str, dict]:
@@ -72,10 +109,119 @@ def load_geo() -> dict[str, dict]:
     return out
 
 
-def load_pin() -> tuple[dict[str, dict], list[dict]]:
+def _clip(text: str, limit: int = AGREEMENT_TITLE_MAX) -> str:
+    text = re.sub(r"\s+", " ", text).strip(" .;")
+    if len(text) <= limit:
+        return text
+    cut = text[: limit - 1].rsplit(" ", 1)[0]
+    return (cut or text[: limit - 1]).rstrip(" ,;:") + "…"
+
+
+def _cap(text: str) -> str:
+    if not text:
+        return text
+    return text[0].upper() + text[1:] if text[0].islower() else text
+
+
+def agreement_essence(title: str, form: str = "") -> str:
+    """Readable subject of an IMC agreement for the detail card."""
+    raw = (title or "").strip()
+    form = (form or "").strip()
+    blob = f"{raw} {form}"
+
+    # Prefer a named object inside quotes when present.
+    quoted = _QUOTED_NAME.search(raw) or _QUOTED_NAME.search(form)
+    if quoted:
+        name = _clip(quoted.group(1).strip(" ."), AGREEMENT_TITLE_MAX - 28)
+        if re.search(r"про[еє]кт", blob, re.IGNORECASE):
+            return _cap(f"Спільний проєкт «{name}»")
+        if re.search(r"фінанс|утриман", blob, re.IGNORECASE):
+            return _cap(f"Спільне фінансування «{name}»")
+        if re.search(r"утворен", blob, re.IGNORECASE):
+            return _cap(f"Утворення «{name}»")
+        if re.search(r"делегуван", blob, re.IGNORECASE):
+            return _cap(f"Делегування «{name}»")
+        return _cap(f"«{name}»")
+
+    short = _TITLE_BOILERPLATE.sub("", raw).strip(" .")
+    short = re.sub(
+        r"^Договір\s+про\s+(утворення|реалізацію|делегування)\s+",
+        r"\1 ",
+        short,
+        flags=re.IGNORECASE,
+    ).strip(" .")
+    if not short:
+        short = _TITLE_BOILERPLATE.sub("", form).strip(" .") or form or raw
+
+    # Collapse pure legal generics to short category labels.
+    if _GENERIC_JOINT_PROJECT.match(short) or _GENERIC_JOINT_PROJECT.match(form):
+        return "Спільний проєкт"
+    if _GENERIC_DELEGATION.match(short) and not re.search(
+        r"[«\"„]|послуг|освіт|медич|пожеж|архів|відход|водо",
+        short,
+        re.IGNORECASE,
+    ):
+        return "Делегування окремих завдань"
+    if _GENERIC_JOINT_FINANCE.match(short) and not re.search(
+        r"[«\"„]|установ[аии]|підприємств|пожеж|освіт|медич|архів|школ|днз|амбулатор",
+        short,
+        re.IGNORECASE,
+    ):
+        return "Спільне фінансування / утримання"
+
+    # If leftover text is mostly party geography, fall back to form / category.
+    if short and not re.search(
+        r"(про[еє]кт|фінанс|утриман|комунальн|пожеж|освіт|медич|соціальн|"
+        r"водо|відход|доро|архів|підприємств|послуг|делегуван|утворен|"
+        r"школ|днз|амбулатор|цнап|безпек)",
+        short,
+        re.IGNORECASE,
+    ):
+        form_short = _TITLE_BOILERPLATE.sub("", form).strip(" .") or form
+        if _GENERIC_JOINT_PROJECT.match(form_short):
+            return "Спільний проєкт"
+        if form_short:
+            short = form_short
+
+    return _cap(_clip(short or form or raw or "Угода МСС"))
+
+
+def load_mss_registry() -> dict[str, dict]:
+    """register_number → {title, form} from MinRegion MSS registry XLSX."""
+    if not MSS_REGISTRY.exists():
+        return {}
+    try:
+        import openpyxl
+    except ImportError as exc:
+        raise SystemExit(
+            "openpyxl required to attach agreement subjects "
+            f"(pip install openpyxl). Missing while reading {MSS_REGISTRY}"
+        ) from exc
+    wb = openpyxl.load_workbook(MSS_REGISTRY, read_only=True, data_only=True)
+    ws = wb.active
+    out: dict[str, dict] = {}
+    for i, row in enumerate(ws.iter_rows(values_only=True)):
+        if i == 0 or not row or row[0] is None:
+            continue
+        num = row[0]
+        if isinstance(num, float) and num.is_integer():
+            key = str(int(num))
+        else:
+            key = str(num).strip()
+        if not key:
+            continue
+        out[key] = {
+            "title": str(row[1] or "").strip(),
+            "form": str(row[6] or "").strip() if len(row) > 6 else "",
+        }
+    return out
+
+
+def load_pin(registry: dict[str, dict] | None = None) -> tuple[dict[str, dict], list[dict]]:
+    """PIN undirected edges, enriched with agreement subjects when registry is present."""
+    registry = registry or {}
     nodes: dict[str, dict] = {}
-    seen: set[tuple[str, str]] = set()
-    edges: list[dict] = []
+    pair_regs: dict[tuple[str, str], set[str]] = defaultdict(set)
     with PIN.open(encoding="utf-8") as f:
         for row in csv.DictReader(f):
             a, b = row["hromada_code.x"], row["hromada_code.y"]
@@ -84,10 +230,40 @@ def load_pin() -> tuple[dict[str, dict], list[dict]]:
             nodes[a] = {"id": a, "label": row["hromada_name.x"] or a}
             nodes[b] = {"id": b, "label": row["hromada_name.y"] or b}
             key = tuple(sorted((a, b)))
-            if key in seen:
+            num = (row.get("register_number") or "").strip()
+            if num:
+                pair_regs[key].add(num)
+            else:
+                pair_regs[key]  # ensure pair exists even without number
+
+    edges: list[dict] = []
+    for (a, b), nums in sorted(pair_regs.items()):
+        edge: dict = {"a": a, "b": b, "kind": "pin"}
+        agreements: list[dict] = []
+        seen_titles: set[str] = set()
+        for num in sorted(nums, key=lambda x: int(x) if x.isdigit() else 0):
+            info = registry.get(num) or {}
+            title = agreement_essence(info.get("title") or "", info.get("form") or "")
+            if not title:
+                title = f"№{num}"
+            # Dedupe near-identical subjects across multi-agreement pairs.
+            key_t = title.casefold()
+            if key_t in seen_titles:
                 continue
-            seen.add(key)
-            edges.append({"a": a, "b": b, "kind": "pin"})
+            seen_titles.add(key_t)
+            item: dict = {"n": num, "title": title}
+            form = _clip(info.get("form") or "", 90)
+            if form and form.casefold() != title.casefold():
+                item["form"] = form
+            agreements.append(item)
+            if len(agreements) >= MAX_AGREEMENTS_PER_EDGE:
+                break
+        if agreements:
+            edge["agreements"] = agreements
+            edge["reasons"] = [x["title"] for x in agreements[:4]]
+            if len(agreements) == 1 and agreements[0].get("form"):
+                edge["theme"] = agreements[0]["form"]
+        edges.append(edge)
     return nodes, edges
 
 
@@ -101,11 +277,20 @@ def explain_fields(e: dict) -> dict:
     out: dict = {}
     reasons = e.get("reasons")
     if isinstance(reasons, list):
-        clipped = [str(r).strip() for r in reasons if r][:4]
+        clipped = [str(r).strip() for r in reasons if r][:5]
         if clipped:
             out["reasons"] = clipped
     if e.get("theme"):
         out["theme"] = e["theme"]
+    themes = e.get("themes")
+    if isinstance(themes, list) and themes:
+        out["themes"] = [str(t).strip() for t in themes if t][:6]
+    pairs = e.get("goal_pairs")
+    if isinstance(pairs, list) and pairs:
+        out["goal_pairs"] = pairs[:3]
+    agreements = e.get("agreements")
+    if isinstance(agreements, list) and agreements:
+        out["agreements"] = agreements[:MAX_AGREEMENTS_PER_EDGE]
     for key in (
         "goals_cosine",
         "geo_score",
@@ -119,12 +304,41 @@ def explain_fields(e: dict) -> dict:
     return out
 
 
+def attach_goal_overlap(
+    edge: dict,
+    *,
+    name_a: str,
+    name_b: str,
+    goals_by_name: dict[str, dict],
+) -> None:
+    """Mutate edge with thematic overlap reasons when Goals text is available."""
+    ga = goals_by_name.get(name_a) or {}
+    gb = goals_by_name.get(name_b) or {}
+    if not (ga.get("goals") and gb.get("goals")):
+        return
+    overlap = explain_goal_overlap(
+        name_a=name_a,
+        name_b=name_b,
+        katottg_a=ga.get("katottg"),
+        katottg_b=gb.get("katottg"),
+        goals_a=ga["goals"],
+        goals_b=gb["goals"],
+    )
+    if not overlap:
+        return
+    # Prefer freshly computed overlap over any empty/generic reasons.
+    for key in ("reasons", "themes", "goal_pairs", "theme"):
+        if overlap.get(key):
+            edge[key] = overlap[key]
+
+
 def encode_overlay(
     rows: list[dict],
     *,
     kind: str,
     name_to_code: dict[str, str],
     pin_keys: set[tuple[str, str]],
+    goals_by_name: dict[str, dict] | None = None,
 ) -> list[dict]:
     """Map matching-edge names → KATOTTG overlay edges; skip pairs already in PIN."""
     out: list[dict] = []
@@ -141,7 +355,11 @@ def encode_overlay(
             "geo_score": e.get("geo_score"),
             "track": e.get("track"),
         }
-        edge.update(explain_fields(e))
+        if goals_by_name is not None:
+            attach_goal_overlap(
+                edge, name_a=e["a"], name_b=e["b"], goals_by_name=goals_by_name
+            )
+        edge.update(explain_fields({**e, **edge}))
         out.append(edge)
     return out
 
@@ -151,6 +369,7 @@ def pin_corpus_overlay(
     *,
     name_to_code: dict[str, str],
     known_code_keys: set[tuple[str, str]],
+    goals_by_name: dict[str, dict] | None = None,
 ) -> list[dict]:
     """Broader KSE check: mss_network>0 but not curated known (dedupe by KATOTTG)."""
     by_codes: dict[tuple[str, str], dict] = {}
@@ -177,7 +396,11 @@ def pin_corpus_overlay(
             "geo_score": e.get("geo_score"),
             "track": e.get("track"),
         }
-        edge.update(explain_fields(e))
+        if goals_by_name is not None:
+            attach_goal_overlap(
+                edge, name_a=e["a"], name_b=e["b"], goals_by_name=goals_by_name
+            )
+        edge.update(explain_fields({**e, **edge}))
         out.append(edge)
     return out
 
@@ -229,7 +452,8 @@ def encode_named_overlay(
 
 def build_payload() -> dict:
     geo = load_geo()
-    pin_nodes, pin_edges = load_pin()
+    mss_registry = load_mss_registry()
+    pin_nodes, pin_edges = load_pin(mss_registry)
 
     hromadas = json.loads(HROMADAS.read_text(encoding="utf-8"))
     # Full metadata index (1,469) — portals / names / corpus flags by KATOTTG
@@ -252,6 +476,14 @@ def build_payload() -> dict:
     name_to_code = {r["Name"]: r["Katottg"] for r in corpus}
     code_to_full = {r["Katottg"]: r["Name"] for r in corpus}
     corpus_codes = set(name_to_code.values())
+    goals_by_name = {
+        r["Name"]: {
+            "goals": (r.get("Goals") or "").strip(),
+            "katottg": r.get("Katottg"),
+        }
+        for r in corpus
+        if r.get("Name")
+    }
 
     matching = json.loads(EDGES.read_text(encoding="utf-8"))
     corpus_matching = [
@@ -277,13 +509,23 @@ def build_payload() -> dict:
             "geo_score": e.get("geo_score"),
             "track": e.get("track"),
         }
-        edge.update(explain_fields(e))
+        attach_goal_overlap(
+            edge, name_a=e["a"], name_b=e["b"], goals_by_name=goals_by_name
+        )
+        edge.update(explain_fields({**e, **edge}))
         known_edges.append(edge)
     pin_corpus_edges = pin_corpus_overlay(
-        corpus_matching, name_to_code=name_to_code, known_code_keys=known_code_keys
+        corpus_matching,
+        name_to_code=name_to_code,
+        known_code_keys=known_code_keys,
+        goals_by_name=goals_by_name,
     )
     thematic_edges = encode_overlay(
-        thematic, kind="thematic", name_to_code=name_to_code, pin_keys=pin_keys
+        thematic,
+        kind="thematic",
+        name_to_code=name_to_code,
+        pin_keys=pin_keys,
+        goals_by_name=goals_by_name,
     )
     operational_edges = encode_overlay(
         operational, kind="operational", name_to_code=name_to_code, pin_keys=pin_keys
@@ -426,6 +668,14 @@ def build_payload() -> dict:
             "nodes_with_geo": with_geo,
             "oblasts": len(oblasts.get("features", [])),
             "pin_source": "KSE-Loc-Data-Hub partnerships-hromadas-network.csv",
+            "mss_registry_source": (
+                "data/cache/mss/mss_registry.xlsx (Назва договору / Форма)"
+                if mss_registry
+                else None
+            ),
+            "pin_agreements_enriched": sum(
+                1 for e in pin_edges if e.get("agreements")
+            ),
             "geo_source": "KSE-Loc-Data-Hub geography.csv (lat_center/lon_center)",
             "oblasts_source": "Natural Earth admin-1 → docs/geo/ukraine-oblasts.geojson",
             "outline_source": "docs/geo/ukraine-outline.geojson (mask outside UA)",
@@ -470,7 +720,8 @@ def main() -> None:
     m = payload["meta"]
     print(
         f"Wrote {OUT.relative_to(ROOT)} — "
-        f"PIN {m['pin_nodes']}n/{m['pin_edges']}e · "
+        f"PIN {m['pin_nodes']}n/{m['pin_edges']}e "
+        f"(subjects={m.get('pin_agreements_enriched', 0)}) · "
         f"universe={m['universe_nodes']} (portal={m['universe_with_portal']}) · "
         f"oblasts={m['oblasts']} · "
         f"known={m['known_edges']} pin∩corpus={m['pin_corpus_edges']} "
