@@ -321,9 +321,9 @@
   }
   .detail-neighbors {
     display: grid;
-    gap: 0.45rem;
+    gap: 0.65rem;
   }
-  .detail-neighbor-group { display: grid; gap: 0.2rem; }
+  .detail-neighbor-group { display: grid; gap: 0.4rem; }
   .detail-neighbor-kind {
     font-size: 0.72rem;
     font-weight: 700;
@@ -337,28 +337,64 @@
     margin: 0 0.35rem 0.1rem 0;
     vertical-align: middle;
   }
-  .detail-neighbor {
+  .detail-neighbor-card {
+    display: grid;
+    gap: 0.3rem;
+    padding: 0.5rem 0.55rem;
+    border: 1px solid var(--site-border);
+    border-radius: 9px;
+    background: var(--site-surface);
+  }
+  .detail-neighbor-card .detail-neighbor {
     display: flex;
     justify-content: space-between;
     gap: 0.5rem;
-    font-size: 0.74rem;
-    color: var(--site-muted);
-    padding: 0.15rem 0;
+    font-size: 0.78rem;
+    color: var(--site-ink);
+    padding: 0;
     border: 0;
     background: transparent;
     text-align: left;
     cursor: pointer;
     font: inherit;
-    border-radius: 6px;
+    font-weight: 650;
     width: 100%;
   }
-  .detail-neighbor:hover { color: var(--site-accent); background: rgba(37, 99, 235, 0.06); }
-  .detail-neighbor span { min-width: 0; }
-  .detail-neighbor b {
+  .detail-neighbor-card .detail-neighbor:hover { color: var(--site-accent); }
+  .detail-neighbor-card .detail-neighbor span { min-width: 0; }
+  .detail-neighbor-card .detail-neighbor b {
     flex-shrink: 0;
     font-variant-numeric: tabular-nums;
     color: var(--site-faint);
     font-weight: 650;
+  }
+  .detail-why {
+    margin: 0;
+    font-size: 0.72rem;
+    color: var(--site-muted);
+    line-height: 1.4;
+  }
+  .detail-why-list {
+    margin: 0.1rem 0 0;
+    padding: 0 0 0 1rem;
+    font-size: 0.72rem;
+    color: var(--site-muted);
+    line-height: 1.4;
+  }
+  .detail-why-list li { margin: 0.12rem 0; }
+  .detail-signals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  .detail-signal {
+    font-size: 0.66rem;
+    color: var(--site-muted);
+    background: var(--site-bg);
+    border: 1px solid var(--site-border);
+    border-radius: 5px;
+    padding: 0.12rem 0.35rem;
+    font-variant-numeric: tabular-nums;
   }
   .detail-empty {
     font-size: 0.76rem;
@@ -651,6 +687,11 @@ function resolveNode(nOrId) {
   return allById[nOrId.id] || nOrId;
 }
 
+function fmtPct(n) {
+  if (n == null || Number.isNaN(Number(n))) return null;
+  return Math.round(Number(n) * 100) + '%';
+}
+
 function neighborsOf(id) {
   const groups = Object.create(null);
   const order = ['known', 'pin_corpus', 'pin', 'thematic', 'operational', 'complementary', 'explicit_ask', 'hypothesis'];
@@ -664,7 +705,15 @@ function neighborsOf(id) {
       id: otherId,
       label: (other && (other.full_name || other.label)) || otherId,
       score: e.score,
+      kind,
       theme: e.theme,
+      reasons: e.reasons || [],
+      goals_cosine: e.goals_cosine,
+      geo_score: e.geo_score,
+      dream_overlap: e.dream_overlap,
+      fiscal_similarity: e.fiscal_similarity,
+      mss_network: e.mss_network,
+      same_oblast: e.same_oblast,
     });
   }
   for (const kind of Object.keys(groups)) {
@@ -672,6 +721,56 @@ function neighborsOf(id) {
     groups[kind] = groups[kind].slice(0, 8);
   }
   return order.filter((k) => groups[k] && groups[k].length).map((k) => ({ kind: k, items: groups[k] }));
+}
+
+function edgeBlurb(item) {
+  const kind = item.kind;
+  if (kind === 'complementary') return t('explain.complementary');
+  if (kind === 'explicit_ask') {
+    return item.theme
+      ? t('explain.explicitTheme').replace('{t}', item.theme)
+      : t('explain.explicit');
+  }
+  if (kind === 'thematic' || kind === 'hypothesis') return t('explain.thematic');
+  if (kind === 'operational') return t('explain.operational');
+  if (kind === 'known') return t('explain.known');
+  if (kind === 'pin_corpus') return t('explain.pinCorpus');
+  if (kind === 'pin') return t('explain.pin');
+  return '';
+}
+
+function edgeSignals(item) {
+  const out = [];
+  const goals = fmtPct(item.goals_cosine);
+  const geo = fmtPct(item.geo_score);
+  const dream = fmtPct(item.dream_overlap);
+  const fiscal = fmtPct(item.fiscal_similarity);
+  if (goals) out.push(t('explain.sigGoals').replace('{n}', goals));
+  if (geo) out.push(t('explain.sigGeo').replace('{n}', geo));
+  if (dream) out.push(t('explain.sigDream').replace('{n}', dream));
+  if (fiscal) out.push(t('explain.sigFiscal').replace('{n}', fiscal));
+  if (item.same_oblast) out.push(t('explain.sameOblast'));
+  if (item.theme && item.kind !== 'explicit_ask') out.push(item.theme);
+  return out;
+}
+
+function neighborCardHtml(item) {
+  const score = item.score != null ? Number(item.score).toFixed(2) : '';
+  const blurb = edgeBlurb(item);
+  const signals = edgeSignals(item);
+  const reasons = (item.reasons || []).slice(0, 4);
+  return (
+    `<div class="detail-neighbor-card">`
+    + `<button type="button" class="detail-neighbor" data-id="${esc(item.id)}"><span>${esc(item.label)}</span>${score ? `<b>${esc(score)}</b>` : ''}</button>`
+    + (blurb ? `<p class="detail-why">${esc(blurb)}</p>` : '')
+    + (signals.length
+      ? `<div class="detail-signals">${signals.map((s) => `<span class="detail-signal">${esc(s)}</span>`).join('')}</div>`
+      : '')
+    + (reasons.length
+      ? `<ul class="detail-why-list">${reasons.map((r) => `<li>${esc(r)}</li>`).join('')}</ul>`
+      : '')
+    + `</div>`
+  );
 }
 
 function renderDetail(n) {
@@ -744,11 +843,7 @@ function renderDetail(n) {
     neighborsHtml = `<p class="detail-empty">${esc(t('detail.noNeighbors'))}</p>`;
   } else {
     neighborsHtml = `<div class="detail-neighbors">${neighborGroups.map((g) => {
-      const items = g.items.map((item) => {
-        const score = item.score != null ? Number(item.score).toFixed(2) : '';
-        const tip = item.theme ? ` title="${esc(item.theme)}"` : '';
-        return `<button type="button" class="detail-neighbor" data-id="${esc(item.id)}"${tip}><span>${esc(item.label)}</span>${score ? `<b>${esc(score)}</b>` : ''}</button>`;
-      }).join('');
+      const items = g.items.map((item) => neighborCardHtml(item)).join('');
       return `<div class="detail-neighbor-group"><div class="detail-neighbor-kind"><span class="sw ${kindSwClass(g.kind)}" aria-hidden="true"></span>${esc(kindLabel(g.kind))}</div>${items}</div>`;
     }).join('')}</div>`;
   }
@@ -1324,7 +1419,20 @@ window.PAGE_I18N = {
     "detail.dream": "Проєкти DREAM",
     "detail.dfrr": "ДФРР (виконано)",
     "detail.war": "Статус (війна)",
-    "detail.health": "ЗОЗ перв. / спец."
+    "detail.health": "ЗОЗ перв. / спец.",
+    "explain.thematic": "Гіпотеза: схожі цілі в текстах стратегій",
+    "explain.operational": "Гіпотеза: зручні сусіди для спільних послуг",
+    "explain.complementary": "Гіпотеза: сила/DREAM однієї ↔ виклик іншої",
+    "explain.explicit": "У стратегії прямо згадано міжмуніципальну співпрацю",
+    "explain.explicitTheme": "Явний запит МСС · тема: {t}",
+    "explain.known": "Кураторський приклад із реєстру МСС для перевірки методу",
+    "explain.pinCorpus": "Угода МСС у реєстрі між громадами з нашого корпусу стратегій",
+    "explain.pin": "Зареєстрована угода МСС",
+    "explain.sigGoals": "цілі {n}",
+    "explain.sigGeo": "гео {n}",
+    "explain.sigDream": "DREAM {n}",
+    "explain.sigFiscal": "бюджет {n}",
+    "explain.sameOblast": "та сама область"
   },
   en: {
     "doc.title": "IMC map — hromada matching · W3I",
@@ -1387,7 +1495,20 @@ window.PAGE_I18N = {
     "detail.dream": "DREAM projects",
     "detail.dfrr": "DFRR (executed)",
     "detail.war": "War status",
-    "detail.health": "PHC / specialized facilities"
+    "detail.health": "PHC / specialized facilities",
+    "explain.thematic": "Hypothesis: similar goals in strategy texts",
+    "explain.operational": "Hypothesis: convenient neighbours for shared services",
+    "explain.complementary": "Hypothesis: one side’s strength/DREAM ↔ the other’s challenge",
+    "explain.explicit": "Strategy text explicitly mentions intermunicipal cooperation",
+    "explain.explicitTheme": "Explicit IMC ask · theme: {t}",
+    "explain.known": "Curated IMC-registry example used to validate the method",
+    "explain.pinCorpus": "Registry IMC between hromadas whose strategies are in our corpus",
+    "explain.pin": "Registered IMC agreement",
+    "explain.sigGoals": "goals {n}",
+    "explain.sigGeo": "geo {n}",
+    "explain.sigDream": "DREAM {n}",
+    "explain.sigFiscal": "fiscal {n}",
+    "explain.sameOblast": "same oblast"
   }
 };
 </script>

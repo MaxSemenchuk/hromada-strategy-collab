@@ -96,6 +96,29 @@ def short_label(full: str) -> str:
     return " ".join(parts[:2]) if len(parts) >= 2 else full
 
 
+def explain_fields(e: dict) -> dict:
+    """Compact why-signal payload for the map/graph detail card."""
+    out: dict = {}
+    reasons = e.get("reasons")
+    if isinstance(reasons, list):
+        clipped = [str(r).strip() for r in reasons if r][:4]
+        if clipped:
+            out["reasons"] = clipped
+    if e.get("theme"):
+        out["theme"] = e["theme"]
+    for key in (
+        "goals_cosine",
+        "geo_score",
+        "dream_overlap",
+        "fiscal_similarity",
+        "mss_network",
+        "same_oblast",
+    ):
+        if e.get(key) is not None:
+            out[key] = e[key]
+    return out
+
+
 def encode_overlay(
     rows: list[dict],
     *,
@@ -109,17 +132,17 @@ def encode_overlay(
         ca, cb = name_to_code[e["a"]], name_to_code[e["b"]]
         if tuple(sorted((ca, cb))) in pin_keys:
             continue
-        out.append(
-            {
-                "a": ca,
-                "b": cb,
-                "kind": kind,
-                "score": e["score"],
-                "goals_cosine": e.get("goals_cosine"),
-                "geo_score": e.get("geo_score"),
-                "track": e.get("track"),
-            }
-        )
+        edge = {
+            "a": ca,
+            "b": cb,
+            "kind": kind,
+            "score": e["score"],
+            "goals_cosine": e.get("goals_cosine"),
+            "geo_score": e.get("geo_score"),
+            "track": e.get("track"),
+        }
+        edge.update(explain_fields(e))
+        out.append(edge)
     return out
 
 
@@ -143,8 +166,9 @@ def pin_corpus_overlay(
         prev = by_codes.get(key)
         if prev is None or float(e["score"]) > float(prev["score"]):
             by_codes[key] = e
-    return [
-        {
+    out: list[dict] = []
+    for key, e in sorted(by_codes.items()):
+        edge = {
             "a": key[0],
             "b": key[1],
             "kind": "pin_corpus",
@@ -153,8 +177,9 @@ def pin_corpus_overlay(
             "geo_score": e.get("geo_score"),
             "track": e.get("track"),
         }
-        for key, e in sorted(by_codes.items())
-    ]
+        edge.update(explain_fields(e))
+        out.append(edge)
+    return out
 
 
 def encode_named_overlay(
@@ -188,17 +213,15 @@ def encode_named_overlay(
             cb = cb or e.get("b_katottg")
         if not ca or not cb or ca == cb:
             continue
-        out.append(
-            {
-                "a": ca,
-                "b": cb,
-                "kind": kind,
-                "score": e.get(score_key),
-                "track": e.get("track") or kind,
-                "same_oblast": e.get("same_oblast"),
-                "theme": e.get("theme"),
-            }
-        )
+        edge = {
+            "a": ca,
+            "b": cb,
+            "kind": kind,
+            "score": e.get(score_key),
+            "track": e.get("track") or kind,
+        }
+        edge.update(explain_fields(e))
+        out.append(edge)
         if len(out) >= limit:
             break
     return out
@@ -243,8 +266,9 @@ def build_payload() -> dict:
         tuple(sorted((name_to_code[e["a"]], name_to_code[e["b"]]))) for e in known
     }
 
-    known_edges = [
-        {
+    known_edges = []
+    for e in known:
+        edge = {
             "a": name_to_code[e["a"]],
             "b": name_to_code[e["b"]],
             "kind": "known",
@@ -253,8 +277,8 @@ def build_payload() -> dict:
             "geo_score": e.get("geo_score"),
             "track": e.get("track"),
         }
-        for e in known
-    ]
+        edge.update(explain_fields(e))
+        known_edges.append(edge)
     pin_corpus_edges = pin_corpus_overlay(
         corpus_matching, name_to_code=name_to_code, known_code_keys=known_code_keys
     )
