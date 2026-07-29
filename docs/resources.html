@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Ресурси й пріоритети — proxy без PDF стратегії</title>
+  <meta name="description" content="Структурні ресурси громад (бюджет, ДФРР, компетенції, медицина) і виявлені пріоритети з проєктів DREAM — поруч зі стратегічним matching."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/site.css"/>
+  <style>
+    body {
+      background:
+        radial-gradient(820px 440px at 8% -12%, rgba(14, 116, 144, 0.10), transparent 55%),
+        radial-gradient(640px 380px at 100% 0%, rgba(37, 99, 235, 0.07), transparent 50%),
+        var(--site-bg);
+      color: var(--site-ink);
+      font-family: var(--site-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { max-width: 980px; margin: 0 auto; padding: 2.4rem 1.5rem 2rem; }
+    .eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--site-accent); font-weight: 700; display: block; margin-bottom: 0.7rem;
+    }
+    h1 {
+      font-family: var(--site-font); font-weight: 750; letter-spacing: -0.02em;
+      font-size: clamp(1.55rem, 3.4vw, 2.15rem); line-height: 1.22; margin: 0 0 0.75rem;
+      max-width: 22ch; text-wrap: balance;
+    }
+    .lede { color: var(--site-muted); max-width: 64ch; margin: 0 0 1.35rem; }
+    .lenses {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 720px) { .lenses { grid-template-columns: 1fr; } }
+    .lens {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 12px; padding: 0.95rem 1rem; box-shadow: var(--site-shadow);
+    }
+    .lens .kicker {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--site-secondary); font-weight: 750; margin-bottom: 0.35rem;
+    }
+    .lens h2 {
+      font-family: var(--site-font); font-weight: 700; font-size: 1.02rem;
+      letter-spacing: -0.02em; margin: 0 0 0.35rem;
+    }
+    .lens p { margin: 0; font-size: 0.88rem; color: var(--site-muted); }
+    .coverage {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.55rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 640px) { .coverage { grid-template-columns: repeat(2, 1fr); } }
+    .cov {
+      text-align: center; padding: 0.7rem 0.45rem;
+      border-radius: 10px; background: var(--site-accent-soft);
+      border: 1px solid color-mix(in srgb, var(--site-accent) 18%, var(--site-border));
+    }
+    .cov .num {
+      display: block; font-variant-numeric: tabular-nums;
+      font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em;
+    }
+    .cov .lbl { font-size: 0.72rem; color: var(--site-muted); }
+    .sectors {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin: 0 0 1.6rem;
+    }
+    .chip {
+      font-size: 0.78rem; font-weight: 650;
+      padding: 0.28rem 0.55rem; border-radius: 999px;
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      color: var(--site-ink);
+    }
+    .chip span { color: var(--site-faint); font-weight: 600; margin-left: 0.25rem; }
+    .panel {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 14px; padding: 1.1rem 1.15rem 1.25rem;
+      box-shadow: var(--site-shadow); margin-bottom: 1.4rem;
+    }
+    .panel label {
+      display: block; font-size: 0.72rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--site-faint); font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .filters { display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: end; }
+    .filters > div { flex: 1 1 12rem; }
+    input[type="search"], select {
+      width: 100%; font: inherit; font-weight: 600;
+      padding: 0.65rem 0.8rem; border-radius: 10px;
+      border: 1px solid var(--site-border); background: #fff; color: var(--site-ink);
+    }
+    section { margin-bottom: 2rem; }
+    .section-kicker {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--site-faint); margin: 0 0 0.35rem;
+    }
+    h2.sec {
+      font-family: var(--site-font); font-weight: 750; letter-spacing: -0.02em;
+      font-size: 1.22rem; margin: 0 0 0.45rem;
+    }
+    .sec-lede { color: var(--site-muted); font-size: 0.92rem; margin: 0 0 0.9rem; max-width: 62ch; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    th, td {
+      padding: 0.55rem 0.55rem; border-bottom: 1px solid var(--site-rule);
+      text-align: left; vertical-align: top;
+    }
+    th {
+      font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--site-faint); font-weight: 700; white-space: nowrap;
+    }
+    td.num, th.num {
+      font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap;
+    }
+    .name { font-weight: 700; color: var(--site-ink); }
+    .meta { font-size: 0.78rem; color: var(--site-faint); }
+    .sectors-cell { font-size: 0.8rem; color: var(--site-muted); }
+    .title-hint { font-size: 0.78rem; color: var(--site-faint); margin-top: 0.2rem; }
+    .empty { color: var(--site-faint); font-size: 0.9rem; padding: 0.8rem 0; }
+    .caveat {
+      font-size: 0.85rem; color: var(--site-faint); font-style: italic;
+      margin-top: 0.5rem; padding-top: 0.85rem; border-top: 1px dashed var(--site-rule);
+    }
+    .top-list { display: grid; gap: 0.55rem; margin-bottom: 1.6rem; }
+    .top-item {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 10px; padding: 0.75rem 0.9rem;
+    }
+    .top-item .row { display: flex; justify-content: space-between; gap: 0.75rem; align-items: baseline; }
+    .top-item .count {
+      font-variant-numeric: tabular-nums; font-weight: 800; color: var(--site-accent);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="eyebrow" data-i18n="eyebrow">Ресурси · DREAM · proxy</span>
+    <h1 data-i18n="h1">Що громада вже має і на що тягне проєкти</h1>
+    <p class="lede" data-i18n-html="lede">
+      Поруч із текстом стратегій — <strong>структурні проксі</strong> (бюджет, ДФРР, компетенції, медицина)
+      і <strong>виявлені пріоритети</strong> з портфеля DREAM. Це не Goals і не готові МСС-кандидати —
+      шар для complementary matching і громад без PDF.
+    </p>
+
+    <div class="lenses" aria-label="Two data layers">
+      <div class="lens">
+        <div class="kicker" data-i18n="lens1.k">KSE ресурси</div>
+        <h2 data-i18n="lens1.h">Ємність і компетенції</h2>
+        <p data-i18n="lens1.p">Власні доходи на особу, ДФРР, молодіжні/бізнес-центри, медмережа. Missing ≠ нуль.</p>
+      </div>
+      <div class="lens">
+        <div class="kicker" data-i18n="lens2.k">DREAM</div>
+        <h2 data-i18n="lens2.h">Виявлені пріоритети</h2>
+        <p data-i18n="lens2.p">Проєкти відновлення/розвитку з локацією КАТОТТГ → сектори. «Е-врядування» = ЦНАП/Дія; «IT / цифровізація» = цифрова складова.</p>
+      </div>
+    </div>
+
+    <div class="coverage" id="coverage">
+      <div class="cov"><span class="num" id="c-rows">—</span><span class="lbl" data-i18n="cov.rows">громад у зрізі</span></div>
+      <div class="cov"><span class="num" id="c-dream">—</span><span class="lbl" data-i18n="cov.dream">з проєктами DREAM</span></div>
+      <div class="cov"><span class="num" id="c-pcap">—</span><span class="lbl" data-i18n="cov.pcap">з доходом на особу</span></div>
+      <div class="cov"><span class="num" id="c-comp">—</span><span class="lbl" data-i18n="cov.comp">competence відомий</span></div>
+    </div>
+
+    <p class="section-kicker" data-i18n="sectors.k">Сектори DREAM (корпус)</p>
+    <div class="sectors" id="sectors"></div>
+
+    <section>
+      <p class="section-kicker" data-i18n="top.k">Топ за кількістю проєктів</p>
+      <h2 class="sec" data-i18n="top.h">Де найгустіший DREAM-портфель</h2>
+      <p class="sec-lede" data-i18n="top.lede">Не «найкраща стратегія» — просто обсяг зареєстрованих ідей/проєктів на громаду.</p>
+      <div class="top-list" id="top-dream"></div>
+    </section>
+
+    <div class="panel">
+      <div class="filters">
+        <div>
+          <label for="q" data-i18n="search.label">Пошук громади</label>
+          <input id="q" type="search" autocomplete="off" data-i18n-placeholder="search.ph" placeholder="Назва або область…"/>
+        </div>
+        <div style="flex:0 1 11rem">
+          <label for="sort" data-i18n="sort.label">Сортування</label>
+          <select id="sort">
+            <option value="dream" data-i18n="sort.dream">DREAM проєкти</option>
+            <option value="pcap" data-i18n="sort.pcap">Дохід на особу</option>
+            <option value="name" data-i18n="sort.name">Назва</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <p class="section-kicker" data-i18n="table.k">Зріз по громадах</p>
+      <h2 class="sec" data-i18n="table.h">Ресурси × DREAM</h2>
+      <p class="sec-lede" id="table-lede" data-i18n="table.lede">Перші 80 рядків після фільтра. Повний шар — у data/releases/.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th data-i18n="th.name">Громада</th>
+              <th class="num" data-i18n="th.pcap">₴/ос.</th>
+              <th class="num" data-i18n="th.dream">DREAM</th>
+              <th data-i18n="th.sectors">Топ-сектори</th>
+              <th class="num" data-i18n="th.health">Мед.</th>
+              <th data-i18n="th.comp">Competence</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <tr><td colspan="6"><div class="empty" data-i18n="loading">Завантаження…</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="caveat" id="caveat" data-i18n-html="caveat">
+      Proxy-шар: не підміняє Goals і не є «стратегічним матчингом».
+      Competence / health missing ≠ нуль. DREAM — гіпотези пріоритетів за проєктами.
+    </p>
+  </div>
+
+  <p class="site-footer-note" data-i18n-html="footer.note">
+    Дані: <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases">hromada-resources.json</a>
+    · <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases">dream-priorities.json</a>
+    · <a href="matches.html">Кандидати</a>
+    · <a href="index.html">Про проєкт</a>
+  </p>
+
+  <script>
+window.PAGE_I18N = {
+  uk: {
+    "doc.title": "Ресурси й пріоритети — proxy без PDF стратегії",
+    "eyebrow": "Ресурси · DREAM · proxy",
+    "h1": "Що громада вже має і на що тягне проєкти",
+    "lede": "Поруч із текстом стратегій — <strong>структурні проксі</strong> (бюджет, ДФРР, компетенції, медицина) і <strong>виявлені пріоритети</strong> з портфеля DREAM. Це не Goals і не готові МСС-кандидати — шар для complementary matching і громад без PDF.",
+    "lens1.k": "KSE ресурси",
+    "lens1.h": "Ємність і компетенції",
+    "lens1.p": "Власні доходи на особу, ДФРР, молодіжні/бізнес-центри, медмережа. Missing ≠ нуль.",
+    "lens2.k": "DREAM",
+    "lens2.h": "Виявлені пріоритети",
+    "lens2.p": "Проєкти відновлення/розвитку з локацією КАТОТТГ → сектори. «Е-врядування» = ЦНАП/Дія; «IT / цифровізація» = цифрова складова.",
+    "cov.rows": "громад у зрізі",
+    "cov.dream": "з проєктами DREAM",
+    "cov.pcap": "з доходом на особу",
+    "cov.comp": "competence відомий",
+    "sectors.k": "Сектори DREAM (корпус)",
+    "top.k": "Топ за кількістю проєктів",
+    "top.h": "Де найгустіший DREAM-портфель",
+    "top.lede": "Не «найкраща стратегія» — просто обсяг зареєстрованих ідей/проєктів на громаду.",
+    "top.projects": "проєктів",
+    "search.label": "Пошук громади",
+    "search.ph": "Назва або область…",
+    "sort.label": "Сортування",
+    "sort.dream": "DREAM проєкти",
+    "sort.pcap": "Дохід на особу",
+    "sort.name": "Назва",
+    "table.k": "Зріз по громадах",
+    "table.h": "Ресурси × DREAM",
+    "table.lede": "Перші 80 рядків після фільтра. Повний шар — у data/releases/.",
+    "table.shown": "Показано {n} з {total} після фільтра.",
+    "th.name": "Громада",
+    "th.pcap": "₴/ос.",
+    "th.dream": "DREAM",
+    "th.sectors": "Топ-сектори",
+    "th.health": "Мед.",
+    "th.comp": "Competence",
+    "comp.yes": "відомо",
+    "comp.no": "—",
+    "empty": "Нічого не знайдено за цим запитом.",
+    "loading": "Завантаження…",
+    "caveat": "Proxy-шар: не підміняє Goals і не є «стратегічним матчингом». Competence / health missing ≠ нуль. DREAM — гіпотези пріоритетів за проєктами.",
+    "err.load": "Не вдалося завантажити resources-preview.json: ",
+    "footer.note": "Дані: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">hromada-resources.json</a> · <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">dream-priorities.json</a> · <a href=\"matches.html\">Кандидати</a> · <a href=\"index.html\">Про проєкт</a>"
+  },
+  en: {
+    "doc.title": "Resources & priorities — proxy without a strategy PDF",
+    "eyebrow": "Resources · DREAM · proxy",
+    "h1": "What a hromada already has — and what it files projects for",
+    "lede": "Beside strategy text — <strong>structural proxies</strong> (budget, SFRD, competence, health) and <strong>revealed priorities</strong> from the DREAM portfolio. Not Goals and not ready IMC candidates — a layer for complementary matching and hromadas without a PDF.",
+    "lens1.k": "KSE resources",
+    "lens1.h": "Capacity & competence",
+    "lens1.p": "Own revenue per capita, SFRD, youth/business centres, health network. Missing ≠ zero.",
+    "lens2.k": "DREAM",
+    "lens2.h": "Revealed priorities",
+    "lens2.p": "Recovery/development projects with CATOTTG locations → sectors. “E-governance” = CNAP/Diia; “IT / digitalisation” = digital component.",
+    "cov.rows": "hromadas in slice",
+    "cov.dream": "with DREAM projects",
+    "cov.pcap": "with income / capita",
+    "cov.comp": "competence known",
+    "sectors.k": "DREAM sectors (corpus)",
+    "top.k": "Top by project count",
+    "top.h": "Where the DREAM portfolio is densest",
+    "top.lede": "Not “best strategy” — just the volume of registered ideas/projects per hromada.",
+    "top.projects": "projects",
+    "search.label": "Search hromada",
+    "search.ph": "Name or oblast…",
+    "sort.label": "Sort",
+    "sort.dream": "DREAM projects",
+    "sort.pcap": "Income per capita",
+    "sort.name": "Name",
+    "table.k": "Hromada slice",
+    "table.h": "Resources × DREAM",
+    "table.lede": "First 80 rows after filter. Full layer — in data/releases/.",
+    "table.shown": "Showing {n} of {total} after filter.",
+    "th.name": "Hromada",
+    "th.pcap": "₴/cap.",
+    "th.dream": "DREAM",
+    "th.sectors": "Top sectors",
+    "th.health": "Health",
+    "th.comp": "Competence",
+    "comp.yes": "known",
+    "comp.no": "—",
+    "empty": "Nothing matched this query.",
+    "loading": "Loading…",
+    "caveat": "Proxy layer: does not replace Goals and is not strategy matching. Competence / health missing ≠ zero. DREAM = priority hypotheses from projects.",
+    "err.load": "Failed to load resources-preview.json: ",
+    "footer.note": "Data: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">hromada-resources.json</a> · <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">dream-priorities.json</a> · <a href=\"matches.html\">Candidates</a> · <a href=\"index.html\">About</a>"
+  }
+};
+  </script>
+  <script src="assets/i18n.js"></script>
+  <script src="assets/nav.js" data-active="resources"></script>
+  <script>
+    function t(key) {
+      return window.HromadaI18n ? HromadaI18n.t(key) : key;
+    }
+    function esc(s) {
+      return String(s == null ? "" : s)
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+    function fmtNum(x) {
+      if (x == null || Number.isNaN(Number(x))) return "—";
+      return Math.round(Number(x)).toLocaleString("uk-UA");
+    }
+    function fmtInt(x) {
+      if (x == null || Number.isNaN(Number(x))) return "—";
+      return String(Math.round(Number(x)));
+    }
+
+    var DATA = null;
+    var LIMIT = 80;
+
+    function filteredRows() {
+      var q = (document.getElementById("q").value || "").trim().toLowerCase();
+      var sort = document.getElementById("sort").value;
+      var rows = (DATA && DATA.hromadas) ? DATA.hromadas.slice() : [];
+      if (q) {
+        rows = rows.filter(function (r) {
+          var blob = [r.short, r.name, r.oblast, (r.top_sectors || []).join(" ")].join(" ").toLowerCase();
+          return blob.indexOf(q) !== -1;
+        });
+      }
+      rows.sort(function (a, b) {
+        if (sort === "name") {
+          return (a.short || a.name || "").localeCompare(b.short || b.name || "", "uk");
+        }
+        if (sort === "pcap") {
+          return (b.own_income_per_capita || -1) - (a.own_income_per_capita || -1);
+        }
+        return (b.dream_projects || 0) - (a.dream_projects || 0)
+          || (b.own_income_per_capita || 0) - (a.own_income_per_capita || 0);
+      });
+      return rows;
+    }
+
+    function render() {
+      if (!DATA) return;
+      var cov = DATA.coverage || {};
+      document.getElementById("c-rows").textContent = fmtInt(cov.rows);
+      document.getElementById("c-dream").textContent = fmtInt(cov.with_dream_projects);
+      document.getElementById("c-pcap").textContent = fmtInt(cov.with_own_income_per_capita);
+      document.getElementById("c-comp").textContent = fmtInt(cov.with_competence);
+
+      document.getElementById("sectors").innerHTML = (DATA.sector_totals || []).map(function (s) {
+        return '<span class="chip">' + esc(s.sector) + '<span>' + fmtInt(s.count) + "</span></span>";
+      }).join("");
+
+      document.getElementById("top-dream").innerHTML = (DATA.top_dream || []).slice(0, 12).map(function (r) {
+        return '<div class="top-item"><div class="row">'
+          + '<div><span class="name">' + esc(r.short) + "</span>"
+          + (r.oblast ? '<div class="meta">' + esc(r.oblast) + "</div>" : "")
+          + '<div class="sectors-cell">' + esc((r.top_sectors || []).slice(0, 3).join(" · ")) + "</div>"
+          + (r.sample_title ? '<div class="title-hint">' + esc(r.sample_title) + "</div>" : "")
+          + '</div><div class="count">' + fmtInt(r.dream_projects) + "<div class=\"meta\">" + t("top.projects") + "</div></div>"
+          + "</div></div>";
+      }).join("");
+
+      var rows = filteredRows();
+      var shown = rows.slice(0, LIMIT);
+      var lede = t("table.shown").replace("{n}", String(shown.length)).replace("{total}", String(rows.length));
+      document.getElementById("table-lede").textContent = lede;
+
+      document.getElementById("tbody").innerHTML = shown.length
+        ? shown.map(function (r) {
+            var health = r.health_known
+              ? fmtInt((r.health_primary || 0) + (r.health_specialized || 0))
+              : "—";
+            var comp = r.competence_known
+              ? t("comp.yes") + " · Y" + fmtInt(r.youth_centers) + "/B" + fmtInt(r.business_support_centers)
+              : t("comp.no");
+            return "<tr>"
+              + '<td><div class="name">' + esc(r.short || r.name) + "</div>"
+              + (r.oblast ? '<div class="meta">' + esc(r.oblast) + "</div>" : "")
+              + "</td>"
+              + '<td class="num">' + fmtNum(r.own_income_per_capita) + "</td>"
+              + '<td class="num">' + ((r.dream_projects || 0) > 0 ? fmtInt(r.dream_projects) : "—") + "</td>"
+              + '<td class="sectors-cell">' + esc((r.top_sectors || []).slice(0, 3).join(" · ") || "—")
+              + (r.sample_title ? '<div class="title-hint">' + esc(r.sample_title) + "</div>" : "")
+              + "</td>"
+              + '<td class="num">' + health + "</td>"
+              + "<td>" + esc(comp) + "</td>"
+              + "</tr>";
+          }).join("")
+        : '<tr><td colspan="6"><div class="empty">' + esc(t("empty")) + "</div></td></tr>";
+    }
+
+    fetch("assets/resources-preview.json")
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status + " " + r.statusText);
+        return r.json();
+      })
+      .then(function (data) {
+        DATA = data;
+        render();
+      })
+      .catch(function (err) {
+        document.getElementById("tbody").innerHTML =
+          '<tr><td colspan="6"><div class="empty">' + esc(t("err.load") + err) + "</div></td></tr>";
+      });
+
+    document.getElementById("q").addEventListener("input", render);
+    document.getElementById("sort").addEventListener("change", render);
+    document.addEventListener("hromada-lang", render);
+  </script>
+</body>
+</html>

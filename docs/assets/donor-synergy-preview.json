@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-24T09:12:23.991354+00:00",
+  "generatedAt": "2026-07-27T15:30:13.918130+00:00",
   "method": "v6 matching edges × DonorsPrograms tags",
   "caveat": "Matching scores are hypotheses unless known=true. DonorsPrograms absence means not found in tagging pass, not 'no program'. Pilot corpus: only text-mined Goals enter matching.",
   "totals": {
     "hromadas": 1469,
-    "tagged": 172,
-    "programs": 9,
+    "tagged": 174,
+    "programs": 13,
     "matching_edges": 2278
   },
   "programs": [
@@ -2320,6 +2320,741 @@
         {
           "short": "Тульчинська",
           "oblast": "Вінницька область",
+          "degree": 67
+        }
+      ]
+    },
+    {
+      "program": "ЄБРР",
+      "tagged": 5,
+      "with_goals": 5,
+      "in_matching_graph": 5,
+      "within_edge_count": 10,
+      "bridge_edge_count": 315,
+      "hubs": [
+        {
+          "name": "Дніпровська міська територіальна громада",
+          "short": "Дніпровська",
+          "oblast": "Дніпропетровська область",
+          "degree": 67,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Криворізька міська територіальна громада",
+          "short": "Криворізька",
+          "oblast": "Дніпропетровська область",
+          "degree": 67,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Луцька міська територіальна громада",
+          "short": "Луцька",
+          "oblast": "Волинська область",
+          "degree": 67,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Одеська міська територіальна громада",
+          "short": "Одеська",
+          "oblast": "Одеська область",
+          "degree": 67,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Черкаська міська територіальна громада",
+          "short": "Черкаська",
+          "oblast": "Черкаська область",
+          "degree": 67,
+          "source_quality": "full-strategy"
+        }
+      ],
+      "within_portfolio": [
+        {
+          "a_short": "Луцька",
+          "b_short": "Черкаська",
+          "score": 0.043,
+          "goals_cosine": 0.071,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Криворізька",
+          "b_short": "Черкаська",
+          "score": 0.041,
+          "goals_cosine": 0.068,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Криворізька",
+          "b_short": "Луцька",
+          "score": 0.04,
+          "goals_cosine": 0.066,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Дніпровська",
+          "b_short": "Черкаська",
+          "score": 0.036,
+          "goals_cosine": 0.06,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Криворізька",
+          "b_short": "Одеська",
+          "score": 0.031,
+          "goals_cosine": 0.051,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Одеська",
+          "b_short": "Черкаська",
+          "score": 0.03,
+          "goals_cosine": 0.05,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Дніпровська",
+          "b_short": "Одеська",
+          "score": 0.026,
+          "goals_cosine": 0.044,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Одеська",
+          "b_short": "Луцька",
+          "score": 0.02,
+          "goals_cosine": 0.034,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Дніпровська",
+          "b_short": "Луцька",
+          "score": 0.02,
+          "goals_cosine": 0.033,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Криворізька",
+          "b_short": "Дніпровська",
+          "score": 0.107,
+          "goals_cosine": 0.032,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        }
+      ],
+      "bridges": [
+        {
+          "in_portfolio_short": "Дніпровська",
+          "outside_short": "Лихівська",
+          "score": 0.168,
+          "goals_cosine": 0.133,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Дніпровська",
+          "outside_short": "Тернопільська",
+          "score": 0.063,
+          "goals_cosine": 0.104,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Криворізька",
+          "outside_short": "Обухівська",
+          "score": 0.146,
+          "goals_cosine": 0.098,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Криворізька",
+          "outside_short": "Ніжинська",
+          "score": 0.056,
+          "goals_cosine": 0.094,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Луцька",
+          "outside_short": "Ужгородська",
+          "score": 0.055,
+          "goals_cosine": 0.091,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Криворізька",
+          "outside_short": "Дунаєвецька",
+          "score": 0.054,
+          "goals_cosine": 0.091,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Лихівська",
+          "score": 0.054,
+          "goals_cosine": 0.09,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Черкаська",
+          "outside_short": "Великодимерська",
+          "score": 0.054,
+          "goals_cosine": 0.09,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Черкаська",
+          "outside_short": "Слобожанська",
+          "score": 0.053,
+          "goals_cosine": 0.089,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Білгород-Дністровська",
+          "score": 0.203,
+          "goals_cosine": 0.088,
+          "geo_score": 0.6,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        }
+      ],
+      "members_with_goals": [
+        {
+          "short": "Дніпровська",
+          "oblast": "Дніпропетровська область",
+          "degree": 67
+        },
+        {
+          "short": "Криворізька",
+          "oblast": "Дніпропетровська область",
+          "degree": 67
+        },
+        {
+          "short": "Луцька",
+          "oblast": "Волинська область",
+          "degree": 67
+        },
+        {
+          "short": "Одеська",
+          "oblast": "Одеська область",
+          "degree": 67
+        },
+        {
+          "short": "Черкаська",
+          "oblast": "Черкаська область",
+          "degree": 67
+        }
+      ]
+    },
+    {
+      "program": "ЄІБ",
+      "tagged": 3,
+      "with_goals": 3,
+      "in_matching_graph": 3,
+      "within_edge_count": 3,
+      "bridge_edge_count": 195,
+      "hubs": [
+        {
+          "name": "Кам'янська міська територіальна громада",
+          "short": "Кам'янська",
+          "oblast": "Дніпропетровська область",
+          "degree": 67,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Луцька міська територіальна громада",
+          "short": "Луцька",
+          "oblast": "Волинська область",
+          "degree": 67,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Одеська міська територіальна громада",
+          "short": "Одеська",
+          "oblast": "Одеська область",
+          "degree": 67,
+          "source_quality": "full-strategy"
+        }
+      ],
+      "within_portfolio": [
+        {
+          "a_short": "Кам'янська",
+          "b_short": "Луцька",
+          "score": 0.048,
+          "goals_cosine": 0.08,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "a_short": "Кам'янська",
+          "b_short": "Одеська",
+          "score": 0.029,
+          "goals_cosine": 0.048,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Одеська",
+          "b_short": "Луцька",
+          "score": 0.02,
+          "goals_cosine": 0.034,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        }
+      ],
+      "bridges": [
+        {
+          "in_portfolio_short": "Луцька",
+          "outside_short": "Ужгородська",
+          "score": 0.055,
+          "goals_cosine": 0.091,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Лихівська",
+          "score": 0.054,
+          "goals_cosine": 0.09,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Білгород-Дністровська",
+          "score": 0.203,
+          "goals_cosine": 0.088,
+          "geo_score": 0.6,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Кам'янська",
+          "outside_short": "Журавненська",
+          "score": 0.051,
+          "goals_cosine": 0.084,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Брацлавська",
+          "score": 0.05,
+          "goals_cosine": 0.083,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Луцька",
+          "outside_short": "Батуринська",
+          "score": 0.049,
+          "goals_cosine": 0.082,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Кам'янська",
+          "outside_short": "Ужгородська",
+          "score": 0.049,
+          "goals_cosine": 0.082,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Луцька",
+          "outside_short": "Великоберезовицька",
+          "score": 0.136,
+          "goals_cosine": 0.081,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Луцька",
+          "outside_short": "Вашковецька",
+          "score": 0.049,
+          "goals_cosine": 0.081,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Луцька",
+          "outside_short": "Дунаєвецька",
+          "score": 0.047,
+          "goals_cosine": 0.079,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        }
+      ],
+      "members_with_goals": [
+        {
+          "short": "Кам'янська",
+          "oblast": "Дніпропетровська область",
+          "degree": 67
+        },
+        {
+          "short": "Луцька",
+          "oblast": "Волинська область",
+          "degree": 67
+        },
+        {
+          "short": "Одеська",
+          "oblast": "Одеська область",
+          "degree": 67
+        }
+      ]
+    },
+    {
+      "program": "JICA",
+      "tagged": 2,
+      "with_goals": 2,
+      "in_matching_graph": 2,
+      "within_edge_count": 1,
+      "bridge_edge_count": 132,
+      "hubs": [
+        {
+          "name": "Одеська міська територіальна громада",
+          "short": "Одеська",
+          "oblast": "Одеська область",
+          "degree": 67,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Херсонська міська територіальна громада",
+          "short": "Херсонська",
+          "oblast": "Херсонська область",
+          "degree": 67,
+          "source_quality": "full-strategy"
+        }
+      ],
+      "within_portfolio": [
+        {
+          "a_short": "Одеська",
+          "b_short": "Херсонська",
+          "score": 0.129,
+          "goals_cosine": 0.069,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        }
+      ],
+      "bridges": [
+        {
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Нікопольська",
+          "score": 0.063,
+          "goals_cosine": 0.105,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Лихівська",
+          "score": 0.054,
+          "goals_cosine": 0.09,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Білгород-Дністровська",
+          "score": 0.203,
+          "goals_cosine": 0.088,
+          "geo_score": 0.6,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Брацлавська",
+          "score": 0.05,
+          "goals_cosine": 0.083,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Дніпровська",
+          "score": 0.047,
+          "goals_cosine": 0.079,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Божедарівська",
+          "score": 0.047,
+          "goals_cosine": 0.079,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Кропивницька",
+          "score": 0.045,
+          "goals_cosine": 0.075,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Великодимерська",
+          "score": 0.045,
+          "goals_cosine": 0.074,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Батуринська",
+          "score": 0.044,
+          "goals_cosine": 0.073,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Батуринська",
+          "score": 0.044,
+          "goals_cosine": 0.073,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        }
+      ],
+      "members_with_goals": [
+        {
+          "short": "Одеська",
+          "oblast": "Одеська область",
+          "degree": 67
+        },
+        {
+          "short": "Херсонська",
+          "oblast": "Херсонська область",
+          "degree": 67
+        }
+      ]
+    },
+    {
+      "program": "AFD",
+      "tagged": 1,
+      "with_goals": 1,
+      "in_matching_graph": 1,
+      "within_edge_count": 0,
+      "bridge_edge_count": 67,
+      "hubs": [
+        {
+          "name": "Одеська міська територіальна громада",
+          "short": "Одеська",
+          "oblast": "Одеська область",
+          "degree": 67,
+          "source_quality": "full-strategy"
+        }
+      ],
+      "within_portfolio": [],
+      "bridges": [
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Лихівська",
+          "score": 0.054,
+          "goals_cosine": 0.09,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Білгород-Дністровська",
+          "score": 0.203,
+          "goals_cosine": 0.088,
+          "geo_score": 0.6,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Брацлавська",
+          "score": 0.05,
+          "goals_cosine": 0.083,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Батуринська",
+          "score": 0.044,
+          "goals_cosine": 0.073,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Рівненська",
+          "score": 0.043,
+          "goals_cosine": 0.072,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Бердичівська",
+          "score": 0.043,
+          "goals_cosine": 0.072,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Житомирська",
+          "score": 0.042,
+          "goals_cosine": 0.07,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Херсонська",
+          "score": 0.129,
+          "goals_cosine": 0.069,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Божедарівська",
+          "score": 0.041,
+          "goals_cosine": 0.068,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Бурштинська",
+          "score": 0.04,
+          "goals_cosine": 0.067,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        }
+      ],
+      "members_with_goals": [
+        {
+          "short": "Одеська",
+          "oblast": "Одеська область",
           "degree": 67
         }
       ]

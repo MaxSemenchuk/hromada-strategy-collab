@@ -73,6 +73,18 @@ Official registry of inter-municipal cooperation agreements
 CC BY 4.0). Tabular XLSX — not individual contract PDFs. Cached under
 `data/cache/` (gitignored), same pattern as KSE covariates.
 
+## DREAM ideas (revealed priorities)
+
+```bash
+yarn fetch-dream                   # list + details + aggregate → dream-priorities.json
+yarn fetch-dream --list-only
+yarn fetch-dream --limit 200       # smoke test
+yarn fetch-dream --aggregate-only  # rebuild release from cache
+```
+
+Caches under `data/cache/dream/` (gitignored). Public aggregate:
+`data/releases/dream-priorities.json`.
+
 ## Batch runner
 
 ```bash

@@ -56,6 +56,15 @@ do not vend copies of KSE CSVs in `data/releases/`.
 | `edem-data.csv` | `edem_petitions`, `edem_consultations`, `edem_participatory_budget`, `edem_open_hromada`, `edem_total` (0–4) | Civic-tech maturity proxy for W3I outreach prioritization (see [W3I use case](#w3i-use-case-civic-tech-lab-outreach) below) |
 | `partnerships-hromadas.csv` | Existing inter-municipal agreement counts and partner lists | Curated ground-truth (`known: true`) **and** broader PIN∩corpus report (`mss_network>0` → `matching-edges.pin-corpus.json`); sanity-check against hypotheses |
 | `minregion-war-status.csv` | Occupation / frontline / LMA status | Context for missing or stale strategy documents; filter or annotate hromadas where retrieval is impossible or misleading |
+| `hromada_budget_2020_2022.csv` | `income_own`, tax mix, diversification | Fiscal capacity + `own_income_per_capita` (÷ `ua-pop-2022`) in `hromada-resources.json` |
+| `dfrr_hromadas.csv` | ДФРР planned/executed by year | Revealed capital-project appetite (state regional fund) |
+| `community-competence-hromada.csv` | Youth councils/centers, business support centers | Soft institutional competence — **~376 rows only; missing ≠ zero** |
+| `health_facilities.csv` | Primary/specialized/emergency counts | Health-service capacity (joined via `hromada_name` → code) |
+| `ua-admin-map.csv` | Settlement → hromada CATOTTG | Map DREAM location gazetteers to hromada rows |
+
+`yarn hromada-resources` packages the budget/DFRR/competence/health/war slice into
+[`data/releases/hromada-resources.json`](../data/releases/hromada-resources.json)
+(KSE still not vendored as raw CSVs).
 
 We also use `hromada.csv` as the KSE row index when joining — not for fields we
 already store (name, oblast, rayon, population come from our own metadata import).
@@ -140,6 +149,9 @@ claim. Tune weights after the first outreach cohort.
 | `match.py` v6 (goals + geo + mss network) | Done (2026-07-23) |
 | Cross-link issue on KSE repo | Filed 2026-07-24: [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) |
 | KSE attribution in `DATA-LICENSE.md` | Check [DATA-LICENSE.md](../DATA-LICENSE.md) |
+| `yarn hromada-resources` (budget/DFRR/competence/health/war) | Done (2026-07-29) |
+| `yarn fetch-dream` → `dream-priorities.json` | Done (2026-07-29) |
 
 Matching reads `data/releases/hromadas.json` and attaches KSE covariates at runtime
-via `enrich_from_kse.py` — not duplicated in NocoDB.
+via `enrich_from_kse.py` — not duplicated in NocoDB. Resource proxies and DREAM
+revealed priorities are separate release files for complementary / proxy use.

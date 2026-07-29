@@ -170,3 +170,107 @@ def edem_total(katottg: str | None) -> float | None:
         return None
     val = df.loc[katottg].get("edem_total")
     return float(val) if pd.notna(val) else None
+
+
+@lru_cache(maxsize=1)
+def budget_df() -> pd.DataFrame | None:
+    try:
+        return _fetch_csv("budget")
+    except Exception as exc:
+        print(f"WARNING: KSE budget unavailable ({exc})")
+        return None
+
+
+@lru_cache(maxsize=1)
+def latest_budget_df() -> pd.DataFrame | None:
+    """One row per hromada_code — latest year in the 2020–2022 panel."""
+    df = budget_df()
+    if df is None or df.empty:
+        return None
+    out = df.copy()
+    out["year"] = pd.to_numeric(out["year"], errors="coerce")
+    out = out.sort_values("year").groupby("hromada_code", as_index=False).tail(1)
+    return out.set_index("hromada_code", drop=False)
+
+
+@lru_cache(maxsize=1)
+def dfrr_df() -> pd.DataFrame | None:
+    try:
+        return _fetch_csv("dfrr")
+    except Exception as exc:
+        print(f"WARNING: KSE DFRR unavailable ({exc})")
+        return None
+
+
+@lru_cache(maxsize=1)
+def competence_df() -> pd.DataFrame | None:
+    """Youth councils/centers + business support — ~376 hromadas only."""
+    try:
+        return _fetch_csv("competence").set_index("hromada_code", drop=False)
+    except Exception as exc:
+        print(f"WARNING: KSE competence unavailable ({exc})")
+        return None
+
+
+@lru_cache(maxsize=1)
+def population_df() -> pd.DataFrame | None:
+    try:
+        return _fetch_csv("population").set_index("hromada_code", drop=False)
+    except Exception as exc:
+        print(f"WARNING: KSE population unavailable ({exc})")
+        return None
+
+
+@lru_cache(maxsize=1)
+def war_status_df() -> pd.DataFrame | None:
+    try:
+        df = _fetch_csv("war_status")
+    except Exception as exc:
+        print(f"WARNING: KSE war status unavailable ({exc})")
+        return None
+    if "hromada_code" not in df.columns:
+        return None
+    return df.set_index("hromada_code", drop=False)
+
+
+@lru_cache(maxsize=1)
+def health_facilities_by_hromada() -> pd.DataFrame | None:
+    """Join health_facilities (name-only) onto hromada_code via hromada.csv."""
+    try:
+        health = _fetch_csv("health")
+        hromada = _fetch_csv("hromada")
+    except Exception as exc:
+        print(f"WARNING: KSE health facilities unavailable ({exc})")
+        return None
+    if "hromada_name" not in health.columns:
+        return None
+    # Prefer unique name matches; drop ambiguous names
+    name_counts = hromada["hromada_name"].value_counts()
+    unique_names = set(name_counts[name_counts == 1].index)
+    h_unique = hromada[hromada["hromada_name"].isin(unique_names)][
+        ["hromada_code", "hromada_name"]
+    ]
+    merged = health.merge(h_unique, on="hromada_name", how="inner")
+    if merged.empty:
+        return None
+    return merged.set_index("hromada_code", drop=False)
+
+
+@lru_cache(maxsize=1)
+def settlement_to_hromada() -> dict[str, str]:
+    """Map settlement CATOTTG → hromada CATOTTG (for DREAM location gazetteers)."""
+    try:
+        admin = _fetch_csv("admin_map")
+    except Exception as exc:
+        print(f"WARNING: KSE admin map unavailable ({exc})")
+        return {}
+    mapping: dict[str, str] = {}
+    for _, row in admin.iterrows():
+        s = str(row.get("settlement_code") or "").strip()
+        h = str(row.get("hromada_code") or "").strip()
+        if s and h and s != "nan" and h != "nan":
+            mapping[s] = h
+        # also allow identity lookup when a hromada code is used directly
+        if h and h != "nan":
+            mapping.setdefault(h, h)
+    return mapping

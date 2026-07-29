@@ -21,15 +21,18 @@ Upstream sources this data draws on:
 - **[data.gov.ua](https://data.gov.ua)** — CKAN open-data portal, CC BY 4.0.
   Source for hromada development-strategy documents.
 - **[DREAM](https://dream.gov.ua)** (`public-api.dream.gov.ua`) — public
-  reconstruction-project registry.
+  reconstruction-project registry; aggregated hromada priorities in
+  `dream-priorities.json`.
 - **МСС (inter-municipal cooperation) agreement registry** — dataset
   `912c1ea4-38ea-4648-8306-59fc1df8b51b` on data.gov.ua.
 - **[KSE-Loc-Data-Hub](https://github.com/kse-ua/KSE-Loc-Data-Hub)**
   (Zenodo [10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573),
-  MIT) — hromada-level covariates (geography, e-dem, existing partnership
-  network, war status) joined at analysis time via KATOTTG. We do not vend
-  KSE CSV copies in this repo; see [data/sources/kse-pin.json](data/sources/kse-pin.json)
-  and [docs/kse-synergy.md](docs/kse-synergy.md).
+  MIT) — hromada-level covariates (geography, e-dem, budget, DFRR, competence,
+  health, existing partnership network, war status) joined at analysis time via
+  KATOTTG. We do not vend KSE CSV copies in this repo; see
+  [data/sources/kse-pin.json](data/sources/kse-pin.json) and
+  [docs/kse-synergy.md](docs/kse-synergy.md). Packaged release slice:
+  `hromada-resources.json`.
 
 The `Goals`, `Projects`, `Strengths`, `Challenges`, `PartnersMentioned`, and
 `MSSAgreements` fields are LLM extractions from the primary strategy

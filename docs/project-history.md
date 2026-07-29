@@ -315,7 +315,7 @@ Map (`yarn graph-pin-matching`): layer **«Усі громади (метадан
 release row with KSE lat/lon (~1 418); PIN/matching stay on top. Popups link
 `PortalUrl` / `StrategyUrl` when present (36 portals in current release).
 
-## Open threads (as of 2026-07-24)
+## Open threads (as of 2026-07-29)
 
 - [x] File cross-link issue on KSE repo — [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) (2026-07-24)
 - [x] Stakeholder site under `docs/` + shared nav (GitHub Pages workflow)
@@ -333,9 +333,16 @@ release row with KSE lat/lon (~1 418); PIN/matching stay on top. Popups link
       «hypothesis» layer; show thematic (default ON) and operational
       («зручний сусід», default OFF) separately —
       `yarn graph-pin-matching` / `build_pin_matching_graph.py` — 2026-07-24
+- [x] Complementary layer + resources/DREAM releases + `resources.html` — 2026-07-29
+- [x] Goals hierarchy sidecar (`goals-hierarchy.json`) + matching v7 blend — 2026-07-29
+- [x] Explicit MSS intents (`mss-intents.json` / explicit-ask edges + map layer) — 2026-07-29
+- [x] Strategy writing guide + corpus-growth checklist — 2026-07-29
 - [ ] Densify strategy corpus in low-МСС / under-sampled oblasts so
       operational neighbours are not an artifact of who got text-mined
+      (queue primed: 25 priority `pending` in `batch-queue.json`; see
+      [corpus-growth.md](./corpus-growth.md))
 - [ ] Multi-way / community view for 3+ party clusters (Nizhyn-5, Dnister-22)
+- [ ] Expand curated hierarchy gold beyond 5 hromadas (re-structure from PDFs)
 
 ---
 

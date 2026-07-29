@@ -19,6 +19,8 @@
     --line-pin-corpus: #c084fc;
     --line-hyp: #7aa2ff;
     --line-ops: #fb923c;
+    --line-comp: #34d399;
+    --line-ask: #f472b6;
     --dot-universe: #94a3b8;
     --dot-corpus: #d9a548;
   }
@@ -154,6 +156,8 @@
   .sw.pin-corpus { border-color: var(--line-pin-corpus); border-top-width: 2.5px; }
   .sw.hyp { border-color: var(--line-hyp); border-top-style: dashed; }
   .sw.ops { border-color: var(--line-ops); border-top-style: dotted; border-top-width: 2.5px; }
+  .sw.comp { border-color: var(--line-comp); border-top-style: dashed; border-top-width: 2.5px; }
+  .sw.ask { border-color: var(--line-ask); border-top-width: 2.5px; }
   .sw.universe {
     width: 9px; height: 9px; border-radius: 50%;
     background: var(--dot-universe); border: 0; margin-top: 0.4rem; margin-left: 6px; margin-right: 7px;
@@ -289,6 +293,22 @@
         </span>
       </label>
       <label>
+        <input type="checkbox" id="layer-complementary"/>
+        <span class="sw comp" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="layer.complementary.title">Доповнення ресурсів</span>
+          <span class="layer-desc" data-i18n="layer.complementary.desc">Зелені — сила/DREAM однієї ↔ виклик іншої</span>
+        </span>
+      </label>
+      <label>
+        <input type="checkbox" id="layer-explicit-ask"/>
+        <span class="sw ask" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="layer.explicitAsk.title">Явний запит МСС</span>
+          <span class="layer-desc" data-i18n="layer.explicitAsk.desc">Рожеві — у стратегії прямо згадано кооперацію</span>
+        </span>
+      </label>
+      <label>
         <input type="checkbox" id="layer-corpus"/>
         <span class="sw corpus" aria-hidden="true"></span>
         <span class="layer-copy">
@@ -309,6 +329,8 @@
       <div class="stat"><span data-i18n="stat.pinCorpus">Угод у корпусі</span><b id="s-pin-corpus">—</b></div>
       <div class="stat"><span data-i18n="stat.thematic">Гіпотез «схожа стратегія»</span><b id="s-thematic">—</b></div>
       <div class="stat"><span data-i18n="stat.operational">Гіпотез «зручний сусід»</span><b id="s-operational">—</b></div>
+      <div class="stat"><span data-i18n="stat.complementary">Гіпотез «доповнення»</span><b id="s-complementary">—</b></div>
+      <div class="stat"><span data-i18n="stat.explicitAsk">Явних запитів МСС</span><b id="s-explicit-ask">—</b></div>
     </div>
     <p class="hint" id="hint">Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по ноді відкриває портал або PDF, якщо є посилання.</p>
   </aside>
@@ -333,6 +355,8 @@ document.getElementById('s-known').textContent = meta.known_edges;
 document.getElementById('s-pin-corpus').textContent = meta.pin_corpus_edges ?? 0;
 document.getElementById('s-thematic').textContent = meta.thematic_edges;
 document.getElementById('s-operational').textContent = meta.operational_edges;
+document.getElementById('s-complementary').textContent = meta.complementary_edges ?? 0;
+document.getElementById('s-explicit-ask').textContent = meta.explicit_ask_edges ?? 0;
 
 const mapEl = document.getElementById('map');
 const canvas = document.getElementById('c');
@@ -347,7 +371,7 @@ let dragging = null, panning = false, lastX = 0, lastY = 0;
 let hover = null;
 let layers = {
   universe: true, pin: true, known: true, pinCorpus: true,
-  thematic: true, operational: false, corpus: false,
+  thematic: true, operational: false, complementary: false, explicitAsk: false, corpus: false,
 };
 
 function esc(s) {
@@ -455,6 +479,8 @@ const knownEdgesLayer = L.layerGroup().addTo(map);
 const pinCorpusEdgesLayer = L.layerGroup().addTo(map);
 const thematicEdgesLayer = L.layerGroup().addTo(map);
 const operationalEdgesLayer = L.layerGroup(); // default OFF — add on toggle
+const complementaryEdgesLayer = L.layerGroup();
+const explicitAskEdgesLayer = L.layerGroup();
 const universeLayer = L.layerGroup().addTo(map);
 const nodesLayer = L.layerGroup().addTo(map);
 
@@ -463,6 +489,8 @@ function edgeStyle(kind) {
   if (kind === 'known') return { color: '#d9a548', weight: 3, opacity: 0.95 };
   if (kind === 'pin_corpus') return { color: '#c084fc', weight: 2.5, opacity: 0.9 };
   if (kind === 'operational') return { color: '#fb923c', weight: 2, opacity: 0.7, dashArray: '2 6' };
+  if (kind === 'complementary') return { color: '#34d399', weight: 2, opacity: 0.75, dashArray: '4 4' };
+  if (kind === 'explicit_ask') return { color: '#f472b6', weight: 2.5, opacity: 0.9 };
   // thematic (and legacy hypothesis)
   return { color: '#7aa2ff', weight: 2, opacity: 0.75, dashArray: '6 5' };
 }
@@ -473,6 +501,8 @@ function rebuildMapLayers() {
   pinCorpusEdgesLayer.clearLayers();
   thematicEdgesLayer.clearLayers();
   operationalEdgesLayer.clearLayers();
+  complementaryEdgesLayer.clearLayers();
+  explicitAskEdgesLayer.clearLayers();
   universeLayer.clearLayers();
   nodesLayer.clearLayers();
 
@@ -484,6 +514,8 @@ function rebuildMapLayers() {
     else if (e.kind === 'known') knownEdgesLayer.addLayer(line);
     else if (e.kind === 'pin_corpus') pinCorpusEdgesLayer.addLayer(line);
     else if (e.kind === 'operational') operationalEdgesLayer.addLayer(line);
+    else if (e.kind === 'complementary') complementaryEdgesLayer.addLayer(line);
+    else if (e.kind === 'explicit_ask') explicitAskEdgesLayer.addLayer(line);
     else if (e.kind === 'thematic' || e.kind === 'hypothesis') thematicEdgesLayer.addLayer(line);
   }
 
@@ -532,8 +564,10 @@ function syncLayerVisibility() {
   show(pinCorpusEdgesLayer, layers.pinCorpus);
   show(thematicEdgesLayer, layers.thematic);
   show(operationalEdgesLayer, layers.operational);
+  show(complementaryEdgesLayer, layers.complementary);
+  show(explicitAskEdgesLayer, layers.explicitAsk);
   // network nodes on when any network / corpus highlight layer is on
-  show(nodesLayer, layers.pin || layers.known || layers.pinCorpus || layers.thematic || layers.operational || layers.corpus);
+  show(nodesLayer, layers.pin || layers.known || layers.pinCorpus || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus);
 }
 
 rebuildMapLayers();
@@ -545,12 +579,14 @@ function syncLayers() {
   layers.pinCorpus = document.getElementById('layer-pin-corpus').checked;
   layers.thematic = document.getElementById('layer-thematic').checked;
   layers.operational = document.getElementById('layer-operational').checked;
+  layers.complementary = document.getElementById('layer-complementary').checked;
+  layers.explicitAsk = document.getElementById('layer-explicit-ask').checked;
   layers.corpus = document.getElementById('layer-corpus').checked;
   if (mode === 'map') {
     rebuildMapLayers();
   }
 }
-['layer-universe','layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-corpus'].forEach(id => {
+['layer-universe','layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-corpus'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
@@ -614,6 +650,8 @@ function edgeVisible(e) {
   if (e.kind === 'pin_corpus') return layers.pinCorpus;
   if (e.kind === 'thematic' || e.kind === 'hypothesis') return layers.thematic;
   if (e.kind === 'operational') return layers.operational;
+  if (e.kind === 'complementary') return layers.complementary;
+  if (e.kind === 'explicit_ask') return layers.explicitAsk;
   return true;
 }
 
@@ -745,6 +783,14 @@ function strokeEdge(e, ax, ay, bx, by) {
     ctx.strokeStyle = 'rgba(251,146,60,0.65)';
     ctx.lineWidth = 1.3 / scale;
     ctx.setLineDash([2 / scale, 5 / scale]);
+  } else if (e.kind === 'complementary') {
+    ctx.strokeStyle = 'rgba(52,211,153,0.75)';
+    ctx.lineWidth = 1.4 / scale;
+    ctx.setLineDash([4 / scale, 4 / scale]);
+  } else if (e.kind === 'explicit_ask') {
+    ctx.strokeStyle = 'rgba(244,114,182,0.9)';
+    ctx.lineWidth = 2 / scale;
+    ctx.setLineDash([]);
   } else {
     // thematic
     ctx.strokeStyle = 'rgba(122,162,255,0.55)';
@@ -763,7 +809,7 @@ function drawGraph() {
   ctx.save();
   ctx.translate(width / 2 + camX, height / 2 + camY);
   ctx.scale(scale, scale);
-  for (const kind of ['pin', 'operational', 'thematic', 'hypothesis', 'pin_corpus', 'known']) {
+  for (const kind of ['pin', 'operational', 'complementary', 'thematic', 'hypothesis', 'pin_corpus', 'explicit_ask', 'known']) {
     for (const e of edges) {
       if (e.kind !== kind || !edgeVisible(e)) continue;
       strokeEdge(e, e.source.x, e.source.y, e.target.x, e.target.y);
@@ -822,6 +868,10 @@ window.PAGE_I18N = {
     "layer.thematic.desc": "Пунктир — гіпотези за схожістю цілей у стратегіях",
     "layer.operational.title": "Зручний сусід",
     "layer.operational.desc": "Крапкові лінії — гіпотези для спільних послуг із сусідами",
+    "layer.complementary.title": "Доповнення ресурсів",
+    "layer.complementary.desc": "Зелені — сила/DREAM однієї ↔ виклик іншої",
+    "layer.explicitAsk.title": "Явний запит МСС",
+    "layer.explicitAsk.desc": "Рожеві — у стратегії прямо згадано кооперацію",
     "layer.corpus.title": "Громади зі стратегіями",
     "layer.corpus.desc": "Підсвітити громади, чиї тексти вже в аналізі",
     "stats.label": "Цифри",
@@ -835,6 +885,8 @@ window.PAGE_I18N = {
     "stat.pinCorpus": "Угод у корпусі",
     "stat.thematic": "Гіпотез «схожа стратегія»",
     "stat.operational": "Гіпотез «зручний сусід»",
+    "stat.complementary": "Гіпотез «доповнення»",
+    "stat.explicitAsk": "Явних запитів МСС",
     "hint.map": "Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по ноді відкриває портал або PDF, якщо є посилання.",
     "hint.graph": "Режим «Граф» показує лише мережу угод і гіпотез. Для повної мапи з усіма громадами перемкніть на «Мапу».",
     "popup.people": "осіб",
@@ -868,6 +920,10 @@ window.PAGE_I18N = {
     "layer.thematic.desc": "Dashed — hypotheses from goal similarity in strategies",
     "layer.operational.title": "Convenient neighbour",
     "layer.operational.desc": "Dotted lines — hypotheses for shared services with neighbours",
+    "layer.complementary.title": "Resource complement",
+    "layer.complementary.desc": "Green — one side’s strength/DREAM ↔ the other’s challenge",
+    "layer.explicitAsk.title": "Explicit IMC ask",
+    "layer.explicitAsk.desc": "Pink — strategy text names inter-municipal cooperation",
     "layer.corpus.title": "Hromadas with strategies",
     "layer.corpus.desc": "Highlight hromadas whose texts are already in the analysis",
     "stats.label": "Figures",
@@ -881,6 +937,8 @@ window.PAGE_I18N = {
     "stat.pinCorpus": "Agreements in the corpus",
     "stat.thematic": "“Similar strategy” hypotheses",
     "stat.operational": "“Convenient neighbour” hypotheses",
+    "stat.complementary": "“Complement” hypotheses",
+    "stat.explicitAsk": "Explicit IMC asks",
     "hint.map": "Grey nodes are all hromadas with coordinates, not only those whose strategies we have already parsed. Click a node to open the portal or PDF when a link is available.",
     "hint.graph": "Graph mode shows only the agreement and hypothesis network. Switch to Map for the full map with all hromadas.",
     "popup.people": "people",

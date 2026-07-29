@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-07-29T09:30:16.394496+00:00",
+  "pairCount": 400,
+  "method": "complementary v2: weighted DREAM/Strengths/resource → Challenges; score=1-exp(-0.4·w) ×1.2 same-oblast; min weight 1.2; prefer same-oblast shortlist",
+  "warning": "Hypotheses only — not v6 strategy matching, not known=true. Keyword hit ≠ verified МСС plan.",
+  "inputs": [
+    "hromadas.json (Challenges/Strengths)",
+    "dream-priorities.json",
+    "hromada-resources.json"
+  ]
+}

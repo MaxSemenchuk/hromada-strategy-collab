@@ -10,10 +10,18 @@
     "edem": "edem-data.csv",
     "partnerships": "partnerships-hromadas.csv",
     "partnerships_network": "partnerships-hromadas-network.csv",
-    "war_status": "minregion-war-status.csv"
+    "war_status": "minregion-war-status.csv",
+    "budget": "hromada_budget_2020_2022.csv",
+    "dfrr": "dfrr_hromadas.csv",
+    "competence": "community-competence-hromada.csv",
+    "health": "health_facilities.csv",
+    "population": "ua-pop-2022.csv",
+    "admin_map": "ua-admin-map.csv"
   },
   "notes": {
     "edem": "Use edem-data.csv only — full_dataset.csv replaces NA with 0 for missing hromadas.",
+    "competence": "Only ~376 hromadas present — treat absence as missing, not zero.",
+    "health": "No hromada_code column — join via hromada_name through hromada.csv.",
     "usage": "Fetched at analysis time via scripts/analysis/enrich_from_kse.py; not vendored in this repo."
   }
 }

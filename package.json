@@ -16,6 +16,12 @@
     "ckan-search": "tsx scripts/retrieval/ckan-search.ts",
     "download-raw": "tsx scripts/retrieval/download-raw.ts",
     "fetch-mss-registry": "tsx scripts/retrieval/fetch-mss-registry.ts",
+    "hromada-resources": "python3 scripts/analysis/build_hromada_resources.py",
+    "fetch-dream": "python3 scripts/analysis/fetch_dream_priorities.py",
+    "complementary-match": "python3 scripts/analysis/complementary_match.py",
+    "extract-mss-intents": "python3 scripts/analysis/extract_mss_intents.py",
+    "build-goals-hierarchy": "python3 scripts/analysis/build_goals_hierarchy.py",
+    "enrich-operational": "python3 scripts/analysis/enrich_operational.py",
     "match": "python3 scripts/analysis/match.py",
     "export-matching-edges": "python3 scripts/analysis/export_edges.py",
     "donor-synergy": "python3 scripts/analysis/donor_synergy.py",
@@ -24,7 +30,8 @@
     "priority-corpus-growth": "python3 scripts/analysis/priority_corpus_growth.py",
     "test-tracks": "python3 scripts/analysis/test_tracks.py",
     "graph-pin-matching": "python3 scripts/analysis/build_pin_matching_graph.py",
-    "build-matches-preview": "python3 scripts/analysis/build_matches_preview.py"
+    "build-matches-preview": "python3 scripts/analysis/build_matches_preview.py",
+    "build-resources-preview": "python3 scripts/analysis/build_resources_preview.py"
   },
   "dependencies": {
     "dotenv": "^16.4.5"

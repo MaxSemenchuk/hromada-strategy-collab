@@ -107,20 +107,50 @@ and ACLED-based conflict-intensity/infrastructure-damage.
 
 ### Relevance to this project
 
-Candidate enrichment covariates for the `Hromadas` table if/when the project
-moves past pilot stage:
+Candidate enrichment covariates for matching / outreach — now also packaged
+via `yarn hromada-resources` (see release `hromada-resources.json`):
 
-- `geography.csv` — distance-to-border/frontline, travel time to oblast
-  center — plausible proximity-signal input alongside the existing
-  oblast/rayon-adjacency term (see the weighted-matching note in
-  [README.md](../README.md#methodology-notes)).
-- `edem_total` / `partnerships-hromadas.csv` — possible weak-signal proxies
-  for civic-tech maturity or existing inter-municipal cooperation, useful as
-  a validation check against this project's own МСС candidates (subject to
-  the missingness caveat above).
-- `minregion-war-status.csv` — occupation/frontline status, relevant context
-  for interpreting why some hromadas have no findable strategy document.
+- `geography.csv` — proximity (already in match.py v6)
+- `edem_total` / `partnerships-hromadas.csv` — civic-tech + PIN validation
+- `minregion-war-status.csv` — occupation/frontline context
+- `hromada_budget_2020_2022.csv`, `dfrr_hromadas.csv`,
+  `community-competence-hromada.csv`, `health_facilities.csv` — fiscal /
+  competence / health proxies
 
-Not yet pulled into NocoDB or the matching pipeline — this section is a
-research note, not an integration decision. For the integration plan and W3I
-outreach use case, see [kse-synergy.md](kse-synergy.md).
+For the integration plan and W3I outreach use case, see
+[kse-synergy.md](kse-synergy.md).
+
+---
+
+## DREAM public API
+
+- **Reviewed:** 2026-07-29
+- **URL:** https://public-api.dream.gov.ua
+- **Docs:** https://open-contracting.github.io/dream-api-docs/
+
+Reconstruction / public-investment project registry. List endpoint paginates
+with `?from=<updated>` (~16k ideas). Per-idea detail carries UA-CATOTTG
+settlement locations + WB-ECO sector codes. Aggregated to hromada level by
+`yarn fetch-dream` → `data/releases/dream-priorities.json` (raw cache in
+`data/cache/dream/`). Revealed priorities, not strategy text.
+
+---
+
+## Own revenues (data.gov.ua) — caveat
+
+CKAN packages titled «Власні доходи громад … на одиницю населення» are often
+**oblast-scoped** dumps (e.g. Івано-Франківська, ~60 rows), not a national
+series. Prefer KSE `hromada_budget_2020_2022.csv` ÷ `ua-pop-2022` for
+comparable per-capita coverage across all 1,469 mainland hromadas
+(`own_income_per_capita` in `hromada-resources.json`). Live national open-budget
+CSVs exist per oblast with `CATUTTC` but are not yet federated here.
+
+---
+
+## Prozorro — deferred
+
+National procurement is high-signal for revealed infrastructure priorities, but
+stable **EDRPOУ → KATOTTG** join at hromada level is not in this repo yet (DREAM
+parties expose EDR ids; mapping them to municipal budgets needs a separate
+registry). Do not invent tender→hromada heuristics. Revisit after an EDR/budget
+code bridge exists.

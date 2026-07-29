@@ -28,21 +28,35 @@ Spin-out from w3i-network (2026-07-23); NocoDB `Hromadas` table still shared.
 
 ## Matching pipeline (current)
 
-`yarn match` → `scripts/analysis/match.py` v6:
+`yarn match` → `scripts/analysis/match.py` v7:
 `0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`
 
-Goals: mean-centered sub-goal embeddings (`multilingual-e5-small`). After changes, run `yarn test-known-pairs` and `yarn report-pin-corpus` (broader KSE PIN∩corpus check — not a second known set).
+Goals: mean-centered sub-goal embeddings (`multilingual-e5-small`). When
+`goals-hierarchy.json` (or parsed Goals text) has operational lines on both
+sides, goals_cosine blends **0.65×operational + 0.35×strategic**. After changes,
+run `yarn test-known-pairs` and `yarn report-pin-corpus`.
 
-PIN map (`yarn graph-pin-matching`): paint **thematic** and **operational**
-overlays separately — never top-N by combined `score` (sparse corpus → geo bias).
+Separate layers (do not fold into combined `score`):
+- `yarn complementary-match` — resource/DREAM ↔ Challenges
+- `yarn extract-mss-intents` — explicit МСС language → `mss-intents.json`
+- `yarn hromada-resources` / `yarn fetch-dream` — structural + DREAM covariates
+
+PIN map (`yarn graph-pin-matching`): paint **thematic**, **operational**,
+**complementary**, and **explicit_ask** overlays separately — never top-N by
+combined `score` (sparse corpus → geo bias).
 
 ## Hard rules
 
 1. Matching scores are **hypotheses** unless `known: true` (curated registry-confirmed). Do not set `known: true` on all PIN edges — use `matching-edges.pin-corpus.json` for the broader overlap.
 2. Sector-tag overlap is **not** a matching signal.
 3. `edem_total`: use `edem-data.csv`; missing hromadas ≠ zero.
-4. Batch growth: `scripts/retrieval/` + in-session structuring → `yarn structure-hromada --json … --write`. Prefer `yarn priority-corpus-growth` when expanding PIN∩corpus validation coverage.
+4. Batch growth: `scripts/retrieval/` + in-session structuring → `yarn structure-hromada --json … --write`. Prefer `yarn priority-corpus-growth` when expanding PIN∩corpus validation coverage. See [docs/corpus-growth.md](../../docs/corpus-growth.md).
 5. Do not inflate CKAN "123 strategies" — mostly unrelated datasets.
 6. Minimize scope; match existing TS/Python conventions in `scripts/`.
 7. Do not present a single combined `score` as «strategy match»; label
-   `схожа стратегія` (thematic) vs `зручний сусід` (operational).
+   `схожа стратегія` (thematic) vs `зручний сусід` (operational) vs
+   `доповнення ресурсів` (complementary) vs `явний запит МСС` (explicit-ask).
+
+## Stakeholders / contacts
+
+- **Рева Ігор** — Заступник Міністра розвитку громад та територій України з питань цифрового розвитку, цифрових трансформацій і цифровізації (CDTO). Saved 2026-07-27. Relevant for digital / digitalization outreach. Ministry reorg mid-July 2026 — verify title before contact.

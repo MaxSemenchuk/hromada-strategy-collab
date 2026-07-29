@@ -1,24 +1,34 @@
 {
-  "generatedAt": "2026-07-24T05:58:59.455401+00:00",
+  "generatedAt": "2026-07-29T09:30:16.693945+00:00",
   "pairCount": 2278,
   "knownValidationPairs": 4,
-  "method": "v6: 60% goals_cosine + 25% KSE geo + 15% KSE mss_network",
+  "method": "v7: 60% goals_cosine (hierarchy-aware) + 25% KSE geo + 15% KSE mss_network",
   "model": "intfloat/multilingual-e5-small",
   "license": "CC BY 4.0 \u2014 see DATA-LICENSE.md",
   "warning": "Unverified hypotheses unless known=true. Combined score is not a pure strategy match \u2014 use track / slice files.",
   "tracks": {
-    "thematic": "goals_cosine >= p90 (0.072) and geo_score <= 0.35 \u2014 cold-start vision partners",
-    "operational": "geo_score >= 0.85 and not thematic \u2014 convenient service co-sharers",
+    "thematic": "goals_cosine >= p90 (0.07) and geo_score <= 0.35 \u2014 cold-start vision partners",
+    "operational": "geo_score >= 0.85 and not thematic \u2014 convenient service co-sharers; slice ranked by operational_score (geo + fiscal_similarity + dream_overlap) when available",
     "mixed": "all other pairs",
     "counts": {
-      "thematic": 221,
+      "thematic": 225,
       "operational": 46,
-      "mixed": 2011
+      "mixed": 2007
     },
-    "goalsFloor": 0.072,
+    "goalsFloor": 0.07,
     "goalsPercentile": 90,
     "geoThematicMax": 0.35,
     "geoOperationalMin": 0.85
+  },
+  "operationalBoost": {
+    "note": "Extra fields on edges; v7 combined-score weights unchanged from v6",
+    "fields": [
+      "fiscal_similarity",
+      "dream_overlap",
+      "operational_score"
+    ],
+    "enriched": 2124,
+    "withOperationalScore": 46
   },
   "slices": {
     "thematic": {
@@ -34,21 +44,16 @@
       "path": "matching-edges.operational.json",
       "limit": 50,
       "count": 40,
-      "rankBy": "score",
+      "rankBy": "operational_score|score",
       "excludes": [
         "known=true",
         "mss_network>0"
       ],
       "note": "Neighbours not already linked in the KSE \u041c\u0421\u0421 network"
+    },
+    "complementary": {
+      "path": "matching-edges.complementary.json",
+      "note": "Separate yarn complementary-match \u2014 resource/DREAM \u2194 Challenges"
     }
-  },
-  "pinCorpusOverlap": {
-    "path": "matching-edges.pin-corpus.json",
-    "count": 10,
-    "curatedKnown": 4,
-    "otherPinCorpus": 6,
-    "inTopN": 10,
-    "topN": 50,
-    "note": "All mss_network>0 pairs with Goals on both sides. Curated known=true stays the hard regression set; this file is the broader KSE check."
   }
 }

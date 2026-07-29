@@ -10,9 +10,14 @@
  *   yarn structure-hromada --name "..." --json structured.json --write --update 12
  *
  * Schema keys (snake_case in JSON file):
- *   goals, projects, strengths, challenges, partners_mentioned, mss_agreements,
+ *   goals | strategic_goals[] | operational_goals[]  (goals flattened for NocoDB)
+ *   projects, strengths, challenges, partners_mentioned, mss_agreements,
+ *   mss_intents[] (quotes of explicit МСС language),
  *   source_quality ("full-strategy"|"partial"|"proxy-info"), confidence_notes,
  *   donors_programs (string[])
+ *
+ * Hierarchy fields are kept in the local hromada-output JSON; NocoDB still
+ * receives flat Goals (strategic + operational lines joined by newline).
  */
 
 import "dotenv/config";
@@ -28,7 +33,21 @@ const NC_TOKEN = process.env.NOCODB_TOKEN || "";
 const HROMADAS_TABLE_ID = process.env.NOCODB_TABLE_HROMADAS || "mjtetfuixggp5lg";
 
 const FIELDS = ["goals", "projects", "strengths", "challenges", "partners_mentioned", "mss_agreements", "source_quality", "confidence_notes", "donors_programs"] as const;
-const DONOR_PROGRAM_OPTIONS = ["EGAP", "DOBRE", "GIZ", "U-LEAD", "DECIDE", "ПРООН/UNDP", "МФ Відродження", "Ре:Форм", "DESPRO"] as const;
+const DONOR_PROGRAM_OPTIONS = [
+    "EGAP",
+    "DOBRE",
+    "GIZ",
+    "U-LEAD",
+    "DECIDE",
+    "ПРООН/UNDP",
+    "МФ Відродження",
+    "Ре:Форм",
+    "DESPRO",
+    "JICA",
+    "ЄІБ",
+    "ЄБРР",
+    "AFD",
+] as const;
 const SOURCE_QUALITY = ["full-strategy", "partial", "proxy-info"] as const;
 
 function parseArgs() {
@@ -45,6 +64,24 @@ function parseArgs() {
     };
 }
 
+function textOfGoal(g: unknown): string {
+    if (typeof g === "string") return g.trim();
+    if (g && typeof g === "object" && "text" in (g as object)) {
+        return String((g as { text: unknown }).text || "").trim();
+    }
+    return "";
+}
+
+function flattenGoals(raw: any): string {
+    if (typeof raw?.goals === "string" && raw.goals.trim()) {
+        return raw.goals.trim();
+    }
+    const strategic = Array.isArray(raw?.strategic_goals) ? raw.strategic_goals : [];
+    const operational = Array.isArray(raw?.operational_goals) ? raw.operational_goals : [];
+    const lines = [...strategic, ...operational].map(textOfGoal).filter((s) => s.length > 0);
+    return lines.join("\n");
+}
+
 function normalizeStructured(raw: any): any {
     const out: any = {};
     for (const f of FIELDS) {
@@ -54,9 +91,21 @@ function normalizeStructured(raw: any): any {
         } else if (f === "source_quality") {
             const v = raw?.[f];
             out[f] = (SOURCE_QUALITY as readonly string[]).includes(v) ? v : "partial";
+        } else if (f === "goals") {
+            out[f] = flattenGoals(raw);
         } else {
             out[f] = typeof raw?.[f] === "string" ? raw[f] : (raw?.[f] ?? "");
         }
+    }
+    // Hierarchy sidecar fields (local JSON only; not written to NocoDB columns yet)
+    if (Array.isArray(raw?.strategic_goals)) {
+        out.strategic_goals = raw.strategic_goals;
+    }
+    if (Array.isArray(raw?.operational_goals)) {
+        out.operational_goals = raw.operational_goals;
+    }
+    if (Array.isArray(raw?.mss_intents)) {
+        out.mss_intents = raw.mss_intents;
     }
     return out;
 }
@@ -113,6 +162,11 @@ async function main() {
 
     console.log(JSON.stringify(structured, null, 2));
     console.log(`\nSaved to ${outPath}`);
+    if (structured.strategic_goals || structured.operational_goals) {
+        console.log(
+            "(Hierarchy present — also run `yarn build-goals-hierarchy` after adding overrides, then `yarn match`.)",
+        );
+    }
 
     if (write) {
         await writeToNocoDB(name, structured, updateId);

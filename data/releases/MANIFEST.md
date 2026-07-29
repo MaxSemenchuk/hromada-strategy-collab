@@ -24,8 +24,8 @@ and self-describing, not a growth history.
   `data/sources/portal-url-overrides.json`.
 
 - **`matching-edges.json`** — pairwise similarity scores (unverified hypotheses
-  unless `known: true`). Method v6: 60% goals-cosine + 25% KSE geography +
-  15% KSE existing partnership network. Regenerate with:
+  unless `known: true`). Method v7: 60% goals-cosine (hierarchy-aware) + 25% KSE
+  geography + 15% KSE existing partnership network. Regenerate with:
 
   ```bash
   yarn match
@@ -61,12 +61,36 @@ and self-describing, not a growth history.
   already in the KSE МСС network):
 
   - `matching-edges.thematic.json` — ranked by `goals_cosine`
-  - `matching-edges.operational.json` — ranked by combined `score`
+  - `matching-edges.operational.json` — ranked by `operational_score`
+    (geo + fiscal similarity + DREAM sector overlap) when present, else `score`
+  - `matching-edges.complementary.json` — **separate** layer
+    (`yarn complementary-match`): DREAM/Strengths/resource of A ↔ Challenges of B
+  - `matching-edges.explicit-ask.json` — **separate** layer
+    (`yarn extract-mss-intents`): МСС / кооперація language in strategy fields
+  - `goals-hierarchy.json` — strategic / operational goal lines (sidecar for v7)
+  - `mss-intents.json` — per-hromada quotes of explicit МСС language
+
+  Operational boost fields on every edge (`fiscal_similarity`, `dream_overlap`,
+  `operational_score`) do **not** change v7 combined `score` weights
+  (`0.60×goals + 0.25×geo + 0.15×mss_network`). Goals cosine may use hierarchy
+  when operational lines exist (`yarn build-goals-hierarchy`).
 
 - **`donor-synergy.json`** — per-program portfolio slices from `DonorsPrograms`
   tags × matching edges (within-portfolio pairs, bridge pairs, hub degrees).
   Regenerate with `yarn donor-synergy` after exporting hromadas. Hypotheses
   only; tag absence ≠ “no program.”
+
+- **`hromada-resources.json`** — structural proxies per KATOTTG (KSE budget /
+  ДФРР / community competence / health / war status + own-income per capita).
+  Regenerate with `yarn hromada-resources`. Missing competence/health ≠ zero.
+  Not a substitute for `Goals` text.
+
+- **`dream-priorities.json`** — revealed project priorities from the DREAM
+  public API, aggregated to hromada via settlement→hromada CATOTTG map.
+  Regenerate with `yarn fetch-dream` (caches under `data/cache/dream/`).
+  Hypotheses only; cancelled ideas excluded.
+  Site preview: `yarn build-resources-preview` → `docs/assets/resources-preview.json`
+  (`docs/resources.html`).
 
 ## Coverage, read before using
 

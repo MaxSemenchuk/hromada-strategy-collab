@@ -16,6 +16,11 @@
       label: { uk: "Фонди", en: "Funds" }
     },
     {
+      href: "resources.html",
+      id: "resources",
+      label: { uk: "Ресурси", en: "Resources" }
+    },
+    {
       href: "mss-pin-matching-graph.html",
       id: "map",
       label: { uk: "Мапа МСС", en: "IMC map" }

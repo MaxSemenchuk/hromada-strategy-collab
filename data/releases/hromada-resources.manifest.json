@@ -1,0 +1,30 @@
+{
+  "file": "hromada-resources.json",
+  "generated_at": "2026-07-28T22:01:22Z",
+  "coverage": {
+    "hromadas": 1418,
+    "with_budget": 1418,
+    "with_own_income_per_capita": 1418,
+    "with_dfrr": 906,
+    "with_competence": 368,
+    "with_health": 898,
+    "war_fields": [
+      "war_deoccupation_date",
+      "war_status_sept",
+      "war_status_sept_ext",
+      "war_zone_2022_10"
+    ]
+  },
+  "source": {
+    "kse": "https://github.com/kse-ua/KSE-Loc-Data-Hub",
+    "zenodo": "10.5281/zenodo.15267573",
+    "license": "MIT (KSE covariates); release packaging CC BY 4.0",
+    "join_key": "katottg / hromada_code",
+    "notes": [
+      "Budget panel is KSE 2020–2022 (latest year per hromada), not live data.gov.ua oblast dumps.",
+      "own_income_per_capita = income_own / total_population_2022 when both present.",
+      "competence_known / health_known: missing ≠ zero.",
+      "These are structural proxies — not a substitute for Goals text."
+    ]
+  }
+}

@@ -111,9 +111,9 @@
     },
     {
       "name": "Великоберезовицька селищна територіальна громада",
-      "katottg": "",
+      "katottg": "UA61040070000079091",
       "status": "structured",
-      "strategy_url": "https://vbsr.gov.ua/images/Strategia_rozvunky/zatverjena/plan_zahodiv_stratehiia.pdf",
+      "strategy_url": "https://vbsr.gov.ua/images/Strategia_rozvunky/zatverjena/Stratehiia_rozvytku_VBSR_do_2027.pdf",
       "raw_text_path": "scripts/retrieval/raw/velykoberezovytska-plan.extracted.txt",
       "notes": "plan-of-measures PDF; letter-spaced OCR normalized; chars=54948; restructured in-session 2026-07-23 (no external LLM)",
       "raw_source_path": "scripts/retrieval/raw/velykoberezovytska-plan.pdf"
@@ -130,11 +130,11 @@
     {
       "name": "Тульчинська міська територіальна громада",
       "katottg": "UA05100150000050790",
-      "status": "structured",
+      "status": "failed",
       "strategy_url": "https://tulchynska-gromada.gov.ua/strategiya-rozvitku-gromadi-12-08-18-04-12-2017/",
       "raw_source_path": "scripts/retrieval/raw/manual/4315-strategiya-2030.pdf",
       "raw_text_path": "scripts/retrieval/raw/manual/extracted/4315-strategiya-2030.txt",
-      "notes": "manual upload 2026-07-24; UPGRADE partial→full Strategy 2030"
+      "notes": "manual upload 2026-07-24; UPGRADE partial→full Strategy 2030; download failed: HTTP 403 <!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
     },
     {
       "name": "Лихівська селищна територіальна громада",
@@ -148,29 +148,553 @@
     {
       "name": "Великогаївська сільська територіальна громада",
       "katottg": "UA61040110000010646",
-      "status": "structured",
+      "status": "failed",
       "strategy_url": "https://velykogaivska-gromada.gov.ua/starategiya-rozvitku-gromadi-12-01-47-07-02-2017/",
       "raw_source_path": "scripts/retrieval/raw/manual/a9532.docx",
       "raw_text_path": "scripts/retrieval/raw/manual/extracted/a9532.txt",
-      "notes": "manual upload 2026-07-24; DOBRE DOCX; UPGRADE partial→full"
+      "notes": "manual upload 2026-07-24; DOBRE DOCX; UPGRADE partial→full; download failed: HTTP 403 <!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
     },
     {
       "name": "Батуринська міська територіальна громада",
       "katottg": "UA74040010000076097",
-      "status": "structured",
+      "status": "failed",
       "strategy_url": "https://baturyn-rada.gov.ua/strategiya-rozvitku-09-43-36-04-01-2019/",
       "raw_source_path": "scripts/retrieval/raw/manual/336fe.doc",
       "raw_text_path": "scripts/retrieval/raw/manual/extracted/336fe.txt",
-      "notes": "manual upload 2026-07-24; full strategy DOC; decision-only twin 6f692.doc ignored"
+      "notes": "manual upload 2026-07-24; full strategy DOC; decision-only twin 6f692.doc ignored; download failed: HTTP 403 <!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
     },
     {
       "name": "Вінницька міська територіальна громада",
-      "katottg": "",
-      "status": "structured",
+      "katottg": "UA05020030000031457",
+      "status": "downloaded",
       "strategy_url": "https://www.vmr.gov.ua/media/Сервіси/Стратегія3.0/Стратегія розвитку ВМТГ до 2030 року - Стратегія 3.0.pdf",
-      "raw_source_path": "scripts/retrieval/raw/manual/vinnytsia.pdf",
+      "raw_source_path": "scripts/retrieval/raw/вінницька.pdf",
       "raw_text_path": "scripts/retrieval/raw/manual/extracted/vinnytsia.txt",
       "notes": "manual upload 2026-07-24; Goals expanded to 6 priorities"
+    },
+    {
+      "name": "Ніжинська міська територіальна громада",
+      "katottg": "UA74040250000063494",
+      "status": "failed",
+      "strategy_url": "https://data.gov.ua/dataset/0e6dcf9a-f240-4967-8cbf-9e2bffe8a79d",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: fetch failed"
+    },
+    {
+      "name": "Козелецька селищна територіальна громада",
+      "katottg": "UA74100190000086457",
+      "status": "downloaded",
+      "strategy_url": "https://kozsr.gov.ua/files/Strategy%20rozvitky.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/козелецька.pdf"
+    },
+    {
+      "name": "Криворізька міська територіальна громада",
+      "katottg": "UA12060170000091033",
+      "status": "failed",
+      "strategy_url": "https://kr.gov.ua/api/uploads/3819_vid_30_07_2025_Strategiya_97d639c4f1.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: HTTP 403 <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/htm"
+    },
+    {
+      "name": "Дніпровська міська територіальна громада",
+      "katottg": "UA12020010000033698",
+      "status": "downloaded",
+      "strategy_url": "https://dniprorada.gov.ua/upload/editor/strategiya_osnovnij_dokument_1.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/дніпровська.pdf"
+    },
+    {
+      "name": "Тернопільська міська територіальна громада",
+      "katottg": "UA61040490000035010",
+      "status": "downloaded",
+      "strategy_url": "https://ternopilcity.gov.ua/app11/%D0%A1%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D1%96%D1%8F%20%D0%A2%D0%B5%D1%80%D0%BD%D0%BE%D0%BF%D1%96%D0%BB%D1%8C%2005052025.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/тернопільська.pdf"
+    },
+    {
+      "name": "Ужгородська міська територіальна громада",
+      "katottg": "UA21100230000083101",
+      "status": "downloaded",
+      "strategy_url": "https://rada-uzhgorod.gov.ua/media/2023/11/01/10-34-22_Проєкт_Стратегії_і_План_заходів_Ужгородська_МТГ__2_.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/ужгородська.pdf"
+    },
+    {
+      "name": "Кам'янська міська територіальна громада",
+      "katottg": "UA12040150000015189",
+      "status": "downloaded",
+      "strategy_url": "https://kam.gov.ua/ua/main-mediafunc-osxfile.file/pg/100307130893174_p18_1o/1852654016.docx",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/кам-янська.docx"
+    },
+    {
+      "name": "Новомосковська міська територіальна громада",
+      "katottg": "UA12100070000011492",
+      "status": "failed",
+      "strategy_url": "http://novomoskovsk-rada.gov.ua/sites/default/files/flies_adittions/1221_dodatok.doc",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: fetch failed"
+    },
+    {
+      "name": "Чернігівська міська територіальна громада",
+      "katottg": "UA74100390000073425",
+      "status": "downloaded",
+      "strategy_url": "https://www.chernigiv-rada.gov.ua/storage/files/21/29/23/15/e3e0a58b69781c29ee6e1fe5a479011e.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/чернігівська.pdf"
+    },
+    {
+      "name": "Яремчанська міська територіальна громада",
+      "katottg": "UA26120150000021671",
+      "status": "downloaded",
+      "strategy_url": "https://rada.info/upload/users_files/33309833/41fc0b3c2824fa8bfd5d485f5ae50956.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/яремчанська.pdf"
+    },
+    {
+      "name": "Мукачівська міська територіальна громада",
+      "katottg": "UA21040150000092428",
+      "status": "failed",
+      "strategy_url": "https://mukachevo-rada.gov.ua/storage/app/media/uploaded-files/strategija-2027.doc",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: HTTP 403 <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
+    },
+    {
+      "name": "Нікопольська міська територіальна громада",
+      "katottg": "UA12080050000062712",
+      "status": "downloaded",
+      "strategy_url": "https://web.archive.org/web/20220310194435/http://www.nikopol-mrada.dp.gov.ua/ekonomika/2020_11_03_strateg_razvitiya/strateg.zip",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/нікопольська.zip"
+    },
+    {
+      "name": "Слобожанська селищна територіальна громада",
+      "katottg": "UA12020250000010438",
+      "status": "failed",
+      "strategy_url": "https://slobozhanska-gromada.gov.ua/upload/content/320/Стратегія розвитку громади Слобожанської ТГ на 2023-2027 роки.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: HTTP 403 <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
+    },
+    {
+      "name": "Львівська міська територіальна громада",
+      "katottg": "UA46060250000025047",
+      "status": "downloaded",
+      "strategy_url": "https://city-adm.lviv.ua/lmr/strategija",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/львівська.bin"
+    },
+    {
+      "name": "Одеська міська територіальна громада",
+      "katottg": "UA51100270000073549",
+      "status": "downloaded",
+      "strategy_url": "https://omr.gov.ua/Files/2026/Ekonomika/Strategiya-OD2027.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/одеська.pdf"
+    },
+    {
+      "name": "Харківська міська територіальна громада",
+      "katottg": "UA63120270000028556",
+      "status": "downloaded",
+      "strategy_url": "https://www.city.kharkov.ua/assets/files/docs/zakon/strategy2411.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/харківська.pdf"
+    },
+    {
+      "name": "Полтавська міська територіальна громада",
+      "katottg": "UA53080370000025447",
+      "status": "downloaded",
+      "strategy_url": "https://rada-poltava.gov.ua/strapi/uploads/strat_1157b9a322.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/полтавська.pdf"
+    },
+    {
+      "name": "Херсонська міська територіальна громада",
+      "katottg": "UA65100150000057191",
+      "status": "failed",
+      "strategy_url": "https://miskrada-ks.gov.ua/wp-content/uploads/2025/11/programa-ekonom.-i-soczialn.-rozvytku-hmtg-na-2026-2028.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: HTTP 403 <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/htm"
+    },
+    {
+      "name": "Рівненська міська територіальна громада",
+      "katottg": "UA56060470000086729",
+      "status": "downloaded",
+      "strategy_url": "https://rivnerada.gov.ua/portal-files/portal/Стратегія_розвитку_Рівненської_територіальної_громади_до_2027_року.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/рівненська.pdf"
+    },
+    {
+      "name": "Сумська міська територіальна громада",
+      "katottg": "UA59080270000073662",
+      "status": "downloaded",
+      "strategy_url": "https://toolkit.in.ua/files/556/upload/Strategia_rozvytku_do_2027.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/сумська.pdf"
+    },
+    {
+      "name": "Запорізька міська територіальна громада",
+      "katottg": "UA23060070000082704",
+      "status": "downloaded",
+      "strategy_url": "https://toolkit.in.ua/files/442/upload/стратегія_20.12.2017_57.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/запорізька.pdf"
+    },
+    {
+      "name": "Миколаївська міська територіальна громада",
+      "katottg": "UA48060150000071713",
+      "status": "downloaded",
+      "strategy_url": "https://mkrada.gov.ua/content/strategiya-rozvitku-mista.html",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/миколаївська.html"
+    },
+    {
+      "name": "Вижницька міська територіальна громада",
+      "katottg": "UA73020090000031499",
+      "status": "failed",
+      "strategy_url": "https://vnmiscrada.gov.ua/strategiya-rozvitku-10-22-46-14-02-2022/",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: HTTP 403 <!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
+    },
+    {
+      "name": "Житомирська міська територіальна громада",
+      "katottg": "UA18040190000029215",
+      "status": "downloaded",
+      "strategy_url": "https://zt-rada.gov.ua/files/upload/sitefiles/doc1783501443.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/житомирська.pdf"
+    },
+    {
+      "name": "Луцька міська територіальна громада",
+      "katottg": "UA07080170000013585",
+      "status": "failed",
+      "strategy_url": "https://www.lutskrada.gov.ua/static/content/files/g/hz/b7zvppwouctgd4wict4cwpgyahclahzg.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: HTTP 403 <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"ht"
+    },
+    {
+      "name": "Черкаська міська територіальна громада",
+      "katottg": "UA71080490000022110",
+      "status": "downloaded",
+      "strategy_url": "https://chmr.gov.ua/myrada/app/305092.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/черкаська.pdf"
+    },
+    {
+      "name": "Кропивницька міська територіальна громада",
+      "katottg": "UA35040210000014072",
+      "status": "downloaded",
+      "strategy_url": "https://www.kr-rada.gov.ua/uploads/documents/47120-pr_rish_2374_09-12-2024.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/кропивницька.pdf"
+    },
+    {
+      "name": "Литовезька сільська територіальна громада",
+      "katottg": "UA07020090000019505",
+      "status": "downloaded",
+      "strategy_url": "https://lotg.gov.ua/wp-content/uploads/2026/05/Lytovezka-STG_Strategiya-rozvytku-nova-1.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/литовезька.pdf"
+    },
+    {
+      "name": "Ганнівська сільська територіальна громада",
+      "katottg": "UA35060010000018331",
+      "status": "failed",
+      "strategy_url": "https://rada.info/upload/users_files/04365321/a3332c2b3d324ebb7bce3c620f568574.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: HTTP 403 <!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
+    },
+    {
+      "name": "Зазимська сільська територіальна громада",
+      "katottg": "UA32060090000096236",
+      "status": "downloaded",
+      "strategy_url": "https://zotg.gov.ua/wp-content/uploads/2024/09/strategiya-rozvytku-zazymskoyi-silskoyi-terytorialnoyi-gromady.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/зазимська.pdf"
+    },
+    {
+      "name": "Вашковецька сільська територіальна громада",
+      "katottg": "UA73040010000039325",
+      "status": "downloaded",
+      "strategy_url": "https://docs.google.com/document/d/11uvVv1o-mO9Dusg3--AtjXrbuJBRH9BhdvGqAW2LeqI/edit",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/вашковецька.bin"
+    },
+    {
+      "name": "Божедарівська селищна територіальна громада",
+      "katottg": "UA12040010000018960",
+      "status": "failed",
+      "strategy_url": "https://rada.info/upload/users_files/04338397/31ab61a179e3bd9b08ed8e0e2643f671.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: HTTP 403 <!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
+    },
+    {
+      "name": "Зноб-Новгородська селищна територіальна громада",
+      "katottg": "UA59100090000041284",
+      "status": "failed",
+      "strategy_url": "https://zn-otg.gov.ua/strategiya-rozvitku-znobnovgorodskoi-selischnoi-radi-na-20192025-roki-15-04-11-23-08-2018/",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: HTTP 403 <!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
+    },
+    {
+      "name": "Журавненська селищна територіальна громада",
+      "katottg": "UA46100070000076013",
+      "status": "downloaded",
+      "strategy_url": "https://consult.e-dem.ua/uploads/consultation/files/1593/Стратегія_План_заходів_Журавненська_ТГ.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/журавненська.pdf"
+    },
+    {
+      "name": "Брацлавська селищна територіальна громада",
+      "katottg": "UA05100010000023453",
+      "status": "downloaded",
+      "strategy_url": "https://toolkit.in.ua/files/26/upload/1994ea75-594b-43a5-92f7-81046cae053d.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/брацлавська.pdf"
+    },
+    {
+      "name": "Галицька міська територіальна громада",
+      "katottg": "UA26040090000025932",
+      "status": "downloaded",
+      "strategy_url": "https://galycka-gromada.golos.net.ua/files/pdf/679.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/галицька.pdf"
+    },
+    {
+      "name": "Лохвицька міська територіальна громада",
+      "katottg": "UA53060190000015369",
+      "status": "downloaded",
+      "strategy_url": "https://web.archive.org/web/20241015174429/https://rada.info/upload/users_files/21048525/dceaabbc6d77a22fb6890a15fe5b43e7.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/лохвицька.pdf"
+    },
+    {
+      "name": "Бурштинська міська територіальна громада",
+      "katottg": "UA26040070000065724",
+      "status": "downloaded",
+      "strategy_url": "https://consult.e-dem.ua/uploads/consultation/files/325/Strategiya-Burshtynska-TG_24.10.2021.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/бурштинська.pdf"
+    },
+    {
+      "name": "Більшівцівська селищна територіальна громада",
+      "katottg": "UA26040010000011271",
+      "status": "downloaded",
+      "strategy_url": "https://bilshivcivskagromada.if.gov.ua/old/wp-content/uploads/2023/04/strategiya-1.doc",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/більшівцівська.doc"
+    },
+    {
+      "name": "Дубовецька сільська територіальна громада",
+      "katottg": "UA26040130000010870",
+      "status": "failed",
+      "strategy_url": "https://rada.info/upload/users_files/04357561/42b2a6fcd4a76b6eb6d8be615075af97.docx",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl; download failed: HTTP 403 <!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
+    },
+    {
+      "name": "Рогатинська міська територіальна громада",
+      "katottg": "UA26040270000047749",
+      "status": "downloaded",
+      "strategy_url": "https://rmtg.gov.ua/Files/Uploads5/8702/f31672f7a4fcedc.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/рогатинська.pdf"
+    },
+    {
+      "name": "Вишнівська громада",
+      "katottg": "UA07060050000091514",
+      "status": "downloaded",
+      "strategy_url": "https://toolkit.in.ua/files/2/upload/Стратегія розвитку/Стратегія Розвитку громади/Сайт ПРОЄКТ Стратегії розвитку Вишнівської  сільської територіальної громади до 2030 року_.pdf",
+      "notes": "synced from data/releases/hromadas.json StrategyUrl",
+      "raw_source_path": "scripts/retrieval/raw/вишнівська.pdf"
+    },
+    {
+      "name": "Сокирянська міська територіальна громада",
+      "katottg": "UA73040170000011490",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=4 pinDegree=22 oblast=Чернівецька область"
+    },
+    {
+      "name": "Клішковецька сільська територіальна громада",
+      "katottg": "UA73040050000080963",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=24 oblast=Чернівецька область"
+    },
+    {
+      "name": "Слобідсько-Кульчієвецька сільська територіальна громада",
+      "katottg": "UA68020230000069135",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=22 oblast=Хмельницька область"
+    },
+    {
+      "name": "Рукшинська сільська територіальна громада",
+      "katottg": "UA73040150000056182",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=22 oblast=Чернівецька область"
+    },
+    {
+      "name": "Борщівська міська територіальна громада",
+      "katottg": "UA61060050000068464",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=22 oblast=Тернопільська область"
+    },
+    {
+      "name": "Жванецька сільська територіальна громада",
+      "katottg": "UA68020070000084437",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Хмельницька область"
+    },
+    {
+      "name": "Китайгородська сільська територіальна громада",
+      "katottg": "UA68020130000052994",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Хмельницька область"
+    },
+    {
+      "name": "Вікнянська сільська територіальна громада",
+      "katottg": "UA73060090000047054",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+    },
+    {
+      "name": "Кадубовецька сільська територіальна громада",
+      "katottg": "UA73060210000010691",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+    },
+    {
+      "name": "Кельменецька селищна територіальна громада",
+      "katottg": "UA73040030000042378",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+    },
+    {
+      "name": "Лівинецька сільська територіальна громада",
+      "katottg": "UA73040070000053425",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+    },
+    {
+      "name": "Новодністровська міська територіальна громада",
+      "katottg": "UA73040130000087963",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+    },
+    {
+      "name": "Юрковецька сільська територіальна громада",
+      "katottg": "UA73060650000012771",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+    },
+    {
+      "name": "Іване-Пустенська сільська територіальна громада",
+      "katottg": "UA61060210000021722",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Тернопільська область"
+    },
+    {
+      "name": "Заліщицька міська територіальна громада",
+      "katottg": "UA61060170000051011",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Тернопільська область"
+    },
+    {
+      "name": "Монастириська міська територіальна громада",
+      "katottg": "UA61060310000061998",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Тернопільська область"
+    },
+    {
+      "name": "Городенківська міська територіальна громада",
+      "katottg": "UA26080030000014307",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Івано-Франківська область"
+    },
+    {
+      "name": "Олешанська сільська територіальна громада",
+      "katottg": "UA26040250000061081",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Івано-Франківська область"
+    },
+    {
+      "name": "Тлумацька міська територіальна громада",
+      "katottg": "UA26040350000024417",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Івано-Франківська область"
+    },
+    {
+      "name": "Коломийська міська територіальна громада",
+      "katottg": "UA26080070000092582",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=16 oblast=Івано-Франківська область"
+    },
+    {
+      "name": "Богданська сільська територіальна громада",
+      "katottg": "UA21060010000011784",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=13 oblast=Закарпатська область"
+    },
+    {
+      "name": "Рахівська міська територіальна громада",
+      "katottg": "UA21060050000029937",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=13 oblast=Закарпатська область"
+    },
+    {
+      "name": "Ясінянська селищна територіальна громада",
+      "katottg": "UA21060070000049340",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=13 oblast=Закарпатська область"
+    },
+    {
+      "name": "Верховинська селищна територіальна громада",
+      "katottg": "UA26020030000088465",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=13 oblast=Івано-Франківська область"
+    },
+    {
+      "name": "Ворохтянська селищна територіальна громада",
+      "katottg": "UA26120010000096774",
+      "status": "pending",
+      "strategy_url": "",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=13 oblast=Івано-Франківська область"
     }
   ]
 }

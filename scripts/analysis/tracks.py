@@ -80,6 +80,8 @@ def operational_slice(edges: list[dict], *, limit: int | None = None) -> list[di
     """
     Convenient neighbours not already linked in the МСС network.
     track=operational, mss_network == 0, exclude known validation pairs.
+    Rank by operational_score when present (fiscal + DREAM overlap boost),
+    else fall back to combined v6 score.
     """
     out = [
         e
@@ -88,5 +90,11 @@ def operational_slice(edges: list[dict], *, limit: int | None = None) -> list[di
         and float(e.get("mss_network") or 0) == 0.0
         and not e.get("known")
     ]
-    out.sort(key=lambda e: (-float(e.get("score") or 0), -float(e.get("geo_score") or 0)))
+
+    def rank_key(e: dict) -> tuple[float, float]:
+        ops = e.get("operational_score")
+        primary = float(ops) if ops is not None else float(e.get("score") or 0)
+        return (-primary, -float(e.get("geo_score") or 0))
+
+    out.sort(key=rank_key)
     return out if limit is None else out[:limit]
