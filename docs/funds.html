@@ -143,6 +143,15 @@
       color: var(--site-muted);
     }
     .chip strong { color: var(--site-ink); font-weight: 700; }
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 1.6rem 1rem 2rem; }
+      table { font-size: 0.82rem; }
+      th, td { padding: 0.55rem 0.5rem; }
+    }
   </style>
 </head>
 <body>

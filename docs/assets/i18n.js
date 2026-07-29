@@ -92,6 +92,10 @@
   }
 
   function boot() {
+    try {
+      var q = new URLSearchParams(location.search).get("lang");
+      if (q === "en" || q === "uk") persist(normalize(q));
+    } catch (e) { /* ignore */ }
     if (global.PAGE_I18N) apply(global.PAGE_I18N);
     else document.documentElement.lang = getLang();
   }

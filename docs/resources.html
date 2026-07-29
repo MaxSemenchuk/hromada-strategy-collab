@@ -55,6 +55,11 @@
       margin-bottom: 1.5rem;
     }
     @media (max-width: 640px) { .coverage { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) {
+      .page { padding: 1.6rem 1rem 2rem; }
+      table { font-size: 0.82rem; }
+      th, td { padding: 0.55rem 0.5rem; }
+    }
     .cov {
       text-align: center; padding: 0.7rem 0.45rem;
       border-radius: 10px; background: var(--site-accent-soft);
@@ -70,12 +75,41 @@
       margin: 0 0 1.6rem;
     }
     .chip {
+      font: inherit;
       font-size: 0.78rem; font-weight: 650;
       padding: 0.28rem 0.55rem; border-radius: 999px;
       background: var(--site-surface); border: 1px solid var(--site-border);
       color: var(--site-ink);
+      display: inline-flex; align-items: baseline; gap: 0.35rem;
+      cursor: pointer;
+      transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
     }
-    .chip span { color: var(--site-faint); font-weight: 600; margin-left: 0.25rem; }
+    .chip:hover {
+      border-color: color-mix(in srgb, var(--site-accent) 40%, var(--site-border));
+    }
+    .chip:focus-visible {
+      outline: 2px solid color-mix(in srgb, var(--site-accent) 55%, transparent);
+      outline-offset: 2px;
+    }
+    .chip.is-active {
+      border-color: color-mix(in srgb, var(--site-accent) 50%, var(--site-border));
+      background: color-mix(in srgb, var(--site-accent) 12%, var(--site-surface));
+      color: var(--site-ink);
+    }
+    .chip .n {
+      color: var(--site-faint); font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+    .chip.is-active .n { color: var(--site-accent); }
+    .sector-hint {
+      font-size: 0.8rem; color: var(--site-faint);
+      margin: -1.1rem 0 1.4rem;
+    }
+    .sector-hint button {
+      font: inherit; font-size: inherit; color: var(--site-accent);
+      background: none; border: 0; padding: 0; cursor: pointer;
+      text-decoration: underline; text-underline-offset: 2px;
+    }
     .panel {
       background: var(--site-surface); border: 1px solid var(--site-border);
       border-radius: 14px; padding: 1.1rem 1.15rem 1.25rem;
@@ -119,7 +153,6 @@
     .name { font-weight: 700; color: var(--site-ink); }
     .meta { font-size: 0.78rem; color: var(--site-faint); }
     .sectors-cell { font-size: 0.8rem; color: var(--site-muted); }
-    .title-hint { font-size: 0.78rem; color: var(--site-faint); margin-top: 0.2rem; }
     .empty { color: var(--site-faint); font-size: 0.9rem; padding: 0.8rem 0; }
     .caveat {
       font-size: 0.85rem; color: var(--site-faint); font-style: italic;
@@ -167,8 +200,9 @@
       <div class="cov"><span class="num" id="c-comp">—</span><span class="lbl" data-i18n="cov.comp">competence відомий</span></div>
     </div>
 
-    <p class="section-kicker" data-i18n="sectors.k">Сектори DREAM (корпус)</p>
-    <div class="sectors" id="sectors"></div>
+    <p class="section-kicker" data-i18n="sectors.k">Сектори DREAM (за кількістю)</p>
+    <div class="sectors" id="sectors" role="group" aria-label="DREAM sectors"></div>
+    <p class="sector-hint" id="sector-hint" hidden></p>
 
     <section>
       <p class="section-kicker" data-i18n="top.k">Топ за кількістю проєктів</p>
@@ -247,7 +281,11 @@ window.PAGE_I18N = {
     "cov.dream": "з проєктами DREAM",
     "cov.pcap": "з доходом на особу",
     "cov.comp": "competence відомий",
-    "sectors.k": "Сектори DREAM (корпус)",
+    "sectors.k": "Сектори DREAM (за кількістю)",
+    "sectors.hint": "Показано громади з сектором «{sector}».",
+    "sectors.clear": "Скинути",
+    "sectors.click": "Клік по тегу — громади з цим сектором.",
+    "empty.sector": "Немає громад із цим сектором у зрізі.",
     "top.k": "Топ за кількістю проєктів",
     "top.h": "Де найгустіший DREAM-портфель",
     "top.lede": "Не «найкраща стратегія» — просто обсяг зареєстрованих ідей/проєктів на громаду.",
@@ -291,7 +329,11 @@ window.PAGE_I18N = {
     "cov.dream": "with DREAM projects",
     "cov.pcap": "with income / capita",
     "cov.comp": "competence known",
-    "sectors.k": "DREAM sectors (corpus)",
+    "sectors.k": "DREAM sectors (by count)",
+    "sectors.hint": "Showing hromadas with sector “{sector}”.",
+    "sectors.clear": "Clear",
+    "sectors.click": "Click a tag to list hromadas with that sector.",
+    "empty.sector": "No hromadas with this sector in the slice.",
     "top.k": "Top by project count",
     "top.h": "Where the DREAM portfolio is densest",
     "top.lede": "Not “best strategy” — just the volume of registered ideas/projects per hromada.",
@@ -343,18 +385,43 @@ window.PAGE_I18N = {
 
     var DATA = null;
     var LIMIT = 80;
+    var activeSector = null;
+
+    function rowSectors(r) {
+      if (r.sectors && r.sectors.length) return r.sectors;
+      return r.top_sectors || [];
+    }
+
+    function sectorCount(r, sector) {
+      var counts = r.sector_counts || {};
+      if (sector && counts[sector] != null) return Number(counts[sector]) || 0;
+      return Number(r.dream_projects) || 0;
+    }
+
+    function hasName(r) {
+      return !!(r && String(r.short || r.name || "").trim());
+    }
 
     function filteredRows() {
       var q = (document.getElementById("q").value || "").trim().toLowerCase();
       var sort = document.getElementById("sort").value;
-      var rows = (DATA && DATA.hromadas) ? DATA.hromadas.slice() : [];
+      var rows = (DATA && DATA.hromadas) ? DATA.hromadas.filter(hasName) : [];
+      if (activeSector) {
+        rows = rows.filter(function (r) {
+          return rowSectors(r).indexOf(activeSector) !== -1;
+        });
+      }
       if (q) {
         rows = rows.filter(function (r) {
-          var blob = [r.short, r.name, r.oblast, (r.top_sectors || []).join(" ")].join(" ").toLowerCase();
+          var blob = [r.short, r.name, r.oblast, rowSectors(r).join(" ")].join(" ").toLowerCase();
           return blob.indexOf(q) !== -1;
         });
       }
       rows.sort(function (a, b) {
+        if (activeSector && sort === "dream") {
+          return sectorCount(b, activeSector) - sectorCount(a, activeSector)
+            || (b.dream_projects || 0) - (a.dream_projects || 0);
+        }
         if (sort === "name") {
           return (a.short || a.name || "").localeCompare(b.short || b.name || "", "uk");
         }
@@ -367,6 +434,43 @@ window.PAGE_I18N = {
       return rows;
     }
 
+    function setSector(sector) {
+      activeSector = (sector && activeSector === sector) ? null : (sector || null);
+      render();
+      if (activeSector) {
+        var panel = document.getElementById("table-lede");
+        if (panel && panel.scrollIntoView) {
+          panel.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    }
+
+    function renderSectors() {
+      var totals = ((DATA && DATA.sector_totals) || []).slice().sort(function (a, b) {
+        return (b.count || 0) - (a.count || 0);
+      });
+      document.getElementById("sectors").innerHTML = totals.map(function (s) {
+        var on = activeSector === s.sector;
+        return '<button type="button" class="chip' + (on ? " is-active" : "") + '"'
+          + ' data-sector="' + esc(s.sector) + '"'
+          + ' aria-pressed="' + (on ? "true" : "false") + '">'
+          + '<span class="label">' + esc(s.sector) + '</span>'
+          + '<span class="n">' + fmtInt(s.count) + "</span></button>";
+      }).join("");
+
+      var hint = document.getElementById("sector-hint");
+      if (activeSector) {
+        hint.hidden = false;
+        hint.innerHTML = esc(t("sectors.hint").replace("{sector}", activeSector))
+          + ' <button type="button" id="sector-clear">' + esc(t("sectors.clear")) + "</button>";
+        var clearBtn = document.getElementById("sector-clear");
+        if (clearBtn) clearBtn.onclick = function () { setSector(null); };
+      } else {
+        hint.hidden = false;
+        hint.textContent = t("sectors.click");
+      }
+    }
+
     function render() {
       if (!DATA) return;
       var cov = DATA.coverage || {};
@@ -375,21 +479,26 @@ window.PAGE_I18N = {
       document.getElementById("c-pcap").textContent = fmtInt(cov.with_own_income_per_capita);
       document.getElementById("c-comp").textContent = fmtInt(cov.with_competence);
 
-      document.getElementById("sectors").innerHTML = (DATA.sector_totals || []).map(function (s) {
-        return '<span class="chip">' + esc(s.sector) + '<span>' + fmtInt(s.count) + "</span></span>";
-      }).join("");
-
-      document.getElementById("top-dream").innerHTML = (DATA.top_dream || []).slice(0, 12).map(function (r) {
-        return '<div class="top-item"><div class="row">'
-          + '<div><span class="name">' + esc(r.short) + "</span>"
-          + (r.oblast ? '<div class="meta">' + esc(r.oblast) + "</div>" : "")
-          + '<div class="sectors-cell">' + esc((r.top_sectors || []).slice(0, 3).join(" · ")) + "</div>"
-          + (r.sample_title ? '<div class="title-hint">' + esc(r.sample_title) + "</div>" : "")
-          + '</div><div class="count">' + fmtInt(r.dream_projects) + "<div class=\"meta\">" + t("top.projects") + "</div></div>"
-          + "</div></div>";
-      }).join("");
+      renderSectors();
 
       var rows = filteredRows();
+      var topSource = activeSector
+        ? rows.filter(function (r) { return (r.dream_projects || 0) > 0; }).slice(0, 12)
+        : (DATA.top_dream || []).filter(hasName).slice(0, 12);
+
+      document.getElementById("top-dream").innerHTML = topSource.map(function (r) {
+        var sectorN = activeSector ? sectorCount(r, activeSector) : null;
+        var countLabel = activeSector
+          ? fmtInt(sectorN) + "<div class=\"meta\">" + esc(activeSector) + "</div>"
+          : fmtInt(r.dream_projects) + "<div class=\"meta\">" + t("top.projects") + "</div>";
+        return '<div class="top-item"><div class="row">'
+          + '<div><span class="name">' + esc(r.short || r.name) + "</span>"
+          + (r.oblast ? '<div class="meta">' + esc(r.oblast) + "</div>" : "")
+          + '<div class="sectors-cell">' + esc(rowSectors(r).slice(0, 4).join(" · ")) + "</div>"
+          + '</div><div class="count">' + countLabel + "</div>"
+          + "</div></div>";
+      }).join("") || ('<div class="empty">' + esc(t(activeSector ? "empty.sector" : "empty")) + "</div>");
+
       var shown = rows.slice(0, LIMIT);
       var lede = t("table.shown").replace("{n}", String(shown.length)).replace("{total}", String(rows.length));
       document.getElementById("table-lede").textContent = lede;
@@ -402,23 +511,24 @@ window.PAGE_I18N = {
             var comp = r.competence_known
               ? t("comp.yes") + " · Y" + fmtInt(r.youth_centers) + "/B" + fmtInt(r.business_support_centers)
               : t("comp.no");
+            var dreamCell = activeSector
+              ? fmtInt(sectorCount(r, activeSector))
+              : ((r.dream_projects || 0) > 0 ? fmtInt(r.dream_projects) : "—");
             return "<tr>"
               + '<td><div class="name">' + esc(r.short || r.name) + "</div>"
               + (r.oblast ? '<div class="meta">' + esc(r.oblast) + "</div>" : "")
               + "</td>"
               + '<td class="num">' + fmtNum(r.own_income_per_capita) + "</td>"
-              + '<td class="num">' + ((r.dream_projects || 0) > 0 ? fmtInt(r.dream_projects) : "—") + "</td>"
-              + '<td class="sectors-cell">' + esc((r.top_sectors || []).slice(0, 3).join(" · ") || "—")
-              + (r.sample_title ? '<div class="title-hint">' + esc(r.sample_title) + "</div>" : "")
-              + "</td>"
+              + '<td class="num">' + dreamCell + "</td>"
+              + '<td class="sectors-cell">' + esc(rowSectors(r).slice(0, 4).join(" · ") || "—") + "</td>"
               + '<td class="num">' + health + "</td>"
               + "<td>" + esc(comp) + "</td>"
               + "</tr>";
           }).join("")
-        : '<tr><td colspan="6"><div class="empty">' + esc(t("empty")) + "</div></td></tr>";
+        : '<tr><td colspan="6"><div class="empty">' + esc(t(activeSector ? "empty.sector" : "empty")) + "</div></td></tr>";
     }
 
-    fetch("assets/resources-preview.json")
+    fetch("assets/resources-preview.v4.json")
       .then(function (r) {
         if (!r.ok) throw new Error(r.status + " " + r.statusText);
         return r.json();
@@ -432,6 +542,11 @@ window.PAGE_I18N = {
           '<tr><td colspan="6"><div class="empty">' + esc(t("err.load") + err) + "</div></td></tr>";
       });
 
+    document.getElementById("sectors").addEventListener("click", function (ev) {
+      var btn = ev.target.closest("button.chip[data-sector]");
+      if (!btn) return;
+      setSector(btn.getAttribute("data-sector"));
+    });
     document.getElementById("q").addEventListener("input", render);
     document.getElementById("sort").addEventListener("change", render);
     document.addEventListener("hromada-lang", render);
