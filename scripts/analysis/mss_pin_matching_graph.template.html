@@ -197,6 +197,174 @@
     color: var(--site-faint);
     line-height: 1.45;
   }
+  .detail {
+    display: none;
+    margin: 0 0 1.15rem;
+    border: 1px solid var(--site-border);
+    border-radius: 12px;
+    background: var(--site-bg);
+    overflow: hidden;
+  }
+  .detail.open { display: block; }
+  .detail-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.55rem;
+    padding: 0.75rem 0.8rem 0.55rem;
+    border-bottom: 1px solid var(--site-rule);
+    background: var(--site-surface);
+  }
+  .detail-head h2 {
+    margin: 0;
+    font-family: var(--site-font);
+    font-size: 0.95rem;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    color: var(--site-ink);
+  }
+  .detail-close {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--site-faint);
+    font: inherit;
+    font-size: 1.15rem;
+    line-height: 1;
+    padding: 0.1rem 0.25rem;
+    cursor: pointer;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .detail-close:hover { color: var(--site-ink); background: var(--site-accent-soft); }
+  .detail-body { padding: 0.65rem 0.8rem 0.85rem; display: grid; gap: 0.55rem; }
+  .detail-meta {
+    font-size: 0.78rem;
+    color: var(--site-muted);
+    line-height: 1.4;
+  }
+  .detail-id {
+    font-size: 0.72rem;
+    color: var(--site-faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .detail-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  .detail-badge {
+    font-size: 0.68rem;
+    font-weight: 650;
+    color: var(--site-accent);
+    background: var(--site-accent-soft);
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    border-radius: 6px;
+    padding: 0.18rem 0.45rem;
+    line-height: 1.25;
+  }
+  .detail-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .detail-actions a {
+    font-size: 0.78rem;
+    font-weight: 650;
+    color: var(--site-accent);
+    text-decoration: none;
+    padding: 0.35rem 0.55rem;
+    border-radius: 8px;
+    border: 1px solid rgba(37, 99, 235, 0.22);
+    background: var(--site-surface);
+  }
+  .detail-actions a:hover { background: var(--site-accent-soft); }
+  .detail-section-label {
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--site-faint);
+    font-weight: 700;
+    margin: 0.15rem 0 0;
+  }
+  .detail-facts {
+    display: grid;
+    gap: 0.28rem;
+    margin: 0;
+  }
+  .detail-fact {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.65rem;
+    font-size: 0.76rem;
+    color: var(--site-muted);
+  }
+  .detail-fact b {
+    color: var(--site-ink);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .detail-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.28rem;
+  }
+  .detail-chip {
+    font-size: 0.7rem;
+    color: var(--site-muted);
+    background: var(--site-surface);
+    border: 1px solid var(--site-border);
+    border-radius: 6px;
+    padding: 0.15rem 0.4rem;
+  }
+  .detail-neighbors {
+    display: grid;
+    gap: 0.45rem;
+  }
+  .detail-neighbor-group { display: grid; gap: 0.2rem; }
+  .detail-neighbor-kind {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--site-ink);
+  }
+  .detail-neighbor-kind .sw {
+    display: inline-block;
+    width: 14px;
+    height: 0;
+    border-top: 2px solid;
+    margin: 0 0.35rem 0.1rem 0;
+    vertical-align: middle;
+  }
+  .detail-neighbor {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 0.74rem;
+    color: var(--site-muted);
+    padding: 0.15rem 0;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+    border-radius: 6px;
+    width: 100%;
+  }
+  .detail-neighbor:hover { color: var(--site-accent); background: rgba(37, 99, 235, 0.06); }
+  .detail-neighbor span { min-width: 0; }
+  .detail-neighbor b {
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+    color: var(--site-faint);
+    font-weight: 650;
+  }
+  .detail-empty {
+    font-size: 0.76rem;
+    color: var(--site-faint);
+    margin: 0;
+  }
   main { position: relative; min-height: calc(100vh - var(--site-nav-h, 56px)); background: var(--map-bg); }
   #map { position: absolute; inset: 0; display: block; background: var(--map-bg); }
   #map.hidden { display: none; }
@@ -237,11 +405,18 @@
   <aside>
     <span class="eyebrow" data-i18n="sidebar.eyebrow">Матчинг · мапа</span>
     <h1 data-i18n="sidebar.h1">Міжмуніципальна співпраця на мапі</h1>
-    <p class="lede" data-i18n="sidebar.lede">Зареєстровані угоди МСС поруч із гіпотезами, де громади можуть співпрацювати далі. Клац по ноді — портал або стратегія, якщо є посилання.</p>
+    <p class="lede" data-i18n="sidebar.lede">Зареєстровані угоди МСС поруч із гіпотезами, де громади можуть співпрацювати далі. Клац по громаді — картка з деталями.</p>
     <div class="toggle" role="tablist" data-i18n-aria="mode.aria" aria-label="Режим перегляду">
       <button type="button" id="btn-map" class="active" data-i18n="mode.map">Мапа</button>
       <button type="button" id="btn-graph" data-i18n="mode.graph">Граф</button>
     </div>
+    <section class="detail" id="detail" aria-live="polite" hidden>
+      <div class="detail-head">
+        <h2 id="detail-title">—</h2>
+        <button type="button" class="detail-close" id="detail-close" data-i18n-aria="detail.close" aria-label="Закрити">×</button>
+      </div>
+      <div class="detail-body" id="detail-body"></div>
+    </section>
     <p class="section-label" data-i18n="layers.label">Шари мапи</p>
     <div class="layers" role="group" data-i18n-aria="layers.aria" aria-label="Шари мапи">
       <label>
@@ -332,7 +507,7 @@
       <div class="stat"><span data-i18n="stat.complementary">Гіпотез «доповнення»</span><b id="s-complementary">—</b></div>
       <div class="stat"><span data-i18n="stat.explicitAsk">Явних запитів МСС</span><b id="s-explicit-ask">—</b></div>
     </div>
-    <p class="hint" id="hint">Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по ноді відкриває портал або PDF, якщо є посилання.</p>
+    <p class="hint" id="hint">Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по громаді відкриває картку з деталями.</p>
   </aside>
   <main>
     <div id="map"></div>
@@ -363,12 +538,19 @@ const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
 const tip = document.getElementById('tooltip');
 const hint = document.getElementById('hint');
+const detailEl = document.getElementById('detail');
+const detailTitle = document.getElementById('detail-title');
+const detailBody = document.getElementById('detail-body');
 
 let mode = 'map';
 let width = 0, height = 0, dpr = 1;
 let camX = 0, camY = 0, scale = 0.55;
 let dragging = null, panning = false, lastX = 0, lastY = 0;
+let dragMoved = false, pendingSelect = null;
 let hover = null;
+let selectedId = null;
+let resourcesByCode = null;
+let resourcesPromise = null;
 let layers = {
   universe: true, pin: true, known: true, pinCorpus: true,
   thematic: true, operational: false, complementary: false, explicitAsk: false, corpus: false,
@@ -386,32 +568,52 @@ function t(key) {
     : key;
 }
 
-function popupHtml(n) {
-  const title = esc(n.full_name || n.label);
-  const bits = [];
-  if (n.oblast) bits.push(esc(n.oblast));
-  if (n.type) bits.push(esc(n.type));
-  if (n.population != null) bits.push(esc(String(n.population)) + ' ' + t('popup.people'));
-  const links = [];
-  if (n.portal_url) {
-    links.push(`<a href="${esc(n.portal_url)}" target="_blank" rel="noopener">${esc(t('popup.portal'))}</a>`);
-  }
-  if (n.strategy_url) {
-    links.push(`<a href="${esc(n.strategy_url)}" target="_blank" rel="noopener">${esc(t('popup.strategy'))}</a>`);
-  }
-  const flags = [];
-  if (n.in_pin) flags.push(t('popup.inPin'));
-  if (n.in_corpus) flags.push(t('popup.inCorpus'));
-  if (n.source_quality) flags.push(esc(n.source_quality));
-  return (
-    `<strong>${title}</strong>`
-    + (bits.length ? `<div class="meta">${bits.join(' · ')}</div>` : '')
-    + (flags.length ? `<div class="meta">${flags.join(' · ')}</div>` : '')
-    + (n.degree ? `<div class="meta">${n.degree} ${esc(t('popup.degree'))}</div>` : '')
-    + (links.length
-      ? `<div style="margin-top:0.35rem">${links.join(' · ')}</div>`
-      : `<div class="meta" style="margin-top:0.35rem">${esc(t('popup.noLink'))}</div>`)
-  );
+function fmtNum(n) {
+  if (n == null || Number.isNaN(Number(n))) return '—';
+  return Number(n).toLocaleString(undefined, { maximumFractionDigits: 1 });
+}
+
+function kindLabel(kind) {
+  const map = {
+    pin: 'layer.pin.title',
+    known: 'layer.known.title',
+    pin_corpus: 'layer.pinCorpus.title',
+    thematic: 'layer.thematic.title',
+    hypothesis: 'layer.thematic.title',
+    operational: 'layer.operational.title',
+    complementary: 'layer.complementary.title',
+    explicit_ask: 'layer.explicitAsk.title',
+  };
+  return t(map[kind] || kind);
+}
+
+function kindSwClass(kind) {
+  if (kind === 'pin') return 'pin';
+  if (kind === 'known') return 'known';
+  if (kind === 'pin_corpus') return 'pin-corpus';
+  if (kind === 'operational') return 'ops';
+  if (kind === 'complementary') return 'comp';
+  if (kind === 'explicit_ask') return 'ask';
+  return 'hyp';
+}
+
+function ensureResources() {
+  if (resourcesByCode) return Promise.resolve(resourcesByCode);
+  if (resourcesPromise) return resourcesPromise;
+  resourcesPromise = fetch('assets/resources-preview.json')
+    .then((r) => r.json())
+    .then((data) => {
+      resourcesByCode = Object.create(null);
+      for (const h of data.hromadas || []) {
+        if (h.katottg) resourcesByCode[h.katottg] = h;
+      }
+      return resourcesByCode;
+    })
+    .catch(() => {
+      resourcesByCode = Object.create(null);
+      return resourcesByCode;
+    });
+  return resourcesPromise;
 }
 
 const nodes = DATA.nodes.map((n, i) => {
@@ -426,10 +628,162 @@ const nodes = DATA.nodes.map((n, i) => {
   };
 });
 const byId = Object.fromEntries(nodes.map(n => [n.id, n]));
+const universe = DATA.universe || [];
+const allById = Object.create(null);
+for (const n of universe) allById[n.id] = n;
+for (const n of nodes) allById[n.id] = n;
 const edges = DATA.edges
   .filter(e => byId[e.a] && byId[e.b])
   .map(e => ({ ...e, source: byId[e.a], target: byId[e.b] }));
-const universe = DATA.universe || [];
+
+function resolveNode(nOrId) {
+  if (!nOrId) return null;
+  if (typeof nOrId === 'string') return allById[nOrId] || null;
+  return allById[nOrId.id] || nOrId;
+}
+
+function neighborsOf(id) {
+  const groups = Object.create(null);
+  const order = ['known', 'pin_corpus', 'pin', 'thematic', 'operational', 'complementary', 'explicit_ask', 'hypothesis'];
+  for (const e of DATA.edges || []) {
+    if (e.a !== id && e.b !== id) continue;
+    const otherId = e.a === id ? e.b : e.a;
+    const other = allById[otherId];
+    const kind = e.kind || 'pin';
+    if (!groups[kind]) groups[kind] = [];
+    groups[kind].push({
+      id: otherId,
+      label: (other && (other.full_name || other.label)) || otherId,
+      score: e.score,
+      theme: e.theme,
+    });
+  }
+  for (const kind of Object.keys(groups)) {
+    groups[kind].sort((a, b) => (Number(b.score) || 0) - (Number(a.score) || 0));
+    groups[kind] = groups[kind].slice(0, 8);
+  }
+  return order.filter((k) => groups[k] && groups[k].length).map((k) => ({ kind: k, items: groups[k] }));
+}
+
+function renderDetail(n) {
+  if (!n) {
+    detailEl.classList.remove('open');
+    detailEl.hidden = true;
+    detailTitle.textContent = '—';
+    detailBody.innerHTML = '';
+    return;
+  }
+  const title = n.full_name || n.label || n.id;
+  detailTitle.textContent = title;
+  const bits = [];
+  if (n.oblast) bits.push(esc(n.oblast));
+  if (n.type) bits.push(esc(n.type));
+  if (n.population != null) bits.push(esc(fmtNum(n.population)) + ' ' + esc(t('popup.people')));
+
+  const badges = [];
+  if (n.in_pin) badges.push(t('popup.inPin'));
+  if (n.in_corpus) badges.push(t('popup.inCorpus'));
+  if (n.source_quality) badges.push(n.source_quality);
+  if (n.degree) badges.push(n.degree + ' ' + t('popup.degreeShort'));
+
+  const links = [];
+  if (n.portal_url) {
+    links.push(`<a href="${esc(n.portal_url)}" target="_blank" rel="noopener">${esc(t('popup.portal'))}</a>`);
+  }
+  if (n.strategy_url) {
+    links.push(`<a href="${esc(n.strategy_url)}" target="_blank" rel="noopener">${esc(t('popup.strategy'))}</a>`);
+  }
+
+  const res = resourcesByCode && resourcesByCode[n.id];
+  let resourcesHtml = '';
+  if (resourcesByCode && !res) {
+    resourcesHtml = `<p class="detail-empty">${esc(t('detail.noResources'))}</p>`;
+  } else if (res) {
+    const facts = [];
+    if (res.own_income_per_capita != null) {
+      facts.push([t('detail.income'), fmtNum(res.own_income_per_capita)]);
+    }
+    if (res.dream_projects != null) {
+      facts.push([t('detail.dream'), fmtNum(res.dream_projects)]);
+    }
+    if (res.dfrr_budget_executed_sum != null) {
+      facts.push([t('detail.dfrr'), fmtNum(res.dfrr_budget_executed_sum)]);
+    }
+    if (res.war_status_sept) {
+      facts.push([t('detail.war'), res.war_status_sept]);
+    }
+    if (res.health_known && (res.health_primary != null || res.health_specialized != null)) {
+      facts.push([t('detail.health'), `${res.health_primary ?? 0} / ${res.health_specialized ?? 0}`]);
+    }
+    const chips = (res.top_sectors || []).slice(0, 6);
+    resourcesHtml =
+      (facts.length
+        ? `<div class="detail-facts">${facts.map(([k, v]) =>
+            `<div class="detail-fact"><span>${esc(k)}</span><b>${esc(String(v))}</b></div>`
+          ).join('')}</div>`
+        : '')
+      + (chips.length
+        ? `<div class="detail-chips">${chips.map((c) => `<span class="detail-chip">${esc(c)}</span>`).join('')}</div>`
+        : '');
+  } else {
+    resourcesHtml = `<p class="detail-empty">${esc(t('detail.loading'))}</p>`;
+  }
+
+  const neighborGroups = neighborsOf(n.id);
+  let neighborsHtml = '';
+  if (!neighborGroups.length) {
+    neighborsHtml = `<p class="detail-empty">${esc(t('detail.noNeighbors'))}</p>`;
+  } else {
+    neighborsHtml = `<div class="detail-neighbors">${neighborGroups.map((g) => {
+      const items = g.items.map((item) => {
+        const score = item.score != null ? Number(item.score).toFixed(2) : '';
+        const tip = item.theme ? ` title="${esc(item.theme)}"` : '';
+        return `<button type="button" class="detail-neighbor" data-id="${esc(item.id)}"${tip}><span>${esc(item.label)}</span>${score ? `<b>${esc(score)}</b>` : ''}</button>`;
+      }).join('');
+      return `<div class="detail-neighbor-group"><div class="detail-neighbor-kind"><span class="sw ${kindSwClass(g.kind)}" aria-hidden="true"></span>${esc(kindLabel(g.kind))}</div>${items}</div>`;
+    }).join('')}</div>`;
+  }
+
+  detailBody.innerHTML =
+    (bits.length ? `<div class="detail-meta">${bits.join(' · ')}</div>` : '')
+    + (n.katottg || n.id ? `<div class="detail-id">${esc(n.katottg || n.id)}</div>` : '')
+    + (badges.length ? `<div class="detail-badges">${badges.map((b) => `<span class="detail-badge">${esc(b)}</span>`).join('')}</div>` : '')
+    + (links.length
+      ? `<div class="detail-actions">${links.join('')}</div>`
+      : `<p class="detail-empty">${esc(t('popup.noLink'))}</p>`)
+    + `<p class="detail-section-label">${esc(t('detail.resources'))}</p>${resourcesHtml}`
+    + `<p class="detail-section-label">${esc(t('detail.neighbors'))}</p>${neighborsHtml}`;
+
+  detailEl.hidden = false;
+  detailEl.classList.add('open');
+  detailBody.querySelectorAll('.detail-neighbor').forEach((btn) => {
+    btn.addEventListener('click', () => selectHromada(btn.getAttribute('data-id')));
+  });
+}
+
+function selectHromada(nOrId) {
+  const n = resolveNode(nOrId);
+  if (!n) return;
+  selectedId = n.id;
+  renderDetail(n);
+  if (mode === 'map') rebuildMapLayers();
+  if (!resourcesByCode) {
+    ensureResources().then(() => {
+      if (selectedId === n.id) renderDetail(resolveNode(n.id));
+    });
+  }
+  if (window.matchMedia && window.matchMedia('(max-width: 900px)').matches) {
+    detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+function clearSelection() {
+  selectedId = null;
+  renderDetail(null);
+  if (mode === 'map') rebuildMapLayers();
+}
+
+document.getElementById('detail-close').addEventListener('click', clearSelection);
 
 // ——— Leaflet map ———
 const map = L.map('map', {
@@ -495,6 +849,13 @@ function edgeStyle(kind) {
   return { color: '#7aa2ff', weight: 2, opacity: 0.75, dashArray: '6 5' };
 }
 
+function bindSelect(marker, n) {
+  marker.on('click', (ev) => {
+    if (ev && ev.originalEvent) L.DomEvent.stopPropagation(ev.originalEvent);
+    selectHromada(n);
+  });
+}
+
 function rebuildMapLayers() {
   pinEdgesLayer.clearLayers();
   knownEdgesLayer.clearLayers();
@@ -522,31 +883,33 @@ function rebuildMapLayers() {
   // Faint universe underlay (all mainland hromadas with KSE geo)
   for (const n of universe) {
     if (n.lat == null) continue;
+    const selected = selectedId === n.id;
     const marker = L.circleMarker([n.lat, n.lon], {
-      radius: 2.2,
-      color: '#64748b',
-      fillColor: n.in_corpus ? '#94a3b8' : '#475569',
-      fillOpacity: 0.45,
-      weight: 0.5,
-      opacity: 0.55,
+      radius: selected ? 5.5 : 2.2,
+      color: selected ? '#f8fafc' : '#64748b',
+      fillColor: selected ? '#2563eb' : (n.in_corpus ? '#94a3b8' : '#475569'),
+      fillOpacity: selected ? 0.95 : 0.45,
+      weight: selected ? 2 : 0.5,
+      opacity: selected ? 1 : 0.55,
     });
-    marker.bindPopup(popupHtml(n), { maxWidth: 280 });
+    bindSelect(marker, n);
     universeLayer.addLayer(marker);
   }
 
   for (const n of nodes) {
     if (n.lat == null) continue;
     const corpusGlow = layers.corpus && n.in_corpus;
-    const r = 3 + Math.min(n.degree || 0, 24) * 0.15;
+    const selected = selectedId === n.id;
+    const r = (selected ? 6.5 : 3) + Math.min(n.degree || 0, 24) * 0.15;
     const marker = L.circleMarker([n.lat, n.lon], {
       radius: r,
-      color: corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff'),
-      fillColor: corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff'),
-      fillOpacity: 0.85,
-      weight: 1,
-      opacity: 0.9,
+      color: selected ? '#f8fafc' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff')),
+      fillColor: selected ? '#2563eb' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff')),
+      fillOpacity: 0.9,
+      weight: selected ? 2.5 : 1,
+      opacity: 0.95,
     });
-    marker.bindPopup(popupHtml(n), { maxWidth: 280 });
+    bindSelect(marker, n);
     nodesLayer.addLayer(marker);
   }
 
@@ -594,11 +957,12 @@ syncLayers();
 function refreshHint() {
   const key = mode === 'graph' ? 'hint.graph' : 'hint.map';
   const fallback = mode === 'graph'
-    ? 'Режим «Граф» показує лише мережу угод і гіпотез. Для повної мапи з усіма громадами перемкніть на «Мапу».'
-    : 'Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по ноді відкриває портал або PDF, якщо є посилання.';
+    ? 'Режим «Граф» показує лише мережу угод і гіпотез. Клац по ноді — картка з деталями. Для повної мапи з усіма громадами перемкніть на «Мапу».'
+    : 'Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по громаді відкриває картку з деталями.';
   hint.textContent = (window.HromadaI18n && window.HromadaI18n.t)
     ? window.HromadaI18n.t(key)
     : fallback;
+  if (selectedId) renderDetail(resolveNode(selectedId));
 }
 
 function setMode(next) {
@@ -681,15 +1045,27 @@ canvas.addEventListener('mousedown', (ev) => {
   if (mode !== 'graph') return;
   const w = worldFromEvent(ev);
   const n = findNode(w.x, w.y);
+  dragMoved = false;
+  pendingSelect = n || null;
+  lastX = ev.clientX;
+  lastY = ev.clientY;
   if (n) { dragging = n; n.fx = n.x; n.fy = n.y; }
-  else { panning = true; lastX = ev.clientX; lastY = ev.clientY; }
+  else { panning = true; }
 });
 window.addEventListener('mouseup', () => {
+  if (mode === 'graph' && pendingSelect && !dragMoved) {
+    selectHromada(pendingSelect);
+  } else if (mode === 'graph' && !pendingSelect && !dragMoved) {
+    clearSelection();
+  }
   if (dragging) { dragging.fx = null; dragging.fy = null; }
-  dragging = null; panning = false;
+  dragging = null; panning = false; pendingSelect = null;
 });
 window.addEventListener('mousemove', (ev) => {
   if (mode !== 'graph') return;
+  if ((dragging || panning) && (Math.abs(ev.clientX - lastX) > 4 || Math.abs(ev.clientY - lastY) > 4)) {
+    dragMoved = true;
+  }
   const w = worldFromEvent(ev);
   if (dragging) {
     dragging.fx = w.x; dragging.fy = w.y;
@@ -816,13 +1192,21 @@ function drawGraph() {
     }
   }
   for (const n of nodes) {
-    const hi = hover === n;
+    const hi = hover === n || selectedId === n.id;
     const corpusGlow = layers.corpus && n.in_corpus;
+    const selected = selectedId === n.id;
     const r = ((hi ? 5.5 : 2.2) + Math.min(n.degree, 20) * 0.12) / Math.sqrt(scale);
     ctx.beginPath();
     ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
-    ctx.fillStyle = corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff');
+    ctx.fillStyle = selected ? '#2563eb' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff'));
     ctx.fill();
+    if (selected) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r + 2.2 / scale, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(248, 250, 252, 0.95)';
+      ctx.lineWidth = 1.6 / scale;
+      ctx.stroke();
+    }
     if (hi) {
       const label = n.full_name || n.label || '';
       const fs = 11 / scale;
@@ -850,7 +1234,7 @@ window.PAGE_I18N = {
     "doc.title": "Мапа МСС — матчинг громад · W3I",
     "sidebar.eyebrow": "Матчинг · мапа",
     "sidebar.h1": "Міжмуніципальна співпраця на мапі",
-    "sidebar.lede": "Зареєстровані угоди МСС поруч із гіпотезами, де громади можуть співпрацювати далі. Клац по ноді — портал або стратегія, якщо є посилання.",
+    "sidebar.lede": "Зареєстровані угоди МСС поруч із гіпотезами, де громади можуть співпрацювати далі. Клац по громаді — картка з деталями.",
     "mode.aria": "Режим перегляду",
     "mode.map": "Мапа",
     "mode.graph": "Граф",
@@ -887,8 +1271,8 @@ window.PAGE_I18N = {
     "stat.operational": "Гіпотез «зручний сусід»",
     "stat.complementary": "Гіпотез «доповнення»",
     "stat.explicitAsk": "Явних запитів МСС",
-    "hint.map": "Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по ноді відкриває портал або PDF, якщо є посилання.",
-    "hint.graph": "Режим «Граф» показує лише мережу угод і гіпотез. Для повної мапи з усіма громадами перемкніть на «Мапу».",
+    "hint.map": "Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по громаді відкриває картку з деталями.",
+    "hint.graph": "Режим «Граф» показує лише мережу угод і гіпотез. Клац по ноді — картка з деталями. Для повної мапи з усіма громадами перемкніть на «Мапу».",
     "popup.people": "осіб",
     "popup.portal": "Портал громади",
     "popup.strategy": "Стратегія / джерело",
@@ -896,13 +1280,24 @@ window.PAGE_I18N = {
     "popup.inCorpus": "стратегія в корпусі",
     "popup.degree": "звʼязків у реєстрі МСС",
     "popup.degreeShort": "звʼязків у реєстрі",
-    "popup.noLink": "Немає посилання на портал або стратегію"
+    "popup.noLink": "Немає посилання на портал або стратегію",
+    "detail.close": "Закрити",
+    "detail.resources": "Ресурси та DREAM",
+    "detail.neighbors": "Звʼязки на мапі",
+    "detail.loading": "Завантаження ресурсів…",
+    "detail.noResources": "Немає даних ресурсів для цієї громади",
+    "detail.noNeighbors": "Немає звʼязків у мережі на мапі",
+    "detail.income": "Власні доходи / особу",
+    "detail.dream": "Проєкти DREAM",
+    "detail.dfrr": "ДФРР (виконано)",
+    "detail.war": "Статус (війна)",
+    "detail.health": "ЗОЗ перв. / спец."
   },
   en: {
     "doc.title": "IMC map — hromada matching · W3I",
     "sidebar.eyebrow": "Matching · map",
     "sidebar.h1": "Intermunicipal cooperation on the map",
-    "sidebar.lede": "Registered IMC agreements alongside hypotheses for further collaboration. Click a node for the portal or strategy when a link is available.",
+    "sidebar.lede": "Registered IMC agreements alongside hypotheses for further collaboration. Click a hromada for a detail card.",
     "mode.aria": "View mode",
     "mode.map": "Map",
     "mode.graph": "Graph",
@@ -939,8 +1334,8 @@ window.PAGE_I18N = {
     "stat.operational": "“Convenient neighbour” hypotheses",
     "stat.complementary": "“Complement” hypotheses",
     "stat.explicitAsk": "Explicit IMC asks",
-    "hint.map": "Grey nodes are all hromadas with coordinates, not only those whose strategies we have already parsed. Click a node to open the portal or PDF when a link is available.",
-    "hint.graph": "Graph mode shows only the agreement and hypothesis network. Switch to Map for the full map with all hromadas.",
+    "hint.map": "Grey nodes are all hromadas with coordinates, not only those whose strategies we have already parsed. Click a hromada to open a detail card.",
+    "hint.graph": "Graph mode shows only the agreement and hypothesis network. Click a node for a detail card. Switch to Map for the full map with all hromadas.",
     "popup.people": "people",
     "popup.portal": "Hromada portal",
     "popup.strategy": "Strategy / source",
@@ -948,7 +1343,18 @@ window.PAGE_I18N = {
     "popup.inCorpus": "strategy in corpus",
     "popup.degree": "links in the IMC registry",
     "popup.degreeShort": "registry links",
-    "popup.noLink": "No portal or strategy link"
+    "popup.noLink": "No portal or strategy link",
+    "detail.close": "Close",
+    "detail.resources": "Resources & DREAM",
+    "detail.neighbors": "Links on the map",
+    "detail.loading": "Loading resources…",
+    "detail.noResources": "No resource data for this hromada",
+    "detail.noNeighbors": "No links in the map network",
+    "detail.income": "Own income / capita",
+    "detail.dream": "DREAM projects",
+    "detail.dfrr": "DFRR (executed)",
+    "detail.war": "War status",
+    "detail.health": "PHC / specialized facilities"
   }
 };
 </script>
