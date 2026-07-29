@@ -1,6 +1,6 @@
 {
   "file": "dream-priorities.json",
-  "generated_at": "2026-07-29T09:30:13Z",
+  "generated_at": "2026-07-29T10:40:34Z",
   "coverage": {
     "ideas_indexed": 16171,
     "details_processed": 16171,
@@ -18,7 +18,8 @@
       "Sectors: WB-ECO (except bare Public Admin B/BH) + title keywords → controlled vocabulary.",
       "Е-врядування = ЦНАП/Дія/е-послуги only; IT / цифровізація = digital component (excl. med imaging).",
       "Cancelled ideas excluded. Settlement codes mapped to hromada via KSE ua-admin-map.",
-      "Hypothesis layer — do not treat as approved municipal strategy."
+      "Hypothesis layer — do not treat as approved municipal strategy.",
+      "sector_projects / sector_samples are title samples for UI — not a full project dump for dense sectors."
     ]
   }
 }

@@ -117,14 +117,37 @@ def main() -> None:
 
     rows = sorted(
         by_code.values(),
-        key=lambda r: (-int(r.get("dream_projects") or 0), -(r.get("own_income_per_capita") or 0), r.get("short") or ""),
+        key=lambda r: (
+            -int(r.get("dream_projects") or 0),
+            -(r.get("own_income_per_capita") or 0),
+            r.get("short") or "",
+        ),
     )
+    rows = [r for r in rows if str(r.get("short") or r.get("name") or "").strip()]
 
-    rows = [
-        r
-        for r in rows
-        if str(r.get("short") or r.get("name") or "").strip()
-    ]
+    by_k = {r["katottg"]: r for r in rows}
+    sector_projects: dict[str, list[dict]] = {}
+    for sector, entries in (dream.get("sector_projects") or {}).items():
+        slim_cat: list[dict] = []
+        for e in entries or []:
+            title = (e.get("title") or "").strip()
+            if not title:
+                continue
+            host = by_k.get((e.get("katottg") or "").strip())
+            slim_cat.append(
+                {
+                    "katottg": e.get("katottg"),
+                    "short": (host.get("short") if host else None)
+                    or short_name(e.get("name"))
+                    or e.get("name")
+                    or "",
+                    "oblast": (host.get("oblast") if host else None),
+                    "title": title[:160],
+                    "code": e.get("code"),
+                }
+            )
+        if slim_cat:
+            sector_projects[str(sector)] = slim_cat
 
     with_dream = sum(1 for r in rows if (r.get("dream_projects") or 0) > 0)
     with_pcap = sum(1 for r in rows if r.get("own_income_per_capita") is not None)
@@ -159,6 +182,7 @@ def main() -> None:
             "with_health": with_health,
         },
         "sector_totals": sector_rows,
+        "sector_projects": sector_projects,
         "top_dream": [
             {
                 "short": r["short"] or r["name"],
@@ -167,6 +191,7 @@ def main() -> None:
                 "top_sectors": r["top_sectors"],
                 "sectors": r.get("sectors") or r["top_sectors"],
                 "sector_counts": r.get("sector_counts") or {},
+                "katottg": r.get("katottg"),
             }
             for r in rows
             if (r.get("dream_projects") or 0) > 0

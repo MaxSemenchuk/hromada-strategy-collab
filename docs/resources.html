@@ -168,6 +168,36 @@
       font-variant-numeric: tabular-nums; font-weight: 800; color: var(--site-accent);
       white-space: nowrap;
     }
+    .project-list { display: grid; gap: 0.55rem; margin: 0 0 1.6rem; }
+    .project-item {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 10px; padding: 0.7rem 0.9rem;
+    }
+    .project-item .title {
+      font-weight: 650; font-size: 0.92rem; line-height: 1.35;
+      color: var(--site-ink); margin: 0 0 0.25rem;
+    }
+    .project-item .title a {
+      color: inherit; text-decoration: none;
+      border-bottom: 1px solid color-mix(in srgb, var(--site-accent) 35%, transparent);
+    }
+    .project-item .title a:hover { color: var(--site-accent); }
+    .project-item .where { font-size: 0.78rem; color: var(--site-faint); }
+    .project-item .code {
+      font-size: 0.72rem; color: var(--site-faint);
+      font-variant-numeric: tabular-nums; margin-top: 0.2rem;
+    }
+    .project-samples {
+      margin: 0.35rem 0 0; padding: 0; list-style: none;
+      font-size: 0.78rem; color: var(--site-muted); line-height: 1.35;
+    }
+    .project-samples li { margin: 0.2rem 0 0; }
+    .project-samples a {
+      color: inherit; text-decoration: none;
+      border-bottom: 1px solid color-mix(in srgb, var(--site-accent) 28%, transparent);
+    }
+    .project-samples a:hover { color: var(--site-accent); }
+    #sector-projects-wrap[hidden] { display: none !important; }
   </style>
 </head>
 <body>
@@ -203,6 +233,13 @@
     <p class="section-kicker" data-i18n="sectors.k">Сектори DREAM (за кількістю)</p>
     <div class="sectors" id="sectors" role="group" aria-label="DREAM sectors"></div>
     <p class="sector-hint" id="sector-hint" hidden></p>
+
+    <section id="sector-projects-wrap" hidden>
+      <p class="section-kicker" data-i18n="proj.k">Проєкти сектору</p>
+      <h2 class="sec" id="sector-projects-h" data-i18n="proj.h">Назви з DREAM</h2>
+      <p class="sec-lede" id="sector-projects-lede" data-i18n="proj.lede">Клік по сектору вище — тут назви ідей/проєктів (не Goals).</p>
+      <div class="project-list" id="sector-projects"></div>
+    </section>
 
     <section>
       <p class="section-kicker" data-i18n="top.k">Топ за кількістю проєктів</p>
@@ -286,6 +323,11 @@ window.PAGE_I18N = {
     "sectors.clear": "Скинути",
     "sectors.click": "Клік по тегу — громади з цим сектором.",
     "empty.sector": "Немає громад із цим сектором у зрізі.",
+    "proj.k": "Проєкти сектору",
+    "proj.h": "Назви з DREAM — «{sector}»",
+    "proj.lede": "Усі (або вибірка) ідей/проєктів у цьому секторі. Посилання відкриває пошук за кодом на dream.gov.ua.",
+    "proj.empty": "Немає назв проєктів для цього сектору в зрізі.",
+    "proj.more": "У щільних секторах — вибірка до {n} назв; повний шар у dream-priorities.json.",
     "top.k": "Топ за кількістю проєктів",
     "top.h": "Де найгустіший DREAM-портфель",
     "top.lede": "Не «найкраща стратегія» — просто обсяг зареєстрованих ідей/проєктів на громаду.",
@@ -334,6 +376,11 @@ window.PAGE_I18N = {
     "sectors.clear": "Clear",
     "sectors.click": "Click a tag to list hromadas with that sector.",
     "empty.sector": "No hromadas with this sector in the slice.",
+    "proj.k": "Sector projects",
+    "proj.h": "DREAM titles — “{sector}”",
+    "proj.lede": "All (or a sample of) ideas/projects in this sector. Links open a code search on dream.gov.ua.",
+    "proj.empty": "No project titles for this sector in the slice.",
+    "proj.more": "Dense sectors show up to {n} titles; full layer is in dream-priorities.json.",
     "top.k": "Top by project count",
     "top.h": "Where the DREAM portfolio is densest",
     "top.lede": "Not “best strategy” — just the volume of registered ideas/projects per hromada.",
@@ -402,6 +449,39 @@ window.PAGE_I18N = {
       return !!(r && String(r.short || r.name || "").trim());
     }
 
+    function dreamLink(code) {
+      if (!code) return null;
+      return "https://dream.gov.ua/spp-pipeline?filter=" + encodeURIComponent(code);
+    }
+
+    function sampleListHtml(samples) {
+      if (!samples || !samples.length) return "";
+      return '<ul class="project-samples">' + samples.map(function (s) {
+        var title = s.title || "";
+        var href = dreamLink(s.code);
+        var label = href
+          ? '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(title) + "</a>"
+          : esc(title);
+        return "<li>" + label + "</li>";
+      }).join("") + "</ul>";
+    }
+
+    function rowSectorSamples(r, sector) {
+      if (!sector || !DATA) return [];
+      var catalog = ((DATA.sector_projects || {})[sector]) || [];
+      var code = r.katottg;
+      var short = r.short || r.name;
+      var out = [];
+      catalog.forEach(function (p) {
+        if (code && p.katottg && p.katottg === code) {
+          out.push(p);
+        } else if (!code && short && p.short === short) {
+          out.push(p);
+        }
+      });
+      return out.slice(0, 3);
+    }
+
     function filteredRows() {
       var q = (document.getElementById("q").value || "").trim().toLowerCase();
       var sort = document.getElementById("sort").value;
@@ -438,7 +518,7 @@ window.PAGE_I18N = {
       activeSector = (sector && activeSector === sector) ? null : (sector || null);
       render();
       if (activeSector) {
-        var panel = document.getElementById("table-lede");
+        var panel = document.getElementById("sector-projects-wrap");
         if (panel && panel.scrollIntoView) {
           panel.scrollIntoView({ behavior: "smooth", block: "start" });
         }
@@ -471,6 +551,45 @@ window.PAGE_I18N = {
       }
     }
 
+    function renderSectorProjects() {
+      var wrap = document.getElementById("sector-projects-wrap");
+      var list = document.getElementById("sector-projects");
+      if (!wrap || !list) return;
+      if (!activeSector) {
+        wrap.hidden = true;
+        list.innerHTML = "";
+        return;
+      }
+      wrap.hidden = false;
+      document.getElementById("sector-projects-h").textContent =
+        t("proj.h").replace("{sector}", activeSector);
+      document.getElementById("sector-projects-lede").textContent = t("proj.lede");
+
+      var catalog = ((DATA && DATA.sector_projects) || {})[activeSector] || [];
+
+      var totalHint = ((DATA.sector_totals || []).find(function (s) {
+        return s.sector === activeSector;
+      }) || {}).count;
+      var html = catalog.map(function (p) {
+        var href = dreamLink(p.code);
+        var title = href
+          ? '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>"
+          : esc(p.title);
+        return '<div class="project-item">'
+          + '<div class="title">' + title + "</div>"
+          + '<div class="where">' + esc(p.short || "")
+          + (p.oblast ? " · " + esc(p.oblast) : "") + "</div>"
+          + (p.code ? '<div class="code">' + esc(p.code) + "</div>" : "")
+          + "</div>";
+      }).join("");
+      if (!html) {
+        html = '<div class="empty">' + esc(t("proj.empty")) + "</div>";
+      } else if (totalHint && catalog.length < totalHint) {
+        html += '<p class="meta">' + esc(t("proj.more").replace("{n}", String(catalog.length))) + "</p>";
+      }
+      list.innerHTML = html;
+    }
+
     function render() {
       if (!DATA) return;
       var cov = DATA.coverage || {};
@@ -480,6 +599,7 @@ window.PAGE_I18N = {
       document.getElementById("c-comp").textContent = fmtInt(cov.with_competence);
 
       renderSectors();
+      renderSectorProjects();
 
       var rows = filteredRows();
       var topSource = activeSector
@@ -491,10 +611,11 @@ window.PAGE_I18N = {
         var countLabel = activeSector
           ? fmtInt(sectorN) + "<div class=\"meta\">" + esc(activeSector) + "</div>"
           : fmtInt(r.dream_projects) + "<div class=\"meta\">" + t("top.projects") + "</div>";
+        var samples = activeSector ? sampleListHtml(rowSectorSamples(r, activeSector)) : "";
         return '<div class="top-item"><div class="row">'
           + '<div><span class="name">' + esc(r.short || r.name) + "</span>"
           + (r.oblast ? '<div class="meta">' + esc(r.oblast) + "</div>" : "")
-          + '<div class="sectors-cell">' + esc(rowSectors(r).slice(0, 4).join(" · ")) + "</div>"
+          + (samples || '<div class="sectors-cell">' + esc(rowSectors(r).slice(0, 4).join(" · ")) + "</div>")
           + '</div><div class="count">' + countLabel + "</div>"
           + "</div></div>";
       }).join("") || ('<div class="empty">' + esc(t(activeSector ? "empty.sector" : "empty")) + "</div>");
@@ -514,13 +635,17 @@ window.PAGE_I18N = {
             var dreamCell = activeSector
               ? fmtInt(sectorCount(r, activeSector))
               : ((r.dream_projects || 0) > 0 ? fmtInt(r.dream_projects) : "—");
+            var samples = activeSector ? sampleListHtml(rowSectorSamples(r, activeSector)) : "";
+            var sectorsCell = activeSector && samples
+              ? samples
+              : esc(rowSectors(r).slice(0, 4).join(" · ") || "—");
             return "<tr>"
               + '<td><div class="name">' + esc(r.short || r.name) + "</div>"
               + (r.oblast ? '<div class="meta">' + esc(r.oblast) + "</div>" : "")
               + "</td>"
               + '<td class="num">' + fmtNum(r.own_income_per_capita) + "</td>"
               + '<td class="num">' + dreamCell + "</td>"
-              + '<td class="sectors-cell">' + esc(rowSectors(r).slice(0, 4).join(" · ") || "—") + "</td>"
+              + '<td class="sectors-cell">' + sectorsCell + "</td>"
               + '<td class="num">' + health + "</td>"
               + "<td>" + esc(comp) + "</td>"
               + "</tr>";
