@@ -16,7 +16,36 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Галицька міська територіальна громада",
@@ -35,7 +64,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Журавненська селищна територіальна громада",
@@ -54,7 +112,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Божедарівська селищна територіальна громада",
@@ -73,7 +160,36 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Скалатська міська територіальна громада",
@@ -92,7 +208,36 @@
     "suggested_form": "спільне утримання",
     "suggested_form_id": "joint_finance",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Освіта» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Освіта",
+      "theme_id": "education",
+      "form": "спільне утримання",
+      "form_id": "joint_finance",
+      "confidence": "medium",
+      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Освіта — спільне утримання"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -111,7 +256,36 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Дніпровська міська територіальна громада",
@@ -130,7 +304,36 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Кам'янська міська територіальна громада",
@@ -149,7 +352,31 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Новомосковська міська територіальна громада",
@@ -168,7 +395,31 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Дніпровська міська територіальна громада",
@@ -187,7 +438,31 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Галицька міська територіальна громада",
@@ -206,7 +481,36 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "medium",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "low"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Великоберезовицька селищна територіальна громада",
@@ -225,7 +529,36 @@
     "suggested_form": "спільне утримання",
     "suggested_form_id": "joint_finance",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Освіта» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Освіта",
+      "theme_id": "education",
+      "form": "спільне утримання",
+      "form_id": "joint_finance",
+      "confidence": "medium",
+      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Освіта — спільне утримання"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -244,7 +577,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Кам'янська міська територіальна громада",
@@ -263,7 +625,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Бурштинська міська територіальна громада",
@@ -282,7 +673,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Новомосковська міська територіальна громада",
@@ -301,7 +721,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Більшівцівська селищна територіальна громада",
@@ -320,7 +769,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Більшівцівська селищна територіальна громада",
@@ -339,7 +817,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Великоберезовицька селищна територіальна громада",
@@ -358,7 +865,36 @@
     "suggested_form": "спільне утримання",
     "suggested_form_id": "joint_finance",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Освіта» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Освіта",
+      "theme_id": "education",
+      "form": "спільне утримання",
+      "form_id": "joint_finance",
+      "confidence": "medium",
+      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Освіта — спільне утримання"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Козелецька селищна територіальна громада",
@@ -377,7 +913,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "low"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Зазимська сільська територіальна громада",
@@ -396,7 +961,31 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Дніпровська міська територіальна громада",
@@ -415,7 +1004,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Водопостачання / водовідведення» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Водопостачання / водовідведення",
+      "theme_id": "water",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "Водопостачання / водовідведення — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Ужгородська міська територіальна громада",
@@ -434,7 +1052,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Великоберезовицька селищна територіальна громада",
@@ -453,7 +1100,36 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -472,7 +1148,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -491,7 +1196,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Великогаївська сільська територіальна громада",
@@ -510,7 +1244,36 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "medium"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Дніпровська міська територіальна громада",
@@ -529,7 +1292,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Кам'янська міська територіальна громада",
@@ -548,7 +1340,36 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Дніпровська міська територіальна громада",
@@ -568,7 +1389,32 @@
     "suggested_form_id": "agglomeration",
     "suggest_confidence": "medium",
     "suggest_rationale": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС",
-    "suggest_caveat": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС"
+    "suggest_caveat": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Агломерація / метрополія",
+      "theme_id": "agglomeration",
+      "form": "агломерація",
+      "form_id": "agglomeration",
+      "confidence": "medium",
+      "rationale": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС",
+      "label_uk": "Агломерація / метрополія — агломерація",
+      "caveat": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Бурштинська міська територіальна громада",
@@ -587,7 +1433,36 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "medium",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Журавненська селищна територіальна громада",
@@ -606,7 +1481,36 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "medium",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "medium"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Журавненська селищна територіальна громада",
@@ -625,7 +1529,36 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "medium",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Новомосковська міська територіальна громада",
@@ -644,7 +1577,36 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "medium"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Великогаївська сільська територіальна громада",
@@ -663,7 +1625,36 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "low"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Журавненська селищна територіальна громада",
@@ -682,7 +1673,36 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "medium",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
@@ -701,7 +1721,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "low"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Дубовецька сільська територіальна громада",
@@ -720,7 +1769,36 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Мукачівська міська територіальна громада",
@@ -739,7 +1817,36 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "medium",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
@@ -758,6 +1865,35 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "medium"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   }
 ]
