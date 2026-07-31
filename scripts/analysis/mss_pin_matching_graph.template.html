@@ -522,7 +522,7 @@
   <aside>
     <span class="eyebrow" data-i18n="sidebar.eyebrow">Матчинг · мапа</span>
     <h1 data-i18n="sidebar.h1">Міжмуніципальна співпраця на мапі</h1>
-    <p class="lede" data-i18n="sidebar.lede">Зареєстровані угоди МСС поруч із гіпотезами, де громади можуть співпрацювати далі. Клац по громаді — картка з деталями.</p>
+    <p class="lede" data-i18n="sidebar.lede">Зареєстровані угоди МСС поруч із кандидатами договорів (тема · форма). Оверлеї — сигнали пошуку, не типи МСС. Клац по громаді — картка з деталями.</p>
     <div class="toggle" role="tablist" data-i18n-aria="mode.aria" aria-label="Режим перегляду">
       <button type="button" id="btn-map" class="active" data-i18n="mode.map">Мапа</button>
       <button type="button" id="btn-graph" data-i18n="mode.graph">Граф</button>
@@ -534,7 +534,7 @@
       </div>
       <div class="detail-body" id="detail-body"></div>
     </section>
-    <p class="section-label" data-i18n="layers.label">Шари мапи</p>
+    <p class="section-label" data-i18n="layers.label">Сигнали пошуку</p>
     <div class="layers" role="group" data-i18n-aria="layers.aria" aria-label="Шари мапи">
       <label>
         <input type="checkbox" id="layer-universe" checked/>
@@ -572,16 +572,16 @@
         <input type="checkbox" id="layer-thematic" checked/>
         <span class="sw hyp" aria-hidden="true"></span>
         <span class="layer-copy">
-          <span class="layer-title" data-i18n="layer.thematic.title">Схожа стратегія</span>
-          <span class="layer-desc" data-i18n="layer.thematic.desc">Пунктир — гіпотези за схожістю цілей у стратегіях</span>
+          <span class="layer-title" data-i18n="layer.thematic.title">Сигнал · схожа стратегія</span>
+          <span class="layer-desc" data-i18n="layer.thematic.desc">Пунктир — кандидат знайдено за схожістю цілей</span>
         </span>
       </label>
       <label>
         <input type="checkbox" id="layer-operational"/>
         <span class="sw ops" aria-hidden="true"></span>
         <span class="layer-copy">
-          <span class="layer-title" data-i18n="layer.operational.title">Зручний сусід</span>
-          <span class="layer-desc" data-i18n="layer.operational.desc">Крапкові лінії — гіпотези для спільних послуг із сусідами</span>
+          <span class="layer-title" data-i18n="layer.operational.title">Сигнал · зручний сусід</span>
+          <span class="layer-desc" data-i18n="layer.operational.desc">Крапкові — кандидат для спільних послуг із сусідами</span>
         </span>
       </label>
       <label>
@@ -797,6 +797,10 @@ function neighborsOf(id) {
       goal_pairs: e.goal_pairs || [],
       suggested_theme: e.suggested_theme,
       suggested_form: e.suggested_form,
+      package: e.package,
+      signals: e.signals,
+      discovery_primary: e.discovery_primary,
+      status: e.status,
       suggest_confidence: e.suggest_confidence,
       suggest_rationale: e.suggest_rationale,
       suggest_caveat: e.suggest_caveat,
@@ -871,24 +875,30 @@ function themesHtml(item) {
 function packageHtml(item) {
   // Hypothesis IMC package (theme + legal form). Skip on registry PIN edges
   // that already show agreement subjects — still OK on overlays.
-  if (!item.suggested_theme && !item.suggested_form) return '';
+  const pkg = item.package || {};
+  const theme = pkg.theme || item.suggested_theme;
+  const form = pkg.form || item.suggested_form;
+  if (!theme && !form) return '';
   if (item.kind === 'pin' || item.kind === 'known' || item.kind === 'pin_corpus') return '';
-  const bits = [];
-  if (item.suggested_theme) bits.push(item.suggested_theme);
-  if (item.suggested_form) bits.push(item.suggested_form);
-  const line = bits.join(' · ');
-  const conf = item.suggest_confidence
-    ? ` <span class="agr-meta">(${esc(item.suggest_confidence)})</span>`
+  const line = pkg.label_uk || [theme, form].filter(Boolean).join(' — ');
+  const conf = (pkg.confidence || item.suggest_confidence)
+    ? ` <span class="agr-meta">(${esc(pkg.confidence || item.suggest_confidence)})</span>`
     : '';
-  const caveat = item.suggest_caveat
-    ? `<span class="agr-meta">${esc(item.suggest_caveat)}</span>`
-    : (item.suggest_rationale
-      ? `<span class="agr-meta">${esc(item.suggest_rationale)}</span>`
+  const chips = (item.signals || []).slice(0, 3);
+  const chipsHtml = chips.length
+    ? `<div class="agr-meta" style="margin-top:0.3rem">${chips.map((c) =>
+        esc(c.label_uk || c.id)).join(' · ')}</div>`
+    : '';
+  const caveat = (pkg.caveat || item.suggest_caveat)
+    ? `<span class="agr-meta">${esc(pkg.caveat || item.suggest_caveat)}</span>`
+    : ((pkg.rationale || item.suggest_rationale)
+      ? `<span class="agr-meta">${esc(pkg.rationale || item.suggest_rationale)}</span>`
       : '');
   return (
     `<div class="detail-themes" aria-label="${esc(t('explain.mssPackage'))}">`
     + `<span class="detail-theme">${esc(t('explain.mssPackageShort').replace('{p}', line))}</span>`
     + conf
+    + chipsHtml
     + (caveat ? `<div class="agr-meta" style="margin-top:0.25rem">${caveat}</div>` : '')
     + `</div>`
   );
@@ -1593,14 +1603,14 @@ setMode('map');
 window.PAGE_I18N = {
   uk: {
     "doc.title": "Мапа МСС — матчинг громад · W3I",
-    "sidebar.eyebrow": "Матчинг · мапа",
+    "sidebar.eyebrow": "Кандидати договорів · мапа",
     "sidebar.h1": "Міжмуніципальна співпраця на мапі",
-    "sidebar.lede": "Зареєстровані угоди МСС поруч із гіпотезами, де громади можуть співпрацювати далі. Клац по громаді — картка з деталями.",
+    "sidebar.lede": "Зареєстровані угоди МСС поруч із кандидатами договорів (тема · форма). Оверлеї — сигнали пошуку, не типи МСС. Клац по громаді — картка з деталями.",
     "mode.aria": "Режим перегляду",
     "mode.map": "Мапа",
     "mode.graph": "Граф",
-    "layers.label": "Шари мапи",
-    "layers.aria": "Шари мапи",
+    "layers.label": "Сигнали пошуку",
+    "layers.aria": "Сигнали пошуку на мапі",
     "layer.universe.title": "Усі громади",
     "layer.universe.desc": "Сірі ноди — материкові громади з координатами",
     "layer.pin.title": "Зареєстровані угоди МСС",
@@ -1609,13 +1619,13 @@ window.PAGE_I18N = {
     "layer.known.desc": "Золоті товсті лінії — кураторські пари для перевірки методу",
     "layer.pinCorpus.title": "Угоди в нашому корпусі",
     "layer.pinCorpus.desc": "Фіолетові — реєстрові МСС між громадами, чиї стратегії ми читали",
-    "layer.thematic.title": "Схожа стратегія",
-    "layer.thematic.desc": "Пунктир — гіпотези за схожістю цілей у стратегіях",
-    "layer.operational.title": "Зручний сусід",
-    "layer.operational.desc": "Крапкові лінії — гіпотези для спільних послуг із сусідами",
-    "layer.complementary.title": "Доповнення ресурсів",
+    "layer.thematic.title": "Сигнал · схожа стратегія",
+    "layer.thematic.desc": "Пунктир — кандидат знайдено за схожістю цілей",
+    "layer.operational.title": "Сигнал · зручний сусід",
+    "layer.operational.desc": "Крапкові — кандидат для спільних послуг із сусідами",
+    "layer.complementary.title": "Сигнал · доповнення ресурсів",
     "layer.complementary.desc": "Зелені — сила/DREAM однієї ↔ виклик іншої",
-    "layer.explicitAsk.title": "Явний запит МСС",
+    "layer.explicitAsk.title": "Сигнал · явний запит МСС",
     "layer.explicitAsk.desc": "Рожеві — у стратегії прямо згадано кооперацію",
     "layer.corpus.title": "Громади зі стратегіями",
     "layer.corpus.desc": "Підсвітити громади, чиї тексти вже в аналізі",
@@ -1664,8 +1674,8 @@ window.PAGE_I18N = {
     "explain.pinMany": "Зареєстровані угоди МСС ({n})",
     "explain.regNo": "№{n}",
     "explain.sharedThemes": "Спільні теми стратегій",
-    "explain.mssPackage": "Гіпотеза пакета МСС (тема · форма)",
-    "explain.mssPackageShort": "МСС-пакет: {p}",
+    "explain.mssPackage": "Кандидат договору МСС (тема · форма)",
+    "explain.mssPackageShort": "Кандидат: {p}",
     "explain.sharedGoal": "Спільна ціль: {g}",
     "explain.goalApprox": "схожі формулювання",
     "explain.sigGoals": "цілі {n}",
@@ -1676,14 +1686,14 @@ window.PAGE_I18N = {
   },
   en: {
     "doc.title": "IMC map — hromada matching · W3I",
-    "sidebar.eyebrow": "Matching · map",
+    "sidebar.eyebrow": "Agreement candidates · map",
     "sidebar.h1": "Intermunicipal cooperation on the map",
-    "sidebar.lede": "Registered IMC agreements alongside hypotheses for further collaboration. Click a hromada for a detail card.",
+    "sidebar.lede": "Registered IMC agreements alongside agreement candidates (theme · form). Overlays are discovery signals, not IMC types. Click a hromada for details.",
     "mode.aria": "View mode",
     "mode.map": "Map",
     "mode.graph": "Graph",
-    "layers.label": "Map layers",
-    "layers.aria": "Map layers",
+    "layers.label": "Discovery signals",
+    "layers.aria": "Discovery signals on the map",
     "layer.universe.title": "All hromadas",
     "layer.universe.desc": "Grey nodes — mainland hromadas with coordinates",
     "layer.pin.title": "Registered IMC agreements",
@@ -1692,13 +1702,13 @@ window.PAGE_I18N = {
     "layer.known.desc": "Thick gold lines — curated pairs for method validation",
     "layer.pinCorpus.title": "Agreements in our corpus",
     "layer.pinCorpus.desc": "Purple — registry IMC between hromadas whose strategies we read",
-    "layer.thematic.title": "Similar strategy",
-    "layer.thematic.desc": "Dashed — hypotheses from goal similarity in strategies",
-    "layer.operational.title": "Convenient neighbour",
-    "layer.operational.desc": "Dotted lines — hypotheses for shared services with neighbours",
-    "layer.complementary.title": "Resource complement",
+    "layer.thematic.title": "Signal · similar strategy",
+    "layer.thematic.desc": "Dashed — candidate found via goal similarity",
+    "layer.operational.title": "Signal · convenient neighbour",
+    "layer.operational.desc": "Dotted — candidate for shared services with neighbours",
+    "layer.complementary.title": "Signal · resource complement",
     "layer.complementary.desc": "Green — one side’s strength/DREAM ↔ the other’s challenge",
-    "layer.explicitAsk.title": "Explicit IMC ask",
+    "layer.explicitAsk.title": "Signal · explicit IMC ask",
     "layer.explicitAsk.desc": "Pink — strategy text names inter-municipal cooperation",
     "layer.corpus.title": "Hromadas with strategies",
     "layer.corpus.desc": "Highlight hromadas whose texts are already in the analysis",
@@ -1747,8 +1757,8 @@ window.PAGE_I18N = {
     "explain.pinMany": "Registered IMC agreements ({n})",
     "explain.regNo": "No. {n}",
     "explain.sharedThemes": "Shared strategy themes",
-    "explain.mssPackage": "Hypothesis IMC package (theme · form)",
-    "explain.mssPackageShort": "IMC package: {p}",
+    "explain.mssPackage": "IMC agreement candidate (theme · form)",
+    "explain.mssPackageShort": "Candidate: {p}",
     "explain.sharedGoal": "Shared goal: {g}",
     "explain.goalApprox": "similar wording",
     "explain.sigGoals": "goals {n}",

@@ -20,6 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 from goals_hierarchy import find_mss_intents_in_text, load_hierarchy_index  # noqa: E402
+from mss_candidate import annotate_candidates  # noqa: E402
 from mss_suggest import annotate_edges  # noqa: E402
 
 HROMADAS = ROOT / "data" / "releases" / "hromadas.json"
@@ -190,6 +191,7 @@ def main() -> None:
         key=lambda e: (-e["explicit_ask_score"], e["a_short"], e["b_short"]),
     )
     suggest = annotate_edges(edges)
+    candidates = annotate_candidates(edges)
 
     generated = datetime.now(timezone.utc).isoformat()
     OUT_INTENTS.write_text(
@@ -216,9 +218,13 @@ def main() -> None:
                     "annotated": suggest["annotated"],
                     "withTheme": suggest["with_theme"],
                 },
+                "mssCandidate": {
+                    "annotated": candidates["annotated"],
+                    "withTheme": candidates["with_theme"],
+                },
                 "method": (
                     "regex МСС/кооперація on strategy fields + curated hierarchy intents "
-                    "+ suggested_theme/form (mss_suggest)"
+                    "+ suggested_theme/form (mss_suggest) + mss_candidate package/signals"
                 ),
             },
             ensure_ascii=False,

@@ -293,9 +293,15 @@ def explain_fields(e: dict) -> dict:
         "suggest_confidence",
         "suggest_rationale",
         "suggest_caveat",
+        "discovery_primary",
+        "status",
     ):
         if e.get(key):
             out[key] = e[key]
+    if e.get("package"):
+        out["package"] = e["package"]
+    if e.get("signals"):
+        out["signals"] = e["signals"][:6]
     pairs = e.get("goal_pairs")
     if isinstance(pairs, list) and pairs:
         out["goal_pairs"] = pairs[:3]

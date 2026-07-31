@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-07-31T16:19:41.137291+00:00",
+  "path": "mss-candidates.json",
+  "registryKnown": 4,
+  "hypotheses": 127,
+  "topNPerSlice": 40,
+  "sliceOrder": [
+    "explicit-ask",
+    "thematic",
+    "complementary",
+    "operational"
+  ],
+  "note": "Thin sidecar for UI browse \u2014 not full pairwise. Forms are package fields; do not browse primarily by form_id.",
+  "license": "CC BY 4.0 \u2014 see DATA-LICENSE.md"
+}

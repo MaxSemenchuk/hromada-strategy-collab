@@ -16,7 +16,26 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС"
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "medium",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Обухівська селищна територіальна громада",
@@ -35,7 +54,26 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "high",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "high",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Батуринська міська територіальна громада",
@@ -54,7 +92,26 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС"
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "medium",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Батуринська міська територіальна громада",
@@ -73,7 +130,26 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "low",
-    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Галицька міська територіальна громада",
@@ -92,7 +168,26 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "low",
-    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Козелецька селищна територіальна громада",
@@ -111,7 +206,26 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "low",
-    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Ніжинська міська територіальна громада",
@@ -130,7 +244,26 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "low",
-    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Ніжинська міська територіальна громада",
@@ -149,7 +282,26 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "low",
-    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Ніжинська міська територіальна громада",
@@ -168,7 +320,26 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "low",
-    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Обухівська селищна територіальна громада",
@@ -187,7 +358,26 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "low",
-    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Полтавська міська територіальна громада",
@@ -206,7 +396,26 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "low",
-    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Слобожанська селищна територіальна громада",
@@ -225,7 +434,26 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "high",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС"
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "high",
+      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+      "label_uk": "Поводження з відходами — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   },
   {
     "a": "Слобожанська селищна територіальна громада",
@@ -244,6 +472,25 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "low",
-    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
   }
 ]

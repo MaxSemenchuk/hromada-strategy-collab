@@ -23,10 +23,20 @@ and self-describing, not a growth history.
   Overrides for aggregator-only StrategyUrls:
   `data/sources/portal-url-overrides.json`.
 
+- **`mss-candidates.json`** — thin **product browse** sidecar: curated
+  `registry_known` pairs + top hypotheses from explicit-ask / thematic /
+  complementary / operational slices. Each row is an **МСС candidate agreement**
+  with `package` (theme · legal form · `label_uk`) and `signals` (discovery
+  evidence). Not a full pairwise dump; do not browse primarily by `form_id`.
+  Built by `yarn export-matching-edges` via `mss_candidate.py`.
+
 - **`matching-edges.json`** — pairwise similarity scores (unverified hypotheses
   unless `known: true`). Method v7.1: 60% goals-cosine (hierarchy-aware;
   bipartite×0.65 + document-centroid×0.35 length/hub blend) + 25% KSE
-  geography + 15% KSE existing partnership network. Regenerate with:
+  geography + 15% KSE existing partnership network. Product framing: each edge
+  also carries `kind: mss_candidate`, `package`, `signals`, `discovery_primary`,
+  `status`. Combined `score` ranks one discovery path — not “strategy match”.
+  Regenerate with:
 
   ```bash
   yarn match
@@ -77,17 +87,22 @@ and self-describing, not a growth history.
   (`0.60×goals + 0.25×geo + 0.15×mss_network`). Goals cosine may use hierarchy
   when operational lines exist (`yarn build-goals-hierarchy`).
 
-  After tracks, `yarn export-matching-edges` also attaches an **IMC package
-  hypothesis** via `mss_suggest.py` (never `known: true`, does not change score):
+  After tracks, `yarn export-matching-edges` attaches an **IMC package
+  hypothesis** via `mss_suggest.py`, then normalizes via `mss_candidate.py`
+  (never `known: true`, does not change score):
 
   | Field | Meaning |
   |-------|---------|
-  | `suggested_theme` | ЦНАП, туризм, відходи, … (from strategy / complementary text) |
-  | `suggested_form` | спільний проєкт / утримання / делегування / КП / орган / агломерація |
+  | `suggested_theme` / `package.theme` | ЦНАП, туризм, відходи, … |
+  | `suggested_form` / `package.form` | one of 5 Law 1508-VII forms (+ agglomeration caveat) |
+  | `package.label_uk` | human line for UI, e.g. «ЦНАП — делегування» |
+  | `signals` | discovery evidence (`strategy_goals`, `geo`, `complementary`, …) |
+  | `discovery_primary` | main signal that surfaced the pair |
+  | `status` | `hypothesis` \| `registry_known` |
   | `suggest_confidence` | low · medium · high |
   | `suggest_rationale` | short why (rules + optional registry prior) |
-  | `suggest_caveat` | present when form=агломерація (separate law not active yet) |
 
+  **Legal forms (product types)** ≠ **signals** (how we found the pair).
   Rules and DOBRE context: [docs/mss-cooperation-research.md](../docs/mss-cooperation-research.md).
   Complementary / explicit-ask edges get the same fields from their own yarn
   commands.
