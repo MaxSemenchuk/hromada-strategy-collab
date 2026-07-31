@@ -16,6 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 from enrich_operational import enrich_edges  # noqa: E402
+from mss_suggest import annotate_edges, load_hromadas_by_name  # noqa: E402
 from tracks import assign_tracks, operational_slice, thematic_slice  # noqa: E402
 
 EDGES = ROOT / "data" / "releases" / "matching-edges.json"
@@ -33,6 +34,7 @@ def main() -> None:
     edges = json.loads(EDGES.read_text(encoding="utf-8"))
     meta = assign_tracks(edges)
     boost = enrich_edges(edges)
+    suggest = annotate_edges(edges, hromadas_by_name=load_hromadas_by_name())
 
     EDGES.write_text(json.dumps(edges, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -53,7 +55,8 @@ def main() -> None:
         "license": "CC BY 4.0 — see DATA-LICENSE.md",
         "warning": (
             "Unverified hypotheses unless known=true. "
-            "Combined score is not a pure strategy match — use track / slice files."
+            "Combined score is not a pure strategy match — use track / slice files. "
+            "suggested_theme / suggested_form are IMC-package hypotheses, not registry facts."
         ),
         "tracks": {
             "thematic": (
@@ -77,6 +80,25 @@ def main() -> None:
             "fields": ["fiscal_similarity", "dream_overlap", "operational_score"],
             "enriched": boost["enriched"],
             "withOperationalScore": boost["with_operational_score"],
+        },
+        "mssSuggest": {
+            "note": (
+                "Rule-based theme + legal-form package (mss_suggest.py); "
+                "does not change score; never sets known=true"
+            ),
+            "fields": [
+                "suggested_theme",
+                "suggested_theme_id",
+                "suggested_form",
+                "suggested_form_id",
+                "suggest_confidence",
+                "suggest_rationale",
+                "suggest_caveat",
+            ],
+            "annotated": suggest["annotated"],
+            "withTheme": suggest["with_theme"],
+            "agglomerationHints": suggest["agglomeration"],
+            "docs": "docs/mss-cooperation-research.md",
         },
         "slices": {
             "thematic": {
@@ -111,6 +133,10 @@ def main() -> None:
     )
     print(
         f"  operational boost: {boost['with_operational_score']} edges with operational_score"
+    )
+    print(
+        f"  mss suggest: {suggest['with_theme']}/{suggest['annotated']} with theme "
+        f"(agglomeration hints={suggest['agglomeration']})"
     )
     print(f"Wrote {THEMATIC} ({len(thematic)} rows)")
     print(f"Wrote {OPERATIONAL} ({len(operational)} rows)")

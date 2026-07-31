@@ -10,7 +10,13 @@
     "track": "operational",
     "fiscal_similarity": null,
     "dream_overlap": null,
-    "operational_score": 1.0
+    "operational_score": 1.0,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Галицька міська територіальна громада",
@@ -23,7 +29,13 @@
     "track": "operational",
     "fiscal_similarity": 0.684,
     "dream_overlap": null,
-    "operational_score": 0.901
+    "operational_score": 0.901,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Журавненська селищна територіальна громада",
@@ -36,7 +48,13 @@
     "track": "operational",
     "fiscal_similarity": 0.968,
     "dream_overlap": null,
-    "operational_score": 0.887
+    "operational_score": 0.887,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Божедарівська селищна територіальна громада",
@@ -49,7 +67,13 @@
     "track": "operational",
     "fiscal_similarity": 0.937,
     "dream_overlap": null,
-    "operational_score": 0.877
+    "operational_score": 0.877,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Скалатська міська територіальна громада",
@@ -62,7 +86,13 @@
     "track": "operational",
     "fiscal_similarity": 0.901,
     "dream_overlap": null,
-    "operational_score": 0.866
+    "operational_score": 0.866,
+    "suggested_theme": "Освіта",
+    "suggested_theme_id": "education",
+    "suggested_form": "спільне утримання",
+    "suggested_form_id": "joint_finance",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -75,7 +105,13 @@
     "track": "operational",
     "fiscal_similarity": 0.988,
     "dream_overlap": 0.286,
-    "operational_score": 0.854
+    "operational_score": 0.854,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Дніпровська міська територіальна громада",
@@ -88,7 +124,13 @@
     "track": "operational",
     "fiscal_similarity": null,
     "dream_overlap": null,
-    "operational_score": 0.85
+    "operational_score": 0.85,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Кам'янська міська територіальна громада",
@@ -101,7 +143,13 @@
     "track": "operational",
     "fiscal_similarity": null,
     "dream_overlap": null,
-    "operational_score": 0.85
+    "operational_score": 0.85,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Новомосковська міська територіальна громада",
@@ -114,7 +162,13 @@
     "track": "operational",
     "fiscal_similarity": null,
     "dream_overlap": null,
-    "operational_score": 0.85
+    "operational_score": 0.85,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Дніпровська міська територіальна громада",
@@ -127,7 +181,13 @@
     "track": "operational",
     "fiscal_similarity": 0.819,
     "dream_overlap": 0.429,
-    "operational_score": 0.841
+    "operational_score": 0.841,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Галицька міська територіальна громада",
@@ -140,7 +200,13 @@
     "track": "operational",
     "fiscal_similarity": 0.993,
     "dream_overlap": 0.6,
-    "operational_score": 0.836
+    "operational_score": 0.836,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
   },
   {
     "a": "Великоберезовицька селищна територіальна громада",
@@ -153,7 +219,13 @@
     "track": "operational",
     "fiscal_similarity": 0.798,
     "dream_overlap": null,
-    "operational_score": 0.834
+    "operational_score": 0.834,
+    "suggested_theme": "Освіта",
+    "suggested_theme_id": "education",
+    "suggested_form": "спільне утримання",
+    "suggested_form_id": "joint_finance",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -166,7 +238,13 @@
     "track": "operational",
     "fiscal_similarity": 0.718,
     "dream_overlap": 0.5,
-    "operational_score": 0.829
+    "operational_score": 0.829,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Кам'янська міська територіальна громада",
@@ -179,7 +257,13 @@
     "track": "operational",
     "fiscal_similarity": 0.775,
     "dream_overlap": null,
-    "operational_score": 0.827
+    "operational_score": 0.827,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Бурштинська міська територіальна громада",
@@ -192,7 +276,13 @@
     "track": "operational",
     "fiscal_similarity": 0.441,
     "dream_overlap": null,
-    "operational_score": 0.825
+    "operational_score": 0.825,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Новомосковська міська територіальна громада",
@@ -205,7 +295,13 @@
     "track": "operational",
     "fiscal_similarity": 0.718,
     "dream_overlap": null,
-    "operational_score": 0.809
+    "operational_score": 0.809,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Більшівцівська селищна територіальна громада",
@@ -218,7 +314,13 @@
     "track": "operational",
     "fiscal_similarity": 0.366,
     "dream_overlap": null,
-    "operational_score": 0.802
+    "operational_score": 0.802,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Більшівцівська селищна територіальна громада",
@@ -231,7 +333,13 @@
     "track": "operational",
     "fiscal_similarity": 0.691,
     "dream_overlap": null,
-    "operational_score": 0.8
+    "operational_score": 0.8,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Великоберезовицька селищна територіальна громада",
@@ -244,7 +352,13 @@
     "track": "operational",
     "fiscal_similarity": 0.897,
     "dream_overlap": 0.5,
-    "operational_score": 0.792
+    "operational_score": 0.792,
+    "suggested_theme": "Освіта",
+    "suggested_theme_id": "education",
+    "suggested_form": "спільне утримання",
+    "suggested_form_id": "joint_finance",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід"
   },
   {
     "a": "Козелецька селищна територіальна громада",
@@ -257,7 +371,13 @@
     "track": "operational",
     "fiscal_similarity": 0.891,
     "dream_overlap": 0.5,
-    "operational_score": 0.79
+    "operational_score": 0.79,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Зазимська сільська територіальна громада",
@@ -270,7 +390,13 @@
     "track": "operational",
     "fiscal_similarity": 0.754,
     "dream_overlap": 0.667,
-    "operational_score": 0.789
+    "operational_score": 0.789,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Дніпровська міська територіальна громада",
@@ -283,7 +409,13 @@
     "track": "operational",
     "fiscal_similarity": 0.738,
     "dream_overlap": 0.667,
-    "operational_score": 0.785
+    "operational_score": 0.785,
+    "suggested_theme": "Водопостачання / водовідведення",
+    "suggested_theme_id": "water",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Ужгородська міська територіальна громада",
@@ -296,7 +428,13 @@
     "track": "operational",
     "fiscal_similarity": 0.835,
     "dream_overlap": 0.429,
-    "operational_score": 0.762
+    "operational_score": 0.762,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Великоберезовицька селищна територіальна громада",
@@ -309,7 +447,13 @@
     "track": "operational",
     "fiscal_similarity": 0.706,
     "dream_overlap": 0.143,
-    "operational_score": 0.755
+    "operational_score": 0.755,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -322,7 +466,13 @@
     "track": "operational",
     "fiscal_similarity": 0.615,
     "dream_overlap": 0.667,
-    "operational_score": 0.755
+    "operational_score": 0.755,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -335,7 +485,13 @@
     "track": "operational",
     "fiscal_similarity": 0.516,
     "dream_overlap": null,
-    "operational_score": 0.746
+    "operational_score": 0.746,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Великогаївська сільська територіальна громада",
@@ -348,7 +504,13 @@
     "track": "operational",
     "fiscal_similarity": 0.504,
     "dream_overlap": null,
-    "operational_score": 0.742
+    "operational_score": 0.742,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Дніпровська міська територіальна громада",
@@ -361,7 +523,13 @@
     "track": "operational",
     "fiscal_similarity": 0.456,
     "dream_overlap": null,
-    "operational_score": 0.727
+    "operational_score": 0.727,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Кам'янська міська територіальна громада",
@@ -374,7 +542,13 @@
     "track": "operational",
     "fiscal_similarity": 0.5,
     "dream_overlap": 0.667,
-    "operational_score": 0.726
+    "operational_score": 0.726,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Дніпровська міська територіальна громада",
@@ -387,7 +561,14 @@
     "track": "operational",
     "fiscal_similarity": 0.681,
     "dream_overlap": 0.429,
-    "operational_score": 0.723
+    "operational_score": 0.723,
+    "suggested_theme": "Агломерація / метрополія",
+    "suggested_theme_id": "agglomeration",
+    "suggested_form": "агломерація",
+    "suggested_form_id": "agglomeration",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС",
+    "suggest_caveat": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС"
   },
   {
     "a": "Бурштинська міська територіальна громада",
@@ -400,7 +581,13 @@
     "track": "operational",
     "fiscal_similarity": 0.75,
     "dream_overlap": 0.286,
-    "operational_score": 0.712
+    "operational_score": 0.712,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
   },
   {
     "a": "Журавненська селищна територіальна громада",
@@ -413,7 +600,13 @@
     "track": "operational",
     "fiscal_similarity": 0.659,
     "dream_overlap": 0.333,
-    "operational_score": 0.699
+    "operational_score": 0.699,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
   },
   {
     "a": "Журавненська селищна територіальна громада",
@@ -426,7 +619,13 @@
     "track": "operational",
     "fiscal_similarity": 0.652,
     "dream_overlap": 0.333,
-    "operational_score": 0.697
+    "operational_score": 0.697,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
   },
   {
     "a": "Новомосковська міська територіальна громада",
@@ -439,7 +638,13 @@
     "track": "operational",
     "fiscal_similarity": 0.558,
     "dream_overlap": 0.429,
-    "operational_score": 0.693
+    "operational_score": 0.693,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Великогаївська сільська територіальна громада",
@@ -452,7 +657,13 @@
     "track": "operational",
     "fiscal_similarity": 0.603,
     "dream_overlap": 0.286,
-    "operational_score": 0.675
+    "operational_score": 0.675,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Журавненська селищна територіальна громада",
@@ -465,7 +676,13 @@
     "track": "operational",
     "fiscal_similarity": 0.409,
     "dream_overlap": 0.5,
-    "operational_score": 0.67
+    "operational_score": 0.67,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
@@ -478,7 +695,13 @@
     "track": "operational",
     "fiscal_similarity": 0.726,
     "dream_overlap": 0.0,
-    "operational_score": 0.649
+    "operational_score": 0.649,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Дубовецька сільська територіальна громада",
@@ -491,7 +714,13 @@
     "track": "operational",
     "fiscal_similarity": 0.675,
     "dream_overlap": 0.0,
-    "operational_score": 0.636
+    "operational_score": 0.636,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   },
   {
     "a": "Мукачівська міська територіальна громада",
@@ -504,7 +733,13 @@
     "track": "operational",
     "fiscal_similarity": 0.0,
     "dream_overlap": null,
-    "operational_score": 0.584
+    "operational_score": 0.584,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
@@ -517,6 +752,12 @@
     "track": "operational",
     "fiscal_similarity": 0.229,
     "dream_overlap": 0.0,
-    "operational_score": 0.525
+    "operational_score": 0.525,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
   }
 ]

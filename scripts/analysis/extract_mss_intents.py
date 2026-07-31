@@ -13,12 +13,15 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from goals_hierarchy import find_mss_intents_in_text, load_hierarchy_index
-
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+from goals_hierarchy import find_mss_intents_in_text, load_hierarchy_index  # noqa: E402
+from mss_suggest import annotate_edges  # noqa: E402
+
 HROMADAS = ROOT / "data" / "releases" / "hromadas.json"
 OUT_INTENTS = ROOT / "data" / "releases" / "mss-intents.json"
 OUT_MANIFEST = ROOT / "data" / "releases" / "mss-intents.manifest.json"
@@ -186,6 +189,7 @@ def main() -> None:
         edge_map.values(),
         key=lambda e: (-e["explicit_ask_score"], e["a_short"], e["b_short"]),
     )
+    suggest = annotate_edges(edges)
 
     generated = datetime.now(timezone.utc).isoformat()
     OUT_INTENTS.write_text(
@@ -208,7 +212,14 @@ def main() -> None:
                 "generatedAt": generated,
                 "hromadaCount": len(intents_out),
                 "explicitAskEdges": len(edges),
-                "method": "regex МСС/кооперація on strategy fields + curated hierarchy intents",
+                "mssSuggest": {
+                    "annotated": suggest["annotated"],
+                    "withTheme": suggest["with_theme"],
+                },
+                "method": (
+                    "regex МСС/кооперація on strategy fields + curated hierarchy intents "
+                    "+ suggested_theme/form (mss_suggest)"
+                ),
             },
             ensure_ascii=False,
             indent=2,
@@ -230,6 +241,8 @@ def main() -> None:
                         "b_short": e["b_short"],
                         "explicit_ask_score": e["explicit_ask_score"],
                         "theme": e.get("theme"),
+                        "suggested_theme": e.get("suggested_theme"),
+                        "suggested_form": e.get("suggested_form"),
                         "reasons": e["reasons"][:2],
                     }
                     for e in edges[:30]

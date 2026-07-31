@@ -75,6 +75,21 @@ and self-describing, not a growth history.
   (`0.60×goals + 0.25×geo + 0.15×mss_network`). Goals cosine may use hierarchy
   when operational lines exist (`yarn build-goals-hierarchy`).
 
+  After tracks, `yarn export-matching-edges` also attaches an **IMC package
+  hypothesis** via `mss_suggest.py` (never `known: true`, does not change score):
+
+  | Field | Meaning |
+  |-------|---------|
+  | `suggested_theme` | ЦНАП, туризм, відходи, … (from strategy / complementary text) |
+  | `suggested_form` | спільний проєкт / утримання / делегування / КП / орган / агломерація |
+  | `suggest_confidence` | low · medium · high |
+  | `suggest_rationale` | short why (rules + optional registry prior) |
+  | `suggest_caveat` | present when form=агломерація (separate law not active yet) |
+
+  Rules and DOBRE context: [docs/mss-cooperation-research.md](../docs/mss-cooperation-research.md).
+  Complementary / explicit-ask edges get the same fields from their own yarn
+  commands.
+
 - **`donor-synergy.json`** — per-program portfolio slices from `DonorsPrograms`
   tags × matching edges (within-portfolio pairs, bridge pairs, hub degrees).
   Regenerate with `yarn donor-synergy` after exporting hromadas. Hypotheses

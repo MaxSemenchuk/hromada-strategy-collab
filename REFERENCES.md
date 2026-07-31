@@ -7,6 +7,11 @@ reasonable one, and where its limits are likely to sit.
 
 ## Ukraine / decentralization context
 
+Empirical notes on the Ukrainian МСС registry, DOBRE survey (partner-search
+bottleneck), «light» joint-project procedure, and ЗП 11412 live in
+[docs/mss-cooperation-research.md](docs/mss-cooperation-research.md) — use that
+file for stakeholder framing; keep this list for the theoretical stack.
+
 1. **OECD — *Rebuilding Ukraine by Reinforcing Regional and Municipal Governance*.**
    Direct policy framing for why municipal-governance capacity (of which
    inter-municipal cooperation is one lever) matters specifically for Ukraine's
@@ -24,6 +29,17 @@ reasonable one, and where its limits are likely to sit.
    [README](README.md)). Read this before the large 2022 Ukraine volume; the
    typology and enabling conditions map directly onto our two product tracks
    (below).
+
+2a. **USAID DOBRE — міжмуніципальне співробітництво ТГ: результати дослідження
+   (2024).** Survey of 546 hromadas + analysis of 429 post-2020 registry
+   contracts. Key product-facing finding: hardest IMC stage is **partner search
+   & communication (30%)**, not legal form; finance dominates drafting (31%).
+   Presentation PDF on decentralization.ua (attachment/document/1442). Feeds
+   legislative concept → bill **№11412**.
+
+2b. **DECIDE — аналіз реєстру договорів МСС (2023).** Why ~61% of deals use
+   joint projects (Law art. 11 simplified procedure). 
+   https://www.decentralization.ua/news/16570
 
 ## How IMC typologies map onto this project's method
 
