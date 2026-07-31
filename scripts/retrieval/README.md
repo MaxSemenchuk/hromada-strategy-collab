@@ -10,7 +10,8 @@ burning 60–150k agent tokens per hromada on anti-bot retrieval.
 2. Pick URLs → add rows to batch-queue.json
 3. yarn download-raw             # PDF/DOC → scripts/retrieval/raw/ (gitignored)
 4. Extract text from raw/ → *.extracted.txt; set raw_text_path
-5. Structure in-session → write `scripts/hromada-output/<name>.json`
+5. `yarn structure-hromada --name "…" --json … --write-release`
+   (optional `--write` only if syncing shared NocoDB)
 6. yarn structure-hromada --name "..." --json … --write
 7. yarn export-hromadas          # refresh data/releases/hromadas.json
 8. yarn match && yarn export-matching-edges

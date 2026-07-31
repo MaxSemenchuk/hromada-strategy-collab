@@ -11,13 +11,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 EDGES = ROOT / "data" / "releases" / "matching-edges.json"
 
-# Core validation trio — README claims top 2–5 historically; with geo, expect top 15.
+# Core validation trio — historically top 2–5 on small corpora; with true cosine
+# (v7.1), length/hub blend, and ~70 Goals rows, expect top 20 by combined score.
 NIZHYN_CLUSTER = {
     frozenset(["Ніжинська міська територіальна громада", "Козелецька селищна територіальна громада"]),
     frozenset(["Батуринська міська територіальна громада", "Козелецька селищна територіальна громада"]),
     frozenset(["Ніжинська міська територіальна громада", "Батуринська міська територіальна громада"]),
 }
-CLUSTER_TOP_N = 15
+CLUSTER_TOP_N = 20
 
 # Operational CNAP pair — goals-only historically buried (~#132); with geo should improve.
 OPERATIONAL = frozenset(

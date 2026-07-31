@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-07-29T09:30:16.693945+00:00",
+  "generatedAt": "2026-07-31T10:17:37.495677+00:00",
   "pairCount": 2278,
   "knownValidationPairs": 4,
-  "method": "v7: 60% goals_cosine (hierarchy-aware) + 25% KSE geo + 15% KSE mss_network",
+  "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
   "model": "intfloat/multilingual-e5-small",
   "license": "CC BY 4.0 \u2014 see DATA-LICENSE.md",
   "warning": "Unverified hypotheses unless known=true. Combined score is not a pure strategy match \u2014 use track / slice files.",
   "tracks": {
-    "thematic": "goals_cosine >= p90 (0.07) and geo_score <= 0.35 \u2014 cold-start vision partners",
+    "thematic": "goals_cosine >= p90 (0.258) and geo_score <= 0.35 \u2014 cold-start vision partners",
     "operational": "geo_score >= 0.85 and not thematic \u2014 convenient service co-sharers; slice ranked by operational_score (geo + fiscal_similarity + dream_overlap) when available",
     "mixed": "all other pairs",
     "counts": {
-      "thematic": 225,
+      "thematic": 216,
       "operational": 46,
-      "mixed": 2007
+      "mixed": 2016
     },
-    "goalsFloor": 0.07,
+    "goalsFloor": 0.258,
     "goalsPercentile": 90,
     "geoThematicMax": 0.35,
     "geoOperationalMin": 0.85

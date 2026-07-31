@@ -24,12 +24,14 @@ and self-describing, not a growth history.
   `data/sources/portal-url-overrides.json`.
 
 - **`matching-edges.json`** — pairwise similarity scores (unverified hypotheses
-  unless `known: true`). Method v7: 60% goals-cosine (hierarchy-aware) + 25% KSE
+  unless `known: true`). Method v7.1: 60% goals-cosine (hierarchy-aware;
+  bipartite×0.65 + document-centroid×0.35 length/hub blend) + 25% KSE
   geography + 15% KSE existing partnership network. Regenerate with:
 
   ```bash
   yarn match
   yarn export-matching-edges
+  yarn test-length-norm
   yarn test-known-pairs
   yarn report-pin-corpus
   yarn test-tracks
