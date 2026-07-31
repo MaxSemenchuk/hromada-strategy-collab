@@ -33,9 +33,10 @@ signals appears to be genuine whitespace.
 2. **Package** — rule-based `suggested_theme` / `suggested_form` (`mss_suggest.py`)
    normalized to `package` + `signals[]` (`mss_candidate.py`). Five Law 1508-VII
    forms (+ agglomeration caveat). Never set `known: true` from suggestions.
-3. **Rank within signals** — v7 pairwise: `0.60 × goals_cosine + 0.25 × geo +
-   0.15 × mss_network` (hierarchy-aware Goals). Combined `score` is an internal
-   rank for one path — UI leads with package + evidence chips.
+3. **Rank within signals** — v7.1 pairwise: `0.60 × goals_cosine + 0.25 × geo +
+   0.15 × mss_network` (hierarchy-aware Goals; bipartite×0.65 + centroid×0.35
+   length/hub blend). Combined `score` is an internal rank for one path — UI
+   leads with package + evidence chips.
 4. **Validate** — curated `known: true` / `status: registry_known` against
    registry-confirmed agreements (`yarn test-known-pairs`).
 

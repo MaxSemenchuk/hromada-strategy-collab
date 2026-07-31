@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-31T10:30:29.495894+00:00",
+  "generatedAt": "2026-07-31T16:25:29.804599+00:00",
   "pairCount": 2278,
   "knownValidationPairs": 4,
   "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
   "model": "intfloat/multilingual-e5-small",
   "license": "CC BY 4.0 \u2014 see DATA-LICENSE.md",
-  "warning": "Unverified hypotheses unless known=true. Combined score is not a pure strategy match \u2014 use track / slice files. suggested_theme / suggested_form are IMC-package hypotheses, not registry facts.",
+  "warning": "Product unit is an \u041c\u0421\u0421 candidate agreement (package theme\u00b7form), not a strategy twin. Unverified hypotheses unless known=true / status=registry_known. Combined score ranks one discovery signal \u2014 use package + signals / slice files. suggested_theme / suggested_form / package are IMC hypotheses, not registry facts.",
   "tracks": {
     "thematic": "goals_cosine >= p90 (0.258) and geo_score <= 0.35 \u2014 cold-start vision partners",
     "operational": "geo_score >= 0.85 and not thematic \u2014 convenient service co-sharers; slice ranked by operational_score (geo + fiscal_similarity + dream_overlap) when available",
@@ -45,6 +45,24 @@
     "withTheme": 2257,
     "agglomerationHints": 21,
     "docs": "docs/mss-cooperation-research.md"
+  },
+  "mssCandidate": {
+    "note": "Normalized candidate wrapper (mss_candidate.py): kind/package/signals/discovery_primary/status. Signals are discovery evidence, not IMC legal forms. Thin browse sidecar: mss-candidates.json",
+    "fields": [
+      "kind",
+      "package",
+      "signals",
+      "discovery_primary",
+      "status"
+    ],
+    "annotated": 2278,
+    "withTheme": 2257,
+    "registryKnown": 4,
+    "sidecar": {
+      "path": "mss-candidates.json",
+      "registryKnown": 4,
+      "hypotheses": 127
+    }
   },
   "slices": {
     "thematic": {
