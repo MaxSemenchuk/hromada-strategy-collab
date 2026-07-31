@@ -41,9 +41,17 @@ def slim(e: dict) -> dict:
         "suggest_confidence",
         "suggest_rationale",
         "suggest_caveat",
+        "kind",
+        "discovery_primary",
+        "status",
     ):
         if e.get(key):
             out[key] = e[key]
+    if e.get("package"):
+        out["package"] = e["package"]
+    if e.get("signals"):
+        out["signals"] = e["signals"]
+        out["signal_chips"] = e["signals"][:3]
     return out
 
 
@@ -74,13 +82,26 @@ def main() -> None:
         pc = json.loads(PIN_CORPUS.read_text(encoding="utf-8"))
         pin_corpus = [slim(p) for p in pc.get("pairs", [])]
 
+    candidates_path = ROOT / "data" / "releases" / "mss-candidates.json"
+    candidates_meta = None
+    if candidates_path.exists():
+        cand = json.loads(candidates_path.read_text(encoding="utf-8"))
+        candidates_meta = {
+            "registryKnown": len(cand.get("registry_known") or []),
+            "hypotheses": len(cand.get("hypotheses") or []),
+            "caveat": cand.get("caveat"),
+        }
+
     payload = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "method": man.get("method") or "v6: 60% goals_cosine + 25% KSE geo + 15% KSE mss_network",
+        "method": man.get("method") or "v7: 60% goals_cosine + 25% KSE geo + 15% KSE mss_network",
+        "productUnit": "mss_candidate",
         "pairCount": len(edges),
         "corpusGoals": goals,
         "textMinedRows": text_mined,
         "tracks": man.get("tracks"),
+        "mssCandidate": man.get("mssCandidate"),
+        "candidatesSidecar": candidates_meta,
         "known": known,
         "pinCorpus": pin_corpus,
         "top": top,

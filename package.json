@@ -2,7 +2,7 @@
   "name": "hromada-strategy-collab",
   "version": "0.1.0",
   "private": true,
-  "description": "Corpus-level NLP matching of Ukrainian hromada development strategies to surface inter-municipal cooperation (МСС) candidates.",
+  "description": "МСС candidate agreements for Ukrainian hromadas (theme · legal form); strategy NLP is one discovery signal among geo, complementary, explicit-ask, and network.",
   "engines": {
     "node": "20.x"
   },
@@ -33,6 +33,7 @@
     "priority-corpus-growth": "python3 scripts/analysis/priority_corpus_growth.py",
     "test-tracks": "python3 scripts/analysis/test_tracks.py",
     "test-mss-suggest": "python3 scripts/analysis/test_mss_suggest.py",
+    "test-mss-candidate": "python3 scripts/analysis/test_mss_candidate.py",
     "graph-pin-matching": "python3 scripts/analysis/build_pin_matching_graph.py",
     "build-matches-preview": "python3 scripts/analysis/build_matches_preview.py",
     "build-resources-preview": "python3 scripts/analysis/build_resources_preview.py"

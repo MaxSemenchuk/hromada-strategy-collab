@@ -5,8 +5,9 @@ alwaysApply: true
 
 # Hromada Strategy Collaboration Mapping
 
-NLP matching of Ukrainian hromada development strategies for МСС candidate discovery.
-Spin-out from w3i-network (2026-07-23); NocoDB `Hromadas` table still shared.
+**Product:** candidate МСС agreements (pair · theme · one of 5 Law 1508-VII forms).
+Strategy NLP, geo, complementary, explicit-ask, network are **discovery signals**,
+not IMC types. Spin-out from w3i-network (2026-07-23); NocoDB `Hromadas` still shared.
 
 ## Read first
 
@@ -60,12 +61,15 @@ layer (EU sister cities in the hromada card + indigo glow on map/graph).
 4. Batch growth: `scripts/retrieval/` + in-session structuring → `yarn structure-hromada --json … --write`. Prefer `yarn priority-corpus-growth` when expanding PIN∩corpus validation coverage. See [docs/corpus-growth.md](../../docs/corpus-growth.md).
 5. Do not inflate CKAN "123 strategies" — mostly unrelated datasets.
 6. Minimize scope; match existing TS/Python conventions in `scripts/`.
-7. Do not present a single combined `score` as «strategy match»; label
-   `схожа стратегія` (thematic) vs `зручний сусід` (operational) vs
-   `доповнення ресурсів` (complementary) vs `явний запит МСС` (explicit-ask) vs
-   `місто-побратим ЄС` (twinning — separate layer).
-8. `suggested_theme` / `suggested_form` are IMC-package hypotheses
-   (`mss_suggest.py`) — never fold into `score`, never set `known: true` from them.
+7. Product unit is an **МСС candidate agreement** (`package` theme·form +
+   `signals[]`). Do not present combined `score` as «strategy match». Signal
+   labels (`схожа стратегія` / `зручний сусід` / `доповнення` / `явний запит` /
+   `місто-побратим ЄС`) are discovery evidence — **not** the five legal IMC forms.
+   Browse by hypothesis strength; form filter is secondary (do not primary-nav by
+   form buckets — most suggestions default to спільний проєкт).
+8. `suggested_theme` / `suggested_form` / `package` are IMC-package hypotheses
+   (`mss_suggest.py` → `mss_candidate.py`) — never fold into `score`, never set
+   `known: true` from them. UI atom: human `package.label_uk` + 1–3 signal chips.
 
 ## Stakeholders / contacts
 

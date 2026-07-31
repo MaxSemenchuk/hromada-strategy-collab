@@ -1,9 +1,10 @@
 # Hromada Strategy Collaboration Mapping
 
-Corpus-level NLP matching of Ukrainian territorial-community (**hromada**) development
-strategies, to systematically surface candidates for **МСС** (inter-municipal
-cooperation) — instead of relying on the ad-hoc, relationship-based matchmaking that
-is how most МСС partnerships get formed today.
+**Product unit:** candidate **МСС** (inter-municipal cooperation) agreements —
+pair · theme · legal form (one of five under Law 1508-VII) — instead of ad-hoc,
+relationship-based matchmaking. Strategy-text NLP is **one discovery signal**
+among geography, complementary resources/DREAM, explicit МСС language, and the
+existing partnership network.
 
 Spun out from the W3I ecosystem project (`w3i-network`) on 2026-07-23 as its own
 codebase. **The NocoDB database is currently shared** with the main W3I base — see
@@ -14,33 +15,29 @@ CC BY 4.0 — see [License & data](#license--data) below.
 
 ## Why
 
-A natural extension of W3I's Civic Tech Lab / Digital Democracy Lab work, which
-already engages individual hromadas one at a time. This project asks a systemic
-question instead: *which hromadas should be talking to each other, or to W3I,* based
-on what their own strategy documents say — not on who happens to already know whom.
+DOBRE (2024): the hardest IMC stage is **partner search & communication**, not
+the legal form of the contract. This pilot surfaces **agreement candidates**
+(who · about what · which of the five legal forms) with evidence — so hromadas
+and facilitators are not limited to who already knows whom.
 
-Prior-art check (2026-07-20/21) found no public product doing this specific thing.
-Adjacent efforts are single-hromada monitoring (U-LEAD's dashboards) or manual,
-relationship-based МСС matchmaking (762 agreements registered as of Jan 2026).
-Corpus-level NLP matching across strategy texts appears to be genuine whitespace.
+Prior-art check (2026-07-20/21) found no public product doing this specific
+thing. Adjacent efforts are single-hromada monitoring (U-LEAD) or manual МСС
+matchmaking. Combining registry/network topology with strategy and resource
+signals appears to be genuine whitespace.
 
 ## Method
 
-1. **Retrieve** — find each hromada's official development-strategy document
-   (state-mandated Мінрегіон/SURGe template, so structure is comparable across
-   hromadas). Retrieval fights Cloudflare/anti-bot protection on many municipal
-   sites; Wayback Machine is a frequent fallback.
-2. **Structure** — extract into a fixed schema (goals, projects, strengths,
-   challenges, named partners, МСС mentions, source quality) in-session, then
-   persist with [scripts/structure-hromada-strategy.ts](scripts/structure-hromada-strategy.ts)
-   (`--json` → NocoDB). No external LLM API in the repo path.
-3. **Match** — compute pairwise similarity on the `Goals` text. Final method: mean-centered,
-   sub-goal-level embeddings (`intfloat/multilingual-e5-small`, local, no API cost),
-   hierarchy-aware when operational lines exist (`goals-hierarchy.json`). See
-   [Methodology notes](#methodology-notes) for why the simpler approaches failed.
-4. **Validate** — score known, registry-confirmed МСС agreements against the model's
-   own ranking. If a real agreement doesn't rank near the top, that's a finding about
-   the method's limits, not noise to explain away.
+1. **Gather signals** — strategy Goals (retrieve + structure), KSE geography /
+   existing МСС network, complementary resource↔Challenges, explicit МСС language,
+   DREAM/fiscal covariates. Strategy scan is signal #1, not the whole product.
+2. **Package** — rule-based `suggested_theme` / `suggested_form` (`mss_suggest.py`)
+   normalized to `package` + `signals[]` (`mss_candidate.py`). Five Law 1508-VII
+   forms (+ agglomeration caveat). Never set `known: true` from suggestions.
+3. **Rank within signals** — v7 pairwise: `0.60 × goals_cosine + 0.25 × geo +
+   0.15 × mss_network` (hierarchy-aware Goals). Combined `score` is an internal
+   rank for one path — UI leads with package + evidence chips.
+4. **Validate** — curated `known: true` / `status: registry_known` against
+   registry-confirmed agreements (`yarn test-known-pairs`).
 
 ## Status (as of 2026-07-29)
 
@@ -61,13 +58,13 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
   in strategy text), **resources** / **DREAM priorities**, **twinning** (UA–EU
   sister cities via SKEW + strategy mentions — `yarn twinning`).
 - Stakeholder site under [`docs/`](docs/) (GitHub Pages): landing · matches ·
-  funds · resources · PIN map (four hypothesis overlays). Product decision still
-  open — this remains pilot / concept-validation stage.
+  funds · resources · PIN map (discovery-signal overlays). Browse sidecar:
+  `data/releases/mss-candidates.json`. Still pilot / concept-validation stage.
 
 **Read this before reusing the data:** the 77-hromada text-mined subset is a
 pilot sample, not a completed sweep of the 1,469 — most rows will have no
-strategy content yet. Every matching score is an **unverified hypothesis**
-unless explicitly marked as a registry-confirmed agreement (`known: true`).
+strategy content yet. Every candidate is an **unverified hypothesis** unless
+`known: true` / `status: registry_known`.
 
 Full narrative history (every pass, every false start, every honest negative finding)
 lives in [docs/project-history.md](docs/project-history.md) — migrated from Claude

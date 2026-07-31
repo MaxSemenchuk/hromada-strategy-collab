@@ -329,6 +329,98 @@ Map (`yarn graph-pin-matching`): layer **«Усі громади (метадан
 release row with KSE lat/lon (~1 418); PIN/matching stay on top. Popups link
 `PortalUrl` / `StrategyUrl` when present (36 portals in current release).
 
+## Maximal PIN graph read (2026-07-31)
+
+Reading
+[mss-pin-matching-graph.html](mss-pin-matching-graph.html) with **all layers
+on** (PIN + known + pin∩corpus + thematic + operational + complementary +
+explicit-ask + corpus highlight + twinning). Numbers from the embedded graph
+payload / release sidecars at the time of the read.
+
+### What the “maximal graph” actually is
+
+| Kind | Count (graph) | Role |
+|------|---------------|------|
+| PIN registry edges | **918** (~87%) | Already-signed МСС (KSE network) |
+| Thematic / operational / complementary | 40 + 40 + 40 | Hypothesis overlays (top-N) |
+| Explicit-ask | 13 | Strategy language → named peers |
+| Known + pin∩corpus | 4 + 6 | Validation only |
+| Twinning | **176** nodes (not domestic edges) | UA–EU sister cities (SKEW / strategy) |
+
+All-layers-on is a **system overview / stakeholder pitch** view. It is a bad
+discovery shortlist: the hairball is dominated by existing agreements, not by
+our matcher.
+
+Graph topology (PIN + overlays): ~89 components; largest ~31% of PIN nodes —
+МСС is dense locally, fragmented nationally.
+
+### Layers are orthogonal (do not fold into one score)
+
+| Overlay | Same-oblast share | Typical `suggested_theme` → form |
+|---------|-------------------|----------------------------------|
+| Thematic | **0%** | туризм → спільний проєкт |
+| Operational | **88%** | відходи / ЦНАП → спільне КП / делегування |
+| Complementary (top-40) | **66%** | водопостачання → спільне КП |
+| Explicit-ask | **92%** | local clusters → спільний проєкт |
+
+- `thematic ∩ operational = 0` on current top lists.
+- Complementary is the **bridge** layer (intersects thematic ~7, operational ~9,
+  explicit-ask ~7).
+- Confirms product rule: label separately
+  (`схожа стратегія` / `зручний сусід` / `доповнення` / `явний запит` /
+  `місто-побратим ЄС`) — never sell a combined `score` as «strategy match».
+
+~23 pairs sit on **2+ hypothesis layers** (multi-signal). Those are better IMC
+packages than single-layer top-N. Long-haul thematic pairs (e.g. Одеса–Яремче)
+are closer to peer-learning / donor exchange than classic Law 1508 МСС.
+
+### Validation gap (loudest graph finding)
+
+- **918** PIN edges vs **~10** pairs where both sides have Goals in corpus
+  (`pin-corpus` 6 + curated `known` 4).
+- High-degree PIN hubs without hypothesis edges concentrate in the west
+  (Чернівецька / Тернопільська / Хмельницька / Івано-Франківська — pin degree
+  often 20+). Dense turquoise there means «already cooperate», not «matcher
+  found them».
+- Method credibility is blocked more by **corpus coverage of PIN neighbours**
+  than by missing overlay types. Priority list already exists:
+  [`corpus-growth-priority.json`](../data/releases/corpus-growth-priority.json)
+  / [corpus-growth.md](./corpus-growth.md).
+
+### Dense multi-signal zones (outreach / showcase)
+
+1. **Чернігівський кластер** — Ніжинська–Козелецька–Батуринська–Чернігівська:
+   curated `known` + explicit-ask + complementary; part twinning. Live tourist
+   cluster («Місцями козацької сили») + explicit Остер river ask. Use as
+   **showcase / basin expansion**, not cold outreach claiming novelty of the
+   partnership itself.
+2. **Слобожанська–Обухівська** — `known` operational (ЦНАП); also on
+   explicit-ask.
+3. **Тульчинська** — hyp hub + MSS intents (туризм), weak/no PIN — candidate
+   for new cooperation, not validation.
+4. **Twinning × corpus × intent** (8 at read time): Галицька, Козелецька,
+   Ніжинська, Одеська, Полтавська, Ужгородська, Черкаська, Чернігівська —
+   donor narrative («already do UA–EU → easier domestic МСС»), separate from
+   Law 1508 edges.
+
+### Work implications (agreed direction after this read)
+
+**Do**
+
+1. Grow Goals corpus into PIN-neighbour hubs (+15–20 toward denser
+   PIN∩corpus), not more complementary volume.
+2. One field/stakeholder move on multi-signal packages (Чернігів showcase +
+   known operational; AIM-CC prereg in `internal/aim-cc-field-experiment-prereg.md`
+   when ready to send).
+3. Keep all-layers-on for pitch; discovery = one overlay or multi-signal
+   filter.
+
+**Don't**
+
+- Retune matching weights / add overlays for their own sake.
+- Treat maximal graph as recommendation list.
+- Inflate complementary beyond top-N while PIN∩corpus stays ~10.
+
 ## Open threads (as of 2026-07-31)
 
 - [x] File cross-link issue on KSE repo — [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) (2026-07-24)
@@ -358,11 +450,20 @@ release row with KSE lat/lon (~1 418); PIN/matching stay on top. Popups link
       operational neighbours are not an artifact of who got text-mined
       (queue primed: 25 priority `pending` in `batch-queue.json`; see
       [corpus-growth.md](./corpus-growth.md))
+- [ ] **PIN∩corpus growth** — pull top candidates from
+      `corpus-growth-priority.json` (western PIN hubs: Сокирянська,
+      Клішковецька, Борщівська, …) so validation pairs rise from ~10 toward
+      ~25–30; see [Maximal PIN graph read](#maximal-pin-graph-read-2026-07-31)
+- [ ] Stakeholder pitch or AIM-CC pilot send on multi-signal packages
+      (Чернігівський кластер / Слобожанська–Обухівська / Тульчинська) —
+      `internal/aim-cc-field-experiment-prereg.md`
 - [ ] Multi-way / community view for 3+ party clusters (Nizhyn-5, Dnister-22)
 - [ ] Expand curated hierarchy gold beyond 5 hromadas (re-structure from PDFs)
 - [x] `suggested_theme` + `suggested_form` on matching edges
       (`mss_suggest.py` + export / complementary / explicit-ask; map + matches.html)
       — 2026-07-30; see [mss-cooperation-research.md](./mss-cooperation-research.md)
+- [x] Maximal-graph layer read + work implications — 2026-07-31
+      ([section above](#maximal-pin-graph-read-2026-07-31))
 
 ---
 

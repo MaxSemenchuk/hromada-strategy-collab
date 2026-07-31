@@ -24,6 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+from mss_candidate import annotate_candidates  # noqa: E402
 from mss_suggest import SECTOR_TO_THEME, annotate_edges, theme_label  # noqa: E402
 HROMADAS = ROOT / "data" / "releases" / "hromadas.json"
 RESOURCES = ROOT / "data" / "releases" / "hromada-resources.json"
@@ -346,6 +347,7 @@ def main() -> None:
                 e["theme"] = theme_label(tid)
 
     suggest = annotate_edges(edges)
+    candidates = annotate_candidates(edges)
 
     generated = datetime.now(timezone.utc).isoformat()
     OUT.write_text(json.dumps(edges, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -358,14 +360,18 @@ def main() -> None:
                     "annotated": suggest["annotated"],
                     "withTheme": suggest["with_theme"],
                 },
+                "mssCandidate": {
+                    "annotated": candidates["annotated"],
+                    "withTheme": candidates["with_theme"],
+                },
                 "method": (
                     "complementary v2: weighted DREAM/Strengths/resource → Challenges; "
                     "score=1-exp(-0.4·w) ×1.2 same-oblast; min weight 1.2; prefer same-oblast shortlist; "
-                    "+ suggested_theme/form (mss_suggest)"
+                    "+ suggested_theme/form (mss_suggest) + mss_candidate package/signals"
                 ),
                 "warning": (
-                    "Hypotheses only — not v6 strategy matching, not known=true. "
-                    "Keyword hit ≠ verified МСС plan."
+                    "МСС candidate hypotheses (complementary signal) — not v7 strategy matching, "
+                    "not known=true. Keyword hit ≠ verified МСС plan."
                 ),
                 "inputs": [
                     "hromadas.json (Challenges/Strengths)",

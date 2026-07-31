@@ -64,6 +64,27 @@
     .tag.hyp { color: var(--site-accent); }
     .tag.pin-corpus { color: #c45c40; }
     .pair { font-weight: 600; color: var(--site-ink); }
+    .pkg {
+      font-size: 0.88rem; font-weight: 650; color: var(--site-ink);
+      margin: 0.25rem 0 0.35rem;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.25rem 0 0.35rem; }
+    .chip {
+      font-size: 0.68rem; letter-spacing: 0.02em;
+      padding: 0.15rem 0.45rem; border-radius: 6px;
+      border: 1px solid var(--site-rule); color: var(--site-muted);
+      background: rgba(255,255,255,0.55);
+    }
+    .chip.high { border-color: #93c5fd; color: #1d4ed8; }
+    .form-filter {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center;
+      margin: 0 0 1rem; font-size: 0.82rem; color: var(--site-muted);
+    }
+    .form-filter select {
+      font: inherit; font-size: 0.82rem; padding: 0.3rem 0.5rem;
+      border-radius: 8px; border: 1px solid var(--site-border); background: var(--site-surface);
+    }
+    .score-sec { font-size: 0.75rem; color: var(--site-faint); }
     .caveat {
       font-size: 0.85rem; color: var(--site-faint); font-style: italic;
       margin-top: 1rem; padding-top: 0.85rem; border-top: 1px dashed var(--site-rule);
@@ -91,45 +112,62 @@
 </head>
 <body>
   <div class="page">
-    <span class="eyebrow" data-i18n="eyebrow">Кандидати на МСС · пілот</span>
-    <h1 data-i18n="h1">Кандидати на міжмуніципальну співпрацю</h1>
+    <span class="eyebrow" data-i18n="eyebrow">Кандидати договорів МСС · пілот</span>
+    <h1 data-i18n="h1">Кандидати договорів міжмуніципального співробітництва</h1>
     <p class="lede" data-i18n-html="lede">
-      Пари громад за схожістю цілей стратегій (і географією / наявною мережею МСС).
-      Корпус зараз: <strong>~77</strong> стратегій, <strong>~68</strong> з текстом Goals.
-      Усі бали — <strong>гіпотези</strong>, доки пара не підтверджена реєстром (<code>known: true</code>).
+      Підказуємо <strong>з ким і про що</strong> домовитись (тема · правова форма).
+      Стратегії, сусідство, доповнення ресурсів і явний запит у тексті — <em>сигнали пошуку</em>, не типи МСС.
+      Корпус: <strong>~77</strong> стратегій. Усе — <strong>гіпотези</strong>, доки не <code>known: true</code>.
     </p>
     <div class="method" id="method-box">
       Завантаження методу…
     </div>
 
+    <div class="form-filter" id="form-filter" hidden>
+      <span data-i18n="filter.form">Форма договору (фільтр):</span>
+      <select id="form-select" aria-label="Filter by legal form">
+        <option value="" data-i18n="filter.all">Усі</option>
+      </select>
+    </div>
+
     <section>
-      <p class="kicker" data-i18n="curated.kicker">Ручний розбір</p>
+      <p class="kicker" data-i18n="curated.kicker">Сильні гіпотези</p>
       <h2 data-i18n="curated.h2">Кандидати з поясненням</h2>
       <div class="curated">
-        <div class="item">
+        <div class="item" data-form="joint_project">
           <span class="tag known" data-i18n="curated.c1.tag">✓ реальна угода</span>
           <span class="pair">Ніжин ↔ Батурин ↔ Козелець</span>
+          <div class="pkg">Туризм / кластер — спільний проєкт</div>
+          <div class="chips"><span class="chip high">схожа стратегія</span><span class="chip high">мережа МСС</span></div>
           <p data-i18n="curated.c1.p">Туристичний кластер «Місцями козацької сили» — вже діє. Метод знаходить без підказки; валідація підходу.</p>
         </div>
-        <div class="item">
+        <div class="item" data-form="joint_enterprise">
           <span class="tag hyp" data-i18n="curated.c2.tag">★★★ сильний кандидат</span>
           <span class="pair">Галицька ↔ Дубовецька</span>
+          <div class="pkg">Водопостачання — спільний проєкт / КП</div>
+          <div class="chips"><span class="chip high">явний запит МСС</span><span class="chip high">зручний сусід</span></div>
           <p data-i18n="curated.c2.p">Сусідні громади; у тексті стратегії вже названо спільний проєкт водопостачання «Галич–Бурштин–Маріямпіль».</p>
         </div>
-        <div class="item">
+        <div class="item" data-form="joint_project">
           <span class="tag hyp" data-i18n="curated.c3.tag">★★ кандидат</span>
           <span class="pair">Ужгород ↔ Мукачево</span>
+          <div class="pkg">Туризм / кластер — спільний проєкт</div>
+          <div class="chips"><span class="chip medium">схожа стратегія</span><span class="chip medium">зручний сусід</span></div>
           <p data-i18n="curated.c3.p">~40 км; окремий туристичний продукт + можлива координація медпослуг / транскордонних грантів.</p>
         </div>
-        <div class="item">
+        <div class="item" data-form="joint_body">
           <span class="tag hyp" data-i18n="curated.c4.tag">★★ peer-learning</span>
           <span class="pair">Дніпро ↔ Львів</span>
+          <div class="pkg">Агломерація / інновації — обмін моделлю</div>
+          <div class="chips"><span class="chip medium">схожа стратегія</span></div>
           <p data-i18n="curated.c4.p">Не спільний проєкт, а обмін моделлю управління інноваціями / агломерацією.</p>
         </div>
-        <div class="item">
-          <span class="tag hyp" data-i18n="curated.c5.tag">★★ топ score — перевірити</span>
+        <div class="item" data-form="joint_project">
+          <span class="tag hyp" data-i18n="curated.c5.tag">★★ перевірити пакет</span>
           <span class="pair">Вижницька ↔ Косівська</span>
-          <p data-i18n="curated.c5.p">Високий combined score (сусіди, туризм). Потрібна ручна перевірка: спільний продукт чи лише тема + географія.</p>
+          <div class="pkg">Туризм — спільний проєкт</div>
+          <div class="chips"><span class="chip medium">зручний сусід</span><span class="chip medium">схожа стратегія</span></div>
+          <p data-i18n="curated.c5.p">Сильний сигнал сусідства + туризму. Потрібна ручна перевірка: спільний продукт чи лише тема + географія.</p>
         </div>
       </div>
     </section>
@@ -146,16 +184,13 @@
           <thead>
             <tr>
               <th data-i18n="th.pair">Пара</th>
-              <th data-i18n="th.track">Трек</th>
-              <th data-i18n="th.mssTheme">Тема МСС</th>
-              <th data-i18n="th.mssForm">Форма</th>
-              <th class="num" data-i18n="th.score">Score</th>
-              <th class="num" data-i18n="th.goals">Goals</th>
-              <th class="num" data-i18n="th.geo">Geo</th>
-              <th class="num" data-i18n="th.network">Мережа</th>
+              <th data-i18n="th.package">Пакет</th>
+              <th data-i18n="th.signals">Сигнали</th>
+              <th data-i18n="th.track">Основний сигнал</th>
+              <th class="num score-sec" data-i18n="th.score">Score</th>
             </tr>
           </thead>
-          <tbody id="known-body"><tr><td colspan="8" data-i18n="loading">Завантаження…</td></tr></tbody>
+          <tbody id="known-body"><tr><td colspan="5" data-i18n="loading">Завантаження…</td></tr></tbody>
         </table>
       </div>
     </section>
@@ -186,10 +221,10 @@
     </section>
 
     <section>
-      <p class="kicker" data-i18n="comp.kicker">Complementary</p>
+      <p class="kicker" data-i18n="comp.kicker">Сигнал · доповнення</p>
       <h2 data-i18n="comp.h2">Ресурс / DREAM однієї ↔ виклик іншої</h2>
       <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem" data-i18n-html="comp.lede">
-        Окремий шар (не Goals-cosine): сила або портфель DREAM громади A
+        Один зі способів знайти кандидата договору (не Goals-cosine): сила або портфель DREAM громади A
         збігається з <code>Challenges</code> громади B. Гіпотези; див. також
         <a href="resources.html">Ресурси</a>.
       </p>
@@ -210,12 +245,11 @@
     </section>
 
     <section>
-      <p class="kicker" data-i18n="ask.kicker">Explicit ask</p>
+      <p class="kicker" data-i18n="ask.kicker">Сигнал · явний запит</p>
       <h2 data-i18n="ask.h2">Явний запит МСС у тексті стратегії</h2>
       <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem" data-i18n-html="ask.lede">
-        У документі прямо згадано міжмуніципальну кооперацію / МСС.
-        Не реєстрова угода — гіпотеза для outreach. Джерело:
-        <code>mss-intents.json</code>.
+        У документі прямо згадано міжмуніципальну кооперацію / МСС — сильний сигнал для кандидата договору.
+        Не реєстрова угода. Джерело: <code>mss-intents.json</code>.
       </p>
       <div class="table-wrap">
         <table>
@@ -240,22 +274,19 @@
           <thead>
             <tr>
               <th data-i18n="th.pair">Пара</th>
-              <th data-i18n="th.track">Трек</th>
-              <th data-i18n="th.mssTheme">Тема МСС</th>
-              <th data-i18n="th.mssForm">Форма</th>
-              <th class="num" data-i18n="th.score">Score</th>
-              <th class="num" data-i18n="th.goals">Goals</th>
-              <th class="num" data-i18n="th.geo">Geo</th>
-              <th class="num" data-i18n="th.network">Мережа</th>
+              <th data-i18n="th.package">Пакет</th>
+              <th data-i18n="th.signals">Сигнали</th>
+              <th data-i18n="th.track">Основний сигнал</th>
+              <th class="num score-sec" data-i18n="th.score">Score</th>
             </tr>
           </thead>
-          <tbody id="top-body"><tr><td colspan="8" data-i18n="loading">Завантаження…</td></tr></tbody>
+          <tbody id="top-body"><tr><td colspan="5" data-i18n="loading">Завантаження…</td></tr></tbody>
         </table>
       </div>
       <p class="caveat" data-i18n-html="caveat">
-        Високий score ≠ готовність до угоди. Шаблонні стратегії й «хаб»-документи можуть завищувати схожість —
-        перед outreach перевіряйте зміст і географію. Повний шар: файл
-        <code>data/releases/matching-edges.json</code> у репозиторії.
+        Пакет (тема · форма) і сигнали — гіпотези, не готовність до угоди.
+        Combined score — внутрішній ранг одного шляху пошуку. Перед outreach перевіряйте зміст.
+        Browse: <code>mss-candidates.json</code>; повний шар: <code>matching-edges.json</code>.
       </p>
     </section>
   </div>
@@ -268,18 +299,20 @@
   <script>
 window.PAGE_I18N = {
   uk: {
-    "doc.title": "Кандидати на співпрацю — матчинг стратегій",
-    "eyebrow": "Кандидати на МСС · пілот",
-    "h1": "Кандидати на міжмуніципальну співпрацю",
-    "lede": "Пари громад за схожістю цілей стратегій (і географією / наявною мережею МСС). Корпус зараз: <strong>~77</strong> стратегій, <strong>~68</strong> з текстом Goals. Усі бали — <strong>гіпотези</strong>, доки пара не підтверджена реєстром (<code>known: true</code>).",
+    "doc.title": "Кандидати договорів МСС",
+    "eyebrow": "Кандидати договорів МСС · пілот",
+    "h1": "Кандидати договорів міжмуніципального співробітництва",
+    "lede": "Підказуємо <strong>з ким і про що</strong> домовитись (тема · правова форма). Стратегії, сусідство, доповнення ресурсів і явний запит — <em>сигнали пошуку</em>, не типи МСС. Корпус: <strong>~77</strong> стратегій. Усе — <strong>гіпотези</strong>, доки не <code>known: true</code>.",
     "method.loading": "Завантаження методу…",
-    "method.label": "Метод:",
+    "method.label": "Метод пошуку:",
     "method.pairs": "Пар у релізі:",
     "method.snapshot": "знімок:",
-    "method.tracks": "Треки:",
-    "method.trackNote": "— один score не означає «strategy match».",
+    "method.tracks": "Сигнали (шари):",
+    "method.trackNote": "— продукт = пакет договору (тема · форма), не «strategy match».",
     "method.error": "Не вдалося завантажити matches-preview.json: ",
-    "curated.kicker": "Ручний розбір",
+    "filter.form": "Форма договору (фільтр):",
+    "filter.all": "Усі",
+    "curated.kicker": "Сильні гіпотези",
     "curated.h2": "Кандидати з поясненням",
     "curated.c1.tag": "✓ реальна угода",
     "curated.c1.p": "Туристичний кластер «Місцями козацької сили» — вже діє. Метод знаходить без підказки; валідація підходу.",
@@ -289,31 +322,33 @@ window.PAGE_I18N = {
     "curated.c3.p": "~40 км; окремий туристичний продукт + можлива координація медпослуг / транскордонних грантів.",
     "curated.c4.tag": "★★ peer-learning",
     "curated.c4.p": "Не спільний проєкт, а обмін моделлю управління інноваціями / агломерацією.",
-    "curated.c5.tag": "★★ топ score — перевірити",
-    "curated.c5.p": "Високий combined score (сусіди, туризм). Потрібна ручна перевірка: спільний продукт чи лише тема + географія.",
+    "curated.c5.tag": "★★ перевірити пакет",
+    "curated.c5.p": "Сильний сигнал сусідства + туризму. Потрібна ручна перевірка: спільний продукт чи лише тема + географія.",
     "known.kicker": "Валідація",
     "known.h2": "Known МСС у matching-edges",
-    "known.lede": "Кураторський ground truth для регресії матчера (<code>known: true</code>) — не всі угоди з реєстру KSE.",
+    "known.lede": "Кураторський ground truth для регресії (<code>known: true</code> / <code>registry_known</code>) — не всі угоди з реєстру KSE.",
     "pin.kicker": "Ширша KSE-перевірка",
     "pin.h2": "PIN ∩ корпус (<code>mss_network&gt;0</code>)",
-    "pin.lede": "Усі пари з Goals з обох боків, які вже є в мережі МСС KSE. Rank — місце за combined score; score вже містить 15% <code>mss_network</code> (частково циклічно). Не замінює known-регресію.",
-    "comp.kicker": "Complementary",
+    "pin.lede": "Усі пари з Goals з обох боків, які вже є в мережі МСС KSE. Rank — місце за combined score (частково циклічно з <code>mss_network</code>). Не замінює known-регресію.",
+    "comp.kicker": "Сигнал · доповнення",
     "comp.h2": "Ресурс / DREAM однієї ↔ виклик іншої",
-    "comp.lede": "Окремий шар (не Goals-cosine): сила або портфель DREAM громади A збігається з <code>Challenges</code> громади B. Гіпотези; див. також <a href=\"resources.html\">Ресурси</a>.",
-    "ask.kicker": "Explicit ask",
+    "comp.lede": "Один зі способів знайти кандидата договору (не Goals-cosine): сила або портфель DREAM громади A збігається з <code>Challenges</code> громади B. Гіпотези; див. також <a href=\"resources.html\">Ресурси</a>.",
+    "ask.kicker": "Сигнал · явний запит",
     "ask.h2": "Явний запит МСС у тексті стратегії",
-    "ask.lede": "У документі прямо згадано міжмуніципальну кооперацію / МСС. Не реєстрова угода — гіпотеза для outreach. Джерело: <code>mss-intents.json</code>.",
+    "ask.lede": "У документі прямо згадано міжмуніципальну кооперацію / МСС — сильний сигнал для кандидата договору. Не реєстрова угода. Джерело: <code>mss-intents.json</code>.",
     "th.compScore": "Comp.",
     "th.why": "Чому",
     "th.theme": "Тема",
     "th.mssTheme": "Тема МСС",
     "th.mssForm": "Форма",
+    "th.package": "Пакет",
+    "th.signals": "Сигнали",
     "empty.comp": "Немає — спочатку <code>yarn complementary-match</code>",
     "empty.ask": "Немає — спочатку <code>yarn extract-mss-intents</code>",
     "top.kicker": "Автоматичний топ",
     "top.h2": "Найвищі гіпотези (ще не known)",
     "th.pair": "Пара",
-    "th.track": "Трек",
+    "th.track": "Основний сигнал",
     "th.kind": "Тип",
     "th.rank": "Rank",
     "th.score": "Score",
@@ -326,23 +361,27 @@ window.PAGE_I18N = {
     "track.thematic": "схожа стратегія",
     "track.operational": "зручний сусід",
     "track.mixed": "mixed",
+    "track.complementary": "доповнення ресурсів",
+    "track.explicit-ask": "явний запит МСС",
     "tag.pinCorpus": "PIN∩корпус",
-    "caveat": "Високий score ≠ готовність до угоди. Шаблонні стратегії й «хаб»-документи можуть завищувати схожість — перед outreach перевіряйте зміст і географію. Повний шар: файл <code>data/releases/matching-edges.json</code> у репозиторії.",
+    "caveat": "Пакет (тема · форма) і сигнали — гіпотези, не готовність до угоди. Combined score — внутрішній ранг одного шляху пошуку. Browse: <code>mss-candidates.json</code>; повний шар: <code>matching-edges.json</code>.",
     "footer.note": "Див. також <a href=\"index.html\">Про проєкт</a>, <a href=\"strategy-writing-guide.md\">гід для стратегій</a> і <a href=\"mss-pin-matching-graph.html\">мапу МСС</a>."
   },
   en: {
-    "doc.title": "Cooperation candidates — strategy matching",
-    "eyebrow": "IMC candidates · pilot",
-    "h1": "Candidates for inter-municipal cooperation",
-    "lede": "Hromada pairs by strategy-goal similarity (plus geography / existing IMC network). Corpus now: <strong>~77</strong> strategies, <strong>~68</strong> with Goals text. All scores are <strong>hypotheses</strong> until a pair is registry-confirmed (<code>known: true</code>).",
+    "doc.title": "IMC agreement candidates",
+    "eyebrow": "IMC agreement candidates · pilot",
+    "h1": "Candidates for inter-municipal cooperation agreements",
+    "lede": "We suggest <strong>who to talk to and about what</strong> (theme · legal form). Strategies, neighbourhood, complementary resources, and explicit asks are <em>discovery signals</em>, not IMC types. Corpus: <strong>~77</strong> strategies. All are <strong>hypotheses</strong> until <code>known: true</code>.",
     "method.loading": "Loading method…",
-    "method.label": "Method:",
+    "method.label": "Discovery method:",
     "method.pairs": "Pairs in release:",
     "method.snapshot": "snapshot:",
-    "method.tracks": "Tracks:",
-    "method.trackNote": "— one score does not mean “strategy match”.",
+    "method.tracks": "Signals (layers):",
+    "method.trackNote": "— the product is an agreement package (theme · form), not a “strategy match”.",
     "method.error": "Failed to load matches-preview.json: ",
-    "curated.kicker": "Manual review",
+    "filter.form": "Agreement form (filter):",
+    "filter.all": "All",
+    "curated.kicker": "Strong hypotheses",
     "curated.h2": "Candidates with explanation",
     "curated.c1.tag": "✓ real agreement",
     "curated.c1.p": "Tourism cluster “Along the Cossack Strength Trail” — already active. The method finds it without a tip; approach validation.",
@@ -352,31 +391,33 @@ window.PAGE_I18N = {
     "curated.c3.p": "~40 km; a distinct tourism product + possible health-service / cross-border grant coordination.",
     "curated.c4.tag": "★★ peer-learning",
     "curated.c4.p": "Not a shared project, but exchange of an innovation / agglomeration governance model.",
-    "curated.c5.tag": "★★ top score — verify",
-    "curated.c5.p": "High combined score (neighbours, tourism). Needs manual check: shared product, or only theme + geography?",
+    "curated.c5.tag": "★★ verify package",
+    "curated.c5.p": "Strong neighbour + tourism signal. Needs manual check: shared product, or only theme + geography?",
     "known.kicker": "Validation",
     "known.h2": "Known IMC in matching-edges",
-    "known.lede": "Curated ground truth for matcher regression (<code>known: true</code>) — not every agreement from the KSE registry.",
+    "known.lede": "Curated ground truth for regression (<code>known: true</code> / <code>registry_known</code>) — not every KSE registry agreement.",
     "pin.kicker": "Broader KSE check",
     "pin.h2": "PIN ∩ corpus (<code>mss_network&gt;0</code>)",
-    "pin.lede": "All pairs with Goals on both sides that already appear in the KSE IMC network. Rank — place by combined score; the score already includes 15% <code>mss_network</code> (partly circular). Does not replace known-pair regression.",
-    "comp.kicker": "Complementary",
+    "pin.lede": "All pairs with Goals on both sides already in the KSE IMC network. Rank by combined score (partly circular with <code>mss_network</code>). Does not replace known-pair regression.",
+    "comp.kicker": "Signal · complementary",
     "comp.h2": "One side’s resource / DREAM ↔ the other’s challenge",
-    "comp.lede": "Separate layer (not goals-cosine): DREAM portfolio or strengths of A match <code>Challenges</code> of B. Hypotheses; see also <a href=\"resources.html\">Resources</a>.",
-    "ask.kicker": "Explicit ask",
+    "comp.lede": "One way to find an agreement candidate (not goals-cosine): DREAM portfolio or strengths of A match <code>Challenges</code> of B. Hypotheses; see also <a href=\"resources.html\">Resources</a>.",
+    "ask.kicker": "Signal · explicit ask",
     "ask.h2": "Explicit IMC language in the strategy text",
-    "ask.lede": "The document directly mentions inter-municipal cooperation / IMC. Not a registry agreement — outreach hypothesis. Source: <code>mss-intents.json</code>.",
+    "ask.lede": "The document directly mentions inter-municipal cooperation / IMC — a strong signal for an agreement candidate. Not a registry agreement. Source: <code>mss-intents.json</code>.",
     "th.compScore": "Comp.",
     "th.why": "Why",
     "th.theme": "Theme",
     "th.mssTheme": "IMC theme",
     "th.mssForm": "Form",
+    "th.package": "Package",
+    "th.signals": "Signals",
     "empty.comp": "None — run <code>yarn complementary-match</code> first",
     "empty.ask": "None — run <code>yarn extract-mss-intents</code> first",
     "top.kicker": "Automatic top",
     "top.h2": "Highest hypotheses (not yet known)",
     "th.pair": "Pair",
-    "th.track": "Track",
+    "th.track": "Primary signal",
     "th.kind": "Type",
     "th.rank": "Rank",
     "th.score": "Score",
@@ -389,8 +430,10 @@ window.PAGE_I18N = {
     "track.thematic": "similar strategy",
     "track.operational": "handy neighbour",
     "track.mixed": "mixed",
+    "track.complementary": "complementary resources",
+    "track.explicit-ask": "explicit IMC ask",
     "tag.pinCorpus": "PIN∩corpus",
-    "caveat": "A high score ≠ readiness for an agreement. Template strategies and “hub” documents can inflate similarity — check content and geography before outreach. Full layer: <code>data/releases/matching-edges.json</code> in the repository.",
+    "caveat": "Package (theme · form) and signals are hypotheses, not readiness to sign. Combined score ranks one discovery path. Browse: <code>mss-candidates.json</code>; full layer: <code>matching-edges.json</code>.",
     "footer.note": "See also <a href=\"index.html\">About</a>, <a href=\"strategy-writing-guide.md\">strategy writing guide</a>, and the <a href=\"mss-pin-matching-graph.html\">IMC map</a>."
   }
 };
@@ -421,19 +464,47 @@ window.PAGE_I18N = {
       if (track === "thematic") return t("track.thematic");
       if (track === "operational") return t("track.operational");
       if (track === "mixed") return t("track.mixed");
+      if (track === "complementary") return t("track.complementary");
+      if (track === "explicit-ask" || track === "explicit_ask") return t("track.explicit-ask");
       return track || "—";
     }
 
+    function packageLabel(p) {
+      if (p.package && p.package.label_uk) return p.package.label_uk;
+      var theme = p.suggested_theme || (p.package && p.package.theme) || "";
+      var form = p.suggested_form || (p.package && p.package.form) || "";
+      if (theme && form) return theme + " — " + form;
+      return theme || form || "—";
+    }
+
+    function formIdOf(p) {
+      return (p.package && p.package.form_id) || p.suggested_form_id || "";
+    }
+
+    function chipsHtml(p) {
+      var chips = p.signal_chips || (p.signals || []).slice(0, 3);
+      if (!chips.length) return "—";
+      return "<div class=\"chips\">" + chips.map(function (c) {
+        return "<span class=\"chip " + esc(c.strength || "") + "\">" + esc(c.label_uk || c.id) + "</span>";
+      }).join("") + "</div>";
+    }
+
+    function primarySignal(p) {
+      if (p.discovery_primary === "strategy_goals") return t("track.thematic");
+      if (p.discovery_primary === "geo") return t("track.operational");
+      if (p.discovery_primary === "complementary") return t("track.complementary");
+      if (p.discovery_primary === "explicit_ask") return t("track.explicit-ask");
+      if (p.discovery_primary === "network") return t("th.network");
+      return trackLabel(p.track);
+    }
+
     function row(p) {
-      return "<tr>"
+      return "<tr data-form=\"" + esc(formIdOf(p)) + "\">"
         + "<td><span class=\"pair\">" + esc(p.a_short) + " ↔ " + esc(p.b_short) + "</span></td>"
-        + "<td>" + trackLabel(p.track) + "</td>"
-        + "<td style=\"font-size:0.82rem\">" + esc(p.suggested_theme || "—") + "</td>"
-        + "<td style=\"font-size:0.82rem\">" + esc(p.suggested_form || "—") + "</td>"
-        + "<td class=\"num\">" + pct(p.score) + "</td>"
-        + "<td class=\"num\">" + pct(p.goals_cosine) + "</td>"
-        + "<td class=\"num\">" + pct(p.geo_score) + "</td>"
-        + "<td class=\"num\">" + pct(p.mss_network) + "</td>"
+        + "<td style=\"font-size:0.85rem;font-weight:600\">" + esc(packageLabel(p)) + "</td>"
+        + "<td>" + chipsHtml(p) + "</td>"
+        + "<td style=\"font-size:0.82rem\">" + esc(primarySignal(p)) + "</td>"
+        + "<td class=\"num score-sec\">" + pct(p.score) + "</td>"
         + "</tr>";
     }
 
@@ -454,10 +525,10 @@ window.PAGE_I18N = {
 
     function compRow(p) {
       var why = (p.reasons || []).slice(0, 2).map(esc).join("<br/>") || "—";
-      return "<tr>"
+      return "<tr data-form=\"" + esc(formIdOf(p)) + "\">"
         + "<td><span class=\"pair\">" + esc(p.a_short) + " ↔ " + esc(p.b_short) + "</span></td>"
         + "<td class=\"num\">" + pct(p.complementary_score) + "</td>"
-        + "<td style=\"font-size:0.82rem\">" + esc(p.suggested_theme || "—") + "</td>"
+        + "<td style=\"font-size:0.85rem;font-weight:600\">" + esc(packageLabel(p)) + "</td>"
         + "<td style=\"font-size:0.82rem\">" + esc(p.suggested_form || "—") + "</td>"
         + "<td style=\"font-size:0.82rem;color:var(--site-muted)\">" + why + "</td>"
         + "</tr>";
@@ -465,9 +536,9 @@ window.PAGE_I18N = {
 
     function askRow(p) {
       if (p.a_short && p.b_short) {
-        return "<tr>"
+        return "<tr data-form=\"" + esc(formIdOf(p)) + "\">"
           + "<td><span class=\"pair\">" + esc(p.a_short) + " ↔ " + esc(p.b_short) + "</span></td>"
-          + "<td>" + esc(p.suggested_theme || p.theme || "—") + "</td>"
+          + "<td style=\"font-weight:600\">" + esc(packageLabel(p)) + "</td>"
           + "<td style=\"font-size:0.82rem\">" + esc(p.suggested_form || "—") + "</td>"
           + "<td style=\"font-size:0.82rem;color:var(--site-muted)\">"
           + esc((p.reasons && p.reasons[0]) || "—") + "</td>"
@@ -490,21 +561,59 @@ window.PAGE_I18N = {
           + data.tracks.counts.mixed
           + " " + t("method.trackNote");
       }
+      var candNote = "";
+      if (data.candidatesSidecar) {
+        candNote = "<br/>mss-candidates: known "
+          + data.candidatesSidecar.registryKnown + " · hypotheses "
+          + data.candidatesSidecar.hypotheses;
+      }
       document.getElementById("method-box").innerHTML =
         "<strong>" + t("method.label") + "</strong> <code>" + data.method + "</code><br/>"
         + t("method.pairs") + " <strong>" + data.pairCount + "</strong> · "
         + t("method.snapshot") + " "
-        + (data.generatedAt || "—") + trackNote;
+        + (data.generatedAt || "—") + trackNote + candNote;
+    }
+
+    var FORM_OPTIONS = [
+      ["joint_project", "спільний проєкт"],
+      ["joint_finance", "спільне утримання"],
+      ["delegation", "делегування"],
+      ["joint_enterprise", "спільне КП"],
+      ["joint_body", "спільний орган"],
+      ["agglomeration", "агломерація"]
+    ];
+
+    var formFilterReady = false;
+    function setupFormFilter() {
+      if (formFilterReady) return;
+      var wrap = document.getElementById("form-filter");
+      var sel = document.getElementById("form-select");
+      if (!wrap || !sel) return;
+      FORM_OPTIONS.forEach(function (pair) {
+        var opt = document.createElement("option");
+        opt.value = pair[0];
+        opt.textContent = pair[1];
+        sel.appendChild(opt);
+      });
+      wrap.hidden = false;
+      sel.addEventListener("change", function () {
+        var v = sel.value;
+        document.querySelectorAll(".item[data-form], tr[data-form]").forEach(function (el) {
+          var f = el.getAttribute("data-form") || "";
+          el.style.display = (!v || f === v) ? "" : "none";
+        });
+      });
+      formFilterReady = true;
     }
 
     function renderTables(data) {
       document.getElementById("known-body").innerHTML =
-        data.known.map(row).join("") || "<tr><td colspan=\"6\">" + t("empty") + "</td></tr>";
+        data.known.map(row).join("") || "<tr><td colspan=\"5\">" + t("empty") + "</td></tr>";
       var pc = data.pinCorpus || [];
       document.getElementById("pin-corpus-body").innerHTML =
         pc.map(pinCorpusRow).join("") || "<tr><td colspan=\"6\">" + t("empty.pin") + "</td></tr>";
       document.getElementById("top-body").innerHTML =
-        data.top.map(row).join("") || "<tr><td colspan=\"6\">" + t("empty") + "</td></tr>";
+        data.top.map(row).join("") || "<tr><td colspan=\"5\">" + t("empty") + "</td></tr>";
     }
 
     function renderComp() {
@@ -543,9 +652,11 @@ window.PAGE_I18N = {
       renderTables(previewData);
       renderComp();
       renderAsk();
+      setupFormFilter();
     }
 
     document.addEventListener("hromada-lang", renderAll);
+    setupFormFilter();
     renderAll();
 
     fetch("assets/matches-preview.json")
