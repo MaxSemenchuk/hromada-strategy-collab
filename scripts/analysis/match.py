@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pairwise hromada matching v7 — hierarchy-aware goals + KSE covariates.
+Pairwise hromada matching v7.1 — hierarchy-aware goals + KSE covariates.
 
 Combines mean-centered sub-goal embeddings (v5 DF-weighting) with KSE enrichment:
   60% goals_cosine + 25% geo + 15% mss_network
@@ -8,6 +8,15 @@ Combines mean-centered sub-goal embeddings (v5 DF-weighting) with KSE enrichment
 v7 goals_cosine: when both sides have operational lines (from goals-hierarchy.json
 or parsed Goals text), blend 0.65×operational_sim + 0.35×strategic_sim; else
 fall back to all lines (v6 behaviour). Combined score weights unchanged.
+
+v7.1 length / hub mitigation (Poltava–Zhytomyr-type risk): each pairwise
+goals similarity blends
+  0.65 × bipartite soft-alignment (DF-weighted avg of best line matches)
+  0.35 × DF-weighted document-centroid cosine (mean-centered subgoals)
+Also restores true pairwise cosine (``A @ B.T``); v4–v7 used a broken
+``np.ix_`` embedding-coordinate slice. Comprehensive long strategies average
+toward the corpus mean after centering, so centroid sim stays low unless the
+*profile* matches — not merely many mediocre line overlaps.
 
 Each edge also gets a dual-track label (scoring weights unchanged):
   thematic    — high goals, low geo  → cold-start vision partners
@@ -48,6 +57,9 @@ WEIGHT_MSS = 0.15
 # When both sides have operational goals
 WEIGHT_OPS_IN_GOALS = 0.65
 WEIGHT_STRAT_IN_GOALS = 0.35
+# Length / hub mitigation inside goals similarity
+WEIGHT_BIPARTITE = 0.65
+WEIGHT_CENTROID = 0.35
 
 
 def load_hromadas(path: Path) -> list[dict]:
@@ -84,12 +96,65 @@ def build_records(hromadas: list[dict]) -> list[dict]:
     return records
 
 
+def _blend_bipartite_centroid(
+    centered: np.ndarray,
+    weight: np.ndarray,
+    idx_i: list[int],
+    idx_j: list[int],
+) -> float:
+    """DF-weighted bipartite soft-align blended with document-centroid cosine.
+
+    Centroid term dampens comprehensive long-document hubs: diverse subgoal
+    sets collapse toward the corpus mean after centering, so only shared
+    *profiles* score high. Bipartite keeps credit for specific shared lines.
+
+    For length-imbalanced pairs, each side's directional average only keeps the
+    top ``min(n_i, n_j)`` best line matches — a long doc cannot pad its score
+    with dozens of mediocre overlaps against a short focused partner.
+
+    Note: v4–v7 incorrectly used ``centered[np.ix_(idx_i, idx_j)]`` (embedding
+    coordinate slices). v7.1 restores true pairwise cosine
+    ``centered[idx_i] @ centered[idx_j].T``.
+    """
+    if not idx_i or not idx_j:
+        return 0.0
+    sims = centered[idx_i] @ centered[idx_j].T
+    wi = np.asarray(weight[idx_i], dtype=float)
+    wj = np.asarray(weight[idx_j], dtype=float)
+    best_i = sims.max(axis=1)
+    best_j = sims.max(axis=0)
+    k = min(len(best_i), len(best_j))
+    bipartite = float((_capped_avg(best_i, wi, k) + _capped_avg(best_j, wj, k)) / 2)
+
+    ci = np.average(centered[idx_i], axis=0, weights=wi)
+    cj = np.average(centered[idx_j], axis=0, weights=wj)
+    ni = float(np.linalg.norm(ci))
+    nj = float(np.linalg.norm(cj))
+    if ni < 1e-8 or nj < 1e-8:
+        centroid = 0.0
+    else:
+        centroid = float((ci / ni) @ (cj / nj))
+
+    blended = WEIGHT_BIPARTITE * bipartite + WEIGHT_CENTROID * centroid
+    return float(max(0.0, blended))
+
+
+def _capped_avg(best: np.ndarray, weights: np.ndarray, k: int) -> float:
+    """Average of the top-k best line matches (length-normalized soft alignment)."""
+    if k <= 0 or len(best) == 0:
+        return 0.0
+    if len(best) <= k:
+        return float(np.average(best, weights=weights))
+    top = np.argpartition(best, -k)[-k:]
+    return float(np.average(best[top], weights=weights[top]))
+
+
 def _indexed_similarity(
     records: list[dict],
     model: SentenceTransformer,
     line_key: str,
 ) -> np.ndarray:
-    """Pairwise DF-weighted mean-centered cosine over record[line_key] lines."""
+    """Pairwise DF-weighted mean-centered similarity over record[line_key] lines."""
     all_subgoals: list[str] = []
     subgoal_owner: list[int] = []
     for i, r in enumerate(records):
@@ -123,19 +188,9 @@ def _indexed_similarity(
         df[k] = len(owners_matched)
     weight = 1.0 / (1.0 + np.log1p(np.maximum(df - 2, 0)))
 
-    def pair_score(i: int, j: int) -> float:
-        idx_i, idx_j = sub_idx[i], sub_idx[j]
-        if not idx_i or not idx_j:
-            return 0.0
-        sims = centered[np.ix_(idx_i, idx_j)]
-        wi, wj = weight[idx_i], weight[idx_j]
-        best_i = sims.max(axis=1)
-        best_j = sims.max(axis=0)
-        return float((np.average(best_i, weights=wi) + np.average(best_j, weights=wj)) / 2)
-
     for i in range(n):
         for j in range(i + 1, n):
-            s = pair_score(i, j)
+            s = _blend_bipartite_centroid(centered, weight, sub_idx[i], sub_idx[j])
             scores[i, j] = scores[j, i] = s
     return scores
 

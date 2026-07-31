@@ -315,15 +315,18 @@ Map (`yarn graph-pin-matching`): layer **«Усі громади (метадан
 release row with KSE lat/lon (~1 418); PIN/matching stay on top. Popups link
 `PortalUrl` / `StrategyUrl` when present (36 portals in current release).
 
-## Open threads (as of 2026-07-29)
+## Open threads (as of 2026-07-31)
 
 - [x] File cross-link issue on KSE repo — [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) (2026-07-24)
 - [x] Stakeholder site under `docs/` + shared nav (GitHub Pages workflow)
 - [x] Re-scrutinize `internal/outreach-messages.md` numbers / overclaims (2026-07-24)
 - [ ] Resolve remaining snowball retrieval targets or accept ~77-hromada pilot cap
-- [ ] Length-normalization / hub-hromada handling (Poltava-Zhytomyr-type risk)
+- [x] Length-normalization / hub-hromada handling (Poltava-Zhytomyr-type risk) —
+      v7.1 bipartite×0.65 + document-centroid×0.35; also fixed bipartite cosine
+      (`A @ B.T`, was broken `np.ix_` slice since v4) (`yarn test-length-norm`) — 2026-07-31
 - [ ] Product decision after first stakeholder conversations (open-data vs matchmaking vs W3I-internal)
-- [ ] Split NocoDB base if project grows into standalone product
+- [x] Prefer local `data/releases/hromadas.json` over a separate NocoDB base —
+      `--write-release` on `structure-hromada`; NocoDB remains optional sync — 2026-07-31
 - [x] Export `DonorsPrograms` into public `hromadas.json` + `donor-synergy.json`
       / docs `funds.html` portfolio lenses (within / bridges / hubs) — 2026-07-24
 - [x] Split matcher outputs into thematic vs operational ranked lists
