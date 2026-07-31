@@ -10,7 +10,13 @@
     "reasons": [
       "named neighbour in intent: «Договір про співробітництво «Створення туристичного кластеру «Місцями козацької сили»» — офіційно зареєстрований у реєст»"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС"
   },
   {
     "a": "Обухівська селищна територіальна громада",
@@ -23,7 +29,13 @@
     "reasons": [
       "named neighbour in intent: «Формального стратегічного документа не знайдено. Реконструйовано з реальних діючих програм ради: підтримка вразливих кат»"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС"
   },
   {
     "a": "Батуринська міська територіальна громада",
@@ -36,7 +48,13 @@
     "reasons": [
       "обидві згадують МСС/кооперацію (тема: туризм)"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС"
   },
   {
     "a": "Батуринська міська територіальна громада",
@@ -49,7 +67,13 @@
     "reasons": [
       "обидві згадують МСС/кооперацію"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
   },
   {
     "a": "Галицька міська територіальна громада",
@@ -62,7 +86,13 @@
     "reasons": [
       "обидві згадують МСС/кооперацію"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
   },
   {
     "a": "Козелецька селищна територіальна громада",
@@ -75,7 +105,13 @@
     "reasons": [
       "обидві згадують МСС/кооперацію"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
   },
   {
     "a": "Ніжинська міська територіальна громада",
@@ -88,7 +124,13 @@
     "reasons": [
       "обидві згадують МСС/кооперацію"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
   },
   {
     "a": "Ніжинська міська територіальна громада",
@@ -101,7 +143,13 @@
     "reasons": [
       "обидві згадують МСС/кооперацію"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
   },
   {
     "a": "Ніжинська міська територіальна громада",
@@ -114,7 +162,13 @@
     "reasons": [
       "обидві згадують МСС/кооперацію"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
   },
   {
     "a": "Обухівська селищна територіальна громада",
@@ -127,7 +181,13 @@
     "reasons": [
       "обидві згадують МСС/кооперацію"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
   },
   {
     "a": "Полтавська міська територіальна громада",
@@ -140,7 +200,13 @@
     "reasons": [
       "обидві згадують МСС/кооперацію"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
   },
   {
     "a": "Слобожанська селищна територіальна громада",
@@ -153,7 +219,13 @@
     "reasons": [
       "обидві згадують МСС/кооперацію (тема: відходи)"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС"
   },
   {
     "a": "Слобожанська селищна територіальна громада",
@@ -166,6 +238,12 @@
     "reasons": [
       "обидві згадують МСС/кооперацію"
     ],
-    "known": false
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС"
   }
 ]

@@ -12,6 +12,7 @@ Spin-out from w3i-network (2026-07-23); NocoDB `Hromadas` table still shared.
 
 - [README.md](../../README.md) — status, setup, commands
 - [docs/project-history.md](../../docs/project-history.md) — full methodology history (replaces Claude memory)
+- [docs/mss-cooperation-research.md](../../docs/mss-cooperation-research.md) — DOBRE partner-search thesis, МСС forms/procedure, legislative notes
 - [docs/hromadas-schema.md](../../docs/hromadas-schema.md) — field schema
 - [docs/kse-synergy.md](../../docs/kse-synergy.md) — KSE join rules
 - Stakeholder site (GitHub Pages root): [docs/index.html](../../docs/index.html) — keep coverage numbers in sync with `data/releases/*.manifest.json`
@@ -59,6 +60,8 @@ layer (EU sister cities in the hromada card + indigo glow on map/graph).
    `схожа стратегія` (thematic) vs `зручний сусід` (operational) vs
    `доповнення ресурсів` (complementary) vs `явний запит МСС` (explicit-ask) vs
    `місто-побратим ЄС` (twinning — separate layer).
+8. `suggested_theme` / `suggested_form` are IMC-package hypotheses
+   (`mss_suggest.py`) — never fold into `score`, never set `known: true` from them.
 
 ## Stakeholders / contacts
 

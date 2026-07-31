@@ -1,7 +1,11 @@
 {
-  "generatedAt": "2026-07-29T09:30:16.394496+00:00",
+  "generatedAt": "2026-07-30T14:32:26.960085+00:00",
   "pairCount": 400,
-  "method": "complementary v2: weighted DREAM/Strengths/resource → Challenges; score=1-exp(-0.4·w) ×1.2 same-oblast; min weight 1.2; prefer same-oblast shortlist",
+  "mssSuggest": {
+    "annotated": 400,
+    "withTheme": 392
+  },
+  "method": "complementary v2: weighted DREAM/Strengths/resource → Challenges; score=1-exp(-0.4·w) ×1.2 same-oblast; min weight 1.2; prefer same-oblast shortlist; + suggested_theme/form (mss_suggest)",
   "warning": "Hypotheses only — not v6 strategy matching, not known=true. Keyword hit ≠ verified МСС plan.",
   "inputs": [
     "hromadas.json (Challenges/Strengths)",

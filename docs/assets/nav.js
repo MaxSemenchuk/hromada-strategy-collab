@@ -23,13 +23,13 @@
     {
       href: "mss-pin-matching-graph.html",
       id: "map",
-      label: { uk: "Мапа МСС", en: "IMC map" }
+      label: { uk: "Мапа угод МСС", en: "IMC map" }
     }
   ];
 
   var BRAND = {
-    uk: 'W3I <span>Матчинг громад</span>',
-    en: 'W3I <span>Hromada matching</span>'
+    uk: 'W3I <span>Партнери для МСС</span>',
+    en: 'W3I <span>IMC partners</span>'
   };
   var MENU = { uk: "Меню", en: "Menu" };
   var NAV_ARIA = { uk: "Розділи сайту", en: "Site sections" };

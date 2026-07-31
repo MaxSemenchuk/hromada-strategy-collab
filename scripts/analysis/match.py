@@ -14,6 +14,9 @@ Each edge also gets a dual-track label (scoring weights unchanged):
   operational — high geo             → convenient service co-sharers
   mixed       — otherwise
 
+After `yarn match`, run `yarn export-matching-edges` to attach operational
+boost + suggested_theme / suggested_form (mss_suggest) and write slices.
+
 Usage:
   python scripts/analysis/match.py
   python scripts/analysis/match.py --input data/releases/hromadas.json --out data/releases/matching-edges.json

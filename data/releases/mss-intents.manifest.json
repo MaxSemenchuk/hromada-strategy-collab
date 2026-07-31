@@ -1,6 +1,10 @@
 {
-  "generatedAt": "2026-07-29T09:19:33.327333+00:00",
+  "generatedAt": "2026-07-30T14:32:27.582491+00:00",
   "hromadaCount": 16,
   "explicitAskEdges": 13,
-  "method": "regex МСС/кооперація on strategy fields + curated hierarchy intents"
+  "mssSuggest": {
+    "annotated": 13,
+    "withTheme": 4
+  },
+  "method": "regex МСС/кооперація on strategy fields + curated hierarchy intents + suggested_theme/form (mss_suggest)"
 }
