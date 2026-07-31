@@ -19,7 +19,9 @@ Spin-out from w3i-network (2026-07-23); NocoDB `Hromadas` table still shared.
 
 ## Data boundaries
 
-- **Canonical dataset:** `data/releases/` (CC BY 4.0) — export via `yarn export-hromadas`
+- **Canonical dataset:** `data/releases/` (CC BY 4.0) — prefer
+  `yarn structure-hromada … --write-release`; optional live pull via
+  `yarn export-hromadas` (shared NocoDB)
 - **Provenance only:** `data/research-log/` — dated snapshots, not maintained dataset
 - **Not public:** `internal/` — outreach drafts (`outreach-messages.md`;
   optional convenience HTML `internal/outreach.html` is gitignored and must
@@ -29,13 +31,15 @@ Spin-out from w3i-network (2026-07-23); NocoDB `Hromadas` table still shared.
 
 ## Matching pipeline (current)
 
-`yarn match` → `scripts/analysis/match.py` v7:
+`yarn match` → `scripts/analysis/match.py` v7.1:
 `0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`
 
 Goals: mean-centered sub-goal embeddings (`multilingual-e5-small`). When
 `goals-hierarchy.json` (or parsed Goals text) has operational lines on both
-sides, goals_cosine blends **0.65×operational + 0.35×strategic**. After changes,
-run `yarn test-known-pairs` and `yarn report-pin-corpus`.
+sides, goals_cosine blends **0.65×operational + 0.35×strategic**. Each pairwise
+goals similarity further blends **0.65×bipartite + 0.35×document-centroid**
+(length / hub mitigation). After changes, run `yarn test-length-norm`,
+`yarn test-known-pairs` and `yarn report-pin-corpus`.
 
 Separate layers (do not fold into combined `score`):
 - `yarn complementary-match` — resource/DREAM ↔ Challenges

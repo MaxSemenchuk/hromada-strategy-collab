@@ -52,9 +52,10 @@ Corpus-level NLP matching across strategy texts appears to be genuine whitespace
 - **174 hromadas** (12%) tagged in NocoDB with at least one donor/technical-assistance
   program (DOBRE, DECIDE, GIZ, ПРООН/UNDP, EGAP, DESPRO, МФ Відродження, U-LEAD,
   Ре:Форм, JICA, ЄІБ, ЄБРР, AFD) — a floor, not a ceiling.
-- Matching **v7** (`0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`):
+- Matching **v7.1** (`0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`):
   goals_cosine prefers operational lines when hierarchy is present
-  (`goals-hierarchy.json`). Combined score weights unchanged from v6.
+  (`goals-hierarchy.json`) and blends bipartite soft-align with a document
+  centroid (length / hub mitigation). Combined score weights unchanged from v6.
 - Extra layers (not folded into combined `score`):
   **complementary** (resource/DREAM ↔ Challenges), **explicit-ask** (МСС language
   in strategy text), **resources** / **DREAM priorities**, **twinning** (UA–EU
@@ -141,18 +142,30 @@ cp .env.example .env   # fill in NOCODB_TOKEN + NOCODB_BASE_ID (shared base, ask
 yarn setup-hromadas    # idempotent — verifies/creates the Hromadas table + Sectors link column
 ```
 
-## Shared database
+## Data store: local JSON first, NocoDB optional
 
-The `Hromadas` table (and the `Tags` table it links `Sectors` to) live in the
-**same NocoDB base** as the main W3I ecosystem project (`w3i-network`) — there is
-no separate database for this project yet. This is a deliberate, temporary choice:
-splitting the codebase out doesn't yet justify splitting the data layer too.
-If this project grows into its own product, re-evaluate whether it needs its own
-base.
+**Canonical working dataset** is [`data/releases/hromadas.json`](data/releases/hromadas.json)
+(plus matching / sidecar releases next to it). Matching, map build, and the
+stakeholder site all read from `data/releases/` — not from a live DB.
+
+Write path without a remote database:
+
+```bash
+# always writes scripts/hromada-output/<name>.json
+yarn structure-hromada --name "…" --json structured.json --write-release
+# → upserts Goals/Projects/… into data/releases/hromadas.json by Name
+yarn match   # reads the release JSON
+```
+
+**NocoDB is optional sync**, not required for analysis. The `Hromadas` table
+(and linked `Tags`) still live in the **shared W3I** base when you want a
+collaborative UI or historical live export (`yarn export-hromadas`). Prefer
+`--write-release` over `--write` for day-to-day corpus growth; use `--write`
+only when intentionally updating the shared base.
 
 | Table | ID |
 |-------|-----|
-| Hromadas | `mjtetfuixggp5lg` |
+| Hromadas (optional sync) | `mjtetfuixggp5lg` |
 | Tags (shared with w3i-network) | `moee8ep5561zt76` |
 
 ## License & data
@@ -174,28 +187,29 @@ snapshot as if it were a finished dataset.
 ## Usage
 
 ```bash
-# Persist in-session structured JSON to hromada-output/ (+ optional NocoDB)
+# Persist in-session structured JSON to hromada-output/
 yarn structure-hromada --name "Ніжинська громада" --json structured.json
 
-# ...and write it into NocoDB
-yarn structure-hromada --name "Ніжинська громада" --json structured.json --write
+# Preferred: upsert strategy fields into local release JSON (no NocoDB)
+yarn structure-hromada --name "Ніжинська громада" --json structured.json --write-release
 
-# Update an existing row instead of inserting
+# Optional: also sync to shared NocoDB
+yarn structure-hromada --name "Ніжинська громада" --json structured.json --write
 yarn structure-hromada --name "..." --json structured.json --write --update 12
 
-# Bulk metadata import (KATOTTG + population) — one-off, already run for all 1,469
+# Bulk metadata import (KATOTTG + population) — one-off; needs NocoDB
 yarn import-hromadas --updates data/research-log/hromada_updates.json --inserts data/research-log/hromada_inserts.json
 
-# Refresh the public dataset (data/releases/hromadas.json) from live NocoDB
+# Pull from NocoDB into data/releases/ (optional refresh)
 yarn export-hromadas
 
-# Offline export from research-log snapshot (no NocoDB credentials)
+# Offline normalize from research-log snapshot (no NocoDB credentials)
 yarn export-hromadas:snapshot
 
-# Recompute matching edges (v6: goals + KSE geo + KSE mss network)
+# Recompute matching edges (v7.1: goals + length/hub blend + KSE geo + mss)
 # Combined score ≠ pure strategy match — also writes track labels + dual slices
 # export-matching-edges also adds fiscal/DREAM boost + suggested_theme/form (score unchanged)
-yarn match && yarn export-matching-edges && yarn test-known-pairs && yarn report-pin-corpus && yarn test-tracks && yarn test-mss-suggest && yarn build-matches-preview
+yarn match && yarn export-matching-edges && yarn test-length-norm && yarn test-known-pairs && yarn report-pin-corpus && yarn test-tracks && yarn test-mss-suggest && yarn build-matches-preview
 
 # Hierarchy + explicit МСС language + complementary (separate from combined score)
 yarn build-goals-hierarchy
@@ -236,8 +250,9 @@ Batch workflow for growing the corpus beyond the current pilot: see
 
 ```bash
 yarn ckan-search --out scripts/retrieval/ckan-candidates.json
-# pick URLs → batch-queue.json → download → structure in-session → yarn structure-hromada --json … --write
-yarn export-hromadas && yarn match
+# pick URLs → batch-queue.json → download → structure in-session →
+# yarn structure-hromada --json … --write-release
+yarn match
 ```
 
 ## Methodology notes
@@ -251,6 +266,12 @@ yarn export-hromadas && yarn match
   government strategy" as the dominant signal. Fix: mean-center (subtract the
   corpus-average sub-goal vector) before comparing, to isolate what's actually
   distinctive per hromada.
+- **Long “comprehensive” strategies create hub false positives.** Pure bipartite
+  avg-of-best-line matches let two thick, all-sector docs score well without a
+  shared profile (Pass 4: Poltava↔Zhytomyr). v7.1 blends bipartite soft-alignment
+  with a DF-weighted **document-centroid** cosine of the same centered subgoals
+  (`yarn test-length-norm`). Same release also restores true pairwise cosine
+  (`A @ B.T`); v4–v7 accidentally sliced embedding coordinates via `np.ix_`.
 - **Goals-cosine similarity finds thematic/strategic-vision matches, not operational
   ones.** A real, confirmed МСС pair cooperating on a shared CNAP office scored only
   rank #132 of 253 on pure cosine — that kind of back-office cooperation needs a

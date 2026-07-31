@@ -50,7 +50,7 @@ def main() -> None:
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "pairCount": len(edges),
         "knownValidationPairs": known,
-        "method": "v7: 60% goals_cosine (hierarchy-aware) + 25% KSE geo + 15% KSE mss_network",
+        "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
         "model": "intfloat/multilingual-e5-small",
         "license": "CC BY 4.0 — see DATA-LICENSE.md",
         "warning": (

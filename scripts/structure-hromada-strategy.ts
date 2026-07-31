@@ -1,23 +1,28 @@
 /**
- * Write a pre-structured hromada JSON blob into NocoDB (and/or scripts/hromada-output/).
+ * Write a pre-structured hromada JSON blob into local stores (and optionally NocoDB).
  *
  * Structuring itself is done in-session (agent reads raw strategy text and produces
  * the schema JSON). This script only persists that JSON — no external LLM.
  *
+ * Preferred path (no remote DB): always writes `scripts/hromada-output/<name>.json`,
+ * and with `--write-release` upserts strategy fields into `data/releases/hromadas.json`
+ * (matched by Name). NocoDB `--write` remains optional sync to the shared W3I base.
+ *
  * Usage:
  *   yarn structure-hromada --name "Ніжинська громада" --json path/to/structured.json
+ *   yarn structure-hromada --name "..." --json structured.json --write-release
  *   yarn structure-hromada --name "..." --json structured.json --write
  *   yarn structure-hromada --name "..." --json structured.json --write --update 12
  *
  * Schema keys (snake_case in JSON file):
- *   goals | strategic_goals[] | operational_goals[]  (goals flattened for NocoDB)
+ *   goals | strategic_goals[] | operational_goals[]  (goals flattened for release/NocoDB)
  *   projects, strengths, challenges, partners_mentioned, mss_agreements,
  *   mss_intents[] (quotes of explicit МСС language),
  *   source_quality ("full-strategy"|"partial"|"proxy-info"), confidence_notes,
  *   donors_programs (string[])
  *
- * Hierarchy fields are kept in the local hromada-output JSON; NocoDB still
- * receives flat Goals (strategic + operational lines joined by newline).
+ * Hierarchy fields are kept in the local hromada-output JSON; the release row
+ * still stores flat Goals (strategic + operational lines joined by newline).
  */
 
 import "dotenv/config";
@@ -60,8 +65,83 @@ function parseArgs() {
         name: get("--name"),
         json: get("--json"),
         write: args.includes("--write"),
+        writeRelease: args.includes("--write-release"),
         updateId: get("--update"),
     };
+}
+
+function normalizeNameKey(name: string): string {
+    return name
+        .toLowerCase()
+        .replace(/\s+(міська|сільська|селищна)\s+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function upsertRelease(name: string, structured: any) {
+    const releasePath = path.join(__dirname, "..", "data", "releases", "hromadas.json");
+    const manifestPath = path.join(__dirname, "..", "data", "releases", "hromadas.manifest.json");
+    if (!fs.existsSync(releasePath)) {
+        console.error(`Missing ${releasePath} — cannot --write-release.`);
+        process.exit(1);
+    }
+    const rows: any[] = JSON.parse(fs.readFileSync(releasePath, "utf-8"));
+    if (!Array.isArray(rows)) {
+        console.error("data/releases/hromadas.json must be a JSON array.");
+        process.exit(1);
+    }
+    const key = normalizeNameKey(name);
+    const idx = rows.findIndex(
+        (r) => r?.Name === name || (r?.Name && normalizeNameKey(String(r.Name)) === key),
+    );
+    if (idx < 0) {
+        console.error(
+            `No row in hromadas.json matching "${name}". ` +
+                "Add metadata (Name/Katottg/Oblast/…) to the release first, then retry --write-release.",
+        );
+        process.exit(1);
+    }
+    const prev = rows[idx];
+    rows[idx] = {
+        ...prev,
+        Goals: structured.goals,
+        Projects: structured.projects,
+        Strengths: structured.strengths,
+        Challenges: structured.challenges,
+        PartnersMentioned: structured.partners_mentioned,
+        MSSAgreements: structured.mss_agreements,
+        SourceQuality: structured.source_quality,
+        ExtractedAt: new Date().toISOString(),
+        DonorsPrograms:
+            Array.isArray(structured.donors_programs) && structured.donors_programs.length
+                ? structured.donors_programs
+                : prev.DonorsPrograms ?? [],
+    };
+    fs.writeFileSync(releasePath, JSON.stringify(rows, null, 2) + "\n", "utf-8");
+
+    let manifest: Record<string, unknown> = {};
+    if (fs.existsSync(manifestPath)) {
+        try {
+            manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
+        } catch {
+            manifest = {};
+        }
+    }
+    const textMined = rows.filter((r) => r.SourceQuality != null).length;
+    const portalUrlRows = rows.filter((r) => r.PortalUrl).length;
+    manifest = {
+        ...manifest,
+        generatedAt: new Date().toISOString(),
+        source: "local:structure-hromada --write-release",
+        totalRows: rows.length,
+        textMinedRows: textMined,
+        portalUrlRows,
+        schema: "see docs/hromadas-schema.md",
+        license: "CC BY 4.0 — see DATA-LICENSE.md",
+        lastUpsert: name,
+    };
+    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n", "utf-8");
+    console.log(`Upserted strategy fields into data/releases/hromadas.json (row ${idx}: ${rows[idx].Name}).`);
 }
 
 function textOfGoal(g: unknown): string {
@@ -145,10 +225,10 @@ async function writeToNocoDB(name: string, structured: any, updateId?: string) {
 }
 
 async function main() {
-    const { name, json, write, updateId } = parseArgs();
+    const { name, json, write, writeRelease, updateId } = parseArgs();
     if (!name || !json) {
         console.error(
-            'Usage: yarn structure-hromada --name "<hromada name>" --json <structured.json> [--write] [--update <rowId>]',
+            'Usage: yarn structure-hromada --name "<hromada name>" --json <structured.json> [--write-release] [--write] [--update <rowId>]',
         );
         process.exit(1);
     }
@@ -168,10 +248,16 @@ async function main() {
         );
     }
 
+    if (writeRelease) {
+        upsertRelease(name, structured);
+    }
+
     if (write) {
         await writeToNocoDB(name, structured, updateId);
-    } else {
-        console.log("\nNot written to NocoDB (pass --write to insert, --update <rowId> to update an existing row).");
+    } else if (!writeRelease) {
+        console.log(
+            "\nLocal only (hromada-output). Pass --write-release to upsert data/releases/hromadas.json, and/or --write for NocoDB.",
+        );
     }
 }
 
