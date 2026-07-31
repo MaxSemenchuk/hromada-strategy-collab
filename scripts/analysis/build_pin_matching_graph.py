@@ -287,6 +287,15 @@ def explain_fields(e: dict) -> dict:
     themes = e.get("themes")
     if isinstance(themes, list) and themes:
         out["themes"] = [str(t).strip() for t in themes if t][:6]
+    for key in (
+        "suggested_theme",
+        "suggested_form",
+        "suggest_confidence",
+        "suggest_rationale",
+        "suggest_caveat",
+    ):
+        if e.get(key):
+            out[key] = e[key]
     pairs = e.get("goal_pairs")
     if isinstance(pairs, list) and pairs:
         out["goal_pairs"] = pairs[:3]

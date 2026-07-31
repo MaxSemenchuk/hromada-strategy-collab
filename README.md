@@ -106,6 +106,7 @@ docs/                             # GitHub Pages site root (see docs/README.md)
 internal/
 └── outreach-messages.md          # draft stakeholder outreach copy — not part of the dataset, not for public reuse
 REFERENCES.md                     # theoretical grounding — network governance, IMC, institutional diversity
+docs/mss-cooperation-research.md  # DOBRE bottleneck thesis, МСС forms/procedure, ЗП 11412, theme/form roadmap
 LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see License & data below
 ```
 
@@ -207,7 +208,8 @@ yarn export-hromadas:snapshot
 
 # Recompute matching edges (v7.1: goals + length/hub blend + KSE geo + mss)
 # Combined score ≠ pure strategy match — also writes track labels + dual slices
-yarn match && yarn export-matching-edges && yarn test-length-norm && yarn test-known-pairs && yarn report-pin-corpus && yarn test-tracks && yarn build-matches-preview
+# export-matching-edges also adds fiscal/DREAM boost + suggested_theme/form (score unchanged)
+yarn match && yarn export-matching-edges && yarn test-length-norm && yarn test-known-pairs && yarn report-pin-corpus && yarn test-tracks && yarn test-mss-suggest && yarn build-matches-preview
 
 # Hierarchy + explicit МСС language + complementary (separate from combined score)
 yarn build-goals-hierarchy

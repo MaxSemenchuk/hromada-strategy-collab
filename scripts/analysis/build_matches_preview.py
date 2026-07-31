@@ -22,7 +22,7 @@ def short_name(full: str) -> str:
 
 
 def slim(e: dict) -> dict:
-    return {
+    out = {
         "a": e["a"],
         "b": e["b"],
         "score": e.get("score"),
@@ -35,6 +35,16 @@ def slim(e: dict) -> dict:
         "b_short": short_name(e["b"]),
         **({"rank": e["rank"]} if e.get("rank") is not None else {}),
     }
+    for key in (
+        "suggested_theme",
+        "suggested_form",
+        "suggest_confidence",
+        "suggest_rationale",
+        "suggest_caveat",
+    ):
+        if e.get(key):
+            out[key] = e[key]
+    return out
 
 
 def main() -> None:

@@ -10,7 +10,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.95,
     "dream_overlap": 0.667,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Рівненська міська територіальна громада",
@@ -23,7 +29,13 @@
     "track": "thematic",
     "fiscal_similarity": null,
     "dream_overlap": null,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -36,7 +48,13 @@
     "track": "thematic",
     "fiscal_similarity": null,
     "dream_overlap": null,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Великодимерська селищна територіальна громада",
@@ -49,7 +67,13 @@
     "track": "thematic",
     "fiscal_similarity": null,
     "dream_overlap": null,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -62,7 +86,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.819,
     "dream_overlap": 0.667,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Коростенська міська територіальна громада",
@@ -75,7 +105,13 @@
     "track": "thematic",
     "fiscal_similarity": null,
     "dream_overlap": null,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Рівненська міська територіальна громада",
@@ -88,7 +124,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.887,
     "dream_overlap": 0.429,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Поводження з відходами",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · схожа стратегія"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -101,7 +143,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.932,
     "dream_overlap": 0.667,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Рокитнівська селищна територіальна громада",
@@ -114,7 +162,13 @@
     "track": "thematic",
     "fiscal_similarity": null,
     "dream_overlap": null,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Коростенська міська територіальна громада",
@@ -127,7 +181,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.895,
     "dream_overlap": 0.429,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Ганнівська сільська територіальна громада",
@@ -140,7 +200,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.907,
     "dream_overlap": 0.5,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Рівненська міська територіальна громада",
@@ -153,7 +219,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.514,
     "dream_overlap": 0.667,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Новомосковська міська територіальна громада",
@@ -166,7 +238,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.989,
     "dream_overlap": 0.429,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Рівненська міська територіальна громада",
@@ -179,7 +257,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.992,
     "dream_overlap": 1.0,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -192,7 +276,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.924,
     "dream_overlap": 0.667,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
@@ -205,7 +295,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.95,
     "dream_overlap": 0.4,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -218,7 +314,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.446,
     "dream_overlap": 0.429,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Рівненська міська територіальна громада",
@@ -231,7 +333,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.564,
     "dream_overlap": 0.429,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Лозівська міська територіальна громада",
@@ -244,7 +352,13 @@
     "track": "thematic",
     "fiscal_similarity": null,
     "dream_overlap": null,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Вашковецька сільська територіальна громада",
@@ -257,7 +371,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.562,
     "dream_overlap": 0.167,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Лозівська міська територіальна громада",
@@ -270,7 +390,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.851,
     "dream_overlap": 0.429,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Косівська міська територіальна громада",
@@ -283,7 +409,13 @@
     "track": "thematic",
     "fiscal_similarity": null,
     "dream_overlap": null,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Зазимська сільська територіальна громада",
@@ -296,7 +428,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.599,
     "dream_overlap": 0.429,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Ганнівська сільська територіальна громада",
@@ -309,7 +447,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.779,
     "dream_overlap": 0.4,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Ганнівська сільська територіальна громада",
@@ -322,7 +466,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.46,
     "dream_overlap": null,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Литовезька сільська територіальна громада",
@@ -335,7 +485,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.751,
     "dream_overlap": 0.125,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Литовезька сільська територіальна громада",
@@ -348,7 +504,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.878,
     "dream_overlap": 0.0,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Рівненська міська територіальна громада",
@@ -361,7 +523,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.737,
     "dream_overlap": 0.667,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Бердичівська міська територіальна громада",
@@ -374,7 +542,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.8,
     "dream_overlap": 0.667,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -387,7 +561,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.496,
     "dream_overlap": 0.429,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Зазимська сільська територіальна громада",
@@ -400,7 +580,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.239,
     "dream_overlap": null,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Зазимська сільська територіальна громада",
@@ -413,7 +599,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.873,
     "dream_overlap": 0.2,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Кропивницька міська територіальна громада",
@@ -426,7 +618,13 @@
     "track": "thematic",
     "fiscal_similarity": null,
     "dream_overlap": 0.4,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
@@ -439,7 +637,13 @@
     "track": "thematic",
     "fiscal_similarity": 1.0,
     "dream_overlap": 0.4,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Рокитнівська селищна територіальна громада",
@@ -452,7 +656,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.777,
     "dream_overlap": 0.667,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Кам'янська міська територіальна громада",
@@ -465,7 +675,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.769,
     "dream_overlap": 0.429,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Литовезька сільська територіальна громада",
@@ -478,7 +694,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.971,
     "dream_overlap": 0.2,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Тернопільська міська територіальна громада",
@@ -491,7 +713,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.669,
     "dream_overlap": 0.667,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Литовезька сільська територіальна громада",
@@ -504,7 +732,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.411,
     "dream_overlap": 0.2,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Мукачівська міська територіальна громада",
@@ -517,7 +751,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.432,
     "dream_overlap": 0.25,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Полтавська міська територіальна громада",
@@ -530,7 +770,13 @@
     "track": "thematic",
     "fiscal_similarity": null,
     "dream_overlap": 0.125,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Криворізька міська територіальна громада",
@@ -543,7 +789,13 @@
     "track": "thematic",
     "fiscal_similarity": null,
     "dream_overlap": 0.25,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Українська міська територіальна громада",
@@ -556,7 +808,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.0,
     "dream_overlap": null,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Мукачівська міська територіальна громада",
@@ -569,7 +827,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.583,
     "dream_overlap": 0.125,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Вижницька міська територіальна громада",
@@ -582,7 +846,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.48,
     "dream_overlap": 0.4,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
@@ -595,7 +865,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.776,
     "dream_overlap": 0.4,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
@@ -608,7 +884,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.627,
     "dream_overlap": 0.167,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Литовезька сільська територіальна громада",
@@ -621,7 +903,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.804,
     "dream_overlap": 0.143,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Новомосковська міська територіальна громада",
@@ -634,7 +922,13 @@
     "track": "thematic",
     "fiscal_similarity": 0.844,
     "dream_overlap": 0.667,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
   },
   {
     "a": "Полтавська міська територіальна громада",
@@ -647,6 +941,12 @@
     "track": "thematic",
     "fiscal_similarity": null,
     "dream_overlap": 0.429,
-    "operational_score": null
+    "operational_score": null,
+    "suggested_theme": "Освіта",
+    "suggested_theme_id": "education",
+    "suggested_form": "спільне утримання",
+    "suggested_form_id": "joint_finance",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Освіта» · правило за темою · схожа стратегія"
   }
 ]

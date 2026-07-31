@@ -18,10 +18,13 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+from mss_suggest import SECTOR_TO_THEME, annotate_edges, theme_label  # noqa: E402
 HROMADAS = ROOT / "data" / "releases" / "hromadas.json"
 RESOURCES = ROOT / "data" / "releases" / "hromada-resources.json"
 DREAM = ROOT / "data" / "releases" / "dream-priorities.json"
@@ -326,6 +329,24 @@ def main() -> None:
     # Keep a publishable top slice
     edges = edges[:400]
 
+    # Seed theme from complementary sector hits before rule-based package
+    for e in edges:
+        tags: list[str] = []
+        for reason in e.get("reasons") or []:
+            for sector in SECTOR_TO_THEME:
+                if sector in reason or f"«{sector}»" in reason:
+                    tags.append(sector)
+                # reasons use short Ukrainian sector names sometimes
+                head = sector.split()[0]
+                if head and head in reason:
+                    tags.append(sector)
+        if tags:
+            tid = SECTOR_TO_THEME.get(tags[0])
+            if tid:
+                e["theme"] = theme_label(tid)
+
+    suggest = annotate_edges(edges)
+
     generated = datetime.now(timezone.utc).isoformat()
     OUT.write_text(json.dumps(edges, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     MANIFEST.write_text(
@@ -333,9 +354,14 @@ def main() -> None:
             {
                 "generatedAt": generated,
                 "pairCount": len(edges),
+                "mssSuggest": {
+                    "annotated": suggest["annotated"],
+                    "withTheme": suggest["with_theme"],
+                },
                 "method": (
                     "complementary v2: weighted DREAM/Strengths/resource → Challenges; "
-                    "score=1-exp(-0.4·w) ×1.2 same-oblast; min weight 1.2; prefer same-oblast shortlist"
+                    "score=1-exp(-0.4·w) ×1.2 same-oblast; min weight 1.2; prefer same-oblast shortlist; "
+                    "+ suggested_theme/form (mss_suggest)"
                 ),
                 "warning": (
                     "Hypotheses only — not v6 strategy matching, not known=true. "
@@ -364,6 +390,8 @@ def main() -> None:
                 "b_short": e["b_short"],
                 "complementary_score": e["complementary_score"],
                 "same_oblast": e["same_oblast"],
+                "suggested_theme": e.get("suggested_theme"),
+                "suggested_form": e.get("suggested_form"),
                 "reasons": e["reasons"][:3],
             }
             for e in edges[:40]
@@ -373,9 +401,15 @@ def main() -> None:
 
     print(f"Wrote {OUT.relative_to(ROOT)} ({len(edges)} edges)")
     print(f"Wrote {PREVIEW.relative_to(ROOT)}")
+    print(
+        f"mss suggest: {suggest['with_theme']}/{suggest['annotated']} with theme"
+    )
     print("Top 5:")
     for e in edges[:5]:
-        print(f"  {e['complementary_score']:.3f} {e['a_short']} ↔ {e['b_short']}: {e['reasons'][0]}")
+        print(
+            f"  {e['complementary_score']:.3f} {e['a_short']} ↔ {e['b_short']}: "
+            f"{e.get('suggested_theme')}/{e.get('suggested_form')} — {e['reasons'][0]}"
+        )
 
 
 if __name__ == "__main__":

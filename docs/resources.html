@@ -153,6 +153,8 @@
     .name { font-weight: 700; color: var(--site-ink); }
     .meta { font-size: 0.78rem; color: var(--site-faint); }
     .sectors-cell { font-size: 0.8rem; color: var(--site-muted); }
+    .comp-cell { font-variant-numeric: tabular-nums; line-height: 1.35; white-space: nowrap; }
+    .comp-cell .meta { margin-top: 0.1rem; }
     .empty { color: var(--site-faint); font-size: 0.9rem; padding: 0.8rem 0; }
     .caveat {
       font-size: 0.85rem; color: var(--site-faint); font-style: italic;
@@ -227,7 +229,7 @@
       <div class="cov"><span class="num" id="c-rows">—</span><span class="lbl" data-i18n="cov.rows">громад у зрізі</span></div>
       <div class="cov"><span class="num" id="c-dream">—</span><span class="lbl" data-i18n="cov.dream">з проєктами DREAM</span></div>
       <div class="cov"><span class="num" id="c-pcap">—</span><span class="lbl" data-i18n="cov.pcap">з доходом на особу</span></div>
-      <div class="cov"><span class="num" id="c-comp">—</span><span class="lbl" data-i18n="cov.comp">competence відомий</span></div>
+      <div class="cov"><span class="num" id="c-comp">—</span><span class="lbl" data-i18n="cov.comp">молодь/бізнес відомі</span></div>
     </div>
 
     <p class="section-kicker" data-i18n="sectors.k">Сектори DREAM (за кількістю)</p>
@@ -278,7 +280,7 @@
               <th class="num" data-i18n="th.dream">DREAM</th>
               <th data-i18n="th.sectors">Топ-сектори</th>
               <th class="num" data-i18n="th.health">Мед.</th>
-              <th data-i18n="th.comp">Competence</th>
+              <th data-i18n="th.comp">Молодь / бізнес</th>
             </tr>
           </thead>
           <tbody id="tbody">
@@ -290,7 +292,7 @@
 
     <p class="caveat" id="caveat" data-i18n-html="caveat">
       Proxy-шар: не підміняє Goals і не є «стратегічним матчингом».
-      Competence / health missing ≠ нуль. DREAM — гіпотези пріоритетів за проєктами.
+      Молодь/бізнес і мед. missing ≠ нуль. DREAM — гіпотези пріоритетів за проєктами.
     </p>
   </div>
 
@@ -317,7 +319,7 @@ window.PAGE_I18N = {
     "cov.rows": "громад у зрізі",
     "cov.dream": "з проєктами DREAM",
     "cov.pcap": "з доходом на особу",
-    "cov.comp": "competence відомий",
+    "cov.comp": "молодь/бізнес відомі",
     "sectors.k": "Сектори DREAM (за кількістю)",
     "sectors.hint": "Показано громади з сектором «{sector}».",
     "sectors.clear": "Скинути",
@@ -347,12 +349,13 @@ window.PAGE_I18N = {
     "th.dream": "DREAM",
     "th.sectors": "Топ-сектори",
     "th.health": "Мед.",
-    "th.comp": "Competence",
-    "comp.yes": "відомо",
+    "th.comp": "Молодь / бізнес",
+    "comp.youth": "молодь",
+    "comp.biz": "бізнес",
     "comp.no": "—",
     "empty": "Нічого не знайдено за цим запитом.",
     "loading": "Завантаження…",
-    "caveat": "Proxy-шар: не підміняє Goals і не є «стратегічним матчингом». Competence / health missing ≠ нуль. DREAM — гіпотези пріоритетів за проєктами.",
+    "caveat": "Proxy-шар: не підміняє Goals і не є «стратегічним матчингом». Молодь/бізнес і мед. missing ≠ нуль. DREAM — гіпотези пріоритетів за проєктами.",
     "err.load": "Не вдалося завантажити resources-preview.json: ",
     "footer.note": "Дані: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">hromada-resources.json</a> · <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">dream-priorities.json</a> · <a href=\"matches.html\">Кандидати</a> · <a href=\"index.html\">Про проєкт</a>"
   },
@@ -370,7 +373,7 @@ window.PAGE_I18N = {
     "cov.rows": "hromadas in slice",
     "cov.dream": "with DREAM projects",
     "cov.pcap": "with income / capita",
-    "cov.comp": "competence known",
+    "cov.comp": "youth/business known",
     "sectors.k": "DREAM sectors (by count)",
     "sectors.hint": "Showing hromadas with sector “{sector}”.",
     "sectors.clear": "Clear",
@@ -400,12 +403,13 @@ window.PAGE_I18N = {
     "th.dream": "DREAM",
     "th.sectors": "Top sectors",
     "th.health": "Health",
-    "th.comp": "Competence",
-    "comp.yes": "known",
+    "th.comp": "Youth / business",
+    "comp.youth": "youth",
+    "comp.biz": "business",
     "comp.no": "—",
     "empty": "Nothing matched this query.",
     "loading": "Loading…",
-    "caveat": "Proxy layer: does not replace Goals and is not strategy matching. Competence / health missing ≠ zero. DREAM = priority hypotheses from projects.",
+    "caveat": "Proxy layer: does not replace Goals and is not strategy matching. Youth/business and health missing ≠ zero. DREAM = priority hypotheses from projects.",
     "err.load": "Failed to load resources-preview.json: ",
     "footer.note": "Data: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">hromada-resources.json</a> · <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">dream-priorities.json</a> · <a href=\"matches.html\">Candidates</a> · <a href=\"index.html\">About</a>"
   }
@@ -635,8 +639,11 @@ window.PAGE_I18N = {
               ? fmtInt((r.health_primary || 0) + (r.health_specialized || 0))
               : "—";
             var comp = r.competence_known
-              ? t("comp.yes") + " · Y" + fmtInt(r.youth_centers) + "/B" + fmtInt(r.business_support_centers)
-              : t("comp.no");
+              ? '<div class="comp-cell">'
+                + "<div>" + esc(t("comp.youth")) + " " + fmtInt(r.youth_centers) + "</div>"
+                + '<div class="meta">' + esc(t("comp.biz")) + " " + fmtInt(r.business_support_centers) + "</div>"
+                + "</div>"
+              : esc(t("comp.no"));
             var dreamCell = activeSector
               ? fmtInt(sectorCount(r, activeSector))
               : ((r.dream_projects || 0) > 0 ? fmtInt(r.dream_projects) : "—");
@@ -652,7 +659,7 @@ window.PAGE_I18N = {
               + '<td class="num">' + dreamCell + "</td>"
               + '<td class="sectors-cell">' + sectorsCell + "</td>"
               + '<td class="num">' + health + "</td>"
-              + "<td>" + esc(comp) + "</td>"
+              + "<td>" + comp + "</td>"
               + "</tr>";
           }).join("")
         : '<tr><td colspan="6"><div class="empty">' + esc(t(activeSector ? "empty.sector" : "empty")) + "</div></td></tr>";
