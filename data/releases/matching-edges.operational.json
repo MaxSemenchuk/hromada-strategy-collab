@@ -2,8 +2,8 @@
   {
     "a": "Обухівська селищна територіальна громада",
     "b": "Обухівська міська територіальна громада",
-    "score": 0.273,
-    "goals_cosine": 0.039,
+    "score": 0.286,
+    "goals_cosine": 0.06,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -16,13 +16,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
   },
   {
     "a": "Галицька міська територіальна громада",
     "b": "Більшівцівська селищна територіальна громада",
-    "score": 0.32,
-    "goals_cosine": 0.116,
+    "score": 0.468,
+    "goals_cosine": 0.363,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -35,13 +35,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Більшівцівська селищна територіальна громада",
-    "score": 0.249,
-    "goals_cosine": 0.061,
+    "score": 0.39,
+    "goals_cosine": 0.295,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -54,13 +54,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Божедарівська селищна територіальна громада",
     "b": "Лихівська селищна територіальна громада",
-    "score": 0.23,
-    "goals_cosine": 0.03,
+    "score": 0.325,
+    "goals_cosine": 0.188,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -73,13 +73,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
   },
   {
     "a": "Скалатська міська територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.211,
-    "goals_cosine": -0.003,
+    "score": 0.317,
+    "goals_cosine": 0.174,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -92,13 +92,13 @@
     "suggested_form": "спільне утримання",
     "suggested_form_id": "joint_finance",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід"
+    "suggest_rationale": "тема «Освіта» · правило за темою · зручний сусід"
   },
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Великогаївська сільська територіальна громада",
-    "score": 0.257,
-    "goals_cosine": 0.011,
+    "score": 0.352,
+    "goals_cosine": 0.169,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -111,13 +111,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
   },
   {
     "a": "Дніпровська міська територіальна громада",
     "b": "Обухівська селищна територіальна громада",
-    "score": 0.26,
-    "goals_cosine": 0.078,
+    "score": 0.271,
+    "goals_cosine": 0.098,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -130,13 +130,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Кам'янська міська територіальна громада",
     "b": "Обухівська селищна територіальна громада",
-    "score": 0.228,
-    "goals_cosine": 0.026,
+    "score": 0.212,
+    "goals_cosine": 0.0,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -149,13 +149,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Новомосковська міська територіальна громада",
     "b": "Обухівська селищна територіальна громада",
-    "score": 0.21,
-    "goals_cosine": -0.004,
+    "score": 0.212,
+    "goals_cosine": 0.0,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -168,13 +168,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
   },
   {
     "a": "Дніпровська міська територіальна громада",
     "b": "Слобожанська селищна територіальна громада",
-    "score": 0.281,
-    "goals_cosine": 0.051,
+    "score": 0.25,
+    "goals_cosine": 0.0,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -187,13 +187,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Галицька міська територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.223,
-    "goals_cosine": 0.018,
+    "score": 0.219,
+    "goals_cosine": 0.011,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -206,13 +206,13 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
   },
   {
     "a": "Великоберезовицька селищна територіальна громада",
     "b": "Скалатська міська територіальна громада",
-    "score": 0.196,
-    "goals_cosine": -0.027,
+    "score": 0.403,
+    "goals_cosine": 0.318,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -225,13 +225,13 @@
     "suggested_form": "спільне утримання",
     "suggested_form_id": "joint_finance",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід"
+    "suggest_rationale": "тема «Освіта» · правило за темою · зручний сусід"
   },
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Великоберезовицька селищна територіальна громада",
-    "score": 0.261,
-    "goals_cosine": 0.018,
+    "score": 0.35,
+    "goals_cosine": 0.167,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -244,13 +244,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Кам'янська міська територіальна громада",
     "b": "Обухівська міська територіальна громада",
-    "score": 0.243,
-    "goals_cosine": 0.05,
+    "score": 0.264,
+    "goals_cosine": 0.086,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -263,13 +263,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Бурштинська міська територіальна громада",
     "b": "Більшівцівська селищна територіальна громада",
-    "score": 0.275,
-    "goals_cosine": 0.042,
+    "score": 0.377,
+    "goals_cosine": 0.212,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -282,13 +282,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Новомосковська міська територіальна громада",
     "b": "Обухівська міська територіальна громада",
-    "score": 0.248,
-    "goals_cosine": 0.06,
+    "score": 0.28,
+    "goals_cosine": 0.112,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -301,13 +301,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Більшівцівська селищна територіальна громада",
     "b": "Дубовецька сільська територіальна громада",
-    "score": 0.3,
-    "goals_cosine": 0.084,
+    "score": 0.557,
+    "goals_cosine": 0.511,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -320,13 +320,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Більшівцівська селищна територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.225,
-    "goals_cosine": 0.021,
+    "score": 0.31,
+    "goals_cosine": 0.162,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -339,13 +339,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Великоберезовицька селищна територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.245,
-    "goals_cosine": 0.055,
+    "score": 0.318,
+    "goals_cosine": 0.176,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -358,13 +358,13 @@
     "suggested_form": "спільне утримання",
     "suggested_form_id": "joint_finance",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід"
+    "suggest_rationale": "тема «Освіта» · правило за темою · зручний сусід"
   },
   {
     "a": "Козелецька селищна територіальна громада",
     "b": "Великодимерська селищна територіальна громада",
-    "score": 0.2,
-    "goals_cosine": -0.02,
+    "score": 0.22,
+    "goals_cosine": 0.012,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -377,13 +377,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Зазимська сільська територіальна громада",
     "b": "Великодимерська селищна територіальна громада",
-    "score": 0.228,
-    "goals_cosine": 0.026,
+    "score": 0.212,
+    "goals_cosine": 0.0,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -396,13 +396,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Дніпровська міська територіальна громада",
     "b": "Новомосковська міська територіальна громада",
-    "score": 0.25,
-    "goals_cosine": 0.063,
+    "score": 0.326,
+    "goals_cosine": 0.189,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -415,13 +415,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «Водопостачання / водовідведення» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Ужгородська міська територіальна громада",
     "b": "Мукачівська міська територіальна громада",
-    "score": 0.259,
-    "goals_cosine": 0.078,
+    "score": 0.353,
+    "goals_cosine": 0.235,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -434,13 +434,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Великоберезовицька селищна територіальна громада",
     "b": "Великогаївська сільська територіальна громада",
-    "score": 0.272,
-    "goals_cosine": 0.036,
+    "score": 0.348,
+    "goals_cosine": 0.163,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -453,13 +453,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
   },
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.184,
-    "goals_cosine": -0.048,
+    "score": 0.294,
+    "goals_cosine": 0.136,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -472,13 +472,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Скалатська міська територіальна громада",
-    "score": 0.148,
-    "goals_cosine": -0.107,
+    "score": 0.33,
+    "goals_cosine": 0.196,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -491,13 +491,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Великогаївська сільська територіальна громада",
     "b": "Скалатська міська територіальна громада",
-    "score": 0.197,
-    "goals_cosine": -0.026,
+    "score": 0.247,
+    "goals_cosine": 0.057,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -510,13 +510,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
   },
   {
     "a": "Дніпровська міська територіальна громада",
     "b": "Обухівська міська територіальна громада",
-    "score": 0.255,
-    "goals_cosine": 0.07,
+    "score": 0.29,
+    "goals_cosine": 0.129,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -529,13 +529,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Кам'янська міська територіальна громада",
     "b": "Слобожанська селищна територіальна громада",
-    "score": 0.229,
-    "goals_cosine": 0.028,
+    "score": 0.416,
+    "goals_cosine": 0.339,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -548,13 +548,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
   },
   {
     "a": "Дніпровська міська територіальна громада",
     "b": "Кам'янська міська територіальна громада",
-    "score": 0.228,
-    "goals_cosine": 0.027,
+    "score": 0.212,
+    "goals_cosine": 0.0,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -573,8 +573,8 @@
   {
     "a": "Бурштинська міська територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.269,
-    "goals_cosine": 0.094,
+    "score": 0.403,
+    "goals_cosine": 0.318,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -587,13 +587,13 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
   },
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.238,
-    "goals_cosine": 0.042,
+    "score": 0.257,
+    "goals_cosine": 0.073,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -606,13 +606,13 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
   },
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Галицька міська територіальна громада",
-    "score": 0.236,
-    "goals_cosine": 0.039,
+    "score": 0.318,
+    "goals_cosine": 0.176,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -625,13 +625,13 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
   },
   {
     "a": "Новомосковська міська територіальна громада",
     "b": "Слобожанська селищна територіальна громада",
-    "score": 0.242,
-    "goals_cosine": 0.049,
+    "score": 0.25,
+    "goals_cosine": 0.062,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -644,13 +644,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
   },
   {
     "a": "Великогаївська сільська територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.252,
-    "goals_cosine": 0.066,
+    "score": 0.228,
+    "goals_cosine": 0.025,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -663,13 +663,13 @@
     "suggested_form": "делегування",
     "suggested_form_id": "delegation",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
   },
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Бурштинська міська територіальна громада",
-    "score": 0.231,
-    "goals_cosine": 0.031,
+    "score": 0.301,
+    "goals_cosine": 0.148,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -682,13 +682,13 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
     "b": "Тульчинська міська територіальна громада",
-    "score": 0.221,
-    "goals_cosine": 0.014,
+    "score": 0.227,
+    "goals_cosine": 0.024,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -701,13 +701,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Дубовецька сільська територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.223,
-    "goals_cosine": 0.018,
+    "score": 0.317,
+    "goals_cosine": 0.174,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -720,13 +720,13 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   },
   {
     "a": "Мукачівська міська територіальна громада",
     "b": "Білківська сільська територіальна громада",
-    "score": 0.206,
-    "goals_cosine": -0.012,
+    "score": 0.299,
+    "goals_cosine": 0.144,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -739,13 +739,13 @@
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід"
+    "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
     "b": "Гайсинська міська територіальна громада",
-    "score": 0.239,
-    "goals_cosine": 0.045,
+    "score": 0.271,
+    "goals_cosine": 0.098,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -758,6 +758,6 @@
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід"
+    "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
   }
 ]

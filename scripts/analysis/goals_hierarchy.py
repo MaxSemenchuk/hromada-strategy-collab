@@ -33,9 +33,42 @@ def split_goal_lines(goals: str | list | None) -> list[str]:
     if not goals:
         return []
     if isinstance(goals, list):
-        return [str(x).strip(" \t-•\n") for x in goals if str(x).strip()]
-    lines = [l.strip(" \t-•\n") for l in re.split(r"\n", str(goals))]
+        raw = [str(x).strip(" \t-•\n") for x in goals if str(x).strip()]
+    else:
+        raw = [l.strip(" \t-•\n") for l in re.split(r"\n", str(goals))]
+    lines: list[str] = []
+    for line in raw:
+        if not line:
+            continue
+        lines.extend(_expand_long_goal_line(line))
     return [l for l in lines if len(l) > 15]
+
+
+# Compressed "all priorities in one paragraph" extractions (common in partial /
+# proxy rows). Splitting them is length/hub mitigation: otherwise two kitchen-sink
+# blobs cosine-match as if they shared a focused profile.
+_LONG_LINE_CHARS = 120
+_GOAL_MARKER_SPLIT = re.compile(
+    r"(?=(?:Стратегічн\w*\s+(?:ціль|напрям)|Основний напрям|Ціль)\s*[.:]?\s*[0-9A-CА-Яа-я0-9])",
+    re.I,
+)
+_CLAUSE_SPLIT = re.compile(r"\s+[-–—]\s+|;\s+")
+
+
+def _expand_long_goal_line(line: str) -> list[str]:
+    if len(line) <= _LONG_LINE_CHARS:
+        return [line]
+    marked = [p.strip(" \t-•,") for p in _GOAL_MARKER_SPLIT.split(line) if p.strip()]
+    if len(marked) > 1:
+        out: list[str] = []
+        for part in marked:
+            out.extend(_expand_long_goal_line(part) if len(part) > _LONG_LINE_CHARS else [part])
+        return out or [line]
+    chunks = [c.strip(" \t-•,") for c in _CLAUSE_SPLIT.split(line)]
+    chunks = [c for c in chunks if len(c) > 20]
+    if len(chunks) >= 2:
+        return chunks
+    return [line]
 
 
 def classify_line(line: str) -> str:
@@ -114,16 +147,20 @@ def record_subgoals(
         hier = hierarchy_index.get(name) or (hierarchy_index.get(katottg) if katottg else None)
 
     if hier and (hier.get("strategic_goals") or hier.get("operational_goals")):
-        strat = [
+        strat_raw = [
             (g.get("text") if isinstance(g, dict) else str(g)).strip()
             for g in (hier.get("strategic_goals") or [])
         ]
-        ops = [
+        ops_raw = [
             (g.get("text") if isinstance(g, dict) else str(g)).strip()
             for g in (hier.get("operational_goals") or [])
         ]
-        strat = [s for s in strat if len(s) > 15]
-        ops = [s for s in ops if len(s) > 15]
+        strat: list[str] = []
+        for s in strat_raw:
+            strat.extend(x for x in _expand_long_goal_line(s) if len(x) > 15)
+        ops: list[str] = []
+        for s in ops_raw:
+            ops.extend(x for x in _expand_long_goal_line(s) if len(x) > 15)
         all_lines = ops + strat
         if not all_lines:
             all_lines = split_goal_lines(goals_text)
