@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T10:17:37.530838+00:00",
+  "generatedAt": "2026-07-31T10:30:29.561863+00:00",
   "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
   "pairCount": 2278,
   "corpusGoals": 68,
@@ -29,7 +29,11 @@
       "known": true,
       "track": "mixed",
       "a_short": "Ніжинська",
-      "b_short": "Козелецька"
+      "b_short": "Козелецька",
+      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Водопостачання / водовідведення» · правило за темою"
     },
     {
       "a": "Ніжинська міська територіальна громада",
@@ -41,7 +45,11 @@
       "known": true,
       "track": "mixed",
       "a_short": "Ніжинська",
-      "b_short": "Батуринська"
+      "b_short": "Батуринська",
+      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Водопостачання / водовідведення» · правило за темою"
     },
     {
       "a": "Батуринська міська територіальна громада",
@@ -53,7 +61,11 @@
       "known": true,
       "track": "mixed",
       "a_short": "Батуринська",
-      "b_short": "Козелецька"
+      "b_short": "Козелецька",
+      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Водопостачання / водовідведення» · правило за темою"
     },
     {
       "a": "Слобожанська селищна територіальна громада",
@@ -65,7 +77,11 @@
       "known": true,
       "track": "operational",
       "a_short": "Слобожанська",
-      "b_short": "Обухівська"
+      "b_short": "Обухівська",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
     }
   ],
   "pinCorpus": [
@@ -211,7 +227,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Галицька",
-      "b_short": "Дубовецька"
+      "b_short": "Дубовецька",
+      "suggested_theme": "Поводження з відходами",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
     },
     {
       "a": "Більшівцівська селищна територіальна громада",
@@ -223,7 +243,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Більшівцівська",
-      "b_short": "Дубовецька"
+      "b_short": "Дубовецька",
+      "suggested_theme": "Поводження з відходами",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
     },
     {
       "a": "Косівська міська територіальна громада",
@@ -235,7 +259,11 @@
       "known": false,
       "track": "thematic",
       "a_short": "Косівська",
-      "b_short": "Рокитнівська"
+      "b_short": "Рокитнівська",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "suggest_confidence": "high",
+      "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -247,7 +275,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Вижницька",
-      "b_short": "Косівська"
+      "b_short": "Косівська",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -259,7 +291,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Галицька",
-      "b_short": "Більшівцівська"
+      "b_short": "Більшівцівська",
+      "suggested_theme": "Поводження з відходами",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
     },
     {
       "a": "Тернопільська міська територіальна громада",
@@ -271,7 +307,11 @@
       "known": false,
       "track": "thematic",
       "a_short": "Тернопільська",
-      "b_short": "Рівненська"
+      "b_short": "Рівненська",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "suggest_confidence": "high",
+      "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -283,7 +323,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Бурштинська",
-      "b_short": "Дубовецька"
+      "b_short": "Дубовецька",
+      "suggested_theme": "Поводження з відходами",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
     },
     {
       "a": "Кам'янська міська територіальна громада",
@@ -295,7 +339,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Кам'янська",
-      "b_short": "Слобожанська"
+      "b_short": "Слобожанська",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми"
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -307,7 +355,11 @@
       "known": false,
       "track": "mixed",
       "a_short": "Яремчанська",
-      "b_short": "Вижницька"
+      "b_short": "Вижницька",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою"
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -319,7 +371,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Бурштинська",
-      "b_short": "Рогатинська"
+      "b_short": "Рогатинська",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
     },
     {
       "a": "Великоберезовицька селищна територіальна громада",
@@ -331,7 +387,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Великоберезовицька",
-      "b_short": "Скалатська"
+      "b_short": "Скалатська",
+      "suggested_theme": "Освіта",
+      "suggested_form": "спільне утримання",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Освіта» · правило за темою · зручний сусід"
     },
     {
       "a": "Рівненська міська територіальна громада",
@@ -343,7 +403,11 @@
       "known": false,
       "track": "thematic",
       "a_short": "Рівненська",
-      "b_short": "Рокитнівська"
+      "b_short": "Рокитнівська",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "suggest_confidence": "high",
+      "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
     },
     {
       "a": "Новомосковська міська територіальна громада",
@@ -355,7 +419,11 @@
       "known": false,
       "track": "thematic",
       "a_short": "Новомосковська",
-      "b_short": "Запорізька"
+      "b_short": "Запорізька",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "suggest_confidence": "high",
+      "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
     },
     {
       "a": "Журавненська селищна територіальна громада",
@@ -367,7 +435,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Журавненська",
-      "b_short": "Більшівцівська"
+      "b_short": "Більшівцівська",
+      "suggested_theme": "Поводження з відходами",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -379,7 +451,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Галицька",
-      "b_short": "Бурштинська"
+      "b_short": "Бурштинська",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Туризм / кластер» · правило за темою · зручний сусід"
     },
     {
       "a": "Рівненська міська територіальна громада",
@@ -391,7 +467,11 @@
       "known": false,
       "track": "thematic",
       "a_short": "Рівненська",
-      "b_short": "Дунаївецька"
+      "b_short": "Дунаївецька",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "suggest_confidence": "high",
+      "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
     },
     {
       "a": "Тернопільська міська територіальна громада",
@@ -403,7 +483,11 @@
       "known": false,
       "track": "thematic",
       "a_short": "Тернопільська",
-      "b_short": "Дунаївецька"
+      "b_short": "Дунаївецька",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "suggest_confidence": "high",
+      "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -415,7 +499,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Бурштинська",
-      "b_short": "Більшівцівська"
+      "b_short": "Більшівцівська",
+      "suggested_theme": "Поводження з відходами",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами» · правило за темою · зручний сусід"
     },
     {
       "a": "Слобожанська селищна територіальна громада",
@@ -427,7 +515,11 @@
       "known": false,
       "track": "operational",
       "a_short": "Слобожанська",
-      "b_short": "Обухівська"
+      "b_short": "Обухівська",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід"
     },
     {
       "a": "Тернопільська міська територіальна громада",
@@ -439,7 +531,11 @@
       "known": false,
       "track": "thematic",
       "a_short": "Тернопільська",
-      "b_short": "Косівська"
+      "b_short": "Косівська",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "suggest_confidence": "high",
+      "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія"
     }
   ]
 }

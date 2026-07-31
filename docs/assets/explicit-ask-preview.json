@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T09:19:33.327333+00:00",
+  "generatedAt": "2026-07-30T14:32:27.582491+00:00",
   "caveat": "Explicit МСС language in strategy text — not registry-confirmed.",
   "intentHromadas": 16,
   "edgeCount": 13,
@@ -9,6 +9,8 @@
       "b_short": "Парафіївська",
       "explicit_ask_score": 0.95,
       "theme": "туризм",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "named neighbour in intent: «Договір про співробітництво «Створення туристичного кластеру «Місцями козацької сили»» — офіційно зареєстрований у реєст»"
       ]
@@ -18,6 +20,8 @@
       "b_short": "Слобожанська",
       "explicit_ask_score": 0.95,
       "theme": "ЦНАП",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
       "reasons": [
         "named neighbour in intent: «Формального стратегічного документа не знайдено. Реконструйовано з реальних діючих програм ради: підтримка вразливих кат»"
       ]
@@ -27,6 +31,8 @@
       "b_short": "Козелецька",
       "explicit_ask_score": 0.75,
       "theme": "туризм",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "обидві згадують МСС/кооперацію (тема: туризм)"
       ]
@@ -36,6 +42,8 @@
       "b_short": "Чернігівська",
       "explicit_ask_score": 0.75,
       "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "обидві згадують МСС/кооперацію"
       ]
@@ -45,6 +53,8 @@
       "b_short": "Дубовецька",
       "explicit_ask_score": 0.75,
       "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "обидві згадують МСС/кооперацію"
       ]
@@ -54,6 +64,8 @@
       "b_short": "Чернігівська",
       "explicit_ask_score": 0.75,
       "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "обидві згадують МСС/кооперацію"
       ]
@@ -63,6 +75,8 @@
       "b_short": "Батуринська",
       "explicit_ask_score": 0.75,
       "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "обидві згадують МСС/кооперацію"
       ]
@@ -72,6 +86,8 @@
       "b_short": "Козелецька",
       "explicit_ask_score": 0.75,
       "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "обидві згадують МСС/кооперацію"
       ]
@@ -81,6 +97,8 @@
       "b_short": "Чернігівська",
       "explicit_ask_score": 0.75,
       "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "обидві згадують МСС/кооперацію"
       ]
@@ -90,6 +108,8 @@
       "b_short": "Божедарівська",
       "explicit_ask_score": 0.75,
       "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "обидві згадують МСС/кооперацію"
       ]
@@ -99,6 +119,8 @@
       "b_short": "Лохвицька",
       "explicit_ask_score": 0.75,
       "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "обидві згадують МСС/кооперацію"
       ]
@@ -108,6 +130,8 @@
       "b_short": "Божедарівська",
       "explicit_ask_score": 0.75,
       "theme": "відходи",
+      "suggested_theme": "Поводження з відходами",
+      "suggested_form": "спільне КП",
       "reasons": [
         "обидві згадують МСС/кооперацію (тема: відходи)"
       ]
@@ -117,6 +141,8 @@
       "b_short": "Обухівська",
       "explicit_ask_score": 0.75,
       "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "обидві згадують МСС/кооперацію"
       ]

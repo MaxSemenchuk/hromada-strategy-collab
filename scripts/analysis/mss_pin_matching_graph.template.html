@@ -795,6 +795,11 @@ function neighborsOf(id) {
       reasons: e.reasons || [],
       agreements: e.agreements || [],
       goal_pairs: e.goal_pairs || [],
+      suggested_theme: e.suggested_theme,
+      suggested_form: e.suggested_form,
+      suggest_confidence: e.suggest_confidence,
+      suggest_rationale: e.suggest_rationale,
+      suggest_caveat: e.suggest_caveat,
       goals_cosine: e.goals_cosine,
       geo_score: e.geo_score,
       dream_overlap: e.dream_overlap,
@@ -863,6 +868,32 @@ function themesHtml(item) {
   );
 }
 
+function packageHtml(item) {
+  // Hypothesis IMC package (theme + legal form). Skip on registry PIN edges
+  // that already show agreement subjects — still OK on overlays.
+  if (!item.suggested_theme && !item.suggested_form) return '';
+  if (item.kind === 'pin' || item.kind === 'known' || item.kind === 'pin_corpus') return '';
+  const bits = [];
+  if (item.suggested_theme) bits.push(item.suggested_theme);
+  if (item.suggested_form) bits.push(item.suggested_form);
+  const line = bits.join(' · ');
+  const conf = item.suggest_confidence
+    ? ` <span class="agr-meta">(${esc(item.suggest_confidence)})</span>`
+    : '';
+  const caveat = item.suggest_caveat
+    ? `<span class="agr-meta">${esc(item.suggest_caveat)}</span>`
+    : (item.suggest_rationale
+      ? `<span class="agr-meta">${esc(item.suggest_rationale)}</span>`
+      : '');
+  return (
+    `<div class="detail-themes" aria-label="${esc(t('explain.mssPackage'))}">`
+    + `<span class="detail-theme">${esc(t('explain.mssPackageShort').replace('{p}', line))}</span>`
+    + conf
+    + (caveat ? `<div class="agr-meta" style="margin-top:0.25rem">${caveat}</div>` : '')
+    + `</div>`
+  );
+}
+
 function goalPairsHtml(item) {
   const pairs = (item.goal_pairs || []).slice(0, 3);
   if (!pairs.length) return '';
@@ -918,9 +949,10 @@ function neighborCardHtml(item) {
   const signals = edgeSignals(item);
   const agr = agreementsHtml(item);
   const themes = themesHtml(item);
+  const pkg = packageHtml(item);
   const pairs = goalPairsHtml(item);
   // Avoid duplicating theme/pair lines already rendered above.
-  const reasons = (agr || themes || pairs)
+  const reasons = (agr || themes || pairs || pkg)
     ? []
     : (item.reasons || []).slice(0, 4);
   return (
@@ -928,6 +960,7 @@ function neighborCardHtml(item) {
     + `<button type="button" class="detail-neighbor" data-id="${esc(item.id)}"><span>${esc(item.label)}</span>${score ? `<b>${esc(score)}</b>` : ''}</button>`
     + (blurb ? `<p class="detail-why">${esc(blurb)}</p>` : '')
     + agr
+    + pkg
     + themes
     + pairs
     + (signals.length
@@ -1631,6 +1664,8 @@ window.PAGE_I18N = {
     "explain.pinMany": "Зареєстровані угоди МСС ({n})",
     "explain.regNo": "№{n}",
     "explain.sharedThemes": "Спільні теми стратегій",
+    "explain.mssPackage": "Гіпотеза пакета МСС (тема · форма)",
+    "explain.mssPackageShort": "МСС-пакет: {p}",
     "explain.sharedGoal": "Спільна ціль: {g}",
     "explain.goalApprox": "схожі формулювання",
     "explain.sigGoals": "цілі {n}",
@@ -1712,6 +1747,8 @@ window.PAGE_I18N = {
     "explain.pinMany": "Registered IMC agreements ({n})",
     "explain.regNo": "No. {n}",
     "explain.sharedThemes": "Shared strategy themes",
+    "explain.mssPackage": "Hypothesis IMC package (theme · form)",
+    "explain.mssPackageShort": "IMC package: {p}",
     "explain.sharedGoal": "Shared goal: {g}",
     "explain.goalApprox": "similar wording",
     "explain.sigGoals": "goals {n}",

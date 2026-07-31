@@ -284,9 +284,23 @@ oblast, frontline) — grow the strategy corpus there first.
 One line: **strategies find like-minded partners; geography finds service
 co-sharers. v6 mixes them — strong signal, easy to misread.**
 
-
 ---
 
+## DOBRE bottleneck thesis + МСС procedure notes (2026-07-30)
+
+Full write-up: [mss-cooperation-research.md](./mss-cooperation-research.md).
+
+**Stakeholder thesis:** DOBRE survey (546 hromadas) — hardest stage of IMC
+organisation is **finding a partner and communication (30%)**, not picking
+the legal form; finance dominates the drafting stage (31%). That is the
+problem our strategy-text matching is built to shrink.
+
+Also captured there: why ~60% of registry deals use the «light» joint-project
+form (Law art. 11 skips arts. 5–8), DECIDE registry read, DOBRE→ЗП 11412
+legislative proposals, and `suggested_theme` / `suggested_form` on matching
+edges (`mss_suggest.py`, shipped 2026-07-30).
+
+---
 
 ### Manual strategy ingest (2026-07-24)
 
@@ -346,6 +360,9 @@ release row with KSE lat/lon (~1 418); PIN/matching stay on top. Popups link
       [corpus-growth.md](./corpus-growth.md))
 - [ ] Multi-way / community view for 3+ party clusters (Nizhyn-5, Dnister-22)
 - [ ] Expand curated hierarchy gold beyond 5 hromadas (re-structure from PDFs)
+- [x] `suggested_theme` + `suggested_form` on matching edges
+      (`mss_suggest.py` + export / complementary / explicit-ask; map + matches.html)
+      — 2026-07-30; see [mss-cooperation-research.md](./mss-cooperation-research.md)
 
 ---
 
