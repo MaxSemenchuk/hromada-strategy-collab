@@ -20,6 +20,13 @@ the legal form of the contract. This pilot surfaces **agreement candidates**
 (who · about what · which of the five legal forms) with evidence — so hromadas
 and facilitators are not limited to who already knows whom.
 
+**Practitioner correction (Anatoliy Tkachuk / ІГС, 2026-08 — top expert input
+for this study):** most agreements still follow contact between hromada heads;
+tools do not replace that trust. Stronger product claim — reduce uncertainty,
+surface mutual benefit («навіщо»), and prepare a safer first talk. Near-term
+thematic window he flagged: **water / shared basins**. Full notes:
+[internal/tkachuk-interview-2026-08.md](internal/tkachuk-interview-2026-08.md).
+
 Prior-art check (2026-07-20/21) found no public product doing this specific
 thing. Adjacent efforts are single-hromada monitoring (U-LEAD) or manual МСС
 matchmaking. Combining registry/network topology with strategy and resource
