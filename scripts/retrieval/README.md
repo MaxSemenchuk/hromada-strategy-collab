@@ -11,10 +11,7 @@ burning 60–150k agent tokens per hromada on anti-bot retrieval.
 3. yarn download-raw             # PDF/DOC → scripts/retrieval/raw/ (gitignored)
 4. Extract text from raw/ → *.extracted.txt; set raw_text_path
 5. `yarn structure-hromada --name "…" --json … --write-release`
-   (optional `--write` only if syncing shared NocoDB)
-6. yarn structure-hromada --name "..." --json … --write
-7. yarn export-hromadas          # refresh data/releases/hromadas.json
-8. yarn match && yarn export-matching-edges
+6. yarn match && yarn export-matching-edges
 ```
 
 Local raw files are a **cache for re-analysis** (alternate extractors, full-text

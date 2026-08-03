@@ -1,21 +1,18 @@
 /**
- * Write a pre-structured hromada JSON blob into local stores (and optionally NocoDB).
+ * Write a pre-structured hromada JSON blob into local stores.
  *
  * Structuring itself is done in-session (agent reads raw strategy text and produces
  * the schema JSON). This script only persists that JSON — no external LLM.
  *
- * Preferred path (no remote DB): always writes `scripts/hromada-output/<name>.json`,
- * and with `--write-release` upserts strategy fields into `data/releases/hromadas.json`
- * (matched by Name). NocoDB `--write` remains optional sync to the shared W3I base.
+ * Always writes `scripts/hromada-output/<name>.json`. With `--write-release`
+ * upserts strategy fields into `data/releases/hromadas.json` (matched by Name).
  *
  * Usage:
  *   yarn structure-hromada --name "Ніжинська громада" --json path/to/structured.json
  *   yarn structure-hromada --name "..." --json structured.json --write-release
- *   yarn structure-hromada --name "..." --json structured.json --write
- *   yarn structure-hromada --name "..." --json structured.json --write --update 12
  *
  * Schema keys (snake_case in JSON file):
- *   goals | strategic_goals[] | operational_goals[]  (goals flattened for release/NocoDB)
+ *   goals | strategic_goals[] | operational_goals[]  (goals flattened for release)
  *   projects, strengths, challenges, partners_mentioned, mss_agreements,
  *   mss_intents[] (quotes of explicit МСС language),
  *   source_quality ("full-strategy"|"partial"|"proxy-info"), confidence_notes,
@@ -25,17 +22,12 @@
  * still stores flat Goals (strategic + operational lines joined by newline).
  */
 
-import "dotenv/config";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-const NC_URL = process.env.NOCODB_URL || "";
-const NC_TOKEN = process.env.NOCODB_TOKEN || "";
-const HROMADAS_TABLE_ID = process.env.NOCODB_TABLE_HROMADAS || "mjtetfuixggp5lg";
 
 const FIELDS = ["goals", "projects", "strengths", "challenges", "partners_mentioned", "mss_agreements", "source_quality", "confidence_notes", "donors_programs"] as const;
 const DONOR_PROGRAM_OPTIONS = [
@@ -61,12 +53,17 @@ function parseArgs() {
         const i = args.indexOf(flag);
         return i >= 0 ? args[i + 1] : undefined;
     };
+    if (args.includes("--write") || args.includes("--update")) {
+        console.error(
+            "NocoDB sync was removed. Use --write-release to update data/releases/hromadas.json.\n" +
+                "Archived scripts: scripts/legacy/nocodb/",
+        );
+        process.exit(1);
+    }
     return {
         name: get("--name"),
         json: get("--json"),
-        write: args.includes("--write"),
         writeRelease: args.includes("--write-release"),
-        updateId: get("--update"),
     };
 }
 
@@ -177,7 +174,7 @@ function normalizeStructured(raw: any): any {
             out[f] = typeof raw?.[f] === "string" ? raw[f] : (raw?.[f] ?? "");
         }
     }
-    // Hierarchy sidecar fields (local JSON only; not written to NocoDB columns yet)
+    // Hierarchy sidecar fields (local JSON only)
     if (Array.isArray(raw?.strategic_goals)) {
         out.strategic_goals = raw.strategic_goals;
     }
@@ -190,45 +187,11 @@ function normalizeStructured(raw: any): any {
     return out;
 }
 
-async function writeToNocoDB(name: string, structured: any, updateId?: string) {
-    if (!NC_URL || !NC_TOKEN) {
-        console.error("Missing NOCODB_URL or NOCODB_TOKEN — cannot write. Set them in .env or omit --write.");
-        process.exit(1);
-    }
-    const body = {
-        Name: name,
-        Goals: structured.goals,
-        Projects: structured.projects,
-        Strengths: structured.strengths,
-        Challenges: structured.challenges,
-        PartnersMentioned: structured.partners_mentioned,
-        MSSAgreements: structured.mss_agreements,
-        SourceQuality: structured.source_quality,
-        ConfidenceNotes: structured.confidence_notes,
-        DonorsPrograms: (structured.donors_programs ?? []).join(","),
-        ExtractedAt: new Date().toISOString(),
-    };
-    const endpoint = `${NC_URL}/api/v2/tables/${HROMADAS_TABLE_ID}/records`;
-    const method = updateId ? "PATCH" : "POST";
-    const payload = updateId ? { Id: Number(updateId), ...body } : body;
-    const res = await fetch(endpoint, {
-        method,
-        headers: { "xc-token": NC_TOKEN, "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-    });
-    if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`NocoDB ${method} ${res.status}: ${text}`);
-    }
-    const result = await res.json();
-    console.log(updateId ? `Updated NocoDB row Id ${updateId}.` : `Created NocoDB row Id ${result.Id ?? result.id}.`);
-}
-
-async function main() {
-    const { name, json, write, writeRelease, updateId } = parseArgs();
+function main() {
+    const { name, json, writeRelease } = parseArgs();
     if (!name || !json) {
         console.error(
-            'Usage: yarn structure-hromada --name "<hromada name>" --json <structured.json> [--write-release] [--write] [--update <rowId>]',
+            'Usage: yarn structure-hromada --name "<hromada name>" --json <structured.json> [--write-release]',
         );
         process.exit(1);
     }
@@ -250,18 +213,11 @@ async function main() {
 
     if (writeRelease) {
         upsertRelease(name, structured);
-    }
-
-    if (write) {
-        await writeToNocoDB(name, structured, updateId);
-    } else if (!writeRelease) {
+    } else {
         console.log(
-            "\nLocal only (hromada-output). Pass --write-release to upsert data/releases/hromadas.json, and/or --write for NocoDB.",
+            "\nLocal only (hromada-output). Pass --write-release to upsert data/releases/hromadas.json.",
         );
     }
 }
 
-main().catch((err) => {
-    console.error(err);
-    process.exit(1);
-});
+main();

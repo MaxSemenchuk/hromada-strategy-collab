@@ -37,7 +37,7 @@ for item in queue:
             continue
         json_path = hit
     print(f"Writing {name} from {json_path.name}...")
-    cmd = ["yarn", "--ignore-engines", "structure-hromada", "--name", name, "--json", str(json_path), "--write"]
+    cmd = ["yarn", "--ignore-engines", "structure-hromada", "--name", name, "--json", str(json_path), "--write-release"]
     if item.get("nocodb_id"):
         cmd += ["--update", str(item["nocodb_id"])]
     subprocess.check_call(cmd, cwd=root)

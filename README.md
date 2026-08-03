@@ -7,8 +7,8 @@ among geography, complementary resources/DREAM, explicit МСС language, and th
 existing partnership network.
 
 Spun out from the W3I ecosystem project (`w3i-network`) on 2026-07-23 as its own
-codebase. **The NocoDB database is currently shared** with the main W3I base — see
-[Shared database](#shared-database) below.
+codebase. **Canonical data store is local JSON** under [`data/releases/`](data/releases/)
+(NocoDB sync archived under [`scripts/legacy/nocodb/`](scripts/legacy/nocodb/)).
 
 Code is MIT-licensed; the dataset in [data/releases/](data/releases/) is
 CC BY 4.0 — see [License & data](#license--data) below.
@@ -54,9 +54,10 @@ signals appears to be genuine whitespace.
 - **77 hromadas** text-mined for strategy content: **59** full-strategy, **9**
   partial, **9** proxy-info; **68** have non-empty `Goals` for matching. (Honest
   retrieval nulls are recorded separately where no strategy could be found.)
-- **174 hromadas** (12%) tagged in NocoDB with at least one donor/technical-assistance
+- **174 hromadas** (12%) tagged with at least one donor/technical-assistance
   program (DOBRE, DECIDE, GIZ, ПРООН/UNDP, EGAP, DESPRO, МФ Відродження, U-LEAD,
-  Ре:Форм, JICA, ЄІБ, ЄБРР, AFD) — a floor, not a ceiling.
+  Ре:Форм, JICA, ЄІБ, ЄБРР, AFD) — a floor, not a ceiling (`DonorsPrograms` on
+  the release JSON).
 - Matching **v7.1** (`0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`):
   goals_cosine prefers operational lines when hierarchy is present
   (`goals-hierarchy.json`) and blends bipartite soft-align with a document
@@ -84,13 +85,13 @@ same guardrails.
 
 ```
 scripts/
-├── migrations/setup-hromadas-table.ts   # create/verify the Hromadas NocoDB table
-├── structure-hromada-strategy.ts        # structured JSON -> NocoDB / hromada-output/
-├── import-hromadas-metadata.ts          # bulk PATCH/POST of KATOTTG+population metadata
-├── export-hromadas.ts                   # live NocoDB -> data/releases/hromadas.json (the public dataset)
-├── hromada-output/                      # per-hromada structured JSON (as produced, gitignored pattern removed — kept for provenance)
+├── structure-hromada-strategy.ts        # structured JSON → hromada-output/ + optional --write-release
+├── export-hromadas.ts                   # research-log snapshot → data/releases/hromadas.json
+├── hromada-output/                      # per-hromada structured JSON (provenance)
 ├── retrieval/                           # CKAN search, download-raw, fetch-mss-registry, batch queue
-└── analysis/                            # one-off Python: KATOTTG merge, matching, PIN map build
+├── analysis/                            # matching, PIN map, sidecars (canon: match.py v7.1)
+│   └── legacy/                          # archived Pass 1–5 / early embed scripts (do not run)
+└── legacy/nocodb/                       # archived NocoDB sync (setup/import/live export)
 data/
 ├── sources/       # reference registries (KATOTTG classifier extract, Tags table dump, hierarchy overrides)
 ├── releases/      # THE dataset — canonical, current, CC BY 4.0 (see data/releases/MANIFEST.md)
@@ -145,17 +146,14 @@ See [scripts/retrieval/README.md](scripts/retrieval/README.md).
 
 ```bash
 yarn install
-cp .env.example .env   # fill in NOCODB_TOKEN + NOCODB_BASE_ID (shared base, ask Max)
-yarn setup-hromadas    # idempotent — verifies/creates the Hromadas table + Sectors link column
+# Optional: cp .env.example .env  (no remote DB required)
 ```
 
-## Data store: local JSON first, NocoDB optional
+## Data store: local JSON
 
 **Canonical working dataset** is [`data/releases/hromadas.json`](data/releases/hromadas.json)
 (plus matching / sidecar releases next to it). Matching, map build, and the
-stakeholder site all read from `data/releases/` — not from a live DB.
-
-Write path without a remote database:
+stakeholder site all read from `data/releases/`.
 
 ```bash
 # always writes scripts/hromada-output/<name>.json
@@ -164,16 +162,8 @@ yarn structure-hromada --name "…" --json structured.json --write-release
 yarn match   # reads the release JSON
 ```
 
-**NocoDB is optional sync**, not required for analysis. The `Hromadas` table
-(and linked `Tags`) still live in the **shared W3I** base when you want a
-collaborative UI or historical live export (`yarn export-hromadas`). Prefer
-`--write-release` over `--write` for day-to-day corpus growth; use `--write`
-only when intentionally updating the shared base.
-
-| Table | ID |
-|-------|-----|
-| Hromadas (optional sync) | `mjtetfuixggp5lg` |
-| Tags (shared with w3i-network) | `moee8ep5561zt76` |
+Former NocoDB setup/import/live-export scripts live under
+[`scripts/legacy/nocodb/`](scripts/legacy/nocodb/) and are **not** wired into yarn.
 
 ## License & data
 
@@ -197,20 +187,11 @@ snapshot as if it were a finished dataset.
 # Persist in-session structured JSON to hromada-output/
 yarn structure-hromada --name "Ніжинська громада" --json structured.json
 
-# Preferred: upsert strategy fields into local release JSON (no NocoDB)
+# Upsert strategy fields into local release JSON
 yarn structure-hromada --name "Ніжинська громада" --json structured.json --write-release
 
-# Optional: also sync to shared NocoDB
-yarn structure-hromada --name "Ніжинська громада" --json structured.json --write
-yarn structure-hromada --name "..." --json structured.json --write --update 12
-
-# Bulk metadata import (KATOTTG + population) — one-off; needs NocoDB
-yarn import-hromadas --updates data/research-log/hromada_updates.json --inserts data/research-log/hromada_inserts.json
-
-# Pull from NocoDB into data/releases/ (optional refresh)
+# Optional: re-normalize release from a research-log snapshot
 yarn export-hromadas
-
-# Offline normalize from research-log snapshot (no NocoDB credentials)
 yarn export-hromadas:snapshot
 
 # Recompute matching edges (v7.1: goals + length/hub blend + KSE geo + mss)

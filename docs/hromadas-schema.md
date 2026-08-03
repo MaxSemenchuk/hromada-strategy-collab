@@ -4,31 +4,33 @@ Draft for the "collect громада strategies → analyze for collaborations"
 Pilot scope: 30–50 громад tied to Civic Tech Lab / Digital Democracy Lab participants + neighbors.
 Two-layer output graph: громада↔громада + громада↔W3I ecosystem.
 
-## NocoDB table: `Hromadas`
+## Release schema: `data/releases/hromadas.json`
+
+(Field names below match the public JSON. Historical NocoDB column types noted
+in parentheses where useful.)
 
 | Field | Type | Notes |
 |-------|------|-------|
-| Name | SingleLineText | Офіційна назва громади |
-| Koatuu / Katottg | SingleLineText | Код КАТОТТГ — стабильный ключ для дедупликации/джойнов |
-| Oblast | SingleSelect | Область |
-| Rayon | SingleLineText | Район |
-| Type | SingleSelect | міська / селищна / сільська |
-| Population | Number | Населення |
-| StrategyUrl | URL | Ссылка на PDF/страницу стратегии |
-| PortalUrl | URL | Homepage офіційного порталу громади (derived at export from `StrategyUrl` when host is municipal; aggregators → null; overrides in `data/sources/portal-url-overrides.json`) |
-| StrategyYear | Number | Горизонт/год принятия стратегии |
-| StrategyPeriod | SingleLineText | напр. 2021–2027 |
-| Goals | LongText | 3–5 стратегічних цілей (і опційно оперативні рядки `N.M`); для matching v7 краще також sidecar `goals-hierarchy.json` |
-| Sectors | LinkToTags | Контролируемый словарь секторов (связь с Tags) |
-| Projects | LongText | Конкретні проєкти из стратегии + ДФРР/Prozorro |
-| Strengths | LongText | Сильні сторони / ресурси |
-| Challenges | LongText | Проблеми / виклики |
-| PartnersMentioned | LongText | Донори, сусідні громади, згадані в стратегії. Для UA–EU twinning див. окремий шар `twinning-partners.json` (`yarn twinning`) |
-| DonorsPrograms | MultiSelect / CSV | Контрольований словник: DOBRE, DECIDE, GIZ, U-LEAD, EGAP, DESPRO, ПРООН/UNDP, МФ Відродження, Ре:Форм, JICA, ЄІБ, ЄБРР, AFD. У публічному JSON — масив рядків. Відсутність ≠ «немає програми» (підлога покриття). Опис програм: [donor-programs.md](donor-programs.md). |
-| MSSAgreements | LongText | Існуючі договори МСС (если найдены) |
-| SourceQuality | SingleSelect | full-strategy / dfrr-proxy / partial / none |
-| ExtractedAt | DateTime | Когда прогнали extraction |
-| RawTextRef | URL/Attachment | Ссылка на исходный PDF/текст |
+| Name | string | Офіційна назва громади |
+| Katottg | string | Код КАТОТТГ — стабильный ключ для дедупликации/джойнов |
+| Oblast | string | Область |
+| Rayon | string | Район |
+| Type | string | міська / селищна / сільська |
+| Population | number | Населення |
+| StrategyUrl | string \| null | Ссылка на PDF/страницу стратегии |
+| PortalUrl | string \| null | Homepage офіційного порталу громади (derived at export from `StrategyUrl` when host is municipal; aggregators → null; overrides in `data/sources/portal-url-overrides.json`) |
+| StrategyYear | number \| null | Горизонт/год принятия стратегии |
+| StrategyPeriod | string \| null | напр. 2021–2027 |
+| Goals | string \| null | 3–5 стратегічних цілей (і опційно оперативні рядки `N.M`); для matching v7 краще також sidecar `goals-hierarchy.json` |
+| Sectors | string[] | Контрольований словник секторів (колишній LinkToTags) |
+| Projects | string \| null | Конкретні проєкти из стратегии + ДФРР/Prozorro |
+| Strengths | string \| null | Сильні сторони / ресурси |
+| Challenges | string \| null | Проблеми / виклики |
+| PartnersMentioned | string \| null | Донори, сусідні громади, згадані в стратегії. Для UA–EU twinning див. окремий шар `twinning-partners.json` (`yarn twinning`) |
+| DonorsPrograms | string[] | Контрольований словник: DOBRE, DECIDE, GIZ, U-LEAD, EGAP, DESPRO, ПРООН/UNDP, МФ Відродження, Ре:Форм, JICA, ЄІБ, ЄБРР, AFD. Відсутність ≠ «немає програми» (підлога покриття). Опис програм: [donor-programs.md](donor-programs.md). |
+| MSSAgreements | string \| null | Існуючі договори МСС (если найдены) |
+| SourceQuality | string \| null | full-strategy / dfrr-proxy / partial / none |
+| ExtractedAt | string \| null | Когда прогнали extraction |
 
 ### Hierarchy sidecar (local structuring JSON + release)
 
@@ -39,11 +41,12 @@ In-session / `scripts/hromada-output/*.json` may include:
   "strategic_goals": [{"id": "1", "text": "…"}],
   "operational_goals": [{"parent": "1", "text": "1.1 …"}],
   "mss_intents": [{"quote": "…", "theme": "вода", "field": "curated"}],
-  "goals": "flattened newline string for NocoDB"
+  "goals": "flattened newline string for release Goals"
 }
 ```
 
-`yarn structure-hromada` flattens hierarchy into `Goals` for NocoDB. Curated gold:
+`yarn structure-hromada --write-release` flattens hierarchy into `Goals` on
+`hromadas.json`. Curated gold:
 `data/sources/goals-hierarchy-overrides.json` → `yarn build-goals-hierarchy`.
 Explicit МСС quotes across the corpus: `yarn extract-mss-intents`.
 

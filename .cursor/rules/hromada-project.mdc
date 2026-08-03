@@ -6,25 +6,15 @@ alwaysApply: true
 # Hromada Strategy Collaboration Mapping
 
 **Product:** candidate МСС agreements (pair · theme · one of 5 Law 1508-VII forms).
-Strategy NLP, geo, complementary, explicit-ask, network (and basin underlay) are
-**discovery signals**, not IMC types. Spin-out from w3i-network (2026-07-23);
-NocoDB `Hromadas` still shared.
-
-**Expert framing (Tkachuk / ІГС, 2026-08 — top practitioner input for this
-study):** AI lowers transaction costs and uncertainty and surfaces mutual
-benefit; it does **not** replace trust between hromada heads (~60–90% of deals
-follow personal contact). Pitch «з ким · про що · навіщо», never «AI замінить
-знайомства». Near-term thematic window: **water / basins**. Outreach priority:
-ВА ОТГ → ВАГ (not АМУ first). Full notes:
-[internal/tkachuk-interview-2026-08.md](../../internal/tkachuk-interview-2026-08.md).
+Strategy NLP, geo, complementary, explicit-ask, network are **discovery signals**,
+not IMC types. Spin-out from w3i-network (2026-07-23). Canonical store:
+`data/releases/` (local JSON). NocoDB sync archived under `scripts/legacy/nocodb/`.
 
 ## Read first
 
 - [README.md](../../README.md) — status, setup, commands
 - [docs/project-history.md](../../docs/project-history.md) — full methodology history (replaces Claude memory)
-- [docs/mss-cooperation-research.md](../../docs/mss-cooperation-research.md) — DOBRE + Tkachuk framing, МСС forms/procedure
-- [internal/tkachuk-interview-2026-08.md](../../internal/tkachuk-interview-2026-08.md) — canonical expert interview (trust · water · associations)
-- [docs/donor-programs.md](../../docs/donor-programs.md) — DOBRE / EGAP / U-LEAD / GIZ / USAID… programme cheat-sheet
+- [docs/mss-cooperation-research.md](../../docs/mss-cooperation-research.md) — DOBRE partner-search thesis, МСС forms/procedure, legislative notes
 - [docs/hromadas-schema.md](../../docs/hromadas-schema.md) — field schema
 - [docs/kse-synergy.md](../../docs/kse-synergy.md) — KSE join rules
 - Stakeholder site (GitHub Pages root): [docs/index.html](../../docs/index.html) — keep coverage numbers in sync with `data/releases/*.manifest.json`
@@ -32,14 +22,15 @@ follow personal contact). Pitch «з ким · про що · навіщо», ne
 ## Data boundaries
 
 - **Canonical dataset:** `data/releases/` (CC BY 4.0) — prefer
-  `yarn structure-hromada … --write-release`; optional live pull via
-  `yarn export-hromadas` (shared NocoDB)
+  `yarn structure-hromada … --write-release`
 - **Provenance only:** `data/research-log/` — dated snapshots, not maintained dataset
 - **Not public:** `internal/` — outreach drafts (`outreach-messages.md`;
   optional convenience HTML `internal/outreach.html` is gitignored and must
   not be published under `docs/`).
 - **Local source caches (gitignored):** `scripts/retrieval/raw/` (strategy PDFs) via `yarn download-raw`; `data/cache/mss/` (МСС registry XLSX) via `yarn fetch-mss-registry`; `data/cache/twinning/` (SKEW HTML) via `yarn twinning` — for re-analysis, not the release
 - **KSE covariates:** fetch at analysis time via `enrich_from_kse.py`; do not vendor KSE CSVs
+- **Archived (do not run day-to-day):** `scripts/analysis/legacy/` (early matching
+  passes); `scripts/legacy/nocodb/` (former shared CRM sync)
 
 ## Matching pipeline (current)
 
@@ -69,7 +60,7 @@ layer (EU sister cities in the hromada card + indigo glow on map/graph).
 1. Matching scores are **hypotheses** unless `known: true` (curated registry-confirmed). Do not set `known: true` on all PIN edges — use `matching-edges.pin-corpus.json` for the broader overlap. Do not set `known: true` on twinning links either (SKEW is foreign twinning, not domestic МСС).
 2. Sector-tag overlap is **not** a matching signal.
 3. `edem_total`: use `edem-data.csv`; missing hromadas ≠ zero.
-4. Batch growth: `scripts/retrieval/` + in-session structuring → `yarn structure-hromada --json … --write`. Prefer `yarn priority-corpus-growth` when expanding PIN∩corpus validation coverage. See [docs/corpus-growth.md](../../docs/corpus-growth.md).
+4. Batch growth: `scripts/retrieval/` + in-session structuring → `yarn structure-hromada --json … --write-release`. Prefer `yarn priority-corpus-growth` when expanding PIN∩corpus validation coverage. See [docs/corpus-growth.md](../../docs/corpus-growth.md).
 5. Do not inflate CKAN "123 strategies" — mostly unrelated datasets.
 6. Minimize scope; match existing TS/Python conventions in `scripts/`.
 7. Product unit is an **МСС candidate agreement** (`package` theme·form +
@@ -81,21 +72,7 @@ layer (EU sister cities in the hromada card + indigo glow on map/graph).
 8. `suggested_theme` / `suggested_form` / `package` are IMC-package hypotheses
    (`mss_suggest.py` → `mss_candidate.py`) — never fold into `score`, never set
    `known: true` from them. UI atom: human `package.label_uk` + 1–3 signal chips.
-9. **Trust / benefit (Tkachuk):** do not claim the tool replaces personal
-   relations between heads. Surface clear «навіщо» (budget savings, revenue,
-   image, joint grant). Motivation > venue. Wartime thematic priorities drift
-   (water → energy → winter infra) — do not freeze one eternal thematic prior.
-10. **HydroBASINS / water:** map underlay + `same_basin` context only — never
-    fold into v7 `score`, never `known: true`. Water-theme IMC ≠ basin
-    hydrology; keep them distinct (see `docs/external-data-sources.md`).
 
 ## Stakeholders / contacts
 
-- **Анатолій Ткачук** — директор Інституту громадянського суспільства. Top
-  practitioner expert for this IMC research (interview 2026-08). Insights:
-  trust between heads; water/basins; benefit clarity; starostas; ВА ОТГ / ВАГ.
-  Notes: `internal/tkachuk-interview-2026-08.md`. Do not overclaim public
-  endorsement — cite as consulted expert, not co-author.
 - **Рева Ігор** — Заступник Міністра розвитку громад та територій України з питань цифрового розвитку, цифрових трансформацій і цифровізації (CDTO). Saved 2026-07-27. Relevant for digital / digitalization outreach. Ministry reorg mid-July 2026 — verify title before contact.
-- **Association outreach order:** ВА ОТГ → ВАГ; АМУ not first cold contact
-  (large cities more autonomous per Tkachuk).

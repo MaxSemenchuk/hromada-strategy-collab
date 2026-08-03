@@ -1,10 +1,8 @@
 /**
- * Export the `Hromadas` table to data/releases/hromadas.json — the canonical,
- * redistributable snapshot of the dataset (CC BY 4.0, see DATA-LICENSE.md).
+ * Normalize a research-log / dump snapshot into data/releases/hromadas.json —
+ * the canonical, redistributable dataset (CC BY 4.0, see DATA-LICENSE.md).
  *
- * Default: live pull from NocoDB (requires NOCODB_TOKEN + NOCODB_TABLE_HROMADAS
- * in .env). Fallback when no credentials: pass --from-snapshot to normalize a
- * dated research-log NocoDB dump instead.
+ * Live NocoDB pull was removed; see scripts/legacy/nocodb/.
  *
  * Usage:
  *   yarn export-hromadas
@@ -16,9 +14,7 @@ import { readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 import { loadPortalOverrides, resolvePortalUrl } from "./lib/portal-url";
 
-const NC_URL = process.env.NOCODB_URL || "http://localhost:8080";
-const NC_TOKEN = process.env.NOCODB_TOKEN || "";
-const HROMADAS_TABLE_ID = process.env.NOCODB_TABLE_HROMADAS || "";
+const DEFAULT_SNAPSHOT = "data/research-log/hromadas_full54.json";
 const portalOverrides = loadPortalOverrides(join(__dirname, ".."));
 
 function argValue(flag: string): string | undefined {
@@ -26,17 +22,7 @@ function argValue(flag: string): string | undefined {
     return idx >= 0 ? process.argv[idx + 1] : undefined;
 }
 
-const snapshotPath = argValue("--from-snapshot");
-const useNocoDb = !snapshotPath && NC_TOKEN && HROMADAS_TABLE_ID;
-
-if (!snapshotPath && !useNocoDb) {
-    console.error(
-        "Missing NOCODB_TOKEN or NOCODB_TABLE_HROMADAS (.env), and no --from-snapshot given.\n" +
-            "  Live export: set credentials in .env, then run yarn export-hromadas\n" +
-            "  Offline:     yarn export-hromadas:snapshot"
-    );
-    process.exit(1);
-}
+const snapshotPath = argValue("--from-snapshot") || DEFAULT_SNAPSHOT;
 
 type RawRecord = Record<string, unknown>;
 
@@ -129,32 +115,6 @@ function writeRelease(cleaned: ReturnType<typeof normalizeRecord>[], source: str
     console.log(`  Wrote data/releases/hromada-portals.json (${portalsIndex.length} portals).`);
 }
 
-async function nc(endpoint: string) {
-    const res = await fetch(`${NC_URL}${endpoint}`, {
-        headers: { "xc-token": NC_TOKEN },
-    });
-    if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`NocoDB GET ${endpoint}: ${res.status} ${text}`);
-    }
-    return res.json();
-}
-
-async function fetchAllRecords(tableId: string): Promise<RawRecord[]> {
-    const records: RawRecord[] = [];
-    let offset = 0;
-    const limit = 100;
-    while (true) {
-        const page = await nc(
-            `/api/v2/tables/${tableId}/records?limit=${limit}&offset=${offset}&nested[Sectors][fields]=Title`
-        );
-        records.push(...(page.list || []));
-        if (page.pageInfo?.isLastPage) break;
-        offset += limit;
-    }
-    return records;
-}
-
 function loadSnapshot(path: string): RawRecord[] {
     const raw = JSON.parse(readFileSync(path, "utf-8"));
     if (Array.isArray(raw)) return raw;
@@ -207,31 +167,14 @@ function enrichPortalUrl(cleaned: ReturnType<typeof normalizeRecord>[]) {
     }
 }
 
-async function main() {
-    let cleaned: ReturnType<typeof normalizeRecord>[];
-    let source: string;
-
-    if (snapshotPath) {
-        console.log(`Loading snapshot ${snapshotPath}...`);
-        const records = loadSnapshot(snapshotPath);
-        console.log(`  Loaded ${records.length} rows.`);
-        cleaned = records.map(normalizeRecord);
-        source = `snapshot:${snapshotPath}`;
-    } else {
-        console.log("Fetching Hromadas table from NocoDB...");
-        const records = await fetchAllRecords(HROMADAS_TABLE_ID);
-        console.log(`  Fetched ${records.length} rows.`);
-        cleaned = records.map(normalizeRecord);
-        source = "nocodb:live";
-    }
-
+function main() {
+    console.log(`Loading snapshot ${snapshotPath}...`);
+    const records = loadSnapshot(snapshotPath);
+    console.log(`  Loaded ${records.length} rows.`);
+    const cleaned = records.map(normalizeRecord);
     enrichKatottg(cleaned);
     enrichPortalUrl(cleaned);
-
-    writeRelease(cleaned, source);
+    writeRelease(cleaned, `snapshot:${snapshotPath}`);
 }
 
-main().catch((err) => {
-    console.error(err);
-    process.exit(1);
-});
+main();

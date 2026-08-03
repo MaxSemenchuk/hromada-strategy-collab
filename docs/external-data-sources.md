@@ -2,7 +2,7 @@
 
 Findings on external repositories/datasets reviewed as potential sources of
 hromada-level covariates or comparison data for this project. One dated section
-per source. Not yet integrated into the `Hromadas` NocoDB table unless noted.
+per source. Not yet folded into `data/releases/hromadas.json` unless noted.
 
 ---
 
