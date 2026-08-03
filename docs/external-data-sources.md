@@ -162,6 +162,9 @@ pair extraction + `markers.json` profile URLs (`yarn twinning`). Not a bulk
 partnership registry like SKEW — confirmed pairs are hypotheses from press
 titles; `c4c_url` means «listed in C4C municipality DB» (seeking partners).
 
+**Format / cases / how hromadas find partners:**
+[ua-eu-twinning.md](ua-eu-twinning.md).
+
 ---
 
 ## Own revenues (data.gov.ua) — caveat
