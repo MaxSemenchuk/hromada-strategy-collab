@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-03T13:25:09.026866+00:00",
+  "generatedAt": "2026-08-03T13:49:34.553038+00:00",
   "purpose": "Grow strategy corpus where it adds PIN∩corpus validation pairs (neighbours of current Goals corpus in the KSE МСС network).",
-  "corpusSize": 91,
+  "corpusSize": 98,
   "pinEdges": 918,
-  "candidatesTotal": 41,
+  "candidatesTotal": 39,
   "limit": 40,
   "candidates": [
     {
@@ -96,9 +96,9 @@
         "UA73060210000010691",
         "UA73060650000012771"
       ],
-      "oblastCorpusCount": 8,
+      "oblastCorpusCount": 9,
       "oblastTotal": 55,
-      "oblastCorpusShare": 0.145,
+      "oblastCorpusShare": 0.164,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -166,48 +166,65 @@
       "name": "Парафіївська селищна територіальна громада",
       "oblast": "Чернігівська область",
       "pinDegree": 4,
-      "corpusPinLinks": 3,
+      "corpusPinLinks": 4,
       "corpusNeighbourCodes": [
         "UA74040010000076097",
         "UA74040250000063494",
+        "UA74080170000055617",
         "UA74100190000086457"
       ],
-      "oblastCorpusCount": 4,
+      "oblastCorpusCount": 6,
       "oblastTotal": 57,
-      "oblastCorpusShare": 0.07,
+      "oblastCorpusShare": 0.105,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
     {
-      "katottg": "UA74080170000055617",
-      "name": "Сухополов'янська сільська територіальна громада",
-      "oblast": "Чернігівська область",
+      "katottg": "UA46060230000093092",
+      "name": "Куликівська селищна територіальна громада",
+      "oblast": "Львівська область",
       "pinDegree": 4,
       "corpusPinLinks": 3,
       "corpusNeighbourCodes": [
-        "UA74040010000076097",
-        "UA74040250000063494",
-        "UA74100190000086457"
+        "UA46060130000059055",
+        "UA46060250000025047",
+        "UA46060390000035967"
       ],
       "oblastCorpusCount": 4,
-      "oblastTotal": 57,
-      "oblastCorpusShare": 0.07,
+      "oblastTotal": 71,
+      "oblastCorpusShare": 0.056,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
     {
-      "katottg": "UA73040190000062796",
-      "name": "Хотинська міська територіальна громада",
-      "oblast": "Чернівецька область",
+      "katottg": "UA46060110000011684",
+      "name": "Добросинсько-Магерівська сільська територіальна громада",
+      "oblast": "Львівська область",
       "pinDegree": 3,
       "corpusPinLinks": 2,
       "corpusNeighbourCodes": [
-        "UA73040050000080963",
-        "UA73040150000056182"
+        "UA46060130000059055",
+        "UA46060390000035967"
       ],
-      "oblastCorpusCount": 11,
+      "oblastCorpusCount": 4,
+      "oblastTotal": 71,
+      "oblastCorpusShare": 0.056,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA73040110000040354",
+      "name": "Недобоївська сільська територіальна громада",
+      "oblast": "Чернівецька область",
+      "pinDegree": 2,
+      "corpusPinLinks": 2,
+      "corpusNeighbourCodes": [
+        "UA73040050000080963",
+        "UA73040190000062796"
+      ],
+      "oblastCorpusCount": 12,
       "oblastTotal": 50,
-      "oblastCorpusShare": 0.22,
+      "oblastCorpusShare": 0.24,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -302,51 +319,6 @@
       "hasMetadataRow": true
     },
     {
-      "katottg": "UA46060130000059055",
-      "name": "Жовківська міська територіальна громада",
-      "oblast": "Львівська область",
-      "pinDegree": 4,
-      "corpusPinLinks": 1,
-      "corpusNeighbourCodes": [
-        "UA46060250000025047"
-      ],
-      "oblastCorpusCount": 2,
-      "oblastTotal": 71,
-      "oblastCorpusShare": 0.028,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA46060230000093092",
-      "name": "Куликівська селищна територіальна громада",
-      "oblast": "Львівська область",
-      "pinDegree": 4,
-      "corpusPinLinks": 1,
-      "corpusNeighbourCodes": [
-        "UA46060250000025047"
-      ],
-      "oblastCorpusCount": 2,
-      "oblastTotal": 71,
-      "oblastCorpusShare": 0.028,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA46060390000035967",
-      "name": "Рава-Руська міська територіальна громада",
-      "oblast": "Львівська область",
-      "pinDegree": 4,
-      "corpusPinLinks": 1,
-      "corpusNeighbourCodes": [
-        "UA46060250000025047"
-      ],
-      "oblastCorpusCount": 2,
-      "oblastTotal": 71,
-      "oblastCorpusShare": 0.028,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
       "katottg": "UA35060150000073710",
       "name": "Новоукраїнська міська територіальна громада",
       "oblast": "Кіровоградська область",
@@ -358,21 +330,6 @@
       "oblastCorpusCount": 2,
       "oblastTotal": 49,
       "oblastCorpusShare": 0.041,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA46020010000073886",
-      "name": "Бориславська міська територіальна громада",
-      "oblast": "Львівська область",
-      "pinDegree": 3,
-      "corpusPinLinks": 1,
-      "corpusNeighbourCodes": [
-        "UA46020030000019252"
-      ],
-      "oblastCorpusCount": 2,
-      "oblastTotal": 71,
-      "oblastCorpusShare": 0.028,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -407,17 +364,17 @@
       "hasMetadataRow": true
     },
     {
-      "katottg": "UA05020170000049432",
-      "name": "Немирівська міська територіальна громада",
-      "oblast": "Вінницька область",
+      "katottg": "UA46020010000073886",
+      "name": "Бориславська міська територіальна громада",
+      "oblast": "Львівська область",
       "pinDegree": 3,
       "corpusPinLinks": 1,
       "corpusNeighbourCodes": [
-        "UA05100010000023453"
+        "UA46020030000019252"
       ],
       "oblastCorpusCount": 4,
-      "oblastTotal": 62,
-      "oblastCorpusShare": 0.065,
+      "oblastTotal": 71,
+      "oblastCorpusShare": 0.056,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -467,36 +424,6 @@
       "hasMetadataRow": true
     },
     {
-      "katottg": "UA61040010000042862",
-      "name": "Байковецька сільська територіальна громада",
-      "oblast": "Тернопільська область",
-      "pinDegree": 2,
-      "corpusPinLinks": 1,
-      "corpusNeighbourCodes": [
-        "UA61040490000035010"
-      ],
-      "oblastCorpusCount": 8,
-      "oblastTotal": 55,
-      "oblastCorpusShare": 0.145,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA73040110000040354",
-      "name": "Недобоївська сільська територіальна громада",
-      "oblast": "Чернівецька область",
-      "pinDegree": 2,
-      "corpusPinLinks": 1,
-      "corpusNeighbourCodes": [
-        "UA73040050000080963"
-      ],
-      "oblastCorpusCount": 11,
-      "oblastTotal": 50,
-      "oblastCorpusShare": 0.22,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
       "katottg": "UA73020150000076225",
       "name": "Селятинська сільська територіальна громада",
       "oblast": "Чернівецька область",
@@ -505,9 +432,9 @@
       "corpusNeighbourCodes": [
         "UA73020090000031499"
       ],
-      "oblastCorpusCount": 11,
+      "oblastCorpusCount": 12,
       "oblastTotal": 50,
-      "oblastCorpusShare": 0.22,
+      "oblastCorpusShare": 0.24,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -520,24 +447,9 @@
       "corpusNeighbourCodes": [
         "UA73040050000080963"
       ],
-      "oblastCorpusCount": 11,
+      "oblastCorpusCount": 12,
       "oblastTotal": 50,
-      "oblastCorpusShare": 0.22,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA46020050000037271",
-      "name": "Меденицька селищна територіальна громада",
-      "oblast": "Львівська область",
-      "pinDegree": 1,
-      "corpusPinLinks": 1,
-      "corpusNeighbourCodes": [
-        "UA46020030000019252"
-      ],
-      "oblastCorpusCount": 2,
-      "oblastTotal": 71,
-      "oblastCorpusShare": 0.028,
+      "oblastCorpusShare": 0.24,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -617,6 +529,36 @@
       "hasMetadataRow": true
     },
     {
+      "katottg": "UA46020050000037271",
+      "name": "Меденицька селищна територіальна громада",
+      "oblast": "Львівська область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA46020030000019252"
+      ],
+      "oblastCorpusCount": 4,
+      "oblastTotal": 71,
+      "oblastCorpusShare": 0.056,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA05040010000022470",
+      "name": "Бершадська міська територіальна громада",
+      "oblast": "Вінницька область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA05020170000049432"
+      ],
+      "oblastCorpusCount": 5,
+      "oblastTotal": 62,
+      "oblastCorpusShare": 0.081,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
       "katottg": "UA05040090000093950",
       "name": "Краснопільська сільська територіальна громада",
       "oblast": "Вінницька область",
@@ -625,9 +567,9 @@
       "corpusNeighbourCodes": [
         "UA05040030000050131"
       ],
-      "oblastCorpusCount": 4,
+      "oblastCorpusCount": 5,
       "oblastTotal": 62,
-      "oblastCorpusShare": 0.065,
+      "oblastCorpusShare": 0.081,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -640,9 +582,24 @@
       "corpusNeighbourCodes": [
         "UA05040030000050131"
       ],
-      "oblastCorpusCount": 4,
+      "oblastCorpusCount": 5,
       "oblastTotal": 62,
-      "oblastCorpusShare": 0.065,
+      "oblastCorpusShare": 0.081,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA05040190000039450",
+      "name": "Райгородська сільська територіальна громада",
+      "oblast": "Вінницька область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA05020170000049432"
+      ],
+      "oblastCorpusCount": 5,
+      "oblastTotal": 62,
+      "oblastCorpusShare": 0.081,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -685,9 +642,39 @@
       "corpusNeighbourCodes": [
         "UA61040430000018305"
       ],
-      "oblastCorpusCount": 8,
+      "oblastCorpusCount": 9,
       "oblastTotal": 55,
-      "oblastCorpusShare": 0.145,
+      "oblastCorpusShare": 0.164,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA61040350000078247",
+      "name": "Підволочиська селищна територіальна громада",
+      "oblast": "Тернопільська область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA61040010000042862"
+      ],
+      "oblastCorpusCount": 9,
+      "oblastTotal": 55,
+      "oblastCorpusShare": 0.164,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA61060350000024021",
+      "name": "Скала-Подільська селищна територіальна громада",
+      "oblast": "Тернопільська область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA61060050000068464"
+      ],
+      "oblastCorpusCount": 9,
+      "oblastTotal": 55,
+      "oblastCorpusShare": 0.164,
       "sourceQuality": null,
       "hasMetadataRow": true
     }
