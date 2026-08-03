@@ -2,8 +2,8 @@
   {
     "a": "Обухівська селищна територіальна громада",
     "b": "Обухівська міська територіальна громада",
-    "score": 0.286,
-    "goals_cosine": 0.059,
+    "score": 0.303,
+    "goals_cosine": 0.089,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -50,8 +50,8 @@
   {
     "a": "Галицька міська територіальна громада",
     "b": "Більшівцівська селищна територіальна громада",
-    "score": 0.469,
-    "goals_cosine": 0.365,
+    "score": 0.49,
+    "goals_cosine": 0.399,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -98,8 +98,8 @@
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Більшівцівська селищна територіальна громада",
-    "score": 0.397,
-    "goals_cosine": 0.307,
+    "score": 0.418,
+    "goals_cosine": 0.343,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -146,8 +146,8 @@
   {
     "a": "Божедарівська селищна територіальна громада",
     "b": "Лихівська селищна територіальна громада",
-    "score": 0.306,
-    "goals_cosine": 0.156,
+    "score": 0.314,
+    "goals_cosine": 0.169,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -192,10 +192,58 @@
     "status": "hypothesis"
   },
   {
+    "a": "Більшівцівська селищна територіальна громада",
+    "b": "Тлумацька міська територіальна громада",
+    "score": 0.239,
+    "goals_cosine": 0.044,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "operational",
+    "fiscal_similarity": 0.929,
+    "dream_overlap": null,
+    "operational_score": 0.875,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "low"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
     "a": "Скалатська міська територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.3,
-    "goals_cosine": 0.145,
+    "score": 0.321,
+    "goals_cosine": 0.18,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -240,10 +288,58 @@
     "status": "hypothesis"
   },
   {
+    "a": "Вашковецька сільська територіальна громада",
+    "b": "Лівинецька сільська територіальна громада",
+    "score": 0.291,
+    "goals_cosine": 0.13,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "operational",
+    "fiscal_similarity": 0.879,
+    "dream_overlap": null,
+    "operational_score": 0.859,
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
     "a": "Тернопільська міська територіальна громада",
     "b": "Великогаївська сільська територіальна громада",
-    "score": 0.39,
-    "goals_cosine": 0.234,
+    "score": 0.428,
+    "goals_cosine": 0.297,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -462,8 +558,8 @@
   {
     "a": "Галицька міська територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.231,
-    "goals_cosine": 0.031,
+    "score": 0.252,
+    "goals_cosine": 0.066,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -501,7 +597,7 @@
       {
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
-        "strength": "low"
+        "strength": "medium"
       }
     ],
     "discovery_primary": "geo",
@@ -510,8 +606,8 @@
   {
     "a": "Великоберезовицька селищна територіальна громада",
     "b": "Скалатська міська територіальна громада",
-    "score": 0.421,
-    "goals_cosine": 0.348,
+    "score": 0.441,
+    "goals_cosine": 0.381,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -556,10 +652,58 @@
     "status": "hypothesis"
   },
   {
+    "a": "Більшівцівська селищна територіальна громада",
+    "b": "Монастириська міська територіальна громада",
+    "score": 0.31,
+    "goals_cosine": 0.163,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "operational",
+    "fiscal_similarity": 0.788,
+    "dream_overlap": null,
+    "operational_score": 0.831,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
     "a": "Тернопільська міська територіальна громада",
     "b": "Великоберезовицька селищна територіальна громада",
-    "score": 0.387,
-    "goals_cosine": 0.228,
+    "score": 0.425,
+    "goals_cosine": 0.292,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -606,8 +750,8 @@
   {
     "a": "Кам'янська міська територіальна громада",
     "b": "Обухівська міська територіальна громада",
-    "score": 0.255,
-    "goals_cosine": 0.072,
+    "score": 0.256,
+    "goals_cosine": 0.073,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -654,8 +798,8 @@
   {
     "a": "Бурштинська міська територіальна громада",
     "b": "Більшівцівська селищна територіальна громада",
-    "score": 0.377,
-    "goals_cosine": 0.212,
+    "score": 0.388,
+    "goals_cosine": 0.229,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -702,8 +846,8 @@
   {
     "a": "Новомосковська міська територіальна громада",
     "b": "Обухівська міська територіальна громада",
-    "score": 0.27,
-    "goals_cosine": 0.095,
+    "score": 0.243,
+    "goals_cosine": 0.05,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -750,8 +894,8 @@
   {
     "a": "Більшівцівська селищна територіальна громада",
     "b": "Дубовецька сільська територіальна громада",
-    "score": 0.558,
-    "goals_cosine": 0.514,
+    "score": 0.578,
+    "goals_cosine": 0.546,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -798,8 +942,8 @@
   {
     "a": "Більшівцівська селищна територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.317,
-    "goals_cosine": 0.175,
+    "score": 0.336,
+    "goals_cosine": 0.206,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -846,8 +990,8 @@
   {
     "a": "Великоберезовицька селищна територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.401,
-    "goals_cosine": 0.314,
+    "score": 0.418,
+    "goals_cosine": 0.343,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -894,8 +1038,8 @@
   {
     "a": "Козелецька селищна територіальна громада",
     "b": "Великодимерська селищна територіальна громада",
-    "score": 0.223,
-    "goals_cosine": 0.018,
+    "score": 0.244,
+    "goals_cosine": 0.052,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -933,7 +1077,7 @@
       {
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
-        "strength": "low"
+        "strength": "medium"
       }
     ],
     "discovery_primary": "geo",
@@ -942,8 +1086,8 @@
   {
     "a": "Зазимська сільська територіальна громада",
     "b": "Великодимерська селищна територіальна громада",
-    "score": 0.242,
-    "goals_cosine": 0.049,
+    "score": 0.285,
+    "goals_cosine": 0.12,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -974,14 +1118,14 @@
         "strength": "high"
       },
       {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
         "strength": "high"
       },
       {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "low"
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
       }
     ],
     "discovery_primary": "geo",
@@ -990,8 +1134,8 @@
   {
     "a": "Дніпровська міська територіальна громада",
     "b": "Новомосковська міська територіальна громада",
-    "score": 0.34,
-    "goals_cosine": 0.212,
+    "score": 0.348,
+    "goals_cosine": 0.227,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1038,8 +1182,8 @@
   {
     "a": "Ужгородська міська територіальна громада",
     "b": "Мукачівська міська територіальна громада",
-    "score": 0.351,
-    "goals_cosine": 0.231,
+    "score": 0.363,
+    "goals_cosine": 0.251,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1086,8 +1230,8 @@
   {
     "a": "Великоберезовицька селищна територіальна громада",
     "b": "Великогаївська сільська територіальна громада",
-    "score": 0.37,
-    "goals_cosine": 0.199,
+    "score": 0.398,
+    "goals_cosine": 0.247,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -1134,8 +1278,8 @@
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.3,
-    "goals_cosine": 0.146,
+    "score": 0.331,
+    "goals_cosine": 0.197,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1182,8 +1326,8 @@
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Скалатська міська територіальна громада",
-    "score": 0.365,
-    "goals_cosine": 0.254,
+    "score": 0.394,
+    "goals_cosine": 0.303,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1230,8 +1374,8 @@
   {
     "a": "Великогаївська сільська територіальна громада",
     "b": "Скалатська міська територіальна громада",
-    "score": 0.276,
-    "goals_cosine": 0.106,
+    "score": 0.306,
+    "goals_cosine": 0.156,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1264,7 +1408,7 @@
       {
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
-        "strength": "medium"
+        "strength": "high"
       },
       {
         "id": "structural",
@@ -1278,8 +1422,8 @@
   {
     "a": "Вашковецька сільська територіальна громада",
     "b": "Кельменецька селищна територіальна громада",
-    "score": 0.257,
-    "goals_cosine": 0.074,
+    "score": 0.244,
+    "goals_cosine": 0.053,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1326,8 +1470,8 @@
   {
     "a": "Дніпровська міська територіальна громада",
     "b": "Обухівська міська територіальна громада",
-    "score": 0.284,
-    "goals_cosine": 0.12,
+    "score": 0.279,
+    "goals_cosine": 0.111,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1360,7 +1504,7 @@
       {
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
-        "strength": "high"
+        "strength": "medium"
       },
       {
         "id": "structural",
@@ -1374,8 +1518,8 @@
   {
     "a": "Кам'янська міська територіальна громада",
     "b": "Слобожанська селищна територіальна громада",
-    "score": 0.423,
-    "goals_cosine": 0.351,
+    "score": 0.447,
+    "goals_cosine": 0.39,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1467,8 +1611,8 @@
   {
     "a": "Бурштинська міська територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.411,
-    "goals_cosine": 0.331,
+    "score": 0.419,
+    "goals_cosine": 0.344,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1515,8 +1659,8 @@
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.271,
-    "goals_cosine": 0.098,
+    "score": 0.291,
+    "goals_cosine": 0.131,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1549,7 +1693,7 @@
       {
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
-        "strength": "medium"
+        "strength": "high"
       },
       {
         "id": "structural",
@@ -1563,8 +1707,8 @@
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Галицька міська територіальна громада",
-    "score": 0.328,
-    "goals_cosine": 0.193,
+    "score": 0.352,
+    "goals_cosine": 0.233,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1611,8 +1755,8 @@
   {
     "a": "Новомосковська міська територіальна громада",
     "b": "Слобожанська селищна територіальна громада",
-    "score": 0.263,
-    "goals_cosine": 0.084,
+    "score": 0.289,
+    "goals_cosine": 0.128,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1645,7 +1789,7 @@
       {
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
-        "strength": "medium"
+        "strength": "high"
       },
       {
         "id": "structural",
@@ -1659,8 +1803,8 @@
   {
     "a": "Великогаївська сільська територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.351,
-    "goals_cosine": 0.231,
+    "score": 0.375,
+    "goals_cosine": 0.271,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1707,8 +1851,8 @@
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Бурштинська міська територіальна громада",
-    "score": 0.308,
-    "goals_cosine": 0.159,
+    "score": 0.322,
+    "goals_cosine": 0.182,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1755,8 +1899,8 @@
   {
     "a": "Брацлавська селищна територіальна громада",
     "b": "Тульчинська міська територіальна громада",
-    "score": 0.249,
-    "goals_cosine": 0.061,
+    "score": 0.286,
+    "goals_cosine": 0.122,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1789,7 +1933,98 @@
       {
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
         "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Вашковецька сільська територіальна громада",
+    "b": "Новодністровська міська територіальна громада",
+    "score": 0.212,
+    "goals_cosine": 0.0,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "operational",
+    "fiscal_similarity": 0.302,
+    "dream_overlap": 0.5,
+    "operational_score": 0.643,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "medium",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Коломийська міська територіальна громада",
+    "b": "Олешанська сільська територіальна громада",
+    "score": 0.298,
+    "goals_cosine": 0.143,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "operational",
+    "fiscal_similarity": 0.178,
+    "dream_overlap": null,
+    "operational_score": 0.64,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
       },
       {
         "id": "structural",
@@ -1803,8 +2038,8 @@
   {
     "a": "Дубовецька сільська територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.329,
-    "goals_cosine": 0.195,
+    "score": 0.348,
+    "goals_cosine": 0.225,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1851,8 +2086,8 @@
   {
     "a": "Мукачівська міська територіальна громада",
     "b": "Білківська сільська територіальна громада",
-    "score": 0.433,
-    "goals_cosine": 0.368,
+    "score": 0.446,
+    "goals_cosine": 0.389,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1897,10 +2132,58 @@
     "status": "hypothesis"
   },
   {
+    "a": "Коломийська міська територіальна громада",
+    "b": "Тлумацька міська територіальна громада",
+    "score": 0.269,
+    "goals_cosine": 0.094,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "operational",
+    "fiscal_similarity": 0.291,
+    "dream_overlap": 0.2,
+    "operational_score": 0.58,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "medium"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
     "a": "Брацлавська селищна територіальна громада",
     "b": "Гайсинська міська територіальна громада",
-    "score": 0.291,
-    "goals_cosine": 0.131,
+    "score": 0.303,
+    "goals_cosine": 0.152,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,

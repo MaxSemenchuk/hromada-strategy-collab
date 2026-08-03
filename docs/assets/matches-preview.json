@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-08-03T10:30:20.900102+00:00",
+  "generatedAt": "2026-08-03T13:25:07.672116+00:00",
   "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
   "productUnit": "mss_candidate",
-  "pairCount": 2850,
-  "corpusGoals": 76,
-  "textMinedRows": 85,
+  "pairCount": 4278,
+  "corpusGoals": 93,
+  "textMinedRows": 102,
   "tracks": {
-    "thematic": "goals_cosine >= p90 (0.275) and geo_score <= 0.35 — cold-start vision partners",
+    "thematic": "goals_cosine >= p90 (0.281) and geo_score <= 0.35 — cold-start vision partners",
     "operational": "geo_score >= 0.85 and not thematic — convenient service co-sharers; slice ranked by operational_score (geo + fiscal_similarity + dream_overlap) when available",
     "mixed": "all other pairs",
     "counts": {
-      "thematic": 269,
-      "operational": 60,
-      "mixed": 2521
+      "thematic": 397,
+      "operational": 133,
+      "mixed": 3748
     },
-    "goalsFloor": 0.275,
+    "goalsFloor": 0.281,
     "goalsPercentile": 90,
     "geoThematicMax": 0.35,
     "geoOperationalMin": 0.85
@@ -28,93 +28,26 @@
       "discovery_primary",
       "status"
     ],
-    "annotated": 2850,
-    "withTheme": 2840,
+    "annotated": 4278,
+    "withTheme": 4268,
     "registryKnown": 4,
     "sidecar": {
       "path": "mss-candidates.json",
       "registryKnown": 4,
-      "hypotheses": 143
+      "hypotheses": 160
     }
   },
   "candidatesSidecar": {
     "registryKnown": 4,
-    "hypotheses": 143,
+    "hypotheses": 160,
     "caveat": "Кандидати договорів МСС (гіпотези). package.form — правова форма за правилами, не факт реєстру. known/registry_known — лише кураторська валідація. Стратегії / geo / complementary / explicit-ask — сигнали пошуку."
   },
   "known": [
     {
       "a": "Ніжинська міська територіальна громада",
-      "b": "Батуринська міська територіальна громада",
-      "score": 0.415,
-      "goals_cosine": 0.191,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": true,
-      "track": "mixed",
-      "a_short": "Ніжинська",
-      "b_short": "Батуринська",
-      "suggested_theme": "Поводження з відходами / довкілля",
-      "suggested_form": "спільне КП",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-      "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
-      "status": "registry_known",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Ніжинська міська територіальна громада",
       "b": "Козелецька селищна територіальна громада",
-      "score": 0.414,
-      "goals_cosine": 0.19,
+      "score": 0.406,
+      "goals_cosine": 0.176,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": true,
@@ -178,10 +111,77 @@
       ]
     },
     {
+      "a": "Ніжинська міська територіальна громада",
+      "b": "Батуринська міська територіальна громада",
+      "score": 0.402,
+      "goals_cosine": 0.169,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": true,
+      "track": "mixed",
+      "a_short": "Ніжинська",
+      "b_short": "Батуринська",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "kind": "mss_candidate",
+      "discovery_primary": "strategy_goals",
+      "status": "registry_known",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ]
+    },
+    {
       "a": "Батуринська міська територіальна громада",
       "b": "Козелецька селищна територіальна громада",
-      "score": 0.391,
-      "goals_cosine": 0.256,
+      "score": 0.397,
+      "goals_cosine": 0.265,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": true,
@@ -247,8 +247,8 @@
     {
       "a": "Слобожанська селищна територіальна громада",
       "b": "Обухівська селищна територіальна громада",
-      "score": 0.362,
-      "goals_cosine": 0.0,
+      "score": 0.379,
+      "goals_cosine": 0.027,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": true,
@@ -286,6 +286,11 @@
           "id": "structural",
           "label_uk": "ресурси / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "low"
         }
       ],
       "signal_chips": [
@@ -309,631 +314,2607 @@
   ],
   "pinCorpus": [
     {
+      "a": "Верховинська селищна територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.73,
+      "goals_cosine": 0.612,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Верховинська",
+      "b_short": "Кутська",
+      "rank": 1
+    },
+    {
       "a": "Галицька міська територіальна громада",
       "b": "Дубовецька сільська територіальна громада",
-      "score": 0.678,
-      "goals_cosine": 0.464,
+      "score": 0.695,
+      "goals_cosine": 0.492,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
       "a_short": "Галицька",
       "b_short": "Дубовецька",
-      "rank": 1
+      "rank": 2
+    },
+    {
+      "a": "Рукшинська сільська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.691,
+      "goals_cosine": 0.548,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Рукшинська",
+      "b_short": "Юрковецька",
+      "rank": 3
+    },
+    {
+      "a": "Новодністровська міська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.677,
+      "goals_cosine": 0.732,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "thematic",
+      "a_short": "Новодністровська",
+      "b_short": "Юрковецька",
+      "rank": 4
+    },
+    {
+      "a": "Новодністровська міська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.618,
+      "goals_cosine": 0.425,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Новодністровська",
+      "b_short": "Сокирянська",
+      "rank": 5
+    },
+    {
+      "a": "Новодністровська міська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.563,
+      "goals_cosine": 0.438,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Новодністровська",
+      "b_short": "Рукшинська",
+      "rank": 7
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Рахівська міська територіальна громада",
+      "score": 0.553,
+      "goals_cosine": 0.255,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Богданська",
+      "b_short": "Рахівська",
+      "rank": 8
+    },
+    {
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Монастириська міська територіальна громада",
+      "score": 0.532,
+      "goals_cosine": 0.283,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Тлумацька",
+      "b_short": "Монастириська",
+      "rank": 10
+    },
+    {
+      "a": "Ясінянська селищна територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.525,
+      "goals_cosine": 0.208,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Ясінянська",
+      "b_short": "Поляницька",
+      "rank": 11
     },
     {
       "a": "Кельменецька селищна територіальна громада",
       "b": "Рукшинська сільська територіальна громада",
-      "score": 0.548,
-      "goals_cosine": 0.31,
+      "score": 0.525,
+      "goals_cosine": 0.272,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
       "a_short": "Кельменецька",
       "b_short": "Рукшинська",
-      "rank": 3
-    },
-    {
-      "a": "Рукшинська сільська територіальна громада",
-      "b": "Сокирянська міська територіальна громада",
-      "score": 0.518,
-      "goals_cosine": 0.363,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Рукшинська",
-      "b_short": "Сокирянська",
-      "rank": 4
-    },
-    {
-      "a": "Клішковецька сільська територіальна громада",
-      "b": "Рукшинська сільська територіальна громада",
-      "score": 0.51,
-      "goals_cosine": 0.183,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Клішковецька",
-      "b_short": "Рукшинська",
-      "rank": 6
+      "rank": 12
     },
     {
       "a": "Вижницька міська територіальна громада",
       "b": "Косівська міська територіальна громада",
-      "score": 0.497,
-      "goals_cosine": 0.162,
+      "score": 0.521,
+      "goals_cosine": 0.201,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
       "a_short": "Вижницька",
       "b_short": "Косівська",
-      "rank": 7
+      "rank": 13
     },
     {
-      "a": "Кадубовецька сільська територіальна громада",
-      "b": "Клішковецька сільська територіальна громада",
-      "score": 0.485,
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.517,
+      "goals_cosine": 0.196,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Клішковецька",
+      "b_short": "Рукшинська",
+      "rank": 15
+    },
+    {
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.515,
+      "goals_cosine": 0.192,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Заліщицька",
+      "b_short": "Кадубовецька",
+      "rank": 16
+    },
+    {
+      "a": "Рахівська міська територіальна громада",
+      "b": "Верховинська селищна територіальна громада",
+      "score": 0.513,
+      "goals_cosine": 0.355,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Рахівська",
+      "b_short": "Верховинська",
+      "rank": 17
+    },
+    {
+      "a": "Ворохтянська селищна територіальна громада",
+      "b": "Зеленська сільська територіальна громада",
+      "score": 0.513,
+      "goals_cosine": 0.251,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Ворохтянська",
+      "b_short": "Зеленська",
+      "rank": 18
+    },
+    {
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.508,
+      "goals_cosine": 0.243,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Клішковецька",
+      "b_short": "Лівинецька",
+      "rank": 19
+    },
+    {
+      "a": "Рукшинська сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.507,
+      "goals_cosine": 0.345,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Рукшинська",
+      "b_short": "Сокирянська",
+      "rank": 20
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Ясінянська селищна територіальна громада",
+      "score": 0.502,
+      "goals_cosine": 0.232,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Богданська",
+      "b_short": "Ясінянська",
+      "rank": 21
+    },
+    {
+      "a": "Сокирянська міська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.497,
+      "goals_cosine": 0.433,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "thematic",
+      "a_short": "Сокирянська",
+      "b_short": "Юрковецька",
+      "rank": 22
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.496,
+      "goals_cosine": 0.223,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Богданська",
+      "b_short": "Поляницька",
+      "rank": 23
+    },
+    {
+      "a": "Верховинська селищна територіальна громада",
+      "b": "Космацька сільська територіальна громада",
+      "score": 0.494,
+      "goals_cosine": 0.219,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Верховинська",
+      "b_short": "Космацька",
+      "rank": 24
+    },
+    {
+      "a": "Рахівська міська територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.49,
+      "goals_cosine": 0.317,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Рахівська",
+      "b_short": "Кутська",
+      "rank": 26
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Верховинська селищна територіальна громада",
+      "score": 0.489,
+      "goals_cosine": 0.211,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Богданська",
+      "b_short": "Верховинська",
+      "rank": 27
+    },
+    {
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.484,
       "goals_cosine": 0.203,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
-      "a_short": "Кадубовецька",
-      "b_short": "Клішковецька",
-      "rank": 8
+      "a_short": "Кельменецька",
+      "b_short": "Лівинецька",
+      "rank": 28
     },
     {
-      "a": "Вікнянська сільська територіальна громада",
-      "b": "Кадубовецька сільська територіальна громада",
-      "score": 0.481,
-      "goals_cosine": 0.135,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Вікнянська",
-      "b_short": "Кадубовецька",
-      "rank": 9
-    },
-    {
-      "a": "Кельменецька селищна територіальна громада",
-      "b": "Сокирянська міська територіальна громада",
+      "a": "Борщівська міська територіальна громада",
+      "b": "Монастириська міська територіальна громада",
       "score": 0.481,
       "goals_cosine": 0.301,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
-      "a_short": "Кельменецька",
-      "b_short": "Сокирянська",
-      "rank": 10
+      "a_short": "Борщівська",
+      "b_short": "Монастириська",
+      "rank": 29
+    },
+    {
+      "a": "Ясінянська селищна територіальна громада",
+      "b": "Верховинська селищна територіальна громада",
+      "score": 0.48,
+      "goals_cosine": 0.196,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Ясінянська",
+      "b_short": "Верховинська",
+      "rank": 30
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.48,
+      "goals_cosine": 0.133,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вікнянська",
+      "b_short": "Кадубовецька",
+      "rank": 31
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.48,
+      "goals_cosine": 0.197,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Кадубовецька",
+      "b_short": "Клішковецька",
+      "rank": 32
+    },
+    {
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.479,
+      "goals_cosine": 0.402,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "thematic",
+      "a_short": "Тлумацька",
+      "b_short": "Рукшинська",
+      "rank": 33
     },
     {
       "a": "Вікнянська сільська територіальна громада",
       "b": "Жванецька сільська територіальна громада",
-      "score": 0.465,
-      "goals_cosine": 0.17,
+      "score": 0.478,
+      "goals_cosine": 0.192,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
       "a_short": "Вікнянська",
       "b_short": "Жванецька",
-      "rank": 12
+      "rank": 34
     },
     {
-      "a": "Кадубовецька сільська територіальна громада",
-      "b": "Кельменецька селищна територіальна громада",
-      "score": 0.465,
-      "goals_cosine": 0.274,
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.475,
+      "goals_cosine": 0.292,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
-      "a_short": "Кадубовецька",
-      "b_short": "Кельменецька",
-      "rank": 13
+      "a_short": "Кельменецька",
+      "b_short": "Юрковецька",
+      "rank": 35
     },
     {
-      "a": "Борщівська міська територіальна громада",
-      "b": "Кадубовецька сільська територіальна громада",
-      "score": 0.464,
-      "goals_cosine": 0.17,
+      "a": "Космацька сільська територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.474,
+      "goals_cosine": 0.186,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
-      "a_short": "Борщівська",
-      "b_short": "Кадубовецька",
-      "rank": 14
-    },
-    {
-      "a": "Кадубовецька сільська територіальна громада",
-      "b": "Рукшинська сільська територіальна громада",
-      "score": 0.461,
-      "goals_cosine": 0.268,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Кадубовецька",
-      "b_short": "Рукшинська",
-      "rank": 15
-    },
-    {
-      "a": "Вікнянська сільська територіальна громада",
-      "b": "Клішковецька сільська територіальна громада",
-      "score": 0.447,
-      "goals_cosine": 0.141,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Вікнянська",
-      "b_short": "Клішковецька",
-      "rank": 17
+      "a_short": "Космацька",
+      "b_short": "Поляницька",
+      "rank": 36
     },
     {
       "a": "Рукшинська сільська територіальна громада",
       "b": "Жванецька сільська територіальна громада",
-      "score": 0.444,
-      "goals_cosine": 0.073,
+      "score": 0.472,
+      "goals_cosine": 0.12,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
       "a_short": "Рукшинська",
       "b_short": "Жванецька",
-      "rank": 18
-    },
-    {
-      "a": "Клішковецька сільська територіальна громада",
-      "b": "Жванецька сільська територіальна громада",
-      "score": 0.443,
-      "goals_cosine": 0.134,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Клішковецька",
-      "b_short": "Жванецька",
-      "rank": 19
+      "rank": 38
     },
     {
       "a": "Кельменецька селищна територіальна громада",
-      "b": "Жванецька сільська територіальна громада",
-      "score": 0.441,
-      "goals_cosine": 0.131,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Кельменецька",
-      "b_short": "Жванецька",
-      "rank": 20
-    },
-    {
-      "a": "Кельменецька селищна територіальна громада",
-      "b": "Клішковецька сільська територіальна громада",
-      "score": 0.437,
-      "goals_cosine": 0.229,
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.47,
+      "goals_cosine": 0.283,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Кельменецька",
-      "b_short": "Клішковецька",
-      "rank": 21
+      "b_short": "Сокирянська",
+      "rank": 39
+    },
+    {
+      "a": "Рахівська міська територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.469,
+      "goals_cosine": 0.178,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Рахівська",
+      "b_short": "Поляницька",
+      "rank": 40
     },
     {
       "a": "Борщівська міська територіальна громада",
-      "b": "Кельменецька селищна територіальна громада",
-      "score": 0.436,
-      "goals_cosine": 0.227,
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.469,
+      "goals_cosine": 0.282,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Борщівська",
-      "b_short": "Кельменецька",
-      "rank": 22
+      "b_short": "Лівинецька",
+      "rank": 41
+    },
+    {
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.467,
+      "goals_cosine": 0.278,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Тлумацька",
+      "b_short": "Кадубовецька",
+      "rank": 42
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Ворохтянська селищна територіальна громада",
+      "score": 0.466,
+      "goals_cosine": 0.172,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Богданська",
+      "b_short": "Ворохтянська",
+      "rank": 43
+    },
+    {
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.466,
+      "goals_cosine": 0.277,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Тлумацька",
+      "b_short": "Юрковецька",
+      "rank": 44
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Тлумацька міська територіальна громада",
+      "score": 0.465,
+      "goals_cosine": 0.109,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Олешанська",
+      "b_short": "Тлумацька",
+      "rank": 45
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.464,
+      "goals_cosine": 0.169,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Борщівська",
+      "b_short": "Кадубовецька",
+      "rank": 46
+    },
+    {
+      "a": "Вижницька міська територіальна громада",
+      "b": "Космацька сільська територіальна громада",
+      "score": 0.461,
+      "goals_cosine": 0.164,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вижницька",
+      "b_short": "Космацька",
+      "rank": 47
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Заліщицька міська територіальна громада",
+      "score": 0.459,
+      "goals_cosine": 0.265,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Олешанська",
+      "b_short": "Заліщицька",
+      "rank": 48
+    },
+    {
+      "a": "Ясінянська селищна територіальна громада",
+      "b": "Космацька сільська територіальна громада",
+      "score": 0.458,
+      "goals_cosine": 0.159,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Ясінянська",
+      "b_short": "Космацька",
+      "rank": 49
+    },
+    {
+      "a": "Ворохтянська селищна територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.457,
+      "goals_cosine": 0.094,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Ворохтянська",
+      "b_short": "Поляницька",
+      "rank": 50
+    },
+    {
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.457,
+      "goals_cosine": 0.157,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Клішковецька",
+      "b_short": "Юрковецька",
+      "rank": 51
+    },
+    {
+      "a": "Космацька сільська територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.456,
+      "goals_cosine": 0.155,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Космацька",
+      "b_short": "Кутська",
+      "rank": 52
     },
     {
       "a": "Кадубовецька сільська територіальна громада",
-      "b": "Сокирянська міська територіальна громада",
-      "score": 0.436,
-      "goals_cosine": 0.33,
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.456,
+      "goals_cosine": 0.26,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кадубовецька",
+      "b_short": "Кельменецька",
+      "rank": 53
+    },
+    {
+      "a": "Монастириська міська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.454,
+      "goals_cosine": 0.361,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "thematic",
+      "a_short": "Монастириська",
+      "b_short": "Клішковецька",
+      "rank": 54
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.453,
+      "goals_cosine": 0.15,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Борщівська",
+      "b_short": "Юрковецька",
+      "rank": 55
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.453,
+      "goals_cosine": 0.089,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
       "a_short": "Кадубовецька",
-      "b_short": "Сокирянська",
-      "rank": 23
+      "b_short": "Юрковецька",
+      "rank": 56
+    },
+    {
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.452,
+      "goals_cosine": 0.253,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кельменецька",
+      "b_short": "Новодністровська",
+      "rank": 57
+    },
+    {
+      "a": "Зеленська сільська територіальна громада",
+      "b": "Косівська міська територіальна громада",
+      "score": 0.451,
+      "goals_cosine": 0.147,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Зеленська",
+      "b_short": "Косівська",
+      "rank": 58
+    },
+    {
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.451,
+      "goals_cosine": 0.148,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Заліщицька",
+      "b_short": "Юрковецька",
+      "rank": 59
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.451,
+      "goals_cosine": 0.252,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кадубовецька",
+      "b_short": "Рукшинська",
+      "rank": 60
+    },
+    {
+      "a": "Монастириська міська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.45,
+      "goals_cosine": 0.251,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Монастириська",
+      "b_short": "Кадубовецька",
+      "rank": 61
+    },
+    {
+      "a": "Монастириська міська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.45,
+      "goals_cosine": 0.354,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "thematic",
+      "a_short": "Монастириська",
+      "b_short": "Кельменецька",
+      "rank": 62
     },
     {
       "a": "Бурштинська міська територіальна громада",
       "b": "Дубовецька сільська територіальна громада",
-      "score": 0.429,
-      "goals_cosine": 0.111,
+      "score": 0.449,
+      "goals_cosine": 0.145,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
       "a_short": "Бурштинська",
       "b_short": "Дубовецька",
-      "rank": 25
+      "rank": 63
+    },
+    {
+      "a": "Верховинська селищна територіальна громада",
+      "b": "Зеленська сільська територіальна громада",
+      "score": 0.448,
+      "goals_cosine": 0.08,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Верховинська",
+      "b_short": "Зеленська",
+      "rank": 64
+    },
+    {
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.447,
+      "goals_cosine": 0.141,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Клішковецька",
+      "b_short": "Жванецька",
+      "rank": 66
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.446,
+      "goals_cosine": 0.077,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Яремчанська",
+      "b_short": "Поляницька",
+      "rank": 67
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Олешанська сільська територіальна громада",
+      "score": 0.445,
+      "goals_cosine": 0.138,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Дубовецька",
+      "b_short": "Олешанська",
+      "rank": 70
+    },
+    {
+      "a": "Лівинецька сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.445,
+      "goals_cosine": 0.138,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Лівинецька",
+      "b_short": "Рукшинська",
+      "rank": 71
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Ворохтянська селищна територіальна громада",
+      "score": 0.444,
+      "goals_cosine": 0.136,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Яремчанська",
+      "b_short": "Ворохтянська",
+      "rank": 72
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.444,
+      "goals_cosine": 0.136,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вікнянська",
+      "b_short": "Клішковецька",
+      "rank": 73
+    },
+    {
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.444,
+      "goals_cosine": 0.136,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Кельменецька",
+      "b_short": "Жванецька",
+      "rank": 74
     },
     {
       "a": "Яремчанська міська територіальна громада",
       "b": "Вижницька міська територіальна громада",
-      "score": 0.424,
-      "goals_cosine": 0.207,
+      "score": 0.443,
+      "goals_cosine": 0.239,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Яремчанська",
       "b_short": "Вижницька",
-      "rank": 27
+      "rank": 75
+    },
+    {
+      "a": "Ворохтянська селищна територіальна громада",
+      "b": "Косівська міська територіальна громада",
+      "score": 0.443,
+      "goals_cosine": 0.135,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Ворохтянська",
+      "b_short": "Косівська",
+      "rank": 76
+    },
+    {
+      "a": "Зеленська сільська територіальна громада",
+      "b": "Космацька сільська територіальна громада",
+      "score": 0.442,
+      "goals_cosine": 0.132,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Зеленська",
+      "b_short": "Космацька",
+      "rank": 77
+    },
+    {
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.442,
+      "goals_cosine": 0.237,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кельменецька",
+      "b_short": "Клішковецька",
+      "rank": 78
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Космацька сільська територіальна громада",
+      "score": 0.441,
+      "goals_cosine": 0.235,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Богданська",
+      "b_short": "Космацька",
+      "rank": 80
+    },
+    {
+      "a": "Коломийська міська територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.44,
+      "goals_cosine": 0.13,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Коломийська",
+      "b_short": "Кутська",
+      "rank": 81
+    },
+    {
+      "a": "Рахівська міська територіальна громада",
+      "b": "Космацька сільська територіальна громада",
+      "score": 0.438,
+      "goals_cosine": 0.23,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Рахівська",
+      "b_short": "Космацька",
+      "rank": 83
+    },
+    {
+      "a": "Верховинська селищна територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.433,
+      "goals_cosine": 0.117,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Верховинська",
+      "b_short": "Поляницька",
+      "rank": 84
     },
     {
       "a": "Борщівська міська територіальна громада",
-      "b": "Клішковецька сільська територіальна громада",
-      "score": 0.424,
-      "goals_cosine": 0.206,
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.43,
+      "goals_cosine": 0.217,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Борщівська",
-      "b_short": "Клішковецька",
-      "rank": 28
+      "b_short": "Кельменецька",
+      "rank": 85
+    },
+    {
+      "a": "Ясінянська селищна територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.429,
+      "goals_cosine": 0.214,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Ясінянська",
+      "b_short": "Кутська",
+      "rank": 86
     },
     {
       "a": "Борщівська міська територіальна громада",
       "b": "Вікнянська сільська територіальна громада",
-      "score": 0.421,
-      "goals_cosine": 0.098,
+      "score": 0.428,
+      "goals_cosine": 0.109,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
       "a_short": "Борщівська",
       "b_short": "Вікнянська",
-      "rank": 32
+      "rank": 88
     },
     {
-      "a": "Ніжинська міська територіальна громада",
-      "b": "Батуринська міська територіальна громада",
-      "score": 0.415,
-      "goals_cosine": 0.191,
-      "geo_score": 0.6,
+      "a": "Косівська міська територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.426,
+      "goals_cosine": 0.043,
+      "geo_score": 1.0,
       "mss_network": 1.0,
-      "known": true,
-      "track": "mixed",
-      "a_short": "Ніжинська",
-      "b_short": "Батуринська",
-      "rank": 33
+      "known": false,
+      "track": "operational",
+      "a_short": "Косівська",
+      "b_short": "Кутська",
+      "rank": 89
     },
     {
-      "a": "Ніжинська міська територіальна громада",
-      "b": "Козелецька селищна територіальна громада",
-      "score": 0.414,
-      "goals_cosine": 0.19,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": true,
-      "track": "mixed",
-      "a_short": "Ніжинська",
-      "b_short": "Козелецька",
-      "rank": 34
-    },
-    {
-      "a": "Вашковецька сільська територіальна громада",
-      "b": "Сокирянська міська територіальна громада",
-      "score": 0.403,
-      "goals_cosine": 0.067,
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Вікнянська сільська територіальна громада",
+      "score": 0.426,
+      "goals_cosine": 0.106,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
-      "a_short": "Вашковецька",
+      "a_short": "Заліщицька",
+      "b_short": "Вікнянська",
+      "rank": 90
+    },
+    {
+      "a": "Ясінянська селищна територіальна громада",
+      "b": "Ворохтянська селищна територіальна громада",
+      "score": 0.425,
+      "goals_cosine": 0.104,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Ясінянська",
+      "b_short": "Ворохтянська",
+      "rank": 92
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.423,
+      "goals_cosine": 0.205,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Борщівська",
+      "b_short": "Клішковецька",
+      "rank": 93
+    },
+    {
+      "a": "Лівинецька сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.423,
+      "goals_cosine": 0.1,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Лівинецька",
+      "b_short": "Жванецька",
+      "rank": 94
+    },
+    {
+      "a": "Рахівська міська територіальна громада",
+      "b": "Ясінянська селищна територіальна громада",
+      "score": 0.421,
+      "goals_cosine": 0.097,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Рахівська",
+      "b_short": "Ясінянська",
+      "rank": 96
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.42,
+      "goals_cosine": 0.304,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "thematic",
+      "a_short": "Кадубовецька",
       "b_short": "Сокирянська",
-      "rank": 38
+      "rank": 98
+    },
+    {
+      "a": "Вижницька міська територіальна громада",
+      "b": "Зеленська сільська територіальна громада",
+      "score": 0.418,
+      "goals_cosine": 0.092,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вижницька",
+      "b_short": "Зеленська",
+      "rank": 100
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.416,
+      "goals_cosine": 0.193,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Богданська",
+      "b_short": "Кутська",
+      "rank": 103
     },
     {
       "a": "Галицька міська територіальна громада",
       "b": "Бурштинська міська територіальна громада",
-      "score": 0.395,
-      "goals_cosine": 0.055,
+      "score": 0.413,
+      "goals_cosine": 0.084,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
       "a_short": "Галицька",
       "b_short": "Бурштинська",
-      "rank": 42
+      "rank": 106
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Зеленська сільська територіальна громада",
+      "score": 0.413,
+      "goals_cosine": 0.084,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Богданська",
+      "b_short": "Зеленська",
+      "rank": 107
+    },
+    {
+      "a": "Ясінянська селищна територіальна громада",
+      "b": "Зеленська сільська територіальна громада",
+      "score": 0.413,
+      "goals_cosine": 0.084,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Ясінянська",
+      "b_short": "Зеленська",
+      "rank": 108
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.413,
+      "goals_cosine": 0.189,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кадубовецька",
+      "b_short": "Лівинецька",
+      "rank": 109
+    },
+    {
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.412,
+      "goals_cosine": 0.29,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "thematic",
+      "a_short": "Тлумацька",
+      "b_short": "Кельменецька",
+      "rank": 110
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Монастириська міська територіальна громада",
+      "score": 0.409,
+      "goals_cosine": 0.078,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Дубовецька",
+      "b_short": "Монастириська",
+      "rank": 112
+    },
+    {
+      "a": "Ворохтянська селищна територіальна громада",
+      "b": "Космацька сільська територіальна громада",
+      "score": 0.409,
+      "goals_cosine": 0.077,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Ворохтянська",
+      "b_short": "Космацька",
+      "rank": 113
+    },
+    {
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Монастириська міська територіальна громада",
+      "score": 0.409,
+      "goals_cosine": 0.181,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Заліщицька",
+      "b_short": "Монастириська",
+      "rank": 114
+    },
+    {
+      "a": "Ніжинська міська територіальна громада",
+      "b": "Козелецька селищна територіальна громада",
+      "score": 0.406,
+      "goals_cosine": 0.176,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": true,
+      "track": "mixed",
+      "a_short": "Ніжинська",
+      "b_short": "Козелецька",
+      "rank": 115
+    },
+    {
+      "a": "Коломийська міська територіальна громада",
+      "b": "Косівська міська територіальна громада",
+      "score": 0.406,
+      "goals_cosine": 0.073,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Коломийська",
+      "b_short": "Косівська",
+      "rank": 116
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.406,
+      "goals_cosine": 0.01,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вікнянська",
+      "b_short": "Юрковецька",
+      "rank": 117
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Ясінянська селищна територіальна громада",
+      "score": 0.404,
+      "goals_cosine": 0.07,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Яремчанська",
+      "b_short": "Ясінянська",
+      "rank": 118
+    },
+    {
+      "a": "Коломийська міська територіальна громада",
+      "b": "Космацька сільська територіальна громада",
+      "score": 0.403,
+      "goals_cosine": 0.068,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Коломийська",
+      "b_short": "Космацька",
+      "rank": 119
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Заліщицька міська територіальна громада",
+      "score": 0.403,
+      "goals_cosine": 0.067,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Борщівська",
+      "b_short": "Заліщицька",
+      "rank": 120
+    },
+    {
+      "a": "Ніжинська міська територіальна громада",
+      "b": "Батуринська міська територіальна громада",
+      "score": 0.402,
+      "goals_cosine": 0.169,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": true,
+      "track": "mixed",
+      "a_short": "Ніжинська",
+      "b_short": "Батуринська",
+      "rank": 121
+    },
+    {
+      "a": "Вижницька міська територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.4,
+      "goals_cosine": 0.0,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вижницька",
+      "b_short": "Кутська",
+      "rank": 122
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Монастириська міська територіальна громада",
+      "score": 0.4,
+      "goals_cosine": 0.166,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Монастириська",
+      "rank": 123
+    },
+    {
+      "a": "Монастириська міська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.399,
+      "goals_cosine": 0.269,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Монастириська",
+      "b_short": "Лівинецька",
+      "rank": 125
     },
     {
       "a": "Батуринська міська територіальна громада",
       "b": "Козелецька селищна територіальна громада",
-      "score": 0.391,
-      "goals_cosine": 0.256,
+      "score": 0.397,
+      "goals_cosine": 0.265,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": true,
       "track": "mixed",
       "a_short": "Батуринська",
       "b_short": "Козелецька",
-      "rank": 43
+      "rank": 127
     },
     {
-      "a": "Бурштинська міська територіальна громада",
-      "b": "Вікнянська сільська територіальна громада",
-      "score": 0.389,
-      "goals_cosine": 0.253,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Бурштинська",
-      "b_short": "Вікнянська",
-      "rank": 45
-    },
-    {
-      "a": "Борщівська міська територіальна громада",
-      "b": "Рукшинська сільська територіальна громада",
-      "score": 0.385,
-      "goals_cosine": 0.142,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Борщівська",
-      "b_short": "Рукшинська",
-      "rank": 48
-    },
-    {
-      "a": "Вікнянська сільська територіальна громада",
-      "b": "Рукшинська сільська територіальна громада",
-      "score": 0.381,
-      "goals_cosine": 0.031,
+      "a": "Вижницька міська територіальна громада",
+      "b": "Верховинська селищна територіальна громада",
+      "score": 0.396,
+      "goals_cosine": 0.055,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
-      "a_short": "Вікнянська",
-      "b_short": "Рукшинська",
-      "rank": 50
+      "a_short": "Вижницька",
+      "b_short": "Верховинська",
+      "rank": 128
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Монастириська міська територіальна громада",
+      "score": 0.396,
+      "goals_cosine": 0.055,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Галицька",
+      "b_short": "Монастириська",
+      "rank": 129
+    },
+    {
+      "a": "Монастириська міська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.395,
+      "goals_cosine": 0.263,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Монастириська",
+      "b_short": "Юрковецька",
+      "rank": 130
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Тлумацька міська територіальна громада",
+      "score": 0.393,
+      "goals_cosine": 0.052,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Галицька",
+      "b_short": "Тлумацька",
+      "rank": 132
     },
     {
       "a": "Клішковецька сільська територіальна громада",
       "b": "Сокирянська міська територіальна громада",
-      "score": 0.381,
-      "goals_cosine": 0.239,
+      "score": 0.392,
+      "goals_cosine": 0.258,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Клішковецька",
       "b_short": "Сокирянська",
-      "rank": 51
+      "rank": 135
     },
     {
-      "a": "Кадубовецька сільська територіальна громада",
-      "b": "Жванецька сільська територіальна громада",
-      "score": 0.368,
-      "goals_cosine": 0.113,
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.391,
+      "goals_cosine": 0.152,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
-      "a_short": "Кадубовецька",
-      "b_short": "Жванецька",
-      "rank": 56
+      "a_short": "Заліщицька",
+      "b_short": "Рукшинська",
+      "rank": 136
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Верховинська селищна територіальна громада",
+      "score": 0.389,
+      "goals_cosine": 0.045,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Яремчанська",
+      "b_short": "Верховинська",
+      "rank": 138
+    },
+    {
+      "a": "Вижницька міська територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.389,
+      "goals_cosine": 0.149,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Вижницька",
+      "b_short": "Поляницька",
+      "rank": 139
+    },
+    {
+      "a": "Рахівська міська територіальна громада",
+      "b": "Ворохтянська селищна територіальна громада",
+      "score": 0.389,
+      "goals_cosine": 0.044,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Рахівська",
+      "b_short": "Ворохтянська",
+      "rank": 140
+    },
+    {
+      "a": "Верховинська селищна територіальна громада",
+      "b": "Косівська міська територіальна громада",
+      "score": 0.388,
+      "goals_cosine": 0.042,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Верховинська",
+      "b_short": "Косівська",
+      "rank": 142
+    },
+    {
+      "a": "Космацька сільська територіальна громада",
+      "b": "Косівська міська територіальна громада",
+      "score": 0.386,
+      "goals_cosine": 0.039,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Космацька",
+      "b_short": "Косівська",
+      "rank": 143
+    },
+    {
+      "a": "Лівинецька сільська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.386,
+      "goals_cosine": 0.143,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Лівинецька",
+      "b_short": "Юрковецька",
+      "rank": 144
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Зеленська сільська територіальна громада",
+      "score": 0.384,
+      "goals_cosine": 0.139,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Яремчанська",
+      "b_short": "Зеленська",
+      "rank": 145
+    },
+    {
+      "a": "Лівинецька сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.384,
+      "goals_cosine": 0.14,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Лівинецька",
+      "b_short": "Сокирянська",
+      "rank": 146
+    },
+    {
+      "a": "Вашковецька сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.383,
+      "goals_cosine": 0.035,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вашковецька",
+      "b_short": "Сокирянська",
+      "rank": 148
+    },
+    {
+      "a": "Верховинська селищна територіальна громада",
+      "b": "Ворохтянська селищна територіальна громада",
+      "score": 0.382,
+      "goals_cosine": 0.032,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Верховинська",
+      "b_short": "Ворохтянська",
+      "rank": 150
+    },
+    {
+      "a": "Коломийська міська територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.382,
+      "goals_cosine": 0.136,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Коломийська",
+      "b_short": "Поляницька",
+      "rank": 151
+    },
+    {
+      "a": "Верховинська селищна територіальна громада",
+      "b": "Коломийська міська територіальна громада",
+      "score": 0.381,
+      "goals_cosine": 0.136,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Верховинська",
+      "b_short": "Коломийська",
+      "rank": 154
+    },
+    {
+      "a": "Вижницька міська територіальна громада",
+      "b": "Рахівська міська територіальна громада",
+      "score": 0.38,
+      "goals_cosine": 0.133,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Вижницька",
+      "b_short": "Рахівська",
+      "rank": 155
     },
     {
       "a": "Слобожанська селищна територіальна громада",
       "b": "Обухівська селищна територіальна громада",
-      "score": 0.362,
-      "goals_cosine": 0.0,
+      "score": 0.379,
+      "goals_cosine": 0.027,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": true,
       "track": "operational",
       "a_short": "Слобожанська",
       "b_short": "Обухівська",
-      "rank": 60
+      "rank": 156
     },
     {
       "a": "Вікнянська сільська територіальна громада",
-      "b": "Кельменецька селищна територіальна громада",
-      "score": 0.355,
-      "goals_cosine": 0.092,
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.379,
+      "goals_cosine": 0.132,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Вікнянська",
-      "b_short": "Кельменецька",
-      "rank": 63
+      "b_short": "Лівинецька",
+      "rank": 157
     },
     {
-      "a": "Сокирянська міська територіальна громада",
-      "b": "Жванецька сільська територіальна громада",
-      "score": 0.336,
-      "goals_cosine": 0.061,
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Монастириська міська територіальна громада",
+      "score": 0.377,
+      "goals_cosine": 0.024,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Олешанська",
+      "b_short": "Монастириська",
+      "rank": 158
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.377,
+      "goals_cosine": 0.129,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
-      "a_short": "Сокирянська",
+      "a_short": "Олешанська",
+      "b_short": "Кадубовецька",
+      "rank": 159
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.377,
+      "goals_cosine": 0.024,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вікнянська",
+      "b_short": "Рукшинська",
+      "rank": 160
+    },
+    {
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Борщівська міська територіальна громада",
+      "score": 0.376,
+      "goals_cosine": 0.126,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Тлумацька",
+      "b_short": "Борщівська",
+      "rank": 161
+    },
+    {
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.376,
+      "goals_cosine": 0.231,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Тлумацька",
+      "b_short": "Клішковецька",
+      "rank": 162
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Тлумацька міська територіальна громада",
+      "score": 0.374,
+      "goals_cosine": 0.018,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Дубовецька",
+      "b_short": "Тлумацька",
+      "rank": 164
+    },
+    {
+      "a": "Рахівська міська територіальна громада",
+      "b": "Коломийська міська територіальна громада",
+      "score": 0.374,
+      "goals_cosine": 0.228,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Рахівська",
+      "b_short": "Коломийська",
+      "rank": 165
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.374,
+      "goals_cosine": 0.124,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кадубовецька",
       "b_short": "Жванецька",
-      "rank": 75
+      "rank": 166
+    },
+    {
+      "a": "Лівинецька сільська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.373,
+      "goals_cosine": 0.121,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Лівинецька",
+      "b_short": "Новодністровська",
+      "rank": 167
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Вікнянська сільська територіальна громада",
+      "score": 0.372,
+      "goals_cosine": 0.224,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Вікнянська",
+      "rank": 168
+    },
+    {
+      "a": "Вижницька міська територіальна громада",
+      "b": "Богданська сільська територіальна громада",
+      "score": 0.371,
+      "goals_cosine": 0.118,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Вижницька",
+      "b_short": "Богданська",
+      "rank": 169
+    },
+    {
+      "a": "Вижницька міська територіальна громада",
+      "b": "Коломийська міська територіальна громада",
+      "score": 0.371,
+      "goals_cosine": 0.014,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вижницька",
+      "b_short": "Коломийська",
+      "rank": 170
+    },
+    {
+      "a": "Вижницька міська територіальна громада",
+      "b": "Ясінянська селищна територіальна громада",
+      "score": 0.37,
+      "goals_cosine": 0.117,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Вижницька",
+      "b_short": "Ясінянська",
+      "rank": 172
+    },
+    {
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.37,
+      "goals_cosine": 0.117,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Заліщицька",
+      "b_short": "Жванецька",
+      "rank": 173
     },
     {
       "a": "Яремчанська міська територіальна громада",
       "b": "Косівська міська територіальна громада",
-      "score": 0.332,
-      "goals_cosine": 0.053,
+      "score": 0.369,
+      "goals_cosine": 0.115,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Яремчанська",
       "b_short": "Косівська",
-      "rank": 78
+      "rank": 174
+    },
+    {
+      "a": "Зеленська сільська територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.369,
+      "goals_cosine": 0.115,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Зеленська",
+      "b_short": "Поляницька",
+      "rank": 175
+    },
+    {
+      "a": "Монастириська міська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.366,
+      "goals_cosine": 0.213,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Монастириська",
+      "b_short": "Рукшинська",
+      "rank": 178
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Коломийська міська територіальна громада",
+      "score": 0.365,
+      "goals_cosine": 0.109,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Богданська",
+      "b_short": "Коломийська",
+      "rank": 180
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Вікнянська сільська територіальна громада",
+      "score": 0.363,
+      "goals_cosine": 0.106,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Олешанська",
+      "b_short": "Вікнянська",
+      "rank": 182
+    },
+    {
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.363,
+      "goals_cosine": 0.105,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Заліщицька",
+      "b_short": "Лівинецька",
+      "rank": 183
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Коломийська міська територіальна громада",
+      "score": 0.362,
+      "goals_cosine": 0.0,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Яремчанська",
+      "b_short": "Коломийська",
+      "rank": 184
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Космацька сільська територіальна громада",
+      "score": 0.362,
+      "goals_cosine": 0.0,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Яремчанська",
+      "b_short": "Космацька",
+      "rank": 185
+    },
+    {
+      "a": "Вижницька міська територіальна громада",
+      "b": "Ворохтянська селищна територіальна громада",
+      "score": 0.362,
+      "goals_cosine": 0.103,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Вижницька",
+      "b_short": "Ворохтянська",
+      "rank": 188
+    },
+    {
+      "a": "Зеленська сільська територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.362,
+      "goals_cosine": 0.0,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Зеленська",
+      "b_short": "Кутська",
+      "rank": 189
+    },
+    {
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Заліщицька міська територіальна громада",
+      "score": 0.36,
+      "goals_cosine": 0.1,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Тлумацька",
+      "b_short": "Заліщицька",
+      "rank": 192
+    },
+    {
+      "a": "Монастириська міська територіальна громада",
+      "b": "Вікнянська сільська територіальна громада",
+      "score": 0.359,
+      "goals_cosine": 0.202,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Монастириська",
+      "b_short": "Вікнянська",
+      "rank": 193
+    },
+    {
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.357,
+      "goals_cosine": 0.199,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Заліщицька",
+      "b_short": "Кельменецька",
+      "rank": 194
+    },
+    {
+      "a": "Юрковецька сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.356,
+      "goals_cosine": 0.094,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Юрковецька",
+      "b_short": "Жванецька",
+      "rank": 195
+    },
+    {
+      "a": "Сокирянська міська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.355,
+      "goals_cosine": 0.091,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Сокирянська",
+      "b_short": "Жванецька",
+      "rank": 197
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.354,
+      "goals_cosine": 0.09,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Борщівська",
+      "b_short": "Рукшинська",
+      "rank": 198
+    },
+    {
+      "a": "Зеленська сільська територіальна громада",
+      "b": "Коломийська міська територіальна громада",
+      "score": 0.353,
+      "goals_cosine": 0.089,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Зеленська",
+      "b_short": "Коломийська",
+      "rank": 199
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.352,
+      "goals_cosine": 0.191,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Олешанська",
+      "b_short": "Жванецька",
+      "rank": 202
+    },
+    {
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.35,
+      "goals_cosine": 0.084,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Заліщицька",
+      "b_short": "Клішковецька",
+      "rank": 205
+    },
+    {
+      "a": "Новодністровська міська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.349,
+      "goals_cosine": 0.081,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Новодністровська",
+      "b_short": "Жванецька",
+      "rank": 207
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Олешанська сільська територіальна громада",
+      "score": 0.348,
+      "goals_cosine": 0.079,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Олешанська",
+      "rank": 209
+    },
+    {
+      "a": "Рахівська міська територіальна громада",
+      "b": "Косівська міська територіальна громада",
+      "score": 0.347,
+      "goals_cosine": 0.078,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Рахівська",
+      "b_short": "Косівська",
+      "rank": 212
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.346,
+      "goals_cosine": 0.077,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Вікнянська",
+      "b_short": "Кельменецька",
+      "rank": 214
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Косівська міська територіальна громада",
+      "score": 0.345,
+      "goals_cosine": 0.074,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Богданська",
+      "b_short": "Косівська",
+      "rank": 216
+    },
+    {
+      "a": "Ворохтянська селищна територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.345,
+      "goals_cosine": 0.076,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Ворохтянська",
+      "b_short": "Кутська",
+      "rank": 217
+    },
+    {
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Вікнянська сільська територіальна громада",
+      "score": 0.343,
+      "goals_cosine": 0.072,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Тлумацька",
+      "b_short": "Вікнянська",
+      "rank": 219
+    },
+    {
+      "a": "Рахівська міська територіальна громада",
+      "b": "Зеленська сільська територіальна громада",
+      "score": 0.342,
+      "goals_cosine": 0.07,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Рахівська",
+      "b_short": "Зеленська",
+      "rank": 220
+    },
+    {
+      "a": "Ясінянська селищна територіальна громада",
+      "b": "Коломийська міська територіальна громада",
+      "score": 0.341,
+      "goals_cosine": 0.068,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Ясінянська",
+      "b_short": "Коломийська",
+      "rank": 221
     },
     {
       "a": "Дубовецька сільська територіальна громада",
       "b": "Кадубовецька сільська територіальна громада",
-      "score": 0.332,
-      "goals_cosine": 0.158,
+      "score": 0.338,
+      "goals_cosine": 0.168,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Дубовецька",
       "b_short": "Кадубовецька",
-      "rank": 79
+      "rank": 224
     },
     {
-      "a": "Галицька міська територіальна громада",
-      "b": "Клішковецька сільська територіальна громада",
-      "score": 0.329,
-      "goals_cosine": 0.152,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Галицька",
-      "b_short": "Клішковецька",
-      "rank": 80
-    },
-    {
-      "a": "Галицька міська територіальна громада",
-      "b": "Кадубовецька сільська територіальна громада",
-      "score": 0.325,
-      "goals_cosine": 0.146,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Галицька",
-      "b_short": "Кадубовецька",
-      "rank": 86
-    },
-    {
-      "a": "Бурштинська міська територіальна громада",
-      "b": "Борщівська міська територіальна громада",
-      "score": 0.322,
-      "goals_cosine": 0.141,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Бурштинська",
-      "b_short": "Борщівська",
-      "rank": 88
-    },
-    {
-      "a": "Борщівська міська територіальна громада",
+      "a": "Тлумацька міська територіальна громада",
       "b": "Сокирянська міська територіальна громада",
-      "score": 0.321,
-      "goals_cosine": 0.139,
-      "geo_score": 0.35,
+      "score": 0.338,
+      "goals_cosine": 0.313,
+      "geo_score": 0.0,
       "mss_network": 1.0,
       "known": false,
-      "track": "mixed",
-      "a_short": "Борщівська",
+      "track": "thematic",
+      "a_short": "Тлумацька",
       "b_short": "Сокирянська",
-      "rank": 90
+      "rank": 226
     },
     {
       "a": "Борщівська міська територіальна громада",
       "b": "Жванецька сільська територіальна громада",
-      "score": 0.313,
-      "goals_cosine": 0.021,
+      "score": 0.333,
+      "goals_cosine": 0.055,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Борщівська",
       "b_short": "Жванецька",
-      "rank": 95
+      "rank": 230
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.332,
+      "goals_cosine": 0.158,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Клішковецька",
+      "rank": 232
+    },
+    {
+      "a": "Монастириська міська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.332,
+      "goals_cosine": 0.304,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "thematic",
+      "a_short": "Монастириська",
+      "b_short": "Сокирянська",
+      "rank": 233
+    },
+    {
+      "a": "Кутська селищна територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.331,
+      "goals_cosine": 0.051,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кутська",
+      "b_short": "Поляницька",
+      "rank": 236
+    },
+    {
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.326,
+      "goals_cosine": 0.148,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Заліщицька",
+      "b_short": "Сокирянська",
+      "rank": 243
+    },
+    {
+      "a": "Ясінянська селищна територіальна громада",
+      "b": "Косівська міська територіальна громада",
+      "score": 0.325,
+      "goals_cosine": 0.042,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Ясінянська",
+      "b_short": "Косівська",
+      "rank": 244
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Богданська сільська територіальна громада",
+      "score": 0.324,
+      "goals_cosine": 0.04,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Яремчанська",
+      "b_short": "Богданська",
+      "rank": 245
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.323,
+      "goals_cosine": 0.142,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Кадубовецька",
+      "rank": 247
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Борщівська міська територіальна громада",
+      "score": 0.323,
+      "goals_cosine": 0.142,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Борщівська",
+      "rank": 248
+    },
+    {
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.322,
+      "goals_cosine": 0.142,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Заліщицька",
+      "b_short": "Новодністровська",
+      "rank": 251
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Тлумацька міська територіальна громада",
+      "score": 0.32,
+      "goals_cosine": 0.034,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Тлумацька",
+      "rank": 253
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Олешанська сільська територіальна громада",
+      "score": 0.319,
+      "goals_cosine": 0.031,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Олешанська",
+      "rank": 254
     },
     {
       "a": "Дубовецька сільська територіальна громада",
-      "b": "Вікнянська сільська територіальна громада",
-      "score": 0.301,
-      "goals_cosine": 0.107,
+      "b": "Борщівська міська територіальна громада",
+      "score": 0.318,
+      "goals_cosine": 0.134,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Дубовецька",
-      "b_short": "Вікнянська",
-      "rank": 108
+      "b_short": "Борщівська",
+      "rank": 255
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Борщівська міська територіальна громада",
+      "score": 0.318,
+      "goals_cosine": 0.03,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Олешанська",
+      "b_short": "Борщівська",
+      "rank": 256
+    },
+    {
+      "a": "Ворохтянська селищна територіальна громада",
+      "b": "Коломийська міська територіальна громада",
+      "score": 0.317,
+      "goals_cosine": 0.028,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Ворохтянська",
+      "b_short": "Коломийська",
+      "rank": 257
+    },
+    {
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.316,
+      "goals_cosine": 0.13,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Тлумацька",
+      "b_short": "Жванецька",
+      "rank": 258
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Рахівська міська територіальна громада",
+      "score": 0.315,
+      "goals_cosine": 0.024,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Яремчанська",
+      "b_short": "Рахівська",
+      "rank": 259
     },
     {
       "a": "Галицька міська територіальна громада",
       "b": "Борщівська міська територіальна громада",
-      "score": 0.295,
-      "goals_cosine": 0.096,
+      "score": 0.314,
+      "goals_cosine": 0.127,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Галицька",
       "b_short": "Борщівська",
-      "rank": 112
+      "rank": 262
+    },
+    {
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.314,
+      "goals_cosine": 0.127,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Клішковецька",
+      "b_short": "Новодністровська",
+      "rank": 263
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.312,
+      "goals_cosine": 0.021,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Олешанська",
+      "b_short": "Юрковецька",
+      "rank": 265
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.312,
+      "goals_cosine": 0.124,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кадубовецька",
+      "b_short": "Новодністровська",
+      "rank": 266
     },
     {
       "a": "Дубовецька сільська територіальна громада",
-      "b": "Борщівська міська територіальна громада",
-      "score": 0.293,
-      "goals_cosine": 0.093,
+      "b": "Вікнянська сільська територіальна громада",
+      "score": 0.311,
+      "goals_cosine": 0.122,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Дубовецька",
-      "b_short": "Борщівська",
-      "rank": 115
+      "b_short": "Вікнянська",
+      "rank": 268
     },
     {
-      "a": "Бурштинська міська територіальна громада",
-      "b": "Кадубовецька сільська територіальна громада",
-      "score": 0.292,
-      "goals_cosine": 0.09,
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.311,
+      "goals_cosine": 0.122,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
-      "a_short": "Бурштинська",
-      "b_short": "Кадубовецька",
-      "rank": 116
+      "a_short": "Тлумацька",
+      "b_short": "Лівинецька",
+      "rank": 269
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.311,
+      "goals_cosine": 0.122,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Борщівська",
+      "b_short": "Новодністровська",
+      "rank": 270
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.31,
+      "goals_cosine": 0.122,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Борщівська",
+      "b_short": "Сокирянська",
+      "rank": 272
     },
     {
       "a": "Вікнянська сільська територіальна громада",
       "b": "Сокирянська міська територіальна громада",
-      "score": 0.291,
-      "goals_cosine": 0.089,
+      "score": 0.308,
+      "goals_cosine": 0.118,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Вікнянська",
       "b_short": "Сокирянська",
-      "rank": 119
+      "rank": 275
     },
     {
-      "a": "Галицька міська територіальна громада",
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.302,
+      "goals_cosine": 0.254,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Тлумацька",
+      "b_short": "Новодністровська",
+      "rank": 288
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.3,
+      "goals_cosine": 0.0,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Яремчанська",
+      "b_short": "Кутська",
+      "rank": 291
+    },
+    {
+      "a": "Косівська міська територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.3,
+      "goals_cosine": 0.0,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Косівська",
+      "b_short": "Поляницька",
+      "rank": 293
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Заліщицька міська територіальна громада",
+      "score": 0.293,
+      "goals_cosine": 0.093,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Заліщицька",
+      "rank": 305
+    },
+    {
+      "a": "Монастириська міська територіальна громада",
       "b": "Жванецька сільська територіальна громада",
       "score": 0.287,
       "goals_cosine": 0.082,
@@ -941,199 +2922,539 @@
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
-      "a_short": "Галицька",
+      "a_short": "Монастириська",
       "b_short": "Жванецька",
-      "rank": 121
+      "rank": 319
+    },
+    {
+      "a": "Монастириська міська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.284,
+      "goals_cosine": 0.224,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Монастириська",
+      "b_short": "Новодністровська",
+      "rank": 329
     },
     {
       "a": "Галицька міська територіальна громада",
       "b": "Вікнянська сільська територіальна громада",
-      "score": 0.278,
-      "goals_cosine": 0.067,
+      "score": 0.283,
+      "goals_cosine": 0.077,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Галицька",
       "b_short": "Вікнянська",
-      "rank": 137
+      "rank": 330
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.279,
+      "goals_cosine": 0.068,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Олешанська",
+      "b_short": "Кельменецька",
+      "rank": 338
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.276,
+      "goals_cosine": 0.065,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Жванецька",
+      "rank": 343
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.274,
+      "goals_cosine": 0.06,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Кадубовецька",
+      "rank": 347
     },
     {
       "a": "Дубовецька сільська територіальна громада",
       "b": "Жванецька сільська територіальна громада",
-      "score": 0.27,
-      "goals_cosine": 0.055,
+      "score": 0.273,
+      "goals_cosine": 0.059,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Дубовецька",
       "b_short": "Жванецька",
-      "rank": 151
-    },
-    {
-      "a": "Бурштинська міська територіальна громада",
-      "b": "Клішковецька сільська територіальна громада",
-      "score": 0.268,
-      "goals_cosine": 0.051,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Бурштинська",
-      "b_short": "Клішковецька",
-      "rank": 154
-    },
-    {
-      "a": "Галицька міська територіальна громада",
-      "b": "Рукшинська сільська територіальна громада",
-      "score": 0.263,
-      "goals_cosine": 0.043,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Галицька",
-      "b_short": "Рукшинська",
-      "rank": 165
+      "rank": 348
     },
     {
       "a": "Дубовецька сільська територіальна громада",
       "b": "Клішковецька сільська територіальна громада",
+      "score": 0.266,
+      "goals_cosine": 0.047,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Клішковецька",
+      "rank": 365
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.264,
+      "goals_cosine": 0.044,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Олешанська",
+      "b_short": "Рукшинська",
+      "rank": 371
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.26,
+      "goals_cosine": 0.184,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Лівинецька",
+      "rank": 388
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.26,
+      "goals_cosine": 0.037,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Олешанська",
+      "b_short": "Лівинецька",
+      "rank": 390
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
       "score": 0.259,
       "goals_cosine": 0.035,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
-      "a_short": "Дубовецька",
+      "a_short": "Вікнянська",
+      "b_short": "Новодністровська",
+      "rank": 397
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.256,
+      "goals_cosine": 0.031,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Олешанська",
       "b_short": "Клішковецька",
-      "rank": 172
+      "rank": 408
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.255,
+      "goals_cosine": 0.03,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Юрковецька",
+      "rank": 410
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.252,
+      "goals_cosine": 0.024,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Клішковецька",
+      "rank": 420
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.247,
+      "goals_cosine": 0.016,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Рукшинська",
+      "rank": 433
     },
     {
       "a": "Бурштинська міська територіальна громада",
       "b": "Жванецька сільська територіальна громада",
-      "score": 0.25,
-      "goals_cosine": 0.167,
+      "score": 0.243,
+      "goals_cosine": 0.154,
       "geo_score": 0.0,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Бурштинська",
       "b_short": "Жванецька",
-      "rank": 193
+      "rank": 449
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Заліщицька міська територіальна громада",
+      "score": 0.239,
+      "goals_cosine": 0.003,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Заліщицька",
+      "rank": 459
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Заліщицька міська територіальна громада",
+      "score": 0.237,
+      "goals_cosine": 0.0,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Заліщицька",
+      "rank": 467
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.237,
+      "goals_cosine": 0.0,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Юрковецька",
+      "rank": 468
     },
     {
       "a": "Дубовецька сільська територіальна громада",
       "b": "Рукшинська сільська територіальна громада",
-      "score": 0.242,
-      "goals_cosine": 0.007,
+      "score": 0.237,
+      "goals_cosine": 0.0,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Дубовецька",
       "b_short": "Рукшинська",
-      "rank": 211
+      "rank": 469
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.237,
+      "goals_cosine": 0.0,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Юрковецька",
+      "rank": 470
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.232,
+      "goals_cosine": 0.137,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Лівинецька",
+      "rank": 494
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.218,
+      "goals_cosine": 0.113,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Лівинецька",
+      "rank": 554
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.217,
+      "goals_cosine": 0.111,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Олешанська",
+      "b_short": "Сокирянська",
+      "rank": 566
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.193,
+      "goals_cosine": 0.072,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Олешанська",
+      "b_short": "Новодністровська",
+      "rank": 702
     },
     {
       "a": "Бурштинська міська територіальна громада",
       "b": "Кельменецька селищна територіальна громада",
-      "score": 0.202,
-      "goals_cosine": 0.087,
+      "score": 0.184,
+      "goals_cosine": 0.057,
       "geo_score": 0.0,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Бурштинська",
       "b_short": "Кельменецька",
-      "rank": 322
+      "rank": 783
     },
     {
       "a": "Бурштинська міська територіальна громада",
       "b": "Рукшинська сільська територіальна громада",
-      "score": 0.188,
-      "goals_cosine": 0.063,
+      "score": 0.167,
+      "goals_cosine": 0.029,
       "geo_score": 0.0,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Бурштинська",
       "b_short": "Рукшинська",
-      "rank": 381
+      "rank": 927
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.161,
+      "goals_cosine": 0.019,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Новодністровська",
+      "rank": 995
     },
     {
       "a": "Бурштинська міська територіальна громада",
       "b": "Сокирянська міська територіальна громада",
-      "score": 0.175,
-      "goals_cosine": 0.042,
+      "score": 0.161,
+      "goals_cosine": 0.018,
       "geo_score": 0.0,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Бурштинська",
       "b_short": "Сокирянська",
-      "rank": 436
+      "rank": 996
     },
     {
       "a": "Дубовецька сільська територіальна громада",
       "b": "Кельменецька селищна територіальна громада",
-      "score": 0.163,
-      "goals_cosine": 0.021,
+      "score": 0.155,
+      "goals_cosine": 0.009,
       "geo_score": 0.0,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Дубовецька",
       "b_short": "Кельменецька",
-      "rank": 515
+      "rank": 1063
     },
     {
       "a": "Галицька міська територіальна громада",
       "b": "Кельменецька селищна територіальна громада",
-      "score": 0.16,
-      "goals_cosine": 0.016,
+      "score": 0.15,
+      "goals_cosine": 0.0,
       "geo_score": 0.0,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Галицька",
       "b_short": "Кельменецька",
-      "rank": 540
+      "rank": 1129
     },
     {
       "a": "Галицька міська територіальна громада",
       "b": "Сокирянська міська територіальна громада",
-      "score": 0.151,
-      "goals_cosine": 0.002,
+      "score": 0.15,
+      "goals_cosine": 0.0,
       "geo_score": 0.0,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Галицька",
       "b_short": "Сокирянська",
-      "rank": 601
+      "rank": 1130
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.15,
+      "goals_cosine": 0.0,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Новодністровська",
+      "rank": 1131
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Новодністровська міська територіальна громада",
+      "score": 0.15,
+      "goals_cosine": 0.0,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Новодністровська",
+      "rank": 1135
     },
     {
       "a": "Дубовецька сільська територіальна громада",
       "b": "Сокирянська міська територіальна громада",
       "score": 0.15,
-      "goals_cosine": 0.001,
+      "goals_cosine": 0.0,
       "geo_score": 0.0,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Дубовецька",
       "b_short": "Сокирянська",
-      "rank": 614
+      "rank": 1136
     }
   ],
   "top": [
     {
+      "a": "Верховинська селищна територіальна громада",
+      "b": "Кутська селищна територіальна громада",
+      "score": 0.73,
+      "goals_cosine": 0.612,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Верховинська",
+      "b_short": "Кутська",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "ЦНАП / адмінпослуги",
+        "theme_id": "cnap",
+        "form": "делегування",
+        "form_id": "delegation",
+        "confidence": "medium",
+        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
       "a": "Галицька міська територіальна громада",
       "b": "Дубовецька сільська територіальна громада",
-      "score": 0.678,
-      "goals_cosine": 0.464,
+      "score": 0.695,
+      "goals_cosine": 0.492,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
@@ -1197,10 +3518,211 @@
       ]
     },
     {
+      "a": "Рукшинська сільська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.691,
+      "goals_cosine": 0.548,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Рукшинська",
+      "b_short": "Юрковецька",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Новодністровська міська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "score": 0.677,
+      "goals_cosine": 0.732,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "thematic",
+      "a_short": "Новодністровська",
+      "b_short": "Юрковецька",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "suggest_confidence": "high",
+      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "kind": "mss_candidate",
+      "discovery_primary": "strategy_goals",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "low"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ]
+    },
+    {
+      "a": "Новодністровська міська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.618,
+      "goals_cosine": 0.425,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Новодністровська",
+      "b_short": "Сокирянська",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
       "a": "Більшівцівська селищна територіальна громада",
       "b": "Дубовецька сільська територіальна громада",
-      "score": 0.558,
-      "goals_cosine": 0.514,
+      "score": 0.578,
+      "goals_cosine": 0.546,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "known": false,
@@ -1259,10 +3781,340 @@
       ]
     },
     {
+      "a": "Новодністровська міська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.563,
+      "goals_cosine": 0.438,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Новодністровська",
+      "b_short": "Рукшинська",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "kind": "mss_candidate",
+      "discovery_primary": "strategy_goals",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "low"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        }
+      ]
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Рахівська міська територіальна громада",
+      "score": 0.553,
+      "goals_cosine": 0.255,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Богданська",
+      "b_short": "Рахівська",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "ЦНАП / адмінпослуги",
+        "theme_id": "cnap",
+        "form": "делегування",
+        "form_id": "delegation",
+        "confidence": "medium",
+        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Коломийська міська територіальна громада",
+      "b": "Заліщицька міська територіальна громада",
+      "score": 0.532,
+      "goals_cosine": 0.637,
+      "geo_score": 0.6,
+      "mss_network": 0.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Коломийська",
+      "b_short": "Заліщицька",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "kind": "mss_candidate",
+      "discovery_primary": "strategy_goals",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ]
+    },
+    {
+      "a": "Тлумацька міська територіальна громада",
+      "b": "Монастириська міська територіальна громада",
+      "score": 0.532,
+      "goals_cosine": 0.283,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Тлумацька",
+      "b_short": "Монастириська",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "ЦНАП / адмінпослуги",
+        "theme_id": "cnap",
+        "form": "делегування",
+        "form_id": "delegation",
+        "confidence": "medium",
+        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Ясінянська селищна територіальна громада",
+      "b": "Поляницька сільська територіальна громада",
+      "score": 0.525,
+      "goals_cosine": 0.208,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Ясінянська",
+      "b_short": "Поляницька",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
       "a": "Кельменецька селищна територіальна громада",
       "b": "Рукшинська сільська територіальна громада",
-      "score": 0.548,
-      "goals_cosine": 0.31,
+      "score": 0.525,
+      "goals_cosine": 0.272,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
@@ -1326,196 +4178,10 @@
       ]
     },
     {
-      "a": "Рукшинська сільська територіальна громада",
-      "b": "Сокирянська міська територіальна громада",
-      "score": 0.518,
-      "goals_cosine": 0.363,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Рукшинська",
-      "b_short": "Сокирянська",
-      "suggested_theme": "Поводження з відходами / довкілля",
-      "suggested_form": "спільне КП",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-      "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "medium"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "medium"
-        }
-      ]
-    },
-    {
-      "a": "Косівська міська територіальна громада",
-      "b": "Рокитнівська селищна територіальна громада",
-      "score": 0.513,
-      "goals_cosine": 0.855,
-      "geo_score": 0.0,
-      "mss_network": 0.0,
-      "known": false,
-      "track": "thematic",
-      "a_short": "Косівська",
-      "b_short": "Рокитнівська",
-      "suggested_theme": "Туризм / кластер",
-      "suggested_form": "спільний проєкт",
-      "suggest_confidence": "high",
-      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Клішковецька сільська територіальна громада",
-      "b": "Рукшинська сільська територіальна громада",
-      "score": 0.51,
-      "goals_cosine": 0.183,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Клішковецька",
-      "b_short": "Рукшинська",
-      "suggested_theme": "Поводження з відходами / довкілля",
-      "suggested_form": "спільне КП",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        }
-      ]
-    },
-    {
       "a": "Вижницька міська територіальна громада",
       "b": "Косівська міська територіальна громада",
-      "score": 0.497,
-      "goals_cosine": 0.162,
+      "score": 0.521,
+      "goals_cosine": 0.201,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
@@ -1579,16 +4245,68 @@
       ]
     },
     {
-      "a": "Кадубовецька сільська територіальна громада",
-      "b": "Клішковецька сільська територіальна громада",
-      "score": 0.485,
-      "goals_cosine": 0.203,
-      "geo_score": 0.85,
+      "a": "Косівська міська територіальна громада",
+      "b": "Рокитнівська селищна територіальна громада",
+      "score": 0.519,
+      "goals_cosine": 0.865,
+      "geo_score": 0.0,
+      "mss_network": 0.0,
+      "known": false,
+      "track": "thematic",
+      "a_short": "Косівська",
+      "b_short": "Рокитнівська",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "suggest_confidence": "high",
+      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "kind": "mss_candidate",
+      "discovery_primary": "strategy_goals",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.517,
+      "goals_cosine": 0.196,
+      "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
-      "a_short": "Кадубовецька",
-      "b_short": "Клішковецька",
+      "a_short": "Клішковецька",
+      "b_short": "Рукшинська",
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
@@ -1624,7 +4342,7 @@
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
-          "strength": "medium"
+          "strength": "high"
         }
       ],
       "signal_chips": [
@@ -1646,31 +4364,31 @@
       ]
     },
     {
-      "a": "Вікнянська сільська територіальна громада",
+      "a": "Заліщицька міська територіальна громада",
       "b": "Кадубовецька сільська територіальна громада",
-      "score": 0.481,
-      "goals_cosine": 0.135,
+      "score": 0.515,
+      "goals_cosine": 0.192,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
-      "a_short": "Вікнянська",
+      "a_short": "Заліщицька",
       "b_short": "Кадубовецька",
-      "suggested_theme": "ЦНАП / адмінпослуги",
-      "suggested_form": "делегування",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
       "package": {
-        "theme": "ЦНАП / адмінпослуги",
-        "theme_id": "cnap",
-        "form": "делегування",
-        "form_id": "delegation",
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
       },
       "signals": [
         {
@@ -1691,7 +4409,7 @@
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
-          "strength": "medium"
+          "strength": "high"
         }
       ],
       "signal_chips": [
@@ -1713,15 +4431,216 @@
       ]
     },
     {
-      "a": "Кельменецька селищна територіальна громада",
-      "b": "Сокирянська міська територіальна громада",
-      "score": 0.481,
-      "goals_cosine": 0.301,
+      "a": "Рахівська міська територіальна громада",
+      "b": "Верховинська селищна територіальна громада",
+      "score": 0.513,
+      "goals_cosine": 0.355,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
-      "a_short": "Кельменецька",
+      "a_short": "Рахівська",
+      "b_short": "Верховинська",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "kind": "mss_candidate",
+      "discovery_primary": "strategy_goals",
+      "status": "hypothesis",
+      "package": {
+        "theme": "ЦНАП / адмінпослуги",
+        "theme_id": "cnap",
+        "form": "делегування",
+        "form_id": "delegation",
+        "confidence": "medium",
+        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "ЦНАП / адмінпослуги — делегування"
+      },
+      "signals": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Ворохтянська селищна територіальна громада",
+      "b": "Зеленська сільська територіальна громада",
+      "score": 0.513,
+      "goals_cosine": 0.251,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Ворохтянська",
+      "b_short": "Зеленська",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "score": 0.508,
+      "goals_cosine": 0.243,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Клішковецька",
+      "b_short": "Лівинецька",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Рукшинська сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.507,
+      "goals_cosine": 0.345,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Рукшинська",
       "b_short": "Сокирянська",
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
@@ -1751,336 +4670,6 @@
           "strength": "high"
         },
         {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Галицька міська територіальна громада",
-      "b": "Більшівцівська селищна територіальна громада",
-      "score": 0.469,
-      "goals_cosine": 0.365,
-      "geo_score": 1.0,
-      "mss_network": 0.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Галицька",
-      "b_short": "Більшівцівська",
-      "suggested_theme": "Поводження з відходами / довкілля",
-      "suggested_form": "спільне КП",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Вікнянська сільська територіальна громада",
-      "b": "Жванецька сільська територіальна громада",
-      "score": 0.465,
-      "goals_cosine": 0.17,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Вікнянська",
-      "b_short": "Жванецька",
-      "suggested_theme": "ЦНАП / адмінпослуги",
-      "suggested_form": "делегування",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "ЦНАП / адмінпослуги",
-        "theme_id": "cnap",
-        "form": "делегування",
-        "form_id": "delegation",
-        "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Кадубовецька сільська територіальна громада",
-      "b": "Кельменецька селищна територіальна громада",
-      "score": 0.465,
-      "goals_cosine": 0.274,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Кадубовецька",
-      "b_short": "Кельменецька",
-      "suggested_theme": "Поводження з відходами / довкілля",
-      "suggested_form": "спільне КП",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-      "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Борщівська міська територіальна громада",
-      "b": "Кадубовецька сільська територіальна громада",
-      "score": 0.464,
-      "goals_cosine": 0.17,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Борщівська",
-      "b_short": "Кадубовецька",
-      "suggested_theme": "ЦНАП / адмінпослуги",
-      "suggested_form": "делегування",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "ЦНАП / адмінпослуги",
-        "theme_id": "cnap",
-        "form": "делегування",
-        "form_id": "delegation",
-        "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Кадубовецька сільська територіальна громада",
-      "b": "Рукшинська сільська територіальна громада",
-      "score": 0.461,
-      "goals_cosine": 0.268,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Кадубовецька",
-      "b_short": "Рукшинська",
-      "suggested_theme": "Поводження з відходами / довкілля",
-      "suggested_form": "спільне КП",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-      "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "strength": "medium"
@@ -2106,336 +4695,6 @@
           "id": "geo",
           "label_uk": "зручний сусід",
           "strength": "medium"
-        }
-      ]
-    },
-    {
-      "a": "Тернопільська міська територіальна громада",
-      "b": "Рівненська міська територіальна громада",
-      "score": 0.453,
-      "goals_cosine": 0.61,
-      "geo_score": 0.35,
-      "mss_network": 0.0,
-      "known": false,
-      "track": "thematic",
-      "a_short": "Тернопільська",
-      "b_short": "Рівненська",
-      "suggested_theme": "Туризм / кластер",
-      "suggested_form": "спільний проєкт",
-      "suggest_confidence": "high",
-      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "low"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "low"
-        }
-      ]
-    },
-    {
-      "a": "Вікнянська сільська територіальна громада",
-      "b": "Клішковецька сільська територіальна громада",
-      "score": 0.447,
-      "goals_cosine": 0.141,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Вікнянська",
-      "b_short": "Клішковецька",
-      "suggested_theme": "ЦНАП / адмінпослуги",
-      "suggested_form": "делегування",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "ЦНАП / адмінпослуги",
-        "theme_id": "cnap",
-        "form": "делегування",
-        "form_id": "delegation",
-        "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Рукшинська сільська територіальна громада",
-      "b": "Жванецька сільська територіальна громада",
-      "score": 0.444,
-      "goals_cosine": 0.073,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Рукшинська",
-      "b_short": "Жванецька",
-      "suggested_theme": "Поводження з відходами / довкілля",
-      "suggested_form": "спільне КП",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Клішковецька сільська територіальна громада",
-      "b": "Жванецька сільська територіальна громада",
-      "score": 0.443,
-      "goals_cosine": 0.134,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Клішковецька",
-      "b_short": "Жванецька",
-      "suggested_theme": "Поводження з відходами / довкілля",
-      "suggested_form": "спільне КП",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Кельменецька селищна територіальна громада",
-      "b": "Жванецька сільська територіальна громада",
-      "score": 0.441,
-      "goals_cosine": 0.131,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Кельменецька",
-      "b_short": "Жванецька",
-      "suggested_theme": "Поводження з відходами / довкілля",
-      "suggested_form": "спільне КП",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
         }
       ]
     }

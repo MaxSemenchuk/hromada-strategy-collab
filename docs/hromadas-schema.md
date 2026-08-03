@@ -27,7 +27,7 @@ in parentheses where useful.)
 | Strengths | string \| null | Сильні сторони / ресурси |
 | Challenges | string \| null | Проблеми / виклики |
 | PartnersMentioned | string \| null | Донори, сусідні громади, згадані в стратегії. Для UA–EU twinning див. окремий шар `twinning-partners.json` (`yarn twinning`) |
-| DonorsPrograms | string[] | Контрольований словник: DOBRE, DECIDE, GIZ, U-LEAD, EGAP, DESPRO, ПРООН/UNDP, МФ Відродження, Ре:Форм, JICA, ЄІБ, ЄБРР, AFD. Відсутність ≠ «немає програми» (підлога покриття). Опис програм: [donor-programs.md](donor-programs.md). |
+| DonorsPrograms | string[] | Контрольований словник: DOBRE, DECIDE, GIZ, U-LEAD, EGAP, DESPRO, ПРООН/UNDP, МФ Відродження, Ре:Форм, JICA, ЄІБ, ЄБРР, AFD, STRATEGY LAB. Відсутність ≠ «немає програми» (підлога покриття). Опис програм: [donor-programs.md](donor-programs.md). |
 | MSSAgreements | string \| null | Існуючі договори МСС (если найдены) |
 | SourceQuality | string \| null | full-strategy / dfrr-proxy / partial / none |
 | ExtractedAt | string \| null | Когда прогнали extraction |

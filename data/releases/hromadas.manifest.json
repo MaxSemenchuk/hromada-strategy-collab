@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-08-03T10:28:53.274Z",
+  "generatedAt": "2026-08-03T13:24:10.911Z",
   "source": "local:structure-hromada --write-release",
   "totalRows": 1469,
-  "textMinedRows": 85,
+  "textMinedRows": 102,
   "schema": "see docs/hromadas-schema.md",
   "license": "CC BY 4.0 — see DATA-LICENSE.md",
   "portalUrlRows": 36,
   "portalUrlEnrichedAt": "2026-07-24T10:48:57.446Z",
-  "donorsProgramsTaggedRows": 174,
-  "donorsProgramsVocabExtendedAt": "2026-07-27T15:30:12Z",
+  "donorsProgramsTaggedRows": 181,
+  "donorsProgramsVocabExtendedAt": "2026-08-03T13:24:29Z",
   "donorsProgramsAdded": [
     "JICA",
     "ЄІБ",
     "ЄБРР",
-    "AFD"
+    "AFD",
+    "STRATEGY LAB"
   ],
-  "lastUpsert": "Вікнянська сільська територіальна громада"
+  "lastUpsert": "Поляницька сільська територіальна громада"
 }

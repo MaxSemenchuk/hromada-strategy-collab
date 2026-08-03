@@ -587,122 +587,179 @@
     {
       "name": "Лівинецька сільська територіальна громада",
       "katottg": "UA73040070000053425",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+      "raw_text_path": "scripts/retrieval/raw/лівинецька.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область; found 2026-08-03 waveA; strategy 2025–2027; structured 2026-08-03 waveA in-session",
+      "raw_source_path": "scripts/retrieval/raw/лівинецька.pdf"
     },
     {
       "name": "Новодністровська міська територіальна громада",
       "katottg": "UA73040130000087963",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+      "raw_text_path": "scripts/retrieval/raw/новодністровська.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область; found 2026-08-03 waveA; strategy to 2027 (2023); structured 2026-08-03 waveA in-session",
+      "raw_source_path": "scripts/retrieval/raw/новодністровська.doc"
     },
     {
       "name": "Юрковецька сільська територіальна громада",
       "katottg": "UA73060650000012771",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+      "raw_text_path": "scripts/retrieval/raw/юрковецька.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область; found 2026-08-03 waveA; strategy to 2027 (2021); structured 2026-08-03 waveA in-session",
+      "raw_source_path": "scripts/retrieval/raw/юрковецька.docx"
     },
     {
       "name": "Іване-Пустенська сільська територіальна громада",
       "katottg": "UA61060210000021722",
-      "status": "pending",
+      "status": "no_strategy",
       "strategy_url": "",
       "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Тернопільська область"
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Тернопільська область; priority search 2026-08-03 waveA: no strategy found"
     },
     {
       "name": "Заліщицька міська територіальна громада",
       "katottg": "UA61060170000051011",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Тернопільська область"
+      "raw_text_path": "scripts/retrieval/raw/заліщицька.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Тернопільська область; found 2026-08-03 waveA; strategy 2022–2028; structured 2026-08-03 waveA in-session",
+      "raw_source_path": "scripts/retrieval/raw/заліщицька.pdf"
     },
     {
       "name": "Монастириська міська територіальна громада",
       "katottg": "UA61060310000061998",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Тернопільська область"
+      "raw_text_path": "scripts/retrieval/raw/монастириська.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Тернопільська область; found 2026-08-03 waveA; strategy to 2027 (2026); structured 2026-08-03 waveA in-session",
+      "raw_source_path": "scripts/retrieval/raw/монастириська.pdf"
     },
     {
       "name": "Городенківська міська територіальна громада",
       "katottg": "UA26080030000014307",
-      "status": "pending",
+      "status": "no_strategy",
       "strategy_url": "",
       "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Івано-Франківська область"
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Івано-Франківська область; priority search 2026-08-03 waveA: no strategy found"
     },
     {
       "name": "Олешанська сільська територіальна громада",
       "katottg": "UA26040250000061081",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Івано-Франківська область"
+      "raw_text_path": "scripts/retrieval/raw/олешанська.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Івано-Франківська область; found 2026-08-03 waveA; U-LEAD 2020–2027; structured 2026-08-03 waveA in-session",
+      "raw_source_path": "scripts/retrieval/raw/олешанська.pdf"
     },
     {
       "name": "Тлумацька міська територіальна громада",
       "katottg": "UA26040350000024417",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Івано-Франківська область"
+      "raw_text_path": "scripts/retrieval/raw/тлумацька.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Івано-Франківська область; found 2026-08-03 waveA; U-LEAD 2019–2023 (dated); structured 2026-08-03 waveA in-session",
+      "raw_source_path": "scripts/retrieval/raw/тлумацька.docx"
     },
     {
       "name": "Коломийська міська територіальна громада",
       "katottg": "UA26080070000092582",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=16 oblast=Івано-Франківська область"
+      "raw_text_path": "scripts/retrieval/raw/коломийська.extracted.txt",
+      "notes": "found 2026-08-03 waveB; PROMIS city strategy to 2027 (2017); structured in-session",
+      "raw_source_path": "scripts/retrieval/raw/коломийська.pdf"
     },
     {
       "name": "Богданська сільська територіальна громада",
       "katottg": "UA21060010000011784",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=13 oblast=Закарпатська область"
+      "raw_text_path": "scripts/retrieval/raw/богданська.extracted.txt",
+      "notes": "found 2026-08-03 waveB; strategy 2025–2027 project; structured in-session",
+      "raw_source_path": "scripts/retrieval/raw/богданська.pdf"
     },
     {
       "name": "Рахівська міська територіальна громада",
       "katottg": "UA21060050000029937",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=13 oblast=Закарпатська область"
+      "raw_text_path": "scripts/retrieval/raw/рахівська.extracted.txt",
+      "notes": "found 2026-08-03 waveB; strategy 2025–2030; structured in-session",
+      "raw_source_path": "scripts/retrieval/raw/рахівська.doc"
     },
     {
       "name": "Ясінянська селищна територіальна громада",
       "katottg": "UA21060070000049340",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=13 oblast=Закарпатська область"
+      "raw_text_path": "scripts/retrieval/raw/ясінянська.extracted.txt",
+      "notes": "found 2026-08-03 waveB; U-LEAD update to 2027 (2026); structured in-session",
+      "raw_source_path": "scripts/retrieval/raw/ясінянська.pdf"
     },
     {
       "name": "Верховинська селищна територіальна громада",
       "katottg": "UA26020030000088465",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=13 oblast=Івано-Франківська область"
+      "raw_text_path": "scripts/retrieval/raw/верховинська.extracted.txt",
+      "notes": "found 2026-08-03 waveB; strategy 2024–2028; structured in-session",
+      "raw_source_path": "scripts/retrieval/raw/верховинська.docx"
     },
     {
       "name": "Ворохтянська селищна територіальна громада",
       "katottg": "UA26120010000096774",
-      "status": "pending",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_text_path": "scripts/retrieval/raw/ворохтянська.extracted.txt",
+      "notes": "found 2026-08-03 waveB; strategy 2022–2027; structured in-session",
+      "raw_source_path": "scripts/retrieval/raw/ворохтянська.pdf"
+    },
+    {
+      "name": "Зеленська сільська територіальна громада",
+      "katottg": "",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_text_path": "scripts/retrieval/raw/зеленська.extracted.txt",
+      "notes": "found 2026-08-03 waveB; strategy 2022–2027 project; structured in-session",
+      "raw_source_path": "scripts/retrieval/raw/зеленська.docx"
+    },
+    {
+      "name": "Космацька сільська територіальна громада",
+      "katottg": "",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_text_path": "scripts/retrieval/raw/космацька.extracted.txt",
+      "notes": "found 2026-08-03 waveB; strategy to 2030 (2024); structured in-session",
+      "raw_source_path": "scripts/retrieval/raw/космацька.docx"
+    },
+    {
+      "name": "Кутська селищна територіальна громада",
+      "katottg": "",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_text_path": "scripts/retrieval/raw/кутська.extracted.txt",
+      "notes": "found 2026-08-03 waveB; plan of measures 2025–2027 (not full strategy body); structured in-session",
+      "raw_source_path": "scripts/retrieval/raw/кутська.docx"
+    },
+    {
+      "name": "Поляницька сільська територіальна громада",
+      "katottg": "",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_text_path": "scripts/retrieval/raw/поляницька.extracted.txt",
+      "notes": "found 2026-08-03 waveB; strategy 2024–2030 project; structured in-session",
+      "raw_source_path": "scripts/retrieval/raw/поляницька.pdf"
+    },
+    {
+      "name": "Надвірнянська міська територіальна громада",
+      "katottg": "",
+      "status": "no_strategy",
       "strategy_url": "",
       "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=13 oblast=Івано-Франківська область"
+      "notes": "priority search 2026-08-03 waveB: no strategy found"
     }
   ]
 }
