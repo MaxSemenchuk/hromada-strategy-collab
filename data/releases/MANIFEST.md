@@ -12,9 +12,10 @@ and self-describing, not a growth history.
   Regenerate with:
 
   ```bash
-  yarn export-hromadas                    # live NocoDB (needs .env)
-  yarn export-hromadas:snapshot           # offline from research-log snapshot
+  yarn export-hromadas                    # normalize research-log snapshot → release
+  yarn export-hromadas:snapshot           # same (alias)
   yarn enrich-portal-urls                 # offline: recompute PortalUrl on current release
+  # (live NocoDB pull archived under scripts/legacy/nocodb/)
   ```
 
 - **`hromada-portals.json`** — compact index of rows with non-null `PortalUrl`

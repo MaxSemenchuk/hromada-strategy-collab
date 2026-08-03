@@ -15,7 +15,6 @@ Then for each candidate:
 2. `yarn download-raw` (or manual download into `scripts/retrieval/raw/`)
 3. In-session structure with **hierarchy** (`strategic_goals`, `operational_goals`,
    `mss_intents`) → `yarn structure-hromada --json … --write-release`
-   (optional `--write` for NocoDB sync)
 4. If hierarchy curated: add to `data/sources/goals-hierarchy-overrides.json`
 5. `yarn build-goals-hierarchy && yarn extract-mss-intents && yarn match && yarn export-matching-edges && yarn test-known-pairs && yarn complementary-match && yarn graph-pin-matching && yarn build-matches-preview`
 
