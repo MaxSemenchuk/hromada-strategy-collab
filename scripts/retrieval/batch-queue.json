@@ -760,6 +760,78 @@
       "strategy_url": "",
       "raw_text_path": "",
       "notes": "priority search 2026-08-03 waveB: no strategy found"
+    },
+    {
+      "name": "Парафіївська селищна територіальна громада",
+      "katottg": "UA74080110000023749",
+      "status": "no_strategy",
+      "strategy_url": "",
+      "raw_source_path": "",
+      "raw_text_path": "",
+      "notes": "priority search 2026-08-03 waveC: user confirmed not found"
+    },
+    {
+      "name": "Хотинська міська територіальна громада",
+      "katottg": "UA73040190000062796",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_source_path": "scripts/retrieval/raw/хотинська.pdf",
+      "raw_text_path": "scripts/retrieval/raw/хотинська.extracted.txt",
+      "notes": "found 2026-08-03 waveC; updated strategy 2023–2027; structured in-session"
+    },
+    {
+      "name": "Байковецька сільська територіальна громада",
+      "katottg": "UA61040010000042862",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_source_path": "scripts/retrieval/raw/байковецька.pdf",
+      "raw_text_path": "scripts/retrieval/raw/байковецька.extracted.txt",
+      "notes": "found 2026-08-03 waveC; strategy 2025–2027; structured in-session"
+    },
+    {
+      "name": "Немирівська міська територіальна громада",
+      "katottg": "UA05020170000049432",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_source_path": "scripts/retrieval/raw/немирівська.docx",
+      "raw_text_path": "scripts/retrieval/raw/немирівська.extracted.txt",
+      "notes": "found 2026-08-03 waveC; strategy to 2030; structured in-session"
+    },
+    {
+      "name": "Куликівська селищна територіальна громада",
+      "katottg": "UA74100210000053397",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_source_path": "scripts/retrieval/raw/куликівська.pdf",
+      "raw_text_path": "scripts/retrieval/raw/куликівська.extracted.txt",
+      "notes": "found 2026-08-03 waveC; Програма SESR 2024–2026 Чернігівська (partial); structured in-session"
+    },
+    {
+      "name": "Жовківська міська територіальна громада",
+      "katottg": "UA46060130000059055",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_source_path": "scripts/retrieval/raw/жовківська.pdf",
+      "raw_text_path": "scripts/retrieval/raw/жовківська.extracted.txt",
+      "notes": "found 2026-08-03 waveC; strategy to 2028; structured in-session"
+    },
+    {
+      "name": "Сухополов'янська сільська територіальна громада",
+      "katottg": "UA74080170000055617",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_source_path": "scripts/retrieval/raw/сухополов'янська.pdf",
+      "raw_text_path": "scripts/retrieval/raw/сухополов'янська.extracted.txt",
+      "notes": "found 2026-08-03 waveC; strategy to 2027 (20.12.2021); structured in-session"
+    },
+    {
+      "name": "Рава-Руська міська територіальна громада",
+      "katottg": "UA46060390000035967",
+      "status": "structured",
+      "strategy_url": "",
+      "raw_source_path": "scripts/retrieval/raw/рава-руська.pdf",
+      "raw_text_path": "scripts/retrieval/raw/рава-руська.extracted.txt",
+      "notes": "found 2026-08-03 waveC; scanned strategy to 2027; Goals via vision; structured in-session"
     }
   ]
 }

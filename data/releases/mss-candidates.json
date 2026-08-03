@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T13:25:03.801410+00:00",
+  "generatedAt": "2026-08-03T13:49:12.283927+00:00",
   "kind": "mss_candidates",
   "caveat": "Кандидати договорів МСС (гіпотези). package.form — правова форма за правилами, не факт реєстру. known/registry_known — лише кураторська валідація. Стратегії / geo / complementary / explicit-ask — сигнали пошуку.",
   "counts": {
@@ -7,70 +7,6 @@
     "hypotheses": 160
   },
   "registry_known": [
-    {
-      "kind": "mss_candidate",
-      "a": "Ніжинська міська територіальна громада",
-      "b": "Козелецька селищна територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "registry_known",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "strategy_goals",
-      "track": "mixed",
-      "known": true,
-      "score": 0.406,
-      "goals_cosine": 0.176,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "suggest_confidence": "medium"
-    },
     {
       "kind": "mss_candidate",
       "a": "Ніжинська міська територіальна громада",
@@ -129,8 +65,72 @@
       "discovery_primary": "strategy_goals",
       "track": "mixed",
       "known": true,
-      "score": 0.402,
-      "goals_cosine": 0.169,
+      "score": 0.405,
+      "goals_cosine": 0.174,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "suggest_confidence": "medium"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Ніжинська міська територіальна громада",
+      "b": "Козелецька селищна територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "registry_known",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "strategy_goals",
+      "track": "mixed",
+      "known": true,
+      "score": 0.403,
+      "goals_cosine": 0.172,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "suggest_confidence": "medium"
@@ -193,8 +193,8 @@
       "discovery_primary": "strategy_goals",
       "track": "mixed",
       "known": true,
-      "score": 0.397,
-      "goals_cosine": 0.265,
+      "score": 0.399,
+      "goals_cosine": 0.269,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "suggest_confidence": "medium"
@@ -257,8 +257,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": true,
-      "score": 0.379,
-      "goals_cosine": 0.027,
+      "score": 0.384,
+      "goals_cosine": 0.037,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "operational_score": 0.85,
@@ -338,6 +338,117 @@
       "known": false,
       "explicit_ask_score": 0.95,
       "suggest_confidence": "high",
+      "source_slice": "explicit-ask"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Байковецька сільська територіальна громада",
+      "b": "Борщівська міська територіальна громада",
+      "a_short": "Байковецька",
+      "b_short": "Борщівська",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Інше / не визначено",
+        "theme_id": "other",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "low",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "label_uk": "Інше / не визначено — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "strength": "medium"
+        }
+      ],
+      "discovery_primary": "explicit_ask",
+      "track": "explicit-ask",
+      "known": false,
+      "explicit_ask_score": 0.75,
+      "suggest_confidence": "low",
+      "source_slice": "explicit-ask"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Байковецька сільська територіальна громада",
+      "b": "Монастириська міська територіальна громада",
+      "a_short": "Байковецька",
+      "b_short": "Монастириська",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Інше / не визначено",
+        "theme_id": "other",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "low",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "label_uk": "Інше / не визначено — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "strength": "medium"
+        }
+      ],
+      "discovery_primary": "explicit_ask",
+      "track": "explicit-ask",
+      "known": false,
+      "explicit_ask_score": 0.75,
+      "suggest_confidence": "low",
+      "source_slice": "explicit-ask"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Батуринська міська територіальна громада",
+      "b": "Сухополов'янська сільська територіальна громада",
+      "a_short": "Батуринська",
+      "b_short": "Сухополов'янська",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Інше / не визначено",
+        "theme_id": "other",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "low",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "label_uk": "Інше / не визначено — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "strength": "medium"
+        }
+      ],
+      "discovery_primary": "explicit_ask",
+      "track": "explicit-ask",
+      "known": false,
+      "explicit_ask_score": 0.75,
+      "suggest_confidence": "low",
       "source_slice": "explicit-ask"
     },
     {
@@ -716,6 +827,43 @@
       "b": "Сокирянська міська територіальна громада",
       "a_short": "Вижницька",
       "b_short": "Сокирянська",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Інше / не визначено",
+        "theme_id": "other",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "low",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "label_uk": "Інше / не визначено — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "strength": "medium"
+        }
+      ],
+      "discovery_primary": "explicit_ask",
+      "track": "explicit-ask",
+      "known": false,
+      "explicit_ask_score": 0.75,
+      "suggest_confidence": "low",
+      "source_slice": "explicit-ask"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Вижницька міська територіальна громада",
+      "b": "Хотинська міська територіальна громада",
+      "a_short": "Вижницька",
+      "b_short": "Хотинська",
       "status": "hypothesis",
       "package": {
         "theme": "Інше / не визначено",
@@ -1230,6 +1378,43 @@
     },
     {
       "kind": "mss_candidate",
+      "a": "Жовківська міська територіальна громада",
+      "b": "Рава-Руська міська територіальна громада",
+      "a_short": "Жовківська",
+      "b_short": "Рава-Руська",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Інше / не визначено",
+        "theme_id": "other",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "low",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "label_uk": "Інше / не визначено — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "strength": "medium"
+        }
+      ],
+      "discovery_primary": "explicit_ask",
+      "track": "explicit-ask",
+      "known": false,
+      "explicit_ask_score": 0.75,
+      "suggest_confidence": "low",
+      "source_slice": "explicit-ask"
+    },
+    {
+      "kind": "mss_candidate",
       "a": "Зеленська сільська територіальна громада",
       "b": "Космацька сільська територіальна громада",
       "a_short": "Зеленська",
@@ -1527,194 +1712,9 @@
     {
       "kind": "mss_candidate",
       "a": "Кадубовецька сільська територіальна громада",
-      "b": "Юрковецька сільська територіальна громада",
+      "b": "Хотинська міська територіальна громада",
       "a_short": "Кадубовецька",
-      "b_short": "Юрковецька",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Інше / не визначено",
-        "theme_id": "other",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
-        "label_uk": "Інше / не визначено — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "explicit_ask",
-      "track": "explicit-ask",
-      "known": false,
-      "explicit_ask_score": 0.75,
-      "suggest_confidence": "low",
-      "source_slice": "explicit-ask"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Кельменецька селищна територіальна громада",
-      "b": "Клішковецька сільська територіальна громада",
-      "a_short": "Кельменецька",
-      "b_short": "Клішковецька",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Інше / не визначено",
-        "theme_id": "other",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
-        "label_uk": "Інше / не визначено — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "explicit_ask",
-      "track": "explicit-ask",
-      "known": false,
-      "explicit_ask_score": 0.75,
-      "suggest_confidence": "low",
-      "source_slice": "explicit-ask"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Кельменецька селищна територіальна громада",
-      "b": "Лівинецька сільська територіальна громада",
-      "a_short": "Кельменецька",
-      "b_short": "Лівинецька",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Інше / не визначено",
-        "theme_id": "other",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
-        "label_uk": "Інше / не визначено — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "explicit_ask",
-      "track": "explicit-ask",
-      "known": false,
-      "explicit_ask_score": 0.75,
-      "suggest_confidence": "low",
-      "source_slice": "explicit-ask"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Кельменецька селищна територіальна громада",
-      "b": "Новодністровська міська територіальна громада",
-      "a_short": "Кельменецька",
-      "b_short": "Новодністровська",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Інше / не визначено",
-        "theme_id": "other",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
-        "label_uk": "Інше / не визначено — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "explicit_ask",
-      "track": "explicit-ask",
-      "known": false,
-      "explicit_ask_score": 0.75,
-      "suggest_confidence": "low",
-      "source_slice": "explicit-ask"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Кельменецька селищна територіальна громада",
-      "b": "Рукшинська сільська територіальна громада",
-      "a_short": "Кельменецька",
-      "b_short": "Рукшинська",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Інше / не визначено",
-        "theme_id": "other",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
-        "label_uk": "Інше / не визначено — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "explicit_ask",
-      "track": "explicit-ask",
-      "known": false,
-      "explicit_ask_score": 0.75,
-      "suggest_confidence": "low",
-      "source_slice": "explicit-ask"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Кельменецька селищна територіальна громада",
-      "b": "Сокирянська міська територіальна громада",
-      "a_short": "Кельменецька",
-      "b_short": "Сокирянська",
+      "b_short": "Хотинська",
       "status": "hypothesis",
       "package": {
         "theme": "Інше / не визначено",
@@ -1789,8 +1789,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.519,
-      "goals_cosine": 0.865,
+      "score": 0.521,
+      "goals_cosine": 0.869,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -1855,7 +1855,7 @@
       "track": "thematic",
       "known": false,
       "score": 0.677,
-      "goals_cosine": 0.732,
+      "goals_cosine": 0.733,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "suggest_confidence": "high",
@@ -1894,8 +1894,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.421,
-      "goals_cosine": 0.702,
+      "score": 0.426,
+      "goals_cosine": 0.709,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -1934,8 +1934,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.42,
-      "goals_cosine": 0.7,
+      "score": 0.425,
+      "goals_cosine": 0.709,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -1974,8 +1974,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.4,
-      "goals_cosine": 0.667,
+      "score": 0.406,
+      "goals_cosine": 0.676,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2014,8 +2014,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.393,
-      "goals_cosine": 0.656,
+      "score": 0.4,
+      "goals_cosine": 0.666,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2074,8 +2074,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.473,
-      "goals_cosine": 0.643,
+      "score": 0.479,
+      "goals_cosine": 0.653,
       "geo_score": 0.35,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2124,8 +2124,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.383,
-      "goals_cosine": 0.639,
+      "score": 0.388,
+      "goals_cosine": 0.647,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "medium",
@@ -2174,8 +2174,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.381,
-      "goals_cosine": 0.635,
+      "score": 0.386,
+      "goals_cosine": 0.643,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2214,8 +2214,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.371,
-      "goals_cosine": 0.619,
+      "score": 0.379,
+      "goals_cosine": 0.631,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2264,8 +2264,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.367,
-      "goals_cosine": 0.612,
+      "score": 0.373,
+      "goals_cosine": 0.622,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2314,8 +2314,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.362,
-      "goals_cosine": 0.603,
+      "score": 0.369,
+      "goals_cosine": 0.614,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2374,8 +2374,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.446,
-      "goals_cosine": 0.598,
+      "score": 0.452,
+      "goals_cosine": 0.608,
       "geo_score": 0.35,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2424,8 +2424,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.355,
-      "goals_cosine": 0.591,
+      "score": 0.361,
+      "goals_cosine": 0.602,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2474,8 +2474,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.352,
-      "goals_cosine": 0.586,
+      "score": 0.36,
+      "goals_cosine": 0.6,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2524,8 +2524,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.345,
-      "goals_cosine": 0.574,
+      "score": 0.352,
+      "goals_cosine": 0.586,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2574,8 +2574,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.343,
-      "goals_cosine": 0.572,
+      "score": 0.351,
+      "goals_cosine": 0.585,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2614,8 +2614,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.338,
-      "goals_cosine": 0.563,
+      "score": 0.347,
+      "goals_cosine": 0.578,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2654,8 +2654,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.338,
-      "goals_cosine": 0.563,
+      "score": 0.344,
+      "goals_cosine": 0.574,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2704,8 +2704,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.333,
-      "goals_cosine": 0.556,
+      "score": 0.339,
+      "goals_cosine": 0.565,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2744,58 +2744,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.33,
-      "goals_cosine": 0.551,
-      "geo_score": 0.0,
-      "mss_network": 0.0,
-      "suggest_confidence": "high",
-      "source_slice": "thematic"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Тернопільська міська територіальна громада",
-      "b": "Українська міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "strategy_goals",
-      "track": "thematic",
-      "known": false,
-      "score": 0.327,
-      "goals_cosine": 0.546,
+      "score": 0.338,
+      "goals_cosine": 0.563,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2854,8 +2804,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.414,
-      "goals_cosine": 0.544,
+      "score": 0.423,
+      "goals_cosine": 0.559,
       "geo_score": 0.35,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2904,8 +2854,58 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.327,
-      "goals_cosine": 0.544,
+      "score": 0.334,
+      "goals_cosine": 0.556,
+      "geo_score": 0.0,
+      "mss_network": 0.0,
+      "suggest_confidence": "high",
+      "source_slice": "thematic"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Тернопільська міська територіальна громада",
+      "b": "Українська міська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "strategy_goals",
+      "track": "thematic",
+      "known": false,
+      "score": 0.333,
+      "goals_cosine": 0.555,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2954,8 +2954,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.322,
-      "goals_cosine": 0.537,
+      "score": 0.33,
+      "goals_cosine": 0.55,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -3014,8 +3014,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.409,
-      "goals_cosine": 0.535,
+      "score": 0.414,
+      "goals_cosine": 0.544,
       "geo_score": 0.35,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -3064,158 +3064,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.315,
-      "goals_cosine": 0.525,
-      "geo_score": 0.0,
-      "mss_network": 0.0,
-      "suggest_confidence": "high",
-      "source_slice": "thematic"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Тернопільська міська територіальна громада",
-      "b": "Лозівська міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "strategy_goals",
-      "track": "thematic",
-      "known": false,
-      "score": 0.305,
-      "goals_cosine": 0.508,
-      "geo_score": 0.0,
-      "mss_network": 0.0,
-      "suggest_confidence": "high",
-      "source_slice": "thematic"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Криворізька міська територіальна громада",
-      "b": "Тульчинська міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "low"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "low"
-        }
-      ],
-      "discovery_primary": "strategy_goals",
-      "track": "thematic",
-      "known": false,
-      "score": 0.304,
-      "goals_cosine": 0.507,
-      "geo_score": 0.0,
-      "mss_network": 0.0,
-      "suggest_confidence": "high",
-      "source_slice": "thematic"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Ганнівська сільська територіальна громада",
-      "b": "Зазимська сільська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "strategy_goals",
-      "track": "thematic",
-      "known": false,
-      "score": 0.304,
-      "goals_cosine": 0.507,
+      "score": 0.321,
+      "goals_cosine": 0.536,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -3264,8 +3114,158 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.304,
-      "goals_cosine": 0.507,
+      "score": 0.314,
+      "goals_cosine": 0.523,
+      "geo_score": 0.0,
+      "mss_network": 0.0,
+      "suggest_confidence": "high",
+      "source_slice": "thematic"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Криворізька міська територіальна громада",
+      "b": "Тульчинська міська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "low"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "low"
+        }
+      ],
+      "discovery_primary": "strategy_goals",
+      "track": "thematic",
+      "known": false,
+      "score": 0.312,
+      "goals_cosine": 0.521,
+      "geo_score": 0.0,
+      "mss_network": 0.0,
+      "suggest_confidence": "high",
+      "source_slice": "thematic"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Тернопільська міська територіальна громада",
+      "b": "Лозівська міська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "discovery_primary": "strategy_goals",
+      "track": "thematic",
+      "known": false,
+      "score": 0.312,
+      "goals_cosine": 0.521,
+      "geo_score": 0.0,
+      "mss_network": 0.0,
+      "suggest_confidence": "high",
+      "source_slice": "thematic"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Ганнівська сільська територіальна громада",
+      "b": "Зазимська сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "strategy_goals",
+      "track": "thematic",
+      "known": false,
+      "score": 0.312,
+      "goals_cosine": 0.521,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -3314,58 +3314,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.299,
-      "goals_cosine": 0.498,
-      "geo_score": 0.0,
-      "mss_network": 0.0,
-      "suggest_confidence": "high",
-      "source_slice": "thematic"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Вашковецька сільська територіальна громада",
-      "b": "Божедарівська селищна територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "strategy_goals",
-      "track": "thematic",
-      "known": false,
-      "score": 0.299,
-      "goals_cosine": 0.498,
+      "score": 0.307,
+      "goals_cosine": 0.511,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -3414,58 +3364,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.298,
-      "goals_cosine": 0.497,
-      "geo_score": 0.0,
-      "mss_network": 0.0,
-      "suggest_confidence": "high",
-      "source_slice": "thematic"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Литовезька сільська територіальна громада",
-      "b": "Зазимська сільська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "strategy_goals",
-      "track": "thematic",
-      "known": false,
-      "score": 0.295,
-      "goals_cosine": 0.491,
+      "score": 0.305,
+      "goals_cosine": 0.509,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -3524,9 +3424,59 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.382,
-      "goals_cosine": 0.49,
+      "score": 0.391,
+      "goals_cosine": 0.506,
       "geo_score": 0.35,
+      "mss_network": 0.0,
+      "suggest_confidence": "high",
+      "source_slice": "thematic"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Литовезька сільська територіальна громада",
+      "b": "Зазимська сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "strategy_goals",
+      "track": "thematic",
+      "known": false,
+      "score": 0.303,
+      "goals_cosine": 0.505,
+      "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
@@ -3564,8 +3514,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.294,
-      "goals_cosine": 0.49,
+      "score": 0.303,
+      "goals_cosine": 0.504,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -3614,8 +3564,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.294,
-      "goals_cosine": 0.489,
+      "score": 0.303,
+      "goals_cosine": 0.504,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -3623,8 +3573,8 @@
     },
     {
       "kind": "mss_candidate",
-      "a": "Рокитнівська селищна територіальна громада",
-      "b": "Лозівська міська територіальна громада",
+      "a": "Вашковецька сільська територіальна громада",
+      "b": "Божедарівська селищна територіальна громада",
       "a_short": null,
       "b_short": null,
       "status": "hypothesis",
@@ -3646,7 +3596,7 @@
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
-          "strength": "high"
+          "strength": "medium"
         }
       ],
       "signal_chips": [
@@ -3658,14 +3608,14 @@
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
-          "strength": "high"
+          "strength": "medium"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.293,
-      "goals_cosine": 0.488,
+      "score": 0.302,
+      "goals_cosine": 0.503,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -3714,8 +3664,58 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.292,
-      "goals_cosine": 0.487,
+      "score": 0.301,
+      "goals_cosine": 0.501,
+      "geo_score": 0.0,
+      "mss_network": 0.0,
+      "suggest_confidence": "high",
+      "source_slice": "thematic"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Рокитнівська селищна територіальна громада",
+      "b": "Лозівська міська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "strategy_goals",
+      "track": "thematic",
+      "known": false,
+      "score": 0.3,
+      "goals_cosine": 0.5,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -4023,6 +4023,43 @@
       "b": "Білгород-Дністровська міська територіальна громада",
       "a_short": "Одеська",
       "b_short": "Білгород-Дністровська",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Вода / захист від повеней",
+        "theme_id": "water",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "high",
+        "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+        "label_uk": "Вода / захист від повеней — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "complementary",
+          "label_uk": "доповнення ресурсів",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "complementary",
+          "label_uk": "доповнення ресурсів",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "complementary",
+      "track": "complementary",
+      "known": false,
+      "complementary_score": 1.0,
+      "suggest_confidence": "high",
+      "source_slice": "complementary"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Верховинська селищна територіальна громада",
+      "a_short": "Яремчанська",
+      "b_short": "Верховинська",
       "status": "hypothesis",
       "package": {
         "theme": "Вода / захист від повеней",
@@ -5166,43 +5203,6 @@
     },
     {
       "kind": "mss_candidate",
-      "a": "Батуринська міська територіальна громада",
-      "b": "Ріпкинська селищна територіальна громада",
-      "a_short": "Батуринська",
-      "b_short": "Ріпкинська",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Вода / захист від повеней",
-        "theme_id": "water",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "high",
-        "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
-        "label_uk": "Вода / захист від повеней — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "complementary",
-          "label_uk": "доповнення ресурсів",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "complementary",
-          "label_uk": "доповнення ресурсів",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "complementary",
-      "track": "complementary",
-      "known": false,
-      "complementary_score": 0.967,
-      "suggest_confidence": "high",
-      "source_slice": "complementary"
-    },
-    {
-      "kind": "mss_candidate",
       "a": "Обухівська селищна територіальна громада",
       "b": "Обухівська міська територіальна громада",
       "a_short": null,
@@ -5254,8 +5254,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.303,
-      "goals_cosine": 0.089,
+      "score": 0.305,
+      "goals_cosine": 0.092,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 1.0,
@@ -5315,8 +5315,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.49,
-      "goals_cosine": 0.399,
+      "score": 0.498,
+      "goals_cosine": 0.413,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.901,
@@ -5376,11 +5376,72 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.418,
-      "goals_cosine": 0.343,
+      "score": 0.426,
+      "goals_cosine": 0.355,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.887,
+      "suggest_confidence": "medium",
+      "source_slice": "operational"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Лівинецька сільська територіальна громада",
+      "b": "Хотинська міська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "medium"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": false,
+      "score": 0.318,
+      "goals_cosine": 0.114,
+      "geo_score": 1.0,
+      "mss_network": 0.0,
+      "operational_score": 0.882,
       "suggest_confidence": "medium",
       "source_slice": "operational"
     },
@@ -5437,8 +5498,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.314,
-      "goals_cosine": 0.169,
+      "score": 0.316,
+      "goals_cosine": 0.172,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.877,
@@ -5475,7 +5536,7 @@
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
-          "strength": "low"
+          "strength": "medium"
         }
       ],
       "signal_chips": [
@@ -5492,14 +5553,14 @@
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
-          "strength": "low"
+          "strength": "medium"
         }
       ],
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.239,
-      "goals_cosine": 0.044,
+      "score": 0.246,
+      "goals_cosine": 0.056,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.875,
@@ -5559,8 +5620,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.321,
-      "goals_cosine": 0.18,
+      "score": 0.326,
+      "goals_cosine": 0.188,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.866,
@@ -5681,8 +5742,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.428,
-      "goals_cosine": 0.297,
+      "score": 0.442,
+      "goals_cosine": 0.32,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.854,
@@ -5946,8 +6007,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.252,
-      "goals_cosine": 0.066,
+      "score": 0.264,
+      "goals_cosine": 0.086,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.836,
@@ -6007,8 +6068,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.441,
-      "goals_cosine": 0.381,
+      "score": 0.446,
+      "goals_cosine": 0.389,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.834,
@@ -6068,11 +6129,72 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.31,
-      "goals_cosine": 0.163,
+      "score": 0.302,
+      "goals_cosine": 0.15,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.831,
+      "suggest_confidence": "medium",
+      "source_slice": "operational"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Великогаївська сільська територіальна громада",
+      "b": "Байковецька сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "ЦНАП / адмінпослуги",
+        "theme_id": "cnap",
+        "form": "делегування",
+        "form_id": "delegation",
+        "confidence": "medium",
+        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "medium"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": false,
+      "score": 0.289,
+      "goals_cosine": 0.066,
+      "geo_score": 1.0,
+      "mss_network": 0.0,
+      "operational_score": 0.83,
       "suggest_confidence": "medium",
       "source_slice": "operational"
     },
@@ -6129,8 +6251,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.425,
-      "goals_cosine": 0.292,
+      "score": 0.435,
+      "goals_cosine": 0.309,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.829,
@@ -6190,8 +6312,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.256,
-      "goals_cosine": 0.073,
+      "score": 0.264,
+      "goals_cosine": 0.086,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.827,
@@ -6251,11 +6373,72 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.388,
-      "goals_cosine": 0.229,
+      "score": 0.395,
+      "goals_cosine": 0.241,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.825,
+      "suggest_confidence": "medium",
+      "source_slice": "operational"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Хотинська міська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "low"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "low"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": false,
+      "score": 0.256,
+      "goals_cosine": 0.01,
+      "geo_score": 1.0,
+      "mss_network": 0.0,
+      "operational_score": 0.812,
       "suggest_confidence": "medium",
       "source_slice": "operational"
     },
@@ -6312,8 +6495,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.243,
-      "goals_cosine": 0.05,
+      "score": 0.251,
+      "goals_cosine": 0.063,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.809,
@@ -6373,8 +6556,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.578,
-      "goals_cosine": 0.546,
+      "score": 0.585,
+      "goals_cosine": 0.558,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.802,
@@ -6434,8 +6617,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.336,
-      "goals_cosine": 0.206,
+      "score": 0.348,
+      "goals_cosine": 0.226,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.8,
@@ -6495,8 +6678,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.418,
-      "goals_cosine": 0.343,
+      "score": 0.422,
+      "goals_cosine": 0.349,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.792,
@@ -6556,8 +6739,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.244,
-      "goals_cosine": 0.052,
+      "score": 0.254,
+      "goals_cosine": 0.068,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.79,
@@ -6617,11 +6800,72 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.285,
-      "goals_cosine": 0.12,
+      "score": 0.3,
+      "goals_cosine": 0.145,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.789,
+      "suggest_confidence": "medium",
+      "source_slice": "operational"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Хотинська міська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "medium",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+        "label_uk": "Туризм / кластер — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "medium"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": false,
+      "score": 0.266,
+      "goals_cosine": 0.09,
+      "geo_score": 0.85,
+      "mss_network": 0.0,
+      "operational_score": 0.788,
       "suggest_confidence": "medium",
       "source_slice": "operational"
     },
@@ -6678,11 +6922,72 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.348,
-      "goals_cosine": 0.227,
+      "score": 0.358,
+      "goals_cosine": 0.242,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.785,
+      "suggest_confidence": "medium",
+      "source_slice": "operational"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Ніжинська міська територіальна громада",
+      "b": "Куликівська селищна територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "ЦНАП / адмінпослуги",
+        "theme_id": "cnap",
+        "form": "делегування",
+        "form_id": "delegation",
+        "confidence": "medium",
+        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "low"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "low"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": false,
+      "score": 0.235,
+      "goals_cosine": 0.038,
+      "geo_score": 0.85,
+      "mss_network": 0.0,
+      "operational_score": 0.769,
       "suggest_confidence": "medium",
       "source_slice": "operational"
     },
@@ -6739,8 +7044,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.363,
-      "goals_cosine": 0.251,
+      "score": 0.397,
+      "goals_cosine": 0.308,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.762,
@@ -6800,8 +7105,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.398,
-      "goals_cosine": 0.247,
+      "score": 0.409,
+      "goals_cosine": 0.265,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.755,
@@ -6861,8 +7166,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.331,
-      "goals_cosine": 0.197,
+      "score": 0.337,
+      "goals_cosine": 0.208,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.755,
@@ -6922,8 +7227,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.394,
-      "goals_cosine": 0.303,
+      "score": 0.402,
+      "goals_cosine": 0.316,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.746,
@@ -6983,8 +7288,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.306,
-      "goals_cosine": 0.156,
+      "score": 0.319,
+      "goals_cosine": 0.178,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.742,
@@ -7044,8 +7349,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.244,
-      "goals_cosine": 0.053,
+      "score": 0.243,
+      "goals_cosine": 0.05,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.736,
@@ -7077,7 +7382,7 @@
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
-          "strength": "medium"
+          "strength": "high"
         },
         {
           "id": "structural",
@@ -7094,7 +7399,7 @@
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
-          "strength": "medium"
+          "strength": "high"
         },
         {
           "id": "structural",
@@ -7105,11 +7410,72 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.279,
-      "goals_cosine": 0.111,
+      "score": 0.284,
+      "goals_cosine": 0.12,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.727,
+      "suggest_confidence": "medium",
+      "source_slice": "operational"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Великоберезовицька селищна територіальна громада",
+      "b": "Байковецька сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "low"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "low"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": false,
+      "score": 0.268,
+      "goals_cosine": 0.03,
+      "geo_score": 1.0,
+      "mss_network": 0.0,
+      "operational_score": 0.725,
       "suggest_confidence": "medium",
       "source_slice": "operational"
     },
@@ -7167,191 +7533,8 @@
     },
     {
       "kind": "mss_candidate",
-      "a": "Бурштинська міська територіальна громада",
-      "b": "Рогатинська міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": false,
-      "score": 0.419,
-      "goals_cosine": 0.344,
-      "geo_score": 0.85,
-      "mss_network": 0.0,
-      "operational_score": 0.712,
-      "suggest_confidence": "medium",
-      "source_slice": "operational"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Журавненська селищна територіальна громада",
-      "b": "Рогатинська міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "medium",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": false,
-      "score": 0.291,
-      "goals_cosine": 0.131,
-      "geo_score": 0.85,
-      "mss_network": 0.0,
-      "operational_score": 0.699,
-      "suggest_confidence": "medium",
-      "source_slice": "operational"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Журавненська селищна територіальна громада",
-      "b": "Галицька міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "medium",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": false,
-      "score": 0.352,
-      "goals_cosine": 0.233,
-      "geo_score": 0.85,
-      "mss_network": 0.0,
-      "operational_score": 0.697,
-      "suggest_confidence": "medium",
-      "source_slice": "operational"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Новомосковська міська територіальна громада",
-      "b": "Слобожанська селищна територіальна громада",
+      "a": "Чернігівська міська територіальна громада",
+      "b": "Куликівська селищна територіальна громада",
       "a_short": null,
       "b_short": null,
       "status": "hypothesis",
@@ -7401,184 +7584,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.289,
-      "goals_cosine": 0.128,
+      "score": 0.435,
+      "goals_cosine": 0.371,
       "geo_score": 0.85,
       "mss_network": 0.0,
-      "operational_score": 0.693,
-      "suggest_confidence": "medium",
-      "source_slice": "operational"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Великогаївська сільська територіальна громада",
-      "b": "Збаразька міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "ЦНАП / адмінпослуги",
-        "theme_id": "cnap",
-        "form": "делегування",
-        "form_id": "delegation",
-        "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": false,
-      "score": 0.375,
-      "goals_cosine": 0.271,
-      "geo_score": 0.85,
-      "mss_network": 0.0,
-      "operational_score": 0.675,
-      "suggest_confidence": "medium",
-      "source_slice": "operational"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Журавненська селищна територіальна громада",
-      "b": "Бурштинська міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": false,
-      "score": 0.322,
-      "goals_cosine": 0.182,
-      "geo_score": 0.85,
-      "mss_network": 0.0,
-      "operational_score": 0.67,
-      "suggest_confidence": "medium",
-      "source_slice": "operational"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Вашковецька сільська територіальна громада",
-      "b": "Новодністровська міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "medium",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": false,
-      "score": 0.212,
-      "goals_cosine": 0.0,
-      "geo_score": 0.85,
-      "mss_network": 0.0,
-      "operational_score": 0.643,
+      "operational_score": 0.718,
       "suggest_confidence": "medium",
       "source_slice": "operational"
     }

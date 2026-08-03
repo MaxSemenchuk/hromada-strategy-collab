@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-03T13:24:10.911Z",
+  "generatedAt": "2026-08-03T13:47:27.720Z",
   "source": "local:structure-hromada --write-release",
   "totalRows": 1469,
-  "textMinedRows": 102,
+  "textMinedRows": 108,
   "schema": "see docs/hromadas-schema.md",
   "license": "CC BY 4.0 — see DATA-LICENSE.md",
   "portalUrlRows": 36,
@@ -16,5 +16,5 @@
     "AFD",
     "STRATEGY LAB"
   ],
-  "lastUpsert": "Поляницька сільська територіальна громада"
+  "lastUpsert": "Рава-Руська міська територіальна громада"
 }
