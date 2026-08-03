@@ -35,6 +35,7 @@ networks as permanent. Write-up:
 - [docs/donor-programs.md](../../docs/donor-programs.md) — DOBRE / EGAP / U-LEAD / GIZ / USAID… programme cheat-sheet
 - [docs/hromadas-schema.md](../../docs/hromadas-schema.md) — field schema
 - [docs/kse-synergy.md](../../docs/kse-synergy.md) — KSE join rules
+- [docs/ua-eu-twinning.md](../../docs/ua-eu-twinning.md) — UA–EU sister cities (format ≠ МСС)
 - Stakeholder site (GitHub Pages root): [docs/index.html](../../docs/index.html) — keep coverage numbers in sync with `data/releases/*.manifest.json`
 
 ## Data boundaries

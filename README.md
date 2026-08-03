@@ -121,6 +121,7 @@ internal/
 └── outreach-messages.md          # draft stakeholder outreach copy — not part of the dataset, not for public reuse
 REFERENCES.md                     # theoretical grounding — network governance, IMC, institutional diversity
 docs/mss-cooperation-research.md  # DOBRE bottleneck thesis, МСС forms/procedure, ЗП 11412, theme/form roadmap
+docs/ua-eu-twinning.md            # UA–EU sister cities: format, SKEW/C4C, cases (≠ МСС)
 docs/donor-programs.md            # donor/fund cheat-sheet (DOBRE, EGAP, U-LEAD, GIZ, USAID…)
 LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see License & data below
 ```

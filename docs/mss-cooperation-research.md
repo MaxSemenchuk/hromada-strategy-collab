@@ -5,7 +5,10 @@ Research notes (2026-07-30). Complements the registry geography/types read in
 and the OECD/IMC ladder in [REFERENCES.md](../REFERENCES.md).
 
 **UA–EU twinning** (SKEW / Cities4Cities) is a separate legal and data layer —
-not Law 1508-VII МСС. See `yarn twinning` / `twinning-partners.json`.
+not Law 1508-VII МСС. Format insights, how partners are found, German SKEW
+mechanics, and cases:
+[ua-eu-twinning.md](./ua-eu-twinning.md). Data: `yarn twinning` /
+`twinning-partners.json`.
 
 ---
 

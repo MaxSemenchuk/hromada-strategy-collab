@@ -472,6 +472,16 @@ in this phase; keep «навіщо» sharper than electoral motivation; do not t
 head-pair network as permanent; warm intros / associations over cold outreach;
 stakeholder site «Практика» + hard rule 9 in `.cursor/rules`.
 
+## UA–EU twinning format insights (2026-08-03)
+
+Narrative notes on how city↔city partnerships work (post-2022 cycle), how
+hromadas find EU partners (SKEW / Cities4Cities / forums / personal asks),
+German SKEW mechanics, themes, coverage gaps, and cases (Poltava–Kalmar,
+Kamianske–Wuppertal, Zhytomyr–Kassel, Kherson–Norrköping, Mykolaiv).
+
+Canonical write-up: [ua-eu-twinning.md](./ua-eu-twinning.md). Data layer from
+2026-07-29 (`yarn twinning`); do not conflate with Law 1508-VII МСС.
+
 ## Open threads (as of 2026-08-03)
 
 - [x] File cross-link issue on KSE repo — [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) (2026-07-24)
@@ -535,6 +545,9 @@ stakeholder site «Практика» + hard rule 9 in `.cursor/rules`.
       inter-ОТГ dynamics + matching implications — 2026-08-03
       ([section above](#frozen-local-elections--inter-hromada-dynamics-2026-08-03);
       [mss-research](./mss-cooperation-research.md#frozen-elections-otg))
+- [x] UA–EU twinning format insights saved — how partnerships work, SKEW/C4C
+      channels, cases (Poltava–Kalmar, Kamianske–Wuppertal, …) —
+      [ua-eu-twinning.md](./ua-eu-twinning.md) (2026-08-03)
 - [ ] Stronger «навіщо» on candidate cards (budget / grant / image rationale),
       not only theme + signal chips
 - [ ] Association outreach: send ВА ОТГ → ВАГ drafts (`outreach-messages.md` §6)
