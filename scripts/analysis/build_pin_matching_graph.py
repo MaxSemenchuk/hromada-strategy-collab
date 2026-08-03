@@ -7,10 +7,12 @@ Sources:
   - data/releases/matching-edges.json
   - data/releases/hromadas.json  (PortalUrl / StrategyUrl / Goals)
   - docs/geo/ukraine-oblasts.geojson  (Natural Earth admin-1, simplified)
+  - docs/geo/ukraine-basins-lev06.geojson  (HydroBASINS EU lev06 clipped/simplified)
+  - data/research-log/hromada-basin-assignment.json  (optional basin_id on nodes)
 
 Writes docs/mss-pin-matching-graph.html
 
-Overlay policy (2026-07-24 / layers 2026-07-29):
+Overlay policy (2026-07-24 / layers 2026-07-29 / basins 2026-08-03):
   Do NOT paint top-N by combined score — that collapses to geo neighbours in a
   sparse strategy corpus. Split tracks instead:
 
@@ -19,6 +21,7 @@ Overlay policy (2026-07-24 / layers 2026-07-29):
     complementary — resource/DREAM ↔ Challenges (default OFF)
     explicit_ask  — МСС language in strategy text (default OFF)
     twinning      — UA–EU sister cities from SKEW / strategy (node highlight, default OFF)
+    basins        — HydroBASINS lev06 underlay (default OFF; not in score)
     known         — curated registry validation pairs
     pin_corpus    — broader KSE PIN ∩ Goals corpus (mss_network>0, not known)
     universe      — all release hromadas with KSE lat/lon (metadata underlay)
@@ -48,6 +51,8 @@ TWINNING = ROOT / "data/releases/twinning-partners.json"
 HROMADAS = ROOT / "data/releases/hromadas.json"
 OBLASTS = ROOT / "docs/geo/ukraine-oblasts.geojson"
 OUTLINE = ROOT / "docs/geo/ukraine-outline.geojson"
+BASINS = ROOT / "docs/geo/ukraine-basins-lev06.geojson"
+BASIN_ASSIGN = ROOT / "data/research-log/hromada-basin-assignment.json"
 TEMPLATE = Path(__file__).with_name("mss_pin_matching_graph.template.html")
 OUT = ROOT / "docs/mss-pin-matching-graph.html"
 
@@ -622,6 +627,17 @@ def build_payload() -> dict:
         degree[e["a"]] = degree.get(e["a"], 0) + 1
         degree[e["b"]] = degree.get(e["b"], 0) + 1
 
+    basin_by_code: dict[str, int] = {}
+    if BASIN_ASSIGN.exists():
+        try:
+            assign_payload = json.loads(BASIN_ASSIGN.read_text(encoding="utf-8"))
+            for code, row in (assign_payload.get("assignments") or {}).items():
+                bid = row.get("basin_id")
+                if bid is not None:
+                    basin_by_code[code] = int(bid)
+        except (OSError, ValueError, TypeError) as exc:
+            print(f"WARNING: basin assignment unreadable ({exc})")
+
     def enrich(code: str, label_fallback: str) -> dict:
         g = geo.get(code)
         meta = by_code.get(code) or {}
@@ -633,7 +649,7 @@ def build_payload() -> dict:
             label = g["name_short"] or label
         twin = twinning_by_code.get(code) or {}
         twin_partners = twin.get("partners") or []
-        return {
+        out = {
             "id": code,
             "label": label,
             "full_name": meta.get("full_name") or code_to_full.get(code),
@@ -653,6 +669,9 @@ def build_payload() -> dict:
             "twinning_count": len(twin_partners),
             "twinning_partners": twin_partners[:12],
         }
+        if code in basin_by_code:
+            out["basin_id"] = basin_by_code[code]
+        return out
 
     nodes = []
     with_geo = 0
@@ -670,27 +689,28 @@ def build_payload() -> dict:
             continue
         twin = twinning_by_code.get(code) or {}
         twin_partners = twin.get("partners") or []
-        universe.append(
-            {
-                "id": code,
-                "label": g.get("name_short") or short_label(meta.get("full_name") or code),
-                "full_name": meta.get("full_name"),
-                "katottg": code,
-                "oblast": g.get("oblast"),
-                "lat": g["lat"],
-                "lon": g["lon"],
-                "in_corpus": bool(meta.get("in_corpus")),
-                "in_pin": code in pin_member,
-                "portal_url": meta.get("portal_url"),
-                "strategy_url": meta.get("strategy_url"),
-                "c4c_url": twin.get("c4c_url"),
-                "source_quality": meta.get("source_quality"),
-                "type": meta.get("type"),
-                "population": meta.get("population"),
-                "twinning_count": len(twin_partners),
-                "twinning_partners": twin_partners[:12],
-            }
-        )
+        u = {
+            "id": code,
+            "label": g.get("name_short") or short_label(meta.get("full_name") or code),
+            "full_name": meta.get("full_name"),
+            "katottg": code,
+            "oblast": g.get("oblast"),
+            "lat": g["lat"],
+            "lon": g["lon"],
+            "in_corpus": bool(meta.get("in_corpus")),
+            "in_pin": code in pin_member,
+            "portal_url": meta.get("portal_url"),
+            "strategy_url": meta.get("strategy_url"),
+            "c4c_url": twin.get("c4c_url"),
+            "source_quality": meta.get("source_quality"),
+            "type": meta.get("type"),
+            "population": meta.get("population"),
+            "twinning_count": len(twin_partners),
+            "twinning_partners": twin_partners[:12],
+        }
+        if code in basin_by_code:
+            u["basin_id"] = basin_by_code[code]
+        universe.append(u)
     universe.sort(key=lambda n: n.get("full_name") or n["label"] or n["id"])
 
     if not OBLASTS.exists():
@@ -699,6 +719,11 @@ def build_payload() -> dict:
         raise SystemExit(f"Missing {OUTLINE}")
     oblasts = json.loads(OBLASTS.read_text(encoding="utf-8"))
     outline = json.loads(OUTLINE.read_text(encoding="utf-8"))
+    basins = None
+    if BASINS.exists():
+        basins = json.loads(BASINS.read_text(encoding="utf-8"))
+    else:
+        print(f"WARNING: missing {BASINS}; basin underlay omitted")
 
     portal_on_map = sum(1 for n in universe if n.get("portal_url"))
     twinning_on_map = sum(1 for n in universe if n.get("twinning_count") or n.get("c4c_url"))
@@ -723,6 +748,8 @@ def build_payload() -> dict:
             "hypothesis_edges": len(thematic_edges),
             "nodes_with_geo": with_geo,
             "oblasts": len(oblasts.get("features", [])),
+            "basins": len((basins or {}).get("features", [])),
+            "basins_assigned": len(basin_by_code),
             "pin_source": "KSE-Loc-Data-Hub partnerships-hromadas-network.csv",
             "mss_registry_source": (
                 "data/cache/mss/mss_registry.xlsx (Назва договору / Форма)"
@@ -735,6 +762,12 @@ def build_payload() -> dict:
             "geo_source": "KSE-Loc-Data-Hub geography.csv (lat_center/lon_center)",
             "oblasts_source": "Natural Earth admin-1 → docs/geo/ukraine-oblasts.geojson",
             "outline_source": "docs/geo/ukraine-outline.geojson (mask outside UA)",
+            "basins_source": (
+                "HydroBASINS EU lev06 → docs/geo/ukraine-basins-lev06.geojson "
+                "(hydrological catchments, not legal DAVR RBDs)"
+                if basins
+                else None
+            ),
             "matching_source": "data/releases/matching-edges.json",
             "hromadas_source": "data/releases/hromadas.json (PortalUrl/StrategyUrl)",
             "twinning_source": (
@@ -750,12 +783,14 @@ def build_payload() -> dict:
                 "thematic=goals_cosine track; operational=geo neighbours; "
                 "complementary=resource/DREAM↔Challenges; explicit_ask=МСС language; "
                 "twinning=UA–EU sister cities (node highlight); "
+                "basins=HydroBASINS lev06 underlay (not in score); "
                 "pin_corpus=mss_network>0 not known; no combined-score hyp layer; "
                 "universe=all release rows with KSE geo (metadata layer)"
             ),
         },
         "oblasts": oblasts,
         "ukraine_outline": outline,
+        "basins": basins,
         "nodes": nodes,
         "universe": universe,
         "edges": (
@@ -785,7 +820,7 @@ def main() -> None:
         f"PIN {m['pin_nodes']}n/{m['pin_edges']}e "
         f"(subjects={m.get('pin_agreements_enriched', 0)}) · "
         f"universe={m['universe_nodes']} (portal={m['universe_with_portal']}) · "
-        f"oblasts={m['oblasts']} · "
+        f"oblasts={m['oblasts']} · basins={m.get('basins', 0)} · "
         f"known={m['known_edges']} pin∩corpus={m['pin_corpus_edges']} "
         f"thematic={m['thematic_edges']} operational={m['operational_edges']} "
         f"complementary={m['complementary_edges']} explicit_ask={m['explicit_ask_edges']} "
