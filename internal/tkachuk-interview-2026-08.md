@@ -2,9 +2,12 @@
 
 **Date:** 2026-08 (conversation) · **Artifact:** 2026-08-03  
 **Who:** Анатолій Ткачук, директор Інституту громадянського суспільства  
-**Context:** консультація щодо пілоту пошуку партнерів для МСС за текстами стратегій  
+**Role in study:** **top practitioner expert** — canonical input for product /
+hypothesis framing (trust · benefit · water · associations). Prefer this file
+over older «AI replaces acquaintance» language when they conflict.  
+**Context:** консультація щодо пілоту пошуку партнерів для МСС  
 **Status:** research notes — гіпотези / практичні висновки, не публічний матеріал  
-**Related:** [outreach draft](outreach-messages.md#5-анатолій-ткачук-інститут-громадянського-суспільства) · [МСС research](../docs/mss-cooperation-research.md)
+**Related:** [outreach](outreach-messages.md#5-анатолій-ткачук-інститут-громадянського-суспільства) · [МСС research](../docs/mss-cooperation-research.md#practitioner-correction--ткачук--ігс-2026-08) · [project-history](../docs/project-history.md#tkachuk--ігс-interview-2026-08) · workspace rule `.cursor/rules/hromada-project.mdc`
 
 ---
 
@@ -131,11 +134,11 @@ AI зменшує **невизначеність**, а не усуває пот�
 
 | Ідея | Статус |
 |------|--------|
-| Водний / басейновий шар як discovery signal (не тип МСС) | гіпотеза — варто оцінити джерела (гідрографія, водоканали, DREAM water) |
-| Не продавати «заміну довіри» — позиціонувати зменшення невизначеності + package + кейси | messaging / AIM-CC / stakeholder site |
+| Водний / басейновий шар як discovery signal (не тип МСС) | **частина є:** HydroBASINS lev06 underlay на PIN-мапі + `hromada-basin-assignment.json` (2026-08-03). Далі: не fold у `score`; окремий water-theme filter / валідація на реєстрі |
+| Не продавати «заміну довіри» — позиціонувати зменшення невизначеності + package + кейси | **закладено** в rule / README / mss-research / лендинг / outreach §6 |
 | Адаптивність теми під кризовий горизонт (вода ↔ енергетика зимою) | обмеження моделі; не фіксувати один «вічний» thematic prior |
-| Outreach через ВА ОТГ / ВАГ; контакти старост у регіонах | канал поширення |
-| Показувати вигоду явно (економія / спільний грант / імідж), не лише cosine | product / complementary + funds layers |
+| Outreach через ВА ОТГ / ВАГ; контакти старост у регіонах | чернетки §6; канал поширення |
+| Показувати вигоду явно (економія / спільний грант / імідж), не лише cosine | product / complementary + funds layers — ще слабке місце UI |
 
 ---
 

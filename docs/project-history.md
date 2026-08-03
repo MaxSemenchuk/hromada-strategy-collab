@@ -423,8 +423,11 @@ are closer to peer-learning / donor exchange than classic Law 1508 МСС.
 
 ## Tkachuk / ІГС interview (2026-08)
 
-Conversation with **Анатолій Ткачук** (Інститут громадянського суспільства).
-Full notes: [`internal/tkachuk-interview-2026-08.md`](../internal/tkachuk-interview-2026-08.md).
+**Top practitioner expert for this study.** Conversation with **Анатолій Ткачук**
+(Інститут громадянського суспільства). Canonical notes:
+[`internal/tkachuk-interview-2026-08.md`](../internal/tkachuk-interview-2026-08.md).
+Also in [mss-cooperation-research](./mss-cooperation-research.md#practitioner-correction--ткачук--ігс-2026-08)
+and workspace rule (product framing hard rules 9–10).
 
 **Hypothesis correction:** AI does not replace trust between hromada heads
 (~60–90% of agreements follow personal contact). Stronger framing — AI
@@ -443,6 +446,10 @@ trust is needed to start, but does not substitute personal relations.
   **ВА ОТГ** / **ВАГ**, not АМУ (large cities too autonomous).
 - Promising three-layer forecast: personal/institutional network × shared
   resources (esp. basins) × mutual-benefit estimate.
+
+**Folded into pilot framing (2026-08-03):** stakeholder site «Практика» section;
+README / mss-research / `.cursor/rules`; HydroBASINS underlay already on PIN map
+(discovery only — not in `score`).
 
 ## Open threads (as of 2026-08-03)
 
@@ -490,14 +497,19 @@ trust is needed to start, but does not substitute personal relations.
       — 2026-07-30; see [mss-cooperation-research.md](./mss-cooperation-research.md)
 - [x] Maximal-graph layer read + work implications — 2026-07-31
       ([section above](#maximal-pin-graph-read-2026-07-31))
-- [x] Tkachuk / ІГС interview notes + hypothesis correction (trust ≠ replaceable;
-      water basins; associations) — 2026-08-03
-      (`internal/tkachuk-interview-2026-08.md`)
-- [ ] **Water / basin layer (hypothesis):** join hydrography / shared water
-      infra to hromadas as a discovery signal; validate against water-themed
-      МСС in registry — see Tkachuk notes
-- [ ] Reframe stakeholder messaging: reduce uncertainty / surface benefit,
-      not «AI replaces trust» (Tkachuk 2026-08)
+- [x] Tkachuk / ІГС as top expert input + hypothesis correction — 2026-08-03
+      (`internal/tkachuk-interview-2026-08.md`; rule / README / mss-research /
+      site «Практика»)
+- [x] HydroBASINS lev06 underlay + basin assignment (discovery context only;
+      not in v7 `score`) — 2026-08-03; see [external-data-sources](./external-data-sources.md)
+- [ ] **Water as product focus (next):** validate water-themed МСС in registry;
+      surface same-basin + water candidates more clearly in UI (still not fold
+      into `score`) — Tkachuk thematic window
+- [x] Reframe stakeholder messaging: reduce uncertainty / surface benefit,
+      not «AI replaces trust» (Tkachuk 2026-08) — site + outreach §6
+- [ ] Stronger «навіщо» on candidate cards (budget / grant / image rationale),
+      not only theme + signal chips
+- [ ] Association outreach: send ВА ОТГ → ВАГ drafts (`outreach-messages.md` §6)
 
 ---
 
