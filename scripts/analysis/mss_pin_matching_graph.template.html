@@ -686,7 +686,7 @@
       <button type="button" id="themes-none" data-i18n="themes.none">Жодної</button>
       <button type="button" id="themes-tagged" data-i18n="themes.tagged">Лише з темою</button>
     </div>
-    <p class="theme-filter-hint" data-i18n="themes.hint">Фільтрує бірюзові/фіолетові лінії реєстру. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).</p>
+    <p class="theme-filter-hint" data-i18n="themes.hint">Фільтрує бірюзові/фіолетові лінії реєстру і ховає громади без обраної теми. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).</p>
     <p class="section-label" data-i18n="stats.label">Цифри</p>
     <div class="stats">
       <div class="stat"><span data-i18n="stat.universe">Громад на мапі</span><b id="s-universe">—</b></div>
@@ -741,6 +741,33 @@ function pinThemeOk(e) {
   if (kind !== 'pin' && kind !== 'pin_corpus') return true;
   const ids = (e.theme_ids && e.theme_ids.length) ? e.theme_ids : ['other'];
   return ids.some((id) => selectedThemes.has(id));
+}
+
+/** True when the theme checklist is not «all themes» (incl. empty selection). */
+function pinThemeFilterNarrowed() {
+  if (!pinThemeCatalog.length) return false;
+  return selectedThemes.size < pinThemeCatalog.length;
+}
+
+/** Hromada ids that sit on at least one theme-matching PIN / pin∩corpus edge. */
+function themedPinNodeIds() {
+  const ids = new Set();
+  for (const e of edges) {
+    const kind = e.kind || 'pin';
+    if (kind !== 'pin' && kind !== 'pin_corpus') continue;
+    if (!pinThemeOk(e)) continue;
+    if (e.source && e.source.id) ids.add(e.source.id);
+    else if (e.a) ids.add(e.a);
+    if (e.target && e.target.id) ids.add(e.target.id);
+    else if (e.b) ids.add(e.b);
+  }
+  return ids;
+}
+
+function nodeVisibleForThemeFilter(n, themedIds) {
+  if (!pinThemeFilterNarrowed()) return true;
+  const ids = themedIds || themedPinNodeIds();
+  return ids.has(n.id);
 }
 
 function renderThemeFilters() {
@@ -1372,8 +1399,15 @@ function rebuildMapLayers() {
   universeLayer.clearLayers();
   nodesLayer.clearLayers();
 
+  const themedIds = pinThemeFilterNarrowed() ? themedPinNodeIds() : null;
+
   for (const e of edges) {
-    if (!pinThemeOk(e) && (e.kind === 'pin' || e.kind === 'pin_corpus')) continue;
+    if (themedIds) {
+      if (e.kind !== 'pin' && e.kind !== 'pin_corpus') continue;
+      if (!pinThemeOk(e)) continue;
+    } else if (!pinThemeOk(e) && (e.kind === 'pin' || e.kind === 'pin_corpus')) {
+      continue;
+    }
     const a = e.source, b = e.target;
     if (a.lat == null || b.lat == null) continue;
     const line = L.polyline([[a.lat, a.lon], [b.lat, b.lon]], edgeStyle(e.kind));
@@ -1389,6 +1423,7 @@ function rebuildMapLayers() {
   // Faint universe underlay (all mainland hromadas with KSE geo)
   for (const n of universe) {
     if (n.lat == null) continue;
+    if (themedIds && !themedIds.has(n.id)) continue;
     const selected = selectedId === n.id;
     const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
     const marker = L.circleMarker([n.lat, n.lon], {
@@ -1405,6 +1440,7 @@ function rebuildMapLayers() {
 
   for (const n of nodes) {
     if (n.lat == null) continue;
+    if (themedIds && !themedIds.has(n.id)) continue;
     const corpusGlow = layers.corpus && n.in_corpus;
     const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
     const selected = selectedId === n.id;
@@ -1521,6 +1557,9 @@ window.addEventListener('resize', () => {
 
 function edgeVisible(e) {
   if ((e.kind === 'pin' || e.kind === 'pin_corpus') && !pinThemeOk(e)) return false;
+  // When themes are narrowed, focus the view on matching registry edges only
+  // (hypothesis lines would otherwise point at hidden hromadas).
+  if (pinThemeFilterNarrowed() && e.kind !== 'pin' && e.kind !== 'pin_corpus') return false;
   if (e.kind === 'pin') return layers.pin;
   if (e.kind === 'known') return layers.known;
   if (e.kind === 'pin_corpus') return layers.pinCorpus;
@@ -1549,6 +1588,7 @@ function findNode(wx, wy) {
   const hit = Math.max(14, 12 / scale);
   let best = null, bestD = hit * hit;
   for (const n of nodes) {
+    if (!nodeVisibleForThemeFilter(n)) continue;
     const dx = n.x - wx, dy = n.y - wy;
     const d = dx * dx + dy * dy;
     if (d < bestD) { bestD = d; best = n; }
@@ -1729,6 +1769,7 @@ function drawGraph() {
     }
   }
   for (const n of nodes) {
+    if (!nodeVisibleForThemeFilter(n)) continue;
     const hi = hover === n || selectedId === n.id;
     const corpusGlow = layers.corpus && n.in_corpus;
     const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
@@ -1804,7 +1845,7 @@ window.PAGE_I18N = {
     "themes.all": "Усі",
     "themes.none": "Жодної",
     "themes.tagged": "Лише з темою",
-    "themes.hint": "Фільтрує бірюзові/фіолетові лінії реєстру. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).",
+    "themes.hint": "Фільтрує бірюзові/фіолетові лінії реєстру і ховає громади без обраної теми. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).",
     "themes.empty": "Немає тем угод",
     "stats.label": "Цифри",
     "stat.universe": "Громад на мапі",
@@ -1900,7 +1941,7 @@ window.PAGE_I18N = {
     "themes.all": "All",
     "themes.none": "None",
     "themes.tagged": "Tagged only",
-    "themes.hint": "Filters teal/purple registry lines. “Other” = title with no recognised theme (often just “joint project”).",
+    "themes.hint": "Filters teal/purple registry lines and hides hromadas without the selected theme(s). “Other” = title with no recognised theme (often just “joint project”).",
     "themes.empty": "No agreement themes",
     "stats.label": "Figures",
     "stat.universe": "Hromadas on the map",
