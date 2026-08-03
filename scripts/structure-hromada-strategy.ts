@@ -44,6 +44,7 @@ const DONOR_PROGRAM_OPTIONS = [
     "ЄІБ",
     "ЄБРР",
     "AFD",
+    "STRATEGY LAB",
 ] as const;
 const SOURCE_QUALITY = ["full-strategy", "partial", "proxy-info"] as const;
 

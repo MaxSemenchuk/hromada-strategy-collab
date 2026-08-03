@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-03T10:30:45.932732+00:00",
+  "generatedAt": "2026-08-03T13:25:09.026866+00:00",
   "purpose": "Grow strategy corpus where it adds PIN∩corpus validation pairs (neighbours of current Goals corpus in the KSE МСС network).",
-  "corpusSize": 74,
+  "corpusSize": 91,
   "pinEdges": 918,
-  "candidatesTotal": 55,
+  "candidatesTotal": 41,
   "limit": 40,
   "candidates": [
     {
@@ -11,19 +11,26 @@
       "name": "Слобідсько-Кульчієвецька сільська територіальна громада",
       "oblast": "Хмельницька область",
       "pinDegree": 22,
-      "corpusPinLinks": 11,
+      "corpusPinLinks": 18,
       "corpusNeighbourCodes": [
         "UA26040070000065724",
         "UA26040090000025932",
         "UA26040130000010870",
+        "UA26040250000061081",
+        "UA26040350000024417",
         "UA61060050000068464",
+        "UA61060170000051011",
+        "UA61060310000061998",
         "UA68020070000084437",
         "UA73040030000042378",
         "UA73040050000080963",
+        "UA73040070000053425",
+        "UA73040130000087963",
         "UA73040150000056182",
         "UA73040170000011490",
         "UA73060090000047054",
-        "UA73060210000010691"
+        "UA73060210000010691",
+        "UA73060650000012771"
       ],
       "oblastCorpusCount": 3,
       "oblastTotal": 59,
@@ -36,19 +43,26 @@
       "name": "Китайгородська сільська територіальна громада",
       "oblast": "Хмельницька область",
       "pinDegree": 21,
-      "corpusPinLinks": 11,
+      "corpusPinLinks": 18,
       "corpusNeighbourCodes": [
         "UA26040070000065724",
         "UA26040090000025932",
         "UA26040130000010870",
+        "UA26040250000061081",
+        "UA26040350000024417",
         "UA61060050000068464",
+        "UA61060170000051011",
+        "UA61060310000061998",
         "UA68020070000084437",
         "UA73040030000042378",
         "UA73040050000080963",
+        "UA73040070000053425",
+        "UA73040130000087963",
         "UA73040150000056182",
         "UA73040170000011490",
         "UA73060090000047054",
-        "UA73060210000010691"
+        "UA73060210000010691",
+        "UA73060650000012771"
       ],
       "oblastCorpusCount": 3,
       "oblastTotal": 59,
@@ -61,73 +75,30 @@
       "name": "Іване-Пустенська сільська територіальна громада",
       "oblast": "Тернопільська область",
       "pinDegree": 21,
-      "corpusPinLinks": 11,
+      "corpusPinLinks": 18,
       "corpusNeighbourCodes": [
         "UA26040070000065724",
         "UA26040090000025932",
         "UA26040130000010870",
+        "UA26040250000061081",
+        "UA26040350000024417",
         "UA61060050000068464",
+        "UA61060170000051011",
+        "UA61060310000061998",
         "UA68020070000084437",
         "UA73040030000042378",
         "UA73040050000080963",
+        "UA73040070000053425",
+        "UA73040130000087963",
         "UA73040150000056182",
         "UA73040170000011490",
         "UA73060090000047054",
-        "UA73060210000010691"
+        "UA73060210000010691",
+        "UA73060650000012771"
       ],
-      "oblastCorpusCount": 6,
+      "oblastCorpusCount": 8,
       "oblastTotal": 55,
-      "oblastCorpusShare": 0.109,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA61060170000051011",
-      "name": "Заліщицька міська територіальна громада",
-      "oblast": "Тернопільська область",
-      "pinDegree": 21,
-      "corpusPinLinks": 11,
-      "corpusNeighbourCodes": [
-        "UA26040070000065724",
-        "UA26040090000025932",
-        "UA26040130000010870",
-        "UA61060050000068464",
-        "UA68020070000084437",
-        "UA73040030000042378",
-        "UA73040050000080963",
-        "UA73040150000056182",
-        "UA73040170000011490",
-        "UA73060090000047054",
-        "UA73060210000010691"
-      ],
-      "oblastCorpusCount": 6,
-      "oblastTotal": 55,
-      "oblastCorpusShare": 0.109,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA61060310000061998",
-      "name": "Монастириська міська територіальна громада",
-      "oblast": "Тернопільська область",
-      "pinDegree": 21,
-      "corpusPinLinks": 11,
-      "corpusNeighbourCodes": [
-        "UA26040070000065724",
-        "UA26040090000025932",
-        "UA26040130000010870",
-        "UA61060050000068464",
-        "UA68020070000084437",
-        "UA73040030000042378",
-        "UA73040050000080963",
-        "UA73040150000056182",
-        "UA73040170000011490",
-        "UA73060090000047054",
-        "UA73060210000010691"
-      ],
-      "oblastCorpusCount": 6,
-      "oblastTotal": 55,
-      "oblastCorpusShare": 0.109,
+      "oblastCorpusShare": 0.145,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -136,301 +107,30 @@
       "name": "Городенківська міська територіальна громада",
       "oblast": "Івано-Франківська область",
       "pinDegree": 21,
-      "corpusPinLinks": 11,
+      "corpusPinLinks": 18,
       "corpusNeighbourCodes": [
         "UA26040070000065724",
         "UA26040090000025932",
         "UA26040130000010870",
+        "UA26040250000061081",
+        "UA26040350000024417",
         "UA61060050000068464",
+        "UA61060170000051011",
+        "UA61060310000061998",
         "UA68020070000084437",
         "UA73040030000042378",
         "UA73040050000080963",
+        "UA73040070000053425",
+        "UA73040130000087963",
         "UA73040150000056182",
         "UA73040170000011490",
         "UA73060090000047054",
-        "UA73060210000010691"
+        "UA73060210000010691",
+        "UA73060650000012771"
       ],
-      "oblastCorpusCount": 7,
+      "oblastCorpusCount": 16,
       "oblastTotal": 62,
-      "oblastCorpusShare": 0.113,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA26040250000061081",
-      "name": "Олешанська сільська територіальна громада",
-      "oblast": "Івано-Франківська область",
-      "pinDegree": 21,
-      "corpusPinLinks": 11,
-      "corpusNeighbourCodes": [
-        "UA26040070000065724",
-        "UA26040090000025932",
-        "UA26040130000010870",
-        "UA61060050000068464",
-        "UA68020070000084437",
-        "UA73040030000042378",
-        "UA73040050000080963",
-        "UA73040150000056182",
-        "UA73040170000011490",
-        "UA73060090000047054",
-        "UA73060210000010691"
-      ],
-      "oblastCorpusCount": 7,
-      "oblastTotal": 62,
-      "oblastCorpusShare": 0.113,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA26040350000024417",
-      "name": "Тлумацька міська територіальна громада",
-      "oblast": "Івано-Франківська область",
-      "pinDegree": 21,
-      "corpusPinLinks": 11,
-      "corpusNeighbourCodes": [
-        "UA26040070000065724",
-        "UA26040090000025932",
-        "UA26040130000010870",
-        "UA61060050000068464",
-        "UA68020070000084437",
-        "UA73040030000042378",
-        "UA73040050000080963",
-        "UA73040150000056182",
-        "UA73040170000011490",
-        "UA73060090000047054",
-        "UA73060210000010691"
-      ],
-      "oblastCorpusCount": 7,
-      "oblastTotal": 62,
-      "oblastCorpusShare": 0.113,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA73040070000053425",
-      "name": "Лівинецька сільська територіальна громада",
-      "oblast": "Чернівецька область",
-      "pinDegree": 21,
-      "corpusPinLinks": 11,
-      "corpusNeighbourCodes": [
-        "UA26040070000065724",
-        "UA26040090000025932",
-        "UA26040130000010870",
-        "UA61060050000068464",
-        "UA68020070000084437",
-        "UA73040030000042378",
-        "UA73040050000080963",
-        "UA73040150000056182",
-        "UA73040170000011490",
-        "UA73060090000047054",
-        "UA73060210000010691"
-      ],
-      "oblastCorpusCount": 8,
-      "oblastTotal": 50,
-      "oblastCorpusShare": 0.16,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA73040130000087963",
-      "name": "Новодністровська міська територіальна громада",
-      "oblast": "Чернівецька область",
-      "pinDegree": 21,
-      "corpusPinLinks": 11,
-      "corpusNeighbourCodes": [
-        "UA26040070000065724",
-        "UA26040090000025932",
-        "UA26040130000010870",
-        "UA61060050000068464",
-        "UA68020070000084437",
-        "UA73040030000042378",
-        "UA73040050000080963",
-        "UA73040150000056182",
-        "UA73040170000011490",
-        "UA73060090000047054",
-        "UA73060210000010691"
-      ],
-      "oblastCorpusCount": 8,
-      "oblastTotal": 50,
-      "oblastCorpusShare": 0.16,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA73060650000012771",
-      "name": "Юрковецька сільська територіальна громада",
-      "oblast": "Чернівецька область",
-      "pinDegree": 21,
-      "corpusPinLinks": 11,
-      "corpusNeighbourCodes": [
-        "UA26040070000065724",
-        "UA26040090000025932",
-        "UA26040130000010870",
-        "UA61060050000068464",
-        "UA68020070000084437",
-        "UA73040030000042378",
-        "UA73040050000080963",
-        "UA73040150000056182",
-        "UA73040170000011490",
-        "UA73060090000047054",
-        "UA73060210000010691"
-      ],
-      "oblastCorpusCount": 8,
-      "oblastTotal": 50,
-      "oblastCorpusShare": 0.16,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA26080070000092582",
-      "name": "Коломийська міська територіальна громада",
-      "oblast": "Івано-Франківська область",
-      "pinDegree": 16,
-      "corpusPinLinks": 3,
-      "corpusNeighbourCodes": [
-        "UA26100010000076570",
-        "UA26120150000021671",
-        "UA73020090000031499"
-      ],
-      "oblastCorpusCount": 7,
-      "oblastTotal": 62,
-      "oblastCorpusShare": 0.113,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA21060010000011784",
-      "name": "Богданська сільська територіальна громада",
-      "oblast": "Закарпатська область",
-      "pinDegree": 13,
-      "corpusPinLinks": 3,
-      "corpusNeighbourCodes": [
-        "UA26100010000076570",
-        "UA26120150000021671",
-        "UA73020090000031499"
-      ],
-      "oblastCorpusCount": 3,
-      "oblastTotal": 64,
-      "oblastCorpusShare": 0.047,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA21060050000029937",
-      "name": "Рахівська міська територіальна громада",
-      "oblast": "Закарпатська область",
-      "pinDegree": 13,
-      "corpusPinLinks": 3,
-      "corpusNeighbourCodes": [
-        "UA26100010000076570",
-        "UA26120150000021671",
-        "UA73020090000031499"
-      ],
-      "oblastCorpusCount": 3,
-      "oblastTotal": 64,
-      "oblastCorpusShare": 0.047,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA21060070000049340",
-      "name": "Ясінянська селищна територіальна громада",
-      "oblast": "Закарпатська область",
-      "pinDegree": 13,
-      "corpusPinLinks": 3,
-      "corpusNeighbourCodes": [
-        "UA26100010000076570",
-        "UA26120150000021671",
-        "UA73020090000031499"
-      ],
-      "oblastCorpusCount": 3,
-      "oblastTotal": 64,
-      "oblastCorpusShare": 0.047,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA26020030000088465",
-      "name": "Верховинська селищна територіальна громада",
-      "oblast": "Івано-Франківська область",
-      "pinDegree": 13,
-      "corpusPinLinks": 3,
-      "corpusNeighbourCodes": [
-        "UA26100010000076570",
-        "UA26120150000021671",
-        "UA73020090000031499"
-      ],
-      "oblastCorpusCount": 7,
-      "oblastTotal": 62,
-      "oblastCorpusShare": 0.113,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA26120010000096774",
-      "name": "Ворохтянська селищна територіальна громада",
-      "oblast": "Івано-Франківська область",
-      "pinDegree": 13,
-      "corpusPinLinks": 3,
-      "corpusNeighbourCodes": [
-        "UA26100010000076570",
-        "UA26120150000021671",
-        "UA73020090000031499"
-      ],
-      "oblastCorpusCount": 7,
-      "oblastTotal": 62,
-      "oblastCorpusShare": 0.113,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA26020050000098694",
-      "name": "Зеленська сільська територіальна громада",
-      "oblast": "Івано-Франківська область",
-      "pinDegree": 13,
-      "corpusPinLinks": 3,
-      "corpusNeighbourCodes": [
-        "UA26100010000076570",
-        "UA26120150000021671",
-        "UA73020090000031499"
-      ],
-      "oblastCorpusCount": 7,
-      "oblastTotal": 62,
-      "oblastCorpusShare": 0.113,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA26100030000012148",
-      "name": "Космацька сільська територіальна громада",
-      "oblast": "Івано-Франківська область",
-      "pinDegree": 13,
-      "corpusPinLinks": 3,
-      "corpusNeighbourCodes": [
-        "UA26100010000076570",
-        "UA26120150000021671",
-        "UA73020090000031499"
-      ],
-      "oblastCorpusCount": 7,
-      "oblastTotal": 62,
-      "oblastCorpusShare": 0.113,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA26100050000019570",
-      "name": "Кутська селищна територіальна громада",
-      "oblast": "Івано-Франківська область",
-      "pinDegree": 13,
-      "corpusPinLinks": 3,
-      "corpusNeighbourCodes": [
-        "UA26100010000076570",
-        "UA26120150000021671",
-        "UA73020090000031499"
-      ],
-      "oblastCorpusCount": 7,
-      "oblastTotal": 62,
-      "oblastCorpusShare": 0.113,
+      "oblastCorpusShare": 0.258,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -439,32 +139,25 @@
       "name": "Надвірнянська міська територіальна громада",
       "oblast": "Івано-Франківська область",
       "pinDegree": 13,
-      "corpusPinLinks": 3,
+      "corpusPinLinks": 13,
       "corpusNeighbourCodes": [
+        "UA21060010000011784",
+        "UA21060050000029937",
+        "UA21060070000049340",
+        "UA26020030000088465",
+        "UA26020050000098694",
+        "UA26080070000092582",
         "UA26100010000076570",
+        "UA26100030000012148",
+        "UA26100050000019570",
+        "UA26120010000096774",
+        "UA26120130000088448",
         "UA26120150000021671",
         "UA73020090000031499"
       ],
-      "oblastCorpusCount": 7,
+      "oblastCorpusCount": 16,
       "oblastTotal": 62,
-      "oblastCorpusShare": 0.113,
-      "sourceQuality": null,
-      "hasMetadataRow": true
-    },
-    {
-      "katottg": "UA26120130000088448",
-      "name": "Поляницька сільська територіальна громада",
-      "oblast": "Івано-Франківська область",
-      "pinDegree": 13,
-      "corpusPinLinks": 3,
-      "corpusNeighbourCodes": [
-        "UA26100010000076570",
-        "UA26120150000021671",
-        "UA73020090000031499"
-      ],
-      "oblastCorpusCount": 7,
-      "oblastTotal": 62,
-      "oblastCorpusShare": 0.113,
+      "oblastCorpusShare": 0.258,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -512,9 +205,9 @@
         "UA73040050000080963",
         "UA73040150000056182"
       ],
-      "oblastCorpusCount": 8,
+      "oblastCorpusCount": 11,
       "oblastTotal": 50,
-      "oblastCorpusShare": 0.16,
+      "oblastCorpusShare": 0.22,
       "sourceQuality": null,
       "hasMetadataRow": true
     },
@@ -729,6 +422,51 @@
       "hasMetadataRow": true
     },
     {
+      "katottg": "UA26120050000087602",
+      "name": "Ланчинська селищна територіальна громада",
+      "oblast": "Івано-Франківська область",
+      "pinDegree": 3,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA26080070000092582"
+      ],
+      "oblastCorpusCount": 16,
+      "oblastTotal": 62,
+      "oblastCorpusShare": 0.258,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA26080130000058024",
+      "name": "Нижньовербізька сільська територіальна громада",
+      "oblast": "Івано-Франківська область",
+      "pinDegree": 3,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA26080070000092582"
+      ],
+      "oblastCorpusCount": 16,
+      "oblastTotal": 62,
+      "oblastCorpusShare": 0.258,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA26080170000041182",
+      "name": "Печеніжинська селищна територіальна громада",
+      "oblast": "Івано-Франківська область",
+      "pinDegree": 3,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA26080070000092582"
+      ],
+      "oblastCorpusCount": 16,
+      "oblastTotal": 62,
+      "oblastCorpusShare": 0.258,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
       "katottg": "UA61040010000042862",
       "name": "Байковецька сільська територіальна громада",
       "oblast": "Тернопільська область",
@@ -737,9 +475,219 @@
       "corpusNeighbourCodes": [
         "UA61040490000035010"
       ],
-      "oblastCorpusCount": 6,
+      "oblastCorpusCount": 8,
       "oblastTotal": 55,
-      "oblastCorpusShare": 0.109,
+      "oblastCorpusShare": 0.145,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA73040110000040354",
+      "name": "Недобоївська сільська територіальна громада",
+      "oblast": "Чернівецька область",
+      "pinDegree": 2,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA73040050000080963"
+      ],
+      "oblastCorpusCount": 11,
+      "oblastTotal": 50,
+      "oblastCorpusShare": 0.22,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA73020150000076225",
+      "name": "Селятинська сільська територіальна громада",
+      "oblast": "Чернівецька область",
+      "pinDegree": 2,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA73020090000031499"
+      ],
+      "oblastCorpusCount": 11,
+      "oblastTotal": 50,
+      "oblastCorpusShare": 0.22,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA73060570000058573",
+      "name": "Топорівська сільська територіальна громада",
+      "oblast": "Чернівецька область",
+      "pinDegree": 2,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA73040050000080963"
+      ],
+      "oblastCorpusCount": 11,
+      "oblastTotal": 50,
+      "oblastCorpusShare": 0.22,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA46020050000037271",
+      "name": "Меденицька селищна територіальна громада",
+      "oblast": "Львівська область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA46020030000019252"
+      ],
+      "oblastCorpusCount": 2,
+      "oblastTotal": 71,
+      "oblastCorpusShare": 0.028,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA53060130000040567",
+      "name": "Заводська міська територіальна громада",
+      "oblast": "Полтавська область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA53060190000015369"
+      ],
+      "oblastCorpusCount": 2,
+      "oblastTotal": 59,
+      "oblastCorpusShare": 0.034,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA07080030000051738",
+      "name": "Боратинська сільська територіальна громада",
+      "oblast": "Волинська область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA07080170000013585"
+      ],
+      "oblastCorpusCount": 2,
+      "oblastTotal": 53,
+      "oblastCorpusShare": 0.038,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA68020150000089666",
+      "name": "Маківська сільська територіальна громада",
+      "oblast": "Хмельницька область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA68020050000040518"
+      ],
+      "oblastCorpusCount": 3,
+      "oblastTotal": 59,
+      "oblastCorpusShare": 0.051,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA68020170000033495",
+      "name": "Новодунаєвецька селищна територіальна громада",
+      "oblast": "Хмельницька область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA68020050000040518"
+      ],
+      "oblastCorpusCount": 3,
+      "oblastTotal": 59,
+      "oblastCorpusShare": 0.051,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA68020250000080044",
+      "name": "Смотрицька селищна територіальна громада",
+      "oblast": "Хмельницька область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA68020050000040518"
+      ],
+      "oblastCorpusCount": 3,
+      "oblastTotal": 59,
+      "oblastCorpusShare": 0.051,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA05040090000093950",
+      "name": "Краснопільська сільська територіальна громада",
+      "oblast": "Вінницька область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA05040030000050131"
+      ],
+      "oblastCorpusCount": 4,
+      "oblastTotal": 62,
+      "oblastCorpusShare": 0.065,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA05040110000042036",
+      "name": "Кунківська сільська територіальна громада",
+      "oblast": "Вінницька область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA05040030000050131"
+      ],
+      "oblastCorpusCount": 4,
+      "oblastTotal": 62,
+      "oblastCorpusShare": 0.065,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA21100110000018765",
+      "name": "Оноківська сільська територіальна громада",
+      "oblast": "Закарпатська область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA21100230000083101"
+      ],
+      "oblastCorpusCount": 6,
+      "oblastTotal": 64,
+      "oblastCorpusShare": 0.094,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA12020150000050274",
+      "name": "Новопокровська селищна територіальна громада",
+      "oblast": "Дніпропетровська область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA12020250000010438"
+      ],
+      "oblastCorpusCount": 9,
+      "oblastTotal": 85,
+      "oblastCorpusShare": 0.106,
+      "sourceQuality": null,
+      "hasMetadataRow": true
+    },
+    {
+      "katottg": "UA61060110000078824",
+      "name": "Гримайлівська селищна територіальна громада",
+      "oblast": "Тернопільська область",
+      "pinDegree": 1,
+      "corpusPinLinks": 1,
+      "corpusNeighbourCodes": [
+        "UA61040430000018305"
+      ],
+      "oblastCorpusCount": 8,
+      "oblastTotal": 55,
+      "oblastCorpusShare": 0.145,
       "sourceQuality": null,
       "hasMetadataRow": true
     }

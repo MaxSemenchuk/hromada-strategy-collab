@@ -54,9 +54,9 @@ signals appears to be genuine whitespace.
 - **77 hromadas** text-mined for strategy content: **59** full-strategy, **9**
   partial, **9** proxy-info; **68** have non-empty `Goals` for matching. (Honest
   retrieval nulls are recorded separately where no strategy could be found.)
-- **174 hromadas** (12%) tagged with at least one donor/technical-assistance
+- **181 hromadas** (12%) tagged with at least one donor/technical-assistance
   program (DOBRE, DECIDE, GIZ, ПРООН/UNDP, EGAP, DESPRO, МФ Відродження, U-LEAD,
-  Ре:Форм, JICA, ЄІБ, ЄБРР, AFD) — a floor, not a ceiling (`DonorsPrograms` on
+  Ре:Форм, STRATEGY LAB, JICA, ЄІБ, ЄБРР, AFD) — a floor, not a ceiling (`DonorsPrograms` on
   the release JSON).
 - Matching **v7.1** (`0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`):
   goals_cosine prefers operational lines when hierarchy is present

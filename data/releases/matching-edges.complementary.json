@@ -471,6 +471,53 @@
   },
   {
     "a": "Яремчанська міська територіальна громада",
+    "b": "Верховинська селищна територіальна громада",
+    "a_short": "Яремчанська",
+    "b_short": "Верховинська",
+    "a_katottg": "UA26120150000021671",
+    "b_katottg": "UA26020030000088465",
+    "track": "complementary",
+    "complementary_score": 1.0,
+    "reason_count": 7,
+    "reasons": [
+      "Strengths «Вода / каналізація (ЖКГ)» у Верховинська ↔ виклик у Яремчанська",
+      "Strengths «Довкілля / екологія» у Верховинська ↔ виклик у Яремчанська",
+      "DREAM «Культура / спадщина» у Верховинська ↔ виклик у Яремчанська",
+      "DREAM «Освіта» у Верховинська ↔ виклик у Яремчанська",
+      "DREAM «Охорона здоров'я» у Верховинська ↔ виклик у Яремчанська",
+      "ресурс «досвід ДФРР/інфри» у Верховинська ↔ потреба в Яремчанська"
+    ],
+    "same_oblast": true,
+    "known": false,
+    "theme": "Вода / захист від повеней",
+    "suggested_theme": "Вода / захист від повеней",
+    "suggested_theme_id": "water",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Вода / захист від повеней",
+      "theme_id": "water",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "high",
+      "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+      "label_uk": "Вода / захист від повеней — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "complementary",
+        "label_uk": "доповнення ресурсів",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "complementary",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Яремчанська міська територіальна громада",
     "b": "Косівська міська територіальна громада",
     "a_short": "Яремчанська",
     "b_short": "Косівська",
@@ -2508,52 +2555,6 @@
       "confidence": "high",
       "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
       "label_uk": "Вода / захист від повеней — спільне КП"
-    },
-    "signals": [
-      {
-        "id": "complementary",
-        "label_uk": "доповнення ресурсів",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "complementary",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Яремчанська міська територіальна громада",
-    "b": "Верховинська селищна територіальна громада",
-    "a_short": "Яремчанська",
-    "b_short": "Верховинська",
-    "a_katottg": "UA26120150000021671",
-    "b_katottg": "UA26020030000088465",
-    "track": "complementary",
-    "complementary_score": 0.967,
-    "reason_count": 5,
-    "reasons": [
-      "DREAM «Культура / спадщина» у Верховинська ↔ виклик у Яремчанська",
-      "DREAM «Освіта» у Верховинська ↔ виклик у Яремчанська",
-      "DREAM «Охорона здоров'я» у Верховинська ↔ виклик у Яремчанська",
-      "ресурс «досвід ДФРР/інфри» у Верховинська ↔ потреба в Яремчанська",
-      "ресурс «медмережа» у Верховинська ↔ потреба в Яремчанська"
-    ],
-    "same_oblast": true,
-    "known": false,
-    "theme": "Туризм / кластер",
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · доповнення ресурсів",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · доповнення ресурсів",
-      "label_uk": "Туризм / кластер — спільний проєкт"
     },
     "signals": [
       {
@@ -12117,53 +12118,6 @@
     "status": "hypothesis"
   },
   {
-    "a": "Косівська міська територіальна громада",
-    "b": "Кам'янська міська територіальна громада",
-    "a_short": "Косівська",
-    "b_short": "Кам'янська",
-    "a_katottg": "UA26100010000076570",
-    "b_katottg": "UA12040150000015189",
-    "track": "complementary",
-    "complementary_score": 0.862,
-    "reason_count": 6,
-    "reasons": [
-      "DREAM «Культура / спадщина» у Кам'янська ↔ виклик у Косівська",
-      "Strengths «Підприємництво / МСБ» у Кам'янська ↔ виклик у Косівська",
-      "DREAM «Довкілля / екологія» у Косівська ↔ виклик у Кам'янська",
-      "DREAM «Освіта» у Косівська ↔ виклик у Кам'янська",
-      "ресурс «фіскальна ємність» у Кам'янська ↔ потреба в Косівська",
-      "ресурс «competence (молодь/бізнес)» у Косівська ↔ потреба в Кам'янська"
-    ],
-    "same_oblast": false,
-    "known": false,
-    "theme": "Туризм / кластер",
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · доповнення ресурсів",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · доповнення ресурсів",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "complementary",
-        "label_uk": "доповнення ресурсів",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "complementary",
-    "status": "hypothesis"
-  },
-  {
     "a": "Сокирянська міська територіальна громада",
     "b": "Білгород-Дністровська міська територіальна громада",
     "a_short": "Сокирянська",
@@ -13174,6 +13128,100 @@
     "status": "hypothesis"
   },
   {
+    "a": "Монастириська міська територіальна громада",
+    "b": "Нікопольська міська територіальна громада",
+    "a_short": "Монастириська",
+    "b_short": "Нікопольська",
+    "a_katottg": "UA61060310000061998",
+    "b_katottg": "UA12080050000062712",
+    "track": "complementary",
+    "complementary_score": 0.853,
+    "reason_count": 6,
+    "reasons": [
+      "DREAM «Вода / каналізація (ЖКГ)» у Нікопольська ↔ виклик у Монастириська",
+      "DREAM «Транспорт / логістика» у Нікопольська ↔ виклик у Монастириська",
+      "Strengths «Вода / каналізація (ЖКГ)» у Монастириська ↔ виклик у Нікопольська",
+      "Strengths «Довкілля / екологія» у Монастириська ↔ виклик у Нікопольська",
+      "ресурс «досвід ДФРР/інфри» у Нікопольська ↔ потреба в Монастириська",
+      "ресурс «досвід ДФРР/інфри» у Монастириська ↔ потреба в Нікопольська"
+    ],
+    "same_oblast": false,
+    "known": false,
+    "theme": "Вода / захист від повеней",
+    "suggested_theme": "Вода / захист від повеней",
+    "suggested_theme_id": "water",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Вода / захист від повеней",
+      "theme_id": "water",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "high",
+      "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+      "label_uk": "Вода / захист від повеней — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "complementary",
+        "label_uk": "доповнення ресурсів",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "complementary",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Монастириська міська територіальна громада",
+    "b": "Яремчанська міська територіальна громада",
+    "a_short": "Монастириська",
+    "b_short": "Яремчанська",
+    "a_katottg": "UA61060310000061998",
+    "b_katottg": "UA26120150000021671",
+    "track": "complementary",
+    "complementary_score": 0.853,
+    "reason_count": 6,
+    "reasons": [
+      "DREAM «Вода / каналізація (ЖКГ)» у Яремчанська ↔ виклик у Монастириська",
+      "DREAM «Довкілля / екологія» у Яремчанська ↔ виклик у Монастириська",
+      "Strengths «Вода / каналізація (ЖКГ)» у Монастириська ↔ виклик у Яремчанська",
+      "Strengths «Довкілля / екологія» у Монастириська ↔ виклик у Яремчанська",
+      "ресурс «досвід ДФРР/інфри» у Яремчанська ↔ потреба в Монастириська",
+      "ресурс «досвід ДФРР/інфри» у Монастириська ↔ потреба в Яремчанська"
+    ],
+    "same_oblast": false,
+    "known": false,
+    "theme": "Вода / захист від повеней",
+    "suggested_theme": "Вода / захист від повеней",
+    "suggested_theme_id": "water",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Вода / захист від повеней",
+      "theme_id": "water",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "high",
+      "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+      "label_uk": "Вода / захист від повеней — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "complementary",
+        "label_uk": "доповнення ресурсів",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "complementary",
+    "status": "hypothesis"
+  },
+  {
     "a": "Сокирянська міська територіальна громада",
     "b": "Слобожанська селищна територіальна громада",
     "a_short": "Сокирянська",
@@ -13443,6 +13491,53 @@
       "confidence": "high",
       "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · доповнення ресурсів",
       "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "complementary",
+        "label_uk": "доповнення ресурсів",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "complementary",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Монастириська міська територіальна громада",
+    "b": "Криворізька міська територіальна громада",
+    "a_short": "Монастириська",
+    "b_short": "Криворізька",
+    "a_katottg": "UA61060310000061998",
+    "b_katottg": "UA12060170000091033",
+    "track": "complementary",
+    "complementary_score": 0.844,
+    "reason_count": 6,
+    "reasons": [
+      "DREAM «Вода / каналізація (ЖКГ)» у Криворізька ↔ виклик у Монастириська",
+      "Strengths «Довкілля / екологія» у Криворізька ↔ виклик у Монастириська",
+      "Strengths «Транспорт / логістика» у Криворізька ↔ виклик у Монастириська",
+      "Strengths «Вода / каналізація (ЖКГ)» у Монастириська ↔ виклик у Криворізька",
+      "ресурс «досвід ДФРР/інфри» у Криворізька ↔ потреба в Монастириська",
+      "ресурс «досвід ДФРР/інфри» у Монастириська ↔ потреба в Криворізька"
+    ],
+    "same_oblast": false,
+    "known": false,
+    "theme": "Вода / захист від повеней",
+    "suggested_theme": "Вода / захист від повеней",
+    "suggested_theme_id": "water",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Вода / захист від повеней",
+      "theme_id": "water",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "high",
+      "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+      "label_uk": "Вода / захист від повеней — спільне КП"
     },
     "signals": [
       {
@@ -14051,6 +14146,98 @@
     "status": "hypothesis"
   },
   {
+    "a": "Заліщицька міська територіальна громада",
+    "b": "Великодимерська селищна територіальна громада",
+    "a_short": "Заліщицька",
+    "b_short": "Великодимерська",
+    "a_katottg": "UA61060170000051011",
+    "b_katottg": "UA32060070000092009",
+    "track": "complementary",
+    "complementary_score": 0.838,
+    "reason_count": 5,
+    "reasons": [
+      "DREAM «Безпека / ЦЗ» у Заліщицька ↔ виклик у Великодимерська",
+      "DREAM «Відновлення / реконструкція» у Заліщицька ↔ виклик у Великодимерська",
+      "DREAM «Освіта» у Заліщицька ↔ виклик у Великодимерська",
+      "DREAM «Охорона здоров'я» у Заліщицька ↔ виклик у Великодимерська",
+      "ресурс «competence (молодь/бізнес)» у Заліщицька ↔ потреба в Великодимерська"
+    ],
+    "same_oblast": false,
+    "known": false,
+    "theme": "Безпека / ЦЗ",
+    "suggested_theme": "Безпека / ЦЗ",
+    "suggested_theme_id": "security",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Безпека / ЦЗ» · пріор реєстру Мінрегіону · доповнення ресурсів",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Безпека / ЦЗ",
+      "theme_id": "security",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Безпека / ЦЗ» · пріор реєстру Мінрегіону · доповнення ресурсів",
+      "label_uk": "Безпека / ЦЗ — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "complementary",
+        "label_uk": "доповнення ресурсів",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "complementary",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Заліщицька міська територіальна громада",
+    "b": "Яремчанська міська територіальна громада",
+    "a_short": "Заліщицька",
+    "b_short": "Яремчанська",
+    "a_katottg": "UA61060170000051011",
+    "b_katottg": "UA26120150000021671",
+    "track": "complementary",
+    "complementary_score": 0.838,
+    "reason_count": 5,
+    "reasons": [
+      "DREAM «Довкілля / екологія» у Яремчанська ↔ виклик у Заліщицька",
+      "DREAM «Енергетика (ВДЕ)» у Заліщицька ↔ виклик у Яремчанська",
+      "DREAM «Освіта» у Заліщицька ↔ виклик у Яремчанська",
+      "DREAM «Охорона здоров'я» у Заліщицька ↔ виклик у Яремчанська",
+      "ресурс «досвід ДФРР/інфри» у Заліщицька ↔ потреба в Яремчанська"
+    ],
+    "same_oblast": false,
+    "known": false,
+    "theme": "Поводження з відходами / довкілля",
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "high",
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "complementary",
+        "label_uk": "доповнення ресурсів",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "complementary",
+    "status": "hypothesis"
+  },
+  {
     "a": "Запорізька міська територіальна громада",
     "b": "Кам'янська міська територіальна громада",
     "a_short": "Запорізька",
@@ -14425,6 +14612,51 @@
     "status": "hypothesis"
   },
   {
+    "a": "Борщівська міська територіальна громада",
+    "b": "Монастириська міська територіальна громада",
+    "a_short": "Борщівська",
+    "b_short": "Монастириська",
+    "a_katottg": "UA61060050000068464",
+    "b_katottg": "UA61060310000061998",
+    "track": "complementary",
+    "complementary_score": 0.831,
+    "reason_count": 4,
+    "reasons": [
+      "Strengths «Вода / каналізація (ЖКГ)» у Монастириська ↔ виклик у Борщівська",
+      "DREAM «Вода / каналізація (ЖКГ)» у Борщівська ↔ виклик у Монастириська",
+      "ресурс «досвід ДФРР/інфри» у Монастириська ↔ потреба в Борщівська",
+      "ресурс «досвід ДФРР/інфри» у Борщівська ↔ потреба в Монастириська"
+    ],
+    "same_oblast": true,
+    "known": false,
+    "theme": "Вода / захист від повеней",
+    "suggested_theme": "Вода / захист від повеней",
+    "suggested_theme_id": "water",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Вода / захист від повеней",
+      "theme_id": "water",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "high",
+      "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+      "label_uk": "Вода / захист від повеней — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "complementary",
+        "label_uk": "доповнення ресурсів",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "complementary",
+    "status": "hypothesis"
+  },
+  {
     "a": "Вишнівська громада",
     "b": "Великодимерська селищна територіальна громада",
     "a_short": "Вишнівська громада",
@@ -14597,6 +14829,52 @@
       "confidence": "high",
       "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
       "label_uk": "Вода / захист від повеней — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "complementary",
+        "label_uk": "доповнення ресурсів",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "complementary",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Заліщицька міська територіальна громада",
+    "b": "Криворізька міська територіальна громада",
+    "a_short": "Заліщицька",
+    "b_short": "Криворізька",
+    "a_katottg": "UA61060170000051011",
+    "b_katottg": "UA12060170000091033",
+    "track": "complementary",
+    "complementary_score": 0.828,
+    "reason_count": 5,
+    "reasons": [
+      "Strengths «Довкілля / екологія» у Криворізька ↔ виклик у Заліщицька",
+      "DREAM «Безпека / ЦЗ» у Заліщицька ↔ виклик у Криворізька",
+      "DREAM «Відновлення / реконструкція» у Заліщицька ↔ виклик у Криворізька",
+      "DREAM «Енергетика (ВДЕ)» у Заліщицька ↔ виклик у Криворізька",
+      "ресурс «досвід ДФРР/інфри» у Заліщицька ↔ потреба в Криворізька"
+    ],
+    "same_oblast": false,
+    "known": false,
+    "theme": "Поводження з відходами / довкілля",
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "high",
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -16855,6 +17133,52 @@
     "status": "hypothesis"
   },
   {
+    "a": "Заліщицька міська територіальна громада",
+    "b": "Тульчинська міська територіальна громада",
+    "a_short": "Заліщицька",
+    "b_short": "Тульчинська",
+    "a_katottg": "UA61060170000051011",
+    "b_katottg": "UA05100150000050790",
+    "track": "complementary",
+    "complementary_score": 0.794,
+    "reason_count": 5,
+    "reasons": [
+      "DREAM «Освіта» у Заліщицька ↔ виклик у Тульчинська",
+      "DREAM «Охорона здоров'я» у Заліщицька ↔ виклик у Тульчинська",
+      "Strengths «Туризм» у Заліщицька ↔ виклик у Тульчинська",
+      "ресурс «competence (молодь/бізнес)» у Заліщицька ↔ потреба в Тульчинська",
+      "ресурс «досвід ДФРР/інфри» у Заліщицька ↔ потреба в Тульчинська"
+    ],
+    "same_oblast": false,
+    "known": false,
+    "theme": "Освіта",
+    "suggested_theme": "Освіта",
+    "suggested_theme_id": "education",
+    "suggested_form": "спільне утримання",
+    "suggested_form_id": "joint_finance",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · доповнення ресурсів",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Освіта",
+      "theme_id": "education",
+      "form": "спільне утримання",
+      "form_id": "joint_finance",
+      "confidence": "high",
+      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · доповнення ресурсів",
+      "label_uk": "Освіта — спільне утримання"
+    },
+    "signals": [
+      {
+        "id": "complementary",
+        "label_uk": "доповнення ресурсів",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "complementary",
+    "status": "hypothesis"
+  },
+  {
     "a": "Кельменецька селищна територіальна громада",
     "b": "Лихівська селищна територіальна громада",
     "a_short": "Кельменецька",
@@ -16870,6 +17194,52 @@
       "DREAM «Довкілля / екологія» у Кельменецька ↔ виклик у Лихівська",
       "ресурс «фіскальна ємність» у Лихівська ↔ потреба в Кельменецька",
       "ресурс «досвід ДФРР/інфри» у Кельменецька ↔ потреба в Лихівська"
+    ],
+    "same_oblast": false,
+    "known": false,
+    "theme": "Вода / захист від повеней",
+    "suggested_theme": "Вода / захист від повеней",
+    "suggested_theme_id": "water",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Вода / захист від повеней",
+      "theme_id": "water",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "high",
+      "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
+      "label_uk": "Вода / захист від повеней — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "complementary",
+        "label_uk": "доповнення ресурсів",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "complementary",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Монастириська міська територіальна громада",
+    "b": "Новомосковська міська територіальна громада",
+    "a_short": "Монастириська",
+    "b_short": "Новомосковська",
+    "a_katottg": "UA61060310000061998",
+    "b_katottg": "UA12100070000011492",
+    "track": "complementary",
+    "complementary_score": 0.794,
+    "reason_count": 5,
+    "reasons": [
+      "DREAM «Вода / каналізація (ЖКГ)» у Новомосковська ↔ виклик у Монастириська",
+      "DREAM «Транспорт / логістика» у Новомосковська ↔ виклик у Монастириська",
+      "Strengths «Вода / каналізація (ЖКГ)» у Монастириська ↔ виклик у Новомосковська",
+      "ресурс «досвід ДФРР/інфри» у Новомосковська ↔ потреба в Монастириська",
+      "ресурс «досвід ДФРР/інфри» у Монастириська ↔ потреба в Новомосковська"
     ],
     "same_oblast": false,
     "known": false,
@@ -18134,373 +18504,23 @@
     "status": "hypothesis"
   },
   {
-    "a": "Бердичівська міська територіальна громада",
-    "b": "Малинська міська територіальна громада",
-    "a_short": "Бердичівська",
-    "b_short": "Малинська",
-    "a_katottg": "UA18020030000035625",
-    "b_katottg": "UA18060130000061781",
+    "a": "Олешанська сільська територіальна громада",
+    "b": "Тульчинська міська територіальна громада",
+    "a_short": "Олешанська",
+    "b_short": "Тульчинська",
+    "a_katottg": "UA26040250000061081",
+    "b_katottg": "UA05100150000050790",
     "track": "complementary",
-    "complementary_score": 0.767,
-    "reason_count": 3,
+    "complementary_score": 0.768,
+    "reason_count": 5,
     "reasons": [
-      "DREAM «Освіта» у Малинська ↔ виклик у Бердичівська",
-      "DREAM «Підприємництво / МСБ» у Малинська ↔ виклик у Бердичівська",
-      "ресурс «фіскальна ємність» у Малинська ↔ потреба в Бердичівська"
+      "Strengths «Сільське господарство / АПК» у Тульчинська ↔ виклик у Олешанська",
+      "Strengths «Вода / каналізація (ЖКГ)» у Олешанська ↔ виклик у Тульчинська",
+      "Strengths «Туризм» у Олешанська ↔ виклик у Тульчинська",
+      "ресурс «досвід ДФРР/інфри» у Олешанська ↔ потреба в Тульчинська",
+      "ресурс «медмережа» у Олешанська ↔ потреба в Тульчинська"
     ],
-    "same_oblast": true,
-    "known": false,
-    "theme": "Освіта",
-    "suggested_theme": "Освіта",
-    "suggested_theme_id": "education",
-    "suggested_form": "спільне утримання",
-    "suggested_form_id": "joint_finance",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · доповнення ресурсів",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Освіта",
-      "theme_id": "education",
-      "form": "спільне утримання",
-      "form_id": "joint_finance",
-      "confidence": "high",
-      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · доповнення ресурсів",
-      "label_uk": "Освіта — спільне утримання"
-    },
-    "signals": [
-      {
-        "id": "complementary",
-        "label_uk": "доповнення ресурсів",
-        "strength": "medium"
-      }
-    ],
-    "discovery_primary": "complementary",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Бердичівська міська територіальна громада",
-    "b": "Новогуйвинська селищна територіальна громада",
-    "a_short": "Бердичівська",
-    "b_short": "Новогуйвинська",
-    "a_katottg": "UA18020030000035625",
-    "b_katottg": "UA18040350000040746",
-    "track": "complementary",
-    "complementary_score": 0.767,
-    "reason_count": 3,
-    "reasons": [
-      "DREAM «Освіта» у Новогуйвинська ↔ виклик у Бердичівська",
-      "DREAM «Охорона здоров'я» у Новогуйвинська ↔ виклик у Бердичівська",
-      "ресурс «фіскальна ємність» у Новогуйвинська ↔ потреба в Бердичівська"
-    ],
-    "same_oblast": true,
-    "known": false,
-    "theme": "Освіта",
-    "suggested_theme": "Освіта",
-    "suggested_theme_id": "education",
-    "suggested_form": "спільне утримання",
-    "suggested_form_id": "joint_finance",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · доповнення ресурсів",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Освіта",
-      "theme_id": "education",
-      "form": "спільне утримання",
-      "form_id": "joint_finance",
-      "confidence": "high",
-      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · доповнення ресурсів",
-      "label_uk": "Освіта — спільне утримання"
-    },
-    "signals": [
-      {
-        "id": "complementary",
-        "label_uk": "доповнення ресурсів",
-        "strength": "medium"
-      }
-    ],
-    "discovery_primary": "complementary",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Бердичівська міська територіальна громада",
-    "b": "Овруцька міська територіальна громада",
-    "a_short": "Бердичівська",
-    "b_short": "Овруцька",
-    "a_katottg": "UA18020030000035625",
-    "b_katottg": "UA18060170000069581",
-    "track": "complementary",
-    "complementary_score": 0.767,
-    "reason_count": 3,
-    "reasons": [
-      "DREAM «Освіта» у Овруцька ↔ виклик у Бердичівська",
-      "DREAM «Охорона здоров'я» у Овруцька ↔ виклик у Бердичівська",
-      "ресурс «фіскальна ємність» у Овруцька ↔ потреба в Бердичівська"
-    ],
-    "same_oblast": true,
-    "known": false,
-    "theme": "Освіта",
-    "suggested_theme": "Освіта",
-    "suggested_theme_id": "education",
-    "suggested_form": "спільне утримання",
-    "suggested_form_id": "joint_finance",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · доповнення ресурсів",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Освіта",
-      "theme_id": "education",
-      "form": "спільне утримання",
-      "form_id": "joint_finance",
-      "confidence": "high",
-      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · доповнення ресурсів",
-      "label_uk": "Освіта — спільне утримання"
-    },
-    "signals": [
-      {
-        "id": "complementary",
-        "label_uk": "доповнення ресурсів",
-        "strength": "medium"
-      }
-    ],
-    "discovery_primary": "complementary",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Бердичівська міська територіальна громада",
-    "b": "Ушомирська сільська територіальна громада",
-    "a_short": "Бердичівська",
-    "b_short": "Ушомирська",
-    "a_katottg": "UA18020030000035625",
-    "b_katottg": "UA18060230000071114",
-    "track": "complementary",
-    "complementary_score": 0.767,
-    "reason_count": 3,
-    "reasons": [
-      "DREAM «Освіта» у Ушомирська ↔ виклик у Бердичівська",
-      "DREAM «Охорона здоров'я» у Ушомирська ↔ виклик у Бердичівська",
-      "ресурс «фіскальна ємність» у Ушомирська ↔ потреба в Бердичівська"
-    ],
-    "same_oblast": true,
-    "known": false,
-    "theme": "Освіта",
-    "suggested_theme": "Освіта",
-    "suggested_theme_id": "education",
-    "suggested_form": "спільне утримання",
-    "suggested_form_id": "joint_finance",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · доповнення ресурсів",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Освіта",
-      "theme_id": "education",
-      "form": "спільне утримання",
-      "form_id": "joint_finance",
-      "confidence": "high",
-      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · доповнення ресурсів",
-      "label_uk": "Освіта — спільне утримання"
-    },
-    "signals": [
-      {
-        "id": "complementary",
-        "label_uk": "доповнення ресурсів",
-        "strength": "medium"
-      }
-    ],
-    "discovery_primary": "complementary",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Більшівцівська селищна територіальна громада",
-    "b": "Городенківська міська територіальна громада",
-    "a_short": "Більшівцівська",
-    "b_short": "Городенківська",
-    "a_katottg": "UA26040010000011271",
-    "b_katottg": "UA26080030000014307",
-    "track": "complementary",
-    "complementary_score": 0.767,
-    "reason_count": 3,
-    "reasons": [
-      "DREAM «Вода / каналізація (ЖКГ)» у Городенківська ↔ виклик у Більшівцівська",
-      "DREAM «Довкілля / екологія» у Городенківська ↔ виклик у Більшівцівська",
-      "ресурс «досвід ДФРР/інфри» у Городенківська ↔ потреба в Більшівцівська"
-    ],
-    "same_oblast": true,
-    "known": false,
-    "theme": "Вода / захист від повеней",
-    "suggested_theme": "Вода / захист від повеней",
-    "suggested_theme_id": "water",
-    "suggested_form": "спільне КП",
-    "suggested_form_id": "joint_enterprise",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Вода / захист від повеней",
-      "theme_id": "water",
-      "form": "спільне КП",
-      "form_id": "joint_enterprise",
-      "confidence": "high",
-      "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
-      "label_uk": "Вода / захист від повеней — спільне КП"
-    },
-    "signals": [
-      {
-        "id": "complementary",
-        "label_uk": "доповнення ресурсів",
-        "strength": "medium"
-      }
-    ],
-    "discovery_primary": "complementary",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Житомирська міська територіальна громада",
-    "b": "Коростишівська міська територіальна громада",
-    "a_short": "Житомирська",
-    "b_short": "Коростишівська",
-    "a_katottg": "UA18040190000029215",
-    "b_katottg": "UA18040250000068141",
-    "track": "complementary",
-    "complementary_score": 0.767,
-    "reason_count": 3,
-    "reasons": [
-      "DREAM «Вода / каналізація (ЖКГ)» у Коростишівська ↔ виклик у Житомирська",
-      "DREAM «Охорона здоров'я» у Коростишівська ↔ виклик у Житомирська",
-      "ресурс «досвід ДФРР/інфри» у Коростишівська ↔ потреба в Житомирська"
-    ],
-    "same_oblast": true,
-    "known": false,
-    "theme": "Вода / захист від повеней",
-    "suggested_theme": "Вода / захист від повеней",
-    "suggested_theme_id": "water",
-    "suggested_form": "спільне КП",
-    "suggested_form_id": "joint_enterprise",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Вода / захист від повеней",
-      "theme_id": "water",
-      "form": "спільне КП",
-      "form_id": "joint_enterprise",
-      "confidence": "high",
-      "rationale": "тема «Вода / захист від повеней» · у реєстрі для цієї теми частіше «спільний проєкт» · доповнення ресурсів",
-      "label_uk": "Вода / захист від повеней — спільне КП"
-    },
-    "signals": [
-      {
-        "id": "complementary",
-        "label_uk": "доповнення ресурсів",
-        "strength": "medium"
-      }
-    ],
-    "discovery_primary": "complementary",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Житомирська міська територіальна громада",
-    "b": "Романівська селищна територіальна громада",
-    "a_short": "Житомирська",
-    "b_short": "Романівська",
-    "a_katottg": "UA18040190000029215",
-    "b_katottg": "UA18040470000074046",
-    "track": "complementary",
-    "complementary_score": 0.767,
-    "reason_count": 3,
-    "reasons": [
-      "DREAM «Енергетика (ВДЕ)» у Романівська ↔ виклик у Житомирська",
-      "DREAM «Охорона здоров'я» у Романівська ↔ виклик у Житомирська",
-      "ресурс «досвід ДФРР/інфри» у Романівська ↔ потреба в Житомирська"
-    ],
-    "same_oblast": true,
-    "known": false,
-    "theme": "Охорона здоров'я",
-    "suggested_theme": "Охорона здоров'я",
-    "suggested_theme_id": "health",
-    "suggested_form": "спільне утримання",
-    "suggested_form_id": "joint_finance",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Охорона здоров'я» · пріор реєстру Мінрегіону · доповнення ресурсів",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Охорона здоров'я",
-      "theme_id": "health",
-      "form": "спільне утримання",
-      "form_id": "joint_finance",
-      "confidence": "medium",
-      "rationale": "тема «Охорона здоров'я» · пріор реєстру Мінрегіону · доповнення ресурсів",
-      "label_uk": "Охорона здоров'я — спільне утримання"
-    },
-    "signals": [
-      {
-        "id": "complementary",
-        "label_uk": "доповнення ресурсів",
-        "strength": "medium"
-      }
-    ],
-    "discovery_primary": "complementary",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Житомирська міська територіальна громада",
-    "b": "Станишівська сільська територіальна громада",
-    "a_short": "Житомирська",
-    "b_short": "Станишівська",
-    "a_katottg": "UA18040190000029215",
-    "b_katottg": "UA18040490000014752",
-    "track": "complementary",
-    "complementary_score": 0.767,
-    "reason_count": 3,
-    "reasons": [
-      "DREAM «Енергетика (ВДЕ)» у Станишівська ↔ виклик у Житомирська",
-      "DREAM «Охорона здоров'я» у Станишівська ↔ виклик у Житомирська",
-      "ресурс «досвід ДФРР/інфри» у Станишівська ↔ потреба в Житомирська"
-    ],
-    "same_oblast": true,
-    "known": false,
-    "theme": "Охорона здоров'я",
-    "suggested_theme": "Охорона здоров'я",
-    "suggested_theme_id": "health",
-    "suggested_form": "спільне утримання",
-    "suggested_form_id": "joint_finance",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Охорона здоров'я» · пріор реєстру Мінрегіону · доповнення ресурсів",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Охорона здоров'я",
-      "theme_id": "health",
-      "form": "спільне утримання",
-      "form_id": "joint_finance",
-      "confidence": "medium",
-      "rationale": "тема «Охорона здоров'я» · пріор реєстру Мінрегіону · доповнення ресурсів",
-      "label_uk": "Охорона здоров'я — спільне утримання"
-    },
-    "signals": [
-      {
-        "id": "complementary",
-        "label_uk": "доповнення ресурсів",
-        "strength": "medium"
-      }
-    ],
-    "discovery_primary": "complementary",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Житомирська міська територіальна громада",
-    "b": "Ушомирська сільська територіальна громада",
-    "a_short": "Житомирська",
-    "b_short": "Ушомирська",
-    "a_katottg": "UA18040190000029215",
-    "b_katottg": "UA18060230000071114",
-    "track": "complementary",
-    "complementary_score": 0.767,
-    "reason_count": 3,
-    "reasons": [
-      "DREAM «Вода / каналізація (ЖКГ)» у Ушомирська ↔ виклик у Житомирська",
-      "DREAM «Охорона здоров'я» у Ушомирська ↔ виклик у Житомирська",
-      "ресурс «досвід ДФРР/інфри» у Ушомирська ↔ потреба в Житомирська"
-    ],
-    "same_oblast": true,
+    "same_oblast": false,
     "known": false,
     "theme": "Вода / захист від повеней",
     "suggested_theme": "Вода / захист від повеней",

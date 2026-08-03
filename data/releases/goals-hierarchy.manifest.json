@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-03T10:29:01.875431+00:00",
-  "hromadaCount": 76,
-  "withOperational": 14,
-  "curatedCount": 13,
+  "generatedAt": "2026-08-03T13:24:22.174799+00:00",
+  "hromadaCount": 93,
+  "withOperational": 30,
+  "curatedCount": 30,
   "warning": "Sidecar for matching v7. Flat Goals on hromadas.json remain canonical for export/NocoDB until hierarchy is written back."
 }

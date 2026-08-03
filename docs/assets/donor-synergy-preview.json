@@ -1,94 +1,131 @@
 {
-  "generatedAt": "2026-07-27T15:30:13.918130+00:00",
+  "generatedAt": "2026-08-03T13:24:40.959561+00:00",
   "method": "v6 matching edges × DonorsPrograms tags",
   "caveat": "Matching scores are hypotheses unless known=true. DonorsPrograms absence means not found in tagging pass, not 'no program'. Pilot corpus: only text-mined Goals enter matching.",
   "totals": {
     "hromadas": 1469,
-    "tagged": 174,
-    "programs": 13,
-    "matching_edges": 2278
+    "tagged": 181,
+    "programs": 14,
+    "matching_edges": 3403
   },
   "programs": [
     {
       "program": "DOBRE",
       "tagged": 76,
-      "with_goals": 5,
-      "in_matching_graph": 5,
-      "within_edge_count": 15,
-      "bridge_edge_count": 372,
+      "with_goals": 8,
+      "in_matching_graph": 8,
+      "within_edge_count": 36,
+      "bridge_edge_count": 666,
       "hubs": [
         {
           "name": "Більшівцівська селищна територіальна громада",
           "short": "Більшівцівська",
           "oblast": "Івано-Франківська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Великогаївська сільська територіальна громада",
           "short": "Великогаївська",
           "oblast": "Тернопільська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Вижницька міська територіальна громада",
           "short": "Вижницька",
           "oblast": "Чернівецька область",
-          "degree": 67,
+          "degree": 82,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Клішковецька сільська територіальна громада",
+          "short": "Клішковецька",
+          "oblast": "Чернівецька область",
+          "degree": 82,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Лівинецька сільська територіальна громада",
+          "short": "Лівинецька",
+          "oblast": "Чернівецька область",
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Ніжинська міська територіальна громада",
           "short": "Ніжинська",
           "oblast": "Чернігівська область",
-          "degree": 67,
-          "source_quality": "full-strategy"
-        },
-        {
-          "name": "Слобожанська селищна територіальна громада",
-          "short": "Слобожанська",
-          "oblast": "Дніпропетровська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         }
       ],
       "within_portfolio": [
         {
-          "a_short": "Слобожанська",
-          "b_short": "Великогаївська",
-          "score": 0.056,
-          "goals_cosine": 0.094,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
           "a_short": "Вижницька",
-          "b_short": "Великогаївська",
-          "score": 0.131,
-          "goals_cosine": 0.073,
+          "b_short": "Більшівцівська",
+          "score": 0.3,
+          "goals_cosine": 0.354,
           "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "a_short": "Великогаївська",
-          "b_short": "Новоолександрівська",
-          "score": 0.042,
-          "goals_cosine": 0.069,
+          "a_short": "Ніжинська",
+          "b_short": "Рукшинська",
+          "score": 0.173,
+          "goals_cosine": 0.289,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "a_short": "Більшівцівська",
+          "b_short": "Великогаївська",
+          "score": 0.316,
+          "goals_cosine": 0.277,
+          "geo_score": 0.6,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Більшівцівська",
+          "b_short": "Клішковецька",
+          "score": 0.237,
+          "goals_cosine": 0.249,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Клішковецька",
+          "b_short": "Лівинецька",
+          "score": 0.51,
+          "goals_cosine": 0.247,
+          "geo_score": 0.85,
+          "mss_network": 1.0,
+          "track": "operational",
+          "known": false
+        },
+        {
+          "a_short": "Слобожанська",
+          "b_short": "Великогаївська",
+          "score": 0.147,
+          "goals_cosine": 0.245,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
         },
         {
-          "a_short": "Слобожанська",
-          "b_short": "Вижницька",
-          "score": 0.041,
-          "goals_cosine": 0.069,
+          "a_short": "Ніжинська",
+          "b_short": "Клішковецька",
+          "score": 0.137,
+          "goals_cosine": 0.228,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -97,58 +134,28 @@
         {
           "a_short": "Ніжинська",
           "b_short": "Слобожанська",
-          "score": 0.04,
-          "goals_cosine": 0.066,
+          "score": 0.128,
+          "goals_cosine": 0.214,
           "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Ніжинська",
-          "b_short": "Більшівцівська",
-          "score": 0.039,
-          "goals_cosine": 0.065,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Ніжинська",
-          "b_short": "Новоолександрівська",
-          "score": 0.037,
-          "goals_cosine": 0.062,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Вижницька",
-          "b_short": "Більшівцівська",
-          "score": 0.123,
-          "goals_cosine": 0.059,
-          "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
         },
         {
           "a_short": "Більшівцівська",
-          "b_short": "Великогаївська",
-          "score": 0.181,
-          "goals_cosine": 0.052,
-          "geo_score": 0.6,
+          "b_short": "Лівинецька",
+          "score": 0.124,
+          "goals_cosine": 0.207,
+          "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
         },
         {
-          "a_short": "Вижницька",
-          "b_short": "Новоолександрівська",
-          "score": 0.026,
-          "goals_cosine": 0.044,
+          "a_short": "Ніжинська",
+          "b_short": "Лівинецька",
+          "score": 0.119,
+          "goals_cosine": 0.199,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -159,8 +166,8 @@
         {
           "in_portfolio_short": "Ніжинська",
           "outside_short": "Козелецька",
-          "score": 0.341,
-          "goals_cosine": 0.068,
+          "score": 0.411,
+          "goals_cosine": 0.185,
           "geo_score": 0.6,
           "mss_network": 1.0,
           "track": "mixed",
@@ -169,8 +176,8 @@
         {
           "in_portfolio_short": "Ніжинська",
           "outside_short": "Батуринська",
-          "score": 0.339,
-          "goals_cosine": 0.064,
+          "score": 0.41,
+          "goals_cosine": 0.183,
           "geo_score": 0.6,
           "mss_network": 1.0,
           "track": "mixed",
@@ -179,48 +186,38 @@
         {
           "in_portfolio_short": "Слобожанська",
           "outside_short": "Обухівська",
-          "score": 0.367,
-          "goals_cosine": 0.007,
+          "score": 0.366,
+          "goals_cosine": 0.005,
           "geo_score": 0.85,
           "mss_network": 1.0,
           "track": "operational",
           "known": true
         },
         {
-          "in_portfolio_short": "Вижницька",
-          "outside_short": "Дунаєвецька",
-          "score": 0.154,
-          "goals_cosine": 0.11,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "thematic",
+          "in_portfolio_short": "Рукшинська",
+          "outside_short": "Юрковецька",
+          "score": 0.685,
+          "goals_cosine": 0.538,
+          "geo_score": 0.85,
+          "mss_network": 1.0,
+          "track": "operational",
           "known": false
         },
         {
-          "in_portfolio_short": "Новоолександрівська",
-          "outside_short": "Шепетівська",
-          "score": 0.059,
-          "goals_cosine": 0.099,
-          "geo_score": 0.0,
+          "in_portfolio_short": "Більшівцівська",
+          "outside_short": "Дубовецька",
+          "score": 0.568,
+          "goals_cosine": 0.53,
+          "geo_score": 1.0,
           "mss_network": 0.0,
-          "track": "thematic",
+          "track": "operational",
           "known": false
         },
         {
-          "in_portfolio_short": "Ніжинська",
-          "outside_short": "Криворізька",
-          "score": 0.056,
-          "goals_cosine": 0.094,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Великогаївська",
-          "outside_short": "Божедарівська",
-          "score": 0.056,
-          "goals_cosine": 0.094,
+          "in_portfolio_short": "Більшівцівська",
+          "outside_short": "Ганнівська",
+          "score": 0.293,
+          "goals_cosine": 0.489,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -228,29 +225,39 @@
         },
         {
           "in_portfolio_short": "Більшівцівська",
-          "outside_short": "Бердянська",
-          "score": 0.056,
-          "goals_cosine": 0.093,
+          "outside_short": "Зазимська",
+          "score": 0.286,
+          "goals_cosine": 0.477,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Слобожанська",
-          "outside_short": "Черкаська",
-          "score": 0.053,
-          "goals_cosine": 0.089,
-          "geo_score": 0.0,
+          "in_portfolio_short": "Рукшинська",
+          "outside_short": "Новодністровська",
+          "score": 0.558,
+          "goals_cosine": 0.429,
+          "geo_score": 0.6,
+          "mss_network": 1.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Вижницька",
+          "outside_short": "Вашковецька",
+          "score": 0.344,
+          "goals_cosine": 0.428,
+          "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Великогаївська",
-          "outside_short": "Мукачівська",
-          "score": 0.053,
-          "goals_cosine": 0.088,
+          "in_portfolio_short": "Новоолександрівська",
+          "outside_short": "Збаразька",
+          "score": 0.254,
+          "goals_cosine": 0.423,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -261,167 +268,152 @@
         {
           "short": "Більшівцівська",
           "oblast": "Івано-Франківська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Великогаївська",
           "oblast": "Тернопільська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Вижницька",
           "oblast": "Чернівецька область",
-          "degree": 67
+          "degree": 82
+        },
+        {
+          "short": "Клішковецька",
+          "oblast": "Чернівецька область",
+          "degree": 82
+        },
+        {
+          "short": "Лівинецька",
+          "oblast": "Чернівецька область",
+          "degree": 82
         },
         {
           "short": "Ніжинська",
           "oblast": "Чернігівська область",
-          "degree": 67
+          "degree": 82
+        },
+        {
+          "short": "Рукшинська",
+          "oblast": "Чернівецька область",
+          "degree": 82
         },
         {
           "short": "Слобожанська",
           "oblast": "Дніпропетровська область",
-          "degree": 67
+          "degree": 82
         }
       ]
     },
     {
       "program": "DECIDE",
       "tagged": 45,
-      "with_goals": 7,
+      "with_goals": 8,
       "in_matching_graph": 7,
       "within_edge_count": 21,
-      "bridge_edge_count": 427,
+      "bridge_edge_count": 532,
       "hubs": [
         {
           "name": "Галицька міська територіальна громада",
           "short": "Галицька",
           "oblast": "Івано-Франківська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Дубовецька сільська територіальна громада",
           "short": "Дубовецька",
           "oblast": "Івано-Франківська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Козелецька селищна територіальна громада",
           "short": "Козелецька",
           "oblast": "Чернігівська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Лохвицька міська територіальна громада",
           "short": "Лохвицька",
           "oblast": "Полтавська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Рогатинська міська територіальна громада",
           "short": "Рогатинська",
           "oblast": "Івано-Франківська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Сумська міська територіальна громада",
           "short": "Сумська",
           "oblast": "Сумська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         }
       ],
       "within_portfolio": [
         {
-          "a_short": "Чернігівська",
-          "b_short": "Рогатинська",
-          "score": 0.063,
-          "goals_cosine": 0.104,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Козелецька",
-          "b_short": "Чернігівська",
-          "score": 0.202,
-          "goals_cosine": 0.087,
-          "geo_score": 0.6,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Чернігівська",
-          "b_short": "Сумська",
-          "score": 0.049,
-          "goals_cosine": 0.082,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Дубовецька",
-          "b_short": "Рогатинська",
-          "score": 0.256,
-          "goals_cosine": 0.073,
-          "geo_score": 0.85,
-          "mss_network": 0.0,
+          "a_short": "Галицька",
+          "b_short": "Дубовецька",
+          "score": 0.688,
+          "goals_cosine": 0.479,
+          "geo_score": 1.0,
+          "mss_network": 1.0,
           "track": "operational",
           "known": false
         },
         {
-          "a_short": "Козелецька",
-          "b_short": "Рогатинська",
-          "score": 0.043,
-          "goals_cosine": 0.071,
+          "a_short": "Лохвицька",
+          "b_short": "Дубовецька",
+          "score": 0.206,
+          "goals_cosine": 0.343,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
           "known": false
         },
         {
-          "a_short": "Козелецька",
-          "b_short": "Лохвицька",
-          "score": 0.042,
-          "goals_cosine": 0.07,
+          "a_short": "Сумська",
+          "b_short": "Рогатинська",
+          "score": 0.179,
+          "goals_cosine": 0.298,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
           "known": false
         },
         {
           "a_short": "Галицька",
           "b_short": "Лохвицька",
-          "score": 0.039,
-          "goals_cosine": 0.066,
+          "score": 0.176,
+          "goals_cosine": 0.293,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
           "known": false
         },
         {
-          "a_short": "Чернігівська",
-          "b_short": "Галицька",
-          "score": 0.039,
-          "goals_cosine": 0.065,
+          "a_short": "Лохвицька",
+          "b_short": "Рогатинська",
+          "score": 0.172,
+          "goals_cosine": 0.287,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
           "known": false
         },
         {
-          "a_short": "Козелецька",
+          "a_short": "Сумська",
           "b_short": "Дубовецька",
-          "score": 0.038,
-          "goals_cosine": 0.063,
+          "score": 0.158,
+          "goals_cosine": 0.264,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -429,9 +421,39 @@
         },
         {
           "a_short": "Сумська",
+          "b_short": "Лохвицька",
+          "score": 0.228,
+          "goals_cosine": 0.234,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Дубовецька",
+          "b_short": "Рогатинська",
+          "score": 0.34,
+          "goals_cosine": 0.212,
+          "geo_score": 0.85,
+          "mss_network": 0.0,
+          "track": "operational",
+          "known": false
+        },
+        {
+          "a_short": "Козелецька",
+          "b_short": "Чернігівська",
+          "score": 0.241,
+          "goals_cosine": 0.151,
+          "geo_score": 0.6,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Сумська",
           "b_short": "Галицька",
-          "score": 0.033,
-          "goals_cosine": 0.055,
+          "score": 0.062,
+          "goals_cosine": 0.103,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -442,48 +464,78 @@
         {
           "in_portfolio_short": "Козелецька",
           "outside_short": "Батуринська",
-          "score": 0.285,
-          "goals_cosine": 0.08,
+          "score": 0.401,
+          "goals_cosine": 0.273,
           "geo_score": 0.35,
-          "mss_network": 1.0,
-          "track": "thematic",
-          "known": true
-        },
-        {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Ніжинська",
-          "score": 0.341,
-          "goals_cosine": 0.068,
-          "geo_score": 0.6,
           "mss_network": 1.0,
           "track": "mixed",
           "known": true
         },
         {
           "in_portfolio_short": "Козелецька",
-          "outside_short": "Шепетівська",
-          "score": 0.089,
-          "goals_cosine": 0.149,
+          "outside_short": "Ніжинська",
+          "score": 0.411,
+          "goals_cosine": 0.185,
+          "geo_score": 0.6,
+          "mss_network": 1.0,
+          "track": "mixed",
+          "known": true
+        },
+        {
+          "in_portfolio_short": "Дубовецька",
+          "outside_short": "Ганнівська",
+          "score": 0.336,
+          "goals_cosine": 0.559,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Чернігівська",
-          "outside_short": "Українська",
-          "score": 0.076,
-          "goals_cosine": 0.127,
+          "in_portfolio_short": "Дубовецька",
+          "outside_short": "Більшівцівська",
+          "score": 0.568,
+          "goals_cosine": 0.53,
+          "geo_score": 1.0,
+          "mss_network": 0.0,
+          "track": "operational",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Дубовецька",
+          "outside_short": "Литовезька",
+          "score": 0.291,
+          "goals_cosine": 0.486,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Чернігівська",
-          "outside_short": "Дрогобицька",
-          "score": 0.074,
-          "goals_cosine": 0.123,
+          "in_portfolio_short": "Дубовецька",
+          "outside_short": "Зазимська",
+          "score": 0.288,
+          "goals_cosine": 0.479,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Сумська",
+          "outside_short": "Новомосковська",
+          "score": 0.261,
+          "goals_cosine": 0.434,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Дубовецька",
+          "outside_short": "Полтавська",
+          "score": 0.259,
+          "goals_cosine": 0.432,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -491,49 +543,19 @@
         },
         {
           "in_portfolio_short": "Галицька",
-          "outside_short": "Білківська",
-          "score": 0.149,
-          "goals_cosine": 0.103,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Львівська",
-          "score": 0.061,
-          "goals_cosine": 0.102,
+          "outside_short": "Литовезька",
+          "score": 0.251,
+          "goals_cosine": 0.419,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Рогатинська",
-          "outside_short": "Батуринська",
-          "score": 0.057,
-          "goals_cosine": 0.096,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Українська",
-          "score": 0.143,
-          "goals_cosine": 0.092,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Чернігівська",
-          "outside_short": "Шепетівська",
-          "score": 0.055,
-          "goals_cosine": 0.092,
+          "in_portfolio_short": "Галицька",
+          "outside_short": "Ганнівська",
+          "score": 0.251,
+          "goals_cosine": 0.418,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -542,39 +564,44 @@
       ],
       "members_with_goals": [
         {
+          "short": "Ворохтянська",
+          "oblast": "Івано-Франківська область",
+          "degree": 0
+        },
+        {
           "short": "Галицька",
           "oblast": "Івано-Франківська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Дубовецька",
           "oblast": "Івано-Франківська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Козелецька",
           "oblast": "Чернігівська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Лохвицька",
           "oblast": "Полтавська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Рогатинська",
           "oblast": "Івано-Франківська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Сумська",
           "oblast": "Сумська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Чернігівська",
           "oblast": "Чернігівська область",
-          "degree": 67
+          "degree": 82
         }
       ]
     },
@@ -584,48 +611,48 @@
       "with_goals": 17,
       "in_matching_graph": 17,
       "within_edge_count": 153,
-      "bridge_edge_count": 900,
+      "bridge_edge_count": 1170,
       "hubs": [
         {
           "name": "Вашковецька сільська територіальна громада",
           "short": "Вашковецька",
           "oblast": "Чернівецька область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Вижницька міська територіальна громада",
           "short": "Вижницька",
           "oblast": "Чернівецька область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Вінницька міська територіальна громада",
           "short": "Вінницька",
           "oblast": "Вінницька область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Житомирська міська територіальна громада",
           "short": "Житомирська",
           "oblast": "Житомирська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Запорізька міська територіальна громада",
           "short": "Запорізька",
           "oblast": "Запорізька область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Кам'янська міська територіальна громада",
           "short": "Кам'янська",
           "oblast": "Дніпропетровська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         }
       ],
@@ -633,38 +660,28 @@
         {
           "a_short": "Ніжинська",
           "b_short": "Козелецька",
-          "score": 0.341,
-          "goals_cosine": 0.068,
+          "score": 0.411,
+          "goals_cosine": 0.185,
           "geo_score": 0.6,
           "mss_network": 1.0,
           "track": "mixed",
           "known": true
         },
         {
-          "a_short": "Козелецька",
-          "b_short": "Львівська",
-          "score": 0.061,
-          "goals_cosine": 0.102,
+          "a_short": "Криворізька",
+          "b_short": "Полтавська",
+          "score": 0.271,
+          "goals_cosine": 0.452,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "a_short": "Ніжинська",
-          "b_short": "Криворізька",
-          "score": 0.056,
-          "goals_cosine": 0.094,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Харківська",
-          "b_short": "Вінницька",
-          "score": 0.056,
-          "goals_cosine": 0.094,
+          "a_short": "Полтавська",
+          "b_short": "Житомирська",
+          "score": 0.266,
+          "goals_cosine": 0.443,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -672,60 +689,70 @@
         },
         {
           "a_short": "Криворізька",
-          "b_short": "Яремчанська",
-          "score": 0.051,
-          "goals_cosine": 0.084,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Миколаївська",
-          "b_short": "Черкаська",
-          "score": 0.05,
-          "goals_cosine": 0.084,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Ужгородська",
           "b_short": "Кам'янська",
-          "score": 0.049,
-          "goals_cosine": 0.082,
+          "score": 0.347,
+          "goals_cosine": 0.432,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "a_short": "Вижницька",
+          "b_short": "Вашковецька",
+          "score": 0.344,
+          "goals_cosine": 0.428,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "a_short": "Нікопольська",
+          "b_short": "Запорізька",
+          "score": 0.387,
+          "goals_cosine": 0.395,
+          "geo_score": 0.6,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Кам'янська",
+          "b_short": "Житомирська",
+          "score": 0.229,
+          "goals_cosine": 0.381,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "a_short": "Львівська",
-          "b_short": "Черкаська",
-          "score": 0.048,
-          "goals_cosine": 0.081,
+          "a_short": "Кам'янська",
+          "b_short": "Вашковецька",
+          "score": 0.209,
+          "goals_cosine": 0.348,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "a_short": "Козелецька",
+          "a_short": "Криворізька",
+          "b_short": "Житомирська",
+          "score": 0.202,
+          "goals_cosine": 0.337,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "a_short": "Кам'янська",
           "b_short": "Полтавська",
-          "score": 0.047,
-          "goals_cosine": 0.079,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Козелецька",
-          "b_short": "Миколаївська",
-          "score": 0.047,
-          "goals_cosine": 0.079,
-          "geo_score": 0.0,
+          "score": 0.281,
+          "goals_cosine": 0.323,
+          "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
@@ -735,88 +762,38 @@
         {
           "in_portfolio_short": "Козелецька",
           "outside_short": "Батуринська",
-          "score": 0.285,
-          "goals_cosine": 0.08,
+          "score": 0.401,
+          "goals_cosine": 0.273,
           "geo_score": 0.35,
           "mss_network": 1.0,
-          "track": "thematic",
+          "track": "mixed",
           "known": true
         },
         {
           "in_portfolio_short": "Ніжинська",
           "outside_short": "Батуринська",
-          "score": 0.339,
-          "goals_cosine": 0.064,
+          "score": 0.41,
+          "goals_cosine": 0.183,
           "geo_score": 0.6,
           "mss_network": 1.0,
           "track": "mixed",
           "known": true
         },
         {
-          "in_portfolio_short": "Львівська",
-          "outside_short": "Лихівська",
-          "score": 0.096,
-          "goals_cosine": 0.16,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Шепетівська",
-          "score": 0.089,
-          "goals_cosine": 0.149,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Вижницька",
-          "outside_short": "Дунаєвецька",
-          "score": 0.154,
-          "goals_cosine": 0.11,
+          "in_portfolio_short": "Запорізька",
+          "outside_short": "Новомосковська",
+          "score": 0.407,
+          "goals_cosine": 0.533,
           "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Полтавська",
-          "outside_short": "Білоцерківська",
-          "score": 0.213,
-          "goals_cosine": 0.105,
-          "geo_score": 0.6,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Нікопольська",
-          "outside_short": "Херсонська",
-          "score": 0.063,
-          "goals_cosine": 0.105,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Нікопольська",
-          "outside_short": "Лихівська",
-          "score": 0.148,
-          "goals_cosine": 0.101,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Львівська",
-          "outside_short": "Батуринська",
-          "score": 0.059,
-          "goals_cosine": 0.099,
+          "in_portfolio_short": "Вашковецька",
+          "outside_short": "Божедарівська",
+          "score": 0.298,
+          "goals_cosine": 0.496,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -824,10 +801,60 @@
         },
         {
           "in_portfolio_short": "Криворізька",
-          "outside_short": "Обухівська",
-          "score": 0.146,
-          "goals_cosine": 0.098,
+          "outside_short": "Тульчинська",
+          "score": 0.29,
+          "goals_cosine": 0.483,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Кам'янська",
+          "outside_short": "Зазимська",
+          "score": 0.277,
+          "goals_cosine": 0.461,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Полтавська",
+          "outside_short": "Журавненська",
+          "score": 0.276,
+          "goals_cosine": 0.461,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Нікопольська",
+          "outside_short": "Новомосковська",
+          "score": 0.358,
+          "goals_cosine": 0.45,
           "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Вашковецька",
+          "outside_short": "Кропивницька",
+          "score": 0.269,
+          "goals_cosine": 0.448,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Вашковецька",
+          "outside_short": "Литовезька",
+          "score": 0.265,
+          "goals_cosine": 0.442,
+          "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
@@ -837,87 +864,87 @@
         {
           "short": "Вашковецька",
           "oblast": "Чернівецька область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Вижницька",
           "oblast": "Чернівецька область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Вінницька",
           "oblast": "Вінницька область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Житомирська",
           "oblast": "Житомирська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Запорізька",
           "oblast": "Запорізька область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Кам'янська",
           "oblast": "Дніпропетровська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Козелецька",
           "oblast": "Чернігівська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Криворізька",
           "oblast": "Дніпропетровська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Львівська",
           "oblast": "Львівська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Ніжинська",
           "oblast": "Чернігівська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Нікопольська",
           "oblast": "Дніпропетровська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Одеська",
           "oblast": "Одеська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Полтавська",
           "oblast": "Полтавська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Ужгородська",
           "oblast": "Закарпатська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Харківська",
           "oblast": "Харківська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Черкаська",
           "oblast": "Черкаська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Яремчанська",
           "oblast": "Івано-Франківська область",
-          "degree": 67
+          "degree": 82
         }
       ]
     },
@@ -927,117 +954,137 @@
       "with_goals": 8,
       "in_matching_graph": 8,
       "within_edge_count": 36,
-      "bridge_edge_count": 531,
+      "bridge_edge_count": 666,
       "hubs": [
         {
           "name": "Кам'янська міська територіальна громада",
           "short": "Кам'янська",
           "oblast": "Дніпропетровська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Лозівська міська територіальна громада",
           "short": "Лозівська",
           "oblast": "Харківська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Одеська міська територіальна громада",
           "short": "Одеська",
           "oblast": "Одеська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Полтавська міська територіальна громада",
           "short": "Полтавська",
           "oblast": "Полтавська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Сумська міська територіальна громада",
           "short": "Сумська",
           "oblast": "Сумська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Тульчинська міська територіальна громада",
           "short": "Тульчинська",
           "oblast": "Вінницька область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         }
       ],
       "within_portfolio": [
         {
-          "a_short": "Херсонська",
-          "b_short": "Миколаївська",
-          "score": 0.192,
-          "goals_cosine": 0.07,
-          "geo_score": 0.6,
+          "a_short": "Кам'янська",
+          "b_short": "Тульчинська",
+          "score": 0.234,
+          "goals_cosine": 0.39,
+          "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "a_short": "Полтавська",
+          "b_short": "Сумська",
+          "score": 0.32,
+          "goals_cosine": 0.387,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "a_short": "Полтавська",
+          "b_short": "Тульчинська",
+          "score": 0.197,
+          "goals_cosine": 0.328,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
           "known": false
         },
         {
           "a_short": "Кам'янська",
           "b_short": "Полтавська",
-          "score": 0.129,
-          "goals_cosine": 0.069,
+          "score": 0.281,
+          "goals_cosine": 0.323,
           "geo_score": 0.35,
           "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
           "known": false
         },
         {
-          "a_short": "Одеська",
-          "b_short": "Херсонська",
-          "score": 0.129,
-          "goals_cosine": 0.069,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Полтавська",
-          "b_short": "Миколаївська",
-          "score": 0.039,
-          "goals_cosine": 0.065,
+          "a_short": "Яремчанська",
+          "b_short": "Полтавська",
+          "score": 0.184,
+          "goals_cosine": 0.307,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
           "known": false
         },
         {
           "a_short": "Кам'янська",
-          "b_short": "Херсонська",
-          "score": 0.037,
-          "goals_cosine": 0.062,
+          "b_short": "Яремчанська",
+          "score": 0.172,
+          "goals_cosine": 0.286,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "a_short": "Яремчанська",
+          "b_short": "Тульчинська",
+          "score": 0.142,
+          "goals_cosine": 0.237,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
         },
         {
-          "a_short": "Полтавська",
+          "a_short": "Сумська",
+          "b_short": "Тульчинська",
+          "score": 0.133,
+          "goals_cosine": 0.222,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Сумська",
           "b_short": "Лозівська",
-          "score": 0.036,
-          "goals_cosine": 0.06,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Яремчанська",
-          "b_short": "Херсонська",
-          "score": 0.034,
-          "goals_cosine": 0.057,
+          "score": 0.123,
+          "goals_cosine": 0.205,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -1045,29 +1092,9 @@
         },
         {
           "a_short": "Херсонська",
-          "b_short": "Сумська",
-          "score": 0.034,
-          "goals_cosine": 0.057,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Одеська",
-          "b_short": "Сумська",
-          "score": 0.033,
-          "goals_cosine": 0.056,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Яремчанська",
-          "b_short": "Полтавська",
-          "score": 0.033,
-          "goals_cosine": 0.055,
+          "b_short": "Лозівська",
+          "score": 0.119,
+          "goals_cosine": 0.199,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -1076,20 +1103,10 @@
       ],
       "bridges": [
         {
-          "in_portfolio_short": "Полтавська",
-          "outside_short": "Білоцерківська",
-          "score": 0.213,
-          "goals_cosine": 0.105,
-          "geo_score": 0.6,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Херсонська",
-          "outside_short": "Нікопольська",
-          "score": 0.063,
-          "goals_cosine": 0.105,
+          "in_portfolio_short": "Лозівська",
+          "outside_short": "Дунаївецька",
+          "score": 0.326,
+          "goals_cosine": 0.543,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -1097,9 +1114,9 @@
         },
         {
           "in_portfolio_short": "Лозівська",
-          "outside_short": "Шепетівська",
-          "score": 0.058,
-          "goals_cosine": 0.097,
+          "outside_short": "Великодимерська",
+          "score": 0.321,
+          "goals_cosine": 0.535,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -1107,69 +1124,79 @@
         },
         {
           "in_portfolio_short": "Лозівська",
-          "outside_short": "Вашковецька",
-          "score": 0.055,
-          "goals_cosine": 0.091,
+          "outside_short": "Рівненська",
+          "score": 0.314,
+          "goals_cosine": 0.523,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Лихівська",
-          "score": 0.054,
-          "goals_cosine": 0.09,
+          "in_portfolio_short": "Лозівська",
+          "outside_short": "Тернопільська",
+          "score": 0.291,
+          "goals_cosine": 0.485,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Білгород-Дністровська",
-          "score": 0.203,
-          "goals_cosine": 0.088,
-          "geo_score": 0.6,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Сумська",
-          "outside_short": "Білківська",
-          "score": 0.053,
-          "goals_cosine": 0.088,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Миколаївська",
-          "outside_short": "Бурштинська",
-          "score": 0.052,
-          "goals_cosine": 0.087,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Миколаївська",
-          "outside_short": "Скалатська",
-          "score": 0.051,
-          "goals_cosine": 0.086,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Яремчанська",
+          "in_portfolio_short": "Тульчинська",
           "outside_short": "Криворізька",
-          "score": 0.051,
-          "goals_cosine": 0.084,
+          "score": 0.29,
+          "goals_cosine": 0.483,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Лозівська",
+          "outside_short": "Рокитнівська",
+          "score": 0.282,
+          "goals_cosine": 0.47,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Кам'янська",
+          "outside_short": "Зазимська",
+          "score": 0.277,
+          "goals_cosine": 0.461,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Полтавська",
+          "outside_short": "Журавненська",
+          "score": 0.276,
+          "goals_cosine": 0.461,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Полтавська",
+          "outside_short": "Криворізька",
+          "score": 0.271,
+          "goals_cosine": 0.452,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Лозівська",
+          "outside_short": "Коростенська",
+          "score": 0.268,
+          "goals_cosine": 0.447,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -1180,42 +1207,42 @@
         {
           "short": "Кам'янська",
           "oblast": "Дніпропетровська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Лозівська",
           "oblast": "Харківська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Одеська",
           "oblast": "Одеська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Полтавська",
           "oblast": "Полтавська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Сумська",
           "oblast": "Сумська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Тульчинська",
           "oblast": "Вінницька область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Херсонська",
           "oblast": "Херсонська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Яремчанська",
           "oblast": "Івано-Франківська область",
-          "degree": 67
+          "degree": 82
         }
       ]
     },
@@ -1232,78 +1259,112 @@
       "members_with_goals": []
     },
     {
-      "program": "DESPRO",
-      "tagged": 9,
-      "with_goals": 4,
-      "in_matching_graph": 4,
-      "within_edge_count": 6,
-      "bridge_edge_count": 256,
+      "program": "U-LEAD",
+      "tagged": 11,
+      "with_goals": 11,
+      "in_matching_graph": 10,
+      "within_edge_count": 45,
+      "bridge_edge_count": 730,
       "hubs": [
+        {
+          "name": "Батуринська міська територіальна громада",
+          "short": "Батуринська",
+          "oblast": "Чернігівська область",
+          "degree": 82,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Бердичівська міська територіальна громада",
+          "short": "Бердичівська",
+          "oblast": "Житомирська область",
+          "degree": 82,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Вашковецька сільська територіальна громада",
+          "short": "Вашковецька",
+          "oblast": "Чернівецька область",
+          "degree": 82,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Великоберезовицька селищна територіальна громада",
+          "short": "Великоберезовицька",
+          "oblast": "Тернопільська область",
+          "degree": 82,
+          "source_quality": "full-strategy"
+        },
         {
           "name": "Вижницька міська територіальна громада",
           "short": "Вижницька",
           "oblast": "Чернівецька область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
-          "name": "Козелецька селищна територіальна громада",
-          "short": "Козелецька",
-          "oblast": "Чернігівська область",
-          "degree": 67,
+          "name": "Клішковецька сільська територіальна громада",
+          "short": "Клішковецька",
+          "oblast": "Чернівецька область",
+          "degree": 82,
           "source_quality": "full-strategy"
-        },
-        {
-          "name": "Тульчинська міська територіальна громада",
-          "short": "Тульчинська",
-          "oblast": "Вінницька область",
-          "degree": 67,
-          "source_quality": "full-strategy"
-        },
-        {
-          "name": "Харківська міська територіальна громада",
-          "short": "Харківська",
-          "oblast": "Харківська область",
-          "degree": 67,
-          "source_quality": "partial"
         }
       ],
       "within_portfolio": [
         {
-          "a_short": "Козелецька",
-          "b_short": "Тульчинська",
-          "score": 0.05,
-          "goals_cosine": 0.083,
-          "geo_score": 0.0,
+          "a_short": "Батуринська",
+          "b_short": "Козелецька",
+          "score": 0.401,
+          "goals_cosine": 0.273,
+          "geo_score": 0.35,
+          "mss_network": 1.0,
+          "track": "mixed",
+          "known": true
+        },
+        {
+          "a_short": "Вижницька",
+          "b_short": "Вашковецька",
+          "score": 0.344,
+          "goals_cosine": 0.428,
+          "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "a_short": "Козелецька",
-          "b_short": "Вижницька",
-          "score": 0.04,
-          "goals_cosine": 0.067,
+          "a_short": "Тлумацька",
+          "b_short": "Клішковецька",
+          "score": 0.388,
+          "goals_cosine": 0.25,
+          "geo_score": 0.35,
+          "mss_network": 1.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Вашковецька",
+          "b_short": "Лохвицька",
+          "score": 0.147,
+          "goals_cosine": 0.244,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
         },
         {
-          "a_short": "Харківська",
-          "b_short": "Вижницька",
-          "score": 0.039,
-          "goals_cosine": 0.064,
+          "a_short": "Козелецька",
+          "b_short": "Тлумацька",
+          "score": 0.137,
+          "goals_cosine": 0.229,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
         },
         {
-          "a_short": "Козелецька",
-          "b_short": "Харківська",
-          "score": 0.033,
-          "goals_cosine": 0.055,
+          "a_short": "Великоберезовицька",
+          "b_short": "Бердичівська",
+          "score": 0.137,
+          "goals_cosine": 0.229,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -1311,20 +1372,40 @@
         },
         {
           "a_short": "Вижницька",
-          "b_short": "Тульчинська",
-          "score": 0.027,
-          "goals_cosine": 0.044,
+          "b_short": "Лохвицька",
+          "score": 0.136,
+          "goals_cosine": 0.227,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
         },
         {
-          "a_short": "Харківська",
-          "b_short": "Тульчинська",
-          "score": 0.02,
-          "goals_cosine": 0.033,
+          "a_short": "Козелецька",
+          "b_short": "Вижницька",
+          "score": 0.13,
+          "goals_cosine": 0.217,
           "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Козелецька",
+          "b_short": "Клішковецька",
+          "score": 0.129,
+          "goals_cosine": 0.215,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Великоберезовицька",
+          "b_short": "Клішковецька",
+          "score": 0.197,
+          "goals_cosine": 0.182,
+          "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
@@ -1333,125 +1414,160 @@
       "bridges": [
         {
           "in_portfolio_short": "Козелецька",
-          "outside_short": "Батуринська",
-          "score": 0.285,
-          "goals_cosine": 0.08,
-          "geo_score": 0.35,
-          "mss_network": 1.0,
-          "track": "thematic",
-          "known": true
-        },
-        {
-          "in_portfolio_short": "Козелецька",
           "outside_short": "Ніжинська",
-          "score": 0.341,
-          "goals_cosine": 0.068,
+          "score": 0.411,
+          "goals_cosine": 0.185,
           "geo_score": 0.6,
           "mss_network": 1.0,
           "track": "mixed",
           "known": true
         },
         {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Шепетівська",
-          "score": 0.089,
-          "goals_cosine": 0.149,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Вижницька",
-          "outside_short": "Дунаєвецька",
-          "score": 0.154,
-          "goals_cosine": 0.11,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Львівська",
-          "score": 0.061,
-          "goals_cosine": 0.102,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Харківська",
-          "outside_short": "Вінницька",
-          "score": 0.056,
-          "goals_cosine": 0.094,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Українська",
-          "score": 0.143,
-          "goals_cosine": 0.092,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Литовезька",
-          "score": 0.054,
-          "goals_cosine": 0.09,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Харківська",
-          "outside_short": "Мукачівська",
-          "score": 0.053,
-          "goals_cosine": 0.089,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Чернігівська",
-          "score": 0.202,
-          "goals_cosine": 0.087,
+          "in_portfolio_short": "Батуринська",
+          "outside_short": "Ніжинська",
+          "score": 0.41,
+          "goals_cosine": 0.183,
           "geo_score": 0.6,
-          "mss_network": 0.0,
+          "mss_network": 1.0,
           "track": "mixed",
+          "known": true
+        },
+        {
+          "in_portfolio_short": "Вашковецька",
+          "outside_short": "Божедарівська",
+          "score": 0.298,
+          "goals_cosine": 0.496,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Вашковецька",
+          "outside_short": "Кропивницька",
+          "score": 0.269,
+          "goals_cosine": 0.448,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Вашковецька",
+          "outside_short": "Литовезька",
+          "score": 0.265,
+          "goals_cosine": 0.442,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Бердичівська",
+          "outside_short": "Лозівська",
+          "score": 0.264,
+          "goals_cosine": 0.44,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Великоберезовицька",
+          "outside_short": "Тульчинська",
+          "score": 0.249,
+          "goals_cosine": 0.414,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Великоберезовицька",
+          "outside_short": "Полтавська",
+          "score": 0.248,
+          "goals_cosine": 0.414,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Бердичівська",
+          "outside_short": "Тернопільська",
+          "score": 0.248,
+          "goals_cosine": 0.413,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Бердичівська",
+          "outside_short": "Білківська",
+          "score": 0.245,
+          "goals_cosine": 0.408,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
           "known": false
         }
       ],
       "members_with_goals": [
         {
+          "short": "Батуринська",
+          "oblast": "Чернігівська область",
+          "degree": 82
+        },
+        {
+          "short": "Бердичівська",
+          "oblast": "Житомирська область",
+          "degree": 82
+        },
+        {
+          "short": "Вашковецька",
+          "oblast": "Чернівецька область",
+          "degree": 82
+        },
+        {
+          "short": "Великоберезовицька",
+          "oblast": "Тернопільська область",
+          "degree": 82
+        },
+        {
           "short": "Вижницька",
           "oblast": "Чернівецька область",
-          "degree": 67
+          "degree": 82
+        },
+        {
+          "short": "Клішковецька",
+          "oblast": "Чернівецька область",
+          "degree": 82
         },
         {
           "short": "Козелецька",
           "oblast": "Чернігівська область",
-          "degree": 67
+          "degree": 82
         },
         {
-          "short": "Тульчинська",
-          "oblast": "Вінницька область",
-          "degree": 67
+          "short": "Лохвицька",
+          "oblast": "Полтавська область",
+          "degree": 82
         },
         {
-          "short": "Харківська",
-          "oblast": "Харківська область",
-          "degree": 67
+          "short": "Олешанська",
+          "oblast": "Івано-Франківська область",
+          "degree": 82
+        },
+        {
+          "short": "Тлумацька",
+          "oblast": "Івано-Франківська область",
+          "degree": 82
+        },
+        {
+          "short": "Ясінянська",
+          "oblast": "Закарпатська область",
+          "degree": 0
         }
       ]
     },
@@ -1461,137 +1577,87 @@
       "with_goals": 6,
       "in_matching_graph": 6,
       "within_edge_count": 15,
-      "bridge_edge_count": 372,
+      "bridge_edge_count": 462,
       "hubs": [
         {
           "name": "Великоберезовицька селищна територіальна громада",
           "short": "Великоберезовицька",
           "oblast": "Тернопільська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Журавненська селищна територіальна громада",
           "short": "Журавненська",
           "oblast": "Львівська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Зазимська сільська територіальна громада",
           "short": "Зазимська",
           "oblast": "Київська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Козелецька селищна територіальна громада",
           "short": "Козелецька",
           "oblast": "Чернігівська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Литовезька сільська територіальна громада",
           "short": "Литовезька",
           "oblast": "Волинська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Ужгородська міська територіальна громада",
           "short": "Ужгородська",
           "oblast": "Закарпатська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         }
       ],
       "within_portfolio": [
         {
           "a_short": "Литовезька",
-          "b_short": "Журавненська",
-          "score": 0.057,
-          "goals_cosine": 0.095,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Козелецька",
-          "b_short": "Литовезька",
-          "score": 0.054,
-          "goals_cosine": 0.09,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Ужгородська",
-          "b_short": "Литовезька",
-          "score": 0.05,
-          "goals_cosine": 0.083,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Козелецька",
           "b_short": "Зазимська",
-          "score": 0.197,
-          "goals_cosine": 0.079,
-          "geo_score": 0.6,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Козелецька",
-          "b_short": "Ужгородська",
-          "score": 0.041,
-          "goals_cosine": 0.068,
+          "score": 0.29,
+          "goals_cosine": 0.483,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
           "known": false
         },
         {
           "a_short": "Зазимська",
           "b_short": "Журавненська",
-          "score": 0.041,
-          "goals_cosine": 0.068,
+          "score": 0.234,
+          "goals_cosine": 0.391,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
           "known": false
         },
         {
           "a_short": "Ужгородська",
-          "b_short": "Журавненська",
-          "score": 0.036,
-          "goals_cosine": 0.06,
+          "b_short": "Литовезька",
+          "score": 0.172,
+          "goals_cosine": 0.287,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
           "known": false
         },
         {
-          "a_short": "Козелецька",
-          "b_short": "Журавненська",
-          "score": 0.035,
-          "goals_cosine": 0.059,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Козелецька",
-          "b_short": "Великоберезовицька",
-          "score": 0.035,
-          "goals_cosine": 0.058,
+          "a_short": "Ужгородська",
+          "b_short": "Зазимська",
+          "score": 0.161,
+          "goals_cosine": 0.268,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -1600,9 +1666,59 @@
         {
           "a_short": "Журавненська",
           "b_short": "Великоберезовицька",
-          "score": 0.12,
-          "goals_cosine": 0.054,
+          "score": 0.245,
+          "goals_cosine": 0.262,
           "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Литовезька",
+          "b_short": "Журавненська",
+          "score": 0.153,
+          "goals_cosine": 0.256,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Литовезька",
+          "b_short": "Великоберезовицька",
+          "score": 0.127,
+          "goals_cosine": 0.211,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Ужгородська",
+          "b_short": "Журавненська",
+          "score": 0.116,
+          "goals_cosine": 0.194,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Зазимська",
+          "b_short": "Великоберезовицька",
+          "score": 0.096,
+          "goals_cosine": 0.159,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Ужгородська",
+          "b_short": "Великоберезовицька",
+          "score": 0.08,
+          "goals_cosine": 0.133,
+          "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
@@ -1612,88 +1728,78 @@
         {
           "in_portfolio_short": "Козелецька",
           "outside_short": "Батуринська",
-          "score": 0.285,
-          "goals_cosine": 0.08,
+          "score": 0.401,
+          "goals_cosine": 0.273,
           "geo_score": 0.35,
-          "mss_network": 1.0,
-          "track": "thematic",
-          "known": true
-        },
-        {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Ніжинська",
-          "score": 0.341,
-          "goals_cosine": 0.068,
-          "geo_score": 0.6,
           "mss_network": 1.0,
           "track": "mixed",
           "known": true
         },
         {
           "in_portfolio_short": "Козелецька",
-          "outside_short": "Шепетівська",
-          "score": 0.089,
-          "goals_cosine": 0.149,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
+          "outside_short": "Ніжинська",
+          "score": 0.411,
+          "goals_cosine": 0.185,
+          "geo_score": 0.6,
+          "mss_network": 1.0,
+          "track": "mixed",
+          "known": true
         },
         {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Львівська",
-          "score": 0.061,
-          "goals_cosine": 0.102,
+          "in_portfolio_short": "Зазимська",
+          "outside_short": "Ганнівська",
+          "score": 0.297,
+          "goals_cosine": 0.495,
           "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Журавненська",
-          "outside_short": "Білоцерківська",
-          "score": 0.06,
-          "goals_cosine": 0.1,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Журавненська",
-          "outside_short": "Білківська",
-          "score": 0.145,
-          "goals_cosine": 0.096,
-          "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
           "in_portfolio_short": "Литовезька",
-          "outside_short": "Дунаєвецька",
-          "score": 0.056,
-          "goals_cosine": 0.094,
+          "outside_short": "Дубовецька",
+          "score": 0.291,
+          "goals_cosine": 0.486,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Козелецька",
-          "outside_short": "Українська",
-          "score": 0.143,
-          "goals_cosine": 0.092,
-          "geo_score": 0.35,
+          "in_portfolio_short": "Зазимська",
+          "outside_short": "Дубовецька",
+          "score": 0.288,
+          "goals_cosine": 0.479,
+          "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Ужгородська",
-          "outside_short": "Луцька",
-          "score": 0.055,
-          "goals_cosine": 0.091,
+          "in_portfolio_short": "Зазимська",
+          "outside_short": "Божедарівська",
+          "score": 0.286,
+          "goals_cosine": 0.477,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Зазимська",
+          "outside_short": "Більшівцівська",
+          "score": 0.286,
+          "goals_cosine": 0.477,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Зазимська",
+          "outside_short": "Кам'янська",
+          "score": 0.277,
+          "goals_cosine": 0.461,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -1701,9 +1807,19 @@
         },
         {
           "in_portfolio_short": "Журавненська",
-          "outside_short": "Дунаєвецька",
-          "score": 0.053,
-          "goals_cosine": 0.089,
+          "outside_short": "Полтавська",
+          "score": 0.276,
+          "goals_cosine": 0.461,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Литовезька",
+          "outside_short": "Ганнівська",
+          "score": 0.271,
+          "goals_cosine": 0.451,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -1714,172 +1830,88 @@
         {
           "short": "Великоберезовицька",
           "oblast": "Тернопільська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Журавненська",
           "oblast": "Львівська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Зазимська",
           "oblast": "Київська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Козелецька",
           "oblast": "Чернігівська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Литовезька",
           "oblast": "Волинська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Ужгородська",
           "oblast": "Закарпатська область",
-          "degree": 67
+          "degree": 82
         }
       ]
     },
     {
-      "program": "U-LEAD",
-      "tagged": 7,
-      "with_goals": 7,
-      "in_matching_graph": 7,
-      "within_edge_count": 21,
-      "bridge_edge_count": 427,
+      "program": "DESPRO",
+      "tagged": 8,
+      "with_goals": 4,
+      "in_matching_graph": 4,
+      "within_edge_count": 6,
+      "bridge_edge_count": 316,
       "hubs": [
-        {
-          "name": "Батуринська міська територіальна громада",
-          "short": "Батуринська",
-          "oblast": "Чернігівська область",
-          "degree": 67,
-          "source_quality": "full-strategy"
-        },
-        {
-          "name": "Бердичівська міська територіальна громада",
-          "short": "Бердичівська",
-          "oblast": "Житомирська область",
-          "degree": 67,
-          "source_quality": "full-strategy"
-        },
-        {
-          "name": "Вашковецька сільська територіальна громада",
-          "short": "Вашковецька",
-          "oblast": "Чернівецька область",
-          "degree": 67,
-          "source_quality": "full-strategy"
-        },
-        {
-          "name": "Великоберезовицька селищна територіальна громада",
-          "short": "Великоберезовицька",
-          "oblast": "Тернопільська область",
-          "degree": 67,
-          "source_quality": "full-strategy"
-        },
         {
           "name": "Вижницька міська територіальна громада",
           "short": "Вижницька",
           "oblast": "Чернівецька область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Козелецька селищна територіальна громада",
           "short": "Козелецька",
           "oblast": "Чернігівська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
+        },
+        {
+          "name": "Тульчинська міська територіальна громада",
+          "short": "Тульчинська",
+          "oblast": "Вінницька область",
+          "degree": 82,
+          "source_quality": "full-strategy"
+        },
+        {
+          "name": "Харківська міська територіальна громада",
+          "short": "Харківська",
+          "oblast": "Харківська область",
+          "degree": 82,
+          "source_quality": "partial"
         }
       ],
       "within_portfolio": [
         {
-          "a_short": "Батуринська",
-          "b_short": "Козелецька",
-          "score": 0.285,
-          "goals_cosine": 0.08,
-          "geo_score": 0.35,
-          "mss_network": 1.0,
-          "track": "thematic",
-          "known": true
-        },
-        {
-          "a_short": "Козелецька",
-          "b_short": "Бердичівська",
-          "score": 0.048,
-          "goals_cosine": 0.079,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Батуринська",
-          "b_short": "Лохвицька",
-          "score": 0.134,
-          "goals_cosine": 0.078,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Вашковецька",
-          "b_short": "Лохвицька",
-          "score": 0.044,
-          "goals_cosine": 0.073,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "a_short": "Батуринська",
-          "b_short": "Вашковецька",
-          "score": 0.042,
-          "goals_cosine": 0.07,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Козелецька",
-          "b_short": "Лохвицька",
-          "score": 0.042,
-          "goals_cosine": 0.07,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
           "a_short": "Козелецька",
           "b_short": "Вижницька",
-          "score": 0.04,
-          "goals_cosine": 0.067,
+          "score": 0.13,
+          "goals_cosine": 0.217,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
         },
         {
-          "a_short": "Вашковецька",
-          "b_short": "Великоберезовицька",
-          "score": 0.039,
-          "goals_cosine": 0.064,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Батуринська",
-          "b_short": "Великоберезовицька",
-          "score": 0.035,
-          "goals_cosine": 0.059,
+          "a_short": "Харківська",
+          "b_short": "Вижницька",
+          "score": 0.056,
+          "goals_cosine": 0.093,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -1887,9 +1919,39 @@
         },
         {
           "a_short": "Козелецька",
-          "b_short": "Вашковецька",
-          "score": 0.035,
-          "goals_cosine": 0.059,
+          "b_short": "Харківська",
+          "score": 0.047,
+          "goals_cosine": 0.078,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Вижницька",
+          "b_short": "Тульчинська",
+          "score": 0.046,
+          "goals_cosine": 0.076,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Харківська",
+          "b_short": "Тульчинська",
+          "score": 0.038,
+          "goals_cosine": 0.063,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Козелецька",
+          "b_short": "Тульчинська",
+          "score": 0.0,
+          "goals_cosine": 0.0,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -1899,29 +1961,29 @@
       "bridges": [
         {
           "in_portfolio_short": "Козелецька",
-          "outside_short": "Ніжинська",
-          "score": 0.341,
-          "goals_cosine": 0.068,
-          "geo_score": 0.6,
-          "mss_network": 1.0,
-          "track": "mixed",
-          "known": true
-        },
-        {
-          "in_portfolio_short": "Батуринська",
-          "outside_short": "Ніжинська",
-          "score": 0.339,
-          "goals_cosine": 0.064,
-          "geo_score": 0.6,
+          "outside_short": "Батуринська",
+          "score": 0.401,
+          "goals_cosine": 0.273,
+          "geo_score": 0.35,
           "mss_network": 1.0,
           "track": "mixed",
           "known": true
         },
         {
           "in_portfolio_short": "Козелецька",
-          "outside_short": "Шепетівська",
-          "score": 0.089,
-          "goals_cosine": 0.149,
+          "outside_short": "Ніжинська",
+          "score": 0.411,
+          "goals_cosine": 0.185,
+          "geo_score": 0.6,
+          "mss_network": 1.0,
+          "track": "mixed",
+          "known": true
+        },
+        {
+          "in_portfolio_short": "Тульчинська",
+          "outside_short": "Криворізька",
+          "score": 0.29,
+          "goals_cosine": 0.483,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -1929,19 +1991,59 @@
         },
         {
           "in_portfolio_short": "Вижницька",
-          "outside_short": "Дунаєвецька",
-          "score": 0.154,
-          "goals_cosine": 0.11,
+          "outside_short": "Вашковецька",
+          "score": 0.344,
+          "goals_cosine": 0.428,
           "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Батуринська",
-          "outside_short": "Шепетівська",
-          "score": 0.064,
-          "goals_cosine": 0.107,
+          "in_portfolio_short": "Тульчинська",
+          "outside_short": "Великоберезовицька",
+          "score": 0.249,
+          "goals_cosine": 0.414,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Тульчинська",
+          "outside_short": "Кам'янська",
+          "score": 0.234,
+          "goals_cosine": 0.39,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Вижницька",
+          "outside_short": "Дубовецька",
+          "score": 0.321,
+          "goals_cosine": 0.389,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Тульчинська",
+          "outside_short": "Коростенська",
+          "score": 0.229,
+          "goals_cosine": 0.381,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Вижницька",
+          "outside_short": "Божедарівська",
+          "score": 0.215,
+          "goals_cosine": 0.358,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -1949,49 +2051,9 @@
         },
         {
           "in_portfolio_short": "Козелецька",
-          "outside_short": "Львівська",
-          "score": 0.061,
-          "goals_cosine": 0.102,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Батуринська",
-          "outside_short": "Білківська",
-          "score": 0.06,
-          "goals_cosine": 0.099,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Батуринська",
-          "outside_short": "Львівська",
-          "score": 0.059,
-          "goals_cosine": 0.099,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Батуринська",
-          "outside_short": "Рогатинська",
-          "score": 0.057,
-          "goals_cosine": 0.096,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Батуринська",
-          "outside_short": "Мукачівська",
-          "score": 0.056,
-          "goals_cosine": 0.093,
+          "outside_short": "Рукшинська",
+          "score": 0.214,
+          "goals_cosine": 0.356,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2000,39 +2062,24 @@
       ],
       "members_with_goals": [
         {
-          "short": "Батуринська",
-          "oblast": "Чернігівська область",
-          "degree": 67
-        },
-        {
-          "short": "Бердичівська",
-          "oblast": "Житомирська область",
-          "degree": 67
-        },
-        {
-          "short": "Вашковецька",
-          "oblast": "Чернівецька область",
-          "degree": 67
-        },
-        {
-          "short": "Великоберезовицька",
-          "oblast": "Тернопільська область",
-          "degree": 67
-        },
-        {
           "short": "Вижницька",
           "oblast": "Чернівецька область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Козелецька",
           "oblast": "Чернігівська область",
-          "degree": 67
+          "degree": 82
         },
         {
-          "short": "Лохвицька",
-          "oblast": "Полтавська область",
-          "degree": 67
+          "short": "Тульчинська",
+          "oblast": "Вінницька область",
+          "degree": 82
+        },
+        {
+          "short": "Харківська",
+          "oblast": "Харківська область",
+          "degree": 82
         }
       ]
     },
@@ -2042,57 +2089,57 @@
       "with_goals": 6,
       "in_matching_graph": 6,
       "within_edge_count": 15,
-      "bridge_edge_count": 372,
+      "bridge_edge_count": 462,
       "hubs": [
         {
           "name": "Більшівцівська селищна територіальна громада",
           "short": "Більшівцівська",
           "oblast": "Івано-Франківська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Вижницька міська територіальна громада",
           "short": "Вижницька",
           "oblast": "Чернівецька область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Журавненська селищна територіальна громада",
           "short": "Журавненська",
           "oblast": "Львівська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Литовезька сільська територіальна громада",
           "short": "Литовезька",
           "oblast": "Волинська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Слобожанська селищна територіальна громада",
           "short": "Слобожанська",
           "oblast": "Дніпропетровська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Тульчинська міська територіальна громада",
           "short": "Тульчинська",
           "oblast": "Вінницька область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         }
       ],
       "within_portfolio": [
         {
           "a_short": "Литовезька",
-          "b_short": "Журавненська",
-          "score": 0.057,
-          "goals_cosine": 0.095,
+          "b_short": "Більшівцівська",
+          "score": 0.23,
+          "goals_cosine": 0.383,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2100,9 +2147,9 @@
         },
         {
           "a_short": "Вижницька",
-          "b_short": "Журавненська",
-          "score": 0.132,
-          "goals_cosine": 0.074,
+          "b_short": "Більшівцівська",
+          "score": 0.3,
+          "goals_cosine": 0.354,
           "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2110,70 +2157,60 @@
         },
         {
           "a_short": "Слобожанська",
-          "b_short": "Вижницька",
-          "score": 0.041,
-          "goals_cosine": 0.069,
+          "b_short": "Тульчинська",
+          "score": 0.211,
+          "goals_cosine": 0.352,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Литовезька",
-          "b_short": "Більшівцівська",
-          "score": 0.038,
-          "goals_cosine": 0.064,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Вижницька",
-          "b_short": "Більшівцівська",
-          "score": 0.123,
-          "goals_cosine": 0.059,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
           "known": false
         },
         {
           "a_short": "Вижницька",
           "b_short": "Литовезька",
-          "score": 0.033,
-          "goals_cosine": 0.055,
+          "score": 0.205,
+          "goals_cosine": 0.342,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Журавненська",
-          "b_short": "Тульчинська",
-          "score": 0.032,
-          "goals_cosine": 0.053,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
+          "track": "thematic",
           "known": false
         },
         {
           "a_short": "Журавненська",
           "b_short": "Більшівцівська",
-          "score": 0.241,
-          "goals_cosine": 0.048,
+          "score": 0.409,
+          "goals_cosine": 0.327,
           "geo_score": 0.85,
           "mss_network": 0.0,
           "track": "operational",
           "known": false
         },
         {
-          "a_short": "Вижницька",
-          "b_short": "Тульчинська",
-          "score": 0.027,
-          "goals_cosine": 0.044,
+          "a_short": "Слобожанська",
+          "b_short": "Литовезька",
+          "score": 0.179,
+          "goals_cosine": 0.299,
           "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "a_short": "Литовезька",
+          "b_short": "Журавненська",
+          "score": 0.153,
+          "goals_cosine": 0.256,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Вижницька",
+          "b_short": "Журавненська",
+          "score": 0.21,
+          "goals_cosine": 0.204,
+          "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
@@ -2181,8 +2218,18 @@
         {
           "a_short": "Слобожанська",
           "b_short": "Журавненська",
-          "score": 0.023,
-          "goals_cosine": 0.039,
+          "score": 0.087,
+          "goals_cosine": 0.145,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Журавненська",
+          "b_short": "Тульчинська",
+          "score": 0.084,
+          "goals_cosine": 0.14,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -2193,48 +2240,28 @@
         {
           "in_portfolio_short": "Слобожанська",
           "outside_short": "Обухівська",
-          "score": 0.367,
-          "goals_cosine": 0.007,
+          "score": 0.366,
+          "goals_cosine": 0.005,
           "geo_score": 0.85,
           "mss_network": 1.0,
           "track": "operational",
           "known": true
         },
         {
-          "in_portfolio_short": "Вижницька",
-          "outside_short": "Дунаєвецька",
-          "score": 0.154,
-          "goals_cosine": 0.11,
-          "geo_score": 0.35,
+          "in_portfolio_short": "Більшівцівська",
+          "outside_short": "Дубовецька",
+          "score": 0.568,
+          "goals_cosine": 0.53,
+          "geo_score": 1.0,
           "mss_network": 0.0,
-          "track": "thematic",
+          "track": "operational",
           "known": false
         },
         {
-          "in_portfolio_short": "Журавненська",
-          "outside_short": "Білоцерківська",
-          "score": 0.06,
-          "goals_cosine": 0.1,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Журавненська",
-          "outside_short": "Білківська",
-          "score": 0.145,
-          "goals_cosine": 0.096,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Слобожанська",
-          "outside_short": "Великогаївська",
-          "score": 0.056,
-          "goals_cosine": 0.094,
+          "in_portfolio_short": "Більшівцівська",
+          "outside_short": "Ганнівська",
+          "score": 0.293,
+          "goals_cosine": 0.489,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2242,9 +2269,29 @@
         },
         {
           "in_portfolio_short": "Литовезька",
-          "outside_short": "Дунаєвецька",
-          "score": 0.056,
-          "goals_cosine": 0.094,
+          "outside_short": "Дубовецька",
+          "score": 0.291,
+          "goals_cosine": 0.486,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Тульчинська",
+          "outside_short": "Криворізька",
+          "score": 0.29,
+          "goals_cosine": 0.483,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Литовезька",
+          "outside_short": "Зазимська",
+          "score": 0.29,
+          "goals_cosine": 0.483,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2252,29 +2299,9 @@
         },
         {
           "in_portfolio_short": "Більшівцівська",
-          "outside_short": "Бердянська",
-          "score": 0.056,
-          "goals_cosine": 0.093,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Литовезька",
-          "outside_short": "Козелецька",
-          "score": 0.054,
-          "goals_cosine": 0.09,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Слобожанська",
-          "outside_short": "Черкаська",
-          "score": 0.053,
-          "goals_cosine": 0.089,
+          "outside_short": "Зазимська",
+          "score": 0.286,
+          "goals_cosine": 0.477,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2282,9 +2309,29 @@
         },
         {
           "in_portfolio_short": "Журавненська",
-          "outside_short": "Дунаєвецька",
-          "score": 0.053,
-          "goals_cosine": 0.089,
+          "outside_short": "Полтавська",
+          "score": 0.276,
+          "goals_cosine": 0.461,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Литовезька",
+          "outside_short": "Ганнівська",
+          "score": 0.271,
+          "goals_cosine": 0.451,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Литовезька",
+          "outside_short": "Вашковецька",
+          "score": 0.265,
+          "goals_cosine": 0.442,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2295,32 +2342,50 @@
         {
           "short": "Більшівцівська",
           "oblast": "Івано-Франківська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Вижницька",
           "oblast": "Чернівецька область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Журавненська",
           "oblast": "Львівська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Литовезька",
           "oblast": "Волинська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Слобожанська",
           "oblast": "Дніпропетровська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Тульчинська",
           "oblast": "Вінницька область",
-          "degree": 67
+          "degree": 82
+        }
+      ]
+    },
+    {
+      "program": "STRATEGY LAB",
+      "tagged": 5,
+      "with_goals": 1,
+      "in_matching_graph": 0,
+      "within_edge_count": 0,
+      "bridge_edge_count": 0,
+      "hubs": [],
+      "within_portfolio": [],
+      "bridges": [],
+      "members_with_goals": [
+        {
+          "short": "Ворохтянська",
+          "oblast": "Івано-Франківська область",
+          "degree": 0
         }
       ]
     },
@@ -2330,50 +2395,70 @@
       "with_goals": 5,
       "in_matching_graph": 5,
       "within_edge_count": 10,
-      "bridge_edge_count": 315,
+      "bridge_edge_count": 390,
       "hubs": [
         {
           "name": "Дніпровська міська територіальна громада",
           "short": "Дніпровська",
           "oblast": "Дніпропетровська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Криворізька міська територіальна громада",
           "short": "Криворізька",
           "oblast": "Дніпропетровська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Луцька міська територіальна громада",
           "short": "Луцька",
           "oblast": "Волинська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Одеська міська територіальна громада",
           "short": "Одеська",
           "oblast": "Одеська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Черкаська міська територіальна громада",
           "short": "Черкаська",
           "oblast": "Черкаська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         }
       ],
       "within_portfolio": [
         {
-          "a_short": "Луцька",
+          "a_short": "Криворізька",
+          "b_short": "Луцька",
+          "score": 0.219,
+          "goals_cosine": 0.366,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "a_short": "Дніпровська",
           "b_short": "Черкаська",
-          "score": 0.043,
-          "goals_cosine": 0.071,
+          "score": 0.119,
+          "goals_cosine": 0.198,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Одеська",
+          "b_short": "Черкаська",
+          "score": 0.084,
+          "goals_cosine": 0.14,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -2381,7 +2466,27 @@
         },
         {
           "a_short": "Криворізька",
-          "b_short": "Черкаська",
+          "b_short": "Одеська",
+          "score": 0.073,
+          "goals_cosine": 0.122,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Дніпровська",
+          "b_short": "Одеська",
+          "score": 0.064,
+          "goals_cosine": 0.107,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "a_short": "Дніпровська",
+          "b_short": "Луцька",
           "score": 0.041,
           "goals_cosine": 0.068,
           "geo_score": 0.0,
@@ -2390,17 +2495,7 @@
           "known": false
         },
         {
-          "a_short": "Криворізька",
-          "b_short": "Луцька",
-          "score": 0.04,
-          "goals_cosine": 0.066,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Дніпровська",
+          "a_short": "Луцька",
           "b_short": "Черкаська",
           "score": 0.036,
           "goals_cosine": 0.06,
@@ -2410,50 +2505,20 @@
           "known": false
         },
         {
-          "a_short": "Криворізька",
-          "b_short": "Одеська",
+          "a_short": "Одеська",
+          "b_short": "Луцька",
           "score": 0.031,
-          "goals_cosine": 0.051,
+          "goals_cosine": 0.052,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
         },
         {
-          "a_short": "Одеська",
+          "a_short": "Криворізька",
           "b_short": "Черкаська",
-          "score": 0.03,
-          "goals_cosine": 0.05,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Дніпровська",
-          "b_short": "Одеська",
-          "score": 0.026,
-          "goals_cosine": 0.044,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Одеська",
-          "b_short": "Луцька",
-          "score": 0.02,
-          "goals_cosine": 0.034,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "a_short": "Дніпровська",
-          "b_short": "Луцька",
-          "score": 0.02,
-          "goals_cosine": 0.033,
+          "score": 0.025,
+          "goals_cosine": 0.042,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -2462,8 +2527,8 @@
         {
           "a_short": "Криворізька",
           "b_short": "Дніпровська",
-          "score": 0.107,
-          "goals_cosine": 0.032,
+          "score": 0.087,
+          "goals_cosine": 0.0,
           "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "mixed",
@@ -2472,20 +2537,10 @@
       ],
       "bridges": [
         {
-          "in_portfolio_short": "Дніпровська",
-          "outside_short": "Лихівська",
-          "score": 0.168,
-          "goals_cosine": 0.133,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Дніпровська",
-          "outside_short": "Тернопільська",
-          "score": 0.063,
-          "goals_cosine": 0.104,
+          "in_portfolio_short": "Криворізька",
+          "outside_short": "Тульчинська",
+          "score": 0.29,
+          "goals_cosine": 0.483,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2493,19 +2548,49 @@
         },
         {
           "in_portfolio_short": "Криворізька",
-          "outside_short": "Обухівська",
-          "score": 0.146,
-          "goals_cosine": 0.098,
-          "geo_score": 0.35,
+          "outside_short": "Полтавська",
+          "score": 0.271,
+          "goals_cosine": 0.452,
+          "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
           "in_portfolio_short": "Криворізька",
-          "outside_short": "Ніжинська",
-          "score": 0.056,
-          "goals_cosine": 0.094,
+          "outside_short": "Кам'янська",
+          "score": 0.347,
+          "goals_cosine": 0.432,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Луцька",
+          "outside_short": "Полтавська",
+          "score": 0.256,
+          "goals_cosine": 0.426,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Криворізька",
+          "outside_short": "Слобожанська",
+          "score": 0.324,
+          "goals_cosine": 0.394,
+          "geo_score": 0.35,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Луцька",
+          "outside_short": "Журавненська",
+          "score": 0.222,
+          "goals_cosine": 0.37,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2513,9 +2598,19 @@
         },
         {
           "in_portfolio_short": "Луцька",
-          "outside_short": "Ужгородська",
-          "score": 0.055,
-          "goals_cosine": 0.091,
+          "outside_short": "Дубовецька",
+          "score": 0.216,
+          "goals_cosine": 0.361,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Луцька",
+          "outside_short": "Зазимська",
+          "score": 0.21,
+          "goals_cosine": 0.35,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2523,52 +2618,22 @@
         },
         {
           "in_portfolio_short": "Криворізька",
-          "outside_short": "Дунаєвецька",
-          "score": 0.054,
-          "goals_cosine": 0.091,
+          "outside_short": "Житомирська",
+          "score": 0.202,
+          "goals_cosine": 0.337,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
           "known": false
         },
         {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Лихівська",
-          "score": 0.054,
-          "goals_cosine": 0.09,
-          "geo_score": 0.0,
+          "in_portfolio_short": "Криворізька",
+          "outside_short": "Ганнівська",
+          "score": 0.288,
+          "goals_cosine": 0.334,
+          "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Черкаська",
-          "outside_short": "Великодимерська",
-          "score": 0.054,
-          "goals_cosine": 0.09,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Черкаська",
-          "outside_short": "Слобожанська",
-          "score": 0.053,
-          "goals_cosine": 0.089,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Білгород-Дністровська",
-          "score": 0.203,
-          "goals_cosine": 0.088,
-          "geo_score": 0.6,
-          "mss_network": 0.0,
-          "track": "mixed",
           "known": false
         }
       ],
@@ -2576,27 +2641,27 @@
         {
           "short": "Дніпровська",
           "oblast": "Дніпропетровська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Криворізька",
           "oblast": "Дніпропетровська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Луцька",
           "oblast": "Волинська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Одеська",
           "oblast": "Одеська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Черкаська",
           "oblast": "Черкаська область",
-          "degree": 67
+          "degree": 82
         }
       ]
     },
@@ -2606,27 +2671,27 @@
       "with_goals": 3,
       "in_matching_graph": 3,
       "within_edge_count": 3,
-      "bridge_edge_count": 195,
+      "bridge_edge_count": 240,
       "hubs": [
         {
           "name": "Кам'янська міська територіальна громада",
           "short": "Кам'янська",
           "oblast": "Дніпропетровська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Луцька міська територіальна громада",
           "short": "Луцька",
           "oblast": "Волинська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Одеська міська територіальна громада",
           "short": "Одеська",
           "oblast": "Одеська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         }
       ],
@@ -2634,8 +2699,8 @@
         {
           "a_short": "Кам'янська",
           "b_short": "Луцька",
-          "score": 0.048,
-          "goals_cosine": 0.08,
+          "score": 0.177,
+          "goals_cosine": 0.294,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2644,8 +2709,8 @@
         {
           "a_short": "Кам'янська",
           "b_short": "Одеська",
-          "score": 0.029,
-          "goals_cosine": 0.048,
+          "score": 0.068,
+          "goals_cosine": 0.114,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -2654,8 +2719,8 @@
         {
           "a_short": "Одеська",
           "b_short": "Луцька",
-          "score": 0.02,
-          "goals_cosine": 0.034,
+          "score": 0.031,
+          "goals_cosine": 0.052,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -2664,60 +2729,10 @@
       ],
       "bridges": [
         {
-          "in_portfolio_short": "Луцька",
-          "outside_short": "Ужгородська",
-          "score": 0.055,
-          "goals_cosine": 0.091,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Лихівська",
-          "score": 0.054,
-          "goals_cosine": 0.09,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Білгород-Дністровська",
-          "score": 0.203,
-          "goals_cosine": 0.088,
-          "geo_score": 0.6,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
           "in_portfolio_short": "Кам'янська",
-          "outside_short": "Журавненська",
-          "score": 0.051,
-          "goals_cosine": 0.084,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Брацлавська",
-          "score": 0.05,
-          "goals_cosine": 0.083,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Луцька",
-          "outside_short": "Батуринська",
-          "score": 0.049,
-          "goals_cosine": 0.082,
+          "outside_short": "Зазимська",
+          "score": 0.277,
+          "goals_cosine": 0.461,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2725,19 +2740,9 @@
         },
         {
           "in_portfolio_short": "Кам'янська",
-          "outside_short": "Ужгородська",
-          "score": 0.049,
-          "goals_cosine": 0.082,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Луцька",
-          "outside_short": "Великоберезовицька",
-          "score": 0.136,
-          "goals_cosine": 0.081,
+          "outside_short": "Криворізька",
+          "score": 0.347,
+          "goals_cosine": 0.432,
           "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2745,9 +2750,39 @@
         },
         {
           "in_portfolio_short": "Луцька",
-          "outside_short": "Вашковецька",
-          "score": 0.049,
-          "goals_cosine": 0.081,
+          "outside_short": "Полтавська",
+          "score": 0.256,
+          "goals_cosine": 0.426,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Кам'янська",
+          "outside_short": "Тульчинська",
+          "score": 0.234,
+          "goals_cosine": 0.39,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Кам'янська",
+          "outside_short": "Житомирська",
+          "score": 0.229,
+          "goals_cosine": 0.381,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Кам'янська",
+          "outside_short": "Литовезька",
+          "score": 0.227,
+          "goals_cosine": 0.378,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2755,9 +2790,39 @@
         },
         {
           "in_portfolio_short": "Луцька",
-          "outside_short": "Дунаєвецька",
-          "score": 0.047,
-          "goals_cosine": 0.079,
+          "outside_short": "Журавненська",
+          "score": 0.222,
+          "goals_cosine": 0.37,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Кам'янська",
+          "outside_short": "Слобожанська",
+          "score": 0.433,
+          "goals_cosine": 0.367,
+          "geo_score": 0.85,
+          "mss_network": 0.0,
+          "track": "operational",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Луцька",
+          "outside_short": "Криворізька",
+          "score": 0.219,
+          "goals_cosine": 0.366,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Луцька",
+          "outside_short": "Дубовецька",
+          "score": 0.216,
+          "goals_cosine": 0.361,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "thematic",
@@ -2768,17 +2833,17 @@
         {
           "short": "Кам'янська",
           "oblast": "Дніпропетровська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Луцька",
           "oblast": "Волинська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Одеська",
           "oblast": "Одеська область",
-          "degree": 67
+          "degree": 82
         }
       ]
     },
@@ -2788,20 +2853,20 @@
       "with_goals": 2,
       "in_matching_graph": 2,
       "within_edge_count": 1,
-      "bridge_edge_count": 132,
+      "bridge_edge_count": 162,
       "hubs": [
         {
           "name": "Одеська міська територіальна громада",
           "short": "Одеська",
           "oblast": "Одеська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         },
         {
           "name": "Херсонська міська територіальна громада",
           "short": "Херсонська",
           "oblast": "Херсонська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         }
       ],
@@ -2809,8 +2874,8 @@
         {
           "a_short": "Одеська",
           "b_short": "Херсонська",
-          "score": 0.129,
-          "goals_cosine": 0.069,
+          "score": 0.149,
+          "goals_cosine": 0.103,
           "geo_score": 0.35,
           "mss_network": 0.0,
           "track": "mixed",
@@ -2820,102 +2885,102 @@
       "bridges": [
         {
           "in_portfolio_short": "Херсонська",
+          "outside_short": "Дунаєвецька",
+          "score": 0.169,
+          "goals_cosine": 0.282,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "thematic",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
           "outside_short": "Нікопольська",
-          "score": 0.063,
-          "goals_cosine": 0.105,
+          "score": 0.167,
+          "goals_cosine": 0.278,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "thematic",
+          "track": "mixed",
           "known": false
         },
         {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Лихівська",
-          "score": 0.054,
-          "goals_cosine": 0.09,
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Коростенська",
+          "score": 0.146,
+          "goals_cosine": 0.243,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "thematic",
+          "track": "mixed",
           "known": false
         },
         {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Білгород-Дністровська",
-          "score": 0.203,
-          "goals_cosine": 0.088,
-          "geo_score": 0.6,
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Бердянська",
+          "score": 0.145,
+          "goals_cosine": 0.241,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Шепетівська",
+          "score": 0.144,
+          "goals_cosine": 0.24,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Брацлавська",
+          "score": 0.143,
+          "goals_cosine": 0.239,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Збаразька",
+          "score": 0.142,
+          "goals_cosine": 0.237,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Дрогобицька",
+          "score": 0.141,
+          "goals_cosine": 0.234,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Херсонська",
+          "outside_short": "Вишнівська громада",
+          "score": 0.139,
+          "goals_cosine": 0.232,
+          "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
           "known": false
         },
         {
           "in_portfolio_short": "Одеська",
-          "outside_short": "Брацлавська",
-          "score": 0.05,
-          "goals_cosine": 0.083,
+          "outside_short": "Новомосковська",
+          "score": 0.138,
+          "goals_cosine": 0.231,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Херсонська",
-          "outside_short": "Дніпровська",
-          "score": 0.047,
-          "goals_cosine": 0.079,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Херсонська",
-          "outside_short": "Божедарівська",
-          "score": 0.047,
-          "goals_cosine": 0.079,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Херсонська",
-          "outside_short": "Кропивницька",
-          "score": 0.045,
-          "goals_cosine": 0.075,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Херсонська",
-          "outside_short": "Великодимерська",
-          "score": 0.045,
-          "goals_cosine": 0.074,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Батуринська",
-          "score": 0.044,
-          "goals_cosine": 0.073,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Херсонська",
-          "outside_short": "Батуринська",
-          "score": 0.044,
-          "goals_cosine": 0.073,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
+          "track": "mixed",
           "known": false
         }
       ],
@@ -2923,12 +2988,12 @@
         {
           "short": "Одеська",
           "oblast": "Одеська область",
-          "degree": 67
+          "degree": 82
         },
         {
           "short": "Херсонська",
           "oblast": "Херсонська область",
-          "degree": 67
+          "degree": 82
         }
       ]
     },
@@ -2938,13 +3003,13 @@
       "with_goals": 1,
       "in_matching_graph": 1,
       "within_edge_count": 0,
-      "bridge_edge_count": 67,
+      "bridge_edge_count": 82,
       "hubs": [
         {
           "name": "Одеська міська територіальна громада",
           "short": "Одеська",
           "oblast": "Одеська область",
-          "degree": 67,
+          "degree": 82,
           "source_quality": "full-strategy"
         }
       ],
@@ -2952,19 +3017,69 @@
       "bridges": [
         {
           "in_portfolio_short": "Одеська",
-          "outside_short": "Лихівська",
-          "score": 0.054,
-          "goals_cosine": 0.09,
+          "outside_short": "Нікопольська",
+          "score": 0.167,
+          "goals_cosine": 0.278,
           "geo_score": 0.0,
           "mss_network": 0.0,
-          "track": "thematic",
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Новомосковська",
+          "score": 0.138,
+          "goals_cosine": 0.231,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Запорізька",
+          "score": 0.124,
+          "goals_cosine": 0.206,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Львівська",
+          "score": 0.122,
+          "goals_cosine": 0.203,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Бердянська",
+          "score": 0.12,
+          "goals_cosine": 0.2,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
+          "known": false
+        },
+        {
+          "in_portfolio_short": "Одеська",
+          "outside_short": "Харківська",
+          "score": 0.115,
+          "goals_cosine": 0.191,
+          "geo_score": 0.0,
+          "mss_network": 0.0,
+          "track": "mixed",
           "known": false
         },
         {
           "in_portfolio_short": "Одеська",
           "outside_short": "Білгород-Дністровська",
-          "score": 0.203,
-          "goals_cosine": 0.088,
+          "score": 0.264,
+          "goals_cosine": 0.189,
           "geo_score": 0.6,
           "mss_network": 0.0,
           "track": "mixed",
@@ -2972,49 +3087,9 @@
         },
         {
           "in_portfolio_short": "Одеська",
-          "outside_short": "Брацлавська",
-          "score": 0.05,
-          "goals_cosine": 0.083,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Батуринська",
-          "score": 0.044,
-          "goals_cosine": 0.073,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Рівненська",
-          "score": 0.043,
-          "goals_cosine": 0.072,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Бердичівська",
-          "score": 0.043,
-          "goals_cosine": 0.072,
-          "geo_score": 0.0,
-          "mss_network": 0.0,
-          "track": "thematic",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Житомирська",
-          "score": 0.042,
-          "goals_cosine": 0.07,
+          "outside_short": "Коростенська",
+          "score": 0.113,
+          "goals_cosine": 0.188,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -3022,19 +3097,9 @@
         },
         {
           "in_portfolio_short": "Одеська",
-          "outside_short": "Херсонська",
-          "score": 0.129,
-          "goals_cosine": 0.069,
-          "geo_score": 0.35,
-          "mss_network": 0.0,
-          "track": "mixed",
-          "known": false
-        },
-        {
-          "in_portfolio_short": "Одеська",
-          "outside_short": "Божедарівська",
-          "score": 0.041,
-          "goals_cosine": 0.068,
+          "outside_short": "Ужгородська",
+          "score": 0.106,
+          "goals_cosine": 0.177,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -3042,9 +3107,9 @@
         },
         {
           "in_portfolio_short": "Одеська",
-          "outside_short": "Бурштинська",
-          "score": 0.04,
-          "goals_cosine": 0.067,
+          "outside_short": "Тульчинська",
+          "score": 0.102,
+          "goals_cosine": 0.169,
           "geo_score": 0.0,
           "mss_network": 0.0,
           "track": "mixed",
@@ -3055,7 +3120,7 @@
         {
           "short": "Одеська",
           "oblast": "Одеська область",
-          "degree": 67
+          "degree": 82
         }
       ]
     }
