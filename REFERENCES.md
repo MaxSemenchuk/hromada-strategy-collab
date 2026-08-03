@@ -11,6 +11,8 @@ Empirical notes on the Ukrainian МСС registry, DOBRE survey (partner-search
 bottleneck), «light» joint-project procedure, and ЗП 11412 live in
 [docs/mss-cooperation-research.md](docs/mss-cooperation-research.md) — use that
 file for stakeholder framing; keep this list for the theoretical stack.
+Short programme/fund cheat-sheet (DOBRE, EGAP, U-LEAD, GIZ, USAID status…):
+[docs/donor-programs.md](docs/donor-programs.md).
 
 1. **OECD — *Rebuilding Ukraine by Reinforcing Regional and Municipal Governance*.**
    Direct policy framing for why municipal-governance capacity (of which
