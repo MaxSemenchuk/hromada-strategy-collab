@@ -2,8 +2,8 @@
   {
     "a": "Косівська міська територіальна громада",
     "b": "Рокитнівська селищна територіальна громада",
-    "score": 0.507,
-    "goals_cosine": 0.846,
+    "score": 0.513,
+    "goals_cosine": 0.855,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -45,8 +45,8 @@
   {
     "a": "Рівненська міська територіальна громада",
     "b": "Дунаївецька міська територіальна громада",
-    "score": 0.382,
-    "goals_cosine": 0.637,
+    "score": 0.404,
+    "goals_cosine": 0.673,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -83,8 +83,8 @@
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Дунаївецька міська територіальна громада",
-    "score": 0.38,
-    "goals_cosine": 0.633,
+    "score": 0.401,
+    "goals_cosine": 0.669,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -121,8 +121,8 @@
   {
     "a": "Великодимерська селищна територіальна громада",
     "b": "Дунаївецька міська територіальна громада",
-    "score": 0.357,
-    "goals_cosine": 0.594,
+    "score": 0.382,
+    "goals_cosine": 0.636,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -150,49 +150,6 @@
       {
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Тернопільська міська територіальна громада",
-    "b": "Великодимерська селищна територіальна громада",
-    "score": 0.345,
-    "goals_cosine": 0.574,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.819,
-    "dream_overlap": 0.667,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
         "strength": "high"
       }
     ],
@@ -202,8 +159,8 @@
   {
     "a": "Коростенська міська територіальна громада",
     "b": "Дунаївецька міська територіальна громада",
-    "score": 0.344,
-    "goals_cosine": 0.573,
+    "score": 0.371,
+    "goals_cosine": 0.619,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -238,53 +195,10 @@
     "status": "hypothesis"
   },
   {
-    "a": "Рівненська міська територіальна громада",
-    "b": "Великодимерська селищна територіальна громада",
-    "score": 0.343,
-    "goals_cosine": 0.572,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.887,
-    "dream_overlap": 0.429,
-    "operational_score": null,
-    "suggested_theme": "Поводження з відходами",
-    "suggested_theme_id": "waste",
-    "suggested_form": "спільне КП",
-    "suggested_form_id": "joint_enterprise",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Поводження з відходами",
-      "theme_id": "waste",
-      "form": "спільне КП",
-      "form_id": "joint_enterprise",
-      "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · схожа стратегія",
-      "label_uk": "Поводження з відходами — спільне КП"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
     "a": "Тернопільська міська територіальна громада",
     "b": "Рівненська міська територіальна громада",
-    "score": 0.428,
-    "goals_cosine": 0.568,
+    "score": 0.453,
+    "goals_cosine": 0.61,
     "geo_score": 0.35,
     "mss_network": 0.0,
     "known": false,
@@ -329,10 +243,96 @@
     "status": "hypothesis"
   },
   {
+    "a": "Рівненська міська територіальна громада",
+    "b": "Великодимерська селищна територіальна громада",
+    "score": 0.366,
+    "goals_cosine": 0.61,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.887,
+    "dream_overlap": 0.429,
+    "operational_score": null,
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · схожа стратегія",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Тернопільська міська територіальна громада",
+    "b": "Великодимерська селищна територіальна громада",
+    "score": 0.365,
+    "goals_cosine": 0.608,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.819,
+    "dream_overlap": 0.667,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
     "a": "Рокитнівська селищна територіальна громада",
     "b": "Дунаївецька міська територіальна громада",
-    "score": 0.328,
-    "goals_cosine": 0.547,
+    "score": 0.349,
+    "goals_cosine": 0.581,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -369,8 +369,8 @@
   {
     "a": "Коростенська міська територіальна громада",
     "b": "Великодимерська селищна територіальна громада",
-    "score": 0.322,
-    "goals_cosine": 0.536,
+    "score": 0.347,
+    "goals_cosine": 0.579,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -410,16 +410,16 @@
     "status": "hypothesis"
   },
   {
-    "a": "Ганнівська сільська територіальна громада",
-    "b": "Дубовецька сільська територіальна громада",
-    "score": 0.318,
-    "goals_cosine": 0.531,
+    "a": "Рівненська міська територіальна громада",
+    "b": "Коростенська міська територіальна громада",
+    "score": 0.338,
+    "goals_cosine": 0.563,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.907,
-    "dream_overlap": 0.5,
+    "fiscal_similarity": 0.992,
+    "dream_overlap": 1.0,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
     "suggested_theme_id": "tourism",
@@ -455,8 +455,8 @@
   {
     "a": "Рівненська міська територіальна громада",
     "b": "Рокитнівська селищна територіальна громада",
-    "score": 0.402,
-    "goals_cosine": 0.524,
+    "score": 0.425,
+    "goals_cosine": 0.562,
     "geo_score": 0.35,
     "mss_network": 0.0,
     "known": false,
@@ -501,10 +501,182 @@
     "status": "hypothesis"
   },
   {
+    "a": "Тернопільська міська територіальна громада",
+    "b": "Коростенська міська територіальна громада",
+    "score": 0.332,
+    "goals_cosine": 0.553,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.924,
+    "dream_overlap": 0.667,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Тернопільська міська територіальна громада",
+    "b": "Рокитнівська селищна територіальна громада",
+    "score": 0.327,
+    "goals_cosine": 0.545,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.446,
+    "dream_overlap": 0.429,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "low"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Ганнівська сільська територіальна громада",
+    "b": "Дубовецька сільська територіальна громада",
+    "score": 0.327,
+    "goals_cosine": 0.545,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.907,
+    "dream_overlap": 0.5,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Рівненська міська територіальна громада",
+    "b": "Косівська міська територіальна громада",
+    "score": 0.321,
+    "goals_cosine": 0.536,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.564,
+    "dream_overlap": 0.429,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
     "a": "Новомосковська міська територіальна громада",
     "b": "Запорізька міська територіальна громада",
-    "score": 0.397,
-    "goals_cosine": 0.516,
+    "score": 0.405,
+    "goals_cosine": 0.529,
     "geo_score": 0.35,
     "mss_network": 0.0,
     "known": false,
@@ -549,225 +721,10 @@
     "status": "hypothesis"
   },
   {
-    "a": "Рівненська міська територіальна громада",
-    "b": "Коростенська міська територіальна громада",
-    "score": 0.308,
-    "goals_cosine": 0.513,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.992,
-    "dream_overlap": 1.0,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Тернопільська міська територіальна громада",
-    "b": "Коростенська міська територіальна громада",
-    "score": 0.305,
-    "goals_cosine": 0.508,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.924,
-    "dream_overlap": 0.667,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Брацлавська селищна територіальна громада",
-    "b": "Косівська міська територіальна громада",
-    "score": 0.305,
-    "goals_cosine": 0.508,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.95,
-    "dream_overlap": 0.4,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Тернопільська міська територіальна громада",
-    "b": "Рокитнівська селищна територіальна громада",
-    "score": 0.304,
-    "goals_cosine": 0.507,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.446,
-    "dream_overlap": 0.429,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "low"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Рівненська міська територіальна громада",
-    "b": "Косівська міська територіальна громада",
-    "score": 0.297,
-    "goals_cosine": 0.494,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.564,
-    "dream_overlap": 0.429,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "medium"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
     "a": "Лозівська міська територіальна громада",
     "b": "Дунаївецька міська територіальна громада",
-    "score": 0.296,
-    "goals_cosine": 0.494,
+    "score": 0.316,
+    "goals_cosine": 0.526,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -802,16 +759,16 @@
     "status": "hypothesis"
   },
   {
-    "a": "Вашковецька сільська територіальна громада",
-    "b": "Божедарівська селищна територіальна громада",
-    "score": 0.294,
-    "goals_cosine": 0.49,
+    "a": "Українська міська територіальна громада",
+    "b": "Дунаївецька міська територіальна громада",
+    "score": 0.313,
+    "goals_cosine": 0.522,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.562,
-    "dream_overlap": 0.167,
+    "fiscal_similarity": null,
+    "dream_overlap": null,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
     "suggested_theme_id": "tourism",
@@ -834,11 +791,6 @@
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
         "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "medium"
       }
     ],
     "discovery_primary": "strategy_goals",
@@ -847,8 +799,8 @@
   {
     "a": "Лозівська міська територіальна громада",
     "b": "Великодимерська селищна територіальна громада",
-    "score": 0.29,
-    "goals_cosine": 0.484,
+    "score": 0.312,
+    "goals_cosine": 0.52,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -888,54 +840,16 @@
     "status": "hypothesis"
   },
   {
-    "a": "Косівська міська територіальна громада",
-    "b": "Дунаївецька міська територіальна громада",
-    "score": 0.284,
-    "goals_cosine": 0.474,
+    "a": "Тернопільська міська територіальна громада",
+    "b": "Українська міська територіальна громада",
+    "score": 0.311,
+    "goals_cosine": 0.518,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": null,
-    "dream_overlap": null,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Зазимська сільська територіальна громада",
-    "b": "Божедарівська селищна територіальна громада",
-    "score": 0.282,
-    "goals_cosine": 0.47,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.599,
-    "dream_overlap": 0.429,
+    "fiscal_similarity": 0.756,
+    "dream_overlap": 0.667,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
     "suggested_theme_id": "tourism",
@@ -962,22 +876,22 @@
       {
         "id": "structural",
         "label_uk": "ресурси / DREAM",
-        "strength": "medium"
+        "strength": "high"
       }
     ],
     "discovery_primary": "strategy_goals",
     "status": "hypothesis"
   },
   {
-    "a": "Ганнівська сільська територіальна громада",
-    "b": "Зазимська сільська територіальна громада",
-    "score": 0.28,
-    "goals_cosine": 0.467,
+    "a": "Брацлавська селищна територіальна громада",
+    "b": "Косівська міська територіальна громада",
+    "score": 0.31,
+    "goals_cosine": 0.517,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.779,
+    "fiscal_similarity": 0.95,
     "dream_overlap": 0.4,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
@@ -1012,15 +926,15 @@
     "status": "hypothesis"
   },
   {
-    "a": "Ганнівська сільська територіальна громада",
-    "b": "Більшівцівська селищна територіальна громада",
-    "score": 0.279,
-    "goals_cosine": 0.465,
+    "a": "Косівська міська територіальна громада",
+    "b": "Дунаївецька міська територіальна громада",
+    "score": 0.31,
+    "goals_cosine": 0.517,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.46,
+    "fiscal_similarity": null,
     "dream_overlap": null,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
@@ -1044,97 +958,6 @@
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
         "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "medium"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Литовезька сільська територіальна громада",
-    "b": "Зазимська сільська територіальна громада",
-    "score": 0.278,
-    "goals_cosine": 0.464,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.751,
-    "dream_overlap": 0.125,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Литовезька сільська територіальна громада",
-    "b": "Дубовецька сільська територіальна громада",
-    "score": 0.278,
-    "goals_cosine": 0.464,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.878,
-    "dream_overlap": 0.0,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "high"
       }
     ],
     "discovery_primary": "strategy_goals",
@@ -1143,8 +966,8 @@
   {
     "a": "Рівненська міська територіальна громада",
     "b": "Лозівська міська територіальна громада",
-    "score": 0.278,
-    "goals_cosine": 0.463,
+    "score": 0.302,
+    "goals_cosine": 0.504,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -1184,53 +1007,10 @@
     "status": "hypothesis"
   },
   {
-    "a": "Бердичівська міська територіальна громада",
-    "b": "Лозівська міська територіальна громада",
-    "score": 0.274,
-    "goals_cosine": 0.457,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.8,
-    "dream_overlap": 0.667,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
     "a": "Тернопільська міська територіальна громада",
     "b": "Косівська міська територіальна громада",
-    "score": 0.361,
-    "goals_cosine": 0.456,
+    "score": 0.387,
+    "goals_cosine": 0.499,
     "geo_score": 0.35,
     "mss_network": 0.0,
     "known": false,
@@ -1275,16 +1055,16 @@
     "status": "hypothesis"
   },
   {
-    "a": "Зазимська сільська територіальна громада",
-    "b": "Більшівцівська селищна територіальна громада",
-    "score": 0.273,
-    "goals_cosine": 0.455,
+    "a": "Коростенська міська територіальна громада",
+    "b": "Українська міська територіальна громада",
+    "score": 0.299,
+    "goals_cosine": 0.498,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.239,
-    "dream_overlap": null,
+    "fiscal_similarity": 0.679,
+    "dream_overlap": 0.429,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
     "suggested_theme_id": "tourism",
@@ -1307,108 +1087,113 @@
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
         "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
       }
     ],
     "discovery_primary": "strategy_goals",
     "status": "hypothesis"
   },
   {
-    "a": "Зазимська сільська територіальна громада",
+    "a": "Вашковецька сільська територіальна громада",
+    "b": "Божедарівська селищна територіальна громада",
+    "score": 0.293,
+    "goals_cosine": 0.489,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.562,
+    "dream_overlap": 0.167,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Ганнівська сільська територіальна громада",
+    "b": "Зазимська сільська територіальна громада",
+    "score": 0.286,
+    "goals_cosine": 0.477,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.779,
+    "dream_overlap": 0.4,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Литовезька сільська територіальна громада",
     "b": "Дубовецька сільська територіальна громада",
-    "score": 0.269,
-    "goals_cosine": 0.449,
+    "score": 0.283,
+    "goals_cosine": 0.472,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.873,
-    "dream_overlap": 0.2,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Кропивницька міська територіальна громада",
-    "b": "Вашковецька сільська територіальна громада",
-    "score": 0.269,
-    "goals_cosine": 0.448,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": null,
-    "dream_overlap": 0.4,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія · агломерація лише з одного боку — не піднято до форми",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "medium",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія · агломерація лише з одного боку — не піднято до форми",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "low"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Брацлавська селищна територіальна громада",
-    "b": "Рокитнівська селищна територіальна громада",
-    "score": 0.268,
-    "goals_cosine": 0.447,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 1.0,
-    "dream_overlap": 0.4,
+    "fiscal_similarity": 0.878,
+    "dream_overlap": 0.0,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
     "suggested_theme_id": "tourism",
@@ -1443,73 +1228,30 @@
   },
   {
     "a": "Рокитнівська селищна територіальна громада",
-    "b": "Лозівська міська територіальна громада",
-    "score": 0.263,
-    "goals_cosine": 0.439,
+    "b": "Українська міська територіальна громада",
+    "score": 0.283,
+    "goals_cosine": 0.472,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.777,
-    "dream_overlap": 0.667,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Кам'янська міська територіальна громада",
-    "b": "Зазимська сільська територіальна громада",
-    "score": 0.258,
-    "goals_cosine": 0.431,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.769,
+    "fiscal_similarity": 0.202,
     "dream_overlap": 0.429,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
     "suggested_theme_id": "tourism",
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія · агломерація лише з одного боку — не піднято до форми",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
     "kind": "mss_candidate",
     "package": {
       "theme": "Туризм / кластер",
       "theme_id": "tourism",
       "form": "спільний проєкт",
       "form_id": "joint_project",
-      "confidence": "medium",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія · агломерація лише з одного боку — не піднято до форми",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
       "label_uk": "Туризм / кластер — спільний проєкт"
     },
     "signals": [
@@ -1521,23 +1263,23 @@
       {
         "id": "structural",
         "label_uk": "ресурси / DREAM",
-        "strength": "high"
+        "strength": "low"
       }
     ],
     "discovery_primary": "strategy_goals",
     "status": "hypothesis"
   },
   {
-    "a": "Литовезька сільська територіальна громада",
-    "b": "Ганнівська сільська територіальна громада",
-    "score": 0.258,
-    "goals_cosine": 0.43,
+    "a": "Ганнівська сільська територіальна громада",
+    "b": "Більшівцівська селищна територіальна громада",
+    "score": 0.281,
+    "goals_cosine": 0.469,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.971,
-    "dream_overlap": 0.2,
+    "fiscal_similarity": 0.46,
+    "dream_overlap": null,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
     "suggested_theme_id": "tourism",
@@ -1564,7 +1306,7 @@
       {
         "id": "structural",
         "label_uk": "ресурси / DREAM",
-        "strength": "high"
+        "strength": "medium"
       }
     ],
     "discovery_primary": "strategy_goals",
@@ -1573,8 +1315,8 @@
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Лозівська міська територіальна громада",
-    "score": 0.256,
-    "goals_cosine": 0.427,
+    "score": 0.28,
+    "goals_cosine": 0.467,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -1615,15 +1357,15 @@
   },
   {
     "a": "Литовезька сільська територіальна громада",
-    "b": "Вашковецька сільська територіальна громада",
-    "score": 0.255,
-    "goals_cosine": 0.425,
+    "b": "Зазимська сільська територіальна громада",
+    "score": 0.28,
+    "goals_cosine": 0.467,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.411,
-    "dream_overlap": 0.2,
+    "fiscal_similarity": 0.751,
+    "dream_overlap": 0.125,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
     "suggested_theme_id": "tourism",
@@ -1650,190 +1392,23 @@
       {
         "id": "structural",
         "label_uk": "ресурси / DREAM",
-        "strength": "low"
+        "strength": "high"
       }
     ],
     "discovery_primary": "strategy_goals",
     "status": "hypothesis"
   },
   {
-    "a": "Мукачівська міська територіальна громада",
+    "a": "Зазимська сільська територіальна громада",
     "b": "Божедарівська селищна територіальна громада",
-    "score": 0.254,
-    "goals_cosine": 0.424,
+    "score": 0.279,
+    "goals_cosine": 0.465,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.432,
-    "dream_overlap": 0.25,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "low"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Полтавська міська територіальна громада",
-    "b": "Журавненська селищна територіальна громада",
-    "score": 0.254,
-    "goals_cosine": 0.423,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": null,
-    "dream_overlap": 0.125,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "low"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Криворізька міська територіальна громада",
-    "b": "Тульчинська міська територіальна громада",
-    "score": 0.253,
-    "goals_cosine": 0.422,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": null,
-    "dream_overlap": 0.25,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "low"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Українська міська територіальна громада",
-    "b": "Бердянська міська територіальна громада",
-    "score": 0.253,
-    "goals_cosine": 0.421,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.0,
-    "dream_overlap": null,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Мукачівська міська територіальна громада",
-    "b": "Литовезька сільська територіальна громада",
-    "score": 0.251,
-    "goals_cosine": 0.419,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.583,
-    "dream_overlap": 0.125,
+    "fiscal_similarity": 0.599,
+    "dream_overlap": 0.429,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
     "suggested_theme_id": "tourism",
@@ -1867,16 +1442,398 @@
     "status": "hypothesis"
   },
   {
-    "a": "Вижницька міська територіальна громада",
-    "b": "Вашковецька сільська територіальна громада",
-    "score": 0.334,
-    "goals_cosine": 0.411,
+    "a": "Криворізька міська територіальна громада",
+    "b": "Тульчинська міська територіальна громада",
+    "score": 0.279,
+    "goals_cosine": 0.464,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": null,
+    "dream_overlap": 0.25,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "low"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Зазимська сільська територіальна громада",
+    "b": "Дубовецька сільська територіальна громада",
+    "score": 0.278,
+    "goals_cosine": 0.463,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.873,
+    "dream_overlap": 0.2,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Брацлавська селищна територіальна громада",
+    "b": "Рокитнівська селищна територіальна громада",
+    "score": 0.276,
+    "goals_cosine": 0.46,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 1.0,
+    "dream_overlap": 0.4,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Зазимська сільська територіальна громада",
+    "b": "Більшівцівська селищна територіальна громада",
+    "score": 0.274,
+    "goals_cosine": 0.457,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.239,
+    "dream_overlap": null,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Рокитнівська селищна територіальна громада",
+    "b": "Лозівська міська територіальна громада",
+    "score": 0.274,
+    "goals_cosine": 0.456,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.777,
+    "dream_overlap": 0.667,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Полтавська міська територіальна громада",
+    "b": "Журавненська селищна територіальна громада",
+    "score": 0.269,
+    "goals_cosine": 0.448,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": null,
+    "dream_overlap": 0.125,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "low"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Рокитнівська селищна територіальна громада",
+    "b": "Великодимерська селищна територіальна громада",
+    "score": 0.266,
+    "goals_cosine": 0.444,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.627,
+    "dream_overlap": 0.25,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Кам'янська міська територіальна громада",
+    "b": "Зазимська сільська територіальна громада",
+    "score": 0.266,
+    "goals_cosine": 0.443,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.769,
+    "dream_overlap": 0.429,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія · агломерація лише з одного боку — не піднято до форми",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "medium",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Коростенська міська територіальна громада",
+    "b": "Білгород-Дністровська міська територіальна громада",
+    "score": 0.265,
+    "goals_cosine": 0.441,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.998,
+    "dream_overlap": 1.0,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Рокитнівська селищна територіальна громада",
+    "b": "Коростенська міська територіальна громада",
+    "score": 0.351,
+    "goals_cosine": 0.439,
     "geo_score": 0.35,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.48,
-    "dream_overlap": 0.4,
+    "fiscal_similarity": 0.522,
+    "dream_overlap": 0.667,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
     "suggested_theme_id": "tourism",
@@ -1916,52 +1873,9 @@
   },
   {
     "a": "Брацлавська селищна територіальна громада",
-    "b": "Лозівська міська територіальна громада",
-    "score": 0.245,
-    "goals_cosine": 0.408,
-    "geo_score": 0.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "thematic",
-    "fiscal_similarity": 0.776,
-    "dream_overlap": 0.4,
-    "operational_score": null,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "high",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "high",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Туризм / кластер — спільний проєкт"
-    },
-    "signals": [
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "strategy_goals",
-    "status": "hypothesis"
-  },
-  {
-    "a": "Брацлавська селищна територіальна громада",
     "b": "Великодимерська селищна територіальна громада",
-    "score": 0.242,
-    "goals_cosine": 0.404,
+    "score": 0.264,
+    "goals_cosine": 0.439,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -2001,16 +1915,59 @@
     "status": "hypothesis"
   },
   {
-    "a": "Литовезька сільська територіальна громада",
-    "b": "Галицька міська територіальна громада",
-    "score": 0.242,
-    "goals_cosine": 0.403,
+    "a": "Кропивницька міська територіальна громада",
+    "b": "Вашковецька сільська територіальна громада",
+    "score": 0.262,
+    "goals_cosine": 0.437,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
     "track": "thematic",
-    "fiscal_similarity": 0.804,
-    "dream_overlap": 0.143,
+    "fiscal_similarity": null,
+    "dream_overlap": 0.4,
+    "operational_score": null,
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · схожа стратегія · агломерація лише з одного боку — не піднято до форми",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · схожа стратегія · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "low"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Литовезька сільська територіальна громада",
+    "b": "Ганнівська сільська територіальна громада",
+    "score": 0.262,
+    "goals_cosine": 0.437,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.971,
+    "dream_overlap": 0.2,
     "operational_score": null,
     "suggested_theme": "Туризм / кластер",
     "suggested_theme_id": "tourism",
@@ -2046,8 +2003,8 @@
   {
     "a": "Новомосковська міська територіальна громада",
     "b": "Нікопольська міська територіальна громада",
-    "score": 0.327,
-    "goals_cosine": 0.399,
+    "score": 0.348,
+    "goals_cosine": 0.434,
     "geo_score": 0.35,
     "mss_network": 0.0,
     "known": false,
@@ -2092,10 +2049,53 @@
     "status": "hypothesis"
   },
   {
-    "a": "Полтавська міська територіальна громада",
-    "b": "Житомирська міська територіальна громада",
-    "score": 0.238,
-    "goals_cosine": 0.396,
+    "a": "Косівська міська територіальна громада",
+    "b": "Українська міська територіальна громада",
+    "score": 0.259,
+    "goals_cosine": 0.432,
+    "geo_score": 0.0,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "thematic",
+    "fiscal_similarity": 0.251,
+    "dream_overlap": 0.429,
+    "operational_score": null,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "low"
+      }
+    ],
+    "discovery_primary": "strategy_goals",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Криворізька міська територіальна громада",
+    "b": "Полтавська міська територіальна громада",
+    "score": 0.259,
+    "goals_cosine": 0.431,
     "geo_score": 0.0,
     "mss_network": 0.0,
     "known": false,
@@ -2103,21 +2103,21 @@
     "fiscal_similarity": null,
     "dream_overlap": 0.429,
     "operational_score": null,
-    "suggested_theme": "Освіта",
-    "suggested_theme_id": "education",
-    "suggested_form": "спільне утримання",
-    "suggested_form_id": "joint_finance",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · схожа стратегія",
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Освіта",
-      "theme_id": "education",
-      "form": "спільне утримання",
-      "form_id": "joint_finance",
-      "confidence": "medium",
-      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · схожа стратегія",
-      "label_uk": "Освіта — спільне утримання"
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "label_uk": "Туризм / кластер — спільний проєкт"
     },
     "signals": [
       {

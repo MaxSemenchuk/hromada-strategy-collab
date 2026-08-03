@@ -15,7 +15,7 @@
     "suggested_theme_id": "tourism",
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
-    "suggest_confidence": "medium",
+    "suggest_confidence": "high",
     "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС",
     "kind": "mss_candidate",
     "package": {
@@ -23,7 +23,7 @@
       "theme_id": "tourism",
       "form": "спільний проєкт",
       "form_id": "joint_project",
-      "confidence": "medium",
+      "confidence": "high",
       "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС",
       "label_uk": "Туризм / кластер — спільний проєкт"
     },
@@ -91,7 +91,7 @@
     "suggested_theme_id": "tourism",
     "suggested_form": "спільний проєкт",
     "suggested_form_id": "joint_project",
-    "suggest_confidence": "medium",
+    "suggest_confidence": "high",
     "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС",
     "kind": "mss_candidate",
     "package": {
@@ -99,7 +99,7 @@
       "theme_id": "tourism",
       "form": "спільний проєкт",
       "form_id": "joint_project",
-      "confidence": "medium",
+      "confidence": "high",
       "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС",
       "label_uk": "Туризм / кластер — спільний проєкт"
     },
@@ -152,10 +152,542 @@
     "status": "hypothesis"
   },
   {
+    "a": "Вижницька міська територіальна громада",
+    "b": "Кадубовецька сільська територіальна громада",
+    "a_short": "Вижницька",
+    "b_short": "Кадубовецька",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Вижницька міська територіальна громада",
+    "b": "Кельменецька селищна територіальна громада",
+    "a_short": "Вижницька",
+    "b_short": "Кельменецька",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Вижницька міська територіальна громада",
+    "b": "Клішковецька сільська територіальна громада",
+    "a_short": "Вижницька",
+    "b_short": "Клішковецька",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Вижницька міська територіальна громада",
+    "b": "Рукшинська сільська територіальна громада",
+    "a_short": "Вижницька",
+    "b_short": "Рукшинська",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Вижницька міська територіальна громада",
+    "b": "Сокирянська міська територіальна громада",
+    "a_short": "Вижницька",
+    "b_short": "Сокирянська",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
     "a": "Галицька міська територіальна громада",
     "b": "Дубовецька сільська територіальна громада",
     "a_short": "Галицька",
     "b_short": "Дубовецька",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Кадубовецька сільська територіальна громада",
+    "b": "Кельменецька селищна територіальна громада",
+    "a_short": "Кадубовецька",
+    "b_short": "Кельменецька",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Кадубовецька сільська територіальна громада",
+    "b": "Клішковецька сільська територіальна громада",
+    "a_short": "Кадубовецька",
+    "b_short": "Клішковецька",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Кадубовецька сільська територіальна громада",
+    "b": "Рукшинська сільська територіальна громада",
+    "a_short": "Кадубовецька",
+    "b_short": "Рукшинська",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Кадубовецька сільська територіальна громада",
+    "b": "Сокирянська міська територіальна громада",
+    "a_short": "Кадубовецька",
+    "b_short": "Сокирянська",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Кельменецька селищна територіальна громада",
+    "b": "Клішковецька сільська територіальна громада",
+    "a_short": "Кельменецька",
+    "b_short": "Клішковецька",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Кельменецька селищна територіальна громада",
+    "b": "Рукшинська сільська територіальна громада",
+    "a_short": "Кельменецька",
+    "b_short": "Рукшинська",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Кельменецька селищна територіальна громада",
+    "b": "Сокирянська міська територіальна громада",
+    "a_short": "Кельменецька",
+    "b_short": "Сокирянська",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": "мережа",
+    "reasons": [
+      "обидві згадують МСС/кооперацію (тема: мережа)"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Клішковецька сільська територіальна громада",
+    "b": "Рукшинська сільська територіальна громада",
+    "a_short": "Клішковецька",
+    "b_short": "Рукшинська",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Клішковецька сільська територіальна громада",
+    "b": "Сокирянська міська територіальна громада",
+    "a_short": "Клішковецька",
+    "b_short": "Сокирянська",
     "track": "explicit-ask",
     "explicit_ask_score": 0.75,
     "theme": null,
@@ -418,6 +950,44 @@
     "status": "hypothesis"
   },
   {
+    "a": "Рукшинська сільська територіальна громада",
+    "b": "Сокирянська міська територіальна громада",
+    "a_short": "Рукшинська",
+    "b_short": "Сокирянська",
+    "track": "explicit-ask",
+    "explicit_ask_score": 0.75,
+    "theme": null,
+    "reasons": [
+      "обидві згадують МСС/кооперацію"
+    ],
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+      "label_uk": "Інше / не визначено — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "explicit_ask",
+    "status": "hypothesis"
+  },
+  {
     "a": "Слобожанська селищна територіальна громада",
     "b": "Божедарівська селищна територіальна громада",
     "a_short": "Слобожанська",
@@ -429,21 +999,21 @@
       "обидві згадують МСС/кооперацію (тема: відходи)"
     ],
     "known": false,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "high",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "high",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
