@@ -33,7 +33,7 @@ offer it back to KSE as a complementary layer.
 Both projects use the official Мінрегіон hromada classifier code
 (`UA…`, 17 characters) as the stable row identifier.
 
-- **This repo:** `Koatuu / Katottg` in NocoDB; `katottg` in
+- **This repo:** `Katottg` on `data/releases/hromadas.json`; `katottg` in
   `data/releases/hromadas.json` and `data/releases/matching-edges.json`.
 - **KSE:** `hromada_code` in `data/derived/hromada.csv` and sibling derived
   files; same codes, same 1,469 mainland hromadas (Crimea excluded).
@@ -97,7 +97,7 @@ Items KSE does not currently publish that we can cross-link or share on request:
 
 | Asset | Location | What it adds for KSE-side research |
 |-------|----------|-------------------------------------|
-| **Strategy extractions** | NocoDB `Hromadas` table → `data/releases/hromadas.json` | Structured `Goals`, `Projects`, `Strengths`, `Challenges`, `PartnersMentioned`, `MSSAgreements` from the actual strategy PDF — narrative intent beyond covariate proxies |
+| **Strategy extractions** | `data/releases/hromadas.json` | Structured `Goals`, `Projects`, `Strengths`, `Challenges`, `PartnersMentioned`, `MSSAgreements` from the actual strategy PDF — narrative intent beyond covariate proxies |
 | **Matching edges (hypotheses)** | `data/releases/matching-edges.json` | Pairwise goals-cosine scores over the text-mined corpus; `known: true` marks a curated registry-confirmed subset for method regression; `matching-edges.pin-corpus.json` lists all `mss_network>0` overlaps; other pairs are *candidates*, not facts |
 | **Retrieval nulls** | `SourceQuality = none` rows | Honest record of hromadas where no findable strategy exists — useful when interpreting gaps in text-based outcomes |
 
@@ -153,5 +153,5 @@ claim. Tune weights after the first outreach cohort.
 | `yarn fetch-dream` → `dream-priorities.json` | Done (2026-07-29) |
 
 Matching reads `data/releases/hromadas.json` and attaches KSE covariates at runtime
-via `enrich_from_kse.py` — not duplicated in NocoDB. Resource proxies and DREAM
+via `enrich_from_kse.py` — not vendored into this release. Resource proxies and DREAM
 revealed priorities are separate release files for complementary / proxy use.

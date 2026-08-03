@@ -462,7 +462,10 @@ README / mss-research / `.cursor/rules`; HydroBASINS underlay already on PIN map
       (`A @ B.T`, was broken `np.ix_` slice since v4) (`yarn test-length-norm`) — 2026-07-31
 - [ ] Product decision after first stakeholder conversations (open-data vs matchmaking vs W3I-internal)
 - [x] Prefer local `data/releases/hromadas.json` over a separate NocoDB base —
-      `--write-release` on `structure-hromada`; NocoDB remains optional sync — 2026-07-31
+      `--write-release` on `structure-hromada`; NocoDB sync **removed from yarn**
+      (archived under `scripts/legacy/nocodb/`) — 2026-08-03
+- [x] Move Pass 1–5 / early embed scripts to `scripts/analysis/legacy/` —
+      canon remains `match.py` v7.1 — 2026-08-03
 - [x] Export `DonorsPrograms` into public `hromadas.json` + `donor-synergy.json`
       / docs `funds.html` portfolio lenses (within / bridges / hubs) — 2026-07-24
 - [x] Split matcher outputs into thematic vs operational ranked lists
