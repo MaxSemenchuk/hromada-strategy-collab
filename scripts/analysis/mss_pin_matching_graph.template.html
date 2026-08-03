@@ -24,6 +24,7 @@
     --dot-universe: #94a3b8;
     --dot-corpus: #d9a548;
     --dot-twinning: #6366f1;
+    --basin-stroke: #38bdf8;
   }
   * { box-sizing: border-box; }
   body {
@@ -167,6 +168,12 @@
     width: 9px; height: 9px; border-radius: 50%;
     background: var(--dot-corpus); box-shadow: 0 0 0 3px rgba(217, 165, 72, 0.28);
     border: 0; margin-top: 0.4rem; margin-left: 6px; margin-right: 7px;
+  }
+  .sw.basins {
+    border-color: var(--basin-stroke);
+    border-top-style: solid;
+    border-top-width: 2px;
+    opacity: 0.85;
   }
   .stats {
     display: grid;
@@ -616,6 +623,14 @@
           <span class="layer-desc" data-i18n="layer.twinning.desc">Індиго — громади з UA–EU twinning (SKEW / стратегія)</span>
         </span>
       </label>
+      <label class="layer">
+        <input type="checkbox" id="layer-basins"/>
+        <span class="sw basins" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="layer.basins.title">Підкладка · водозбори</span>
+          <span class="layer-desc" data-i18n="layer.basins.desc">HydroBASINS lev06 — гідрологічні басейни (не юридичні RBD DAVR)</span>
+        </span>
+      </label>
     </div>
     <p class="section-label" data-i18n="stats.label">Цифри</p>
     <div class="stats">
@@ -632,6 +647,7 @@
       <div class="stat"><span data-i18n="stat.complementary">Гіпотез «доповнення»</span><b id="s-complementary">—</b></div>
       <div class="stat"><span data-i18n="stat.explicitAsk">Явних запитів МСС</span><b id="s-explicit-ask">—</b></div>
       <div class="stat"><span data-i18n="stat.twinning">З побратимами ЄС</span><b id="s-twinning">—</b></div>
+      <div class="stat"><span data-i18n="stat.basins">Водозборів (підкладка)</span><b id="s-basins">—</b></div>
     </div>
     <p class="hint" id="hint">Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по громаді відкриває картку з деталями.</p>
   </aside>
@@ -659,6 +675,7 @@ document.getElementById('s-operational').textContent = meta.operational_edges;
 document.getElementById('s-complementary').textContent = meta.complementary_edges ?? 0;
 document.getElementById('s-explicit-ask').textContent = meta.explicit_ask_edges ?? 0;
 document.getElementById('s-twinning').textContent = meta.twinning_hromadas ?? 0;
+document.getElementById('s-basins').textContent = meta.basins ?? 0;
 
 const mapEl = document.getElementById('map');
 const canvas = document.getElementById('c');
@@ -682,7 +699,8 @@ let resourcesByCode = null;
 let resourcesPromise = null;
 let layers = {
   universe: true, pin: true, known: true, pinCorpus: true,
-  thematic: true, operational: false, complementary: false, explicitAsk: false, corpus: false, twinning: false,
+  thematic: true, operational: false, complementary: false, explicitAsk: false,
+  corpus: false, twinning: false, basins: false,
 };
 
 function esc(s) {
@@ -995,6 +1013,7 @@ function renderDetail(n) {
   detailTitle.textContent = title;
   const bits = [];
   if (n.oblast) bits.push(esc(n.oblast));
+  if (n.basin_id != null) bits.push(esc(t('popup.basin')) + ' ' + esc(String(n.basin_id)));
   if (n.type) bits.push(esc(n.type));
   if (n.population != null) bits.push(esc(fmtNum(n.population)) + ' ' + esc(t('popup.people')));
 
@@ -1170,6 +1189,23 @@ if (uaHoles.length) {
   map.setMaxBounds(bounds.pad(0.35));
 }
 
+const basinsLayer = L.layerGroup(); // default OFF
+if (DATA.basins && DATA.basins.features && DATA.basins.features.length) {
+  map.createPane('basinsPane');
+  map.getPane('basinsPane').style.zIndex = 350; // above tiles, below overlayPane (400)
+  L.geoJSON(DATA.basins, {
+    pane: 'basinsPane',
+    style: () => ({
+      color: '#38bdf8',
+      weight: 1,
+      opacity: 0.55,
+      fillColor: '#0ea5e9',
+      fillOpacity: 0.06,
+      interactive: false,
+    }),
+  }).addTo(basinsLayer);
+}
+
 const pinEdgesLayer = L.layerGroup().addTo(map);
 const knownEdgesLayer = L.layerGroup().addTo(map);
 const pinCorpusEdgesLayer = L.layerGroup().addTo(map);
@@ -1266,6 +1302,7 @@ function syncLayerVisibility() {
     else if (map.hasLayer(layer)) map.removeLayer(layer);
   };
   show(universeLayer, layers.universe);
+  show(basinsLayer, layers.basins);
   show(pinEdgesLayer, layers.pin);
   show(knownEdgesLayer, layers.known);
   show(pinCorpusEdgesLayer, layers.pinCorpus);
@@ -1290,11 +1327,12 @@ function syncLayers() {
   layers.explicitAsk = document.getElementById('layer-explicit-ask').checked;
   layers.corpus = document.getElementById('layer-corpus').checked;
   layers.twinning = document.getElementById('layer-twinning').checked;
+  layers.basins = document.getElementById('layer-basins').checked;
   if (mode === 'map') {
     rebuildMapLayers();
   }
 }
-['layer-universe','layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-corpus','layer-twinning'].forEach(id => {
+['layer-universe','layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-corpus','layer-twinning','layer-basins'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
@@ -1629,6 +1667,10 @@ window.PAGE_I18N = {
     "layer.explicitAsk.desc": "Рожеві — у стратегії прямо згадано кооперацію",
     "layer.corpus.title": "Громади зі стратегіями",
     "layer.corpus.desc": "Підсвітити громади, чиї тексти вже в аналізі",
+    "layer.twinning.title": "Міста-побратими ЄС",
+    "layer.twinning.desc": "Індиго — громади з UA–EU twinning (SKEW / стратегія)",
+    "layer.basins.title": "Підкладка · водозбори",
+    "layer.basins.desc": "HydroBASINS lev06 — гідрологічні басейни (не юридичні RBD DAVR)",
     "stats.label": "Цифри",
     "stat.universe": "Громад на мапі",
     "stat.portal": "З посиланням на портал",
@@ -1642,6 +1684,8 @@ window.PAGE_I18N = {
     "stat.operational": "Гіпотез «зручний сусід»",
     "stat.complementary": "Гіпотез «доповнення»",
     "stat.explicitAsk": "Явних запитів МСС",
+    "stat.twinning": "З побратимами ЄС",
+    "stat.basins": "Водозборів (підкладка)",
     "hint.map": "Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по громаді відкриває картку з деталями.",
     "hint.graph": "Режим «Граф» показує лише мережу угод і гіпотез. Клац по ноді — картка з деталями. Для повної мапи з усіма громадами перемкніть на «Мапу».",
     "popup.people": "осіб",
@@ -1649,6 +1693,7 @@ window.PAGE_I18N = {
     "popup.strategy": "Стратегія / джерело",
     "popup.inPin": "є угода МСС",
     "popup.inCorpus": "стратегія в корпусі",
+    "popup.basin": "водозбір",
     "popup.degree": "звʼязків у реєстрі МСС",
     "popup.degreeShort": "звʼязків у реєстрі",
     "popup.noLink": "Немає посилання на портал або стратегію",
@@ -1712,6 +1757,10 @@ window.PAGE_I18N = {
     "layer.explicitAsk.desc": "Pink — strategy text names inter-municipal cooperation",
     "layer.corpus.title": "Hromadas with strategies",
     "layer.corpus.desc": "Highlight hromadas whose texts are already in the analysis",
+    "layer.twinning.title": "EU twin cities",
+    "layer.twinning.desc": "Indigo — hromadas with UA–EU twinning (SKEW / strategy)",
+    "layer.basins.title": "Underlay · catchments",
+    "layer.basins.desc": "HydroBASINS lev06 — hydrological basins (not legal DAVR RBDs)",
     "stats.label": "Figures",
     "stat.universe": "Hromadas on the map",
     "stat.portal": "With a portal link",
@@ -1725,6 +1774,8 @@ window.PAGE_I18N = {
     "stat.operational": "“Convenient neighbour” hypotheses",
     "stat.complementary": "“Complement” hypotheses",
     "stat.explicitAsk": "Explicit IMC asks",
+    "stat.twinning": "With EU twin cities",
+    "stat.basins": "Catchments (underlay)",
     "hint.map": "Grey nodes are all hromadas with coordinates, not only those whose strategies we have already parsed. Click a hromada to open a detail card.",
     "hint.graph": "Graph mode shows only the agreement and hypothesis network. Click a node for a detail card. Switch to Map for the full map with all hromadas.",
     "popup.people": "people",
@@ -1732,6 +1783,7 @@ window.PAGE_I18N = {
     "popup.strategy": "Strategy / source",
     "popup.inPin": "has IMC agreement",
     "popup.inCorpus": "strategy in corpus",
+    "popup.basin": "catchment",
     "popup.degree": "links in the IMC registry",
     "popup.degreeShort": "registry links",
     "popup.noLink": "No portal or strategy link",

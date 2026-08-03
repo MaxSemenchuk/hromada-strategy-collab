@@ -182,3 +182,26 @@ stable **EDRPOУ → KATOTTG** join at hromada level is not in this repo yet (DR
 parties expose EDR ids; mapping them to municipal budgets needs a separate
 registry). Do not invent tender→hromada heuristics. Revisit after an EDR/budget
 code bridge exists.
+
+---
+
+## HydroBASINS / river catchments (water underlay)
+
+- **Reviewed:** 2026-08-03
+- **Spike:** `python3 scripts/analysis/basin_overlay_spike.py` (optional `--fetch`)
+- **Source:** [HydroBASINS EU lev06 v1c](https://data.hydrosheds.org/file/hydrobasins/standard/hybas_eu_lev06_v1c.zip)
+  (HydroSHEDS) — hydrological catchments, **not** the nine legal Ukrainian
+  river basin districts (ВК ст. 13-1 / наказ Мінприроди №103). Official DAVR
+  WFS (`geoportal.davr.gov.ua:81`) was unreachable at review time; prefer
+  legal RBD polygons when that geoportal recovers.
+- **Cache:** `data/cache/water/` (gitignored). Clipped UA layer + simplified
+  web GeoJSON: [`docs/geo/ukraine-basins-lev06.geojson`](geo/ukraine-basins-lev06.geojson).
+- **Join:** KSE `lat_center`/`lon_center` → point-in-polygon → `basin_id`
+  (`data/research-log/hromada-basin-assignment.json`).
+- **Spike finding (lev06):** PIN undirected edges ~77% same-oblast vs ~53%
+  same-basin (finer than oblast). Control water pair Галицька↔Дубовецька
+  shares a basin; Дністровський каньйон (reg#721, 22 parties) spans **5**
+  basins / 4 oblasts. Theme `water` (ЖКГ utilities) is **not** the same as
+  basin-management IMC — do not fold `same_basin` into v7 `score`.
+- **Product use:** optional PIN-map underlay «Підкладка · водозбори»
+  (`yarn graph-pin-matching`); discovery context only, never `known: true`.
