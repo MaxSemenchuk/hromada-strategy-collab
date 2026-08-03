@@ -39,6 +39,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 from goal_overlap import explain_goal_overlap  # noqa: E402
+from mss_suggest import (  # noqa: E402
+    THEME_LABELS,
+    classify_registry_theme,
+    theme_label,
+)
 from tracks import operational_slice, thematic_slice  # noqa: E402
 
 PIN = ROOT / "data/cache/kse/partnerships-hromadas-network.csv"
@@ -262,14 +267,30 @@ def load_pin(registry: dict[str, dict] | None = None) -> tuple[dict[str, dict], 
             form = _clip(info.get("form") or "", 90)
             if form and form.casefold() != title.casefold():
                 item["form"] = form
+            raw_title = info.get("title") or ""
+            tid, _score = classify_registry_theme(raw_title, form, title)
+            item["theme_id"] = tid
+            item["theme"] = theme_label(tid) or tid
             agreements.append(item)
             if len(agreements) >= MAX_AGREEMENTS_PER_EDGE:
                 break
         if agreements:
             edge["agreements"] = agreements
             edge["reasons"] = [x["title"] for x in agreements[:4]]
+            theme_ids = []
+            seen_t: set[str] = set()
+            for agr in agreements:
+                tid = agr.get("theme_id") or "other"
+                if tid not in seen_t:
+                    seen_t.add(tid)
+                    theme_ids.append(tid)
+            edge["theme_ids"] = theme_ids
+            # Human labels for detail chips (not the legal-form string formerly stuffed in theme)
+            edge["themes"] = [
+                theme_label(t) or t for t in theme_ids if t != "other"
+            ][:6]
             if len(agreements) == 1 and agreements[0].get("form"):
-                edge["theme"] = agreements[0]["form"]
+                edge["form"] = agreements[0]["form"]
         edges.append(edge)
     return nodes, edges
 
@@ -289,9 +310,14 @@ def explain_fields(e: dict) -> dict:
             out["reasons"] = clipped
     if e.get("theme"):
         out["theme"] = e["theme"]
+    if e.get("form"):
+        out["form"] = e["form"]
     themes = e.get("themes")
     if isinstance(themes, list) and themes:
         out["themes"] = [str(t).strip() for t in themes if t][:6]
+    theme_ids = e.get("theme_ids")
+    if isinstance(theme_ids, list) and theme_ids:
+        out["theme_ids"] = [str(t).strip() for t in theme_ids if t][:8]
     for key in (
         "suggested_theme",
         "suggested_form",
@@ -476,6 +502,30 @@ def build_payload() -> dict:
     geo = load_geo()
     mss_registry = load_mss_registry()
     pin_nodes, pin_edges = load_pin(mss_registry)
+
+    # Theme catalog for PIN filter UI — unique registry agreements, not edge fan-out
+    # (multi-party deals otherwise explode one title into dozens of pair edges).
+    pin_theme_regs: dict[str, set[str]] = defaultdict(set)
+    for e in pin_edges:
+        agrs = e.get("agreements") or []
+        if not agrs:
+            pin_theme_regs["other"].add(f"edge:{e['a']}:{e['b']}")
+            continue
+        for agr in agrs:
+            tid = agr.get("theme_id") or "other"
+            pin_theme_regs[tid].add(str(agr.get("n") or agr.get("title") or id(agr)))
+    pin_theme_counts = {tid: len(regs) for tid, regs in pin_theme_regs.items()}
+    pin_themes = [
+        {
+            "id": tid,
+            "label_uk": THEME_LABELS.get(tid, tid),
+            "n": pin_theme_counts[tid],
+        }
+        for tid in sorted(
+            pin_theme_counts.keys(),
+            key=lambda t: (-pin_theme_counts[t], THEME_LABELS.get(t, t)),
+        )
+    ]
 
     hromadas = json.loads(HROMADAS.read_text(encoding="utf-8"))
     # Full metadata index (1,469) — portals / names / corpus flags by KATOTTG
@@ -759,6 +809,10 @@ def build_payload() -> dict:
             "pin_agreements_enriched": sum(
                 1 for e in pin_edges if e.get("agreements")
             ),
+            "pin_themes_tagged": sum(
+                v for k, v in pin_theme_counts.items() if k != "other"
+            ),
+            "pin_themes_other": pin_theme_counts.get("other", 0),
             "geo_source": "KSE-Loc-Data-Hub geography.csv (lat_center/lon_center)",
             "oblasts_source": "Natural Earth admin-1 → docs/geo/ukraine-oblasts.geojson",
             "outline_source": "docs/geo/ukraine-outline.geojson (mask outside UA)",
@@ -784,10 +838,12 @@ def build_payload() -> dict:
                 "complementary=resource/DREAM↔Challenges; explicit_ask=МСС language; "
                 "twinning=UA–EU sister cities (node highlight); "
                 "basins=HydroBASINS lev06 underlay (not in score); "
+                "pin theme filter=mss_suggest on registry title/form; "
                 "pin_corpus=mss_network>0 not known; no combined-score hyp layer; "
                 "universe=all release rows with KSE geo (metadata layer)"
             ),
         },
+        "pin_themes": pin_themes,
         "oblasts": oblasts,
         "ukraine_outline": outline,
         "basins": basins,

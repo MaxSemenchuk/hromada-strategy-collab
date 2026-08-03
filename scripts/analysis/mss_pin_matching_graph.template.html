@@ -175,6 +175,53 @@
     border-top-width: 2px;
     opacity: 0.85;
   }
+  .theme-filters {
+    display: grid;
+    gap: 0.2rem;
+    margin: 0 0 0.55rem;
+    max-height: 220px;
+    overflow-y: auto;
+    padding-right: 0.15rem;
+  }
+  .theme-filters label {
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    font-size: 0.78rem;
+    color: var(--site-ink);
+    cursor: pointer;
+    padding: 0.18rem 0.2rem;
+    border-radius: 6px;
+  }
+  .theme-filters label:hover { background: rgba(37, 99, 235, 0.06); }
+  .theme-filters .theme-n {
+    margin-left: auto;
+    color: var(--site-muted);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.72rem;
+  }
+  .theme-filter-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 0 0.75rem;
+  }
+  .theme-filter-actions button {
+    font: inherit;
+    font-size: 0.72rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--site-border);
+    background: var(--site-surface);
+    color: var(--site-muted);
+    cursor: pointer;
+  }
+  .theme-filter-actions button:hover { color: var(--site-ink); border-color: var(--site-ink); }
+  .theme-filter-hint {
+    font-size: 0.72rem;
+    color: var(--site-muted);
+    margin: -0.35rem 0 0.85rem;
+    line-height: 1.35;
+  }
   .stats {
     display: grid;
     gap: 0;
@@ -632,6 +679,14 @@
         </span>
       </label>
     </div>
+    <p class="section-label" data-i18n="themes.label">Теми угод МСС</p>
+    <div class="theme-filters" id="theme-filters" role="group" aria-label="Фільтр тем угод"></div>
+    <div class="theme-filter-actions">
+      <button type="button" id="themes-all" data-i18n="themes.all">Усі</button>
+      <button type="button" id="themes-none" data-i18n="themes.none">Жодної</button>
+      <button type="button" id="themes-tagged" data-i18n="themes.tagged">Лише з темою</button>
+    </div>
+    <p class="theme-filter-hint" data-i18n="themes.hint">Фільтрує бірюзові/фіолетові лінії реєстру. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).</p>
     <p class="section-label" data-i18n="stats.label">Цифри</p>
     <div class="stats">
       <div class="stat"><span data-i18n="stat.universe">Громад на мапі</span><b id="s-universe">—</b></div>
@@ -676,6 +731,77 @@ document.getElementById('s-complementary').textContent = meta.complementary_edge
 document.getElementById('s-explicit-ask').textContent = meta.explicit_ask_edges ?? 0;
 document.getElementById('s-twinning').textContent = meta.twinning_hromadas ?? 0;
 document.getElementById('s-basins').textContent = meta.basins ?? 0;
+
+// ——— PIN theme filter (registry title heuristics; not legal IMC forms) ———
+const pinThemeCatalog = DATA.pin_themes || [];
+const selectedThemes = new Set(pinThemeCatalog.map((t) => t.id));
+
+function pinThemeOk(e) {
+  const kind = e.kind || 'pin';
+  if (kind !== 'pin' && kind !== 'pin_corpus') return true;
+  const ids = (e.theme_ids && e.theme_ids.length) ? e.theme_ids : ['other'];
+  return ids.some((id) => selectedThemes.has(id));
+}
+
+function renderThemeFilters() {
+  const root = document.getElementById('theme-filters');
+  if (!root) return;
+  const escLocal = (typeof esc === 'function')
+    ? esc
+    : (s) => String(s || '').replace(/[&<>"']/g, (c) => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
+  const emptyMsg = (typeof t === 'function') ? t('themes.empty') : 'Немає тем угод';
+  if (!pinThemeCatalog.length) {
+    root.innerHTML = `<p class="theme-filter-hint">${escLocal(emptyMsg)}</p>`;
+    return;
+  }
+  root.innerHTML = pinThemeCatalog.map((th) => {
+    const checked = selectedThemes.has(th.id) ? 'checked' : '';
+    return `<label>
+      <input type="checkbox" data-theme-id="${escLocal(th.id)}" ${checked}/>
+      <span>${escLocal(th.label_uk || th.id)}</span>
+      <span class="theme-n">${escLocal(String(th.n ?? 0))}</span>
+    </label>`;
+  }).join('');
+  root.querySelectorAll('input[data-theme-id]').forEach((input) => {
+    input.addEventListener('change', () => {
+      const id = input.getAttribute('data-theme-id');
+      if (!id) return;
+      if (input.checked) selectedThemes.add(id);
+      else selectedThemes.delete(id);
+      refreshThemeFilterView();
+    });
+  });
+}
+
+function refreshThemeFilterView() {
+  if (typeof mode !== 'undefined' && mode === 'graph' && typeof drawGraph === 'function') {
+    drawGraph();
+  } else if (typeof rebuildMapLayers === 'function') {
+    rebuildMapLayers();
+  }
+}
+
+renderThemeFilters();
+document.getElementById('themes-all')?.addEventListener('click', () => {
+  pinThemeCatalog.forEach((th) => selectedThemes.add(th.id));
+  renderThemeFilters();
+  refreshThemeFilterView();
+});
+document.getElementById('themes-none')?.addEventListener('click', () => {
+  selectedThemes.clear();
+  renderThemeFilters();
+  refreshThemeFilterView();
+});
+document.getElementById('themes-tagged')?.addEventListener('click', () => {
+  selectedThemes.clear();
+  pinThemeCatalog.forEach((th) => {
+    if (th.id !== 'other') selectedThemes.add(th.id);
+  });
+  renderThemeFilters();
+  refreshThemeFilterView();
+});
 
 const mapEl = document.getElementById('map');
 const canvas = document.getElementById('c');
@@ -810,6 +936,7 @@ function neighborsOf(id) {
       kind,
       theme: e.theme,
       themes: e.themes || [],
+      theme_ids: e.theme_ids || [],
       reasons: e.reasons || [],
       agreements: e.agreements || [],
       goal_pairs: e.goal_pairs || [],
@@ -1246,6 +1373,7 @@ function rebuildMapLayers() {
   nodesLayer.clearLayers();
 
   for (const e of edges) {
+    if (!pinThemeOk(e) && (e.kind === 'pin' || e.kind === 'pin_corpus')) continue;
     const a = e.source, b = e.target;
     if (a.lat == null || b.lat == null) continue;
     const line = L.polyline([[a.lat, a.lon], [b.lat, b.lon]], edgeStyle(e.kind));
@@ -1392,6 +1520,7 @@ window.addEventListener('resize', () => {
 });
 
 function edgeVisible(e) {
+  if ((e.kind === 'pin' || e.kind === 'pin_corpus') && !pinThemeOk(e)) return false;
   if (e.kind === 'pin') return layers.pin;
   if (e.kind === 'known') return layers.known;
   if (e.kind === 'pin_corpus') return layers.pinCorpus;
@@ -1671,6 +1800,12 @@ window.PAGE_I18N = {
     "layer.twinning.desc": "Індиго — громади з UA–EU twinning (SKEW / стратегія)",
     "layer.basins.title": "Підкладка · водозбори",
     "layer.basins.desc": "HydroBASINS lev06 — гідрологічні басейни (не юридичні RBD DAVR)",
+    "themes.label": "Теми угод МСС",
+    "themes.all": "Усі",
+    "themes.none": "Жодної",
+    "themes.tagged": "Лише з темою",
+    "themes.hint": "Фільтрує бірюзові/фіолетові лінії реєстру. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).",
+    "themes.empty": "Немає тем угод",
     "stats.label": "Цифри",
     "stat.universe": "Громад на мапі",
     "stat.portal": "З посиланням на портал",
@@ -1761,6 +1896,12 @@ window.PAGE_I18N = {
     "layer.twinning.desc": "Indigo — hromadas with UA–EU twinning (SKEW / strategy)",
     "layer.basins.title": "Underlay · catchments",
     "layer.basins.desc": "HydroBASINS lev06 — hydrological basins (not legal DAVR RBDs)",
+    "themes.label": "IMC agreement themes",
+    "themes.all": "All",
+    "themes.none": "None",
+    "themes.tagged": "Tagged only",
+    "themes.hint": "Filters teal/purple registry lines. “Other” = title with no recognised theme (often just “joint project”).",
+    "themes.empty": "No agreement themes",
     "stats.label": "Figures",
     "stat.universe": "Hromadas on the map",
     "stat.portal": "With a portal link",

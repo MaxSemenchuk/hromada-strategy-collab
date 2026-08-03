@@ -205,3 +205,17 @@ code bridge exists.
   basin-management IMC — do not fold `same_basin` into v7 `score`.
 - **Product use:** optional PIN-map underlay «Підкладка · водозбори»
   (`yarn graph-pin-matching`); discovery context only, never `known: true`.
+
+### Parsing registry titles → themes (map filter)
+
+Registry XLSX has no theme column — we score `Назва`+`Форма` with
+`mss_suggest.classify_registry_theme` (same patterns as candidate packaging).
+
+**Why ~40% stay `other`:** many rows are legal boilerplate only («реалізація
+спільного проекту» / делегування без предмета). Expanding patterns recovered
+gaps that *do* have subject text in quotes (ПМСД, трудовий архів, спорт,
+дамби, теплопостачання…). Honest residual: leave as `other`; do not invent
+themes from party geography alone.
+
+**Map:** sidebar «Теми угод МСС» filters PIN / pin∩corpus edges by `theme_ids`
+(not the five legal forms — form filter remains secondary).
