@@ -21,6 +21,7 @@ hromadas with coordinates (metadata — not the strategy corpus). Click a point 
 | [`resources.html`](resources.html) | KSE resource proxies × DREAM revealed priorities |
 | [`mss-pin-matching-graph.html`](mss-pin-matching-graph.html) | Full PIN map + four hypothesis overlays |
 | [`strategy-writing-guide.md`](strategy-writing-guide.md) | How to write strategies that surface МСС signals |
+| [`donor-programs.md`](donor-programs.md) | DOBRE, EGAP, U-LEAD, GIZ, USAID… — what each programme is |
 | [`corpus-growth.md`](corpus-growth.md) | Priority corpus growth checklist |
 | [`hromada-project-passport.html`](hromada-project-passport.html) | Redirect → `index.html` (legacy URL) |
 

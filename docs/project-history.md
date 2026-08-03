@@ -421,7 +421,30 @@ are closer to peer-learning / donor exchange than classic Law 1508 МСС.
 - Treat maximal graph as recommendation list.
 - Inflate complementary beyond top-N while PIN∩corpus stays ~10.
 
-## Open threads (as of 2026-07-31)
+## Tkachuk / ІГС interview (2026-08)
+
+Conversation with **Анатолій Ткачук** (Інститут громадянського суспільства).
+Full notes: [`internal/tkachuk-interview-2026-08.md`](../internal/tkachuk-interview-2026-08.md).
+
+**Hypothesis correction:** AI does not replace trust between hromada heads
+(~60–90% of agreements follow personal contact). Stronger framing — AI
+lowers transaction costs / uncertainty and surfaces mutual benefit so less
+trust is needed to start, but does not substitute personal relations.
+
+**Practical signals from the interview:**
+
+- Strongest near-term thematic window: **water / river basins** (надгромадна,
+  recovery + EU eco funding); pre-war Dnipro recreation IMC stalled by war.
+- Wartime priorities are unstable (water → energy → winter critical infra) —
+  fixed thematic priors age quickly.
+- Motivation > venue: inviting neighbours to strategy sessions failed without
+  a clear «why» (budget savings / revenue / image).
+- Network levels: heads · **starostas** · specialists; outreach via
+  **ВА ОТГ** / **ВАГ**, not АМУ (large cities too autonomous).
+- Promising three-layer forecast: personal/institutional network × shared
+  resources (esp. basins) × mutual-benefit estimate.
+
+## Open threads (as of 2026-08-03)
 
 - [x] File cross-link issue on KSE repo — [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) (2026-07-24)
 - [x] Stakeholder site under `docs/` + shared nav (GitHub Pages workflow)
@@ -459,11 +482,22 @@ are closer to peer-learning / donor exchange than classic Law 1508 МСС.
       `internal/aim-cc-field-experiment-prereg.md`
 - [ ] Multi-way / community view for 3+ party clusters (Nizhyn-5, Dnister-22)
 - [ ] Expand curated hierarchy gold beyond 5 hromadas (re-structure from PDFs)
+- [ ] **Adjacent idea (parked):** university cooperation candidates — same
+      agreement-candidate product class (pair · theme · form + signals), not
+      in current scope — `internal/university-cooperation-idea.md` (2026-07-31)
 - [x] `suggested_theme` + `suggested_form` on matching edges
       (`mss_suggest.py` + export / complementary / explicit-ask; map + matches.html)
       — 2026-07-30; see [mss-cooperation-research.md](./mss-cooperation-research.md)
 - [x] Maximal-graph layer read + work implications — 2026-07-31
       ([section above](#maximal-pin-graph-read-2026-07-31))
+- [x] Tkachuk / ІГС interview notes + hypothesis correction (trust ≠ replaceable;
+      water basins; associations) — 2026-08-03
+      (`internal/tkachuk-interview-2026-08.md`)
+- [ ] **Water / basin layer (hypothesis):** join hydrography / shared water
+      infra to hromadas as a discovery signal; validate against water-themed
+      МСС in registry — see Tkachuk notes
+- [ ] Reframe stakeholder messaging: reduce uncertainty / surface benefit,
+      not «AI replaces trust» (Tkachuk 2026-08)
 
 ---
 

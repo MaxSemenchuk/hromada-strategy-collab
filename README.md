@@ -95,6 +95,7 @@ docs/                             # GitHub Pages site root (see docs/README.md)
 ├── funds.html                    # donor portfolio: shared next grant / bridges / hubs
 ├── resources.html                # KSE resource proxies × DREAM priorities
 ├── strategy-writing-guide.md     # how to write strategies that surface МСС signals
+├── donor-programs.md             # DOBRE / EGAP / U-LEAD / GIZ / USAID… reference
 ├── corpus-growth.md              # priority corpus growth checklist
 ├── mss-pin-matching-graph.html   # full PIN map + matching overlays
 ├── hromada-project-passport.html # legacy redirect → index.html
@@ -105,6 +106,7 @@ internal/
 └── outreach-messages.md          # draft stakeholder outreach copy — not part of the dataset, not for public reuse
 REFERENCES.md                     # theoretical grounding — network governance, IMC, institutional diversity
 docs/mss-cooperation-research.md  # DOBRE bottleneck thesis, МСС forms/procedure, ЗП 11412, theme/form roadmap
+docs/donor-programs.md            # donor/fund cheat-sheet (DOBRE, EGAP, U-LEAD, GIZ, USAID…)
 LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see License & data below
 ```
 
