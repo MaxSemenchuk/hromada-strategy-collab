@@ -451,6 +451,27 @@ trust is needed to start, but does not substitute personal relations.
 README / mss-research / `.cursor/rules`; HydroBASINS underlay already on PIN map
 (discovery only — not in `score`).
 
+
+## Frozen local elections → inter-hromada dynamics (2026-08-03)
+
+**Research synthesis** (not a Tkachuk quote): institutional effect of no local
+elections since Oct 2020 under martial law, read against the trust-between-heads
+mechanism. Canonical write-up:
+[mss-cooperation-research.md § frozen elections](./mss-cooperation-research.md#frozen-elections-otg).
+
+**Core claim:** postponed elections freeze the **personal** layer of МСС more
+than the formal one. Same heads longer → denser bilateral trust (*sticky
+heads*); post-war / next local elections → possible mass head turnover
+(*fragile heads*). Asymmetric regimes (elected head vs VCA/VA) complicate
+pairs. Wartime crisis agenda already covered by Tkachuk (water → energy →
+winter); frozen electoral accountability amplifies strategy-text lag vs live
+priorities.
+
+**Product implications folded in:** elevate `mss_network` / known as discovery
+in this phase; keep «навіщо» sharper than electoral motivation; do not treat
+head-pair network as permanent; warm intros / associations over cold outreach;
+stakeholder site «Практика» + hard rule 9 in `.cursor/rules`.
+
 ## Open threads (as of 2026-08-03)
 
 - [x] File cross-link issue on KSE repo — [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) (2026-07-24)
@@ -510,6 +531,10 @@ README / mss-research / `.cursor/rules`; HydroBASINS underlay already on PIN map
       into `score`) — Tkachuk thematic window
 - [x] Reframe stakeholder messaging: reduce uncertainty / surface benefit,
       not «AI replaces trust» (Tkachuk 2026-08) — site + outreach §6
+- [x] Frozen local elections (2020→) → sticky/fragile heads framing for
+      inter-ОТГ dynamics + matching implications — 2026-08-03
+      ([section above](#frozen-local-elections--inter-hromada-dynamics-2026-08-03);
+      [mss-research](./mss-cooperation-research.md#frozen-elections-otg))
 - [ ] Stronger «навіщо» on candidate cards (budget / grant / image rationale),
       not only theme + signal chips
 - [ ] Association outreach: send ВА ОТГ → ВАГ drafts (`outreach-messages.md` §6)

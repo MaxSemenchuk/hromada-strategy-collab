@@ -27,6 +27,13 @@ surface mutual benefit («навіщо»), and prepare a safer first talk. Near-
 thematic window he flagged: **water / shared basins**. Full notes:
 [internal/tkachuk-interview-2026-08.md](internal/tkachuk-interview-2026-08.md).
 
+**Institutional context (2026-08):** no local elections since Oct 2020 under
+martial law → *sticky heads* (denser personal trust networks now) but
+*fragile heads* after future elections. Matching implication: lean on
+`mss_network` / known pairs in this phase; do not treat head-pair edges as
+permanent. Write-up:
+[docs/mss-cooperation-research.md#frozen-elections-otg](docs/mss-cooperation-research.md#frozen-elections-otg).
+
 Prior-art check (2026-07-20/21) found no public product doing this specific
 thing. Adjacent efforts are single-hromada monitoring (U-LEAD) or manual МСС
 matchmaking. Combining registry/network topology with strategy and resource

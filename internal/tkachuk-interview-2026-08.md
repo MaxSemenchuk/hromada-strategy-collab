@@ -153,6 +153,15 @@ AI зменшує **невизначеність**, а не усуває пот�
 
 ---
 
+## Related institutional context (not from this interview)
+
+Заморожені місцеві вибори з 2020 (воєнний стан) → *sticky / fragile heads*:
+консервують персональну мережу довіри зараз, але роблять її вразливою до
+майбутньої ротації. Повний синтез і наслідки для matching:
+[docs/mss-cooperation-research.md#frozen-elections-otg](../docs/mss-cooperation-research.md#frozen-elections-otg).
+
+---
+
 ## Open questions
 
 1. Які відкриті шари гідрографії / басейнів зручно джойнити до `katottg` / KSE geo?  
