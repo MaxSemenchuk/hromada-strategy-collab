@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 from mss_suggest import (  # noqa: E402
     FORM_LABELS,
+    classify_registry_theme,
     load_registry_theme_form_priors,
     suggest_form,
     suggest_package,
@@ -53,6 +54,31 @@ def test_packages() -> None:
     assert agg.get("suggest_caveat"), agg
 
 
+def test_registry_gap_fills() -> None:
+    """Patterns that used to fall into registry «other»."""
+    cases = [
+        ("захист від пожеж та ліквідація надзвичайних ситуацій", "fire"),
+        ("розвиток туризму запорука розвику села", "tourism"),
+        ("інфраструктурний об'єкт комунального підприємства «Питна вода»", "water"),
+        ("водозахисних дамб і берегоукріплень", "water"),
+        ("центр первинної медико-санітарної допомоги", "health"),
+        ("інклюзивно-ресурсний центр", "education"),
+        ("трудовий архів", "archive"),
+        ("реконструкція системи теплопостачання", "utilities"),
+        ("капітальний ремонт спортивної зали", "culture"),
+        ("впровадження енергозберігаючих технологій", "energy"),
+        ("управління архітектури та містобудування", "archbud"),
+        ("спільна мета – чисте довкілля", "waste"),
+    ]
+    for blob, expect in cases:
+        tid, _ = classify_registry_theme(blob)
+        assert tid == expect, (blob, tid, expect)
+    # Boilerplate-only stays other
+    tid, score = classify_registry_theme(
+        "Договір про співробітництво територіальних громад у формі реалізації спільного проекту"
+    )
+    assert tid == "other" and score == 0, (tid, score)
+
 def test_form_defaults() -> None:
     form_id, _ = suggest_form("education", track="operational", registry_priors={})
     assert form_id == "joint_finance"
@@ -78,6 +104,7 @@ def test_registry_priors_smoke() -> None:
 def main() -> None:
     test_packages()
     test_form_defaults()
+    test_registry_gap_fills()
     test_registry_priors_smoke()
     print("test_mss_suggest: OK")
 

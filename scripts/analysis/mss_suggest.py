@@ -25,14 +25,18 @@ MSS_REGISTRY = ROOT / "data" / "cache" / "mss" / "mss_registry.xlsx"
 THEME_LABELS: dict[str, str] = {
     "cnap": "ЦНАП / адмінпослуги",
     "fire": "Пожежна охорона",
-    "waste": "Поводження з відходами",
-    "water": "Водопостачання / водовідведення",
+    "waste": "Поводження з відходами / довкілля",
+    "water": "Вода / захист від повеней",
     "education": "Освіта",
     "health": "Охорона здоров'я",
     "social": "Соціальні послуги",
     "tourism": "Туризм / кластер",
+    "culture": "Культура / спорт",
+    "utilities": "ЖКГ / тепло / газ / благоустрій",
+    "energy": "Енергоефективність",
+    "archive": "Архівна справа",
     "roads": "Дороги / інфраструктура",
-    "archbud": "Архітектурно-будівельний контроль",
+    "archbud": "Архітектура / містобудування",
     "registration": "Державна реєстрація",
     "agglomeration": "Агломерація / метрополія",
     "security": "Безпека / ЦЗ",
@@ -48,33 +52,104 @@ FORM_LABELS: dict[str, str] = {
     "agglomeration": "агломерація",
 }
 
-# theme_id → list of compiled patterns (scored on blob)
+# theme_id → list of compiled patterns (scored on blob).
+# Tuned on MinRegion registry titles: many "other" rows are empty boilerplate;
+# the rest often hide subject in quotes ( damб / ПМСД / спорт / трудовий архів ).
 _THEME_PATTERNS: list[tuple[str, re.Pattern[str], int]] = [
     ("agglomeration", re.compile(r"агломерац|метропол", re.I), 12),
     ("cnap", re.compile(r"цнап|адмін(?:істративн)?\w*\s*послуг|центр\s*дія|е-послуг", re.I), 10),
-    ("fire", re.compile(r"пожежн", re.I), 10),
-    ("archbud", re.compile(r"архітектурно-будівельн|архбуд|будівельн\w*\s*паспорт", re.I), 9),
+    ("fire", re.compile(r"пожеж", re.I), 10),
+    (
+        "archive",
+        re.compile(r"трудов\w*\s*архів|архівн\w*\s*установ|спільного?\s+архів", re.I),
+        11,
+    ),
+    (
+        "archbud",
+        re.compile(
+            r"архітектурно-будівельн|архбуд|будівельн\w*\s*паспорт|"
+            r"містобудув|управлін\w*\s+архітектур",
+            re.I,
+        ),
+        9,
+    ),
     (
         "registration",
         re.compile(r"реєстрац\w*.{0,40}(?:акт|громадян|нерухом|речов)", re.I),
         8,
     ),
-    ("waste", re.compile(r"відход|смітт|тпв|полігон|сортувал", re.I), 10),
     (
-        "water",
-        re.compile(r"водопостачан|водовідведен|водоканал|каналіз", re.I),
+        "waste",
+        re.compile(
+            r"відход|смітт|тпв|полігон|сортувал|довкілл|екотехно|"
+            r"еко[\s\-]*громад|чист\w+\s+довкілл",
+            re.I,
+        ),
         10,
     ),
-    ("tourism", re.compile(r"турист|спадщин|рекреац|маршрут|дмо\b|фестивал", re.I), 9),
-    ("education", re.compile(r"освіт|школ|днз|дошкільн|ліце|садоч", re.I), 8),
+    (
+        "water",
+        re.compile(
+            r"водопостачан|водовідведен|водоканал|каналіз|питн\w*\s*вод|"
+            r"водопровід|водозахис|водозабор|дамб|повен|берегоукріп|"
+            r"очисні\s+споруд",
+            re.I,
+        ),
+        10,
+    ),
+    (
+        "tourism",
+        re.compile(r"туризм|турист|спадщин|рекреац|дмо\b|фестивал", re.I),
+        9,
+    ),
+    (
+        "culture",
+        re.compile(
+            r"спорт|культур|бібліотек|музей|стадіон|будинок\s+культур|"
+            r"дозвілл|мистецьк|спортивн\w*\s*(?:зал|баз|комплекс)",
+            re.I,
+        ),
+        8,
+    ),
+    (
+        "education",
+        re.compile(
+            r"освіт|школ|днз|дошкільн|ліце|садоч|\bзош\b|"
+            r"інклюзивно-?ресурсн|позашкільн|педагогічн\w*\s+працівник",
+            re.I,
+        ),
+        8,
+    ),
     (
         "health",
-        re.compile(r"медичн|охорони\s*здоров|амбулатор|лікарн|фап\b", re.I),
+        re.compile(
+            r"медичн|медико-?санітарн|охорони\s*здоров|амбулатор|лікарн|"
+            r"поліклінічн|\bфап\b|\bпмсд\b|\bазпсм\b|санітарн\w*\s+авто",
+            re.I,
+        ),
         8,
     ),
     ("social", re.compile(r"соціальн\w*\s*(?:послуг|захист)|впо\b|ветеран", re.I), 7),
-    ("roads", re.compile(r"дорог|шляхов|вулиц|мост|міст\b|транспорт", re.I), 6),
-    ("security", re.compile(r"безпек|укритт|цивільн\w*\s*захист|\bцз\b", re.I), 7),
+    (
+        "utilities",
+        re.compile(
+            r"теплопостач|котельн|газопостач|житлово-?комунальн|\bжкг\b|"
+            r"благоустр|освітленн\w*\s+вулиц|капремонт\w*\s+будинк",
+            re.I,
+        ),
+        8,
+    ),
+    (
+        "energy",
+        re.compile(
+            r"енергозберіга|енергоефектив|енергоефект|теплонасос|"
+            r"сонячн\w*\s+(?:панел|станц)|енергоменедж",
+            re.I,
+        ),
+        8,
+    ),
+    ("roads", re.compile(r"дорог|шляхов|вулиц|мост|міст\b|транспорт|автостанц", re.I), 6),
+    ("security", re.compile(r"безпек|укритт|цивільн\w*\s*захист|\bцз\b|надзвичайних\s+ситуац", re.I), 7),
 ]
 
 # Complementary / DREAM sector tag → theme_id
@@ -101,9 +176,13 @@ THEME_DEFAULT_FORM: dict[str, str] = {
     "education": "joint_finance",
     "health": "joint_finance",
     "social": "joint_finance",
+    "archive": "joint_finance",
     "waste": "joint_enterprise",
     "water": "joint_enterprise",
+    "utilities": "joint_enterprise",
     "tourism": "joint_project",
+    "culture": "joint_project",
+    "energy": "joint_project",
     "roads": "joint_project",
     "security": "joint_project",
     "agglomeration": "agglomeration",
@@ -148,6 +227,20 @@ def detect_theme_scores(text: str) -> Counter[str]:
         if pat.search(text):
             scores[theme_id] += weight
     return scores
+
+
+def classify_registry_theme(*parts: str) -> tuple[str, int]:
+    """Best theme_id for a registry title/form/essence blob.
+
+    Returns ``(\"other\", 0)`` when no pattern hits — common for boilerplate-only
+    titles («реалізація спільного проекту» with no subject).
+    """
+    blob = " ".join(p for p in parts if p)
+    scores = detect_theme_scores(blob)
+    theme_id, score = pick_theme(scores)
+    if not theme_id:
+        return "other", 0
+    return theme_id, int(score)
 
 
 def theme_from_sector_tags(tags: list[str] | set[str] | None) -> Counter[str]:
