@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-07-31T16:25:30.039875+00:00",
+  "generatedAt": "2026-08-03T10:30:20.900102+00:00",
   "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
   "productUnit": "mss_candidate",
-  "pairCount": 2278,
-  "corpusGoals": 68,
-  "textMinedRows": 77,
+  "pairCount": 2850,
+  "corpusGoals": 76,
+  "textMinedRows": 85,
   "tracks": {
-    "thematic": "goals_cosine >= p90 (0.258) and geo_score <= 0.35 — cold-start vision partners",
+    "thematic": "goals_cosine >= p90 (0.275) and geo_score <= 0.35 — cold-start vision partners",
     "operational": "geo_score >= 0.85 and not thematic — convenient service co-sharers; slice ranked by operational_score (geo + fiscal_similarity + dream_overlap) when available",
     "mixed": "all other pairs",
     "counts": {
-      "thematic": 216,
-      "operational": 46,
-      "mixed": 2016
+      "thematic": 269,
+      "operational": 60,
+      "mixed": 2521
     },
-    "goalsFloor": 0.258,
+    "goalsFloor": 0.275,
     "goalsPercentile": 90,
     "geoThematicMax": 0.35,
     "geoOperationalMin": 0.85
@@ -28,47 +28,47 @@
       "discovery_primary",
       "status"
     ],
-    "annotated": 2278,
-    "withTheme": 2257,
+    "annotated": 2850,
+    "withTheme": 2840,
     "registryKnown": 4,
     "sidecar": {
       "path": "mss-candidates.json",
       "registryKnown": 4,
-      "hypotheses": 127
+      "hypotheses": 143
     }
   },
   "candidatesSidecar": {
     "registryKnown": 4,
-    "hypotheses": 127,
+    "hypotheses": 143,
     "caveat": "Кандидати договорів МСС (гіпотези). package.form — правова форма за правилами, не факт реєстру. known/registry_known — лише кураторська валідація. Стратегії / geo / complementary / explicit-ask — сигнали пошуку."
   },
   "known": [
     {
       "a": "Ніжинська міська територіальна громада",
-      "b": "Козелецька селищна територіальна громада",
-      "score": 0.418,
-      "goals_cosine": 0.197,
+      "b": "Батуринська міська територіальна громада",
+      "score": 0.415,
+      "goals_cosine": 0.191,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": true,
       "track": "mixed",
       "a_short": "Ніжинська",
-      "b_short": "Козелецька",
-      "suggested_theme": "Водопостачання / водовідведення",
+      "b_short": "Батуринська",
+      "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
       "kind": "mss_candidate",
       "discovery_primary": "strategy_goals",
       "status": "registry_known",
       "package": {
-        "theme": "Водопостачання / водовідведення",
-        "theme_id": "water",
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "Водопостачання / водовідведення — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
       },
       "signals": [
         {
@@ -112,30 +112,30 @@
     },
     {
       "a": "Ніжинська міська територіальна громада",
-      "b": "Батуринська міська територіальна громада",
-      "score": 0.39,
-      "goals_cosine": 0.15,
+      "b": "Козелецька селищна територіальна громада",
+      "score": 0.414,
+      "goals_cosine": 0.19,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": true,
       "track": "mixed",
       "a_short": "Ніжинська",
-      "b_short": "Батуринська",
-      "suggested_theme": "Водопостачання / водовідведення",
+      "b_short": "Козелецька",
+      "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
       "kind": "mss_candidate",
       "discovery_primary": "strategy_goals",
       "status": "registry_known",
       "package": {
-        "theme": "Водопостачання / водовідведення",
-        "theme_id": "water",
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "Водопостачання / водовідведення — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
       },
       "signals": [
         {
@@ -180,29 +180,29 @@
     {
       "a": "Батуринська міська територіальна громада",
       "b": "Козелецька селищна територіальна громада",
-      "score": 0.389,
-      "goals_cosine": 0.252,
+      "score": 0.391,
+      "goals_cosine": 0.256,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": true,
       "track": "mixed",
       "a_short": "Батуринська",
       "b_short": "Козелецька",
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
       "kind": "mss_candidate",
       "discovery_primary": "strategy_goals",
       "status": "registry_known",
       "package": {
-        "theme": "Водопостачання / водовідведення",
-        "theme_id": "water",
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "Водопостачання / водовідведення — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
       },
       "signals": [
         {
@@ -311,8 +311,8 @@
     {
       "a": "Галицька міська територіальна громада",
       "b": "Дубовецька сільська територіальна громада",
-      "score": 0.42,
-      "goals_cosine": 0.033,
+      "score": 0.678,
+      "goals_cosine": 0.464,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
@@ -322,150 +322,839 @@
       "rank": 1
     },
     {
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.548,
+      "goals_cosine": 0.31,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Кельменецька",
+      "b_short": "Рукшинська",
+      "rank": 3
+    },
+    {
+      "a": "Рукшинська сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.518,
+      "goals_cosine": 0.363,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Рукшинська",
+      "b_short": "Сокирянська",
+      "rank": 4
+    },
+    {
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.51,
+      "goals_cosine": 0.183,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Клішковецька",
+      "b_short": "Рукшинська",
+      "rank": 6
+    },
+    {
       "a": "Вижницька міська територіальна громада",
       "b": "Косівська міська територіальна громада",
-      "score": 0.419,
-      "goals_cosine": 0.031,
+      "score": 0.497,
+      "goals_cosine": 0.162,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
       "a_short": "Вижницька",
       "b_short": "Косівська",
-      "rank": 2
+      "rank": 7
     },
     {
-      "a": "Галицька міська територіальна громада",
-      "b": "Бурштинська міська територіальна громада",
-      "score": 0.392,
-      "goals_cosine": 0.049,
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.485,
+      "goals_cosine": 0.203,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
-      "a_short": "Галицька",
-      "b_short": "Бурштинська",
-      "rank": 3
+      "a_short": "Кадубовецька",
+      "b_short": "Клішковецька",
+      "rank": 8
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.481,
+      "goals_cosine": 0.135,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вікнянська",
+      "b_short": "Кадубовецька",
+      "rank": 9
+    },
+    {
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.481,
+      "goals_cosine": 0.301,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кельменецька",
+      "b_short": "Сокирянська",
+      "rank": 10
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.465,
+      "goals_cosine": 0.17,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вікнянська",
+      "b_short": "Жванецька",
+      "rank": 12
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.465,
+      "goals_cosine": 0.274,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кадубовецька",
+      "b_short": "Кельменецька",
+      "rank": 13
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.464,
+      "goals_cosine": 0.17,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Борщівська",
+      "b_short": "Кадубовецька",
+      "rank": 14
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.461,
+      "goals_cosine": 0.268,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кадубовецька",
+      "b_short": "Рукшинська",
+      "rank": 15
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.447,
+      "goals_cosine": 0.141,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вікнянська",
+      "b_short": "Клішковецька",
+      "rank": 17
+    },
+    {
+      "a": "Рукшинська сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.444,
+      "goals_cosine": 0.073,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Рукшинська",
+      "b_short": "Жванецька",
+      "rank": 18
+    },
+    {
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.443,
+      "goals_cosine": 0.134,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Клішковецька",
+      "b_short": "Жванецька",
+      "rank": 19
+    },
+    {
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.441,
+      "goals_cosine": 0.131,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Кельменецька",
+      "b_short": "Жванецька",
+      "rank": 20
+    },
+    {
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.437,
+      "goals_cosine": 0.229,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кельменецька",
+      "b_short": "Клішковецька",
+      "rank": 21
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.436,
+      "goals_cosine": 0.227,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Борщівська",
+      "b_short": "Кельменецька",
+      "rank": 22
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.436,
+      "goals_cosine": 0.33,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "thematic",
+      "a_short": "Кадубовецька",
+      "b_short": "Сокирянська",
+      "rank": 23
     },
     {
       "a": "Бурштинська міська територіальна громада",
       "b": "Дубовецька сільська територіальна громада",
-      "score": 0.392,
-      "goals_cosine": 0.05,
+      "score": 0.429,
+      "goals_cosine": 0.111,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
       "a_short": "Бурштинська",
       "b_short": "Дубовецька",
-      "rank": 4
-    },
-    {
-      "a": "Слобожанська селищна територіальна громада",
-      "b": "Обухівська селищна територіальна громада",
-      "score": 0.367,
-      "goals_cosine": 0.007,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "known": true,
-      "track": "operational",
-      "a_short": "Слобожанська",
-      "b_short": "Обухівська",
-      "rank": 5
-    },
-    {
-      "a": "Ніжинська міська територіальна громада",
-      "b": "Козелецька селищна територіальна громада",
-      "score": 0.341,
-      "goals_cosine": 0.068,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": true,
-      "track": "mixed",
-      "a_short": "Ніжинська",
-      "b_short": "Козелецька",
-      "rank": 7
-    },
-    {
-      "a": "Ніжинська міська територіальна громада",
-      "b": "Батуринська міська територіальна громада",
-      "score": 0.339,
-      "goals_cosine": 0.064,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": true,
-      "track": "mixed",
-      "a_short": "Ніжинська",
-      "b_short": "Батуринська",
-      "rank": 8
-    },
-    {
-      "a": "Яремчанська міська територіальна громада",
-      "b": "Косівська міська територіальна громада",
-      "score": 0.328,
-      "goals_cosine": 0.046,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Яремчанська",
-      "b_short": "Косівська",
-      "rank": 9
+      "rank": 25
     },
     {
       "a": "Яремчанська міська територіальна громада",
       "b": "Вижницька міська територіальна громада",
-      "score": 0.326,
-      "goals_cosine": 0.043,
+      "score": 0.424,
+      "goals_cosine": 0.207,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "known": false,
       "track": "mixed",
       "a_short": "Яремчанська",
       "b_short": "Вижницька",
-      "rank": 10
+      "rank": 27
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.424,
+      "goals_cosine": 0.206,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Борщівська",
+      "b_short": "Клішковецька",
+      "rank": 28
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Вікнянська сільська територіальна громада",
+      "score": 0.421,
+      "goals_cosine": 0.098,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Борщівська",
+      "b_short": "Вікнянська",
+      "rank": 32
+    },
+    {
+      "a": "Ніжинська міська територіальна громада",
+      "b": "Батуринська міська територіальна громада",
+      "score": 0.415,
+      "goals_cosine": 0.191,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": true,
+      "track": "mixed",
+      "a_short": "Ніжинська",
+      "b_short": "Батуринська",
+      "rank": 33
+    },
+    {
+      "a": "Ніжинська міська територіальна громада",
+      "b": "Козелецька селищна територіальна громада",
+      "score": 0.414,
+      "goals_cosine": 0.19,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": true,
+      "track": "mixed",
+      "a_short": "Ніжинська",
+      "b_short": "Козелецька",
+      "rank": 34
+    },
+    {
+      "a": "Вашковецька сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.403,
+      "goals_cosine": 0.067,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вашковецька",
+      "b_short": "Сокирянська",
+      "rank": 38
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Бурштинська міська територіальна громада",
+      "score": 0.395,
+      "goals_cosine": 0.055,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Галицька",
+      "b_short": "Бурштинська",
+      "rank": 42
     },
     {
       "a": "Батуринська міська територіальна громада",
       "b": "Козелецька селищна територіальна громада",
-      "score": 0.285,
-      "goals_cosine": 0.08,
+      "score": 0.391,
+      "goals_cosine": 0.256,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "known": true,
-      "track": "thematic",
+      "track": "mixed",
       "a_short": "Батуринська",
       "b_short": "Козелецька",
-      "rank": 11
+      "rank": 43
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Вікнянська сільська територіальна громада",
+      "score": 0.389,
+      "goals_cosine": 0.253,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Вікнянська",
+      "rank": 45
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.385,
+      "goals_cosine": 0.142,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Борщівська",
+      "b_short": "Рукшинська",
+      "rank": 48
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.381,
+      "goals_cosine": 0.031,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вікнянська",
+      "b_short": "Рукшинська",
+      "rank": 50
+    },
+    {
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.381,
+      "goals_cosine": 0.239,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Клішковецька",
+      "b_short": "Сокирянська",
+      "rank": 51
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.368,
+      "goals_cosine": 0.113,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кадубовецька",
+      "b_short": "Жванецька",
+      "rank": 56
+    },
+    {
+      "a": "Слобожанська селищна територіальна громада",
+      "b": "Обухівська селищна територіальна громада",
+      "score": 0.362,
+      "goals_cosine": 0.0,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": true,
+      "track": "operational",
+      "a_short": "Слобожанська",
+      "b_short": "Обухівська",
+      "rank": 60
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.355,
+      "goals_cosine": 0.092,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Вікнянська",
+      "b_short": "Кельменецька",
+      "rank": 63
+    },
+    {
+      "a": "Сокирянська міська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.336,
+      "goals_cosine": 0.061,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Сокирянська",
+      "b_short": "Жванецька",
+      "rank": 75
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Косівська міська територіальна громада",
+      "score": 0.332,
+      "goals_cosine": 0.053,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Яремчанська",
+      "b_short": "Косівська",
+      "rank": 78
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.332,
+      "goals_cosine": 0.158,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Кадубовецька",
+      "rank": 79
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.329,
+      "goals_cosine": 0.152,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Клішковецька",
+      "rank": 80
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.325,
+      "goals_cosine": 0.146,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Кадубовецька",
+      "rank": 86
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Борщівська міська територіальна громада",
+      "score": 0.322,
+      "goals_cosine": 0.141,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Борщівська",
+      "rank": 88
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.321,
+      "goals_cosine": 0.139,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Борщівська",
+      "b_short": "Сокирянська",
+      "rank": 90
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.313,
+      "goals_cosine": 0.021,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Борщівська",
+      "b_short": "Жванецька",
+      "rank": 95
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Вікнянська сільська територіальна громада",
+      "score": 0.301,
+      "goals_cosine": 0.107,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Вікнянська",
+      "rank": 108
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Борщівська міська територіальна громада",
+      "score": 0.295,
+      "goals_cosine": 0.096,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Борщівська",
+      "rank": 112
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Борщівська міська територіальна громада",
+      "score": 0.293,
+      "goals_cosine": 0.093,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Борщівська",
+      "rank": 115
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.292,
+      "goals_cosine": 0.09,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Кадубовецька",
+      "rank": 116
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.291,
+      "goals_cosine": 0.089,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Вікнянська",
+      "b_short": "Сокирянська",
+      "rank": 119
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.287,
+      "goals_cosine": 0.082,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Жванецька",
+      "rank": 121
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Вікнянська сільська територіальна громада",
+      "score": 0.278,
+      "goals_cosine": 0.067,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Вікнянська",
+      "rank": 137
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.27,
+      "goals_cosine": 0.055,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Жванецька",
+      "rank": 151
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.268,
+      "goals_cosine": 0.051,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Клішковецька",
+      "rank": 154
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.263,
+      "goals_cosine": 0.043,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Рукшинська",
+      "rank": 165
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.259,
+      "goals_cosine": 0.035,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Клішковецька",
+      "rank": 172
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.25,
+      "goals_cosine": 0.167,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Жванецька",
+      "rank": 193
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.242,
+      "goals_cosine": 0.007,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Рукшинська",
+      "rank": 211
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.202,
+      "goals_cosine": 0.087,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Кельменецька",
+      "rank": 322
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.188,
+      "goals_cosine": 0.063,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Рукшинська",
+      "rank": 381
+    },
+    {
+      "a": "Бурштинська міська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.175,
+      "goals_cosine": 0.042,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Бурштинська",
+      "b_short": "Сокирянська",
+      "rank": 436
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.163,
+      "goals_cosine": 0.021,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Кельменецька",
+      "rank": 515
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.16,
+      "goals_cosine": 0.016,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Кельменецька",
+      "rank": 540
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.151,
+      "goals_cosine": 0.002,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Галицька",
+      "b_short": "Сокирянська",
+      "rank": 601
+    },
+    {
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.15,
+      "goals_cosine": 0.001,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Дубовецька",
+      "b_short": "Сокирянська",
+      "rank": 614
     }
   ],
   "top": [
     {
       "a": "Галицька міська територіальна громада",
       "b": "Дубовецька сільська територіальна громада",
-      "score": 0.671,
-      "goals_cosine": 0.452,
+      "score": 0.678,
+      "goals_cosine": 0.464,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
       "a_short": "Галицька",
       "b_short": "Дубовецька",
-      "suggested_theme": "Поводження з відходами",
+      "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
       "package": {
-        "theme": "Поводження з відходами",
+        "theme": "Поводження з відходами / довкілля",
         "theme_id": "waste",
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
       },
       "signals": [
         {
@@ -510,29 +1199,29 @@
     {
       "a": "Більшівцівська селищна територіальна громада",
       "b": "Дубовецька сільська територіальна громада",
-      "score": 0.557,
-      "goals_cosine": 0.511,
+      "score": 0.558,
+      "goals_cosine": 0.514,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "known": false,
       "track": "operational",
       "a_short": "Більшівцівська",
       "b_short": "Дубовецька",
-      "suggested_theme": "Поводження з відходами",
+      "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
       "package": {
-        "theme": "Поводження з відходами",
+        "theme": "Поводження з відходами / довкілля",
         "theme_id": "waste",
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
       },
       "signals": [
         {
@@ -570,10 +1259,144 @@
       ]
     },
     {
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.548,
+      "goals_cosine": 0.31,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Кельменецька",
+      "b_short": "Рукшинська",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Рукшинська сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.518,
+      "goals_cosine": 0.363,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Рукшинська",
+      "b_short": "Сокирянська",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "kind": "mss_candidate",
+      "discovery_primary": "strategy_goals",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        }
+      ]
+    },
+    {
       "a": "Косівська міська територіальна громада",
       "b": "Рокитнівська селищна територіальна громада",
-      "score": 0.507,
-      "goals_cosine": 0.846,
+      "score": 0.513,
+      "goals_cosine": 0.855,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "known": false,
@@ -622,10 +1445,77 @@
       ]
     },
     {
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.51,
+      "goals_cosine": 0.183,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Клішковецька",
+      "b_short": "Рукшинська",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
       "a": "Вижницька міська територіальна громада",
       "b": "Косівська міська територіальна громада",
-      "score": 0.486,
-      "goals_cosine": 0.143,
+      "score": 0.497,
+      "goals_cosine": 0.162,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "known": false,
@@ -689,31 +1579,232 @@
       ]
     },
     {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.485,
+      "goals_cosine": 0.203,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Кадубовецька",
+      "b_short": "Клішковецька",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.481,
+      "goals_cosine": 0.135,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вікнянська",
+      "b_short": "Кадубовецька",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "ЦНАП / адмінпослуги",
+        "theme_id": "cnap",
+        "form": "делегування",
+        "form_id": "delegation",
+        "confidence": "medium",
+        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "score": 0.481,
+      "goals_cosine": 0.301,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кельменецька",
+      "b_short": "Сокирянська",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "kind": "mss_candidate",
+      "discovery_primary": "strategy_goals",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ]
+    },
+    {
       "a": "Галицька міська територіальна громада",
       "b": "Більшівцівська селищна територіальна громада",
-      "score": 0.468,
-      "goals_cosine": 0.363,
+      "score": 0.469,
+      "goals_cosine": 0.365,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "known": false,
       "track": "operational",
       "a_short": "Галицька",
       "b_short": "Більшівцівська",
-      "suggested_theme": "Поводження з відходами",
+      "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
       "package": {
-        "theme": "Поводження з відходами",
+        "theme": "Поводження з відходами / довкілля",
         "theme_id": "waste",
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
       },
       "signals": [
         {
@@ -751,10 +1842,278 @@
       ]
     },
     {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.465,
+      "goals_cosine": 0.17,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Вікнянська",
+      "b_short": "Жванецька",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "ЦНАП / адмінпослуги",
+        "theme_id": "cnap",
+        "form": "делегування",
+        "form_id": "delegation",
+        "confidence": "medium",
+        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "score": 0.465,
+      "goals_cosine": 0.274,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кадубовецька",
+      "b_short": "Кельменецька",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "kind": "mss_candidate",
+      "discovery_primary": "strategy_goals",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Кадубовецька сільська територіальна громада",
+      "score": 0.464,
+      "goals_cosine": 0.17,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "operational",
+      "a_short": "Борщівська",
+      "b_short": "Кадубовецька",
+      "suggested_theme": "ЦНАП / адмінпослуги",
+      "suggested_form": "делегування",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "kind": "mss_candidate",
+      "discovery_primary": "geo",
+      "status": "hypothesis",
+      "package": {
+        "theme": "ЦНАП / адмінпослуги",
+        "theme_id": "cnap",
+        "form": "делегування",
+        "form_id": "delegation",
+        "confidence": "medium",
+        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        }
+      ]
+    },
+    {
+      "a": "Кадубовецька сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "score": 0.461,
+      "goals_cosine": 0.268,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "known": false,
+      "track": "mixed",
+      "a_short": "Кадубовецька",
+      "b_short": "Рукшинська",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "kind": "mss_candidate",
+      "discovery_primary": "strategy_goals",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "medium"
+        }
+      ]
+    },
+    {
       "a": "Тернопільська міська територіальна громада",
       "b": "Рівненська міська територіальна громада",
-      "score": 0.428,
-      "goals_cosine": 0.568,
+      "score": 0.453,
+      "goals_cosine": 0.61,
       "geo_score": 0.35,
       "mss_network": 0.0,
       "known": false,
@@ -813,83 +2172,16 @@
       ]
     },
     {
-      "a": "Бурштинська міська територіальна громада",
-      "b": "Дубовецька сільська територіальна громада",
-      "score": 0.422,
-      "goals_cosine": 0.099,
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Клішковецька сільська територіальна громада",
+      "score": 0.447,
+      "goals_cosine": 0.141,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
-      "a_short": "Бурштинська",
-      "b_short": "Дубовецька",
-      "suggested_theme": "Поводження з відходами",
-      "suggested_form": "спільне КП",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Кам'янська міська територіальна громада",
-      "b": "Слобожанська селищна територіальна громада",
-      "score": 0.416,
-      "goals_cosine": 0.339,
-      "geo_score": 0.85,
-      "mss_network": 0.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Кам'янська",
-      "b_short": "Слобожанська",
+      "a_short": "Вікнянська",
+      "b_short": "Клішковецька",
       "suggested_theme": "ЦНАП / адмінпослуги",
       "suggested_form": "делегування",
       "suggest_confidence": "medium",
@@ -913,63 +2205,6 @@
           "strength": "high"
         },
         {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        }
-      ]
-    },
-    {
-      "a": "Яремчанська міська територіальна громада",
-      "b": "Вижницька міська територіальна громада",
-      "score": 0.409,
-      "goals_cosine": 0.182,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "mixed",
-      "a_short": "Яремчанська",
-      "b_short": "Вижницька",
-      "suggested_theme": "ЦНАП / адмінпослуги",
-      "suggested_form": "делегування",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт»",
-      "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
-      "status": "hypothesis",
-      "package": {
-        "theme": "ЦНАП / адмінпослуги",
-        "theme_id": "cnap",
-        "form": "делегування",
-        "form_id": "delegation",
-        "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
-      },
-      "signals": [
-        {
           "id": "network",
           "label_uk": "мережа МСС",
           "strength": "high"
@@ -980,391 +2215,9 @@
           "strength": "high"
         },
         {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "medium"
-        },
-        {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
           "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "medium"
-        }
-      ]
-    },
-    {
-      "a": "Бурштинська міська територіальна громада",
-      "b": "Рогатинська міська територіальна громада",
-      "score": 0.403,
-      "goals_cosine": 0.318,
-      "geo_score": 0.85,
-      "mss_network": 0.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Бурштинська",
-      "b_short": "Рогатинська",
-      "suggested_theme": "Туризм / кластер",
-      "suggested_form": "спільний проєкт",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "medium",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Великоберезовицька селищна територіальна громада",
-      "b": "Скалатська міська територіальна громада",
-      "score": 0.403,
-      "goals_cosine": 0.318,
-      "geo_score": 0.85,
-      "mss_network": 0.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Великоберезовицька",
-      "b_short": "Скалатська",
-      "suggested_theme": "Освіта",
-      "suggested_form": "спільне утримання",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Освіта",
-        "theme_id": "education",
-        "form": "спільне утримання",
-        "form_id": "joint_finance",
-        "confidence": "medium",
-        "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
-        "label_uk": "Освіта — спільне утримання"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Рівненська міська територіальна громада",
-      "b": "Рокитнівська селищна територіальна громада",
-      "score": 0.402,
-      "goals_cosine": 0.524,
-      "geo_score": 0.35,
-      "mss_network": 0.0,
-      "known": false,
-      "track": "thematic",
-      "a_short": "Рівненська",
-      "b_short": "Рокитнівська",
-      "suggested_theme": "Туризм / кластер",
-      "suggested_form": "спільний проєкт",
-      "suggest_confidence": "high",
-      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "low"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "low"
-        }
-      ]
-    },
-    {
-      "a": "Новомосковська міська територіальна громада",
-      "b": "Запорізька міська територіальна громада",
-      "score": 0.397,
-      "goals_cosine": 0.516,
-      "geo_score": 0.35,
-      "mss_network": 0.0,
-      "known": false,
-      "track": "thematic",
-      "a_short": "Новомосковська",
-      "b_short": "Запорізька",
-      "suggested_theme": "Туризм / кластер",
-      "suggested_form": "спільний проєкт",
-      "suggest_confidence": "high",
-      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "low"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "low"
-        }
-      ]
-    },
-    {
-      "a": "Журавненська селищна територіальна громада",
-      "b": "Більшівцівська селищна територіальна громада",
-      "score": 0.39,
-      "goals_cosine": 0.295,
-      "geo_score": 0.85,
-      "mss_network": 0.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Журавненська",
-      "b_short": "Більшівцівська",
-      "suggested_theme": "Поводження з відходами",
-      "suggested_form": "спільне КП",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Поводження з відходами",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Галицька міська територіальна громада",
-      "b": "Бурштинська міська територіальна громада",
-      "score": 0.386,
-      "goals_cosine": 0.038,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "known": false,
-      "track": "operational",
-      "a_short": "Галицька",
-      "b_short": "Бурштинська",
-      "suggested_theme": "Туризм / кластер",
-      "suggested_form": "спільний проєкт",
-      "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
-      "kind": "mss_candidate",
-      "discovery_primary": "geo",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "medium",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "low"
         }
       ],
       "signal_chips": [
@@ -1379,48 +2232,6 @@
           "strength": "high"
         },
         {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Рівненська міська територіальна громада",
-      "b": "Дунаївецька міська територіальна громада",
-      "score": 0.382,
-      "goals_cosine": 0.637,
-      "geo_score": 0.0,
-      "mss_network": 0.0,
-      "known": false,
-      "track": "thematic",
-      "a_short": "Рівненська",
-      "b_short": "Дунаївецька",
-      "suggested_theme": "Туризм / кластер",
-      "suggested_form": "спільний проєкт",
-      "suggest_confidence": "high",
-      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "strength": "high"
@@ -1428,73 +2239,31 @@
       ]
     },
     {
-      "a": "Тернопільська міська територіальна громада",
-      "b": "Дунаївецька міська територіальна громада",
-      "score": 0.38,
-      "goals_cosine": 0.633,
-      "geo_score": 0.0,
-      "mss_network": 0.0,
-      "known": false,
-      "track": "thematic",
-      "a_short": "Тернопільська",
-      "b_short": "Дунаївецька",
-      "suggested_theme": "Туризм / кластер",
-      "suggested_form": "спільний проєкт",
-      "suggest_confidence": "high",
-      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-      "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        }
-      ]
-    },
-    {
-      "a": "Бурштинська міська територіальна громада",
-      "b": "Більшівцівська селищна територіальна громада",
-      "score": 0.377,
-      "goals_cosine": 0.212,
+      "a": "Рукшинська сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.444,
+      "goals_cosine": 0.073,
       "geo_score": 1.0,
-      "mss_network": 0.0,
+      "mss_network": 1.0,
       "known": false,
       "track": "operational",
-      "a_short": "Бурштинська",
-      "b_short": "Більшівцівська",
-      "suggested_theme": "Поводження з відходами",
+      "a_short": "Рукшинська",
+      "b_short": "Жванецька",
+      "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
       "package": {
-        "theme": "Поводження з відходами",
+        "theme": "Поводження з відходами / довкілля",
         "theme_id": "waste",
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
       },
       "signals": [
         {
@@ -1503,14 +2272,19 @@
           "strength": "high"
         },
         {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
+          "id": "network",
+          "label_uk": "мережа МСС",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "medium"
         }
       ],
       "signal_chips": [
@@ -1520,8 +2294,8 @@
           "strength": "high"
         },
         {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
+          "id": "network",
+          "label_uk": "мережа МСС",
           "strength": "high"
         },
         {
@@ -1532,31 +2306,31 @@
       ]
     },
     {
-      "a": "Слобожанська селищна територіальна громада",
-      "b": "Обухівська міська територіальна громада",
-      "score": 0.362,
-      "goals_cosine": 0.0,
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.443,
+      "goals_cosine": 0.134,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "known": false,
       "track": "operational",
-      "a_short": "Слобожанська",
-      "b_short": "Обухівська",
-      "suggested_theme": "ЦНАП / адмінпослуги",
-      "suggested_form": "делегування",
+      "a_short": "Клішковецька",
+      "b_short": "Жванецька",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
       "package": {
-        "theme": "ЦНАП / адмінпослуги",
-        "theme_id": "cnap",
-        "form": "делегування",
-        "form_id": "delegation",
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
       },
       "signals": [
         {
@@ -1570,9 +2344,14 @@
           "strength": "high"
         },
         {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
-          "strength": "medium"
+          "strength": "high"
         }
       ],
       "signal_chips": [
@@ -1587,40 +2366,50 @@
           "strength": "high"
         },
         {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
         }
       ]
     },
     {
-      "a": "Тернопільська міська територіальна громада",
-      "b": "Косівська міська територіальна громада",
-      "score": 0.361,
-      "goals_cosine": 0.456,
-      "geo_score": 0.35,
-      "mss_network": 0.0,
+      "a": "Кельменецька селищна територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "score": 0.441,
+      "goals_cosine": 0.131,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
       "known": false,
-      "track": "thematic",
-      "a_short": "Тернопільська",
-      "b_short": "Косівська",
-      "suggested_theme": "Туризм / кластер",
-      "suggested_form": "спільний проєкт",
-      "suggest_confidence": "high",
-      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "track": "operational",
+      "a_short": "Кельменецька",
+      "b_short": "Жванецька",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
+      "suggest_confidence": "medium",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
       "kind": "mss_candidate",
-      "discovery_primary": "strategy_goals",
+      "discovery_primary": "geo",
       "status": "hypothesis",
       "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
       },
       "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
@@ -1629,29 +2418,24 @@
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
-          "strength": "medium"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "low"
+          "strength": "high"
         }
       ],
       "signal_chips": [
         {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
+          "id": "geo",
+          "label_uk": "зручний сусід",
           "strength": "high"
         },
         {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "medium"
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
         },
         {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "low"
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
         }
       ]
     }

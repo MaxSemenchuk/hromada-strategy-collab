@@ -3,7 +3,7 @@
     "a": "Обухівська селищна територіальна громада",
     "b": "Обухівська міська територіальна громада",
     "score": 0.286,
-    "goals_cosine": 0.06,
+    "goals_cosine": 0.059,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -50,8 +50,8 @@
   {
     "a": "Галицька міська територіальна громада",
     "b": "Більшівцівська селищна територіальна громада",
-    "score": 0.468,
-    "goals_cosine": 0.363,
+    "score": 0.469,
+    "goals_cosine": 0.365,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -59,21 +59,21 @@
     "fiscal_similarity": 0.684,
     "dream_overlap": null,
     "operational_score": 0.901,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -98,8 +98,8 @@
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Більшівцівська селищна територіальна громада",
-    "score": 0.39,
-    "goals_cosine": 0.295,
+    "score": 0.397,
+    "goals_cosine": 0.307,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -107,21 +107,21 @@
     "fiscal_similarity": 0.968,
     "dream_overlap": null,
     "operational_score": 0.887,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -146,8 +146,8 @@
   {
     "a": "Божедарівська селищна територіальна громада",
     "b": "Лихівська селищна територіальна громада",
-    "score": 0.325,
-    "goals_cosine": 0.188,
+    "score": 0.306,
+    "goals_cosine": 0.156,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -194,8 +194,8 @@
   {
     "a": "Скалатська міська територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.317,
-    "goals_cosine": 0.174,
+    "score": 0.3,
+    "goals_cosine": 0.145,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -203,21 +203,21 @@
     "fiscal_similarity": 0.901,
     "dream_overlap": null,
     "operational_score": 0.866,
-    "suggested_theme": "Освіта",
-    "suggested_theme_id": "education",
-    "suggested_form": "спільне утримання",
-    "suggested_form_id": "joint_finance",
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Освіта",
-      "theme_id": "education",
-      "form": "спільне утримання",
-      "form_id": "joint_finance",
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
       "confidence": "medium",
-      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
-      "label_uk": "Освіта — спільне утримання"
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Туризм / кластер — спільний проєкт"
     },
     "signals": [
       {
@@ -242,8 +242,8 @@
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Великогаївська сільська територіальна громада",
-    "score": 0.352,
-    "goals_cosine": 0.169,
+    "score": 0.39,
+    "goals_cosine": 0.234,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -290,8 +290,8 @@
   {
     "a": "Дніпровська міська територіальна громада",
     "b": "Обухівська селищна територіальна громада",
-    "score": 0.271,
-    "goals_cosine": 0.098,
+    "score": 0.212,
+    "goals_cosine": 0.0,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -325,11 +325,6 @@
         "id": "structural",
         "label_uk": "ресурси / DREAM",
         "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "medium"
       }
     ],
     "discovery_primary": "geo",
@@ -467,8 +462,8 @@
   {
     "a": "Галицька міська територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.219,
-    "goals_cosine": 0.011,
+    "score": 0.231,
+    "goals_cosine": 0.031,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -515,8 +510,8 @@
   {
     "a": "Великоберезовицька селищна територіальна громада",
     "b": "Скалатська міська територіальна громада",
-    "score": 0.403,
-    "goals_cosine": 0.318,
+    "score": 0.421,
+    "goals_cosine": 0.348,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -524,21 +519,21 @@
     "fiscal_similarity": 0.798,
     "dream_overlap": null,
     "operational_score": 0.834,
-    "suggested_theme": "Освіта",
-    "suggested_theme_id": "education",
-    "suggested_form": "спільне утримання",
-    "suggested_form_id": "joint_finance",
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Освіта",
-      "theme_id": "education",
-      "form": "спільне утримання",
-      "form_id": "joint_finance",
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
       "confidence": "medium",
-      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
-      "label_uk": "Освіта — спільне утримання"
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Туризм / кластер — спільний проєкт"
     },
     "signals": [
       {
@@ -563,8 +558,8 @@
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Великоберезовицька селищна територіальна громада",
-    "score": 0.35,
-    "goals_cosine": 0.167,
+    "score": 0.387,
+    "goals_cosine": 0.228,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -572,21 +567,21 @@
     "fiscal_similarity": 0.718,
     "dream_overlap": 0.5,
     "operational_score": 0.829,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -611,8 +606,8 @@
   {
     "a": "Кам'янська міська територіальна громада",
     "b": "Обухівська міська територіальна громада",
-    "score": 0.264,
-    "goals_cosine": 0.086,
+    "score": 0.255,
+    "goals_cosine": 0.072,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -620,21 +615,21 @@
     "fiscal_similarity": 0.775,
     "dream_overlap": null,
     "operational_score": 0.827,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -668,21 +663,21 @@
     "fiscal_similarity": 0.441,
     "dream_overlap": null,
     "operational_score": 0.825,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -707,8 +702,8 @@
   {
     "a": "Новомосковська міська територіальна громада",
     "b": "Обухівська міська територіальна громада",
-    "score": 0.28,
-    "goals_cosine": 0.112,
+    "score": 0.27,
+    "goals_cosine": 0.095,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -716,21 +711,21 @@
     "fiscal_similarity": 0.718,
     "dream_overlap": null,
     "operational_score": 0.809,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -755,8 +750,8 @@
   {
     "a": "Більшівцівська селищна територіальна громада",
     "b": "Дубовецька сільська територіальна громада",
-    "score": 0.557,
-    "goals_cosine": 0.511,
+    "score": 0.558,
+    "goals_cosine": 0.514,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -764,21 +759,21 @@
     "fiscal_similarity": 0.366,
     "dream_overlap": null,
     "operational_score": 0.802,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -803,8 +798,8 @@
   {
     "a": "Більшівцівська селищна територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.31,
-    "goals_cosine": 0.162,
+    "score": 0.317,
+    "goals_cosine": 0.175,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -812,21 +807,21 @@
     "fiscal_similarity": 0.691,
     "dream_overlap": null,
     "operational_score": 0.8,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -851,8 +846,8 @@
   {
     "a": "Великоберезовицька селищна територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.318,
-    "goals_cosine": 0.176,
+    "score": 0.401,
+    "goals_cosine": 0.314,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -860,21 +855,21 @@
     "fiscal_similarity": 0.897,
     "dream_overlap": 0.5,
     "operational_score": 0.792,
-    "suggested_theme": "Освіта",
-    "suggested_theme_id": "education",
-    "suggested_form": "спільне утримання",
-    "suggested_form_id": "joint_finance",
+    "suggested_theme": "Культура / спорт",
+    "suggested_theme_id": "culture",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
+    "suggest_rationale": "тема «Культура / спорт» · пріор реєстру Мінрегіону · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Освіта",
-      "theme_id": "education",
-      "form": "спільне утримання",
-      "form_id": "joint_finance",
+      "theme": "Культура / спорт",
+      "theme_id": "culture",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
       "confidence": "medium",
-      "rationale": "тема «Освіта» · пріор реєстру Мінрегіону · зручний сусід",
-      "label_uk": "Освіта — спільне утримання"
+      "rationale": "тема «Культура / спорт» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Культура / спорт — спільний проєкт"
     },
     "signals": [
       {
@@ -899,8 +894,8 @@
   {
     "a": "Козелецька селищна територіальна громада",
     "b": "Великодимерська селищна територіальна громада",
-    "score": 0.22,
-    "goals_cosine": 0.012,
+    "score": 0.223,
+    "goals_cosine": 0.018,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -908,21 +903,21 @@
     "fiscal_similarity": 0.891,
     "dream_overlap": 0.5,
     "operational_score": 0.79,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -947,8 +942,8 @@
   {
     "a": "Зазимська сільська територіальна громада",
     "b": "Великодимерська селищна територіальна громада",
-    "score": 0.212,
-    "goals_cosine": 0.0,
+    "score": 0.242,
+    "goals_cosine": 0.049,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -956,21 +951,21 @@
     "fiscal_similarity": 0.754,
     "dream_overlap": 0.667,
     "operational_score": 0.789,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -982,6 +977,11 @@
         "id": "structural",
         "label_uk": "ресурси / DREAM",
         "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "low"
       }
     ],
     "discovery_primary": "geo",
@@ -990,8 +990,8 @@
   {
     "a": "Дніпровська міська територіальна громада",
     "b": "Новомосковська міська територіальна громада",
-    "score": 0.326,
-    "goals_cosine": 0.189,
+    "score": 0.34,
+    "goals_cosine": 0.212,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -999,21 +999,21 @@
     "fiscal_similarity": 0.738,
     "dream_overlap": 0.667,
     "operational_score": 0.785,
-    "suggested_theme": "Водопостачання / водовідведення",
-    "suggested_theme_id": "water",
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Водопостачання / водовідведення",
-      "theme_id": "water",
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Водопостачання / водовідведення» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-      "label_uk": "Водопостачання / водовідведення — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -1038,8 +1038,8 @@
   {
     "a": "Ужгородська міська територіальна громада",
     "b": "Мукачівська міська територіальна громада",
-    "score": 0.353,
-    "goals_cosine": 0.235,
+    "score": 0.351,
+    "goals_cosine": 0.231,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1047,21 +1047,21 @@
     "fiscal_similarity": 0.835,
     "dream_overlap": 0.429,
     "operational_score": 0.762,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -1086,8 +1086,8 @@
   {
     "a": "Великоберезовицька селищна територіальна громада",
     "b": "Великогаївська сільська територіальна громада",
-    "score": 0.348,
-    "goals_cosine": 0.163,
+    "score": 0.37,
+    "goals_cosine": 0.199,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
@@ -1134,8 +1134,8 @@
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.294,
-    "goals_cosine": 0.136,
+    "score": 0.3,
+    "goals_cosine": 0.146,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1143,21 +1143,21 @@
     "fiscal_similarity": 0.615,
     "dream_overlap": 0.667,
     "operational_score": 0.755,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -1182,8 +1182,8 @@
   {
     "a": "Тернопільська міська територіальна громада",
     "b": "Скалатська міська територіальна громада",
-    "score": 0.33,
-    "goals_cosine": 0.196,
+    "score": 0.365,
+    "goals_cosine": 0.254,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1191,21 +1191,21 @@
     "fiscal_similarity": 0.516,
     "dream_overlap": null,
     "operational_score": 0.746,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -1230,8 +1230,8 @@
   {
     "a": "Великогаївська сільська територіальна громада",
     "b": "Скалатська міська територіальна громада",
-    "score": 0.247,
-    "goals_cosine": 0.057,
+    "score": 0.276,
+    "goals_cosine": 0.106,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1276,10 +1276,58 @@
     "status": "hypothesis"
   },
   {
+    "a": "Вашковецька сільська територіальна громада",
+    "b": "Кельменецька селищна територіальна громада",
+    "score": 0.257,
+    "goals_cosine": 0.074,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "track": "operational",
+    "fiscal_similarity": 0.752,
+    "dream_overlap": 0.4,
+    "operational_score": 0.736,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "medium",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Туризм / кластер — спільний проєкт"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
     "a": "Дніпровська міська територіальна громада",
     "b": "Обухівська міська територіальна громада",
-    "score": 0.29,
-    "goals_cosine": 0.129,
+    "score": 0.284,
+    "goals_cosine": 0.12,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1287,21 +1335,21 @@
     "fiscal_similarity": 0.456,
     "dream_overlap": null,
     "operational_score": 0.727,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -1326,8 +1374,8 @@
   {
     "a": "Кам'янська міська територіальна громада",
     "b": "Слобожанська селищна територіальна громада",
-    "score": 0.416,
-    "goals_cosine": 0.339,
+    "score": 0.423,
+    "goals_cosine": 0.351,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1419,8 +1467,8 @@
   {
     "a": "Бурштинська міська територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.403,
-    "goals_cosine": 0.318,
+    "score": 0.411,
+    "goals_cosine": 0.331,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1428,21 +1476,21 @@
     "fiscal_similarity": 0.75,
     "dream_overlap": 0.286,
     "operational_score": 0.712,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
-      "label_uk": "Туризм / кластер — спільний проєкт"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -1467,8 +1515,8 @@
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.257,
-    "goals_cosine": 0.073,
+    "score": 0.271,
+    "goals_cosine": 0.098,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1515,8 +1563,8 @@
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Галицька міська територіальна громада",
-    "score": 0.318,
-    "goals_cosine": 0.176,
+    "score": 0.328,
+    "goals_cosine": 0.193,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1563,8 +1611,8 @@
   {
     "a": "Новомосковська міська територіальна громада",
     "b": "Слобожанська селищна територіальна громада",
-    "score": 0.25,
-    "goals_cosine": 0.062,
+    "score": 0.263,
+    "goals_cosine": 0.084,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1611,8 +1659,8 @@
   {
     "a": "Великогаївська сільська територіальна громада",
     "b": "Збаразька міська територіальна громада",
-    "score": 0.228,
-    "goals_cosine": 0.025,
+    "score": 0.351,
+    "goals_cosine": 0.231,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1643,14 +1691,14 @@
         "strength": "high"
       },
       {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "strength": "high"
+      },
+      {
         "id": "structural",
         "label_uk": "ресурси / DREAM",
         "strength": "medium"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "low"
       }
     ],
     "discovery_primary": "geo",
@@ -1659,8 +1707,8 @@
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Бурштинська міська територіальна громада",
-    "score": 0.301,
-    "goals_cosine": 0.148,
+    "score": 0.308,
+    "goals_cosine": 0.159,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1668,21 +1716,21 @@
     "fiscal_similarity": 0.409,
     "dream_overlap": 0.5,
     "operational_score": 0.67,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
-      "label_uk": "Туризм / кластер — спільний проєкт"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -1707,8 +1755,8 @@
   {
     "a": "Брацлавська селищна територіальна громада",
     "b": "Тульчинська міська територіальна громада",
-    "score": 0.227,
-    "goals_cosine": 0.024,
+    "score": 0.249,
+    "goals_cosine": 0.061,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1716,21 +1764,21 @@
     "fiscal_similarity": 0.726,
     "dream_overlap": 0.0,
     "operational_score": 0.649,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -1739,14 +1787,14 @@
         "strength": "high"
       },
       {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
         "strength": "medium"
       },
       {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "strength": "low"
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "strength": "medium"
       }
     ],
     "discovery_primary": "geo",
@@ -1755,8 +1803,8 @@
   {
     "a": "Дубовецька сільська територіальна громада",
     "b": "Рогатинська міська територіальна громада",
-    "score": 0.317,
-    "goals_cosine": 0.174,
+    "score": 0.329,
+    "goals_cosine": 0.195,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1764,21 +1812,21 @@
     "fiscal_similarity": 0.675,
     "dream_overlap": 0.0,
     "operational_score": 0.636,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -1803,8 +1851,8 @@
   {
     "a": "Мукачівська міська територіальна громада",
     "b": "Білківська сільська територіальна громада",
-    "score": 0.299,
-    "goals_cosine": 0.144,
+    "score": 0.433,
+    "goals_cosine": 0.368,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1851,8 +1899,8 @@
   {
     "a": "Брацлавська селищна територіальна громада",
     "b": "Гайсинська міська територіальна громада",
-    "score": 0.271,
-    "goals_cosine": 0.098,
+    "score": 0.291,
+    "goals_cosine": 0.131,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
@@ -1860,21 +1908,21 @@
     "fiscal_similarity": 0.229,
     "dream_overlap": 0.0,
     "operational_score": 0.525,
-    "suggested_theme": "Поводження з відходами",
+    "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
     "suggested_form_id": "joint_enterprise",
     "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
     "kind": "mss_candidate",
     "package": {
-      "theme": "Поводження з відходами",
+      "theme": "Поводження з відходами / довкілля",
       "theme_id": "waste",
       "form": "спільне КП",
       "form_id": "joint_enterprise",
       "confidence": "medium",
-      "rationale": "тема «Поводження з відходами» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами — спільне КП"
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП"
     },
     "signals": [
       {
@@ -1885,7 +1933,7 @@
       {
         "id": "strategy_goals",
         "label_uk": "схожа стратегія",
-        "strength": "medium"
+        "strength": "high"
       },
       {
         "id": "structural",

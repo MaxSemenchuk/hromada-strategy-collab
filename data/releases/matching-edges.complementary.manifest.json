@@ -1,12 +1,16 @@
 {
-  "generatedAt": "2026-07-30T14:32:26.960085+00:00",
+  "generatedAt": "2026-08-03T10:30:19.410504+00:00",
   "pairCount": 400,
   "mssSuggest": {
     "annotated": 400,
-    "withTheme": 392
+    "withTheme": 396
   },
-  "method": "complementary v2: weighted DREAM/Strengths/resource → Challenges; score=1-exp(-0.4·w) ×1.2 same-oblast; min weight 1.2; prefer same-oblast shortlist; + suggested_theme/form (mss_suggest)",
-  "warning": "Hypotheses only — not v6 strategy matching, not known=true. Keyword hit ≠ verified МСС plan.",
+  "mssCandidate": {
+    "annotated": 400,
+    "withTheme": 396
+  },
+  "method": "complementary v2: weighted DREAM/Strengths/resource → Challenges; score=1-exp(-0.4·w) ×1.2 same-oblast; min weight 1.2; prefer same-oblast shortlist; + suggested_theme/form (mss_suggest) + mss_candidate package/signals",
+  "warning": "МСС candidate hypotheses (complementary signal) — not v7 strategy matching, not known=true. Keyword hit ≠ verified МСС plan.",
   "inputs": [
     "hromadas.json (Challenges/Strengths)",
     "dream-priorities.json",

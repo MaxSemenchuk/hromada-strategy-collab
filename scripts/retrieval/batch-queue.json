@@ -6,126 +6,126 @@
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://obcity.gov.ua/drupal/uploads/2025/07/STRATEGIYA-do-2027-Obukhivska-gromada.pdf",
-      "raw_text_path": "scripts/retrieval/raw/obukhiv-miska.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/обухівська.extracted.txt",
       "notes": "source=obukhiv-miska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/obukhiv-miska.pdf"
+      "raw_source_path": "scripts/retrieval/raw/обухівська.pdf"
     },
     {
       "name": "Дунаєвецька міська територіальна громада",
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://dunrada.gov.ua/sites/dunrada.gov.ua/files/inline-files/strategiyaplan-zakhodiv.pdf",
-      "raw_text_path": "scripts/retrieval/raw/dunayevetska.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/дунаєвецька.extracted.txt",
       "notes": "source=dunayevetska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/dunayevetska.pdf"
+      "raw_source_path": "scripts/retrieval/raw/дунаєвецька.pdf"
     },
     {
       "name": "Великодимерська селищна територіальна громада",
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://vdsr.gov.ua/sites/vdsr.gov.ua/files/inline-files/strategiya-rozvitku-velikodimerskoi-gromadi-do-2027-roku.pdf",
-      "raw_text_path": "scripts/retrieval/raw/velykodymerska.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/великодимерська.extracted.txt",
       "notes": "source=velykodymerska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/velykodymerska.pdf"
+      "raw_source_path": "scripts/retrieval/raw/великодимерська.pdf"
     },
     {
       "name": "Скалатська міська територіальна громада",
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://skalatmr.gov.ua/sites/skalatmr.gov.ua/files/document_files/strategiya-rozvitku-2023-2027-proekt.pdf",
-      "raw_text_path": "scripts/retrieval/raw/skalatska.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/скалатська.extracted.txt",
       "notes": "source=skalatska; chars=78076; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/skalatska.pdf"
+      "raw_source_path": "scripts/retrieval/raw/скалатська.pdf"
     },
     {
       "name": "Новоолександрівська сільська територіальна громада",
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://data.gov.ua/dataset/d84b8c16-f1a9-49af-8844-f4a65da880d1/resource/b5066e3b-af18-4c84-9088-c52d85a9d937/download/strategiya-stalogo-rozvitku-na-2017-2025-roki.pdf",
-      "raw_text_path": "scripts/retrieval/raw/novooleksandrivska.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/новоолександрівська.extracted.txt",
       "notes": "source=novooleksandrivska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/novooleksandrivska.pdf"
+      "raw_source_path": "scripts/retrieval/raw/новоолександрівська.pdf"
     },
     {
       "name": "Давидівська сільська територіальна громада",
       "katottg": "",
       "status": "no_strategy",
       "strategy_url": "https://data.gov.ua/dataset/3b7624d3-1a88-469e-a6b5-f6add6b04421/resource/9eba2edc-f4e8-4f0f-84af-61d8b8146346/download/1490-zatverdzhennya-strategiyi-rozvitku.pdf",
-      "raw_text_path": "scripts/retrieval/raw/davydivska.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/давидівська.extracted.txt",
       "notes": "CKAN PDF is council decision №1490 only (~1.2k chars), strategy body not attached",
-      "raw_source_path": "scripts/retrieval/raw/davydivska.pdf"
+      "raw_source_path": "scripts/retrieval/raw/давидівська.pdf"
     },
     {
       "name": "Гайсинська міська територіальна громада",
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://haisyn-municipality.gov.ua/files/222/upload/Економіка/strategiya2030.pdf",
-      "raw_text_path": "scripts/retrieval/raw/haisynska.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/гайсинська.extracted.txt",
       "notes": "source=haisynska; chars=73401; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/haisynska.pdf"
+      "raw_source_path": "scripts/retrieval/raw/гайсинська.pdf"
     },
     {
       "name": "Шепетівська міська територіальна громада",
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://shepetivka-rada.gov.ua/wp-content/uploads/2024/03/strategiya-rozvytku-shepetivskoyi-mtg-do-2030.pdf",
-      "raw_text_path": "scripts/retrieval/raw/shepetivska.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/шепетівська.extracted.txt",
       "notes": "source=shepetivska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/shepetivska.pdf"
+      "raw_source_path": "scripts/retrieval/raw/шепетівська.pdf"
     },
     {
       "name": "Білоцерківська міська територіальна громада",
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://bc75fea2-18c4-4c33-a99e-456439a453d0.filesusr.com/ugd/865f7d_afd6ccb5daf2454f8d469ff90657c6da.pdf",
-      "raw_text_path": "scripts/retrieval/raw/bila-tserkva-2025.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/білоцерківська.extracted.txt",
       "notes": "source=bila-tserkva-2025; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/bila-tserkva-2025.pdf"
+      "raw_source_path": "scripts/retrieval/raw/білоцерківська.pdf"
     },
     {
       "name": "Білківська сільська територіальна громада",
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://bilkigr.gov.ua/wp-content/uploads/sites/25/2024/01/Strategiya-rozvytku-Bilkivskoyi-STG-ta-Plan-vrovadzhennya-do-2027-roku_sajt_Rishennya.pdf",
-      "raw_text_path": "scripts/retrieval/raw/bilkivska.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/білківська.extracted.txt",
       "notes": "source=bilkivska; chars=85007; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/bilkivska.pdf"
+      "raw_source_path": "scripts/retrieval/raw/білківська.pdf"
     },
     {
       "name": "Збаразька міська територіальна громада",
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://data.gov.ua/dataset/33f327db-a7b3-4fdf-9ca8-b27d01b5aa43/resource/e7e3a807-402d-48fc-b6ab-8f41ca301854/download/vii-36-24-pro-zatverdzhennya-strategiyi-rozvitku-gromadi-na-25-30-roki.docx",
-      "raw_text_path": "scripts/retrieval/raw/zbarazka.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/збаразька.extracted.txt",
       "notes": "source=zbarazka; chars=67578; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/zbarazka.docx"
+      "raw_source_path": "scripts/retrieval/raw/збаразька.docx"
     },
     {
       "name": "Дрогобицька міська територіальна громада",
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://drohobych-rada.gov.ua/wp-content/uploads/2024/10/strategiya-21-30-nova-redakcziya-2024.pdf",
-      "raw_text_path": "scripts/retrieval/raw/drogobytska.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/дрогобицька.extracted.txt",
       "notes": "source=drogobytska; chars=67916; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/drogobytska.pdf"
+      "raw_source_path": "scripts/retrieval/raw/дрогобицька.pdf"
     },
     {
       "name": "Великоберезовицька селищна територіальна громада",
       "katottg": "UA61040070000079091",
       "status": "structured",
       "strategy_url": "https://vbsr.gov.ua/images/Strategia_rozvunky/zatverjena/Stratehiia_rozvytku_VBSR_do_2027.pdf",
-      "raw_text_path": "scripts/retrieval/raw/velykoberezovytska-plan.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/великоберезовицька.extracted.txt",
       "notes": "plan-of-measures PDF; letter-spaced OCR normalized; chars=54948; restructured in-session 2026-07-23 (no external LLM)",
-      "raw_source_path": "scripts/retrieval/raw/velykoberezovytska-plan.pdf"
+      "raw_source_path": "scripts/retrieval/raw/великоберезовицька.pdf"
     },
     {
       "name": "Бердичівська міська територіальна громада",
       "katottg": "",
       "status": "structured",
       "strategy_url": "https://berdychiv-rada.gov.ua/wp-content/uploads/2023/11/%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%86%D0%AF-%D0%91%D0%95%D0%A0%D0%94%D0%98%D0%A7%D0%86%D0%92%D0%A1%D0%AC%D0%9A%D0%90-%D0%9C%D0%A2%D0%93-.pdf",
-      "raw_text_path": "scripts/retrieval/raw/berdychiv-strategy.extracted.txt",
+      "raw_text_path": "scripts/retrieval/raw/бердичівська.extracted.txt",
       "notes": "source=berdychiv-strategy; chars=282607; structured 2026-07-23 with PyPDF2; U-LEAD support",
-      "raw_source_path": "scripts/retrieval/raw/berdychiv-strategy.pdf"
+      "raw_source_path": "scripts/retrieval/raw/бердичівська.pdf"
     },
     {
       "name": "Тульчинська міська територіальна громада",
@@ -499,82 +499,90 @@
     {
       "name": "Сокирянська міська територіальна громада",
       "katottg": "UA73040170000011490",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=4 pinDegree=22 oblast=Чернівецька область"
+      "raw_text_path": "scripts/retrieval/raw/сокирянська.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=4 pinDegree=22 oblast=Чернівецька область; found 2026-08-03 Downloads/newstrat; full strategy; structured 2026-08-03 in-session",
+      "raw_source_path": "scripts/retrieval/raw/сокирянська.pdf"
     },
     {
       "name": "Клішковецька сільська територіальна громада",
       "katottg": "UA73040050000080963",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=24 oblast=Чернівецька область"
+      "raw_text_path": "scripts/retrieval/raw/клішковецька.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=24 oblast=Чернівецька область; found 2026-08-03; DOBRE 2021–2027; structured 2026-08-03 in-session",
+      "raw_source_path": "scripts/retrieval/raw/клішковецька.doc"
     },
     {
       "name": "Слобідсько-Кульчієвецька сільська територіальна громада",
       "katottg": "UA68020230000069135",
-      "status": "pending",
+      "status": "no_strategy",
       "strategy_url": "",
       "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=22 oblast=Хмельницька область"
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=22 oblast=Хмельницька область; priority search 2026-08-03: no strategy PDF/DOC found publicly"
     },
     {
       "name": "Рукшинська сільська територіальна громада",
       "katottg": "UA73040150000056182",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=22 oblast=Чернівецька область"
+      "raw_text_path": "scripts/retrieval/raw/рукшинська.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=22 oblast=Чернівецька область; found 2026-08-03; strategy to 2027 (2017); structured 2026-08-03 in-session",
+      "raw_source_path": "scripts/retrieval/raw/рукшинська.docx"
     },
     {
       "name": "Борщівська міська територіальна громада",
       "katottg": "UA61060050000068464",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=22 oblast=Тернопільська область"
+      "raw_text_path": "scripts/retrieval/raw/борщівська.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=22 oblast=Тернопільська область; found 2026-08-03; updated strategy to 2027 (2025); structured 2026-08-03 in-session",
+      "raw_source_path": "scripts/retrieval/raw/борщівська.pdf"
     },
     {
       "name": "Жванецька сільська територіальна громада",
       "katottg": "UA68020070000084437",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Хмельницька область"
+      "raw_text_path": "scripts/retrieval/raw/жванецька.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Хмельницька область; found 2026-08-03; strategic plan 2022–2027 new edition 2025; structured 2026-08-03 in-session",
+      "raw_source_path": "scripts/retrieval/raw/жванецька.pdf"
     },
     {
       "name": "Китайгородська сільська територіальна громада",
       "katottg": "UA68020130000052994",
-      "status": "pending",
+      "status": "no_strategy",
       "strategy_url": "",
       "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Хмельницька область"
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Хмельницька область; priority search 2026-08-03: no strategy PDF/DOC found publicly"
     },
     {
       "name": "Вікнянська сільська територіальна громада",
       "katottg": "UA73060090000047054",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
       "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область; found 2026-08-03; scanned Програма соц-екон. розвитку 2021 (not full MinRegion strategy); OCR needed for body; structured 2026-08-03 in-session",
+      "raw_source_path": "scripts/retrieval/raw/вікнянська.pdf"
     },
     {
       "name": "Кадубовецька сільська територіальна громада",
       "katottg": "UA73060210000010691",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+      "raw_text_path": "scripts/retrieval/raw/кадубовецька.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область; found 2026-08-03; strategy 2028–2034 (2026); structured 2026-08-03 in-session",
+      "raw_source_path": "scripts/retrieval/raw/кадубовецька.docx"
     },
     {
       "name": "Кельменецька селищна територіальна громада",
       "katottg": "UA73040030000042378",
-      "status": "pending",
+      "status": "structured",
       "strategy_url": "",
-      "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область"
+      "raw_text_path": "scripts/retrieval/raw/кельменецька.extracted.txt",
+      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Чернівецька область; found 2026-08-03; strategy 2024–2027 project; structured 2026-08-03 in-session",
+      "raw_source_path": "scripts/retrieval/raw/кельменецька.docx"
     },
     {
       "name": "Лівинецька сільська територіальна громада",

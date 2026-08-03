@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-24T09:12:23.811695Z",
-  "source": "merge: main strategy upgrades + branch DonorsPrograms",
+  "generatedAt": "2026-08-03T10:28:53.274Z",
+  "source": "local:structure-hromada --write-release",
   "totalRows": 1469,
-  "textMinedRows": 77,
+  "textMinedRows": 85,
   "schema": "see docs/hromadas-schema.md",
   "license": "CC BY 4.0 — see DATA-LICENSE.md",
   "portalUrlRows": 36,
@@ -14,5 +14,6 @@
     "ЄІБ",
     "ЄБРР",
     "AFD"
-  ]
+  ],
+  "lastUpsert": "Вікнянська сільська територіальна громада"
 }

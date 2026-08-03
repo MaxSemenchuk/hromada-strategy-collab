@@ -1,10 +1,14 @@
 {
-  "generatedAt": "2026-07-30T14:32:27.582491+00:00",
-  "hromadaCount": 16,
-  "explicitAskEdges": 13,
+  "generatedAt": "2026-08-03T10:29:03.037188+00:00",
+  "hromadaCount": 23,
+  "explicitAskEdges": 28,
   "mssSuggest": {
-    "annotated": 13,
+    "annotated": 28,
     "withTheme": 4
   },
-  "method": "regex МСС/кооперація on strategy fields + curated hierarchy intents + suggested_theme/form (mss_suggest)"
+  "mssCandidate": {
+    "annotated": 28,
+    "withTheme": 4
+  },
+  "method": "regex МСС/кооперація on strategy fields + curated hierarchy intents + suggested_theme/form (mss_suggest) + mss_candidate package/signals"
 }

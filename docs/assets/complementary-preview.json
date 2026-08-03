@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T14:32:26.960085+00:00",
+  "generatedAt": "2026-08-03T10:30:19.410504+00:00",
   "caveat": "Complementary hypotheses — resource/DREAM of one side ↔ challenge of the other. Not goals-cosine.",
   "pairCount": 400,
   "top": [
@@ -34,7 +34,7 @@
       "b_short": "Бердичівська",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Бердичівська ↔ виклик у Житомирська",
@@ -60,7 +60,7 @@
       "b_short": "Коростенська",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Коростенська ↔ виклик у Житомирська",
@@ -99,7 +99,7 @@
       "b_short": "Тульчинська",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "Strengths «Сільське господарство / АПК» у Тульчинська ↔ виклик у Вінницька",
@@ -125,7 +125,7 @@
       "b_short": "Білгород-Дністровська",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Білгород-Дністровська ↔ виклик у Одеська",
@@ -138,8 +138,8 @@
       "b_short": "Косівська",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Туризм / кластер",
-      "suggested_form": "спільний проєкт",
+      "suggested_theme": "Поводження з відходами / довкілля",
+      "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Довкілля / екологія» у Косівська ↔ виклик у Яремчанська",
         "DREAM «Культура / спадщина» у Косівська ↔ виклик у Яремчанська",
@@ -151,7 +151,7 @@
       "b_short": "Бахмацька",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Бахмацька ↔ виклик у Батуринська",
@@ -164,7 +164,7 @@
       "b_short": "Прилуцька",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Прилуцька ↔ виклик у Батуринська",
@@ -177,7 +177,7 @@
       "b_short": "Чернігівська",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Чернігівська ↔ виклик у Батуринська",
@@ -190,7 +190,7 @@
       "b_short": "Чернігівська",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Чернігівська ↔ виклик у Козелецька",
@@ -203,7 +203,7 @@
       "b_short": "Нікопольська",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Нікопольська ↔ виклик у Криворізька",
@@ -242,7 +242,7 @@
       "b_short": "Липовецька",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Липовецька ↔ виклик у Тульчинська",
@@ -255,7 +255,7 @@
       "b_short": "Калуська",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Калуська ↔ виклик у Яремчанська",
@@ -268,7 +268,7 @@
       "b_short": "Теплодарська",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Теплодарська ↔ виклик у Білгород-Дністровська",
@@ -294,7 +294,7 @@
       "b_short": "Понорницька",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Понорницька ↔ виклик у Чернігівська",
@@ -307,7 +307,7 @@
       "b_short": "Городенківська",
       "complementary_score": 1.0,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Городенківська ↔ виклик у Яремчанська",
@@ -320,7 +320,7 @@
       "b_short": "Галицька",
       "complementary_score": 0.994,
       "same_oblast": true,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Галицька ↔ виклик у Яремчанська",
@@ -346,7 +346,7 @@
       "b_short": "Білгород-Дністровська",
       "complementary_score": 0.99,
       "same_oblast": false,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Білгород-Дністровська ↔ виклик у Тульчинська",
@@ -359,7 +359,7 @@
       "b_short": "Бердичівська",
       "complementary_score": 0.988,
       "same_oblast": false,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Бердичівська ↔ виклик у Тульчинська",
@@ -372,7 +372,7 @@
       "b_short": "Білгород-Дністровська",
       "complementary_score": 0.987,
       "same_oblast": false,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Білгород-Дністровська ↔ виклик у Яремчанська",
@@ -398,8 +398,8 @@
       "b_short": "Тульчинська",
       "complementary_score": 0.982,
       "same_oblast": false,
-      "suggested_theme": "Освіта",
-      "suggested_form": "спільне утримання",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "DREAM «Енергетика (ВДЕ)» у Тульчинська ↔ виклик у Яремчанська",
         "DREAM «Культура / спадщина» у Тульчинська ↔ виклик у Яремчанська",
@@ -437,7 +437,7 @@
       "b_short": "Білгород-Дністровська",
       "complementary_score": 0.975,
       "same_oblast": false,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Відновлення / реконструкція» у Білгород-Дністровська ↔ виклик у Коростенська",
@@ -463,7 +463,7 @@
       "b_short": "Житомирська",
       "complementary_score": 0.975,
       "same_oblast": false,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Житомирська ↔ виклик у Яремчанська",
@@ -489,8 +489,8 @@
       "b_short": "Кам'янська",
       "complementary_score": 0.973,
       "same_oblast": false,
-      "suggested_theme": "Освіта",
-      "suggested_form": "спільне утримання",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
       "reasons": [
         "DREAM «Культура / спадщина» у Кам'янська ↔ виклик у Ніжинська",
         "DREAM «Освіта» у Кам'янська ↔ виклик у Ніжинська",
@@ -502,7 +502,7 @@
       "b_short": "Бердичівська",
       "complementary_score": 0.973,
       "same_oblast": false,
-      "suggested_theme": "Водопостачання / водовідведення",
+      "suggested_theme": "Вода / захист від повеней",
       "suggested_form": "спільне КП",
       "reasons": [
         "DREAM «Вода / каналізація (ЖКГ)» у Бердичівська ↔ виклик у Яремчанська",

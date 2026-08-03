@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-30T14:32:27.582491+00:00",
+  "generatedAt": "2026-08-03T10:29:03.037188+00:00",
   "caveat": "Explicit МСС language in strategy text — not registry-confirmed.",
-  "intentHromadas": 16,
-  "edgeCount": 13,
+  "intentHromadas": 23,
+  "edgeCount": 28,
   "top": [
     {
       "a_short": "Козелецька",
@@ -49,8 +49,162 @@
       ]
     },
     {
+      "a_short": "Вижницька",
+      "b_short": "Кадубовецька",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Вижницька",
+      "b_short": "Кельменецька",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Вижницька",
+      "b_short": "Клішковецька",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Вижницька",
+      "b_short": "Рукшинська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Вижницька",
+      "b_short": "Сокирянська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
       "a_short": "Галицька",
       "b_short": "Дубовецька",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Кадубовецька",
+      "b_short": "Кельменецька",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Кадубовецька",
+      "b_short": "Клішковецька",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Кадубовецька",
+      "b_short": "Рукшинська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Кадубовецька",
+      "b_short": "Сокирянська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Кельменецька",
+      "b_short": "Клішковецька",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Кельменецька",
+      "b_short": "Рукшинська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Кельменецька",
+      "b_short": "Сокирянська",
+      "explicit_ask_score": 0.75,
+      "theme": "мережа",
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію (тема: мережа)"
+      ]
+    },
+    {
+      "a_short": "Клішковецька",
+      "b_short": "Рукшинська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Клішковецька",
+      "b_short": "Сокирянська",
       "explicit_ask_score": 0.75,
       "theme": null,
       "suggested_theme": "Інше / не визначено",
@@ -126,11 +280,22 @@
       ]
     },
     {
+      "a_short": "Рукшинська",
+      "b_short": "Сокирянська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
       "a_short": "Слобожанська",
       "b_short": "Божедарівська",
       "explicit_ask_score": 0.75,
       "theme": "відходи",
-      "suggested_theme": "Поводження з відходами",
+      "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "reasons": [
         "обидві згадують МСС/кооперацію (тема: відходи)"
