@@ -207,6 +207,11 @@ yarn export-hromadas:snapshot
 # export-matching-edges also adds fiscal/DREAM boost + suggested_theme/form (score unchanged)
 yarn match && yarn export-matching-edges && yarn test-length-norm && yarn test-known-pairs && yarn report-pin-corpus && yarn test-tracks && yarn test-mss-suggest && yarn build-matches-preview
 
+# Agent-centric recommendations for one seed (re-rank existing edges; no rematch)
+yarn recommend-for --seed "Галицька" --motivation water_basin
+yarn test-recommend-for && yarn build-recommend-preview
+# docs: agent-centric vs global score → docs/agent-centric-recommendations.md
+
 # Hierarchy + explicit МСС language + complementary (separate from combined score)
 yarn build-goals-hierarchy
 yarn extract-mss-intents

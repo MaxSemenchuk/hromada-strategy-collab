@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-03T13:49:12.564540+00:00",
+  "generatedAt": "2026-08-04T07:10:33.606271+00:00",
   "method": "PIN∩corpus: matching edges with mss_network>0 (KSE partnerships)",
   "pairCount": 246,
-  "curatedKnownCount": 4,
-  "otherPinCorpusCount": 242,
+  "curatedKnownCount": 12,
+  "otherPinCorpusCount": 234,
   "softTopN": 50,
   "inSoftTopN": 45,
   "warning": "Not a substitute for known=true regression. Combined score already includes mss_network (15%) — ranks are partly circular.",
@@ -20,7 +20,7 @@
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
-      "known": false,
+      "known": true,
       "rank": 1
     },
     {
@@ -35,7 +35,7 @@
       "geo_score": 1.0,
       "mss_network": 1.0,
       "track": "operational",
-      "known": false,
+      "known": true,
       "rank": 2
     },
     {
@@ -125,7 +125,7 @@
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
-      "known": false,
+      "known": true,
       "rank": 9
     },
     {
@@ -185,7 +185,7 @@
       "geo_score": 1.0,
       "mss_network": 1.0,
       "track": "operational",
-      "known": false,
+      "known": true,
       "rank": 14
     },
     {
@@ -290,7 +290,7 @@
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
-      "known": false,
+      "known": true,
       "rank": 22
     },
     {
@@ -560,7 +560,7 @@
       "geo_score": 1.0,
       "mss_network": 1.0,
       "track": "operational",
-      "known": false,
+      "known": true,
       "rank": 42
     },
     {
@@ -1595,7 +1595,7 @@
       "geo_score": 1.0,
       "mss_network": 1.0,
       "track": "operational",
-      "known": false,
+      "known": true,
       "rank": 130
     },
     {
@@ -2150,7 +2150,7 @@
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
-      "known": false,
+      "known": true,
       "rank": 179
     },
     {

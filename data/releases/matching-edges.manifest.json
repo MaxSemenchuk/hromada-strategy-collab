@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-03T13:49:12.285587+00:00",
+  "generatedAt": "2026-08-04T07:10:26.518916+00:00",
   "pairCount": 4950,
-  "knownValidationPairs": 4,
+  "knownValidationPairs": 12,
   "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
   "model": "intfloat/multilingual-e5-small",
   "license": "CC BY 4.0 \u2014 see DATA-LICENSE.md",
@@ -57,10 +57,10 @@
     ],
     "annotated": 4950,
     "withTheme": 4940,
-    "registryKnown": 4,
+    "registryKnown": 12,
     "sidecar": {
       "path": "mss-candidates.json",
-      "registryKnown": 4,
+      "registryKnown": 12,
       "hypotheses": 160
     }
   },
@@ -93,8 +93,8 @@
   "pinCorpusOverlap": {
     "path": "matching-edges.pin-corpus.json",
     "count": 246,
-    "curatedKnown": 4,
-    "otherPinCorpus": 242,
+    "curatedKnown": 12,
+    "otherPinCorpus": 234,
     "inTopN": 45,
     "topN": 50,
     "note": "All mss_network>0 pairs with Goals on both sides. Curated known=true stays the hard regression set; this file is the broader KSE check."

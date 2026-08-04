@@ -31,6 +31,11 @@ and self-describing, not a growth history.
   evidence). Not a full pairwise dump; do not browse primarily by `form_id`.
   Built by `yarn export-matching-edges` via `mss_candidate.py`.
 
+- **Agent-centric recommendations** (seed A · motivation → top-K packages) —
+  CLI `yarn recommend-for`; UI preview `docs/assets/recommend-for-preview.json`
+  via `yarn build-recommend-preview`. Does not rematch or change v7.1 weights.
+  See [docs/agent-centric-recommendations.md](../../docs/agent-centric-recommendations.md).
+
 - **`matching-edges.json`** — pairwise similarity scores (unverified hypotheses
   unless `known: true`). Method v7.1: 60% goals-cosine (hierarchy-aware;
   bipartite×0.65 + document-centroid×0.35 length/hub blend) + 25% KSE

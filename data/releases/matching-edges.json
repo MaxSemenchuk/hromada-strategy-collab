@@ -6,7 +6,7 @@
     "goals_cosine": 0.615,
     "geo_score": 0.85,
     "mss_network": 1.0,
-    "known": false,
+    "known": true,
     "track": "operational",
     "fiscal_similarity": 0.787,
     "dream_overlap": 0.167,
@@ -50,7 +50,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "registry_known"
   },
   {
     "a": "Галицька міська територіальна громада",
@@ -59,7 +59,7 @@
     "goals_cosine": 0.502,
     "geo_score": 1.0,
     "mss_network": 1.0,
-    "known": false,
+    "known": true,
     "track": "operational",
     "fiscal_similarity": 0.682,
     "dream_overlap": 0.25,
@@ -103,7 +103,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "registry_known"
   },
   {
     "a": "Рукшинська сільська територіальна громада",
@@ -425,7 +425,7 @@
     "goals_cosine": 0.304,
     "geo_score": 0.85,
     "mss_network": 1.0,
-    "known": false,
+    "known": true,
     "track": "operational",
     "fiscal_similarity": 0.536,
     "dream_overlap": 0.2,
@@ -469,7 +469,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "registry_known"
   },
   {
     "a": "Вижницька міська територіальна громада",
@@ -685,7 +685,7 @@
     "goals_cosine": 0.203,
     "geo_score": 1.0,
     "mss_network": 1.0,
-    "known": false,
+    "known": true,
     "track": "operational",
     "fiscal_similarity": 0.872,
     "dream_overlap": 0.0,
@@ -729,7 +729,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "registry_known"
   },
   {
     "a": "Косівська міська територіальна громада",
@@ -1099,7 +1099,7 @@
     "goals_cosine": 0.231,
     "geo_score": 0.85,
     "mss_network": 1.0,
-    "known": false,
+    "known": true,
     "track": "operational",
     "fiscal_similarity": 0.565,
     "dream_overlap": 0.429,
@@ -1145,7 +1145,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "registry_known"
   },
   {
     "a": "Галицька міська територіальна громада",
@@ -2151,7 +2151,7 @@
     "goals_cosine": 0.118,
     "geo_score": 1.0,
     "mss_network": 1.0,
-    "known": false,
+    "known": true,
     "track": "operational",
     "fiscal_similarity": 0.408,
     "dream_overlap": 0.167,
@@ -2195,7 +2195,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "registry_known"
   },
   {
     "a": "Ясінянська селищна територіальна громада",
@@ -6685,7 +6685,7 @@
     "goals_cosine": 0.0,
     "geo_score": 1.0,
     "mss_network": 1.0,
-    "known": false,
+    "known": true,
     "track": "operational",
     "fiscal_similarity": 0.88,
     "dream_overlap": 0.111,
@@ -6724,7 +6724,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "registry_known"
   },
   {
     "a": "Вижницька міська територіальна громада",
@@ -9177,7 +9177,7 @@
     "goals_cosine": 0.017,
     "geo_score": 0.85,
     "mss_network": 1.0,
-    "known": false,
+    "known": true,
     "track": "operational",
     "fiscal_similarity": 0.672,
     "dream_overlap": 0.167,
@@ -9221,7 +9221,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "registry_known"
   },
   {
     "a": "Тлумацька міська територіальна громада",

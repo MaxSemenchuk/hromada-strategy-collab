@@ -4,7 +4,7 @@
 **Status:** Draft for AIM-CC 2026 consultation (not locked). Comments welcome before freeze.  
 **Contact:** Max Semenchuk · max.semenchuk@gmail.com · W3I Civic Tech Lab pilot  
 **Repo / data:** https://github.com/MaxSemenchuk/hromada-strategy-collab · CC BY 4.0 releases  
-**Date:** 2026-07-30 · **Version:** 0.1
+**Date:** 2026-07-30 · **Version:** 0.2 (sampling frame refreshed 2026-08-04)
 
 ---
 
@@ -31,7 +31,7 @@ Note: experiment arms test **signals** (how the pair was found), not legal-form 
 | **B — Operational** | Pair labeled `track=operational` (`geo_score` high, goals weak) | Tests “convenient neighbour” baseline common in practice |
 | **C — Control** | Random pair from same Goals-ready corpus, **excluding** A/B eligible edges and known МСС; same oblast preferred when available | Isolates outreach effect of *any* intro vs model ranking |
 
-**Sampling frame (pilot corpus, 2026-07):** ~68 hromadas with Goals; ~225 thematic / ~46 operational edges in `matching-edges.json`. Exclude pairs already in registry-confirmed `known: true`. Prefer seeds with working contact channel (email / PIN partner / prior W3I touch).
+**Sampling frame (pilot corpus, 2026-08-03 release):** **100** municipalities with Goals; **455** thematic / **150** operational / **4,345** mixed edges in `matching-edges.json` (4,950 pairs total). PIN∩corpus = **246**. Exclude pairs already in registry-confirmed `known: true`. Prefer seeds with working contact channel (email / PIN partner / prior W3I touch).
 
 ## 4. Target N (pilot)
 
