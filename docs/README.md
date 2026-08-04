@@ -16,7 +16,8 @@ hromadas with coordinates (metadata — not the strategy corpus). Click a point 
 | Path | Content |
 |------|---------|
 | [`index.html`](index.html) | Landing / «Про проєкт» (all stakeholder audiences) |
-| [`matches.html`](matches.html) | Known pairs + thematic / operational / complementary / explicit-ask |
+| [`matches.html`](matches.html) | Known pairs + thematic / operational / complementary / explicit-ask · **«Для цієї громади»** agent recommendations |
+| [`agent-centric-recommendations.md`](agent-centric-recommendations.md) | Agent-centric re-rank vs global v7.1 lab score |
 | [`funds.html`](funds.html) | Donor portfolio: shared next grant / bridges / hubs |
 | [`resources.html`](resources.html) | KSE resource proxies × DREAM revealed priorities |
 | [`mss-pin-matching-graph.html`](mss-pin-matching-graph.html) | Full PIN map + four hypothesis overlays |

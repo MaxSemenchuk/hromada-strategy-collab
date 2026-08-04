@@ -98,6 +98,19 @@
     }
     .item .pair { margin-bottom: 0.25rem; display: block; }
     .item p { margin: 0; font-size: 0.9rem; color: var(--site-muted); }
+    .agent-controls {
+      display: flex; flex-wrap: wrap; gap: 0.65rem 1rem; align-items: flex-end;
+      margin: 0 0 1rem; font-size: 0.85rem; color: var(--site-muted);
+    }
+    .agent-controls label { display: flex; flex-direction: column; gap: 0.25rem; min-width: 12rem; }
+    .agent-controls select {
+      font: inherit; font-size: 0.85rem; padding: 0.35rem 0.5rem;
+      border-radius: 8px; border: 1px solid var(--site-border); background: var(--site-surface);
+      max-width: min(100%, 22rem);
+    }
+    .agent-hint { font-size: 0.82rem; color: var(--site-faint); margin: 0 0 1rem; max-width: 62ch; }
+    .agent-cards { display: grid; gap: 0.85rem; }
+    .agent-cards .item .why { margin-top: 0.35rem; }
     .table-wrap {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
@@ -129,6 +142,30 @@
         <option value="" data-i18n="filter.all">Усі</option>
       </select>
     </div>
+
+    <section id="agent-section">
+      <p class="kicker" data-i18n="agent.kicker">Для цієї громади</p>
+      <h2 data-i18n="agent.h2">Рекомендації для громади-агента</h2>
+      <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem" data-i18n-html="agent.lede">
+        Оберіть громаду з Goals і мотивацію — підкажемо партнерів і пакети <strong>для неї</strong>,
+        а не пари з найвищим global score. Деталі:
+        <a href="agent-centric-recommendations.md">agent-centric vs global score</a>.
+      </p>
+      <div class="agent-controls">
+        <label>
+          <span data-i18n="agent.seed">Громада</span>
+          <select id="agent-seed" aria-label="Seed hromada"></select>
+        </label>
+        <label>
+          <span data-i18n="agent.motivation">Мотивація</span>
+          <select id="agent-motivation" aria-label="Motivation"></select>
+        </label>
+      </div>
+      <p class="agent-hint" id="agent-hint" hidden></p>
+      <div class="agent-cards" id="agent-cards">
+        <p class="lede" style="font-size:0.9rem;margin:0" data-i18n="agent.loading">Завантаження рекомендацій…</p>
+      </div>
+    </section>
 
     <section>
       <p class="kicker" data-i18n="curated.kicker">Сильні гіпотези</p>
@@ -312,6 +349,16 @@ window.PAGE_I18N = {
     "method.error": "Не вдалося завантажити matches-preview.json: ",
     "filter.form": "Форма договору (фільтр):",
     "filter.all": "Усі",
+    "agent.kicker": "Для цієї громади",
+    "agent.h2": "Рекомендації для громади-агента",
+    "agent.lede": "Оберіть громаду з Goals і мотивацію — підкажемо партнерів і пакети <strong>для неї</strong>, а не пари з найвищим global score. Деталі: <a href=\"agent-centric-recommendations.md\">agent-centric vs global score</a>.",
+    "agent.seed": "Громада",
+    "agent.motivation": "Мотивація",
+    "agent.loading": "Завантаження рекомендацій…",
+    "agent.empty": "Немає інцидентних ребер для цієї громади в релізі.",
+    "agent.error": "Не вдалося завантажити recommend-for-preview.json — запустіть <code>yarn build-recommend-preview</code>.",
+    "agent.tag.known": "✓ реальна угода",
+    "agent.tag.hyp": "гіпотеза",
     "curated.kicker": "Сильні гіпотези",
     "curated.h2": "Кандидати з поясненням",
     "curated.c1.tag": "✓ реальна угода",
@@ -381,6 +428,16 @@ window.PAGE_I18N = {
     "method.error": "Failed to load matches-preview.json: ",
     "filter.form": "Agreement form (filter):",
     "filter.all": "All",
+    "agent.kicker": "For this hromada",
+    "agent.h2": "Hromada-as-agent recommendations",
+    "agent.lede": "Pick a Goals hromada and a motivation — we suggest partners and packages <strong>for that municipality</strong>, not pairs that maximize the global score. Details: <a href=\"agent-centric-recommendations.md\">agent-centric vs global score</a>.",
+    "agent.seed": "Hromada",
+    "agent.motivation": "Motivation",
+    "agent.loading": "Loading recommendations…",
+    "agent.empty": "No incident edges for this hromada in the release.",
+    "agent.error": "Could not load recommend-for-preview.json — run <code>yarn build-recommend-preview</code>.",
+    "agent.tag.known": "✓ real agreement",
+    "agent.tag.hyp": "hypothesis",
     "curated.kicker": "Strong hypotheses",
     "curated.h2": "Candidates with explanation",
     "curated.c1.tag": "✓ real agreement",
@@ -444,10 +501,17 @@ window.PAGE_I18N = {
     var previewData = null;
     var compData = null;
     var askData = null;
+    var recommendData = null;
+    var recommendError = null;
     var loadError = null;
+    var agentUiReady = false;
 
     function t(key) {
       return window.HromadaI18n ? HromadaI18n.t(key) : key;
+    }
+
+    function lang() {
+      return (window.HromadaI18n && HromadaI18n.getLang && HromadaI18n.getLang()) || "uk";
     }
 
     function pct(x) {
@@ -496,6 +560,96 @@ window.PAGE_I18N = {
       if (p.discovery_primary === "explicit_ask") return t("track.explicit-ask");
       if (p.discovery_primary === "network") return t("th.network");
       return trackLabel(p.track);
+    }
+
+    function setupAgentUi() {
+      if (!recommendData || agentUiReady) return;
+      var seedSel = document.getElementById("agent-seed");
+      var motSel = document.getElementById("agent-motivation");
+      if (!seedSel || !motSel) return;
+      seedSel.innerHTML = "";
+      (recommendData.seeds || []).forEach(function (s) {
+        var opt = document.createElement("option");
+        opt.value = s.key;
+        opt.textContent = (s.short || s.name) + (s.oblast ? " · " + s.oblast : "");
+        seedSel.appendChild(opt);
+      });
+      motSel.innerHTML = "";
+      (recommendData.motivations || []).forEach(function (m) {
+        var opt = document.createElement("option");
+        opt.value = m.id;
+        opt.textContent = lang() === "en" ? (m.label_en || m.id) : (m.label_uk || m.id);
+        motSel.appendChild(opt);
+      });
+      // Prefer a known water-corridor seed when present
+      var prefer = (recommendData.seeds || []).find(function (s) {
+        return (s.short || "").indexOf("Галицька") === 0 || (s.name || "").indexOf("Галицька") === 0;
+      });
+      if (prefer) seedSel.value = prefer.key;
+      var water = (recommendData.motivations || []).find(function (m) { return m.id === "water_basin"; });
+      if (water) motSel.value = "water_basin";
+      seedSel.addEventListener("change", renderAgent);
+      motSel.addEventListener("change", renderAgent);
+      agentUiReady = true;
+    }
+
+    function refreshMotivationLabels() {
+      if (!recommendData) return;
+      var motSel = document.getElementById("agent-motivation");
+      if (!motSel) return;
+      var cur = motSel.value;
+      Array.prototype.forEach.call(motSel.options, function (opt) {
+        var m = (recommendData.motivations || []).find(function (x) { return x.id === opt.value; });
+        if (m) opt.textContent = lang() === "en" ? (m.label_en || m.id) : (m.label_uk || m.id);
+      });
+      motSel.value = cur;
+    }
+
+    function renderAgent() {
+      var wrap = document.getElementById("agent-cards");
+      var hint = document.getElementById("agent-hint");
+      if (!wrap) return;
+      if (recommendError) {
+        wrap.innerHTML = "<p class=\"lede\" style=\"font-size:0.9rem;margin:0\">" + t("agent.error") + "</p>";
+        if (hint) hint.hidden = true;
+        return;
+      }
+      if (!recommendData) {
+        wrap.innerHTML = "<p class=\"lede\" style=\"font-size:0.9rem;margin:0\">" + t("agent.loading") + "</p>";
+        return;
+      }
+      setupAgentUi();
+      refreshMotivationLabels();
+      var seedKey = document.getElementById("agent-seed").value;
+      var motId = document.getElementById("agent-motivation").value;
+      var seed = (recommendData.bySeed || {})[seedKey];
+      var motMeta = (recommendData.motivations || []).find(function (m) { return m.id === motId; });
+      if (hint && motMeta) {
+        hint.hidden = false;
+        hint.textContent = lang() === "en"
+          ? (motMeta.package_hint_en || "")
+          : (motMeta.package_hint_uk || "");
+      }
+      var cards = seed && seed.by_motivation ? (seed.by_motivation[motId] || []) : [];
+      if (!cards.length) {
+        wrap.innerHTML = "<p class=\"lede\" style=\"font-size:0.9rem;margin:0\">" + t("agent.empty") + "</p>";
+        return;
+      }
+      wrap.innerHTML = cards.map(function (c) {
+        var tag = c.known
+          ? "<span class=\"tag known\">" + t("agent.tag.known") + "</span>"
+          : "<span class=\"tag hyp\">" + t("agent.tag.hyp") + "</span>";
+        var why = lang() === "en"
+          ? (c.why_en || c.why_helps_you_en || "")
+          : (c.why_uk || c.why_helps_you_uk || "");
+        return "<div class=\"item\" data-form=\"" + esc((c.package && c.package.form_id) || "") + "\">"
+          + tag
+          + "<span class=\"pair\">" + esc(c.partner_short || c.partner) + "</span>"
+          + "<div class=\"pkg\">" + esc((c.package && c.package.label_uk) || "—") + "</div>"
+          + chipsHtml(c)
+          + "<p class=\"why\">" + esc(why) + "</p>"
+          + "</div>";
+      }).join("");
     }
 
     function row(p) {
@@ -652,6 +806,7 @@ window.PAGE_I18N = {
       renderTables(previewData);
       renderComp();
       renderAsk();
+      renderAgent();
       setupFormFilter();
     }
 
@@ -668,6 +823,23 @@ window.PAGE_I18N = {
       .catch(function (err) {
         loadError = String(err);
         renderAll();
+      });
+
+    fetch("assets/recommend-for-preview.json")
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status + " " + r.statusText);
+        return r.json();
+      })
+      .then(function (data) {
+        recommendData = data;
+        recommendError = null;
+        agentUiReady = false;
+        renderAgent();
+      })
+      .catch(function (err) {
+        recommendData = null;
+        recommendError = String(err);
+        renderAgent();
       });
 
     fetch("assets/complementary-preview.json")
