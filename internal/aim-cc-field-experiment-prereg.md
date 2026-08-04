@@ -4,7 +4,7 @@
 **Status:** Draft for AIM-CC 2026 consultation (not locked). Comments welcome before freeze.  
 **Contact:** Max Semenchuk · max.semenchuk@gmail.com · W3I Civic Tech Lab pilot  
 **Repo / data:** https://github.com/MaxSemenchuk/hromada-strategy-collab · CC BY 4.0 releases  
-**Date:** 2026-07-30 · **Version:** 0.2 (sampling frame refreshed 2026-08-04)
+**Date:** 2026-07-30 · **Version:** 0.3 (primary reply window → 21 days, 2026-08-04)
 
 ---
 
@@ -45,14 +45,14 @@ This is an **underpowered** pilot for small effects; primary goal is **feasibili
 
 ## 5. Intervention (identical logistics across arms)
 
-1. **Message (UA):** short email/Telegram — hypothesis language, not “AI matched you as perfect partners.” Include: (a) 2–3 quoted goal fragments motivating the pair, (b) one concrete joint-project sketch, (c) ask for 30-min intro call within 14 days.  
-2. **Timing:** send to both sides same day; one reminder at day 7 if no reply.  
+1. **Message (UA):** short email/Telegram — hypothesis language, not “AI matched you as perfect partners.” Include: (a) 2–3 quoted goal fragments motivating the pair, (b) one concrete joint-project sketch, (c) ask for 30-min intro call within 21 days.  
+2. **Timing:** send to both sides same day; one reminder at day 10 if no reply.  
 3. **Facilitation:** optional W3I-hosted call; same script checklist for all arms.  
 4. **Generation rule (pre-commit):** either (i) **fixed human template** filled from stored Goals snippets, or (ii) **LLM-drafted** then human-edited — choose **one** before launch; if both are of interest, nest as 2×2 only after N≥36 (Bessudnov consult).
 
 ## 6. Outcomes
 
-**Primary (pre-registered):** binary **replied within 14 days** by ≥1 side (email/TG).
+**Primary (pre-registered):** binary **replied within 21 days** by ≥1 side (email/TG).
 
 **Secondary (ordered ladder):**  
 1. both sides replied · 2. intro-call scheduled · 3. intro-call held · 4. agreed next step (doc exchange / joint concept) within 30 days · 5. (exploratory, 12 months) new entry in public МСС registry / KSE PIN edge.

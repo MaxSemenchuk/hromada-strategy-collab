@@ -92,7 +92,7 @@ Partner discovery remains mostly **relational** (head-to-head contact, associati
 
 On **100** Goals-ready municipalities we rank **4,950** pairs (tracks: **455** thematic · **150** operational · **4,345** mixed). The product unit is an **IMC package hypothesis** (theme · form) plus 1–3 discovery-signal chips — not the blended score alone.
 
-**Known-pair recovery (curated N=12).** Operational CNAP **Slobozhanske↔Obukhivka**: goals-only **#3886** → v7.1 **#162** (package *ASC — delegation*). Tourism triangle **Nizhyn–Kozelets–Baturyn** recovers to ~**#124–#133** (curated *tourism — joint project*). Several newer registry-checked pairs land in the top ranks (e.g. Verkhovyna–Kuty **#1**, Halych–Dubivtsi **#2** on the Dniester Canyon tourism agreement #721). Absolute ranks shift as the edge set grows; the relative finding holds: geo/network recover operational deals that pure goals miss.
+**Known-pair recovery (curated N=12).** Operational ASC **Slobozhanske↔Obukhivka**: goals-only **#3886** → v7.1 **#162** (package *ASC — delegation*). Tourism triangle **Nizhyn–Kozelets–Baturyn** recovers to ~**#124–#133** (curated *tourism — joint project*). Several newer registry-checked pairs land in the top ranks (e.g. Verkhovyna–Kuty **#1**, Halych–Dubivtsi **#2** on the Dniester Canyon tourism agreement #721). Absolute ranks shift as the edge set grows; the relative finding holds: geo/network recover operational deals that pure goals miss.
 
 **Validation coverage.** Growing Goals into IMC-network hubs lifted IMC∩Goals from ~**10** to **246** pairs with strategy text on both sides; curated hard labels grew **4 → 12**.
 
@@ -110,7 +110,7 @@ On **100** Goals-ready municipalities we rank **4,950** pairs (tracks: **455** t
 
 **Theory / context.** OECD IMC ladders + Hooghe & Marks Type II networks; sticky/fragile heads under frozen elections.
 
-**Next — prospective test (draft prereg).** Arms: thematic vs operational vs control; treatment = **agreement package** recommendation. Primary: reply ≤14 days. Sampling frame (2026-08): **~100** Goals · **455** thematic · **150** operational — see `internal/aim-cc-field-experiment-prereg.md`.
+**Next — prospective experiment (draft prereg).** Arms: thematic vs operational vs control; treatment = **agreement package** recommendation. Primary: reply ≤21 days. Sampling frame (2026-08): **~100** Goals · **455** thematic · **150** operational — see `internal/aim-cc-field-experiment-prereg.md`.
 
 **Ask for mentors.** With IMC∩Goals in the hundreds and curated known at 12, how to move from recovery diagnostics to confirmatory validation / labelling? Design and ethics for cold outreach to municipalities? Active learning on institutional texts?
 
@@ -118,11 +118,13 @@ On **100** Goals-ready municipalities we rank **4,950** pairs (tracks: **455** t
 
 ## Conclusion
 
-Corpus methods can rank **IMC agreement hypotheses** and recover known clusters when geography/network enter; a single blended score must not be sold as “strategy match.” Product framing: **candidate agreement (theme · form)** justified by discovery signals. Corpus growth into the registry graph is as important as scoring tweaks.
+Partner search remains the hard step of Ukrainian IMC; strategies, geography, and the registered partnership network are usable **discovery signals**, not a substitute for trust between heads. Combining goal NLP with geo/network **recovers** registry-confirmed pairs that text alone misses — especially **operational** service sharing (e.g. shared ASC) — while text remains stronger for **thematic** clusters. The right product unit is an **agreement-package hypothesis** (who · about what · which legal form) backed by 1–3 signal chips, not a single blended “compatibility” score.
 
-**Next steps.** Keep growing PIN-neighbour Goals; field-test package recommendations; keep overlays separate in stakeholder tools.
+Growing Goals into IMC-network hubs mattered as much as formula tweaks: IMC∩Goals rose ~10→246; curated known labels now N=12. The pilot also ships an **open release** (CC BY 4.0) and a stakeholder map/interface so candidates can be inspected, not only ranked. Limits remain real: sparse national strategy coverage, template-text collisions, and partial circularity when network enters the score.
 
-**Data & code.** CC BY 4.0 releases + MIT pipeline · KATOTTG join · complements KSE Loc-Data-Hub · site: https://maxsemenchuk.github.io/hromada-strategy-collab/?lang=en
+**Next.** Pre-register and run a small field experiment: do package recommendations raise contact rates vs geo-only / control? Longer term: motivation-conditioned (agent-centric) recommendations per municipality, and clearer validation of package plausibility — not only rank recovery.
+
+**Data & code.** MIT pipeline · KATOTTG join with KSE Loc-Data-Hub · https://maxsemenchuk.github.io/hromada-strategy-collab/?lang=en
 
 ---
 
