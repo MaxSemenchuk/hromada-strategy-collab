@@ -59,6 +59,21 @@ yarn download-raw --dry-run
 Writes binaries under `scripts/retrieval/raw/`, sets `raw_source_path`, and
 appends sha256 metadata to `raw/manifest.json`.
 
+## GISRR local strategies (Мінрозвитку)
+
+```bash
+yarn fetch-gisrr-strategies              # catalog + details → data/cache/gisrr/
+yarn fetch-gisrr-strategies --limit 5    # smoke test
+yarn fetch-gisrr-strategies --catalog-only
+yarn fetch-gisrr-strategies --force      # re-fetch details
+```
+
+Public catalog of approved СРТГ on
+[gisrr.gov.ua/strategy-local](https://gisrr.gov.ua/strategy-local) (CC BY 4.0;
+дослідна експлуатація — coverage incomplete). SSR `window.__pinia` payloads:
+structured goals/subgoals/tasks + prose blocks. Cache only — not folded into
+`data/releases/` until structured via the usual pipeline.
+
 ## МСС registry (ground truth)
 
 ```bash
