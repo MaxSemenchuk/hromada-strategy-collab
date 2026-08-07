@@ -28,8 +28,8 @@
   ];
 
   var BRAND = {
-    uk: 'W3I <span>Партнери для МСС</span>',
-    en: 'W3I <span>IMC partners</span>'
+    uk: 'Партнери <span>для МСС</span>',
+    en: 'IMC <span>partners</span>'
   };
   var MENU = { uk: "Меню", en: "Menu" };
   var NAV_ARIA = { uk: "Розділи сайту", en: "Site sections" };
