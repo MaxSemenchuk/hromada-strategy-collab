@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-03T13:48:31.493096+00:00",
-  "hromadaCount": 40,
-  "explicitAskEdges": 87,
+  "generatedAt": "2026-08-07T14:10:20.563170+00:00",
+  "hromadaCount": 85,
+  "explicitAskEdges": 256,
   "mssSuggest": {
-    "annotated": 87,
+    "annotated": 256,
     "withTheme": 4
   },
   "mssCandidate": {
-    "annotated": 87,
+    "annotated": 256,
     "withTheme": 4
   },
   "method": "regex МСС/кооперація on strategy fields + curated hierarchy intents + suggested_theme/form (mss_suggest) + mss_candidate package/signals"

@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-08-04T07:10:26.518916+00:00",
-  "pairCount": 4950,
+  "generatedAt": "2026-08-07T14:15:29.790329+00:00",
+  "pairCount": 43071,
   "knownValidationPairs": 12,
   "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
   "model": "intfloat/multilingual-e5-small",
   "license": "CC BY 4.0 \u2014 see DATA-LICENSE.md",
   "warning": "Product unit is an \u041c\u0421\u0421 candidate agreement (package theme\u00b7form), not a strategy twin. Unverified hypotheses unless known=true / status=registry_known. Combined score ranks one discovery signal \u2014 use package + signals / slice files. suggested_theme / suggested_form / package are IMC hypotheses, not registry facts.",
   "tracks": {
-    "thematic": "goals_cosine >= p90 (0.282) and geo_score <= 0.35 \u2014 cold-start vision partners",
+    "thematic": "goals_cosine >= p90 (0.281) and geo_score <= 0.35 \u2014 cold-start vision partners",
     "operational": "geo_score >= 0.85 and not thematic \u2014 convenient service co-sharers; slice ranked by operational_score (geo + fiscal_similarity + dream_overlap) when available",
     "mixed": "all other pairs",
     "counts": {
-      "thematic": 455,
-      "operational": 150,
-      "mixed": 4345
+      "thematic": 3878,
+      "operational": 702,
+      "mixed": 38491
     },
-    "goalsFloor": 0.282,
+    "goalsFloor": 0.281,
     "goalsPercentile": 90,
     "geoThematicMax": 0.35,
     "geoOperationalMin": 0.85
@@ -27,8 +27,8 @@
       "dream_overlap",
       "operational_score"
     ],
-    "enriched": 4714,
-    "withOperationalScore": 150
+    "enriched": 42372,
+    "withOperationalScore": 702
   },
   "mssSuggest": {
     "note": "Rule-based theme + legal-form package (mss_suggest.py); does not change score; never sets known=true",
@@ -41,9 +41,9 @@
       "suggest_rationale",
       "suggest_caveat"
     ],
-    "annotated": 4950,
-    "withTheme": 4940,
-    "agglomerationHints": 36,
+    "annotated": 43071,
+    "withTheme": 43005,
+    "agglomerationHints": 45,
     "docs": "docs/mss-cooperation-research.md"
   },
   "mssCandidate": {
@@ -55,8 +55,8 @@
       "discovery_primary",
       "status"
     ],
-    "annotated": 4950,
-    "withTheme": 4940,
+    "annotated": 43071,
+    "withTheme": 43005,
     "registryKnown": 12,
     "sidecar": {
       "path": "mss-candidates.json",
@@ -92,10 +92,10 @@
   },
   "pinCorpusOverlap": {
     "path": "matching-edges.pin-corpus.json",
-    "count": 246,
+    "count": 316,
     "curatedKnown": 12,
-    "otherPinCorpus": 234,
-    "inTopN": 45,
+    "otherPinCorpus": 304,
+    "inTopN": 26,
     "topN": 50,
     "note": "All mss_network>0 pairs with Goals on both sides. Curated known=true stays the hard regression set; this file is the broader KSE check."
   }
