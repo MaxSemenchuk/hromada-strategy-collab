@@ -20,7 +20,7 @@ Then for each candidate:
 
 ## Target (pilot)
 
-- **+30–50** full/partial Goals (toward ~100–120 with text), prioritizing:
+- **Done (GISRR wave):** ~294 Goals in release (`yarn structure-gisrr`). Next prioritize:
   - high `corpusPinLinks` in `corpus-growth-priority.json`
   - low-МСС / under-sampled oblasts
   - сільські / селищні (міські зараз надпредставлені)

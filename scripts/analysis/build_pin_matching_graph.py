@@ -38,6 +38,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+sys.path.insert(0, str(ROOT / "scripts" / "analysis" / "legacy"))
 from goal_overlap import explain_goal_overlap  # noqa: E402
 from mss_suggest import (  # noqa: E402
     THEME_LABELS,

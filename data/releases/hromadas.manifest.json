@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-03T13:47:27.720Z",
-  "source": "local:structure-hromada --write-release",
+  "generatedAt": "2026-08-07T14:10:18.635254+00:00",
+  "source": "local:structure-gisrr",
   "totalRows": 1469,
-  "textMinedRows": 108,
+  "textMinedRows": 301,
   "schema": "see docs/hromadas-schema.md",
   "license": "CC BY 4.0 — see DATA-LICENSE.md",
   "portalUrlRows": 36,
@@ -16,5 +16,13 @@
     "AFD",
     "STRATEGY LAB"
   ],
-  "lastUpsert": "Рава-Руська міська територіальна громада"
+  "lastUpsert": "gisrr-batch:194",
+  "goalsRows": 294,
+  "gisrr": {
+    "upserted": 194,
+    "meta_only": 0,
+    "skipped_existing_goals": 19,
+    "unmatched": 3,
+    "hierarchy_rows": 194
+  }
 }

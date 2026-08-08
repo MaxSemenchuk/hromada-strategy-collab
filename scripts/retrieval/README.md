@@ -72,7 +72,14 @@ Public catalog of approved СРТГ on
 [gisrr.gov.ua/strategy-local](https://gisrr.gov.ua/strategy-local) (CC BY 4.0;
 дослідна експлуатація — coverage incomplete). SSR `window.__pinia` payloads:
 structured goals/subgoals/tasks + prose blocks. Cache only — not folded into
-`data/releases/` until structured via the usual pipeline.
+`data/releases/` until structured:
+
+```bash
+yarn structure-gisrr                 # upsert Goals for GISRR ТГ missing text
+yarn structure-gisrr --dry-run
+yarn structure-gisrr --limit 10
+yarn build-goals-hierarchy && yarn extract-mss-intents && yarn match
+```
 
 ## МСС registry (ground truth)
 

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-03T13:49:16.107120+00:00",
+  "generatedAt": "2026-08-07T14:12:45.849704+00:00",
   "pairCount": 400,
   "mssSuggest": {
     "annotated": 400,
-    "withTheme": 396
+    "withTheme": 400
   },
   "mssCandidate": {
     "annotated": 400,
-    "withTheme": 396
+    "withTheme": 400
   },
   "method": "complementary v2: weighted DREAM/Strengths/resource → Challenges; score=1-exp(-0.4·w) ×1.2 same-oblast; min weight 1.2; prefer same-oblast shortlist; + suggested_theme/form (mss_suggest) + mss_candidate package/signals",
   "warning": "МСС candidate hypotheses (complementary signal) — not v7 strategy matching, not known=true. Keyword hit ≠ verified МСС plan.",
