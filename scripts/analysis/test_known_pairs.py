@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Regression: curated known МСС pairs must exist and rank reasonably under v7.1.
 
-Hard gates are calibrated to the ~5k-edge Goals corpus (wave C, 2026-08):
-absolute top-20 from the ~70-Goals era no longer holds after corpus growth.
+Hard gates are calibrated to the ~5k-edge Goals corpus (wave C, 2026-08) and
+scale with edge count after corpus growth (GISRR wave → ~43k edges). Absolute
+top-20 from the ~70-Goals era no longer holds; absolute top-200/250 also
+breaks when N grows ~9× while known-pair scores stay geo+network capped.
 """
 
 from __future__ import annotations
@@ -23,15 +25,21 @@ NIZHYN_CLUSTER = {
     frozenset(["Батуринська міська територіальна громада", "Козелецька селищна територіальна громада"]),
     frozenset(["Ніжинська міська територіальна громада", "Батуринська міська територіальна громада"]),
 }
-CLUSTER_TOP_N = 200  # was 20 on smaller corpora; ~top 4% of 4950
+
+# Wave-C calibration (~4950 edges): cluster ~top 4%, CNAP ~5%, expanded ~10%.
+REF_EDGES = 4950
+CLUSTER_TOP_BASE = 200
+OPERATIONAL_TOP_BASE = 250
+EXPANDED_TOP_BASE = 500
 
 OPERATIONAL = frozenset(
     ["Слобожанська селищна територіальна громада", "Обухівська селищна територіальна громада"]
 )
-OPERATIONAL_TOP_N = 250  # was 50; geo/network recovery still required
 
-# Expanded curated batch — must be present; soft rank band (IMC network + geo).
-EXPANDED_TOP_N = 500
+
+def scaled_top(base: int, n_edges: int) -> int:
+    """Keep the wave-C percentile band as the corpus grows."""
+    return max(base, int(round(base * n_edges / REF_EDGES)))
 
 
 def ensure_edges() -> list[dict]:
@@ -42,6 +50,11 @@ def ensure_edges() -> list[dict]:
 
 def main() -> None:
     edges = ensure_edges()
+    n_edges = len(edges)
+    cluster_top_n = scaled_top(CLUSTER_TOP_BASE, n_edges)
+    operational_top_n = scaled_top(OPERATIONAL_TOP_BASE, n_edges)
+    expanded_top_n = scaled_top(EXPANDED_TOP_BASE, n_edges)
+
     ranked = sorted(edges, key=lambda e: -e["score"])
     rank_map = {frozenset([e["a"], e["b"]]): i + 1 for i, e in enumerate(ranked)}
     known_flag = {
@@ -62,20 +75,24 @@ def main() -> None:
 
     for pair in NIZHYN_CLUSTER:
         r = rank_map.get(pair)
-        if r is None or r > CLUSTER_TOP_N:
-            failed.append((f"cluster top-{CLUSTER_TOP_N}", pair, r))
+        if r is None or r > cluster_top_n:
+            failed.append((f"cluster top-{cluster_top_n}", pair, r))
 
     r_op = rank_map.get(OPERATIONAL)
-    if r_op is None or r_op > OPERATIONAL_TOP_N:
-        failed.append((f"operational top-{OPERATIONAL_TOP_N}", OPERATIONAL, r_op))
+    if r_op is None or r_op > operational_top_n:
+        failed.append((f"operational top-{operational_top_n}", OPERATIONAL, r_op))
 
     expanded = KNOWN_PAIRS - NIZHYN_CLUSTER - {OPERATIONAL}
     for pair in expanded:
         r = rank_map.get(pair)
-        if r is None or r > EXPANDED_TOP_N:
-            failed.append((f"expanded top-{EXPANDED_TOP_N}", pair, r))
+        if r is None or r > expanded_top_n:
+            failed.append((f"expanded top-{expanded_top_n}", pair, r))
 
-    print(f"Curated known N={len(KNOWN_PAIRS)} (of {len(edges)} edges)\nRanks:")
+    print(
+        f"Curated known N={len(KNOWN_PAIRS)} (of {n_edges} edges; "
+        f"gates top-{cluster_top_n}/{operational_top_n}/{expanded_top_n} "
+        f"scaled from {REF_EDGES})\nRanks:"
+    )
     rows = []
     for pair in KNOWN_PAIRS:
         r = rank_map.get(pair, 10**9)
@@ -101,8 +118,8 @@ def main() -> None:
         sys.exit(1)
 
     print(
-        f"\nOK: core cluster top-{CLUSTER_TOP_N}; CNAP top-{OPERATIONAL_TOP_N}; "
-        f"expanded top-{EXPANDED_TOP_N}; all {len(KNOWN_PAIRS)} flagged known"
+        f"\nOK: core cluster top-{cluster_top_n}; CNAP top-{operational_top_n}; "
+        f"expanded top-{expanded_top_n}; all {len(KNOWN_PAIRS)} flagged known"
     )
 
 

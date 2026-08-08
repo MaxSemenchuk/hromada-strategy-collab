@@ -115,18 +115,29 @@ def parse_goals_text(goals: str | list | None) -> dict:
 
 
 def load_hierarchy_index(path: Path | None = None) -> dict[str, dict]:
-    """Index by Name and Katottg."""
+    """Index by Katottg (preferred) and Name (fallback for unique names).
+
+    Homonyms (e.g. two Солотвинська ТГ) share a Name — never let the last
+    name write overwrite a katottg-keyed row used for lookup.
+    """
     p = path or HIERARCHY_RELEASE
     if not p.exists():
         return {}
     raw = json.loads(p.read_text(encoding="utf-8"))
     rows = raw.get("hromadas") if isinstance(raw, dict) else raw
     index: dict[str, dict] = {}
+    name_counts: dict[str, int] = {}
     for row in rows or []:
-        if row.get("name"):
-            index[row["name"]] = row
+        n = row.get("name")
+        if n:
+            name_counts[n] = name_counts.get(n, 0) + 1
+    for row in rows or []:
         if row.get("katottg"):
             index[row["katottg"]] = row
+        name = row.get("name")
+        # Only index unambiguous names — homonyms must resolve via Katottg.
+        if name and name_counts.get(name, 0) == 1:
+            index[name] = row
     return index
 
 
@@ -141,10 +152,16 @@ def record_subgoals(
     Prefer curated hierarchy release; else parse Goals text.
     Embedding list: operational first (higher weight applied in matcher),
     then strategic, then leftover lines.
+
+    Lookup prefers Katottg over Name so homonymous ТГ (identical official
+    Name, different codes) do not share one hierarchy row.
     """
     hier = None
     if hierarchy_index:
-        hier = hierarchy_index.get(name) or (hierarchy_index.get(katottg) if katottg else None)
+        if katottg:
+            hier = hierarchy_index.get(katottg)
+        if hier is None and name:
+            hier = hierarchy_index.get(name)
 
     if hier and (hier.get("strategic_goals") or hier.get("operational_goals")):
         strat_raw = [
