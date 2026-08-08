@@ -24,7 +24,8 @@ Each edge also gets a dual-track label (scoring weights unchanged):
   mixed       — otherwise
 
 After `yarn match`, run `yarn export-matching-edges` to attach operational
-boost + suggested_theme / suggested_form (mss_suggest) and write slices.
+boost, write slim `matching-edges.json` (core scores; compact), rich slices /
+mss-candidates, and an optional rich cache under data/cache/matching/.
 
 Usage:
   python scripts/analysis/match.py
@@ -43,6 +44,7 @@ from sentence_transformers import SentenceTransformer
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+from edge_io import write_release_edges  # noqa: E402
 from enrich_from_kse import geo_score, mss_network_score  # noqa: E402
 from goals_hierarchy import load_hierarchy_index, record_subgoals  # noqa: E402
 from tracks import assign_tracks  # noqa: E402
@@ -318,9 +320,8 @@ def main() -> None:
     edges = match_all(records, model)
     meta = assign_tracks(edges)
 
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(json.dumps(edges, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {len(edges)} edges to {args.out}")
+    write_release_edges(edges, args.out)
+    print(f"Wrote {len(edges)} slim edges to {args.out}")
     print(
         f"Tracks: thematic={meta['counts']['thematic']} "
         f"operational={meta['counts']['operational']} "

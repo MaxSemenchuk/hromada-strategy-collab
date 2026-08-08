@@ -230,6 +230,9 @@ yarn build-resources-preview
 Track labels on each edge (`thematic` / `operational` / `mixed`) and ranked
 slices `matching-edges.thematic.json` / `matching-edges.operational.json` are
 documented in [data/releases/MANIFEST.md](data/releases/MANIFEST.md).
+`matching-edges.json` is a **slim** compact score matrix (full pairwise for
+lab ranks); IMC `package` / `signals` live on `mss-candidates.json` and the
+slice files (rich local cache under `data/cache/matching/` after export).
 `yarn report-pin-corpus` writes the broader KSE PIN∩corpus check;
 `yarn priority-corpus-growth` lists next strategy extractions that add overlap
 ([docs/corpus-growth.md](docs/corpus-growth.md)).

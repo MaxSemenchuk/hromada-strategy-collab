@@ -78,9 +78,18 @@ def test_release_files() -> None:
     if any(e.get("track") != TRACK_OPERATIONAL for e in operational):
         raise SystemExit("operational slice contains non-operational rows")
 
-    # Slice helpers agree with files (full filters, then limit)
-    assert thematic == thematic_slice(edges, limit=50)
-    assert operational == operational_slice(edges, limit=50)
+    # Slice membership/order agree with helpers. Slice files may carry rich
+    # package/signals; the release matrix is slim (scores only).
+    def pair_key(e: dict) -> frozenset[str]:
+        return frozenset([e["a"], e["b"]])
+
+    expect_t = thematic_slice(edges, limit=50)
+    expect_o = operational_slice(edges, limit=50)
+    assert [pair_key(e) for e in thematic] == [pair_key(e) for e in expect_t]
+    assert [pair_key(e) for e in operational] == [pair_key(e) for e in expect_o]
+    assert [e.get("goals_cosine") for e in thematic] == [
+        e.get("goals_cosine") for e in expect_t
+    ]
 
     print(
         f"OK: tracks thematic={meta['counts']['thematic']} "

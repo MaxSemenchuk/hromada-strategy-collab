@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -68,14 +69,21 @@ def main() -> None:
         if r.get("SourceQuality") in ("full-strategy", "partial", "proxy-info")
     )
 
-    known = [slim(e) for e in edges if e.get("known")]
-    known.sort(key=lambda e: -float(e.get("score") or 0))
+    # Release matrix is slim (scores only); annotate the small preview subset.
+    sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+    from edge_io import ensure_packages  # noqa: E402
 
-    top = [
-        slim(e)
+    known_raw = [e for e in edges if e.get("known")]
+    known_raw.sort(key=lambda e: -float(e.get("score") or 0))
+    top_raw = [
+        e
         for e in sorted(edges, key=lambda x: -float(x.get("score") or 0))
         if not e.get("known")
     ][:TOP_N]
+    ensure_packages(known_raw + top_raw)
+
+    known = [slim(e) for e in known_raw]
+    top = [slim(e) for e in top_raw]
 
     pin_corpus = []
     if PIN_CORPUS.exists():
