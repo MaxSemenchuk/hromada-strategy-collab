@@ -390,11 +390,14 @@ def write_candidates_sidecar(
 
 
 def main() -> None:
+    from edge_io import write_release_edges, write_rich_cache
+    from mss_suggest import annotate_edges, load_hromadas_by_name
+
     edges = json.loads((RELEASES / "matching-edges.json").read_text(encoding="utf-8"))
+    annotate_edges(edges, hromadas_by_name=load_hromadas_by_name())
     counts = annotate_candidates(edges)
-    (RELEASES / "matching-edges.json").write_text(
-        json.dumps(edges, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-    )
+    write_release_edges(edges)
+    write_rich_cache(edges)
     result = write_candidates_sidecar(matching_edges=edges)
     print(f"annotated {counts['annotated']} edges "
           f"(theme={counts['with_theme']}, known={counts['registry_known']})")

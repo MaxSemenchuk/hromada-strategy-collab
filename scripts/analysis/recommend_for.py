@@ -451,11 +451,16 @@ def recommend_for(
             f"Choose from: {', '.join(MOTIVATIONS)}"
         )
     if edges is None:
-        edges = load_json(EDGES)
+        from edge_io import load_matching_edges
+
+        edges = load_matching_edges(prefer_rich_cache=True)
     if complementary is None and COMPLEMENTARY.exists():
         complementary = load_json(COMPLEMENTARY)
     merged = merge_complementary(edges, complementary or [])
     incident = edges_for_seed(merged, seed_name)
+    from edge_io import ensure_packages
+
+    ensure_packages(incident)
     scored = [(agent_rank(e, motivation), e) for e in incident]
     scored.sort(key=lambda t: (-t[0], -(t[1].get("score") or 0)))
     cards = [

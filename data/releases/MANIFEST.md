@@ -36,12 +36,20 @@ and self-describing, not a growth history.
   via `yarn build-recommend-preview`. Does not rematch or change v7.1 weights.
   See [docs/agent-centric-recommendations.md](../../docs/agent-centric-recommendations.md).
 
-- **`matching-edges.json`** — pairwise similarity scores (unverified hypotheses
-  unless `known: true`). Method v7.1: 60% goals-cosine (hierarchy-aware;
-  bipartite×0.65 + document-centroid×0.35 length/hub blend) + 25% KSE
-  geography + 15% KSE existing partnership network. Product framing: each edge
-  also carries `kind: mss_candidate`, `package`, `signals`, `discovery_primary`,
-  `status`. Combined `score` ranks one discovery path — not “strategy match”.
+- **`matching-edges.json`** — full pairwise **slim** matrix (compact JSON):
+  core scores (`score`, `goals_cosine`, `geo_score`, `mss_network`), `known`,
+  `track`, optional `operational_score`, plus `a`/`b` (+ katottg). Unverified
+  hypotheses unless `known: true`. Method v7.1: 60% goals-cosine
+  (hierarchy-aware; bipartite×0.65 + document-centroid×0.35 length/hub blend)
+  + 25% KSE geography + 15% KSE existing partnership network. Combined `score`
+  ranks one discovery path — not “strategy match”.
+
+  **Packages / signals** (`kind`, `package`, `signals`, `discovery_primary`,
+  `status`, `suggested_*`) are **not** duplicated on every matrix row — they
+  live on browse surfaces: `mss-candidates.json`, thematic/operational slices,
+  and (locally) `data/cache/matching/matching-edges.rich.json` after
+  `yarn export-matching-edges` (gitignored).
+
   Regenerate with:
 
   ```bash

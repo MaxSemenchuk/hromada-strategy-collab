@@ -39,6 +39,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 sys.path.insert(0, str(ROOT / "scripts" / "analysis" / "legacy"))
+from edge_io import ensure_packages, load_matching_edges  # noqa: E402
 from goal_overlap import explain_goal_overlap  # noqa: E402
 from mss_suggest import (  # noqa: E402
     THEME_LABELS,
@@ -558,13 +559,15 @@ def build_payload() -> dict:
         if r.get("Name")
     }
 
-    matching = json.loads(EDGES.read_text(encoding="utf-8"))
+    matching = load_matching_edges(prefer_rich_cache=True)
     corpus_matching = [
         e for e in matching if e["a"] in name_to_code and e["b"] in name_to_code
     ]
     known = [e for e in corpus_matching if e.get("known")]
     thematic = thematic_slice(corpus_matching, limit=TOP_THEMATIC)
     operational = operational_slice(corpus_matching, limit=TOP_OPERATIONAL)
+    # Slim release may lack package/signals — annotate only painted layers.
+    ensure_packages(known + thematic + operational)
 
     pin_keys = {tuple(sorted((e["a"], e["b"]))) for e in pin_edges}
     known_code_keys = {
