@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T14:15:29.779402+00:00",
+  "generatedAt": "2026-08-08T05:19:50.928954+00:00",
   "kind": "mss_candidates",
   "caveat": "Кандидати договорів МСС (гіпотези). package.form — правова форма за правилами, не факт реєстру. known/registry_known — лише кураторська валідація. Стратегії / geo / complementary / explicit-ask — сигнали пошуку.",
   "counts": {
@@ -65,8 +65,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": true,
-      "score": 0.742,
-      "goals_cosine": 0.633,
+      "score": 0.744,
+      "goals_cosine": 0.635,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "operational_score": 0.698,
@@ -131,7 +131,7 @@
       "track": "operational",
       "known": true,
       "score": 0.739,
-      "goals_cosine": 0.564,
+      "goals_cosine": 0.565,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "operational_score": 0.77,
@@ -260,8 +260,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": true,
-      "score": 0.565,
-      "goals_cosine": 0.276,
+      "score": 0.566,
+      "goals_cosine": 0.277,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "operational_score": 0.768,
@@ -400,6 +400,71 @@
     },
     {
       "kind": "mss_candidate",
+      "a": "Тернопільська міська територіальна громада",
+      "b": "Байковецька сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "registry_known",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": true,
+      "score": 0.441,
+      "goals_cosine": 0.068,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "operational_score": 0.792,
+      "suggest_confidence": "medium"
+    },
+    {
+      "kind": "mss_candidate",
       "a": "Батуринська міська територіальна громада",
       "b": "Козелецька селищна територіальна громада",
       "a_short": null,
@@ -457,75 +522,10 @@
       "track": "thematic",
       "known": true,
       "score": 0.44,
-      "goals_cosine": 0.337,
+      "goals_cosine": 0.338,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "suggest_confidence": "high"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Тернопільська міська територіальна громада",
-      "b": "Байковецька сільська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "registry_known",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": true,
-      "score": 0.44,
-      "goals_cosine": 0.067,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "operational_score": 0.792,
-      "suggest_confidence": "medium"
     },
     {
       "kind": "mss_candidate",
@@ -649,10 +649,75 @@
       "discovery_primary": "strategy_goals",
       "track": "mixed",
       "known": true,
-      "score": 0.419,
-      "goals_cosine": 0.199,
+      "score": 0.42,
+      "goals_cosine": 0.2,
       "geo_score": 0.6,
       "mss_network": 1.0,
+      "suggest_confidence": "medium"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Слобожанська селищна територіальна громада",
+      "b": "Обухівська селищна територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "registry_known",
+      "package": {
+        "theme": "ЦНАП / адмінпослуги",
+        "theme_id": "cnap",
+        "form": "делегування",
+        "form_id": "delegation",
+        "confidence": "medium",
+        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": true,
+      "score": 0.409,
+      "goals_cosine": 0.078,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "operational_score": 0.85,
       "suggest_confidence": "medium"
     },
     {
@@ -713,76 +778,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": true,
-      "score": 0.404,
-      "goals_cosine": 0.07,
+      "score": 0.405,
+      "goals_cosine": 0.071,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "operational_score": 0.669,
-      "suggest_confidence": "medium"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Слобожанська селищна територіальна громада",
-      "b": "Обухівська селищна територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "registry_known",
-      "package": {
-        "theme": "ЦНАП / адмінпослуги",
-        "theme_id": "cnap",
-        "form": "делегування",
-        "form_id": "delegation",
-        "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "low"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": true,
-      "score": 0.376,
-      "goals_cosine": 0.023,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "operational_score": 0.85,
       "suggest_confidence": "medium"
     }
   ],
@@ -2269,66 +2269,6 @@
     },
     {
       "kind": "mss_candidate",
-      "a": "Солотвинська селищна територіальна громада",
-      "b": "Солотвинська селищна територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "low"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "low"
-        }
-      ],
-      "discovery_primary": "strategy_goals",
-      "track": "thematic",
-      "known": false,
-      "score": 0.688,
-      "goals_cosine": 1.0,
-      "geo_score": 0.35,
-      "mss_network": 0.0,
-      "suggest_confidence": "high",
-      "source_slice": "thematic"
-    },
-    {
-      "kind": "mss_candidate",
       "a": "Бабинська сільська територіальна громада",
       "b": "Ободівська сільська територіальна громада",
       "a_short": null,
@@ -2700,8 +2640,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.436,
-      "goals_cosine": 0.727,
+      "score": 0.437,
+      "goals_cosine": 0.728,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2815,8 +2755,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.418,
-      "goals_cosine": 0.696,
+      "score": 0.417,
+      "goals_cosine": 0.695,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2856,7 +2796,7 @@
       "track": "thematic",
       "known": false,
       "score": 0.417,
-      "goals_cosine": 0.695,
+      "goals_cosine": 0.694,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2896,7 +2836,7 @@
       "track": "thematic",
       "known": false,
       "score": 0.416,
-      "goals_cosine": 0.694,
+      "goals_cosine": 0.693,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2956,7 +2896,7 @@
       "track": "thematic",
       "known": false,
       "score": 0.503,
-      "goals_cosine": 0.693,
+      "goals_cosine": 0.692,
       "geo_score": 0.35,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -2995,7 +2935,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.407,
+      "score": 0.408,
       "goals_cosine": 0.679,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -3156,7 +3096,7 @@
       "track": "thematic",
       "known": false,
       "score": 0.399,
-      "goals_cosine": 0.666,
+      "goals_cosine": 0.665,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "medium",
@@ -3265,7 +3205,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.481,
+      "score": 0.48,
       "goals_cosine": 0.655,
       "geo_score": 0.35,
       "mss_network": 0.0,
@@ -3866,7 +3806,7 @@
       "track": "thematic",
       "known": false,
       "score": 0.376,
-      "goals_cosine": 0.627,
+      "goals_cosine": 0.626,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -3986,7 +3926,7 @@
       "track": "thematic",
       "known": false,
       "score": 0.457,
-      "goals_cosine": 0.616,
+      "goals_cosine": 0.615,
       "geo_score": 0.35,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -4106,7 +4046,7 @@
       "track": "thematic",
       "known": false,
       "score": 0.452,
-      "goals_cosine": 0.607,
+      "goals_cosine": 0.608,
       "geo_score": 0.35,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -4195,8 +4135,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.355,
-      "goals_cosine": 0.592,
+      "score": 0.356,
+      "goals_cosine": 0.593,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -4285,8 +4225,58 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.353,
-      "goals_cosine": 0.589,
+      "score": 0.354,
+      "goals_cosine": 0.59,
+      "geo_score": 0.0,
+      "mss_network": 0.0,
+      "suggest_confidence": "high",
+      "source_slice": "thematic"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Брацлавська селищна територіальна громада",
+      "b": "Косівська міська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "strategy_goals",
+      "track": "thematic",
+      "known": false,
+      "score": 0.352,
+      "goals_cosine": 0.586,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "suggest_confidence": "high",
@@ -5774,67 +5764,6 @@
     },
     {
       "kind": "mss_candidate",
-      "a": "Обухівська селищна територіальна громада",
-      "b": "Обухівська міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "ЦНАП / адмінпослуги",
-        "theme_id": "cnap",
-        "form": "делегування",
-        "form_id": "delegation",
-        "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": false,
-      "score": 0.289,
-      "goals_cosine": 0.065,
-      "geo_score": 1.0,
-      "mss_network": 0.0,
-      "operational_score": 1.0,
-      "suggest_confidence": "medium",
-      "source_slice": "operational"
-    },
-    {
-      "kind": "mss_candidate",
       "a": "Ланнівська сільська територіальна громада",
       "b": "Красноградська міська територіальна громада",
       "a_short": null,
@@ -5948,7 +5877,7 @@
       "track": "operational",
       "known": false,
       "score": 0.283,
-      "goals_cosine": 0.054,
+      "goals_cosine": 0.055,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.977,
@@ -6070,7 +5999,7 @@
       "track": "operational",
       "known": false,
       "score": 0.293,
-      "goals_cosine": 0.072,
+      "goals_cosine": 0.071,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.965,
@@ -6130,8 +6059,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.332,
-      "goals_cosine": 0.137,
+      "score": 0.333,
+      "goals_cosine": 0.138,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.958,
@@ -6191,8 +6120,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.413,
-      "goals_cosine": 0.271,
+      "score": 0.412,
+      "goals_cosine": 0.27,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.941,
@@ -6252,7 +6181,7 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.436,
+      "score": 0.435,
       "goals_cosine": 0.309,
       "geo_score": 1.0,
       "mss_network": 0.0,
@@ -6314,7 +6243,7 @@
       "track": "operational",
       "known": false,
       "score": 0.375,
-      "goals_cosine": 0.209,
+      "goals_cosine": 0.208,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.925,
@@ -6375,7 +6304,7 @@
       "track": "operational",
       "known": false,
       "score": 0.417,
-      "goals_cosine": 0.278,
+      "goals_cosine": 0.279,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.918,
@@ -6436,7 +6365,7 @@
       "track": "operational",
       "known": false,
       "score": 0.308,
-      "goals_cosine": 0.096,
+      "goals_cosine": 0.097,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.918,
@@ -6558,7 +6487,7 @@
       "track": "operational",
       "known": false,
       "score": 0.543,
-      "goals_cosine": 0.488,
+      "goals_cosine": 0.489,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.901,
@@ -6679,7 +6608,7 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.322,
+      "score": 0.323,
       "goals_cosine": 0.183,
       "geo_score": 0.85,
       "mss_network": 0.0,
@@ -6802,7 +6731,7 @@
       "track": "operational",
       "known": false,
       "score": 0.457,
-      "goals_cosine": 0.407,
+      "goals_cosine": 0.408,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.897,
@@ -7046,7 +6975,7 @@
       "track": "operational",
       "known": false,
       "score": 0.271,
-      "goals_cosine": 0.097,
+      "goals_cosine": 0.098,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.895,
@@ -7167,8 +7096,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.283,
-      "goals_cosine": 0.117,
+      "score": 0.284,
+      "goals_cosine": 0.119,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.894,
@@ -7229,7 +7158,7 @@
       "track": "operational",
       "known": false,
       "score": 0.31,
-      "goals_cosine": 0.162,
+      "goals_cosine": 0.163,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.893,
@@ -7289,8 +7218,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.396,
-      "goals_cosine": 0.243,
+      "score": 0.397,
+      "goals_cosine": 0.244,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.892,
@@ -7472,8 +7401,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.325,
-      "goals_cosine": 0.187,
+      "score": 0.324,
+      "goals_cosine": 0.186,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.891,
@@ -7716,7 +7645,7 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.403,
+      "score": 0.404,
       "goals_cosine": 0.256,
       "geo_score": 1.0,
       "mss_network": 0.0,
@@ -7778,7 +7707,7 @@
       "track": "operational",
       "known": false,
       "score": 0.43,
-      "goals_cosine": 0.363,
+      "goals_cosine": 0.362,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.885,
@@ -7890,7 +7819,7 @@
       "track": "operational",
       "known": false,
       "score": 0.381,
-      "goals_cosine": 0.218,
+      "goals_cosine": 0.219,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.883,
@@ -7950,8 +7879,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.27,
-      "goals_cosine": 0.096,
+      "score": 0.271,
+      "goals_cosine": 0.097,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.883,
@@ -8073,7 +8002,7 @@
       "track": "operational",
       "known": false,
       "score": 0.481,
-      "goals_cosine": 0.385,
+      "goals_cosine": 0.386,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "operational_score": 0.881,
@@ -8133,7 +8062,7 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.319,
+      "score": 0.32,
       "goals_cosine": 0.178,
       "geo_score": 0.85,
       "mss_network": 0.0,
@@ -8195,8 +8124,69 @@
       "track": "operational",
       "known": false,
       "score": 0.392,
-      "goals_cosine": 0.237,
+      "goals_cosine": 0.236,
       "geo_score": 1.0,
+      "mss_network": 0.0,
+      "operational_score": 0.88,
+      "suggest_confidence": "medium",
+      "source_slice": "operational"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Вапнярська селищна територіальна громада",
+      "b": "Ободівська сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "medium",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
+        "label_uk": "Туризм / кластер — спільний проєкт"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": false,
+      "score": 0.483,
+      "goals_cosine": 0.451,
+      "geo_score": 0.85,
       "mss_network": 0.0,
       "operational_score": 0.88,
       "suggest_confidence": "medium",

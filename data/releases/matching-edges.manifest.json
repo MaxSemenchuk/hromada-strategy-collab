@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-07T14:15:29.790329+00:00",
-  "pairCount": 43071,
+  "generatedAt": "2026-08-08T05:19:50.941207+00:00",
+  "pairCount": 43064,
   "knownValidationPairs": 12,
   "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
   "model": "intfloat/multilingual-e5-small",
@@ -11,9 +11,9 @@
     "operational": "geo_score >= 0.85 and not thematic \u2014 convenient service co-sharers; slice ranked by operational_score (geo + fiscal_similarity + dream_overlap) when available",
     "mixed": "all other pairs",
     "counts": {
-      "thematic": 3878,
-      "operational": 702,
-      "mixed": 38491
+      "thematic": 3881,
+      "operational": 701,
+      "mixed": 38482
     },
     "goalsFloor": 0.281,
     "goalsPercentile": 90,
@@ -27,8 +27,8 @@
       "dream_overlap",
       "operational_score"
     ],
-    "enriched": 42372,
-    "withOperationalScore": 702
+    "enriched": 42366,
+    "withOperationalScore": 701
   },
   "mssSuggest": {
     "note": "Rule-based theme + legal-form package (mss_suggest.py); does not change score; never sets known=true",
@@ -41,8 +41,8 @@
       "suggest_rationale",
       "suggest_caveat"
     ],
-    "annotated": 43071,
-    "withTheme": 43005,
+    "annotated": 43064,
+    "withTheme": 42999,
     "agglomerationHints": 45,
     "docs": "docs/mss-cooperation-research.md"
   },
@@ -55,8 +55,8 @@
       "discovery_primary",
       "status"
     ],
-    "annotated": 43071,
-    "withTheme": 43005,
+    "annotated": 43064,
+    "withTheme": 42999,
     "registryKnown": 12,
     "sidecar": {
       "path": "mss-candidates.json",
@@ -89,14 +89,5 @@
       "path": "matching-edges.complementary.json",
       "note": "Separate yarn complementary-match \u2014 resource/DREAM \u2194 Challenges"
     }
-  },
-  "pinCorpusOverlap": {
-    "path": "matching-edges.pin-corpus.json",
-    "count": 316,
-    "curatedKnown": 12,
-    "otherPinCorpus": 304,
-    "inTopN": 26,
-    "topN": 50,
-    "note": "All mss_network>0 pairs with Goals on both sides. Curated known=true stays the hard regression set; this file is the broader KSE check."
   }
 }

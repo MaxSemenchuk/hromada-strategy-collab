@@ -233,6 +233,33 @@ def goals_similarity(records: list[dict], model: SentenceTransformer) -> np.ndar
     return scores
 
 
+def _short_name(full: str | None) -> str:
+    """First adjective token — «Солотвинська селищна …» → «Солотвинська»."""
+    if not full:
+        return ""
+    parts = full.replace("територіальна громада", "").strip().split()
+    return parts[0] if parts else full
+
+
+def _is_homonym_pair(a: dict, b: dict) -> bool:
+    """Drop twin / corrupt pairs that should never rank as IMC candidates.
+
+    - Same Katottg (duplicate rows — e.g. Обухівська селищна vs міська
+      sharing one code) → skip.
+    - Same official Name or same short name, different Katottg
+      (Солотвинська Закарпаття vs ІФ) → skip.
+    """
+    ka, kb = a.get("katottg"), b.get("katottg")
+    if ka and kb and ka == kb:
+        return True
+    if not ka or not kb or ka == kb:
+        return False
+    if a.get("name") and a["name"] == b.get("name"):
+        return True
+    sa, sb = _short_name(a.get("name")), _short_name(b.get("name"))
+    return bool(sa and sa == sb)
+
+
 def match_all(records: list[dict], model: SentenceTransformer) -> list[dict]:
     n = len(records)
     goals_mat = goals_similarity(records, model)
@@ -240,6 +267,8 @@ def match_all(records: list[dict], model: SentenceTransformer) -> list[dict]:
 
     for i in range(n):
         for j in range(i + 1, n):
+            if _is_homonym_pair(records[i], records[j]):
+                continue
             g = float(goals_mat[i, j])
             geo = geo_score(
                 records[i]["katottg"],
@@ -256,6 +285,8 @@ def match_all(records: list[dict], model: SentenceTransformer) -> list[dict]:
                 {
                     "a": records[i]["name"],
                     "b": records[j]["name"],
+                    "a_katottg": records[i]["katottg"],
+                    "b_katottg": records[j]["katottg"],
                     "score": round(combined, 3),
                     "goals_cosine": round(g, 3),
                     "geo_score": round(geo, 3),

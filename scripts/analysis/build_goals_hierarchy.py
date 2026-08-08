@@ -34,12 +34,22 @@ def _index_hierarchy_file(path: Path) -> dict[str, dict]:
     if not isinstance(items, list):
         return {}
     out: dict[str, dict] = {}
+    name_counts: dict[str, int] = {}
+    usable: list[dict] = []
     for item in items:
         if not (item.get("strategic_goals") or item.get("operational_goals")):
             continue
-        for key in (item.get("name"), item.get("katottg")):
-            if key:
-                out[str(key)] = item
+        usable.append(item)
+        n = item.get("name")
+        if n:
+            name_counts[str(n)] = name_counts.get(str(n), 0) + 1
+    for item in usable:
+        if item.get("katottg"):
+            out[str(item["katottg"])] = item
+        name = item.get("name")
+        # Homonyms (two Солотвинська etc.) resolve only via Katottg.
+        if name and name_counts.get(str(name), 0) == 1:
+            out[str(name)] = item
     return out
 
 
@@ -58,8 +68,8 @@ def main() -> None:
             continue
         name = r.get("Name") or ""
         code = r.get("Katottg") or r.get("KATOTTG") or ""
-        ov = overrides.get(name) or overrides.get(code)
-        gv = gisrr.get(name) or gisrr.get(code)
+        ov = (overrides.get(code) if code else None) or overrides.get(name)
+        gv = (gisrr.get(code) if code else None) or gisrr.get(name)
         if ov and (ov.get("strategic_goals") or ov.get("operational_goals")):
             curated += 1
             strategic = ov.get("strategic_goals") or []
