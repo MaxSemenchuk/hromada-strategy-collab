@@ -37,6 +37,8 @@
 
   var script = document.currentScript;
   var active = (script && script.getAttribute("data-active")) || "home";
+  var langsAttr = (script && script.getAttribute("data-langs")) || "uk,en";
+  var showLangSwitch = langsAttr.indexOf("en") !== -1;
 
   function fileName(path) {
     var parts = (path || "").split("/");
@@ -94,32 +96,35 @@
     linkEls.push({ el: a, page: p });
   });
 
-  var langSwitch = document.createElement("div");
-  langSwitch.className = "lang-switch";
-  langSwitch.setAttribute("role", "group");
-  langSwitch.setAttribute("aria-label", LANG_ARIA[lang()] || LANG_ARIA.uk);
+  var btnUk, btnEn;
+  if (showLangSwitch) {
+    var langSwitch = document.createElement("div");
+    langSwitch.className = "lang-switch";
+    langSwitch.setAttribute("role", "group");
+    langSwitch.setAttribute("aria-label", LANG_ARIA[lang()] || LANG_ARIA.uk);
 
-  function makeLangBtn(code, label) {
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "lang-btn";
-    btn.setAttribute("data-lang", code);
-    btn.textContent = label;
-    btn.addEventListener("click", function () {
-      if (window.HromadaI18n) window.HromadaI18n.setLang(code);
-      else {
-        try { localStorage.setItem("hromada-docs-lang", code); } catch (e) { /* ignore */ }
-        location.reload();
-      }
-    });
-    return btn;
+    var makeLangBtn = function (code, label) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "lang-btn";
+      btn.setAttribute("data-lang", code);
+      btn.textContent = label;
+      btn.addEventListener("click", function () {
+        if (window.HromadaI18n) window.HromadaI18n.setLang(code);
+        else {
+          try { localStorage.setItem("hromada-docs-lang", code); } catch (e) { /* ignore */ }
+          location.reload();
+        }
+      });
+      return btn;
+    };
+
+    btnUk = makeLangBtn("uk", "UK");
+    btnEn = makeLangBtn("en", "EN");
+    langSwitch.appendChild(btnUk);
+    langSwitch.appendChild(btnEn);
+    links.appendChild(langSwitch);
   }
-
-  var btnUk = makeLangBtn("uk", "UK");
-  var btnEn = makeLangBtn("en", "EN");
-  langSwitch.appendChild(btnUk);
-  langSwitch.appendChild(btnEn);
-  links.appendChild(langSwitch);
 
   var repo = document.createElement("a");
   repo.href = "https://github.com/MaxSemenchuk/hromada-strategy-collab";
@@ -135,14 +140,16 @@
     brand.innerHTML = BRAND[current] || BRAND.uk;
     toggle.textContent = MENU[current] || MENU.uk;
     nav.setAttribute("aria-label", NAV_ARIA[current] || NAV_ARIA.uk);
-    langSwitch.setAttribute("aria-label", LANG_ARIA[current] || LANG_ARIA.uk);
     linkEls.forEach(function (item) {
       item.el.textContent = item.page.label[current] || item.page.label.uk;
     });
-    btnUk.classList.toggle("active", current === "uk");
-    btnEn.classList.toggle("active", current === "en");
-    btnUk.setAttribute("aria-pressed", current === "uk" ? "true" : "false");
-    btnEn.setAttribute("aria-pressed", current === "en" ? "true" : "false");
+    if (showLangSwitch) {
+      langSwitch.setAttribute("aria-label", LANG_ARIA[current] || LANG_ARIA.uk);
+      btnUk.classList.toggle("active", current === "uk");
+      btnEn.classList.toggle("active", current === "en");
+      btnUk.setAttribute("aria-pressed", current === "uk" ? "true" : "false");
+      btnEn.setAttribute("aria-pressed", current === "en" ? "true" : "false");
+    }
   }
 
   syncLangUi();
