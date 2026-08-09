@@ -551,6 +551,17 @@ Canonical write-up: [ua-eu-twinning.md](./ua-eu-twinning.md). Data layer from
 - [ ] Stronger «навіщо» on candidate cards (budget / grant / image rationale),
       not only theme + signal chips
 - [ ] Association outreach: send ВА ОТГ → ВАГ drafts (`outreach-messages.md` §6)
+- [ ] **Template-collision guardrail never ported to live matcher.** Pass 5's
+      `template_collision()` (difflib ratio ≥0.98 on subgoal lines, guardrail
+      #3 above) exists only in `scripts/analysis/legacy/final_matching.py` —
+      `match.py` v7.1 (the canon matcher) has no equivalent check. Confirmed
+      regression on real output: Бабинська↔Ободівська scores
+      `goals_cosine=1.0` in `matching-edges.thematic.json` — near-verbatim
+      reordered boilerplate goal text (no tourism content at all), yet ships
+      as the top `tourism`/«схожа стратегія» thematic candidate at
+      `suggest_confidence: high`. Port the flag (or equivalent) into
+      `match.py`/`export_edges.py`, or at minimum surface it as a chip/caveat
+      on `matches.html`, before trusting top-N thematic slices — 2026-08-09
 
 ---
 
