@@ -35,7 +35,9 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import difflib
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -260,6 +262,68 @@ def _is_homonym_pair(a: dict, b: dict) -> bool:
         return True
     sa, sb = _short_name(a.get("name")), _short_name(b.get("name"))
     return bool(sa and sa == sb)
+
+
+def _norm_line(s: str) -> str:
+    s = s.lower()
+    s = re.sub(r"[^\w\s]", "", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
+def template_collision(lines_a: list[str], lines_b: list[str]) -> tuple[str, str, float] | None:
+    """Best near-verbatim subgoal-line match between two records, if any.
+
+    Ported from Pass 5 (`legacy/final_matching.py`) — never made it into v6/v7.
+    NOTE: on the current 294-record corpus, "best single line" is too noisy —
+    common boilerplate sentences (e.g. "Залучення інвестицій у громаду") match
+    near-verbatim across many unrelated pairs. Use `template_collision_fraction`
+    for the actual guardrail decision; this is kept for the sample-line display.
+    """
+    best: tuple[str, str, float] | None = None
+    for la in lines_a:
+        na = _norm_line(la)
+        if len(na) < 20:
+            continue
+        for lb in lines_b:
+            nb = _norm_line(lb)
+            if len(nb) < 20:
+                continue
+            ratio = difflib.SequenceMatcher(None, na, nb).ratio()
+            if best is None or ratio > best[2]:
+                best = (la, lb, ratio)
+    return best
+
+
+def template_collision_fraction(
+    lines_a: list[str], lines_b: list[str], line_ratio_thresh: float = 0.9
+) -> float:
+    """Fraction of each side's lines with a near-verbatim match on the other side.
+
+    Returns min(frac_a, frac_b) — both directions must show substantial
+    line-level duplication for this to indicate a shared document template,
+    not just one recycled boilerplate sentence.
+    """
+    na_lines = [l for l in lines_a if len(_norm_line(l)) >= 20]
+    nb_lines = [l for l in lines_b if len(_norm_line(l)) >= 20]
+    if not na_lines or not nb_lines:
+        return 0.0
+    normed_b = [_norm_line(l) for l in nb_lines]
+
+    def frac(src: list[str], others: list[str]) -> float:
+        matched = 0
+        for l in src:
+            nl = _norm_line(l)
+            best = max(
+                (difflib.SequenceMatcher(None, nl, ol).ratio() for ol in others),
+                default=0.0,
+            )
+            if best >= line_ratio_thresh:
+                matched += 1
+        return matched / len(src)
+
+    normed_a = [_norm_line(l) for l in na_lines]
+    return min(frac(na_lines, normed_b), frac(nb_lines, normed_a))
 
 
 def match_all(records: list[dict], model: SentenceTransformer) -> list[dict]:
