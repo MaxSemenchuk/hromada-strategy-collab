@@ -23,6 +23,14 @@ active_2402==1; `end` looks like the contract's nominal term-end, not an
 observed termination) — so this stays a formation-only model, no
 dissolution/persistence side.
 
+Also adds donor_overlap (dyadic: count of shared DonorsPrograms entries) and
+donor_total_exposure (nodal control: combined donor-program count on both
+sides, so overlap isn't confounded with "both sides are just generically
+donor-active"). DonorsPrograms is extracted independently of Goals, so unlike
+template_collision it isn't circular with goals_cosine — see conversation log
+for why a "shared consultant" tie was considered and dropped (no structured
+per-hromada consultant identity field exists yet).
+
 Run: python3 scripts/analysis/tergm_pilot.py
 """
 
@@ -41,17 +49,40 @@ KSE_NETWORK_CSV = ROOT / "data" / "cache" / "kse" / "partnerships-hromadas-netwo
 PERIOD_ENDS = list(range(2014, 2023))  # 8 transitions: 2014->15 ... 2021->22
 
 
+def load_donor_programs() -> dict[str, set[str]]:
+    """DonorsPrograms per hromada — extracted from strategy text independently
+    of Goals, so not circular with goals_cosine (unlike template_collision,
+    which is derived from the same subgoal lines as goals_cosine — see
+    match.py's template_collision_fraction)."""
+    raw = json.loads((ROOT / "data/releases/hromadas.json").read_text(encoding="utf-8"))
+    rows = raw if isinstance(raw, list) else raw.get("list", [])
+    out: dict[str, set[str]] = {}
+    for r in rows:
+        katottg = r.get("Katottg") or r.get("KATOTTG")
+        programs = r.get("DonorsPrograms")
+        if katottg and programs:
+            out[katottg] = set(programs)
+    return out
+
+
 def load_edges() -> dict[frozenset, dict]:
     edges = json.loads((ROOT / "data/releases/matching-edges.json").read_text(encoding="utf-8"))
+    donors = load_donor_programs()
     out: dict[frozenset, dict] = {}
     for r in edges:
-        dyad = frozenset((r["a_katottg"], r["b_katottg"]))
+        ka, kb = r["a_katottg"], r["b_katottg"]
+        dyad = frozenset((ka, kb))
+        da, db = donors.get(ka, set()), donors.get(kb, set())
         out[dyad] = {
             "a": r["a"],
             "b": r["b"],
             "goals_cosine": r["goals_cosine"],
             "geo_score": r["geo_score"],
             "known": r.get("known", False),
+            # dyadic: do they share a donor program (and how many)
+            "donor_overlap": len(da & db),
+            # nodal control: how donor-active is each side, regardless of overlap
+            "donor_total_exposure": len(da) + len(db),
         }
     return out
 
@@ -139,6 +170,8 @@ def main() -> None:
                     "goals_cosine": r["goals_cosine"],
                     "geo_score": r["geo_score"],
                     "shared_partners_prior": shared_partners_count(d, adjacency),
+                    "donor_overlap": r["donor_overlap"],
+                    "donor_total_exposure": r["donor_total_exposure"],
                     "y": int(d in formed_this_period),
                 }
             )
@@ -147,11 +180,11 @@ def main() -> None:
     print(f"\nPooled MPLE dataset: {len(data)} (dyad, period) rows, {data['y'].sum()} formation events")
     print(data.groupby("period")["y"].agg(["size", "sum"]))
 
-    X_cols = ["goals_cosine", "geo_score", "shared_partners_prior"]
+    X_cols = ["goals_cosine", "geo_score", "shared_partners_prior", "donor_overlap", "donor_total_exposure"]
     X = data[X_cols].to_numpy()
     y = data["y"].to_numpy()
 
-    params = fit_logit(X, y, x0=np.array([-9.0, 0.0, 0.0, 0.0]))
+    params = fit_logit(X, y, x0=np.array([-9.0] + [0.0] * len(X_cols)))
     intercept, coefs = params[0], params[1:]
     print("\n=== MPLE point estimates (log-odds), BFGS ===")
     for name, coef in zip(X_cols, coefs):
