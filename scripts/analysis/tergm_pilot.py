@@ -10,12 +10,18 @@ each transition. This is the same estimator `btergm` (R) uses internally, just
 implemented directly since no R/statnet is installed in this environment. Not
 full MCMC-MLE `tergm` — see caveats printed at the end.
 
-Known ties + dates were hand-extracted from data/cache/mss/mss_registry.xlsx by
-name-matching against the 12 `known: true` pairs in match.py's KNOWN_PAIRS
-(see conversation log for the extraction step). Hardcoded here because the
-registry's free-text subject column isn't reliably machine-joinable to katottg
-at scale — this pilot deliberately stays scoped to the 12 pairs we already
-trust, not a full registry-wide join.
+Ground-truth ties + dates come from KSE's own registry-to-katottg join
+(data/cache/kse/partnerships-hromadas-network.csv — the same source
+`enrich_from_kse.mss_network_score` reads). No name-matching needed: this file
+is already keyed by hromada_code (katottg) with a `start` date per pair. This
+supersedes an earlier v1 of this script that hand-extracted dates for only the
+12 pairs in match.py's KNOWN_PAIRS by name-matching the raw registry xlsx —
+that was 26x fewer events than what KSE already had joined for us.
+
+`end` in that CSV is not a real dissolution date (every row has
+active_2402==1; `end` looks like the contract's nominal term-end, not an
+observed termination) — so this stays a formation-only model, no
+dissolution/persistence side.
 
 Run: python3 scripts/analysis/tergm_pilot.py
 """
@@ -30,36 +36,9 @@ import pandas as pd
 from scipy.optimize import minimize
 
 ROOT = Path(__file__).resolve().parents[2]
+KSE_NETWORK_CSV = ROOT / "data" / "cache" / "kse" / "partnerships-hromadas-network.csv"
 
-# (name_a, name_b, earliest registry date_added for a tie connecting them)
-DATED_KNOWN_TIES = [
-    ("Вашковецька сільська територіальна громада", "Сокирянська міська територіальна громада", "2017-12-06"),
-    ("Рукшинська сільська територіальна громада", "Хотинська міська територіальна громада", "2017-12-29"),
-    ("Слобожанська селищна територіальна громада", "Обухівська селищна територіальна громада", "2018-02-20"),
-    ("Клішковецька сільська територіальна громада", "Хотинська міська територіальна громада", "2018-11-05"),
-    ("Тернопільська міська територіальна громада", "Байковецька сільська територіальна громада", "2019-05-06"),
-    ("Львівська міська територіальна громада", "Жовківська міська територіальна громада", "2020-01-23"),
-    ("Верховинська селищна територіальна громада", "Кутська селищна територіальна громада", "2021-05-31"),
-    ("Клішковецька сільська територіальна громада", "Рукшинська сільська територіальна громада", "2021-07-13"),
-    ("Галицька міська територіальна громада", "Дубовецька сільська територіальна громада", "2021-07-23"),
-    ("Ніжинська міська територіальна громада", "Козелецька селищна територіальна громада", "2021-10-28"),
-    ("Батуринська міська територіальна громада", "Козелецька селищна територіальна громада", "2021-10-28"),
-    ("Ніжинська міська територіальна громада", "Батуринська міська територіальна громада", "2021-10-28"),
-]
-
-PERIOD_ENDS = [2016, 2017, 2018, 2019, 2020, 2021]  # 5 transitions: 2016->17 ... 2020->21
-
-
-def load_katottg_by_name() -> dict[str, str]:
-    raw = json.loads((ROOT / "data/releases/hromadas.json").read_text(encoding="utf-8"))
-    rows = raw if isinstance(raw, list) else raw.get("list", [])
-    out = {}
-    for r in rows:
-        name = r.get("Name")
-        katottg = r.get("Katottg") or r.get("KATOTTG")
-        if name and katottg:
-            out[name] = katottg
-    return out
+PERIOD_ENDS = list(range(2014, 2023))  # 8 transitions: 2014->15 ... 2021->22
 
 
 def load_edges() -> dict[frozenset, dict]:
@@ -77,18 +56,15 @@ def load_edges() -> dict[frozenset, dict]:
     return out
 
 
-def build_tie_events(name_to_katottg: dict[str, str]) -> list[tuple[frozenset, pd.Timestamp]]:
-    events = []
-    missing = []
-    for a, b, date in DATED_KNOWN_TIES:
-        ka, kb = name_to_katottg.get(a), name_to_katottg.get(b)
-        if not ka or not kb:
-            missing.append((a, b))
-            continue
-        events.append((frozenset((ka, kb)), pd.Timestamp(date)))
-    if missing:
-        print(f"WARNING: {len(missing)} dated pair(s) could not be resolved to katottg: {missing}")
-    return events
+def build_tie_events(corpus_dyads: set[frozenset]) -> list[tuple[frozenset, pd.Timestamp]]:
+    df = pd.read_csv(KSE_NETWORK_CSV, low_memory=False)
+    df["dyad"] = df.apply(lambda r: frozenset((r["hromada_code.x"], r["hromada_code.y"])), axis=1)
+    df = df.drop_duplicates(subset="dyad")
+    df["start"] = pd.to_datetime(df["start"])
+    df = df[df["dyad"].isin(corpus_dyads)]
+    # a dyad can appear under >1 register_number (multiple agreements); keep earliest.
+    earliest = df.sort_values("start").groupby("dyad", as_index=False).first()
+    return list(zip(earliest["dyad"], earliest["start"]))
 
 
 def shared_partners_count(dyad: frozenset, adjacency: dict[str, set[str]]) -> int:
@@ -111,24 +87,27 @@ def fit_logit(X: np.ndarray, y: np.ndarray, x0: np.ndarray) -> np.ndarray:
         z = Xd @ params
         return -(y * z - np.log1p(np.exp(z))).sum()
 
-    res = minimize(negloglik, x0=x0, method="BFGS")
+    def grad(params: np.ndarray) -> np.ndarray:
+        z = Xd @ params
+        p = 1.0 / (1.0 + np.exp(-z))
+        return Xd.T @ (p - y)
+
+    res = minimize(negloglik, x0=x0, jac=grad, method="BFGS")
+    if not res.success:
+        res = minimize(negloglik, x0=res.x, jac=grad, method="Nelder-Mead")
     if not res.success:
         raise RuntimeError(f"logit fit did not converge: {res.message}")
     return res.x
 
 
 def main() -> None:
-    name_to_katottg = load_katottg_by_name()
     edges = load_edges()
-    events = build_tie_events(name_to_katottg)
+    events = build_tie_events(set(edges.keys()))
     event_dates = {dyad: date for dyad, date in events}
 
     print(f"Corpus dyads (from matching-edges.json): {len(edges)}")
-    print(f"Dated known ties resolved: {len(events)} / {len(DATED_KNOWN_TIES)}")
-    for dyad, date in sorted(events, key=lambda x: x[1]):
-        row = edges.get(dyad)
-        label = f"{row['a']} <-> {row['b']}" if row is not None else "(not in matching-edges corpus)"
-        print(f"  {date.date()}  {label}")
+    print(f"Dated known ties from KSE partnerships network (corpus-restricted): {len(events)}")
+    print(f"  by year: {pd.Series([d.year for _, d in events]).value_counts().sort_index().to_dict()}")
 
     rows = []
     adjacency: dict[str, set[str]] = {}

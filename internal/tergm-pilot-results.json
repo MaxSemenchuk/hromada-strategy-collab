@@ -1,26 +1,26 @@
 {
-  "n_dyad_period_rows": 213843,
-  "n_formation_events": 12,
-  "n_periods": 5,
+  "n_dyad_period_rows": 341734,
+  "n_formation_events": 316,
+  "n_periods": 8,
   "point_estimates": {
-    "goals_cosine": 3.1881099760956357,
-    "geo_score": 7.809810802320338,
-    "shared_partners_prior": 4.345595140052722
+    "goals_cosine": 1.1889815144910831,
+    "geo_score": 5.992572811732248,
+    "shared_partners_prior": 0.06800494093569595
   },
-  "intercept": -13.731654700307454,
+  "intercept": -8.999038377176394,
   "bootstrap_95ci": {
     "goals_cosine": [
-      -7.63292275615739,
-      6.260249419233841
+      -3.411486191842806,
+      1.5552839849521523
     ],
     "geo_score": [
-      5.991817833703203,
-      14.848693646043612
+      5.740105338970003,
+      12.471783631879292
     ],
     "shared_partners_prior": [
-      -12.705904240149533,
-      21.542005395210595
+      -21.097498419675684,
+      2.320336777001232
     ]
   },
-  "n_valid_bootstrap_fits": 281
+  "n_valid_bootstrap_fits": 300
 }
