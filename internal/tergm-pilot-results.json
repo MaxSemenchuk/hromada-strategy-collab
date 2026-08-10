@@ -1,7 +1,7 @@
 {
   "n_dyad_period_rows": 341734,
   "n_formation_events": 316,
-  "n_periods": 8,
+  "n_contracts": 36,
   "point_estimates": {
     "goals_cosine": 1.3636740454642153,
     "geo_score": 6.028651880878739,
@@ -12,25 +12,26 @@
   "intercept": -9.264159645151299,
   "bootstrap_95ci": {
     "goals_cosine": [
-      -3.391578710137799,
-      1.7938551793596476
+      -1.145686097321771,
+      2.1452470361285223
     ],
     "geo_score": [
-      5.777807546110764,
-      12.438750033415372
+      5.1721692368820635,
+      9.198757571381059
     ],
     "shared_partners_prior": [
-      -21.555987781891186,
-      2.0922837525402755
+      -20.71746478110675,
+      0.9100463899217742
     ],
     "donor_overlap": [
-      -0.04663136867743842,
-      1.8674416986709124
+      -0.3616560053695883,
+      1.2554532221170154
     ],
     "donor_total_exposure": [
-      -0.3547909035023409,
-      0.34391955693958
+      0.027632453782829573,
+      0.44841097012196146
     ]
   },
-  "n_valid_bootstrap_fits": 300
+  "n_valid_bootstrap_fits": 300,
+  "bootstrap_method": "contract-cluster (resample register_number clusters; background fixed)"
 }
