@@ -1,0 +1,26 @@
+{
+  "n_dyad_period_rows": 213843,
+  "n_formation_events": 12,
+  "n_periods": 5,
+  "point_estimates": {
+    "goals_cosine": 3.1881099760956357,
+    "geo_score": 7.809810802320338,
+    "shared_partners_prior": 4.345595140052722
+  },
+  "intercept": -13.731654700307454,
+  "bootstrap_95ci": {
+    "goals_cosine": [
+      -7.63292275615739,
+      6.260249419233841
+    ],
+    "geo_score": [
+      5.991817833703203,
+      14.848693646043612
+    ],
+    "shared_partners_prior": [
+      -12.705904240149533,
+      21.542005395210595
+    ]
+  },
+  "n_valid_bootstrap_fits": 281
+}
