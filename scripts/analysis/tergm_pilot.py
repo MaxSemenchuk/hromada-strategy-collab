@@ -38,6 +38,15 @@ one block. This is the standard cluster-bootstrap fix for clustered binary
 outcomes, and it is a materially different (more honest, wider) uncertainty
 estimate than treating 316 as the effective N.
 
+Affiliation-consistent weighting: a naive dyad-projection also distorts the
+POINT ESTIMATE, not just its SE — a 19-party contract's 171 pairs each vote
+in the likelihood as if independent, so it pulls the fit ~171x harder than a
+simple 2-party contract despite being ONE decision. Each event row is
+weighted by 1/C(k,2) (k = that contract's corpus-restricted party count) so
+every contract casts one combined "vote" regardless of size — the standard
+fix for projecting a bipartite affiliation network (hromada-joins-contract)
+down to pairwise ties. True-negative rows keep weight 1.
+
 Also adds donor_overlap (dyadic: count of shared DonorsPrograms entries) and
 donor_total_exposure (nodal control: combined donor-program count on both
 sides, so overlap isn't confounded with "both sides are just generically
@@ -61,7 +70,24 @@ from scipy.optimize import minimize
 ROOT = Path(__file__).resolve().parents[2]
 KSE_NETWORK_CSV = ROOT / "data" / "cache" / "kse" / "partnerships-hromadas-network.csv"
 
-PERIOD_ENDS = list(range(2014, 2023))  # 8 transitions: 2014->15 ... 2021->22
+# Annual cuts everywhere except 2020->2021, which is split into quarters.
+# 264/316 formation events (84%) fall inside that single annual transition
+# (two near-simultaneous multi-party contracts: a 19-hromada clique in
+# 2021Q3, a 13-hromada clique in 2021Q2 — see docstring). Left annual, the
+# adjacency snapshot for shared_partners_prior is frozen at 2020-12-31 for
+# the entire year, so the Q2 clique's brand-new ties can never inform the
+# Q3 clique's transitivity score even though they existed months earlier by
+# then. Quarterly cuts let adjacency update between Q2 and Q3. This does
+# NOT fix the pseudo-replication itself (each clique is still one contract,
+# one cluster in the bootstrap) — it only lets the transitivity covariate
+# see realistic within-year network growth. Other years get one or a
+# handful of events each; splitting those into quarters would just multiply
+# background rows for no inferential benefit.
+PERIOD_CUTS = (
+    [pd.Timestamp(f"{y}-12-31") for y in range(2014, 2021)]
+    + [pd.Timestamp(d) for d in ("2021-03-31", "2021-06-30", "2021-09-30", "2021-12-31")]
+    + [pd.Timestamp("2022-12-31")]
+)
 
 
 def load_donor_programs() -> dict[str, set[str]]:
@@ -118,9 +144,9 @@ def shared_partners_count(dyad: frozenset, adjacency: dict[str, set[str]]) -> in
     return len(adjacency.get(ka, set()) & adjacency.get(kb, set()))
 
 
-def fit_logit_design(Xd: np.ndarray, y: np.ndarray, x0: np.ndarray) -> np.ndarray:
-    """MLE via BFGS, not sklearn's LogisticRegression. `Xd` already has its
-    leading intercept column of ones.
+def fit_logit_design(Xd: np.ndarray, y: np.ndarray, x0: np.ndarray, w: np.ndarray | None = None) -> np.ndarray:
+    """Weighted MLE via BFGS, not sklearn's LogisticRegression. `Xd` already
+    has its leading intercept column of ones. `w` defaults to all-ones.
 
     With ~12 events among ~2*10^5 rows and an intercept around -9 to -11,
     sklearn's default lbfgs solver reliably reports false convergence to a
@@ -128,15 +154,17 @@ def fit_logit_design(Xd: np.ndarray, y: np.ndarray, x0: np.ndarray) -> np.ndarra
     profile — see conversation log). BFGS from a sane starting point finds the
     correct interior maximum.
     """
+    if w is None:
+        w = np.ones(len(y))
 
     def negloglik(params: np.ndarray) -> float:
         z = Xd @ params
-        return -(y * z - np.log1p(np.exp(z))).sum()
+        return -(w * (y * z - np.log1p(np.exp(z)))).sum()
 
     def grad(params: np.ndarray) -> np.ndarray:
         z = Xd @ params
         p = 1.0 / (1.0 + np.exp(-z))
-        return Xd.T @ (p - y)
+        return Xd.T @ (w * (p - y))
 
     res = minimize(negloglik, x0=x0, jac=grad, method="BFGS")
     if not res.success:
@@ -146,8 +174,8 @@ def fit_logit_design(Xd: np.ndarray, y: np.ndarray, x0: np.ndarray) -> np.ndarra
     return res.x
 
 
-def fit_logit(X: np.ndarray, y: np.ndarray, x0: np.ndarray) -> np.ndarray:
-    return fit_logit_design(np.column_stack([np.ones(len(X)), X]), y, x0)
+def fit_logit(X: np.ndarray, y: np.ndarray, x0: np.ndarray, w: np.ndarray | None = None) -> np.ndarray:
+    return fit_logit_design(np.column_stack([np.ones(len(X)), X]), y, x0, w)
 
 
 def main() -> None:
@@ -166,10 +194,9 @@ def main() -> None:
     adjacency: dict[str, set[str]] = {}
     all_dyads = list(edges.keys())
 
-    for period_idx in range(1, len(PERIOD_ENDS)):
-        start_year, end_year = PERIOD_ENDS[period_idx - 1], PERIOD_ENDS[period_idx]
-        start_cut = pd.Timestamp(f"{start_year}-12-31")
-        end_cut = pd.Timestamp(f"{end_year}-12-31")
+    for period_idx in range(1, len(PERIOD_CUTS)):
+        start_cut, end_cut = PERIOD_CUTS[period_idx - 1], PERIOD_CUTS[period_idx]
+        period_label = f"{start_cut.date()}->{end_cut.date()}"
 
         tied_before = {d for d, dt in event_dates.items() if dt <= start_cut}
         formed_this_period = {
@@ -189,7 +216,7 @@ def main() -> None:
             is_event = d in formed_this_period
             rows.append(
                 {
-                    "period": f"{start_year}->{end_year}",
+                    "period": period_label,
                     "goals_cosine": r["goals_cosine"],
                     "geo_score": r["geo_score"],
                     "shared_partners_prior": shared_partners_count(d, adjacency),
@@ -207,11 +234,22 @@ def main() -> None:
     print(f"\nPooled MPLE dataset: {len(data)} (dyad, period) rows, {data['y'].sum()} formation events")
     print(data.groupby("period")["y"].agg(["size", "sum"]))
 
+    # Affiliation-consistent weight: each contract casts one combined vote
+    # regardless of how many corpus-restricted pairs it expands to.
+    cluster_sizes = data.groupby("cluster_id")["cluster_id"].transform("size")
+    data["weight"] = np.where(data["y"] == 1, 1.0 / cluster_sizes, 1.0)
+    print(
+        f"Weight range on event rows: {data.loc[data.y == 1, 'weight'].min():.4f}"
+        f" .. {data.loc[data.y == 1, 'weight'].max():.4f}"
+        f" (1.0 = singleton contract, small = big clique down-weighted)"
+    )
+
     X_cols = ["goals_cosine", "geo_score", "shared_partners_prior", "donor_overlap", "donor_total_exposure"]
     X = data[X_cols].to_numpy()
     y = data["y"].to_numpy()
+    w = data["weight"].to_numpy()
 
-    params = fit_logit(X, y, x0=np.array([-9.0] + [0.0] * len(X_cols)))
+    params = fit_logit(X, y, x0=np.array([-9.0] + [0.0] * len(X_cols)), w=w)
     intercept, coefs = params[0], params[1:]
     print("\n=== MPLE point estimates (log-odds), BFGS ===")
     for name, coef in zip(X_cols, coefs):
@@ -228,9 +266,10 @@ def main() -> None:
     bg = data[data["y"] == 0]
     Xd_bg = np.column_stack([np.ones(len(bg)), bg[X_cols].to_numpy()])
     y_bg = bg["y"].to_numpy()
+    w_bg = bg["weight"].to_numpy()
 
     event_rows = data[data["y"] == 1]
-    clusters = [g[X_cols].to_numpy() for _, g in event_rows.groupby("cluster_id")]
+    clusters = [(g[X_cols].to_numpy(), g["weight"].to_numpy()) for _, g in event_rows.groupby("cluster_id")]
     n_clusters = len(clusters)
     print(f"Event rows collapse to {n_clusters} contract-clusters for the bootstrap")
 
@@ -239,12 +278,14 @@ def main() -> None:
     n_boot = 300
     for _ in range(n_boot):
         sampled = [clusters[i] for i in rng.randint(0, n_clusters, size=n_clusters)]
-        ev_X = np.concatenate(sampled, axis=0)
+        ev_X = np.concatenate([s[0] for s in sampled], axis=0)
+        ev_w = np.concatenate([s[1] for s in sampled], axis=0)
         Xd_ev = np.column_stack([np.ones(len(ev_X)), ev_X])
         Xd = np.vstack([Xd_bg, Xd_ev])
         yb = np.concatenate([y_bg, np.ones(len(ev_X))])
+        wb = np.concatenate([w_bg, ev_w])
         try:
-            bp = fit_logit_design(Xd, yb, x0=params)
+            bp = fit_logit_design(Xd, yb, x0=params, w=wb)
             boot_coefs.append(bp[1:])
         except Exception:
             continue
