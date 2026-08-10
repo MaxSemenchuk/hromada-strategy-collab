@@ -55,10 +55,33 @@ _GOAL_MARKER_SPLIT = re.compile(
 _CLAUSE_SPLIT = re.compile(r"\s+[-–—]\s+|;\s+")
 
 
+def _goal_marker_starts(line: str) -> list[int]:
+    """Start positions of goal markers in ``line``.
+
+    The bare "Ціль" alternative in ``_GOAL_MARKER_SPLIT`` also fires inside a
+    compound marker (e.g. "Стратегічна |ціль 1" — lookahead matches once at
+    "Стратегічна" via the compound alternative, once again a few chars later
+    at "ціль" via the bare one). A real marker's own text ("Стратегічна ціль
+    N: ") already runs >20 chars, so any second hit within 20 chars of a kept
+    one is that duplicate, not a distinct marker — collapse it.
+    """
+    kept: list[int] = []
+    for m in _GOAL_MARKER_SPLIT.finditer(line):
+        pos = m.start()
+        if not kept or pos - kept[-1] > 20:
+            kept.append(pos)
+    return kept
+
+
 def _expand_long_goal_line(line: str) -> list[str]:
     if len(line) <= _LONG_LINE_CHARS:
         return [line]
-    marked = [p.strip(" \t-•,") for p in _GOAL_MARKER_SPLIT.split(line) if p.strip()]
+    boundaries = [0] + [p for p in _goal_marker_starts(line) if p != 0]
+    parts = [
+        line[start : boundaries[i + 1] if i + 1 < len(boundaries) else len(line)]
+        for i, start in enumerate(boundaries)
+    ]
+    marked = [p.strip(" \t-•,") for p in parts if p.strip()]
     if len(marked) > 1:
         out: list[str] = []
         for part in marked:
