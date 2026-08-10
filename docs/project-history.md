@@ -482,6 +482,14 @@ Kamianske–Wuppertal, Zhytomyr–Kassel, Kherson–Norrköping, Mykolaiv).
 Canonical write-up: [ua-eu-twinning.md](./ua-eu-twinning.md). Data layer from
 2026-07-29 (`yarn twinning`); do not conflate with Law 1508-VII МСС.
 
+## Candidate new research questions (2026-08-09)
+
+Brainstormed list of new research directions (predictive validity, head-tenure
+dynamics, multi-party cluster detection, basin thematic focus, donor synergy,
+template-collision governance signal, university/twinning extensions) —
+not yet scoped into open threads below. Full list:
+[research-questions.md](research-questions.md).
+
 ## Open threads (as of 2026-08-03)
 
 - [x] File cross-link issue on KSE repo — [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) (2026-07-24)
@@ -577,6 +585,7 @@ Canonical leave-behind is the **GitHub Pages site** rooted at [`docs/`](./)
 | Landing («Про проєкт») | [index.html](index.html) |
 | Matching candidates | [matches.html](matches.html) |
 | Funds portfolio | [funds.html](funds.html) |
+| Resource / DREAM proxies | [resources.html](resources.html) |
 | PIN map + overlays | [mss-pin-matching-graph.html](mss-pin-matching-graph.html) |
 | Legacy passport URL | [hromada-project-passport.html](hromada-project-passport.html) → redirects to index |
 
