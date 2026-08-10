@@ -13,6 +13,7 @@ then `yarn export-matching-edges`.
 | `embed_matching.py` … `embed_matching_v5.py` | embedding iterations before v6/v7 |
 | `final_matching.py`, `clusters30.py`, `goal_overlap.py` | scratch / cluster experiments |
 | `match_existing.py`, `build_hromadas.py`, `insert_nizhyn.py` | hard-coded scratchpad / NocoDB paths |
+| `mss_graph_layout.py` | early graph-MVP layout script; hard-coded relative paths to `data/research-log/mss_graph_mvp_data.json`, predates the `ROOT`-relative convention used elsewhere |
 
 Do not wire these into `package.json`. To replay historically, use a scratch dir
 with symlinks into `data/research-log/` (see root `AGENTS.md`).
