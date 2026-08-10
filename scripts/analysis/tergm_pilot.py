@@ -23,6 +23,21 @@ active_2402==1; `end` looks like the contract's nominal term-end, not an
 observed termination) — so this stays a formation-only model, no
 dissolution/persistence side.
 
+IMPORTANT — pseudo-replication: the 316 dyad-events are not 316 independent
+formation decisions. They collapse to just 36 distinct `register_number`
+contracts; the two biggest (#721 "Дністровський каньйон", #696 "Гуцул
+Етнос") are near-complete cliques among 19 and 13 corpus hromadas
+respectively, mechanically producing 170 and 78 simultaneous "positive" dyad
+rows from ONE signing event each. A period-block bootstrap doesn't fix this
+(it treats each period as one moving block, which is *also* wrong, just a
+coarser version of the same problem). The bootstrap below resamples at the
+contract-cluster level instead: the ~341k true-negative rows are one-row
+clusters and stay fixed (huge, ~i.i.d., contribute negligible extra variance
+either way); the handful of positive rows sharing a register_number move as
+one block. This is the standard cluster-bootstrap fix for clustered binary
+outcomes, and it is a materially different (more honest, wider) uncertainty
+estimate than treating 316 as the effective N.
+
 Also adds donor_overlap (dyadic: count of shared DonorsPrograms entries) and
 donor_total_exposure (nodal control: combined donor-program count on both
 sides, so overlap isn't confounded with "both sides are just generically
@@ -87,7 +102,7 @@ def load_edges() -> dict[frozenset, dict]:
     return out
 
 
-def build_tie_events(corpus_dyads: set[frozenset]) -> list[tuple[frozenset, pd.Timestamp]]:
+def build_tie_events(corpus_dyads: set[frozenset]) -> list[tuple[frozenset, pd.Timestamp, int]]:
     df = pd.read_csv(KSE_NETWORK_CSV, low_memory=False)
     df["dyad"] = df.apply(lambda r: frozenset((r["hromada_code.x"], r["hromada_code.y"])), axis=1)
     df = df.drop_duplicates(subset="dyad")
@@ -95,7 +110,7 @@ def build_tie_events(corpus_dyads: set[frozenset]) -> list[tuple[frozenset, pd.T
     df = df[df["dyad"].isin(corpus_dyads)]
     # a dyad can appear under >1 register_number (multiple agreements); keep earliest.
     earliest = df.sort_values("start").groupby("dyad", as_index=False).first()
-    return list(zip(earliest["dyad"], earliest["start"]))
+    return list(zip(earliest["dyad"], earliest["start"], earliest["register_number"]))
 
 
 def shared_partners_count(dyad: frozenset, adjacency: dict[str, set[str]]) -> int:
@@ -103,8 +118,9 @@ def shared_partners_count(dyad: frozenset, adjacency: dict[str, set[str]]) -> in
     return len(adjacency.get(ka, set()) & adjacency.get(kb, set()))
 
 
-def fit_logit(X: np.ndarray, y: np.ndarray, x0: np.ndarray) -> np.ndarray:
-    """MLE via BFGS, not sklearn's LogisticRegression.
+def fit_logit_design(Xd: np.ndarray, y: np.ndarray, x0: np.ndarray) -> np.ndarray:
+    """MLE via BFGS, not sklearn's LogisticRegression. `Xd` already has its
+    leading intercept column of ones.
 
     With ~12 events among ~2*10^5 rows and an intercept around -9 to -11,
     sklearn's default lbfgs solver reliably reports false convergence to a
@@ -112,7 +128,6 @@ def fit_logit(X: np.ndarray, y: np.ndarray, x0: np.ndarray) -> np.ndarray:
     profile — see conversation log). BFGS from a sane starting point finds the
     correct interior maximum.
     """
-    Xd = np.column_stack([np.ones(len(X)), X])
 
     def negloglik(params: np.ndarray) -> float:
         z = Xd @ params
@@ -131,14 +146,21 @@ def fit_logit(X: np.ndarray, y: np.ndarray, x0: np.ndarray) -> np.ndarray:
     return res.x
 
 
+def fit_logit(X: np.ndarray, y: np.ndarray, x0: np.ndarray) -> np.ndarray:
+    return fit_logit_design(np.column_stack([np.ones(len(X)), X]), y, x0)
+
+
 def main() -> None:
     edges = load_edges()
     events = build_tie_events(set(edges.keys()))
-    event_dates = {dyad: date for dyad, date in events}
+    event_dates = {dyad: date for dyad, date, _ in events}
+    event_register = {dyad: int(reg) for dyad, _, reg in events}
 
     print(f"Corpus dyads (from matching-edges.json): {len(edges)}")
     print(f"Dated known ties from KSE partnerships network (corpus-restricted): {len(events)}")
-    print(f"  by year: {pd.Series([d.year for _, d in events]).value_counts().sort_index().to_dict()}")
+    print(f"  by year: {pd.Series([d.year for _, d, _ in events]).value_counts().sort_index().to_dict()}")
+    n_contracts = len(set(event_register.values()))
+    print(f"  collapse to {n_contracts} distinct register_number contracts (pseudo-replication — see docstring)")
 
     rows = []
     adjacency: dict[str, set[str]] = {}
@@ -164,6 +186,7 @@ def main() -> None:
         at_risk = [d for d in all_dyads if d not in tied_before]
         for d in at_risk:
             r = edges[d]
+            is_event = d in formed_this_period
             rows.append(
                 {
                     "period": f"{start_year}->{end_year}",
@@ -172,7 +195,11 @@ def main() -> None:
                     "shared_partners_prior": shared_partners_count(d, adjacency),
                     "donor_overlap": r["donor_overlap"],
                     "donor_total_exposure": r["donor_total_exposure"],
-                    "y": int(d in formed_this_period),
+                    "y": int(is_event),
+                    # non-events are each their own singleton cluster (no correlation
+                    # among dyads that never tie); events cluster by contract, since a
+                    # single multi-party agreement produces many simultaneous "events".
+                    "cluster_id": f"contract:{event_register[d]}" if is_event else f"row:{len(rows)}",
                 }
             )
 
@@ -191,28 +218,39 @@ def main() -> None:
         print(f"  {name:<22} {coef:+.3f}  (odds ratio {np.exp(coef):.3f})")
     print(f"  {'intercept':<22} {intercept:+.3f}")
 
-    # Block bootstrap over the 5 time periods (btergm's own method: resample
-    # whole transitions with replacement, not individual dyads).
-    periods = data["period"].unique()
+    # Contract-cluster bootstrap: hold the huge, effectively-i.i.d. background
+    # of true-negative rows fixed, and resample only the event-clusters (grouped
+    # by register_number, so a 170-dyad clique from one contract moves as one
+    # block, never split) with replacement. This targets the actual source of
+    # uncertainty — "how would estimates change with a different set of ~36
+    # comparable contracts" — instead of period-block bootstrap's coarser and
+    # partially-redundant treatment of the same clustering.
+    bg = data[data["y"] == 0]
+    Xd_bg = np.column_stack([np.ones(len(bg)), bg[X_cols].to_numpy()])
+    y_bg = bg["y"].to_numpy()
+
+    event_rows = data[data["y"] == 1]
+    clusters = [g[X_cols].to_numpy() for _, g in event_rows.groupby("cluster_id")]
+    n_clusters = len(clusters)
+    print(f"Event rows collapse to {n_clusters} contract-clusters for the bootstrap")
+
     rng = np.random.RandomState(20260810)
     boot_coefs = []
     n_boot = 300
     for _ in range(n_boot):
-        sampled_periods = rng.choice(periods, size=len(periods), replace=True)
-        chunks = [data[data["period"] == p] for p in sampled_periods]
-        boot_df = pd.concat(chunks, ignore_index=True)
-        if boot_df["y"].nunique() < 2:
-            continue
-        bx = boot_df[X_cols].to_numpy()
-        by = boot_df["y"].to_numpy()
+        sampled = [clusters[i] for i in rng.randint(0, n_clusters, size=n_clusters)]
+        ev_X = np.concatenate(sampled, axis=0)
+        Xd_ev = np.column_stack([np.ones(len(ev_X)), ev_X])
+        Xd = np.vstack([Xd_bg, Xd_ev])
+        yb = np.concatenate([y_bg, np.ones(len(ev_X))])
         try:
-            bp = fit_logit(bx, by, x0=params)
+            bp = fit_logit_design(Xd, yb, x0=params)
             boot_coefs.append(bp[1:])
         except Exception:
             continue
 
     boot_coefs = np.array(boot_coefs)
-    print(f"\n=== Block bootstrap over {len(periods)} periods ({len(boot_coefs)}/{n_boot} valid fits) ===")
+    print(f"\n=== Contract-cluster bootstrap ({n_clusters} clusters, {len(boot_coefs)}/{n_boot} valid fits) ===")
     for i, name in enumerate(X_cols):
         lo, hi = np.percentile(boot_coefs[:, i], [2.5, 97.5])
         print(f"  {name:<22} 95% CI [{lo:+.3f}, {hi:+.3f}]")
@@ -220,7 +258,7 @@ def main() -> None:
     out = {
         "n_dyad_period_rows": len(data),
         "n_formation_events": int(data["y"].sum()),
-        "n_periods": len(periods),
+        "n_contracts": n_contracts,
         "point_estimates": {name: float(c) for name, c in zip(X_cols, coefs)},
         "intercept": float(intercept),
         "bootstrap_95ci": {
@@ -228,6 +266,7 @@ def main() -> None:
             for i, name in enumerate(X_cols)
         },
         "n_valid_bootstrap_fits": int(len(boot_coefs)),
+        "bootstrap_method": "contract-cluster (resample register_number clusters; background fixed)",
     }
     out_path = ROOT / "internal" / "tergm-pilot-results.json"
     out_path.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
