@@ -504,6 +504,7 @@ def build_payload() -> dict:
     geo = load_geo()
     mss_registry = load_mss_registry()
     pin_nodes, pin_edges = load_pin(mss_registry)
+    pin_participant_count = len(pin_nodes)
 
     # Theme catalog for PIN filter UI — unique registry agreements, not edge fan-out
     # (multi-party deals otherwise explode one title into dozens of pair edges).
@@ -786,6 +787,7 @@ def build_payload() -> dict:
         "meta": {
             "corpus_size": len(corpus),
             "pin_edges": len(pin_edges),
+            "pin_participants": pin_participant_count,
             "pin_nodes": len(nodes),
             "universe_nodes": len(universe),
             "universe_with_portal": portal_on_map,
@@ -877,7 +879,8 @@ def main() -> None:
     m = payload["meta"]
     print(
         f"Wrote {OUT.relative_to(ROOT)} — "
-        f"PIN {m['pin_nodes']}n/{m['pin_edges']}e "
+        f"PIN {m['pin_participants']}participants/{m['pin_edges']}e "
+        f"(graph {m['pin_nodes']}n all layers) "
         f"(subjects={m.get('pin_agreements_enriched', 0)}) · "
         f"universe={m['universe_nodes']} (portal={m['universe_with_portal']}) · "
         f"oblasts={m['oblasts']} · basins={m.get('basins', 0)} · "
