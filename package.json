@@ -28,6 +28,8 @@
     "export-matching-edges": "python3 scripts/analysis/export_edges.py",
     "donor-synergy": "python3 scripts/analysis/donor_synergy.py",
     "test-length-norm": "python3 scripts/analysis/test_length_norm.py",
+    "test-template-collision": "python3 scripts/analysis/test_template_collision.py",
+    "test-goals-hierarchy": "python3 scripts/analysis/test_goals_hierarchy.py",
     "test-known-pairs": "python3 scripts/analysis/test_known_pairs.py",
     "report-pin-corpus": "python3 scripts/analysis/report_pin_corpus.py",
     "priority-corpus-growth": "python3 scripts/analysis/priority_corpus_growth.py",
