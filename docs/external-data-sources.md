@@ -167,6 +167,63 @@ titles; `c4c_url` means «listed in C4C municipality DB» (seeking partners).
 
 ---
 
+## keep.eu — Interreg / ETC project & partner database
+
+- **Reviewed:** 2026-08-12
+- **Site:** https://keep.eu
+- **Operator:** Interact (EU programme supporting Interreg cooperation)
+
+Official EU database of Interreg/European Territorial Cooperation projects
+and partner organisations (32,000+ projects, 150,000+ partnerships since
+2000). Two separate access paths:
+
+1. **Registered Open Data API** (`/api/open-data?key=...`) — bulk export,
+   requires registering at keep.eu and requesting a key by email
+   (`keep.support@interact.eu`, case-by-case approval). Not used here.
+2. **Public browse API** (what this repo uses) — the same endpoints the
+   public web UI calls, reachable with no key: `POST /api/search/projects/`
+   (paginated project list, filtered via a `programmes.available: [{id}, ...]`
+   body — plain GET query params are silently ignored, this shape was found
+   by capturing the real browser request) and `GET /api/project/<id>/`
+   (full detail incl. `partnerships[].partner` — name, country, town,
+   coordinates, `organisation_type`, budget).
+
+Separate release layer (not in v7 `score`, not `known: true`):
+
+```bash
+yarn interreg                 # fetch keep.eu + build release (2021-2027 programmes only)
+yarn interreg --historical    # also fetch 2000-2020 programmes (~1,100 more projects)
+yarn interreg --offline       # rebuild from cache, no network
+yarn fetch-interreg           # refresh cache only
+```
+
+→ `data/releases/interreg-partners.json`. Covers all 16 Interreg
+NEXT/B/ENI CBC/ENPI CBC programmes bordering or covering Ukraine since 2000
+(Poland-Ukraine, Hungary-Slovakia-Romania-Ukraine, Romania-Ukraine, Danube,
+Black Sea Basin, across the 2000-2006/2007-2013/2014-2020/2021-2027
+periods). Partner orgs matched to `hromadas.json` by name-stem (Ukrainian
+legal name, e.g. «...ської міської ради» → stem) or by registered town as
+fallback — no transliteration table needed since keep.eu gives original
+Cyrillic names for current-period records, unlike SKEW's German-side source.
+
+**Read `organisation_type` (and `period`) before treating a match as a real
+cooperation tie**: town-matching alone conflates the hromada with any
+oblast/national body that merely has its mailing address there (regional
+development agencies, universities, hospitals, NGOs, even a National Guard
+unit turned up this way). Only entries where `is_local_authority: true`
+(`organisation_type == "Local public authority"`) plausibly are the hromada
+council or a direct department — combined run: **57/734 matched
+partnerships** (43/100 hromadas have at least one). The other 677 aren't
+necessarily wrong, they're just unclassified: **keep.eu's own
+`organisation_type` field is null on every 2000-2020 ("historical") record
+observed so far** (populated only from the 2021-2027 period onward), so all
+513 historical-period matches show up as `organisation_type: unspecified` —
+absence of the flag there is a metadata gap, not evidence the partner isn't
+a hromada council. See `coverage.org_type_breakdown` and
+`coverage.period_breakdown` in the release for the full picture.
+
+---
+
 ## Own revenues (data.gov.ua) — caveat
 
 CKAN packages titled «Власні доходи громад … на одиницю населення» are often
