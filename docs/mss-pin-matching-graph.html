@@ -1874,6 +1874,8 @@ function strokeEdge(e, ax, ay, bx, by) {
   ctx.setLineDash([]);
 }
 
+const HOVER_FADE_ALPHA = 0.2; // non-connected nodes/edges fade ~80%
+
 function drawGraph() {
   if (mode !== 'graph') return;
   tickGraph();
@@ -1882,12 +1884,27 @@ function drawGraph() {
   ctx.save();
   ctx.translate(width / 2 + camX, height / 2 + camY);
   ctx.scale(scale, scale);
+
+  // When hovering a node, keep it and its direct neighbors at full opacity
+  // and fade everything else so the hovered node's connections stand out.
+  let hoverSet = null;
+  if (hover) {
+    hoverSet = new Set([hover]);
+    for (const e of edges) {
+      if (!edgeVisible(e)) continue;
+      if (e.source === hover) hoverSet.add(e.target);
+      else if (e.target === hover) hoverSet.add(e.source);
+    }
+  }
+
   for (const kind of ['pin', 'pin_agreement', 'operational', 'complementary', 'thematic', 'hypothesis', 'pin_corpus', 'explicit_ask', 'known', 'twinning', 'donor']) {
     for (const e of edges) {
       if (e.kind !== kind || !edgeVisible(e)) continue;
+      ctx.globalAlpha = (hoverSet && e.source !== hover && e.target !== hover) ? HOVER_FADE_ALPHA : 1;
       strokeEdge(e, e.source.x, e.source.y, e.target.x, e.target.y);
     }
   }
+  ctx.globalAlpha = 1;
   for (const n of nodes) {
     if (!nodeVisibleForThemeFilter(n)) continue;
     const isHub = n.kind === 'country' || n.kind === 'donor' || n.kind === 'agreement';
@@ -1897,6 +1914,8 @@ function drawGraph() {
     const corpusGlow = layers.corpus && n.in_corpus;
     const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
     const selected = selectedId === n.id;
+    const dimmed = hoverSet && !hoverSet.has(n);
+    ctx.globalAlpha = dimmed ? HOVER_FADE_ALPHA : 1;
     const hubSize = n.kind === 'agreement' ? (n.party_count || 0) : (n.degree || 0);
     const r = isHub
       ? (6 + Math.min(hubSize, 60) * 0.03) / Math.sqrt(scale)
@@ -1930,6 +1949,7 @@ function drawGraph() {
       ctx.fillText(label, n.x + 7 / scale, n.y + 3 / scale);
     }
   }
+  ctx.globalAlpha = 1;
   ctx.restore();
 }
 
