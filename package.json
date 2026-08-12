@@ -20,6 +20,8 @@
     "fetch-dream": "python3 scripts/analysis/fetch_dream_priorities.py",
     "fetch-twinning": "python3 scripts/analysis/build_twinning_layer.py --fetch-only",
     "twinning": "python3 scripts/analysis/build_twinning_layer.py",
+    "fetch-interreg": "python3 scripts/analysis/build_interreg_layer.py --fetch-only",
+    "interreg": "python3 scripts/analysis/build_interreg_layer.py",
     "complementary-match": "python3 scripts/analysis/complementary_match.py",
     "extract-mss-intents": "python3 scripts/analysis/extract_mss_intents.py",
     "build-goals-hierarchy": "python3 scripts/analysis/build_goals_hierarchy.py",

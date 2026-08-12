@@ -18,3 +18,8 @@ scripts/retrieval/raw/**
 
 # Local convenience only — not published on GitHub Pages
 internal/outreach.html
+
+# Draft manuscript — unconfirmed co-authorship, real names/emails; keep local
+# until authorship + content are confirmed for submission
+internal/paper-draft-*.md
+.playwright-mcp/
