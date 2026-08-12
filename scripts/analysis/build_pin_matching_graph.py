@@ -238,11 +238,37 @@ def load_mss_registry() -> dict[str, dict]:
     return out
 
 
-def load_pin(registry: dict[str, dict] | None = None) -> tuple[dict[str, dict], list[dict]]:
-    """PIN undirected edges, enriched with agreement subjects when registry is present."""
+def _agreement_item(num: str, registry: dict[str, dict]) -> tuple[dict, str]:
+    """Registry lookup → detail-card item {n, title, theme_id, theme, form?}."""
+    info = registry.get(num) or {}
+    raw_title = info.get("title") or ""
+    form = _clip(info.get("form") or "", 90)
+    title = agreement_essence(raw_title, form) or f"№{num}"
+    tid, _score = classify_registry_theme(raw_title, form, title)
+    item: dict = {"n": num, "title": title, "theme_id": tid, "theme": theme_label(tid) or tid}
+    if form and form.casefold() != title.casefold():
+        item["form"] = form
+    return item, tid
+
+
+def load_pin(
+    registry: dict[str, dict] | None = None,
+) -> tuple[dict[str, dict], list[dict], dict[str, dict], set[tuple[str, str]]]:
+    """PIN registry as a graph.
+
+    2-party agreements become a direct hromada↔hromada edge (as before).
+    Multi-party agreements (89 of 306 registry numbers span 3–22 hromadas)
+    become a single hub node instead of a fully-expanded clique of pairwise
+    edges — clique expansion is how the raw KSE CSV is shaped, and it alone
+    accounts for ~80% of all raw PIN pairs, which is what made the "Граф"
+    view unreadable.
+    """
     registry = registry or {}
     nodes: dict[str, dict] = {}
-    pair_regs: dict[tuple[str, str], set[str]] = defaultdict(set)
+    reg_parties: dict[str, set[str]] = defaultdict(set)
+    pair_nums: dict[tuple[str, str], set[str]] = defaultdict(set)
+    pair_keys: set[tuple[str, str]] = set()
+
     with PIN.open(encoding="utf-8") as f:
         for row in csv.DictReader(f):
             a, b = row["hromada_code.x"], row["hromada_code.y"]
@@ -251,35 +277,31 @@ def load_pin(registry: dict[str, dict] | None = None) -> tuple[dict[str, dict], 
             nodes[a] = {"id": a, "label": row["hromada_name.x"] or a}
             nodes[b] = {"id": b, "label": row["hromada_name.y"] or b}
             key = tuple(sorted((a, b)))
+            pair_keys.add(key)
             num = (row.get("register_number") or "").strip()
             if num:
-                pair_regs[key].add(num)
+                reg_parties[num].add(a)
+                reg_parties[num].add(b)
+                pair_nums[key].add(num)
             else:
-                pair_regs[key]  # ensure pair exists even without number
+                pair_nums[key]  # ensure pair exists even without a number
+
+    multi_nums = {num for num, codes in reg_parties.items() if len(codes) > 2}
 
     edges: list[dict] = []
-    for (a, b), nums in sorted(pair_regs.items()):
+    for (a, b), nums in sorted(pair_nums.items()):
+        solo_nums = nums - multi_nums
+        if not solo_nums and nums:
+            continue  # tied only via a multi-party hub — no direct dyad
         edge: dict = {"a": a, "b": b, "kind": "pin"}
         agreements: list[dict] = []
         seen_titles: set[str] = set()
-        for num in sorted(nums, key=lambda x: int(x) if x.isdigit() else 0):
-            info = registry.get(num) or {}
-            title = agreement_essence(info.get("title") or "", info.get("form") or "")
-            if not title:
-                title = f"№{num}"
-            # Dedupe near-identical subjects across multi-agreement pairs.
-            key_t = title.casefold()
+        for num in sorted(solo_nums, key=lambda x: int(x) if x.isdigit() else 0):
+            item, _tid = _agreement_item(num, registry)
+            key_t = item["title"].casefold()
             if key_t in seen_titles:
                 continue
             seen_titles.add(key_t)
-            item: dict = {"n": num, "title": title}
-            form = _clip(info.get("form") or "", 90)
-            if form and form.casefold() != title.casefold():
-                item["form"] = form
-            raw_title = info.get("title") or ""
-            tid, _score = classify_registry_theme(raw_title, form, title)
-            item["theme_id"] = tid
-            item["theme"] = theme_label(tid) or tid
             agreements.append(item)
             if len(agreements) >= MAX_AGREEMENTS_PER_EDGE:
                 break
@@ -301,7 +323,35 @@ def load_pin(registry: dict[str, dict] | None = None) -> tuple[dict[str, dict], 
             if len(agreements) == 1 and agreements[0].get("form"):
                 edge["form"] = agreements[0]["form"]
         edges.append(edge)
-    return nodes, edges
+
+    agreement_nodes: dict[str, dict] = {}
+    for num in sorted(multi_nums, key=lambda x: int(x) if x.isdigit() else 0):
+        codes = sorted(reg_parties[num])
+        item, tid = _agreement_item(num, registry)
+        hub_id = f"agreement:{num}"
+        agreement_nodes[hub_id] = {
+            "id": hub_id,
+            "kind": "agreement",
+            "label": _clip(item["title"], 40),
+            "full_name": item["title"],
+            "party_count": len(codes),
+            "theme_id": tid,
+            "theme": item.get("theme") if tid != "other" else None,
+        }
+        for code in codes:
+            edges.append({
+                "a": code,
+                "b": hub_id,
+                "kind": "pin_agreement",
+                "theme_id": tid,
+                "theme": item.get("theme"),
+                "themes": [item["theme"]] if tid != "other" else [],
+                "theme_ids": [tid],
+                "agreements": [item],
+                "reasons": [item["title"]],
+            })
+
+    return nodes, edges, agreement_nodes, pair_keys
 
 
 def short_label(full: str) -> str:
@@ -510,7 +560,7 @@ def encode_named_overlay(
 def build_payload() -> dict:
     geo = load_geo()
     mss_registry = load_mss_registry()
-    pin_nodes, pin_edges = load_pin(mss_registry)
+    pin_nodes, pin_edges, agreement_nodes, pin_pair_keys = load_pin(mss_registry)
     pin_participant_count = len(pin_nodes)
 
     # Theme catalog for PIN filter UI — unique registry agreements, not edge fan-out
@@ -582,7 +632,9 @@ def build_payload() -> dict:
     # Slim release may lack package/signals — annotate only painted layers.
     ensure_packages(known + thematic + operational)
 
-    pin_keys = {tuple(sorted((e["a"], e["b"]))) for e in pin_edges}
+    # Includes pairs only tied via a multi-party agreement hub (no direct
+    # dyadic "pin" edge for those), so overlay layers still skip them.
+    pin_keys = pin_pair_keys
     known_code_keys = {
         tuple(sorted((name_to_code[e["a"]], name_to_code[e["b"]]))) for e in known
     }
@@ -803,6 +855,7 @@ def build_payload() -> dict:
     # Leaflet map layers, which all skip lat==None, never render them).
     nodes.extend(sorted(country_nodes.values(), key=lambda n: n["label"]))
     nodes.extend(sorted(donor_nodes.values(), key=lambda n: n["label"]))
+    nodes.extend(sorted(agreement_nodes.values(), key=lambda n: -n["party_count"]))
 
     # Universe layer: every release hromada with KSE lat/lon (≈ full mainland set)
     universe: list[dict] = []
@@ -866,6 +919,8 @@ def build_payload() -> dict:
             "twinning_edges": len(twinning_edges),
             "donor_programs_count": len(donor_nodes),
             "donor_edges": len(donor_edges),
+            "pin_agreement_hubs": len(agreement_nodes),
+            "pin_agreement_edges": sum(1 for e in pin_edges if e["kind"] == "pin_agreement"),
             "thematic_edges": len(thematic_edges),
             "operational_edges": len(operational_edges),
             "complementary_edges": len(complementary_edges),
@@ -963,7 +1018,8 @@ def main() -> None:
         f"complementary={m['complementary_edges']} explicit_ask={m['explicit_ask_edges']} "
         f"twinning={m.get('twinning_hromadas', 0)} "
         f"(countries={m.get('twinning_countries', 0)}/{m.get('twinning_edges', 0)}e) "
-        f"donors={m.get('donor_programs_count', 0)}/{m.get('donor_edges', 0)}e"
+        f"donors={m.get('donor_programs_count', 0)}/{m.get('donor_edges', 0)}e "
+        f"pin_agreement_hubs={m.get('pin_agreement_hubs', 0)}/{m.get('pin_agreement_edges', 0)}e"
     )
 
 
