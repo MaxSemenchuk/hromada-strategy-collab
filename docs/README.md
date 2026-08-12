@@ -26,6 +26,7 @@ hromadas with coordinates (metadata — not the strategy corpus). Click a point 
 | [`ua-eu-twinning.md`](ua-eu-twinning.md) | UA–EU sister cities: format, SKEW/C4C, how partners are found, cases |
 | [`donor-programs.md`](donor-programs.md) | DOBRE, EGAP, U-LEAD, GIZ, USAID… — what each programme is |
 | [`corpus-growth.md`](corpus-growth.md) | Priority corpus growth checklist |
+| [`research-questions.md`](research-questions.md) | Candidate new research questions (brainstorm, not yet scoped) |
 | [`hromada-project-passport.html`](hromada-project-passport.html) | Redirect → `index.html` (legacy URL) |
 
 Shared chrome: [`assets/site.css`](assets/site.css), [`assets/nav.js`](assets/nav.js), [`assets/i18n.js`](assets/i18n.js). UK/EN language switch lives in the site nav.
