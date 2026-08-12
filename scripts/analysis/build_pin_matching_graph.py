@@ -70,6 +70,13 @@ TOP_EXPLICIT_ASK = 40
 MAX_AGREEMENTS_PER_EDGE = 6
 AGREEMENT_TITLE_MAX = 140
 
+COUNTRY_LABELS = {
+    "DE": "Німеччина",
+    "PL": "Польща",
+    "SE": "Швеція",
+    "BG": "Болгарія",
+}
+
 # Registry titles are noisy: legal boilerplate, typos (теритріальн*), genitive forms.
 _TITLE_BOILERPLATE = re.compile(
     r"^(?:"
@@ -544,12 +551,17 @@ def build_payload() -> dict:
             "source_quality": r.get("SourceQuality"),
             "type": r.get("Type"),
             "population": r.get("Population"),
+            "donor_programs": r.get("DonorsPrograms") or [],
         }
 
     corpus = [r for r in hromadas if r.get("Goals") and r.get("Katottg")]
     name_to_code = {r["Name"]: r["Katottg"] for r in corpus}
     code_to_full = {r["Katottg"]: r["Name"] for r in corpus}
     corpus_codes = set(name_to_code.values())
+    # Expand name_to_code to all hromadas (intents/tags may cite non-Goals rows)
+    all_name_to_code = {
+        r["Name"]: r["Katottg"] for r in hromadas if r.get("Name") and r.get("Katottg")
+    }
     goals_by_name = {
         r["Name"]: {
             "goals": (r.get("Goals") or "").strip(),
@@ -620,12 +632,6 @@ def build_payload() -> dict:
 
     explicit_ask_edges: list[dict] = []
     if EXPLICIT_ASK.exists():
-        # Expand name_to_code to all hromadas (intents may cite non-Goals rows)
-        all_name_to_code = {
-            r["Name"]: r["Katottg"]
-            for r in hromadas
-            if r.get("Name") and r.get("Katottg")
-        }
         explicit_ask_edges = encode_named_overlay(
             json.loads(EXPLICIT_ASK.read_text(encoding="utf-8")),
             kind="explicit_ask",
@@ -676,6 +682,62 @@ def build_payload() -> dict:
                 "c4c_url": h.get("c4c_url"),
             }
 
+    # Twinning countries as graph-only hub nodes (Граф view; no lat/lon, so
+    # they never enter the Leaflet map layers, which all skip lat==None).
+    country_nodes: dict[str, dict] = {}
+    twinning_edges: list[dict] = []
+    for code, twin in twinning_by_code.items():
+        by_country: dict[str, int] = defaultdict(int)
+        for p in twin.get("partners") or []:
+            iso = p.get("country")
+            if iso:
+                by_country[iso] += 1
+        for iso, count in by_country.items():
+            node_id = f"country:{iso}"
+            if node_id not in country_nodes:
+                label = COUNTRY_LABELS.get(iso, iso)
+                country_nodes[node_id] = {
+                    "id": node_id,
+                    "kind": "country",
+                    "label": label,
+                    "full_name": label,
+                    "iso2": iso,
+                    "degree": 0,
+                }
+            country_nodes[node_id]["degree"] += 1
+            twinning_edges.append(
+                {"a": code, "b": node_id, "kind": "twinning", "partner_count": count}
+            )
+
+    # Donor programs as graph-only hub nodes, from hromadas.json DonorsPrograms.
+    donor_nodes: dict[str, dict] = {}
+    donor_edges: list[dict] = []
+    for r in hromadas:
+        code = r.get("Katottg")
+        programs = r.get("DonorsPrograms") or []
+        if not code or not programs:
+            continue
+        for program in programs:
+            node_id = f"donor:{program}"
+            if node_id not in donor_nodes:
+                donor_nodes[node_id] = {
+                    "id": node_id,
+                    "kind": "donor",
+                    "label": program,
+                    "full_name": program,
+                    "degree": 0,
+                }
+            donor_nodes[node_id]["degree"] += 1
+            donor_edges.append({"a": code, "b": node_id, "kind": "donor"})
+
+    for e in twinning_edges + donor_edges:
+        code = e["a"]
+        if code not in pin_nodes:
+            pin_nodes[code] = {
+                "id": code,
+                "label": short_label(code_to_full.get(code) or by_code.get(code, {}).get("full_name") or code),
+            }
+
     degree: dict[str, int] = {c: 0 for c in pin_nodes}
     for e in pin_edges:
         degree[e["a"]] = degree.get(e["a"], 0) + 1
@@ -722,6 +784,7 @@ def build_payload() -> dict:
             "population": meta.get("population"),
             "twinning_count": len(twin_partners),
             "twinning_partners": twin_partners[:12],
+            "donor_programs": meta.get("donor_programs") or [],
         }
         if code in basin_by_code:
             out["basin_id"] = basin_by_code[code]
@@ -734,6 +797,11 @@ def build_payload() -> dict:
         if n["lat"] is not None:
             with_geo += 1
         nodes.append(n)
+
+    # Country / donor hub nodes — Граф view only (no katottg/lat/lon, so the
+    # Leaflet map layers, which all skip lat==None, never render them).
+    nodes.extend(sorted(country_nodes.values(), key=lambda n: n["label"]))
+    nodes.extend(sorted(donor_nodes.values(), key=lambda n: n["label"]))
 
     # Universe layer: every release hromada with KSE lat/lon (≈ full mainland set)
     universe: list[dict] = []
@@ -792,6 +860,10 @@ def build_payload() -> dict:
             "twinning_hromadas": twinning_on_map,
             "twinning_partners": sum(len(v.get("partners") or []) for v in twinning_by_code.values()),
             "cities4cities_listed": sum(1 for v in twinning_by_code.values() if v.get("c4c_url")),
+            "twinning_countries": len(country_nodes),
+            "twinning_edges": len(twinning_edges),
+            "donor_programs_count": len(donor_nodes),
+            "donor_edges": len(donor_edges),
             "thematic_edges": len(thematic_edges),
             "operational_edges": len(operational_edges),
             "complementary_edges": len(complementary_edges),
@@ -861,6 +933,8 @@ def build_payload() -> dict:
             + operational_edges
             + complementary_edges
             + explicit_ask_edges
+            + twinning_edges
+            + donor_edges
         ),
     }
 
@@ -884,7 +958,9 @@ def main() -> None:
         f"known={m['known_edges']} pin∩corpus={m['pin_corpus_edges']} "
         f"thematic={m['thematic_edges']} operational={m['operational_edges']} "
         f"complementary={m['complementary_edges']} explicit_ask={m['explicit_ask_edges']} "
-        f"twinning={m.get('twinning_hromadas', 0)}"
+        f"twinning={m.get('twinning_hromadas', 0)} "
+        f"(countries={m.get('twinning_countries', 0)}/{m.get('twinning_edges', 0)}e) "
+        f"donors={m.get('donor_programs_count', 0)}/{m.get('donor_edges', 0)}e"
     )
 
 
