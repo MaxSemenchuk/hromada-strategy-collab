@@ -1,0 +1,329 @@
+{
+  "generatedAt": "2026-08-12T06:19:32.232052+00:00",
+  "caveat": "UA-EU Interreg partnerships (keep.eu) — separate from domestic МСС and SKEW/C4C twinning. Most matches are oblast/national bodies headquartered in the hromada's town, not the hromada council itself — see local_authority_partner_count per hromada.",
+  "hromadaCount": 100,
+  "localAuthorityPartnerships": 57,
+  "projectsScanned": 1550,
+  "top": [
+    {
+      "short": "Ужгородська",
+      "oblast": "Закарпатська область",
+      "partner_count": 140,
+      "local_authority_partner_count": 2,
+      "projects": [
+        "4YOURSMILE",
+        "4_SAFE",
+        "ANCHOR",
+        "AdaptWater",
+        "BAT2LIFE"
+      ]
+    },
+    {
+      "short": "Івано-Франківська",
+      "oblast": "Івано-Франківська область",
+      "partner_count": 114,
+      "local_authority_partner_count": 6,
+      "projects": [
+        "52 Carpathian Lifestyle Experiences",
+        "ALTHERA",
+        "ATEd",
+        "BE PREPARED",
+        "BRIDGE"
+      ]
+    },
+    {
+      "short": "Львівська",
+      "oblast": "Львівська область",
+      "partner_count": 100,
+      "local_authority_partner_count": 2,
+      "projects": [
+        "A joint initiative of The Dr. Jozef Psarski Mazovian Specialist Hospital in Ostroleka and First Lviv Territorial Medical Union in Lviv as increasing the availability of health care services.",
+        "Accessible",
+        "BCPmonitoring",
+        "CBCPilgrim",
+        "CapTTict"
+      ]
+    },
+    {
+      "short": "Луцька",
+      "oblast": "Волинська область",
+      "partner_count": 64,
+      "local_authority_partner_count": 2,
+      "projects": [
+        "4_Seasons",
+        "BCPmonitoring",
+        "Coordination",
+        "Creation of Cross-Border Centers for Preventive Examinations in Lubelskie and Volyn Regions",
+        "DINAMIC DANUBE"
+      ]
+    },
+    {
+      "short": "Ізмаїльська",
+      "oblast": "Одеська область",
+      "partner_count": 33,
+      "local_authority_partner_count": 1,
+      "projects": [
+        "Black Sea e-Eye",
+        "BordersPrevent",
+        "CBC-DEBUS",
+        "CBC-PracticeFirms",
+        "CBC-Safety"
+      ]
+    },
+    {
+      "short": "Велицька",
+      "oblast": "Волинська область",
+      "partner_count": 15,
+      "local_authority_partner_count": 1,
+      "projects": [
+        "ANCESTORS",
+        "CARPATHIAN YOUTH FOR ECO SMART EDUCATION",
+        "CBCD",
+        "Carpathian Mobility",
+        "Ctrl"
+      ]
+    },
+    {
+      "short": "Виноградівська",
+      "oblast": "Закарпатська область",
+      "partner_count": 14,
+      "local_authority_partner_count": 1,
+      "projects": [
+        "AdaptWater",
+        "HUSKROUA/0901/040",
+        "HUSKROUA/1101/084",
+        "Health CBC",
+        "ROUA DISASTER COOP"
+      ]
+    },
+    {
+      "short": "Рівненська",
+      "oblast": "Рівненська область",
+      "partner_count": 14,
+      "local_authority_partner_count": 1,
+      "projects": [
+        "Development of sewerage infrastructure and improvement of sewage management in Rivne and Lublin",
+        "East_promotion",
+        "Enhancing transport infrastructure to strengthen Polish-Ukrainian connectivity via road 850 in Lubelskie and H22 in Rivne",
+        "Ensuring accessibility of health care services to patients with cardiovascular diseases in the Polish-Ukrainian border area through modernization of medical infrastructure and equipment",
+        "FIRE & WATERPROOF. Cooperation of the civil protection services of Lublin and Rivne"
+      ]
+    },
+    {
+      "short": "Ренійська",
+      "oblast": "Одеська область",
+      "partner_count": 13,
+      "local_authority_partner_count": 0,
+      "projects": [
+        "As different as we are a 7 ethnia project at the Black Sea",
+        "CrossLife-SkillsNet",
+        "DABS",
+        "EXCELLENCE",
+        "European spirit through sports without frontiers"
+      ]
+    },
+    {
+      "short": "Тернопільська",
+      "oblast": "Тернопільська область",
+      "partner_count": 13,
+      "local_authority_partner_count": 2,
+      "projects": [
+        "CrossEco: Unified Solutions for a Shared Environment",
+        "Development of palliative, geriatric and treatment care, and also improving the quality of medical services for cancer patients in hospitals of Lviv, Ternopil and Krosno",
+        "Development of sewage infrastructure in two cities - Suwalki and Ternopil",
+        "EACH",
+        "Environmental Safety - Creation of a Ukrainian-Polish Forest Fire Management Network in the Carpathian Region"
+      ]
+    },
+    {
+      "short": "Миколаївська",
+      "oblast": "Миколаївська область",
+      "partner_count": 11,
+      "local_authority_partner_count": 0,
+      "projects": [
+        "AQUABATOR",
+        "BLISS",
+        "CREA - CENTERS",
+        "HERO",
+        "ITM BEE-BSB"
+      ]
+    },
+    {
+      "short": "Солотвинська",
+      "oblast": "Закарпатська область",
+      "partner_count": 10,
+      "local_authority_partner_count": 2,
+      "projects": [
+        "Digital City Hall",
+        "HUSKROUA/0901/014",
+        "HUSKROUA/1001/035",
+        "HUSKROUA/1001/097",
+        "REVITAL I"
+      ]
+    },
+    {
+      "short": "Новоселицька",
+      "oblast": "Чернівецька область",
+      "partner_count": 9,
+      "local_authority_partner_count": 1,
+      "projects": [
+        "Artistic and cultural education in the context of sustainable cross-border cooperation",
+        "Be preventive",
+        "COOP4FIRE",
+        "Cross-border improvement of solid municipal waste management in Republic of Moldova, Romania and Ukraine (SMWM)",
+        "Elaboration and Management of the Integrated Urban Development Plans"
+      ]
+    },
+    {
+      "short": "Перечинська",
+      "oblast": "Закарпатська область",
+      "partner_count": 9,
+      "local_authority_partner_count": 0,
+      "projects": [
+        "2cultures",
+        "CBCD",
+        "CULTURE SPACES 4 EVENT TOURISM",
+        "Carpathian Mobility",
+        "ETHNOTOUR"
+      ]
+    },
+    {
+      "short": "Рахівська",
+      "oblast": "Закарпатська область",
+      "partner_count": 9,
+      "local_authority_partner_count": 0,
+      "projects": [
+        "COOP4SAFE",
+        "ForestConnect",
+        "HUSKROUA/0901/008",
+        "HUSKROUA/1001/038",
+        "HUSKROUA/1001/079"
+      ]
+    },
+    {
+      "short": "Глибоцька",
+      "oblast": "Чернівецька область",
+      "partner_count": 8,
+      "local_authority_partner_count": 0,
+      "projects": [
+        "BEDUN",
+        "Cross-border waste management tool for rural localities, CBCRur Waste",
+        "Culture Bukovina-reviving forgotten",
+        "DTP-PAC2-PA09",
+        "Prevention of the Blue Death Syndrome"
+      ]
+    },
+    {
+      "short": "Хустська",
+      "oblast": "Закарпатська область",
+      "partner_count": 8,
+      "local_authority_partner_count": 1,
+      "projects": [
+        "EDUARC",
+        "HISTrenght",
+        "HUSKROUA/1001/118",
+        "IPBU.01.03.00-18-550/11",
+        "Jointly improvement of cross-border healthcare in the field of surgery and orthopedics in the region of Bialystok and Khust"
+      ]
+    },
+    {
+      "short": "Долинська",
+      "oblast": "Івано-Франківська область",
+      "partner_count": 6,
+      "local_authority_partner_count": 3,
+      "projects": [
+        "BBC",
+        "CARPATHIAN FOREST SCHOOLs",
+        "CIMS",
+        "Resilient Borders",
+        "SOS for children's health"
+      ]
+    },
+    {
+      "short": "Коломийська",
+      "oblast": "Івано-Франківська область",
+      "partner_count": 6,
+      "local_authority_partner_count": 1,
+      "projects": [
+        "BLOOM",
+        "Cross-Border CARP",
+        "HUSKROUA/1101/132",
+        "Health Bridge",
+        "IPBU.01.02.00-90-574/11"
+      ]
+    },
+    {
+      "short": "Боянська",
+      "oblast": "Чернівецька область",
+      "partner_count": 5,
+      "local_authority_partner_count": 0,
+      "projects": [
+        "Beyond Borders- Music and Identity Among European Youth",
+        "CreaFuture",
+        "Music Festival for Children “Music for all”",
+        "SENIOR NE(s)T",
+        "SMART 4 YOUTH"
+      ]
+    },
+    {
+      "short": "Сокальська",
+      "oblast": "Львівська область",
+      "partner_count": 5,
+      "local_authority_partner_count": 1,
+      "projects": [
+        "BugUnitesUs",
+        "ECOROADS",
+        "IPBU.01.03.00-06-318/11",
+        "Protection of the border Bug River by expanding the sanitary network in the border communes of Dołhobyczów and Sokal.",
+        "Rescue"
+      ]
+    },
+    {
+      "short": "Вигодська",
+      "oblast": "Івано-Франківська область",
+      "partner_count": 4,
+      "local_authority_partner_count": 1,
+      "projects": [
+        "CARPATHIAN FOREST SCHOOLs",
+        "HUSKROUA/1101/176",
+        "Roads to Healthy Forests",
+        "THE CARPATHIAN NARROW-GAUGE RAILWAYS - A JOURNEY IN THE FOOTSTEPS OF THE CARPATHIAN FOREST RAILWAYS"
+      ]
+    },
+    {
+      "short": "Вишківська",
+      "oblast": "Закарпатська область",
+      "partner_count": 4,
+      "local_authority_partner_count": 2,
+      "projects": [
+        "HEALTH for CBCommunities",
+        "INCLUSIVE-ED4ALL",
+        "PINTEA HERITAGE",
+        "RESQUE GUARD"
+      ]
+    },
+    {
+      "short": "Володимир-Волинська",
+      "oblast": "Волинська область",
+      "partner_count": 4,
+      "local_authority_partner_count": 0,
+      "projects": [
+        "GothicWay",
+        "IPBU.01.03.00-06-161/10",
+        "IPBU.01.03.00-06-648/11"
+      ]
+    },
+    {
+      "short": "Косівська",
+      "oblast": "Івано-Франківська область",
+      "partner_count": 4,
+      "local_authority_partner_count": 1,
+      "projects": [
+        "CarpathianBee",
+        "KoSol",
+        "RESPONDIS",
+        "ROSETTES"
+      ]
+    }
+  ]
+}
