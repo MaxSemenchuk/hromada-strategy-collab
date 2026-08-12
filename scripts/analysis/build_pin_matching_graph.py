@@ -107,6 +107,31 @@ _GENERIC_DELEGATION = re.compile(
     re.IGNORECASE | re.UNICODE,
 )
 
+# Registry titles never record the project subject (only the legal form under
+# 1508-VII ст.11 ч.2) — these three were identified via targeted web research
+# (council decisions / regional grant coverage), 2026-08, for hub-node display.
+KNOWN_AGREEMENT_SUBJECTS = {
+    "320": "Соляна дорога",
+    "527": "Словечансько-Овруцький кряж",
+    "584": "Скейт-парк у Кам’янка-Бузькій",
+}
+
+# Multi-party hub nodes whose title collapses to one of these generic
+# category labels get a register-number suffix so they're distinguishable
+# on the graph (see KNOWN_AGREEMENT_SUBJECTS for the ones we could name).
+_GENERIC_HUB_LABELS = {"Спільний проєкт"}
+
+
+def _ukr_hromada_count(n: int) -> str:
+    if n % 100 in (11, 12, 13, 14):
+        return f"{n} громад"
+    last = n % 10
+    if last == 1:
+        return f"{n} громада"
+    if 2 <= last <= 4:
+        return f"{n} громади"
+    return f"{n} громад"
+
 
 def load_geo() -> dict[str, dict]:
     out: dict[str, dict] = {}
@@ -242,7 +267,12 @@ def _agreement_item(num: str, registry: dict[str, dict]) -> tuple[dict, str]:
     info = registry.get(num) or {}
     raw_title = info.get("title") or ""
     form = _clip(info.get("form") or "", 90)
-    title = agreement_essence(raw_title, form) or f"№{num}"
+    known = KNOWN_AGREEMENT_SUBJECTS.get(num)
+    title = (
+        _cap(f"Спільний проєкт «{known}»")
+        if known
+        else (agreement_essence(raw_title, form) or f"№{num}")
+    )
     tid, _score = classify_registry_theme(raw_title, form, title)
     item: dict = {"n": num, "title": title, "theme_id": tid, "theme": theme_label(tid) or tid}
     if form and form.casefold() != title.casefold():
@@ -328,11 +358,16 @@ def load_pin(
         codes = sorted(reg_parties[num])
         item, tid = _agreement_item(num, registry)
         hub_id = f"agreement:{num}"
+        title = item["title"]
+        full_name = title
+        if title in _GENERIC_HUB_LABELS:
+            title = f"{title} №{num}"
+            full_name = f"{title} ({_ukr_hromada_count(len(codes))})"
         agreement_nodes[hub_id] = {
             "id": hub_id,
             "kind": "agreement",
-            "label": _clip(item["title"], 40),
-            "full_name": item["title"],
+            "label": _clip(title, 40),
+            "full_name": full_name,
             "party_count": len(codes),
             "theme_id": tid,
             "theme": item.get("theme") if tid != "other" else None,
