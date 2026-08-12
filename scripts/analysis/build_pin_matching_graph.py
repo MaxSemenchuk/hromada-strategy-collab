@@ -23,7 +23,6 @@ Overlay policy (2026-07-24 / layers 2026-07-29 / basins 2026-08-03):
     twinning      — UA–EU sister cities from SKEW / strategy (node highlight, default OFF)
     basins        — HydroBASINS lev06 underlay (default OFF; not in score)
     known         — curated registry validation pairs
-    pin_corpus    — broader KSE PIN ∩ Goals corpus (mss_network>0, not known)
     universe      — all release hromadas with KSE lat/lon (metadata underlay)
 """
 
@@ -471,47 +470,6 @@ def encode_overlay(
     return out
 
 
-def pin_corpus_overlay(
-    corpus_matching: list[dict],
-    *,
-    name_to_code: dict[str, str],
-    known_code_keys: set[tuple[str, str]],
-    goals_by_name: dict[str, dict] | None = None,
-) -> list[dict]:
-    """Broader KSE check: mss_network>0 but not curated known (dedupe by KATOTTG)."""
-    by_codes: dict[tuple[str, str], dict] = {}
-    for e in corpus_matching:
-        if e.get("known") or float(e.get("mss_network") or 0) <= 0:
-            continue
-        ca, cb = name_to_code[e["a"]], name_to_code[e["b"]]
-        if ca == cb:
-            continue
-        key = tuple(sorted((ca, cb)))
-        if key in known_code_keys:
-            continue
-        prev = by_codes.get(key)
-        if prev is None or float(e["score"]) > float(prev["score"]):
-            by_codes[key] = e
-    out: list[dict] = []
-    for key, e in sorted(by_codes.items()):
-        edge = {
-            "a": key[0],
-            "b": key[1],
-            "kind": "pin_corpus",
-            "score": e["score"],
-            "goals_cosine": e.get("goals_cosine"),
-            "geo_score": e.get("geo_score"),
-            "track": e.get("track"),
-        }
-        if goals_by_name is not None:
-            attach_goal_overlap(
-                edge, name_a=e["a"], name_b=e["b"], goals_by_name=goals_by_name
-            )
-        edge.update(explain_fields({**e, **edge}))
-        out.append(edge)
-    return out
-
-
 def encode_named_overlay(
     rows: list[dict],
     *,
@@ -635,9 +593,6 @@ def build_payload() -> dict:
     # Includes pairs only tied via a multi-party agreement hub (no direct
     # dyadic "pin" edge for those), so overlay layers still skip them.
     pin_keys = pin_pair_keys
-    known_code_keys = {
-        tuple(sorted((name_to_code[e["a"]], name_to_code[e["b"]]))) for e in known
-    }
 
     known_edges = []
     for e in known:
@@ -655,12 +610,6 @@ def build_payload() -> dict:
         )
         edge.update(explain_fields({**e, **edge}))
         known_edges.append(edge)
-    pin_corpus_edges = pin_corpus_overlay(
-        corpus_matching,
-        name_to_code=name_to_code,
-        known_code_keys=known_code_keys,
-        goals_by_name=goals_by_name,
-    )
     thematic_edges = encode_overlay(
         thematic,
         kind="thematic",
@@ -695,7 +644,6 @@ def build_payload() -> dict:
 
     for e in (
         known_edges
-        + pin_corpus_edges
         + thematic_edges
         + operational_edges
         + complementary_edges
@@ -926,7 +874,6 @@ def build_payload() -> dict:
             "complementary_edges": len(complementary_edges),
             "explicit_ask_edges": len(explicit_ask_edges),
             "known_edges": len(known_edges),
-            "pin_corpus_edges": len(pin_corpus_edges),
             # legacy alias: thematic only (combined-score hyp layer removed)
             "hypothesis_edges": len(thematic_edges),
             "nodes_with_geo": with_geo,
@@ -972,7 +919,7 @@ def build_payload() -> dict:
                 "twinning=UA–EU sister cities (node highlight); "
                 "basins=HydroBASINS lev06 underlay (not in score); "
                 "pin theme filter=mss_suggest on registry title/form; "
-                "pin_corpus=mss_network>0 not known; no combined-score hyp layer; "
+                "no combined-score hyp layer; "
                 "universe=all release rows with KSE geo (metadata layer)"
             ),
         },
@@ -985,7 +932,6 @@ def build_payload() -> dict:
         "edges": (
             pin_edges
             + known_edges
-            + pin_corpus_edges
             + thematic_edges
             + operational_edges
             + complementary_edges
@@ -1013,7 +959,7 @@ def main() -> None:
         f"(subjects={m.get('pin_agreements_enriched', 0)}) · "
         f"universe={m['universe_nodes']} (portal={m['universe_with_portal']}) · "
         f"oblasts={m['oblasts']} · basins={m.get('basins', 0)} · "
-        f"known={m['known_edges']} pin∩corpus={m['pin_corpus_edges']} "
+        f"known={m['known_edges']} "
         f"thematic={m['thematic_edges']} operational={m['operational_edges']} "
         f"complementary={m['complementary_edges']} explicit_ask={m['explicit_ask_edges']} "
         f"twinning={m.get('twinning_hromadas', 0)} "
