@@ -24,6 +24,7 @@
     --dot-universe: #94a3b8;
     --dot-corpus: #d9a548;
     --dot-twinning: #6366f1;
+    --dot-donor: #f59e0b;
     --basin-stroke: #38bdf8;
   }
   * { box-sizing: border-box; }
@@ -174,6 +175,14 @@
     border-top-style: solid;
     border-top-width: 2px;
     opacity: 0.85;
+  }
+  .sw.twinning {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--dot-twinning); border: 0; margin-top: 0.4rem; margin-left: 6px; margin-right: 7px;
+  }
+  .sw.donor {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--dot-donor); border: 0; margin-top: 0.4rem; margin-left: 6px; margin-right: 7px;
   }
   .theme-filters {
     display: grid;
@@ -682,7 +691,15 @@
         <span class="sw twinning" aria-hidden="true"></span>
         <span class="layer-copy">
           <span class="layer-title" data-i18n="layer.twinning.title">Міста-побратими ЄС</span>
-          <span class="layer-desc" data-i18n="layer.twinning.desc">Індиго — громади з UA–EU twinning (SKEW / стратегія)</span>
+          <span class="layer-desc" data-i18n="layer.twinning.desc">Індиго — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли</span>
+        </span>
+      </label>
+      <label class="layer">
+        <input type="checkbox" id="layer-donors"/>
+        <span class="sw donor" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="layer.donors.title">Донорські програми</span>
+          <span class="layer-desc" data-i18n="layer.donors.desc">Жовтогарячі — у «Графі» донорські програми показані як окремі вузли</span>
         </span>
       </label>
       <label class="layer">
@@ -718,6 +735,8 @@
       <div class="stat"><span data-i18n="stat.complementary">Гіпотез «доповнення»</span><b id="s-complementary">—</b></div>
       <div class="stat"><span data-i18n="stat.explicitAsk">Явних запитів МСС</span><b id="s-explicit-ask">—</b></div>
       <div class="stat"><span data-i18n="stat.twinning">З побратимами ЄС</span><b id="s-twinning">—</b></div>
+      <div class="stat"><span data-i18n="stat.twinningCountries">Країн-побратимів (Граф)</span><b id="s-twinning-countries">—</b></div>
+      <div class="stat"><span data-i18n="stat.donors">Донорських програм (Граф)</span><b id="s-donors">—</b></div>
       <div class="stat"><span data-i18n="stat.basins">Водозборів (підкладка)</span><b id="s-basins">—</b></div>
     </div>
     <p class="hint" id="hint">Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по громаді відкриває картку з деталями.</p>
@@ -746,6 +765,8 @@ document.getElementById('s-operational').textContent = meta.operational_edges;
 document.getElementById('s-complementary').textContent = meta.complementary_edges ?? 0;
 document.getElementById('s-explicit-ask').textContent = meta.explicit_ask_edges ?? 0;
 document.getElementById('s-twinning').textContent = meta.twinning_hromadas ?? 0;
+document.getElementById('s-twinning-countries').textContent = meta.twinning_countries ?? 0;
+document.getElementById('s-donors').textContent = meta.donor_programs_count ?? 0;
 document.getElementById('s-basins').textContent = meta.basins ?? 0;
 
 // Declared early so theme-filter handlers never hit TDZ on mode/layers.
@@ -753,7 +774,7 @@ let mode = 'map';
 let layers = {
   universe: true, pin: true, known: true, pinCorpus: true,
   thematic: true, operational: false, complementary: false, explicitAsk: false,
-  corpus: false, twinning: false, basins: false,
+  corpus: false, twinning: false, donors: false, basins: false,
 };
 
 // ——— PIN theme filter (registry title heuristics; not legal IMC forms) ———
@@ -917,6 +938,8 @@ function kindLabel(kind) {
     operational: 'layer.operational.title',
     complementary: 'layer.complementary.title',
     explicit_ask: 'layer.explicitAsk.title',
+    twinning: 'layer.twinning.title',
+    donor: 'layer.donors.title',
   };
   return t(map[kind] || kind);
 }
@@ -928,6 +951,8 @@ function kindSwClass(kind) {
   if (kind === 'operational') return 'ops';
   if (kind === 'complementary') return 'comp';
   if (kind === 'explicit_ask') return 'ask';
+  if (kind === 'twinning') return 'twinning';
+  if (kind === 'donor') return 'donor';
   return 'hyp';
 }
 
@@ -983,12 +1008,17 @@ function fmtPct(n) {
 
 function neighborsOf(id) {
   const groups = Object.create(null);
-  const order = ['known', 'pin_corpus', 'pin', 'thematic', 'operational', 'complementary', 'explicit_ask', 'hypothesis'];
+  const order = ['known', 'pin_corpus', 'pin', 'thematic', 'operational', 'complementary', 'explicit_ask', 'hypothesis', 'twinning', 'donor'];
+  // A hromada's own twinning partners already have a dedicated detail-card
+  // section (per-city name/region/source) — only surface the aggregated
+  // "twinning" neighbor group when viewing the country hub itself.
+  const isCountryHub = (allById[id] || {}).kind === 'country';
   for (const e of DATA.edges || []) {
     if (e.a !== id && e.b !== id) continue;
     const otherId = e.a === id ? e.b : e.a;
     const other = allById[otherId];
     const kind = e.kind || 'pin';
+    if (kind === 'twinning' && !isCountryHub) continue;
     if (!groups[kind]) groups[kind] = [];
     groups[kind].push({
       id: otherId,
@@ -1042,6 +1072,8 @@ function edgeBlurb(item) {
     if (n > 1) return t('explain.pinMany').replace('{n}', String(n));
     return t('explain.pin');
   }
+  if (kind === 'twinning') return t('explain.twinning');
+  if (kind === 'donor') return t('explain.donor');
   return '';
 }
 
@@ -1211,6 +1243,7 @@ function renderDetail(n) {
   if (n.source_quality) badges.push(n.source_quality);
   if (n.degree) badges.push(n.degree + ' ' + t('popup.degreeShort'));
   if (n.twinning_count) badges.push(n.twinning_count + ' ' + t('popup.twinning'));
+  if (n.donor_programs && n.donor_programs.length) badges.push(n.donor_programs.join(', '));
 
   const links = [];
   if (n.portal_url) {
@@ -1525,12 +1558,13 @@ function syncLayers() {
   layers.explicitAsk = document.getElementById('layer-explicit-ask').checked;
   layers.corpus = document.getElementById('layer-corpus').checked;
   layers.twinning = document.getElementById('layer-twinning').checked;
+  layers.donors = document.getElementById('layer-donors').checked;
   layers.basins = document.getElementById('layer-basins').checked;
   if (mode === 'map') {
     rebuildMapLayers();
   }
 }
-['layer-universe','layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-corpus','layer-twinning','layer-basins'].forEach(id => {
+['layer-universe','layer-pin','layer-known','layer-pin-corpus','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-corpus','layer-twinning','layer-donors','layer-basins'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
@@ -1601,6 +1635,8 @@ function edgeVisible(e) {
   if (e.kind === 'operational') return layers.operational;
   if (e.kind === 'complementary') return layers.complementary;
   if (e.kind === 'explicit_ask') return layers.explicitAsk;
+  if (e.kind === 'twinning') return layers.twinning;
+  if (e.kind === 'donor') return layers.donors;
   return true;
 }
 
@@ -1734,8 +1770,9 @@ function tickGraph() {
     const a = e.source, b = e.target;
     let dx = b.x - a.x, dy = b.y - a.y;
     let dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
-    const rest = e.kind === 'pin' ? 70 : 110;
-    const k = e.kind === 'pin' ? 0.008 : 0.02;
+    const isHub = e.kind === 'twinning' || e.kind === 'donor';
+    const rest = e.kind === 'pin' ? 70 : (isHub ? 160 : 110);
+    const k = e.kind === 'pin' ? 0.008 : (isHub ? 0.01 : 0.02);
     const f = k * (dist - rest);
     const fx = (dx / dist) * f, fy = (dy / dist) * f;
     a.vx += fx; a.vy += fy;
@@ -1778,6 +1815,14 @@ function strokeEdge(e, ax, ay, bx, by) {
     ctx.strokeStyle = 'rgba(244,114,182,0.9)';
     ctx.lineWidth = 2 / scale;
     ctx.setLineDash([]);
+  } else if (e.kind === 'twinning') {
+    ctx.strokeStyle = 'rgba(99,102,241,0.4)';
+    ctx.lineWidth = 1 / scale;
+    ctx.setLineDash([]);
+  } else if (e.kind === 'donor') {
+    ctx.strokeStyle = 'rgba(245,158,11,0.4)';
+    ctx.lineWidth = 1 / scale;
+    ctx.setLineDash([3 / scale, 3 / scale]);
   } else {
     // thematic
     ctx.strokeStyle = 'rgba(122,162,255,0.55)';
@@ -1796,7 +1841,7 @@ function drawGraph() {
   ctx.save();
   ctx.translate(width / 2 + camX, height / 2 + camY);
   ctx.scale(scale, scale);
-  for (const kind of ['pin', 'operational', 'complementary', 'thematic', 'hypothesis', 'pin_corpus', 'explicit_ask', 'known']) {
+  for (const kind of ['pin', 'operational', 'complementary', 'thematic', 'hypothesis', 'pin_corpus', 'explicit_ask', 'known', 'twinning', 'donor']) {
     for (const e of edges) {
       if (e.kind !== kind || !edgeVisible(e)) continue;
       strokeEdge(e, e.source.x, e.source.y, e.target.x, e.target.y);
@@ -1804,14 +1849,21 @@ function drawGraph() {
   }
   for (const n of nodes) {
     if (!nodeVisibleForThemeFilter(n)) continue;
+    const isHub = n.kind === 'country' || n.kind === 'donor';
+    if (isHub && !edgeVisible({ kind: n.kind === 'country' ? 'twinning' : 'donor' })) continue;
     const hi = hover === n || selectedId === n.id;
     const corpusGlow = layers.corpus && n.in_corpus;
     const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
     const selected = selectedId === n.id;
-    const r = ((hi ? 5.5 : 2.2) + Math.min(n.degree, 20) * 0.12) / Math.sqrt(scale);
+    const r = isHub
+      ? (7 + Math.min(n.degree || 0, 60) * 0.03) / Math.sqrt(scale)
+      : ((hi ? 5.5 : 2.2) + Math.min(n.degree, 20) * 0.12) / Math.sqrt(scale);
     ctx.beginPath();
     ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
-    ctx.fillStyle = selected ? '#2563eb' : (twinGlow ? '#6366f1' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff')));
+    ctx.fillStyle = selected ? '#2563eb'
+      : n.kind === 'country' ? '#6366f1'
+      : n.kind === 'donor' ? '#f59e0b'
+      : (twinGlow ? '#6366f1' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff')));
     ctx.fill();
     if (selected) {
       ctx.beginPath();
@@ -1820,10 +1872,10 @@ function drawGraph() {
       ctx.lineWidth = 1.6 / scale;
       ctx.stroke();
     }
-    if (hi) {
+    if (hi || isHub) {
       const label = n.full_name || n.label || '';
-      const fs = 11 / scale;
-      ctx.font = `600 ${fs}px Manrope, "Segoe UI", sans-serif`;
+      const fs = (isHub ? 12 : 11) / scale;
+      ctx.font = `${isHub ? 700 : 600} ${fs}px Manrope, "Segoe UI", sans-serif`;
       ctx.lineWidth = 3 / scale;
       ctx.strokeStyle = 'rgba(13, 17, 22, 0.92)';
       ctx.fillStyle = '#f8fafc';
@@ -1872,7 +1924,9 @@ window.PAGE_I18N = {
     "layer.corpus.title": "Громади зі стратегіями",
     "layer.corpus.desc": "Підсвітити громади, чиї тексти вже в аналізі",
     "layer.twinning.title": "Міста-побратими ЄС",
-    "layer.twinning.desc": "Індиго — громади з UA–EU twinning (SKEW / стратегія)",
+    "layer.twinning.desc": "Індиго — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли",
+    "layer.donors.title": "Донорські програми",
+    "layer.donors.desc": "Жовтогарячі — у «Графі» донорські програми показані як окремі вузли",
     "layer.basins.title": "Підкладка · водозбори",
     "layer.basins.desc": "HydroBASINS lev06 — гідрологічні басейни (не юридичні RBD DAVR)",
     "themes.label": "Теми угод МСС",
@@ -1896,6 +1950,8 @@ window.PAGE_I18N = {
     "stat.complementary": "Гіпотез «доповнення»",
     "stat.explicitAsk": "Явних запитів МСС",
     "stat.twinning": "З побратимами ЄС",
+    "stat.twinningCountries": "Країн-побратимів (Граф)",
+    "stat.donors": "Донорських програм (Граф)",
     "stat.basins": "Водозборів (підкладка)",
     "hint.map": "Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по громаді відкриває картку з деталями.",
     "hint.graph": "Режим «Граф» показує лише мережу угод і гіпотез. Клац по ноді — картка з деталями. Для повної мапи з усіма громадами перемкніть на «Мапу».",
@@ -1928,6 +1984,8 @@ window.PAGE_I18N = {
     "explain.pinCorpus": "Угода МСС у реєстрі між громадами з нашого корпусу стратегій",
     "explain.pin": "Зареєстрована угода МСС",
     "explain.pinMany": "Зареєстровані угоди МСС ({n})",
+    "explain.twinning": "Місто-побратим за кордоном (SKEW / стратегія)",
+    "explain.donor": "Учасниця тієї ж донорської програми",
     "explain.regNo": "№{n}",
     "explain.sharedThemes": "Спільні теми стратегій",
     "explain.mssPackage": "Кандидат договору МСС (тема · форма)",
@@ -1969,7 +2027,9 @@ window.PAGE_I18N = {
     "layer.corpus.title": "Hromadas with strategies",
     "layer.corpus.desc": "Highlight hromadas whose texts are already in the analysis",
     "layer.twinning.title": "EU twin cities",
-    "layer.twinning.desc": "Indigo — hromadas with UA–EU twinning (SKEW / strategy)",
+    "layer.twinning.desc": "Indigo — hromadas with UA–EU twinning; countries appear as separate nodes in Graph mode",
+    "layer.donors.title": "Donor programs",
+    "layer.donors.desc": "Amber — in Graph mode, donor programs appear as separate nodes",
     "layer.basins.title": "Underlay · catchments",
     "layer.basins.desc": "HydroBASINS lev06 — hydrological basins (not legal DAVR RBDs)",
     "themes.label": "IMC agreement themes",
@@ -1993,6 +2053,8 @@ window.PAGE_I18N = {
     "stat.complementary": "“Complement” hypotheses",
     "stat.explicitAsk": "Explicit IMC asks",
     "stat.twinning": "With EU twin cities",
+    "stat.twinningCountries": "Twin countries (Graph)",
+    "stat.donors": "Donor programs (Graph)",
     "stat.basins": "Catchments (underlay)",
     "hint.map": "Grey nodes are all hromadas with coordinates, not only those whose strategies we have already parsed. Click a hromada to open a detail card.",
     "hint.graph": "Graph mode shows only the agreement and hypothesis network. Click a node for a detail card. Switch to Map for the full map with all hromadas.",
@@ -2025,6 +2087,8 @@ window.PAGE_I18N = {
     "explain.pinCorpus": "Registry IMC between hromadas whose strategies are in our corpus",
     "explain.pin": "Registered IMC agreement",
     "explain.pinMany": "Registered IMC agreements ({n})",
+    "explain.twinning": "Twin city abroad (SKEW / strategy)",
+    "explain.donor": "Participant in the same donor program",
     "explain.regNo": "No. {n}",
     "explain.sharedThemes": "Shared strategy themes",
     "explain.mssPackage": "IMC agreement candidate (theme · form)",
