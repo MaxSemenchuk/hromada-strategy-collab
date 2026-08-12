@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-08-12T06:19:32.232052+00:00",
+  "hromadasWithPartners": 100,
+  "hromadasWithLocalAuthorityPartner": 43,
+  "projectsScanned": 1550,
+  "matchedPartnerships": 734,
+  "localAuthorityPartnerships": 57,
+  "periodBreakdown": {
+    "current": 221,
+    "historical": 513
+  },
+  "unmatchedPartnerships": 581,
+  "programmeIds": [
+    335,
+    337,
+    341,
+    369,
+    387,
+    76,
+    93,
+    96,
+    63,
+    64,
+    173,
+    137,
+    117,
+    153,
+    259,
+    232
+  ],
+  "method": "keep.eu public search+detail API; name-stem + town matching, no API key required"
+}
