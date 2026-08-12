@@ -29,6 +29,7 @@ RELEASE_CORE_KEYS = (
     "known",
     "track",
     "operational_score",
+    "template_collision",
 )
 
 

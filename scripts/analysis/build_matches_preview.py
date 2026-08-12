@@ -53,13 +53,23 @@ def slim(e: dict) -> dict:
     if e.get("signals"):
         out["signals"] = e["signals"]
         out["signal_chips"] = e["signals"][:3]
+    if e.get("goals_evidence"):
+        out["goals_evidence"] = e["goals_evidence"]
+    tc = e.get("template_collision")
+    if tc:
+        out["template_collision"] = tc
     return out
 
 
 def main() -> None:
     if not EDGES.exists():
         raise SystemExit(f"Missing {EDGES}")
-    edges = json.loads(EDGES.read_text(encoding="utf-8"))
+    sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+    from edge_io import load_matching_edges  # noqa: E402
+    from tracks import TEMPLATE_COLLISION_MAX  # noqa: E402
+
+    # Rich cache carries goals_evidence (dropped from the slim public matrix).
+    edges = load_matching_edges(prefer_rich_cache=True)
     man = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
     hromadas = json.loads(HROMADAS.read_text(encoding="utf-8"))
     goals = sum(1 for r in hromadas if (r.get("Goals") or "").strip())
@@ -70,7 +80,6 @@ def main() -> None:
     )
 
     # Release matrix is slim (scores only); annotate the small preview subset.
-    sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
     from edge_io import ensure_packages  # noqa: E402
 
     known_raw = [e for e in edges if e.get("known")]
@@ -78,7 +87,7 @@ def main() -> None:
     top_raw = [
         e
         for e in sorted(edges, key=lambda x: -float(x.get("score") or 0))
-        if not e.get("known")
+        if not e.get("known") and float(e.get("template_collision") or 0) < TEMPLATE_COLLISION_MAX
     ][:TOP_N]
     ensure_packages(known_raw + top_raw)
 

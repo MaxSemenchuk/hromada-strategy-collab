@@ -17,6 +17,12 @@ from typing import Any
 GOALS_PERCENTILE = 90
 GEO_THEMATIC_MAX = 0.35
 GEO_OPERATIONAL_MIN = 0.85
+# Fraction of subgoal lines with a near-verbatim match on the other side (both
+# directions) above which goals_cosine is presumed inflated by a shared
+# consulting template, not real content overlap — see docs/project-history.md
+# (2026-08-09/10 template-collision entries). Excluded from ranked slices only;
+# stays visible on the full matching-edges.json matrix for transparency.
+TEMPLATE_COLLISION_MAX = 0.5
 
 TRACK_THEMATIC = "thematic"
 TRACK_OPERATIONAL = "operational"
@@ -71,7 +77,13 @@ def assign_tracks(edges: list[dict], *, goals_percentile: float = GOALS_PERCENTI
 
 def thematic_slice(edges: list[dict], *, limit: int | None = None) -> list[dict]:
     """Cold-start vision candidates: track=thematic, ranked by goals_cosine."""
-    out = [e for e in edges if e.get("track") == TRACK_THEMATIC and not e.get("known")]
+    out = [
+        e
+        for e in edges
+        if e.get("track") == TRACK_THEMATIC
+        and not e.get("known")
+        and float(e.get("template_collision") or 0) < TEMPLATE_COLLISION_MAX
+    ]
     out.sort(key=lambda e: (-float(e.get("goals_cosine") or 0), -float(e.get("score") or 0)))
     return out if limit is None else out[:limit]
 
@@ -89,6 +101,7 @@ def operational_slice(edges: list[dict], *, limit: int | None = None) -> list[di
         if e.get("track") == TRACK_OPERATIONAL
         and float(e.get("mss_network") or 0) == 0.0
         and not e.get("known")
+        and float(e.get("template_collision") or 0) < TEMPLATE_COLLISION_MAX
     ]
 
     def rank_key(e: dict) -> tuple[float, float]:

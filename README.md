@@ -56,7 +56,7 @@ signals appears to be genuine whitespace.
 
 ## Status (as of 2026-08-10)
 
-- **~1,469 mainland hromadas** in the metadata layer (KATOTTG code, oblast, rayon,
+- **~1,463 mainland hromadas** in the metadata layer (KATOTTG code, oblast, rayon,
   type, population) — effectively the full universe, not a sample.
 - **~293 hromadas** text-mined for strategy content: **274** full-strategy, **18**
   partial, **1** proxy-info; all have non-empty `Goals` for matching. Grown from
@@ -81,7 +81,7 @@ signals appears to be genuine whitespace.
   `data/releases/mss-candidates.json`. Still pilot / concept-validation stage.
 
 **Read this before reusing the data:** the ~293-hromada text-mined subset is a
-pilot sample, not a completed sweep of the 1,469 — most rows will have no
+pilot sample, not a completed sweep of the 1,463 — most rows will have no
 strategy content yet. Every candidate is an **unverified hypothesis** unless
 `known: true` / `status: registry_known`.
 

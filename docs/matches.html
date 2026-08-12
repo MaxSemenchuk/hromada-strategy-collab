@@ -76,6 +76,14 @@
       background: rgba(255,255,255,0.55);
     }
     .chip.high { border-color: #93c5fd; color: #1d4ed8; }
+    .evidence {
+      font-size: 0.78rem; color: var(--site-muted); font-style: italic;
+      margin: 0.15rem 0 0; max-width: 32ch;
+    }
+    .evidence b { font-style: normal; color: var(--site-faint); font-weight: 600; }
+    .collision-note {
+      font-size: 0.7rem; color: #b45309; display: block; margin-top: 0.15rem;
+    }
     .form-filter {
       display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center;
       margin: 0 0 1rem; font-size: 0.82rem; color: var(--site-muted);
@@ -130,7 +138,7 @@
     <p class="lede" data-i18n-html="lede">
       Підказуємо <strong>з ким і про що</strong> домовитись (тема · правова форма).
       Сигнали пошуку (не типи МСС): стратегії, сусідство, мережа угод, доповнення ресурсів/DREAM, явний запит.
-      Текстовий корпус: <strong>~294</strong> стратегій; ресурсний шар ширший (~1 000). Усе — <strong>гіпотези</strong>, доки не <code>known: true</code>.
+      Текстовий корпус: <strong>~293</strong> стратегій; ресурсний шар ширший (~1 000). Усе — <strong>гіпотези</strong>, доки не <code>known: true</code>.
     </p>
     <div class="method" id="method-box">
       Завантаження методу…
@@ -339,7 +347,7 @@ window.PAGE_I18N = {
     "doc.title": "Кандидати договорів МСС",
     "eyebrow": "Кандидати договорів МСС · пілот",
     "h1": "Кандидати договорів міжмуніципального співробітництва",
-    "lede": "Підказуємо <strong>з ким і про що</strong> домовитись (тема · правова форма). Сигнали пошуку (не типи МСС): стратегії, сусідство, мережа угод, доповнення ресурсів/DREAM, явний запит. Текстовий корпус: <strong>~294</strong> стратегій; ресурсний шар ширший (~1 000). Усе — <strong>гіпотези</strong>, доки не <code>known: true</code>.",
+    "lede": "Підказуємо <strong>з ким і про що</strong> домовитись (тема · правова форма). Сигнали пошуку (не типи МСС): стратегії, сусідство, мережа угод, доповнення ресурсів/DREAM, явний запит. Текстовий корпус: <strong>~293</strong> стратегій; ресурсний шар ширший (~1 000). Усе — <strong>гіпотези</strong>, доки не <code>known: true</code>.",
     "method.loading": "Завантаження методу…",
     "method.label": "Метод пошуку:",
     "method.pairs": "Пар у релізі:",
@@ -390,6 +398,8 @@ window.PAGE_I18N = {
     "th.mssForm": "Форма",
     "th.package": "Пакет",
     "th.signals": "Сигнали",
+    "evidence.label": "Спільна ціль:",
+    "evidence.collision": "⚠ {pct}% шаблонного збігу текстів — не факт спільної теми",
     "empty.comp": "Немає — спочатку <code>yarn complementary-match</code>",
     "empty.ask": "Немає — спочатку <code>yarn extract-mss-intents</code>",
     "top.kicker": "Автоматичний топ",
@@ -418,7 +428,7 @@ window.PAGE_I18N = {
     "doc.title": "IMC agreement candidates",
     "eyebrow": "IMC agreement candidates · pilot",
     "h1": "Candidates for inter-municipal cooperation agreements",
-    "lede": "We suggest <strong>who to talk to and about what</strong> (theme · legal form). Discovery signals (not IMC types): strategies, neighbourhood, agreement network, complementary resources/DREAM, explicit asks. Text corpus: <strong>~294</strong> strategies; resource layer is wider (~1,000). All are <strong>hypotheses</strong> until <code>known: true</code>.",
+    "lede": "We suggest <strong>who to talk to and about what</strong> (theme · legal form). Discovery signals (not IMC types): strategies, neighbourhood, agreement network, complementary resources/DREAM, explicit asks. Text corpus: <strong>~293</strong> strategies; resource layer is wider (~1,000). All are <strong>hypotheses</strong> until <code>known: true</code>.",
     "method.loading": "Loading method…",
     "method.label": "Discovery method:",
     "method.pairs": "Pairs in release:",
@@ -469,6 +479,8 @@ window.PAGE_I18N = {
     "th.mssForm": "Form",
     "th.package": "Package",
     "th.signals": "Signals",
+    "evidence.label": "Shared goal:",
+    "evidence.collision": "⚠ {pct}% template text overlap — not evidence of a real shared theme",
     "empty.comp": "None — run <code>yarn complementary-match</code> first",
     "empty.ask": "None — run <code>yarn extract-mss-intents</code> first",
     "top.kicker": "Automatic top",
@@ -543,6 +555,25 @@ window.PAGE_I18N = {
 
     function formIdOf(p) {
       return (p.package && p.package.form_id) || p.suggested_form_id || "";
+    }
+
+    function truncate(s, n) {
+      s = String(s == null ? "" : s);
+      return s.length > n ? s.slice(0, n - 1) + "…" : s;
+    }
+
+    function evidenceHtml(p) {
+      var ev = p.goals_evidence;
+      if (!ev || !ev.a) return "";
+      var quote = ev.a === ev.b
+        ? "«" + esc(truncate(ev.a, 60)) + "»"
+        : "«" + esc(truncate(ev.a, 42)) + "» / «" + esc(truncate(ev.b, 42)) + "»";
+      var out = "<div class=\"evidence\">" + t("evidence.label") + " " + quote + "</div>";
+      var tc = p.template_collision;
+      if (typeof tc === "number" && tc >= 0.2) {
+        out += "<span class=\"collision-note\">" + t("evidence.collision").replace("{pct}", Math.round(tc * 100)) + "</span>";
+      }
+      return out;
     }
 
     function chipsHtml(p) {
@@ -655,7 +686,7 @@ window.PAGE_I18N = {
     function row(p) {
       return "<tr data-form=\"" + esc(formIdOf(p)) + "\">"
         + "<td><span class=\"pair\">" + esc(p.a_short) + " ↔ " + esc(p.b_short) + "</span></td>"
-        + "<td style=\"font-size:0.85rem;font-weight:600\">" + esc(packageLabel(p)) + "</td>"
+        + "<td style=\"font-size:0.85rem;font-weight:600\">" + esc(packageLabel(p)) + evidenceHtml(p) + "</td>"
         + "<td>" + chipsHtml(p) + "</td>"
         + "<td style=\"font-size:0.82rem\">" + esc(primarySignal(p)) + "</td>"
         + "<td class=\"num score-sec\">" + pct(p.score) + "</td>"
