@@ -272,9 +272,10 @@ real design question rather than a data-availability one.
 
 **Owner / next step**: Max decides whether to run the AIM-CC pilot as
 currently pre-registered or revise it first; a scoped
-data-science/outreach task on `experiment/tergm-pilot` (or a follow-on
-branch) executes it. The passive forward-test, if still wanted as a
-cheap secondary check, is a smaller side task on the same branch.
+data-science/outreach task on a follow-on branch executes it (the original
+`experiment/tergm-pilot` branch is archived — see Decisions log). The
+passive forward-test, if still wanted as a cheap secondary check, is a
+smaller side task on that new branch.
 
 ### Brief 3: EU instrument + validation dataset
 
@@ -409,3 +410,14 @@ Append an entry here whenever one of the above gets decided — keep it short
   [Brief 1](#brief-1-product-form)) and with Brief 3's sequencing (EU
   instrument decision comes after Brief 2, not before). No file/code changes
   needed beyond this log entry — the underlying lean was already compatible.
+- **2026-08-12 — TERGM method deprioritized, branch archived**: the
+  temporal-dynamics part of the TERGM pilot isn't a fit for this corpus —
+  there's only one real network transition (2020→2021) to model, and TERGM
+  needs several genuinely-observed time-sliced snapshots. `experiment/tergm-
+  pilot` is archived as `archive/tergm-pilot`; its non-TERGM commits
+  (stakeholder-list broadening, corpus-stats refresh, goals-hierarchy fix +
+  tests, PIN-graph `pin_participants` field) were ported to `main`. This
+  doesn't touch the pooled-MPLE covariate findings themselves — `geo_score`
+  (confirmed) and `donor_overlap` (tentative) came from the non-temporal
+  part of the model and stand on their own; see `project_mss-tergm-pilot-
+  findings` memory.
