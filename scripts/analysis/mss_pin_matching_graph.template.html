@@ -184,6 +184,10 @@
     width: 9px; height: 9px; border-radius: 50%;
     background: var(--dot-donor); border: 0; margin-top: 0.4rem; margin-left: 6px; margin-right: 7px;
   }
+  .sw.cluster {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--dot-universe); border: 0; margin-top: 0.4rem; margin-left: 6px; margin-right: 7px;
+  }
   .theme-filters {
     display: grid;
     gap: 0.2rem;
@@ -605,6 +609,16 @@
       <button type="button" id="btn-map" class="active" data-i18n="mode.map">Мапа</button>
       <button type="button" id="btn-graph" data-i18n="mode.graph">Граф</button>
     </div>
+    <div class="layers" role="group" aria-label="Розкладка графа" style="margin-bottom:0.9rem">
+      <label>
+        <input type="checkbox" id="cluster-oblast" checked/>
+        <span class="sw cluster" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="cluster.title">Групувати за областями</span>
+          <span class="layer-desc" data-i18n="cluster.desc">Лише в «Графі» — тримає громади ближче до вузла їхньої області</span>
+        </span>
+      </label>
+    </div>
     <section class="detail" id="detail" aria-live="polite" hidden>
       <div class="detail-head">
         <h2 id="detail-title">—</h2>
@@ -783,7 +797,7 @@ const selectedThemes = new Set(pinThemeCatalog.map((t) => t.id));
 
 function pinThemeOk(e) {
   const kind = e.kind || 'pin';
-  if (kind !== 'pin' && kind !== 'pin_corpus') return true;
+  if (kind !== 'pin' && kind !== 'pin_corpus' && kind !== 'pin_agreement') return true;
   const ids = (e.theme_ids && e.theme_ids.length) ? e.theme_ids : ['other'];
   return ids.some((id) => selectedThemes.has(id));
 }
@@ -801,7 +815,7 @@ function themedPinNodeIds() {
   if (typeof edges === 'undefined' || !edges) return ids;
   for (const e of edges) {
     const kind = e.kind || 'pin';
-    if (kind !== 'pin' && kind !== 'pin_corpus') continue;
+    if (kind !== 'pin' && kind !== 'pin_corpus' && kind !== 'pin_agreement') continue;
     if (!pinThemeOk(e)) continue;
     if (e.source && e.source.id) ids.add(e.source.id);
     else if (e.a) ids.add(e.a);
@@ -940,6 +954,7 @@ function kindLabel(kind) {
     explicit_ask: 'layer.explicitAsk.title',
     twinning: 'layer.twinning.title',
     donor: 'layer.donors.title',
+    pin_agreement: 'layer.pin.title',
   };
   return t(map[kind] || kind);
 }
@@ -953,6 +968,7 @@ function kindSwClass(kind) {
   if (kind === 'explicit_ask') return 'ask';
   if (kind === 'twinning') return 'twinning';
   if (kind === 'donor') return 'donor';
+  if (kind === 'pin_agreement') return 'pin';
   return 'hyp';
 }
 
@@ -995,6 +1011,21 @@ const edges = DATA.edges
   .filter(e => byId[e.a] && byId[e.b])
   .map(e => ({ ...e, source: byId[e.a], target: byId[e.b] }));
 
+// Weak per-oblast attractor so the force layout separates into geographic
+// islands instead of one undifferentiated PIN-network hairball — cross-oblast
+// edges then read as visibly "long", which is the informative part.
+let clusterByOblast = true;
+const oblastAnchors = (() => {
+  const names = Array.from(new Set(nodes.map(n => n.oblast).filter(Boolean))).sort();
+  const anchors = Object.create(null);
+  const R = 900;
+  names.forEach((name, i) => {
+    const angle = (i / names.length) * Math.PI * 2;
+    anchors[name] = { x: Math.cos(angle) * R, y: Math.sin(angle) * R * 0.85 };
+  });
+  return anchors;
+})();
+
 function resolveNode(nOrId) {
   if (!nOrId) return null;
   if (typeof nOrId === 'string') return allById[nOrId] || null;
@@ -1008,7 +1039,7 @@ function fmtPct(n) {
 
 function neighborsOf(id) {
   const groups = Object.create(null);
-  const order = ['known', 'pin_corpus', 'pin', 'thematic', 'operational', 'complementary', 'explicit_ask', 'hypothesis', 'twinning', 'donor'];
+  const order = ['known', 'pin_corpus', 'pin', 'pin_agreement', 'thematic', 'operational', 'complementary', 'explicit_ask', 'hypothesis', 'twinning', 'donor'];
   // A hromada's own twinning partners already have a dedicated detail-card
   // section (per-city name/region/source) — only surface the aggregated
   // "twinning" neighbor group when viewing the country hub itself.
@@ -1072,6 +1103,7 @@ function edgeBlurb(item) {
     if (n > 1) return t('explain.pinMany').replace('{n}', String(n));
     return t('explain.pin');
   }
+  if (kind === 'pin_agreement') return t('explain.pinAgreement');
   if (kind === 'twinning') return t('explain.twinning');
   if (kind === 'donor') return t('explain.donor');
   return '';
@@ -1568,6 +1600,9 @@ function syncLayers() {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
+document.getElementById('cluster-oblast').addEventListener('change', (ev) => {
+  clusterByOblast = ev.target.checked;
+});
 
 function refreshHint() {
   const key = mode === 'graph' ? 'hint.graph' : 'hint.map';
@@ -1624,11 +1659,11 @@ window.addEventListener('resize', () => {
 });
 
 function edgeVisible(e) {
-  if ((e.kind === 'pin' || e.kind === 'pin_corpus') && !pinThemeOk(e)) return false;
+  if ((e.kind === 'pin' || e.kind === 'pin_corpus' || e.kind === 'pin_agreement') && !pinThemeOk(e)) return false;
   // When themes are narrowed, focus the view on matching registry edges only
   // (hypothesis lines would otherwise point at hidden hromadas).
-  if (pinThemeFilterNarrowed() && e.kind !== 'pin' && e.kind !== 'pin_corpus') return false;
-  if (e.kind === 'pin') return layers.pin;
+  if (pinThemeFilterNarrowed() && e.kind !== 'pin' && e.kind !== 'pin_corpus' && e.kind !== 'pin_agreement') return false;
+  if (e.kind === 'pin' || e.kind === 'pin_agreement') return layers.pin;
   if (e.kind === 'known') return layers.known;
   if (e.kind === 'pin_corpus') return layers.pinCorpus;
   if (e.kind === 'thematic' || e.kind === 'hypothesis') return layers.thematic;
@@ -1771,8 +1806,9 @@ function tickGraph() {
     let dx = b.x - a.x, dy = b.y - a.y;
     let dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
     const isHub = e.kind === 'twinning' || e.kind === 'donor';
-    const rest = e.kind === 'pin' ? 70 : (isHub ? 160 : 110);
-    const k = e.kind === 'pin' ? 0.008 : (isHub ? 0.01 : 0.02);
+    const isPinAgreement = e.kind === 'pin_agreement';
+    const rest = e.kind === 'pin' ? 70 : (isHub ? 160 : (isPinAgreement ? 90 : 110));
+    const k = e.kind === 'pin' ? 0.008 : (isHub ? 0.01 : (isPinAgreement ? 0.012 : 0.02));
     const f = k * (dist - rest);
     const fx = (dx / dist) * f, fy = (dy / dist) * f;
     a.vx += fx; a.vy += fy;
@@ -1781,6 +1817,11 @@ function tickGraph() {
   for (const node of nodes) {
     node.vx += -node.x * 0.0015;
     node.vy += -node.y * 0.0015;
+    if (clusterByOblast && node.oblast && oblastAnchors[node.oblast]) {
+      const anchor = oblastAnchors[node.oblast];
+      node.vx += (anchor.x - node.x) * 0.012;
+      node.vy += (anchor.y - node.y) * 0.012;
+    }
     if (node.fx != null) { node.x = node.fx; node.y = node.fy; node.vx = 0; node.vy = 0; continue; }
     node.vx *= 0.85; node.vy *= 0.85;
     node.x += node.vx; node.y += node.vy;
@@ -1791,8 +1832,8 @@ function strokeEdge(e, ax, ay, bx, by) {
   ctx.beginPath();
   ctx.moveTo(ax, ay);
   ctx.lineTo(bx, by);
-  if (e.kind === 'pin') {
-    ctx.strokeStyle = 'rgba(87,171,156,0.22)';
+  if (e.kind === 'pin' || e.kind === 'pin_agreement') {
+    ctx.strokeStyle = 'rgba(87,171,156,0.3)';
     ctx.lineWidth = 0.9 / scale;
     ctx.setLineDash([]);
   } else if (e.kind === 'known') {
@@ -1841,7 +1882,7 @@ function drawGraph() {
   ctx.save();
   ctx.translate(width / 2 + camX, height / 2 + camY);
   ctx.scale(scale, scale);
-  for (const kind of ['pin', 'operational', 'complementary', 'thematic', 'hypothesis', 'pin_corpus', 'explicit_ask', 'known', 'twinning', 'donor']) {
+  for (const kind of ['pin', 'pin_agreement', 'operational', 'complementary', 'thematic', 'hypothesis', 'pin_corpus', 'explicit_ask', 'known', 'twinning', 'donor']) {
     for (const e of edges) {
       if (e.kind !== kind || !edgeVisible(e)) continue;
       strokeEdge(e, e.source.x, e.source.y, e.target.x, e.target.y);
@@ -1849,20 +1890,23 @@ function drawGraph() {
   }
   for (const n of nodes) {
     if (!nodeVisibleForThemeFilter(n)) continue;
-    const isHub = n.kind === 'country' || n.kind === 'donor';
-    if (isHub && !edgeVisible({ kind: n.kind === 'country' ? 'twinning' : 'donor' })) continue;
+    const isHub = n.kind === 'country' || n.kind === 'donor' || n.kind === 'agreement';
+    const hubEdgeKind = n.kind === 'country' ? 'twinning' : n.kind === 'donor' ? 'donor' : 'pin_agreement';
+    if (isHub && !edgeVisible({ kind: hubEdgeKind, theme_ids: n.theme_id ? [n.theme_id] : undefined })) continue;
     const hi = hover === n || selectedId === n.id;
     const corpusGlow = layers.corpus && n.in_corpus;
     const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
     const selected = selectedId === n.id;
+    const hubSize = n.kind === 'agreement' ? (n.party_count || 0) : (n.degree || 0);
     const r = isHub
-      ? (7 + Math.min(n.degree || 0, 60) * 0.03) / Math.sqrt(scale)
+      ? (6 + Math.min(hubSize, 60) * 0.03) / Math.sqrt(scale)
       : ((hi ? 5.5 : 2.2) + Math.min(n.degree, 20) * 0.12) / Math.sqrt(scale);
     ctx.beginPath();
     ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
     ctx.fillStyle = selected ? '#2563eb'
       : n.kind === 'country' ? '#6366f1'
       : n.kind === 'donor' ? '#f59e0b'
+      : n.kind === 'agreement' ? '#57ab9c'
       : (twinGlow ? '#6366f1' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff')));
     ctx.fill();
     if (selected) {
@@ -1872,8 +1916,11 @@ function drawGraph() {
       ctx.lineWidth = 1.6 / scale;
       ctx.stroke();
     }
-    if (hi || isHub) {
-      const label = n.full_name || n.label || '';
+    // 18 country/donor hubs are few enough to always label; 89 agreement
+    // hubs are not — those only label on hover, like regular hromadas.
+    const alwaysLabel = n.kind === 'country' || n.kind === 'donor';
+    if (hi || alwaysLabel) {
+      const label = n.kind === 'agreement' ? (n.label || '') : (n.full_name || n.label || '');
       const fs = (isHub ? 12 : 11) / scale;
       ctx.font = `${isHub ? 700 : 600} ${fs}px Manrope, "Segoe UI", sans-serif`;
       ctx.lineWidth = 3 / scale;
@@ -1903,6 +1950,8 @@ window.PAGE_I18N = {
     "mode.aria": "Режим перегляду",
     "mode.map": "Мапа",
     "mode.graph": "Граф",
+    "cluster.title": "Групувати за областями",
+    "cluster.desc": "Лише в «Графі» — тримає громади ближче до вузла їхньої області",
     "layers.label": "Сигнали пошуку",
     "layers.aria": "Сигнали пошуку на мапі",
     "layer.universe.title": "Усі громади",
@@ -1986,6 +2035,7 @@ window.PAGE_I18N = {
     "explain.pinMany": "Зареєстровані угоди МСС ({n})",
     "explain.twinning": "Місто-побратим за кордоном (SKEW / стратегія)",
     "explain.donor": "Учасниця тієї ж донорської програми",
+    "explain.pinAgreement": "Учасниця багатосторонньої угоди МСС",
     "explain.regNo": "№{n}",
     "explain.sharedThemes": "Спільні теми стратегій",
     "explain.mssPackage": "Кандидат договору МСС (тема · форма)",
@@ -2006,6 +2056,8 @@ window.PAGE_I18N = {
     "mode.aria": "View mode",
     "mode.map": "Map",
     "mode.graph": "Graph",
+    "cluster.title": "Group by oblast",
+    "cluster.desc": "Graph mode only — keeps hromadas near their oblast's anchor",
     "layers.label": "Discovery signals",
     "layers.aria": "Discovery signals on the map",
     "layer.universe.title": "All hromadas",
@@ -2089,6 +2141,7 @@ window.PAGE_I18N = {
     "explain.pinMany": "Registered IMC agreements ({n})",
     "explain.twinning": "Twin city abroad (SKEW / strategy)",
     "explain.donor": "Participant in the same donor program",
+    "explain.pinAgreement": "Party to a multi-party IMC agreement",
     "explain.regNo": "No. {n}",
     "explain.sharedThemes": "Shared strategy themes",
     "explain.mssPackage": "IMC agreement candidate (theme · form)",
