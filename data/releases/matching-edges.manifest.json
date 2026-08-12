@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-08T05:30:18.435336+00:00",
-  "pairCount": 43064,
+  "generatedAt": "2026-08-12T07:21:36.546266+00:00",
+  "pairCount": 42771,
   "knownValidationPairs": 12,
   "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
   "model": "intfloat/multilingual-e5-small",
@@ -13,15 +13,15 @@
   },
   "warning": "Product unit is an \u041c\u0421\u0421 candidate agreement (package theme\u00b7form), not a strategy twin. Unverified hypotheses unless known=true / status=registry_known. Combined score ranks one discovery signal \u2014 use package + signals / slice files. suggested_theme / suggested_form / package are IMC hypotheses, not registry facts. matching-edges.json is slim (scores); browse packages via mss-candidates / slices.",
   "tracks": {
-    "thematic": "goals_cosine >= p90 (0.281) and geo_score <= 0.35 \u2014 cold-start vision partners",
+    "thematic": "goals_cosine >= p90 (0.28) and geo_score <= 0.35 \u2014 cold-start vision partners",
     "operational": "geo_score >= 0.85 and not thematic \u2014 convenient service co-sharers; slice ranked by operational_score (geo + fiscal_similarity + dream_overlap) when available",
     "mixed": "all other pairs",
     "counts": {
-      "thematic": 3881,
-      "operational": 701,
-      "mixed": 38482
+      "thematic": 3869,
+      "operational": 703,
+      "mixed": 38199
     },
-    "goalsFloor": 0.281,
+    "goalsFloor": 0.28,
     "goalsPercentile": 90,
     "geoThematicMax": 0.35,
     "geoOperationalMin": 0.85
@@ -33,8 +33,8 @@
       "dream_overlap",
       "operational_score"
     ],
-    "enriched": 42366,
-    "withOperationalScore": 701
+    "enriched": 42587,
+    "withOperationalScore": 703
   },
   "mssSuggest": {
     "note": "Rule-based theme + legal-form package (mss_suggest.py); does not change score; never sets known=true",
@@ -47,8 +47,8 @@
       "suggest_rationale",
       "suggest_caveat"
     ],
-    "annotated": 43064,
-    "withTheme": 42999,
+    "annotated": 42771,
+    "withTheme": 42717,
     "agglomerationHints": 45,
     "docs": "docs/mss-cooperation-research.md"
   },
@@ -61,8 +61,8 @@
       "discovery_primary",
       "status"
     ],
-    "annotated": 43064,
-    "withTheme": 42999,
+    "annotated": 42771,
+    "withTheme": 42717,
     "registryKnown": 12,
     "sidecar": {
       "path": "mss-candidates.json",

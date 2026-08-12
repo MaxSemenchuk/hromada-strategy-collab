@@ -490,6 +490,14 @@ template-collision governance signal, university/twinning extensions) —
 not yet scoped into open threads below. Full list:
 [research-questions.md](research-questions.md).
 
+## Future Backwards strategy synthesis (2026-08-10)
+
+Product/funding-direction reference (Было · Сейчас · Рай · Ад → backcast),
+distinct from this file's methodology chronicle and from
+[research-questions.md](research-questions.md)'s open method questions.
+Canonical write-up, with a running decisions log:
+[internal/project-strategy-future-backwards.md](../internal/project-strategy-future-backwards.md).
+
 ## Open threads (as of 2026-08-03)
 
 - [x] File cross-link issue on KSE repo — [kse-ua/KSE-Loc-Data-Hub#25](https://github.com/kse-ua/KSE-Loc-Data-Hub/issues/25) (2026-07-24)
@@ -559,17 +567,38 @@ not yet scoped into open threads below. Full list:
 - [ ] Stronger «навіщо» on candidate cards (budget / grant / image rationale),
       not only theme + signal chips
 - [ ] Association outreach: send ВА ОТГ → ВАГ drafts (`outreach-messages.md` §6)
-- [ ] **Template-collision guardrail never ported to live matcher.** Pass 5's
-      `template_collision()` (difflib ratio ≥0.98 on subgoal lines, guardrail
-      #3 above) exists only in `scripts/analysis/legacy/final_matching.py` —
-      `match.py` v7.1 (the canon matcher) has no equivalent check. Confirmed
-      regression on real output: Бабинська↔Ободівська scores
-      `goals_cosine=1.0` in `matching-edges.thematic.json` — near-verbatim
-      reordered boilerplate goal text (no tourism content at all), yet ships
-      as the top `tourism`/«схожа стратегія» thematic candidate at
-      `suggest_confidence: high`. Port the flag (or equivalent) into
-      `match.py`/`export_edges.py`, or at minimum surface it as a chip/caveat
-      on `matches.html`, before trusting top-N thematic slices — 2026-08-09
+- [x] **Template-collision guardrail ported + widened; two data bugs found along the way — 2026-08-10.**
+      Pass 5's `template_collision()` (best-single-line difflib ratio) turned out too noisy on the
+      current 293-hromada corpus — common boilerplate sentences (e.g. «Залучення інвестицій у
+      громаду») near-match across dozens of unrelated pairs. Replaced with
+      `template_collision_fraction()` (`match.py`): fraction of each side's subgoal lines with a
+      near-verbatim (≥0.9) match on the other side, `min()` of both directions — requires
+      *most of the document* to duplicate, not one recycled sentence. Distribution on the full
+      corpus (43k pairs): 99.5% score <0.10; only 19 pairs ≥0.5. Threshold `TEMPLATE_COLLISION_MAX
+      = 0.5` (`tracks.py`) excludes flagged pairs from `matching-edges.thematic.json` /
+      `matching-edges.operational.json` / high-confidence `mss_suggest` labels — field stays on the
+      full `matching-edges.json` matrix for transparency. Бабинська↔Ободівська (`goals_cosine=1.0`,
+      `template_collision=1.0`) now correctly excluded from the thematic slice. Regression:
+      `yarn test-template-collision`.
+      Also added `goals_evidence` on every edge (best-matching subgoal line pair + similarity,
+      surfaced via `_blend_bipartite_centroid`'s argmax) — answers "which goals actually overlap,"
+      previously discarded after scoring. Wired into `matches.html` as a per-row evidence line
+      (with a template-collision warning badge when `template_collision >= 0.2`).
+      Side findings while investigating (see `_is_homonym_pair` in `match.py`):
+      **mis-keyed katottg** — "Обухівська міська територіальна громада" (content = Обухів,
+      Київська обл.) had been assigned Дніпропетровська Обухівська-селищна's katottg by mistake
+      (likely a retrieval-time fuzzy-name collision); corrected to its real code
+      (`UA32120110000025177`) — these are two distinct real hromadas, not a duplicate, and now
+      match normally against the rest of the corpus instead of being silently dropped by the
+      homonym guard. **Genuine duplicate row** — "Дунаївецька міська територіальна громада"
+      (typo, no katottg) was the same real place as "Дунаєвецька міська територіальна громада",
+      retrieved twice with different completeness per field; merged into one row, richer field
+      kept per-field. Also backfilled missing `Oblast`/`Rayon`/`Type`/`Population` for
+      Великодимерська and Дрогобицька (valid katottg, just never enriched — did not affect
+      `geo_score`, which resolves via katottg first). Corpus is now 293 hromadas (was 294).
+      Full regen run: `yarn match && yarn export-matching-edges` + full test suite green
+      (`test-known-pairs` / `test-tracks` / `test-mss-suggest` / `test-template-collision` /
+      `test-length-norm` / `test-mss-candidate` / `test-recommend-for` / `test-goals-hierarchy`).
 
 ---
 

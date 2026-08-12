@@ -37,8 +37,8 @@ def test_focused_pair_scores_higher_than_comprehensive_hubs() -> None:
 
     fa, fb = [0, 1], [2, 3]
     ha, hb = list(range(4, 10)), list(range(10, 16))
-    focused = _blend_bipartite_centroid(centered, weight, fa, fb)
-    hubs = _blend_bipartite_centroid(centered, weight, ha, hb)
+    focused, _ = _blend_bipartite_centroid(centered, weight, fa, fb)
+    hubs, _ = _blend_bipartite_centroid(centered, weight, ha, hb)
     assert focused > hubs, f"expected focused {focused:.3f} > hubs {hubs:.3f}"
     assert focused > 0.2
 
@@ -49,7 +49,7 @@ def test_true_cosine_not_ix_slice() -> None:
     v[0, 0] = 1.0
     v[1, 0] = 1.0
     weight = np.ones(2)
-    score = _blend_bipartite_centroid(v, weight, [0], [1])
+    score, _ = _blend_bipartite_centroid(v, weight, [0], [1])
     assert score > 0.99, f"identical vectors scored {score}"
 
 
@@ -60,7 +60,9 @@ def test_blend_weights_sum_to_one() -> None:
 def test_empty_returns_zero() -> None:
     centered = np.eye(3)
     weight = np.ones(3)
-    assert _blend_bipartite_centroid(centered, weight, [], [0]) == 0.0
+    score, evidence = _blend_bipartite_centroid(centered, weight, [], [0])
+    assert score == 0.0
+    assert evidence is None
 
 
 def test_length_cap_prefers_shared_core() -> None:
@@ -73,7 +75,7 @@ def test_length_cap_prefers_shared_core() -> None:
     centered = stacked - stacked.mean(axis=0)
     centered = centered / np.clip(np.linalg.norm(centered, axis=1, keepdims=True), 1e-8, None)
     weight = np.ones(len(centered))
-    score = _blend_bipartite_centroid(centered, weight, [0, 1], list(range(2, 8)))
+    score, _ = _blend_bipartite_centroid(centered, weight, [0, 1], list(range(2, 8)))
     # Should stay healthy thanks to shared axes (not dragged down by 4 noise lines)
     assert score > 0.25, score
 

@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 from edge_io import (  # noqa: E402
     RICH_CACHE,
+    load_matching_edges,
     write_json,
     write_release_edges,
     write_rich_cache,
@@ -43,7 +44,9 @@ def main() -> None:
     if not EDGES.exists():
         raise SystemExit(f"Missing {EDGES} — run yarn match first")
 
-    edges = json.loads(EDGES.read_text(encoding="utf-8"))
+    # Prefer the rich cache written by match.py (carries template_collision,
+    # goals_evidence — dropped from the slim public matrix by RELEASE_CORE_KEYS).
+    edges = load_matching_edges(prefer_rich_cache=True)
     meta = assign_tracks(edges)
     boost = enrich_edges(edges)
     suggest = annotate_edges(edges, hromadas_by_name=load_hromadas_by_name())

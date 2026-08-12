@@ -14,11 +14,14 @@ Usage:
 from __future__ import annotations
 
 import re
+import sys
 from collections import Counter
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+from tracks import TEMPLATE_COLLISION_MAX  # noqa: E402
 MSS_REGISTRY = ROOT / "data" / "cache" / "mss" / "mss_registry.xlsx"
 
 # Stable theme ids → Ukrainian labels (UI / release)
@@ -535,6 +538,15 @@ def annotate_edges(
                     "suggest_rationale": form_rationale
                     + " · агломерація лише з одного боку — не піднято до форми",
                 }
+
+        # «схожа стратегія» rationale is not trustworthy when the two Goals
+        # texts are mostly the same shared consulting template (see
+        # docs/project-history.md, template-collision entries 2026-08-09/10).
+        if float(e.get("template_collision") or 0) >= TEMPLATE_COLLISION_MAX:
+            pkg["suggest_confidence"] = "low"
+            pkg["suggest_rationale"] = (
+                pkg["suggest_rationale"] + " · шаблонний збіг цілей — довіру знижено"
+            )
 
         e.update(pkg)
         # Drop stale caveat if we downgraded

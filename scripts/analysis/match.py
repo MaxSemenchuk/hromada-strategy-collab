@@ -46,7 +46,7 @@ from sentence_transformers import SentenceTransformer
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
-from edge_io import write_release_edges  # noqa: E402
+from edge_io import write_release_edges, write_rich_cache  # noqa: E402
 from enrich_from_kse import geo_score, mss_network_score  # noqa: E402
 from goals_hierarchy import load_hierarchy_index, record_subgoals  # noqa: E402
 from tracks import assign_tracks  # noqa: E402
@@ -120,7 +120,7 @@ def _blend_bipartite_centroid(
     weight: np.ndarray,
     idx_i: list[int],
     idx_j: list[int],
-) -> float:
+) -> tuple[float, tuple[int, int, float] | None]:
     """DF-weighted bipartite soft-align blended with document-centroid cosine.
 
     Centroid term dampens comprehensive long-document hubs: diverse subgoal
@@ -134,9 +134,13 @@ def _blend_bipartite_centroid(
     Note: v4–v7 incorrectly used ``centered[np.ix_(idx_i, idx_j)]`` (embedding
     coordinate slices). v7.1 restores true pairwise cosine
     ``centered[idx_i] @ centered[idx_j].T``.
+
+    Returns ``(score, evidence)`` where ``evidence`` is the single best-matching
+    line pair as ``(global_idx_a, global_idx_b, similarity)`` — the strongest
+    concrete overlap driving this pair's score, for UI display.
     """
     if not idx_i or not idx_j:
-        return 0.0
+        return 0.0, None
     sims = centered[idx_i] @ centered[idx_j].T
     wi = np.asarray(weight[idx_i], dtype=float)
     wj = np.asarray(weight[idx_j], dtype=float)
@@ -155,7 +159,10 @@ def _blend_bipartite_centroid(
         centroid = float((ci / ni) @ (cj / nj))
 
     blended = WEIGHT_BIPARTITE * bipartite + WEIGHT_CENTROID * centroid
-    return float(max(0.0, blended))
+    flat = int(np.argmax(sims))
+    li, lj = divmod(flat, sims.shape[1])
+    evidence = (idx_i[li], idx_j[lj], float(sims[li, lj]))
+    return float(max(0.0, blended)), evidence
 
 
 def _capped_avg(best: np.ndarray, weights: np.ndarray, k: int) -> float:
@@ -168,12 +175,19 @@ def _capped_avg(best: np.ndarray, weights: np.ndarray, k: int) -> float:
     return float(np.average(best[top], weights=weights[top]))
 
 
+Evidence = dict[tuple[int, int], tuple[str, str, float]]
+
+
 def _indexed_similarity(
     records: list[dict],
     model: SentenceTransformer,
     line_key: str,
-) -> np.ndarray:
-    """Pairwise DF-weighted mean-centered similarity over record[line_key] lines."""
+) -> tuple[np.ndarray, Evidence]:
+    """Pairwise DF-weighted mean-centered similarity over record[line_key] lines.
+
+    Also returns, per pair, the single best-matching line pair (stripped of the
+    "query: " e5 prefix) as evidence for why the score is what it is.
+    """
     all_subgoals: list[str] = []
     subgoal_owner: list[int] = []
     for i, r in enumerate(records):
@@ -186,8 +200,9 @@ def _indexed_similarity(
 
     n = len(records)
     scores = np.zeros((n, n))
+    evidence: Evidence = {}
     if not all_subgoals:
-        return scores
+        return scores, evidence
 
     sub_emb = model.encode(all_subgoals, show_progress_bar=False, normalize_embeddings=True, batch_size=64)
     mean_vec = sub_emb.mean(axis=0)
@@ -209,18 +224,26 @@ def _indexed_similarity(
 
     for i in range(n):
         for j in range(i + 1, n):
-            s = _blend_bipartite_centroid(centered, weight, sub_idx[i], sub_idx[j])
+            s, ev = _blend_bipartite_centroid(centered, weight, sub_idx[i], sub_idx[j])
             scores[i, j] = scores[j, i] = s
-    return scores
+            if ev is not None:
+                gi, gj, sim = ev
+                evidence[(i, j)] = (
+                    all_subgoals[gi][len("query: ") :],
+                    all_subgoals[gj][len("query: ") :],
+                    sim,
+                )
+    return scores, evidence
 
 
-def goals_similarity(records: list[dict], model: SentenceTransformer) -> np.ndarray:
-    all_mat = _indexed_similarity(records, model, "subgoals")
-    ops_mat = _indexed_similarity(records, model, "operational")
-    strat_mat = _indexed_similarity(records, model, "strategic")
+def goals_similarity(records: list[dict], model: SentenceTransformer) -> tuple[np.ndarray, Evidence]:
+    all_mat, all_ev = _indexed_similarity(records, model, "subgoals")
+    ops_mat, ops_ev = _indexed_similarity(records, model, "operational")
+    strat_mat, strat_ev = _indexed_similarity(records, model, "strategic")
 
     n = len(records)
     scores = np.zeros((n, n))
+    evidence: Evidence = {}
     for i in range(n):
         for j in range(i + 1, n):
             has_ops = bool(records[i]["operational"] and records[j]["operational"])
@@ -234,7 +257,11 @@ def goals_similarity(records: list[dict], model: SentenceTransformer) -> np.ndar
             else:
                 s = float(all_mat[i, j])
             scores[i, j] = scores[j, i] = s
-    return scores
+            # Prefer operational evidence (more concrete/actionable), then strategic, then any line.
+            ev = ops_ev.get((i, j)) or strat_ev.get((i, j)) or all_ev.get((i, j))
+            if ev is not None:
+                evidence[(i, j)] = ev
+    return scores, evidence
 
 
 def _short_name(full: str | None) -> str:
@@ -328,7 +355,7 @@ def template_collision_fraction(
 
 def match_all(records: list[dict], model: SentenceTransformer) -> list[dict]:
     n = len(records)
-    goals_mat = goals_similarity(records, model)
+    goals_mat, goals_evidence = goals_similarity(records, model)
     edges = []
 
     for i in range(n):
@@ -347,19 +374,23 @@ def match_all(records: list[dict], model: SentenceTransformer) -> list[dict]:
             mss = mss_network_score(records[i]["katottg"], records[j]["katottg"])
             combined = WEIGHT_GOALS * g + WEIGHT_GEO * geo + WEIGHT_MSS * mss
             pk = frozenset([records[i]["name"], records[j]["name"]])
-            edges.append(
-                {
-                    "a": records[i]["name"],
-                    "b": records[j]["name"],
-                    "a_katottg": records[i]["katottg"],
-                    "b_katottg": records[j]["katottg"],
-                    "score": round(combined, 3),
-                    "goals_cosine": round(g, 3),
-                    "geo_score": round(geo, 3),
-                    "mss_network": round(mss, 3),
-                    "known": pk in KNOWN_PAIRS,
-                }
-            )
+            collision = template_collision_fraction(records[i]["subgoals"], records[j]["subgoals"])
+            edge = {
+                "a": records[i]["name"],
+                "b": records[j]["name"],
+                "a_katottg": records[i]["katottg"],
+                "b_katottg": records[j]["katottg"],
+                "score": round(combined, 3),
+                "goals_cosine": round(g, 3),
+                "geo_score": round(geo, 3),
+                "mss_network": round(mss, 3),
+                "known": pk in KNOWN_PAIRS,
+                "template_collision": round(collision, 3),
+            }
+            ev = goals_evidence.get((i, j))
+            if ev is not None:
+                edge["goals_evidence"] = {"a": ev[0], "b": ev[1], "similarity": round(ev[2], 3)}
+            edges.append(edge)
     return sorted(edges, key=lambda e: -e["score"])
 
 
@@ -384,8 +415,13 @@ def main() -> None:
     edges = match_all(records, model)
     meta = assign_tracks(edges)
 
+    # Rich cache first (goals_evidence + full fields) — export_edges.py picks
+    # this up via load_matching_edges(prefer_rich_cache=True) since the public
+    # release matrix below is slimmed to RELEASE_CORE_KEYS.
+    rich_path = write_rich_cache(edges)
     write_release_edges(edges, args.out)
     print(f"Wrote {len(edges)} slim edges to {args.out}")
+    print(f"Wrote {len(edges)} rich edges to {rich_path}")
     print(
         f"Tracks: thematic={meta['counts']['thematic']} "
         f"operational={meta['counts']['operational']} "
