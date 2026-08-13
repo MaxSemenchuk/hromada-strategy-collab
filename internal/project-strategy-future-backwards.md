@@ -38,11 +38,16 @@ surfaced yet:
   (`data/releases/hromadas.json`), candidate matches computed
   (`matching-edges*.json`), but IT-specific asks inside those matches are not
   yet obviously separable from general cooperation asks.
-- **TERGM pilot already validates part of the mechanism**, not just "found some
-  matches": on 316 tie-formation events, `geo_score` is a confirmed predictor
-  (tight CI) and `donor_overlap` is tentatively confirmed. `goals_cosine` and
-  the transitivity/"bridge" signal are *not* confirmed yet — do not let a pitch
-  imply otherwise. Full detail: project memory
+- **Retrospective covariate pilot (formerly framed as "TERGM"), deprioritized
+  2026-08-12** (see [decisions log](#decisions-log)): the temporal/TERGM
+  method itself doesn't fit this corpus (only one real network transition,
+  2020→2021, to model). The non-temporal covariate results survive as
+  background, not a headline: on 316 tie-formation events, `geo_score` is a
+  confirmed predictor (tight CI) and `donor_overlap` is tentatively
+  confirmed. `goals_cosine` and the transitivity/"bridge" signal are *not*
+  confirmed — do not let a pitch imply otherwise. Treat this as Study-1
+  supporting material for the paper, not something to lead with in product
+  or funder conversations. Full detail: project memory
   `project_mss-tergm-pilot-findings.md` / `internal/tergm-pilot-results.json`.
 - **Tkachuk's (ІГС) practitioner correction is the load-bearing theory of
   change**: the tool does not replace trust between hromada heads (60–90% of
@@ -182,7 +187,7 @@ Max before treating as settled definitions):
   engagements, not a public product. Lowest external/political exposure, but
   caps external impact and forgoes the funder/community narrative the other
   two options are already halfway built for (stakeholder site, outreach
-  drafts, TERGM validation).
+  drafts, retrospective covariate pilot).
 
 These aren't permanently exclusive, but the pitch materials currently gesture
 at all three at once, which is the actual problem — a funder can't be told
@@ -211,8 +216,8 @@ doesn't replace relationships — hard rule 9) and Brief 2's unresolved
 predictive-validity question, the lower-risk sequencing is **open-data now,
 matchmaking as a small funded pilot on a handful of pairs later** — not a
 full-programme commitment before Brief 2 has an answer. Pure W3I-internal
-gives up ground already paid for (site, outreach drafts, TERGM validation)
-without a hard capacity reason forcing that choice.
+gives up ground already paid for (site, outreach drafts, retrospective
+covariate pilot) without a hard capacity reason forcing that choice.
 
 **Owner / next step**: Max, informed by whichever stakeholder conversations
 have actually happened so far.
@@ -421,3 +426,35 @@ Append an entry here whenever one of the above gets decided — keep it short
   (confirmed) and `donor_overlap` (tentative) came from the non-temporal
   part of the model and stand on their own; see `project_mss-tergm-pilot-
   findings` memory.
+- **2026-08-12 — paper retitled and refocused on the field experiment; old
+  TERGM-only draft retired.** New working title: **"Collaboration
+  Matchmaking by Public Strategies: Evidence from a Field Experiment with
+  Ukraine's Municipalities."** The paper's central evidence is now the
+  AIM-CC field experiment (Brief 2) — strategy-derived thematic matching
+  tested as an active-facilitation arm against geo-matching and a random
+  control — not the retrospective pooled-MPLE/TERGM fit, which becomes
+  Study 1 background motivating the experimental arms. This also resolves
+  the framing risk flagged when the old title first came up: "matchmaking"
+  and "by public strategies" only overclaim if the headline evidence is
+  observational; once the headline evidence is an actual facilitated
+  intervention, both words describe the design accurately. The old
+  TERGM-only draft (`internal/paper-draft-tergm-mss.md`, gitignored,
+  never git-tracked) is retired to
+  `internal/legacy/paper-draft-tergm-mss.md` rather than deleted, since it
+  has no git history to recover from otherwise; its Sections 3–6
+  (corpus, pooled-MPLE methods, results table, limitations) are reusable
+  as Study 1 material once the new draft is assembled.
+  **Plan, in order**: (1) run/launch the AIM-CC pilot per Brief 2's
+  "Owner / next step" (unchanged by this entry — still gates everything
+  below); (2) once results exist (reply-within-21-days as primary outcome,
+  signing as exploratory), write the new paper with Study 1 = retrospective
+  pooled-MPLE analysis (reusing `internal/legacy/paper-draft-tergm-mss.md`
+  Sections 3–6) and Study 2 = the field experiment's design + results as
+  the new central section; (3) revisit target journal once the experiment
+  section exists (old target was *Local Government Studies*, TERGM-only
+  framing — may still fit, not re-checked against the new framing); (4)
+  co-authorship (Taraktaş, Сердюк locked in; Ткачук pending, see above)
+  applies unchanged to whichever draft is submitted. **Owner / next step**:
+  Max decides when Brief 2's pilot has enough data to write from; no new
+  drafting starts before that, per the field-experiment-first sequencing
+  agreed the same day.
