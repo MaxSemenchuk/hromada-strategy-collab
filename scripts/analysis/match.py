@@ -186,8 +186,13 @@ def _indexed_similarity(
     """Pairwise DF-weighted mean-centered similarity over record[line_key] lines.
 
     Also returns, per pair, the single best-matching line pair (stripped of the
-    "query: " e5 prefix) as evidence for why the score is what it is.
+    "query: " e5 prefix, when applied) as evidence for why the score is what it is.
+
+    The "query: " prefix is an e5-specific training convention (asymmetric
+    query/passage encoding) — meaningless for other models, so it's only
+    applied when ``model.uses_query_prefix`` is set (see ``main``).
     """
+    prefix = "query: " if getattr(model, "uses_query_prefix", False) else ""
     all_subgoals: list[str] = []
     subgoal_owner: list[int] = []
     for i, r in enumerate(records):
@@ -195,7 +200,7 @@ def _indexed_similarity(
         if not sg:
             continue
         for s in sg:
-            all_subgoals.append("query: " + s)
+            all_subgoals.append(prefix + s)
             subgoal_owner.append(i)
 
     n = len(records)
@@ -229,8 +234,8 @@ def _indexed_similarity(
             if ev is not None:
                 gi, gj, sim = ev
                 evidence[(i, j)] = (
-                    all_subgoals[gi][len("query: ") :],
-                    all_subgoals[gj][len("query: ") :],
+                    all_subgoals[gi][len(prefix) :],
+                    all_subgoals[gj][len(prefix) :],
                     sim,
                 )
     return scores, evidence
@@ -411,7 +416,14 @@ def main() -> None:
     records = build_records(hromadas)
     print(f"Matching {len(records)} hromadas from {args.input}...")
 
-    model = SentenceTransformer("intfloat/multilingual-e5-small")
+    from sentence_transformers import models as st_models
+
+    _word_embedding_model = st_models.Transformer("lang-uk/ukr-paraphrase-multilingual-mpnet-base")
+    _pooling_model = st_models.Pooling(
+        _word_embedding_model.get_word_embedding_dimension(), pooling_mode="mean"
+    )
+    model = SentenceTransformer(modules=[_word_embedding_model, _pooling_model])
+    model.uses_query_prefix = False  # e5-specific convention, not applicable here
     edges = match_all(records, model)
     meta = assign_tracks(edges)
 

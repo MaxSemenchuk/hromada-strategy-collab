@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T07:21:36.546266+00:00",
+  "generatedAt": "2026-08-18T10:36:17.483419+00:00",
   "pairCount": 42771,
   "knownValidationPairs": 12,
   "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
@@ -13,15 +13,15 @@
   },
   "warning": "Product unit is an \u041c\u0421\u0421 candidate agreement (package theme\u00b7form), not a strategy twin. Unverified hypotheses unless known=true / status=registry_known. Combined score ranks one discovery signal \u2014 use package + signals / slice files. suggested_theme / suggested_form / package are IMC hypotheses, not registry facts. matching-edges.json is slim (scores); browse packages via mss-candidates / slices.",
   "tracks": {
-    "thematic": "goals_cosine >= p90 (0.28) and geo_score <= 0.35 \u2014 cold-start vision partners",
+    "thematic": "goals_cosine >= p90 (0.401) and geo_score <= 0.35 \u2014 cold-start vision partners",
     "operational": "geo_score >= 0.85 and not thematic \u2014 convenient service co-sharers; slice ranked by operational_score (geo + fiscal_similarity + dream_overlap) when available",
     "mixed": "all other pairs",
     "counts": {
-      "thematic": 3869,
+      "thematic": 3921,
       "operational": 703,
-      "mixed": 38199
+      "mixed": 38147
     },
-    "goalsFloor": 0.28,
+    "goalsFloor": 0.401,
     "goalsPercentile": 90,
     "geoThematicMax": 0.35,
     "geoOperationalMin": 0.85
