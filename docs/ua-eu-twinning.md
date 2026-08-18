@@ -133,6 +133,75 @@ separate donor infrastructure packages.
 
 ---
 
+## Statistics (2026-08-16 snapshot)
+
+Computed by joining `twinning-partners.json` (178 hromadas listed) against
+`hromadas.json` demographics (1463 hromadas, join key KATOTTG). **Key split:
+of the 178 listed, only 114 have a confirmed partner edge — the other 64 are
+Cities4Cities profiles with no confirmed pair yet ("seeking", not "twinned").**
+Stats below use the 114-confirmed group unless noted.
+
+### Scale — confirmed-partner hromadas vs baseline
+
+| | Confirmed partner (n=114) | Seeking-only, C4C (n=64) | All hromadas (n=1463) |
+|---|---|---|---|
+| міська | 86.0% | 45.3% | 27.9% |
+| селищна | 8.8% | 32.8% | 29.5% |
+| сільська | 5.3% | 21.9% | 42.6% |
+| median population | 42,980 | 17,678 | 10,658 |
+| mean population | 111,560 | 28,499 | — |
+
+Twinning is a **big-city format**: 4× baseline median population, 86% urban
+type. The seeking-only C4C pool is much closer to the overall hromada mix —
+large cities convert "seeking" into a real partner far more than small ones.
+Largest confirmed: Kharkiv (950,072). Smallest: Esman selyshche hromada
+(1,528).
+
+Population buckets, confirmed group (n=114): <5k: 1 · 5–15k: 13 · 15–30k: 22 ·
+30–60k: 35 · 60–150k: 21 · 150k+: 21.
+
+### Agreement type / source (194 partner edges total)
+
+| Type | Source | Count | Share |
+|---|---|---|---|
+| Kommunalpartnerschaft | SKEW (DE registry) | 179 | 92.3% |
+| Cities4Cities partnership | C4C news | 11 | 5.7% |
+| strategy_mention | hromada strategy text | 4 | 2.1% |
+
+Country: DE 180 (92.8%), unspecified/C4C 11, SE 1, BG 1, PL 1 — confirms the
+"German format is the only bulk registry" point above with hard numbers.
+
+### Timing — clear 2022+ solidarity wave
+
+Of 190 dated edges (4 strategy mentions undated): <2015: 30 · 2015–2021: 14 ·
+2022: 33 · **2023: 57** · 2024: 30 · 2025+: 26. **76.8% of dated edges start
+2022 or later** — a wartime surge layered on a pre-existing (mostly pre-2015)
+base, consistent with the "running since 2015, surge from 2022" note above.
+
+### Concentration
+
+- Partners per hromada (n=114): 1 partner 67 · 2: 26 · 3: 15 · 4: 3 · 5+: 3.
+  Top: Poltava (7), Ivano-Frankivsk (6), Lviv (5), Zhovkva/Mykolaiv/Odesa (4
+  each).
+- Oblast twinning rate (confirmed / all hromadas in oblast): Lviv 20.5%
+  (15/73), Kyiv obl. 17.4% (12/69), Volyn 13.2%, Poltava 11.7%,
+  Ivano-Frankivsk 11.3% — top oblasts by raw count: Lviv (15), Kyiv obl. (12),
+  Poltava/Ivano-Frankivsk/Volyn (7 each).
+- German *Land* of partner (top): Nordrhein-Westfalen 36, Bayern 27,
+  Baden-Württemberg 25, Niedersachsen 22, Hessen 14.
+
+### Caveat
+
+No per-edge theme tag exists in the data — the "Typical themes" table above is
+narrative/qualitative (SKEW policy descriptions + case docs), not a tally.
+Don't present it as counted statistics.
+
+Method: ad hoc analysis, 2026-08-16, not a committed script — rerun by joining
+`twinning-partners.json` `.hromadas[]` against `hromadas.json` on
+`katottg`/`Katottg`, filtering `partner_count > 0` for the "confirmed" group.
+
+---
+
 ## Implications for this project
 
 | Domestic МСС matching | UA–EU twinning |
