@@ -82,6 +82,15 @@ surfaced yet:
   deciding unilaterally, since `.cursor/rules/hromada-project.mdc` treats him
   as a consulted-expert-only by default and that's the fallback if he
   declines or doesn't respond by submission.
+- **Exploratory (2026-08-13): domain-generalization analysis exists**
+  ([internal/domain-generalization-analysis.md](domain-generalization-analysis.md)) —
+  reframes the method as three pillars (LLM strategy analysis, network
+  analysis, game theory), with geo as a case-specific adaptation slot rather
+  than a fourth pillar, and scores six other domains (universities, GitHub/OSS,
+  grantmakers↔recipients, city twinning, NGO coalitions, startups) on
+  scientific/impact/commercial attractiveness. Not a decision — filed for
+  later use (paper generalizability section, or a side-market pitch), and
+  explicitly doesn't change Brief 1–3's sequencing below.
 
 ## Рай (heaven)
 
@@ -244,11 +253,12 @@ question, not just a style guide.
   what pairs would have found each other unprompted.
 - The pre-registered **primary outcome is reply-within-21-days**, not
   "agreement signed" — the design already treats agreement-signing as too
-  rare to power on directly. Signing / new registry entry is outcome #5 on
-  the ordered ladder (§6), explicitly **exploratory, 12-month horizon**, not
-  the thing significance is computed on. This matches Max's point: agreements
-  are too rare to test *prediction* against, but a facilitated-outreach
-  funnel (reply → call scheduled → call held → next step → [exploratory]
+  rare to power on directly. Signing / new registry entry is outcome #6 on
+  the ordered ladder (§6, updated 2026-08-18 — see decisions log), explicitly
+  **exploratory, 12-month horizon**, not the thing significance is computed
+  on. This matches Max's point: agreements are too rare to test *prediction*
+  against, but a facilitated-outreach funnel (reply → call scheduled → call
+  held → next step → [exploratory, 3mo] concept drafted → [exploratory, 12mo]
   signed) is measurable at pilot scale (24–60 pairs, §4).
 - The design is explicit about being underpowered for small effects
   (§4) — feasibility + effect-size estimate is the honest goal of a first
@@ -458,3 +468,22 @@ Append an entry here whenever one of the above gets decided — keep it short
   Max decides when Brief 2's pilot has enough data to write from; no new
   drafting starts before that, per the field-experiment-first sequencing
   agreed the same day.
+- **2026-08-18 — AIM-CC prereg refined: confound framing + new outcome
+  rung, not a new design.** Reacting to the AIM-CC slide deck, Max
+  independently re-derived two things already latent in the design and one
+  genuine addition; all three are now explicit in
+  [internal/aim-cc-field-experiment-prereg.md](aim-cc-field-experiment-prereg.md)
+  (v0.4): (1) Arm B (geo-matched) is named as the design's built-in control
+  for **Class 1** cooperation (neighbor/personal-contact ties, Tkachuk's
+  60–90% figure) — it already existed, just wasn't framed this way; (2)
+  **Class 2** (UA↔EU twinning) is added as an exploratory moderator (has a
+  confirmed SKEW/C4C twin) rather than its own arm, since it's still
+  under-studied — ties to [[project_eu-twinning-vs-domestic-mss-comparison]]
+  and Brief 3; (3) new outcome-ladder rung 5, "(exploratory, 3 months)
+  formal project concept/plan drafted," between the existing 30-day
+  "agreed next step" and the 12-month registry-signing outcome (now rung
+  6) — Max's proposal that a drafted concept is a stronger mid-point signal
+  than a 30-day informal next-step. No experiment has launched yet, so this
+  is a draft revision, not a deviation requiring a §11 log entry in the
+  prereg itself. **Owner / next step**: unchanged — still gated on Brief 2's
+  launch decision above.
