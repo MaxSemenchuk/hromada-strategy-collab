@@ -1446,6 +1446,8 @@ if (DATA.basins && DATA.basins.features && DATA.basins.features.length) {
 }
 
 const pinEdgesLayer = L.layerGroup().addTo(map);
+const pinAgreementEdgesLayer = L.layerGroup().addTo(map);
+const pinAgreementHubsLayer = L.layerGroup().addTo(map);
 const knownEdgesLayer = L.layerGroup().addTo(map);
 const thematicEdgesLayer = L.layerGroup().addTo(map);
 const operationalEdgesLayer = L.layerGroup(); // default OFF — add on toggle
@@ -1456,6 +1458,7 @@ const nodesLayer = L.layerGroup().addTo(map);
 
 function edgeStyle(kind) {
   if (kind === 'pin') return { color: '#57ab9c', weight: 1, opacity: 0.28 };
+  if (kind === 'pin_agreement') return { color: '#57ab9c', weight: 1, opacity: 0.35, dashArray: '2 5' };
   if (kind === 'known') return { color: '#d9a548', weight: 3, opacity: 0.95 };
   if (kind === 'operational') return { color: '#fb923c', weight: 2, opacity: 0.7, dashArray: '2 6' };
   if (kind === 'complementary') return { color: '#34d399', weight: 2, opacity: 0.75, dashArray: '4 4' };
@@ -1473,6 +1476,8 @@ function bindSelect(marker, n) {
 
 function rebuildMapLayers() {
   pinEdgesLayer.clearLayers();
+  pinAgreementEdgesLayer.clearLayers();
+  pinAgreementHubsLayer.clearLayers();
   knownEdgesLayer.clearLayers();
   thematicEdgesLayer.clearLayers();
   operationalEdgesLayer.clearLayers();
@@ -1485,20 +1490,40 @@ function rebuildMapLayers() {
 
   for (const e of edges) {
     if (themedIds) {
-      if (e.kind !== 'pin') continue;
+      if (e.kind !== 'pin' && e.kind !== 'pin_agreement') continue;
       if (!pinThemeOk(e)) continue;
-    } else if (!pinThemeOk(e) && e.kind === 'pin') {
+    } else if (!pinThemeOk(e) && (e.kind === 'pin' || e.kind === 'pin_agreement')) {
       continue;
     }
     const a = e.source, b = e.target;
     if (a.lat == null || b.lat == null) continue;
     const line = L.polyline([[a.lat, a.lon], [b.lat, b.lon]], edgeStyle(e.kind));
     if (e.kind === 'pin') pinEdgesLayer.addLayer(line);
+    else if (e.kind === 'pin_agreement') pinAgreementEdgesLayer.addLayer(line);
     else if (e.kind === 'known') knownEdgesLayer.addLayer(line);
     else if (e.kind === 'operational') operationalEdgesLayer.addLayer(line);
     else if (e.kind === 'complementary') complementaryEdgesLayer.addLayer(line);
     else if (e.kind === 'explicit_ask') explicitAskEdgesLayer.addLayer(line);
     else if (e.kind === 'thematic' || e.kind === 'hypothesis') thematicEdgesLayer.addLayer(line);
+  }
+
+  // Multi-party agreement hubs: small non-interactive markers where the
+  // pin_agreement spokes above converge (synthetic centroid position, not a
+  // real place) — mirrors the Граф view's hub-node treatment.
+  for (const n of nodes) {
+    if (n.kind !== 'agreement' || n.lat == null) continue;
+    if (themedIds && !themedIds.has(n.id)) continue;
+    const marker = L.circleMarker([n.lat, n.lon], {
+      radius: 3 + Math.min(n.party_count || 0, 20) * 0.25,
+      color: '#57ab9c',
+      fillColor: '#57ab9c',
+      fillOpacity: 0.5,
+      weight: 1,
+      opacity: 0.6,
+      interactive: false,
+    });
+    marker.bindTooltip(`${n.full_name || n.label} · ${n.party_count} учасників`, { sticky: true });
+    pinAgreementHubsLayer.addLayer(marker);
   }
 
   // Faint universe underlay (all mainland hromadas with KSE geo)
@@ -1520,7 +1545,7 @@ function rebuildMapLayers() {
   }
 
   for (const n of nodes) {
-    if (n.lat == null) continue;
+    if (n.lat == null || n.kind === 'agreement') continue;
     if (themedIds && !themedIds.has(n.id)) continue;
     const corpusGlow = layers.corpus && n.in_corpus;
     const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
@@ -1549,6 +1574,8 @@ function syncLayerVisibility() {
   show(universeLayer, layers.universe);
   show(basinsLayer, layers.basins);
   show(pinEdgesLayer, layers.pin);
+  show(pinAgreementEdgesLayer, layers.pin);
+  show(pinAgreementHubsLayer, layers.pin);
   show(knownEdgesLayer, layers.known);
   show(thematicEdgesLayer, layers.thematic);
   show(operationalEdgesLayer, layers.operational);
