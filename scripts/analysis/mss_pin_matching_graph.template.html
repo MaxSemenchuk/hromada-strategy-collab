@@ -109,6 +109,7 @@
     font-weight: 700;
     margin: 0 0 0.55rem;
   }
+  .layers[hidden] { display: none; }
   .layers {
     display: grid;
     gap: 0.35rem;
@@ -607,7 +608,7 @@
       <button type="button" id="btn-map" class="active" data-i18n="mode.map">Мапа</button>
       <button type="button" id="btn-graph" data-i18n="mode.graph">Граф</button>
     </div>
-    <div class="layers" role="group" aria-label="Розкладка графа" style="margin-bottom:0.9rem">
+    <div class="layers" id="graph-layout" role="group" aria-label="Розкладка графа" style="margin-bottom:0.9rem" hidden>
       <label>
         <input type="checkbox" id="cluster-oblast" checked/>
         <span class="sw cluster" aria-hidden="true"></span>
@@ -1391,10 +1392,10 @@ const map = L.map('map', {
   zoomControl: true,
   attributionControl: true,
 });
-// No place-name labels on basemap
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; OpenStreetMap &copy; CARTO · межі: Natural Earth',
-  subdomains: 'abcd',
+// CARTO's anonymous basemap tiles now require an API key (watermarked otherwise);
+// Esri's Canvas tiles stay free/keyless, so we use those instead.
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+  attribution: '&copy; Esri, HERE, Garmin, OpenStreetMap contributors · межі: Natural Earth',
   maxZoom: 18,
 }).addTo(map);
 
@@ -1598,6 +1599,7 @@ function setMode(next) {
   mode = next;
   document.getElementById('btn-graph').classList.toggle('active', mode === 'graph');
   document.getElementById('btn-map').classList.toggle('active', mode === 'map');
+  document.getElementById('graph-layout').hidden = mode !== 'graph';
   if (mode === 'map') {
     mapEl.classList.remove('hidden');
     canvas.classList.remove('visible');
