@@ -23,4 +23,7 @@ internal/outreach.html
 # until authorship + content are confirmed for submission
 internal/paper-draft-*.md
 internal/legacy/
+
+# Personal contact details (phone numbers etc.) — private, never in git
+internal/private-contacts.md
 .playwright-mcp/
