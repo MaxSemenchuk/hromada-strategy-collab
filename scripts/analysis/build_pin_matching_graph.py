@@ -838,6 +838,23 @@ def build_payload() -> dict:
     # Leaflet map layers, which all skip lat==None, never render them).
     nodes.extend(sorted(country_nodes.values(), key=lambda n: n["label"]))
     nodes.extend(sorted(donor_nodes.values(), key=lambda n: n["label"]))
+
+    # Multi-party agreement hubs get a synthetic position (centroid of their
+    # geocoded participants) so the Мапа view can draw pin_agreement spokes —
+    # otherwise every hromada whose only PIN ties are multi-party (44% of PIN
+    # participants) shows its badge/degree but zero lines on the map.
+    code_latlon = {n["id"]: (n["lat"], n["lon"]) for n in nodes if n.get("lat") is not None}
+    hub_participants: dict[str, list[str]] = defaultdict(list)
+    for e in pin_edges:
+        if e["kind"] == "pin_agreement":
+            hub_participants[e["b"]].append(e["a"])
+    for hub_id, hub in agreement_nodes.items():
+        pts = [code_latlon[c] for c in hub_participants.get(hub_id, []) if c in code_latlon]
+        if pts:
+            hub["lat"] = sum(p[0] for p in pts) / len(pts)
+            hub["lon"] = sum(p[1] for p in pts) / len(pts)
+        else:
+            hub["lat"] = hub["lon"] = None
     nodes.extend(sorted(agreement_nodes.values(), key=lambda n: -n["party_count"]))
 
     # Universe layer: every release hromada with KSE lat/lon (≈ full mainland set)
