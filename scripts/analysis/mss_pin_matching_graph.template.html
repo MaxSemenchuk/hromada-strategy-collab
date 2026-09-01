@@ -616,9 +616,10 @@
     <h1 data-i18n="sidebar.h1">Міжмуніципальна співпраця на мапі</h1>
     <p class="lede" data-i18n="sidebar.lede">Зареєстровані угоди МСС поруч із кандидатами договорів (тема · форма). Оверлеї — сигнали пошуку, не типи МСС. Клац по громаді — картка з деталями.</p>
     <div class="toggle" role="tablist" data-i18n-aria="mode.aria" aria-label="Режим перегляду">
-      <button type="button" id="btn-map" class="active" data-i18n="mode.map">Мапа</button>
-      <button type="button" id="btn-graph" data-i18n="mode.graph">Граф</button>
+      <button type="button" id="btn-map" class="active" role="tab" aria-selected="true" data-i18n="mode.map">Мапа</button>
+      <button type="button" id="btn-graph" role="tab" aria-selected="false" data-i18n="mode.graph">Граф</button>
     </div>
+    <p class="section-label" id="graph-layout-label" data-i18n="graphLayout.label" hidden>Розкладка графа</p>
     <div class="layers" id="graph-layout" role="group" aria-label="Розкладка графа" style="margin-bottom:0.9rem" hidden>
       <label>
         <input type="checkbox" id="cluster-oblast" checked/>
@@ -1634,7 +1635,10 @@ function setMode(next) {
   mode = next;
   document.getElementById('btn-graph').classList.toggle('active', mode === 'graph');
   document.getElementById('btn-map').classList.toggle('active', mode === 'map');
+  document.getElementById('btn-graph').setAttribute('aria-selected', String(mode === 'graph'));
+  document.getElementById('btn-map').setAttribute('aria-selected', String(mode === 'map'));
   document.getElementById('graph-layout').hidden = mode !== 'graph';
+  document.getElementById('graph-layout-label').hidden = mode !== 'graph';
   // Donor-program ties are graph-only hub edges (no lat/lon) — the toggle
   // has zero effect on the Мапа layer, so don't show it there either.
   document.getElementById('layer-donors-row').hidden = mode !== 'graph';
@@ -1685,6 +1689,16 @@ window.addEventListener('resize', () => {
   else map.invalidateSize();
 });
 
+// Mirrors the Мапа mode nodesLayer gate (rebuildMapLayers' final show() call):
+// ordinary hromada nodes only show when at least one network/corpus signal
+// layer is on. Hub nodes (country/donor/agreement) are gated separately via
+// edgeVisible() against their own layer, so they're always allowed here.
+function networkNodeVisible(n) {
+  if (n.kind === 'country' || n.kind === 'donor' || n.kind === 'agreement') return true;
+  return layers.pin || layers.thematic || layers.operational || layers.complementary
+    || layers.explicitAsk || layers.corpus || layers.twinning;
+}
+
 function edgeVisible(e) {
   if ((e.kind === 'pin' || e.kind === 'pin_agreement') && !pinThemeOk(e)) return false;
   // When themes are narrowed, focus the view on matching registry edges only
@@ -1719,6 +1733,7 @@ function findNode(wx, wy) {
   let best = null, bestD = hit * hit;
   for (const n of nodes) {
     if (!nodeVisibleForThemeFilter(n)) continue;
+    if (!networkNodeVisible(n)) continue;
     const dx = n.x - wx, dy = n.y - wy;
     const d = dx * dx + dy * dy;
     if (d < bestD) { bestD = d; best = n; }
@@ -1924,6 +1939,7 @@ function drawGraph() {
   ctx.globalAlpha = 1;
   for (const n of nodes) {
     if (!nodeVisibleForThemeFilter(n)) continue;
+    if (!networkNodeVisible(n)) continue;
     const isHub = n.kind === 'country' || n.kind === 'donor' || n.kind === 'agreement';
     const hubEdgeKind = n.kind === 'country' ? 'twinning' : n.kind === 'donor' ? 'donor' : 'pin_agreement';
     if (isHub && !edgeVisible({ kind: hubEdgeKind, theme_ids: n.theme_id ? [n.theme_id] : undefined })) continue;
@@ -1987,6 +2003,7 @@ window.PAGE_I18N = {
     "mode.aria": "Режим перегляду",
     "mode.map": "Мапа",
     "mode.graph": "Граф",
+    "graphLayout.label": "Розкладка графа",
     "cluster.title": "Групувати за областями",
     "cluster.desc": "Лише в «Графі» — тримає громади ближче до вузла їхньої області",
     "layers.label": "Сигнали пошуку",
@@ -2085,6 +2102,7 @@ window.PAGE_I18N = {
     "mode.aria": "View mode",
     "mode.map": "Map",
     "mode.graph": "Graph",
+    "graphLayout.label": "Graph layout",
     "cluster.title": "Group by oblast",
     "cluster.desc": "Graph mode only — keeps hromadas near their oblast's anchor",
     "layers.label": "Discovery signals",
