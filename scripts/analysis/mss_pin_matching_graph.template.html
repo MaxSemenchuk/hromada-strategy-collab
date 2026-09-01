@@ -14,16 +14,16 @@
   :root {
     --map-bg: #0d1116;
     /* Match stroke colors used on the Leaflet / force layers */
-    --line-pin: #57ab9c;
-    --line-known: #d9a548;
-    --line-hyp: #7aa2ff;
-    --line-ops: #fb923c;
-    --line-comp: #34d399;
-    --line-ask: #f472b6;
+    --line-pin: #199e70;
+    --line-known: #c98500;
+    --line-hyp: #3987e5;
+    --line-ops: #d95926;
+    --line-comp: #008300;
+    --line-ask: #d55181;
     --dot-universe: #94a3b8;
-    --dot-corpus: #d9a548;
-    --dot-twinning: #6366f1;
-    --dot-donor: #f59e0b;
+    --dot-corpus: #c98500;
+    --dot-twinning: #9085e9;
+    --dot-donor: #e66767;
     --basin-stroke: #38bdf8;
   }
   * { box-sizing: border-box; }
@@ -38,10 +38,6 @@
     display: grid;
     grid-template-columns: minmax(300px, 340px) 1fr;
     min-height: calc(100vh - var(--site-nav-h, 56px));
-  }
-  @media (max-width: 900px) {
-    .wrap { grid-template-columns: 1fr; }
-    aside { max-height: none; border-right: 0; border-bottom: 1px solid var(--site-border); }
   }
   aside {
     padding: 1.35rem 1.2rem 1.6rem;
@@ -570,6 +566,8 @@
   canvas#c.visible { display: block; }
   canvas#c:active { cursor: grabbing; }
   .leaflet-container { background: var(--map-bg); font: inherit; }
+  /* Esri's dark-gray tiles read too light against our near-black theme; darken to match. */
+  .leaflet-tile-pane { filter: brightness(0.22) saturate(0.85); }
   .leaflet-popup-content-wrapper {
     background: #ffffff;
     color: #0f172a;
@@ -596,6 +594,20 @@
   #tooltip .tip-id { color: #64748b; font-size: 0.72rem; font-variant-numeric: tabular-nums; }
   #tooltip .tip-links { color: #2563eb; font-size: 0.72rem; margin-top: 0.25rem; display: block; }
   canvas#c { background: #0d1116; }
+  /* Mobile: put the map/graph above the (long) filter sidebar instead of
+     making it something you scroll past a screenful of toggles to reach —
+     this rule must stay after the base .wrap/aside/main rules above so it
+     wins the cascade at equal specificity. */
+  @media (max-width: 900px) {
+    .wrap { grid-template-columns: 1fr; }
+    main { order: 1; min-height: 62vh; }
+    aside {
+      order: 2;
+      max-height: none;
+      border-right: 0;
+      border-bottom: 1px solid var(--site-border);
+    }
+  }
 </style>
 </head>
 <body>
@@ -696,7 +708,7 @@
         <span class="sw twinning" aria-hidden="true"></span>
         <span class="layer-copy">
           <span class="layer-title" data-i18n="layer.twinning.title">Міста-побратими ЄС</span>
-          <span class="layer-desc" data-i18n="layer.twinning.desc">Індиго — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли</span>
+          <span class="layer-desc" data-i18n="layer.twinning.desc">Фіолетові — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли</span>
         </span>
       </label>
       <label class="layer">
@@ -704,7 +716,7 @@
         <span class="sw donor" aria-hidden="true"></span>
         <span class="layer-copy">
           <span class="layer-title" data-i18n="layer.donors.title">Донорські програми</span>
-          <span class="layer-desc" data-i18n="layer.donors.desc">Жовтогарячі — у «Графі» донорські програми показані як окремі вузли</span>
+          <span class="layer-desc" data-i18n="layer.donors.desc">Червоні — у «Графі» донорські програми показані як окремі вузли</span>
         </span>
       </label>
       <label class="layer">
@@ -1457,14 +1469,14 @@ const universeLayer = L.layerGroup().addTo(map);
 const nodesLayer = L.layerGroup().addTo(map);
 
 function edgeStyle(kind) {
-  if (kind === 'pin') return { color: '#57ab9c', weight: 1, opacity: 0.28 };
-  if (kind === 'pin_agreement') return { color: '#57ab9c', weight: 1, opacity: 0.35, dashArray: '2 5' };
-  if (kind === 'known') return { color: '#d9a548', weight: 3, opacity: 0.95 };
-  if (kind === 'operational') return { color: '#fb923c', weight: 2, opacity: 0.7, dashArray: '2 6' };
-  if (kind === 'complementary') return { color: '#34d399', weight: 2, opacity: 0.75, dashArray: '4 4' };
-  if (kind === 'explicit_ask') return { color: '#f472b6', weight: 2.5, opacity: 0.9 };
+  if (kind === 'pin') return { color: '#199e70', weight: 1, opacity: 0.28 };
+  if (kind === 'pin_agreement') return { color: '#199e70', weight: 1, opacity: 0.35, dashArray: '2 5' };
+  if (kind === 'known') return { color: '#c98500', weight: 3, opacity: 0.95 };
+  if (kind === 'operational') return { color: '#d95926', weight: 2, opacity: 0.7, dashArray: '2 6' };
+  if (kind === 'complementary') return { color: '#008300', weight: 2, opacity: 0.75, dashArray: '4 4' };
+  if (kind === 'explicit_ask') return { color: '#d55181', weight: 2.5, opacity: 0.9 };
   // thematic (and legacy hypothesis)
-  return { color: '#7aa2ff', weight: 2, opacity: 0.75, dashArray: '6 5' };
+  return { color: '#3987e5', weight: 2, opacity: 0.75, dashArray: '6 5' };
 }
 
 function bindSelect(marker, n) {
@@ -1515,8 +1527,8 @@ function rebuildMapLayers() {
     if (themedIds && !themedIds.has(n.id)) continue;
     const marker = L.circleMarker([n.lat, n.lon], {
       radius: 3 + Math.min(n.party_count || 0, 20) * 0.25,
-      color: '#57ab9c',
-      fillColor: '#57ab9c',
+      color: '#199e70',
+      fillColor: '#199e70',
       fillOpacity: 0.5,
       weight: 1,
       opacity: 0.6,
@@ -1534,8 +1546,8 @@ function rebuildMapLayers() {
     const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
     const marker = L.circleMarker([n.lat, n.lon], {
       radius: selected ? 5.5 : (twinGlow ? 4.2 : 2.2),
-      color: selected ? '#f8fafc' : (twinGlow ? '#6366f1' : '#64748b'),
-      fillColor: selected ? '#2563eb' : (twinGlow ? '#6366f1' : (n.in_corpus ? '#94a3b8' : '#475569')),
+      color: selected ? '#f8fafc' : (twinGlow ? '#9085e9' : '#64748b'),
+      fillColor: selected ? '#2563eb' : (twinGlow ? '#9085e9' : (n.in_corpus ? '#94a3b8' : '#475569')),
       fillOpacity: selected ? 0.95 : (twinGlow ? 0.85 : 0.45),
       weight: selected ? 2 : (twinGlow ? 1.5 : 0.5),
       opacity: selected ? 1 : 0.55,
@@ -1553,8 +1565,8 @@ function rebuildMapLayers() {
     const r = (selected ? 6.5 : 3) + Math.min(n.degree || 0, 24) * 0.15 + (twinGlow ? 1.2 : 0);
     const marker = L.circleMarker([n.lat, n.lon], {
       radius: r,
-      color: selected ? '#f8fafc' : (twinGlow ? '#6366f1' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff'))),
-      fillColor: selected ? '#2563eb' : (twinGlow ? '#6366f1' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff'))),
+      color: selected ? '#f8fafc' : (twinGlow ? '#9085e9' : (corpusGlow ? '#c98500' : (n.in_pin ? '#199e70' : '#3987e5'))),
+      fillColor: selected ? '#2563eb' : (twinGlow ? '#9085e9' : (corpusGlow ? '#c98500' : (n.in_pin ? '#199e70' : '#3987e5'))),
       fillOpacity: 0.9,
       weight: selected ? 2.5 : 1,
       opacity: 0.95,
@@ -1840,36 +1852,36 @@ function strokeEdge(e, ax, ay, bx, by) {
   ctx.moveTo(ax, ay);
   ctx.lineTo(bx, by);
   if (e.kind === 'pin' || e.kind === 'pin_agreement') {
-    ctx.strokeStyle = 'rgba(87,171,156,0.3)';
+    ctx.strokeStyle = 'rgba(25,158,112,0.3)';
     ctx.lineWidth = 0.9 / scale;
     ctx.setLineDash([]);
   } else if (e.kind === 'known') {
-    ctx.strokeStyle = 'rgba(217,165,72,0.95)';
+    ctx.strokeStyle = 'rgba(201,133,0,0.95)';
     ctx.lineWidth = 2.6 / scale;
     ctx.setLineDash([]);
   } else if (e.kind === 'operational') {
-    ctx.strokeStyle = 'rgba(251,146,60,0.65)';
+    ctx.strokeStyle = 'rgba(217,89,38,0.65)';
     ctx.lineWidth = 1.3 / scale;
     ctx.setLineDash([2 / scale, 5 / scale]);
   } else if (e.kind === 'complementary') {
-    ctx.strokeStyle = 'rgba(52,211,153,0.75)';
+    ctx.strokeStyle = 'rgba(0,131,0,0.75)';
     ctx.lineWidth = 1.4 / scale;
     ctx.setLineDash([4 / scale, 4 / scale]);
   } else if (e.kind === 'explicit_ask') {
-    ctx.strokeStyle = 'rgba(244,114,182,0.9)';
+    ctx.strokeStyle = 'rgba(213,81,129,0.9)';
     ctx.lineWidth = 2 / scale;
     ctx.setLineDash([]);
   } else if (e.kind === 'twinning') {
-    ctx.strokeStyle = 'rgba(99,102,241,0.4)';
+    ctx.strokeStyle = 'rgba(144,133,233,0.4)';
     ctx.lineWidth = 1 / scale;
     ctx.setLineDash([]);
   } else if (e.kind === 'donor') {
-    ctx.strokeStyle = 'rgba(245,158,11,0.4)';
+    ctx.strokeStyle = 'rgba(230,103,103,0.4)';
     ctx.lineWidth = 1 / scale;
     ctx.setLineDash([3 / scale, 3 / scale]);
   } else {
     // thematic
-    ctx.strokeStyle = 'rgba(122,162,255,0.55)';
+    ctx.strokeStyle = 'rgba(57,135,229,0.55)';
     ctx.lineWidth = 1.2 / scale;
     ctx.setLineDash([5 / scale, 4 / scale]);
   }
@@ -1926,10 +1938,10 @@ function drawGraph() {
     ctx.beginPath();
     ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
     ctx.fillStyle = selected ? '#2563eb'
-      : n.kind === 'country' ? '#6366f1'
-      : n.kind === 'donor' ? '#f59e0b'
-      : n.kind === 'agreement' ? '#57ab9c'
-      : (twinGlow ? '#6366f1' : (corpusGlow ? '#d9a548' : (n.in_pin ? '#57ab9c' : '#7aa2ff')));
+      : n.kind === 'country' ? '#9085e9'
+      : n.kind === 'donor' ? '#e66767'
+      : n.kind === 'agreement' ? '#199e70'
+      : (twinGlow ? '#9085e9' : (corpusGlow ? '#c98500' : (n.in_pin ? '#199e70' : '#3987e5')));
     ctx.fill();
     if (selected) {
       ctx.beginPath();
@@ -1994,9 +2006,9 @@ window.PAGE_I18N = {
     "layer.corpus.title": "Громади зі стратегіями",
     "layer.corpus.desc": "Підсвітити громади, чиї тексти вже в аналізі",
     "layer.twinning.title": "Міста-побратими ЄС",
-    "layer.twinning.desc": "Індиго — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли",
+    "layer.twinning.desc": "Фіолетові — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли",
     "layer.donors.title": "Донорські програми",
-    "layer.donors.desc": "Жовтогарячі — у «Графі» донорські програми показані як окремі вузли",
+    "layer.donors.desc": "Червоні — у «Графі» донорські програми показані як окремі вузли",
     "layer.basins.title": "Підкладка · водозбори",
     "layer.basins.desc": "HydroBASINS lev06 — гідрологічні басейни (не юридичні RBD DAVR)",
     "themes.label": "Теми угод МСС",
@@ -2096,9 +2108,9 @@ window.PAGE_I18N = {
     "layer.corpus.title": "Hromadas with strategies",
     "layer.corpus.desc": "Highlight hromadas whose texts are already in the analysis",
     "layer.twinning.title": "EU twin cities",
-    "layer.twinning.desc": "Indigo — hromadas with UA–EU twinning; countries appear as separate nodes in Graph mode",
+    "layer.twinning.desc": "Violet — hromadas with UA–EU twinning; countries appear as separate nodes in Graph mode",
     "layer.donors.title": "Donor programs",
-    "layer.donors.desc": "Amber — in Graph mode, donor programs appear as separate nodes",
+    "layer.donors.desc": "Red — in Graph mode, donor programs appear as separate nodes",
     "layer.basins.title": "Underlay · catchments",
     "layer.basins.desc": "HydroBASINS lev06 — hydrological basins (not legal DAVR RBDs)",
     "themes.label": "IMC agreement themes",
