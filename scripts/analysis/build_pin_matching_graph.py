@@ -22,7 +22,6 @@ Overlay policy (2026-07-24 / layers 2026-07-29 / basins 2026-08-03):
     explicit_ask  — МСС language in strategy text (default OFF)
     twinning      — UA–EU sister cities from SKEW / strategy (node highlight, default OFF)
     basins        — HydroBASINS lev06 underlay (default OFF; not in score)
-    known         — curated registry validation pairs
     universe      — all release hromadas with KSE lat/lon (metadata underlay)
 """
 
@@ -619,32 +618,15 @@ def build_payload() -> dict:
     corpus_matching = [
         e for e in matching if e["a"] in name_to_code and e["b"] in name_to_code
     ]
-    known = [e for e in corpus_matching if e.get("known")]
     thematic = thematic_slice(corpus_matching, limit=TOP_THEMATIC)
     operational = operational_slice(corpus_matching, limit=TOP_OPERATIONAL)
     # Slim release may lack package/signals — annotate only painted layers.
-    ensure_packages(known + thematic + operational)
+    ensure_packages(thematic + operational)
 
     # Includes pairs only tied via a multi-party agreement hub (no direct
     # dyadic "pin" edge for those), so overlay layers still skip them.
     pin_keys = pin_pair_keys
 
-    known_edges = []
-    for e in known:
-        edge = {
-            "a": name_to_code[e["a"]],
-            "b": name_to_code[e["b"]],
-            "kind": "known",
-            "score": e["score"],
-            "goals_cosine": e.get("goals_cosine"),
-            "geo_score": e.get("geo_score"),
-            "track": e.get("track"),
-        }
-        attach_goal_overlap(
-            edge, name_a=e["a"], name_b=e["b"], goals_by_name=goals_by_name
-        )
-        edge.update(explain_fields({**e, **edge}))
-        known_edges.append(edge)
     thematic_edges = encode_overlay(
         thematic,
         kind="thematic",
@@ -678,8 +660,7 @@ def build_payload() -> dict:
         )
 
     for e in (
-        known_edges
-        + thematic_edges
+        thematic_edges
         + operational_edges
         + complementary_edges
         + explicit_ask_edges
@@ -925,7 +906,6 @@ def build_payload() -> dict:
             "operational_edges": len(operational_edges),
             "complementary_edges": len(complementary_edges),
             "explicit_ask_edges": len(explicit_ask_edges),
-            "known_edges": len(known_edges),
             # legacy alias: thematic only (combined-score hyp layer removed)
             "hypothesis_edges": len(thematic_edges),
             "nodes_with_geo": with_geo,
@@ -983,7 +963,6 @@ def build_payload() -> dict:
         "universe": universe,
         "edges": (
             pin_edges
-            + known_edges
             + thematic_edges
             + operational_edges
             + complementary_edges
@@ -1011,7 +990,6 @@ def main() -> None:
         f"(subjects={m.get('pin_agreements_enriched', 0)}) · "
         f"universe={m['universe_nodes']} (portal={m['universe_with_portal']}) · "
         f"oblasts={m['oblasts']} · basins={m.get('basins', 0)} · "
-        f"known={m['known_edges']} "
         f"thematic={m['thematic_edges']} operational={m['operational_edges']} "
         f"complementary={m['complementary_edges']} explicit_ask={m['explicit_ask_edges']} "
         f"twinning={m.get('twinning_hromadas', 0)} "

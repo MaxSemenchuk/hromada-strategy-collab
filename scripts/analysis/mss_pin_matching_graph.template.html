@@ -15,7 +15,6 @@
     --map-bg: #0d1116;
     /* Match stroke colors used on the Leaflet / force layers */
     --line-pin: #199e70;
-    --line-known: #c98500;
     --line-hyp: #3987e5;
     --line-ops: #d95926;
     --line-comp: #008300;
@@ -152,7 +151,6 @@
     flex-shrink: 0;
   }
   .sw.pin { border-color: var(--line-pin); }
-  .sw.known { border-color: var(--line-known); border-top-width: 3px; }
   .sw.hyp { border-color: var(--line-hyp); border-top-style: dashed; }
   .sw.ops { border-color: var(--line-ops); border-top-style: dotted; border-top-width: 2.5px; }
   .sw.comp { border-color: var(--line-comp); border-top-style: dashed; border-top-width: 2.5px; }
@@ -657,14 +655,6 @@
         </span>
       </label>
       <label>
-        <input type="checkbox" id="layer-known" checked/>
-        <span class="sw known" aria-hidden="true"></span>
-        <span class="layer-copy">
-          <span class="layer-title" data-i18n="layer.known.title">Перевірені приклади</span>
-          <span class="layer-desc" data-i18n="layer.known.desc">Золоті товсті лінії — кураторські пари для перевірки методу</span>
-        </span>
-      </label>
-      <label>
         <input type="checkbox" id="layer-thematic" checked/>
         <span class="sw hyp" aria-hidden="true"></span>
         <span class="layer-copy">
@@ -746,7 +736,6 @@
       <div class="stat"><span data-i18n="stat.pin">Зареєстрованих угод</span><b id="s-pin">—</b></div>
       <div class="stat"><span data-i18n="stat.geo">Угод із координатами</span><b id="s-geo">—</b></div>
       <div class="stat"><span data-i18n="stat.corpus">Стратегій у корпусі</span><b id="s-corpus">—</b></div>
-      <div class="stat"><span data-i18n="stat.known">Перевірених прикладів</span><b id="s-known">—</b></div>
       <div class="stat"><span data-i18n="stat.thematic">Гіпотез «схожа стратегія»</span><b id="s-thematic">—</b></div>
       <div class="stat"><span data-i18n="stat.operational">Гіпотез «зручний сусід»</span><b id="s-operational">—</b></div>
       <div class="stat"><span data-i18n="stat.complementary">Гіпотез «доповнення»</span><b id="s-complementary">—</b></div>
@@ -775,7 +764,6 @@ document.getElementById('s-nodes').textContent = meta.pin_nodes;
 document.getElementById('s-pin').textContent = meta.pin_edges;
 document.getElementById('s-geo').textContent = meta.nodes_with_geo;
 document.getElementById('s-corpus').textContent = meta.corpus_size;
-document.getElementById('s-known').textContent = meta.known_edges;
 document.getElementById('s-thematic').textContent = meta.thematic_edges;
 document.getElementById('s-operational').textContent = meta.operational_edges;
 document.getElementById('s-complementary').textContent = meta.complementary_edges ?? 0;
@@ -788,7 +776,7 @@ document.getElementById('s-basins').textContent = meta.basins ?? 0;
 // Declared early so theme-filter handlers never hit TDZ on mode/layers.
 let mode = 'map';
 let layers = {
-  universe: true, pin: true, known: true,
+  universe: true, pin: true,
   thematic: true, operational: false, complementary: false, explicitAsk: false,
   corpus: false, twinning: false, donors: false, basins: false,
 };
@@ -947,7 +935,6 @@ function fmtNum(n) {
 function kindLabel(kind) {
   const map = {
     pin: 'layer.pin.title',
-    known: 'layer.known.title',
     thematic: 'layer.thematic.title',
     hypothesis: 'layer.thematic.title',
     operational: 'layer.operational.title',
@@ -962,7 +949,6 @@ function kindLabel(kind) {
 
 function kindSwClass(kind) {
   if (kind === 'pin') return 'pin';
-  if (kind === 'known') return 'known';
   if (kind === 'operational') return 'ops';
   if (kind === 'complementary') return 'comp';
   if (kind === 'explicit_ask') return 'ask';
@@ -1039,7 +1025,7 @@ function fmtPct(n) {
 
 function neighborsOf(id) {
   const groups = Object.create(null);
-  const order = ['known', 'pin', 'pin_agreement', 'thematic', 'operational', 'complementary', 'explicit_ask', 'hypothesis', 'twinning', 'donor'];
+  const order = ['pin', 'pin_agreement', 'thematic', 'operational', 'complementary', 'explicit_ask', 'hypothesis', 'twinning', 'donor'];
   // A hromada's own twinning partners already have a dedicated detail-card
   // section (per-city name/region/source) — only surface the aggregated
   // "twinning" neighbor group when viewing the country hub itself.
@@ -1096,7 +1082,6 @@ function edgeBlurb(item) {
   }
   if (kind === 'thematic' || kind === 'hypothesis') return t('explain.thematic');
   if (kind === 'operational') return t('explain.operational');
-  if (kind === 'known') return t('explain.known');
   if (kind === 'pin') {
     const n = (item.agreements || []).length;
     if (n > 1) return t('explain.pinMany').replace('{n}', String(n));
@@ -1148,7 +1133,7 @@ function packageHtml(item) {
   const theme = pkg.theme || item.suggested_theme;
   const form = pkg.form || item.suggested_form;
   if (!theme && !form) return '';
-  if (item.kind === 'pin' || item.kind === 'known') return '';
+  if (item.kind === 'pin') return '';
   const line = pkg.label_uk || [theme, form].filter(Boolean).join(' — ');
   const conf = (pkg.confidence || item.suggest_confidence)
     ? ` <span class="agr-meta">(${esc(pkg.confidence || item.suggest_confidence)})</span>`
@@ -1477,7 +1462,6 @@ if (DATA.basins && DATA.basins.features && DATA.basins.features.length) {
 const pinEdgesLayer = L.layerGroup().addTo(map);
 const pinAgreementEdgesLayer = L.layerGroup().addTo(map);
 const pinAgreementHubsLayer = L.layerGroup().addTo(map);
-const knownEdgesLayer = L.layerGroup().addTo(map);
 const thematicEdgesLayer = L.layerGroup().addTo(map);
 const operationalEdgesLayer = L.layerGroup(); // default OFF — add on toggle
 const complementaryEdgesLayer = L.layerGroup();
@@ -1488,7 +1472,6 @@ const nodesLayer = L.layerGroup().addTo(map);
 function edgeStyle(kind) {
   if (kind === 'pin') return { color: '#199e70', weight: 1, opacity: 0.28 };
   if (kind === 'pin_agreement') return { color: '#199e70', weight: 1, opacity: 0.35, dashArray: '2 5' };
-  if (kind === 'known') return { color: '#c98500', weight: 3, opacity: 0.95 };
   if (kind === 'operational') return { color: '#d95926', weight: 2, opacity: 0.7, dashArray: '2 6' };
   if (kind === 'complementary') return { color: '#008300', weight: 2, opacity: 0.75, dashArray: '4 4' };
   if (kind === 'explicit_ask') return { color: '#d55181', weight: 2.5, opacity: 0.9 };
@@ -1507,7 +1490,6 @@ function rebuildMapLayers() {
   pinEdgesLayer.clearLayers();
   pinAgreementEdgesLayer.clearLayers();
   pinAgreementHubsLayer.clearLayers();
-  knownEdgesLayer.clearLayers();
   thematicEdgesLayer.clearLayers();
   operationalEdgesLayer.clearLayers();
   complementaryEdgesLayer.clearLayers();
@@ -1529,7 +1511,6 @@ function rebuildMapLayers() {
     const line = L.polyline([[a.lat, a.lon], [b.lat, b.lon]], edgeStyle(e.kind));
     if (e.kind === 'pin') pinEdgesLayer.addLayer(line);
     else if (e.kind === 'pin_agreement') pinAgreementEdgesLayer.addLayer(line);
-    else if (e.kind === 'known') knownEdgesLayer.addLayer(line);
     else if (e.kind === 'operational') operationalEdgesLayer.addLayer(line);
     else if (e.kind === 'complementary') complementaryEdgesLayer.addLayer(line);
     else if (e.kind === 'explicit_ask') explicitAskEdgesLayer.addLayer(line);
@@ -1605,13 +1586,12 @@ function syncLayerVisibility() {
   show(pinEdgesLayer, layers.pin);
   show(pinAgreementEdgesLayer, layers.pin);
   show(pinAgreementHubsLayer, layers.pin);
-  show(knownEdgesLayer, layers.known);
   show(thematicEdgesLayer, layers.thematic);
   show(operationalEdgesLayer, layers.operational);
   show(complementaryEdgesLayer, layers.complementary);
   show(explicitAskEdgesLayer, layers.explicitAsk);
   // network nodes on when any network / corpus highlight layer is on
-  show(nodesLayer, layers.pin || layers.known || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus || layers.twinning);
+  show(nodesLayer, layers.pin || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus || layers.twinning);
 }
 
 rebuildMapLayers();
@@ -1619,7 +1599,6 @@ rebuildMapLayers();
 function syncLayers() {
   layers.universe = document.getElementById('layer-universe').checked;
   layers.pin = document.getElementById('layer-pin').checked;
-  layers.known = document.getElementById('layer-known').checked;
   layers.thematic = document.getElementById('layer-thematic').checked;
   layers.operational = document.getElementById('layer-operational').checked;
   layers.complementary = document.getElementById('layer-complementary').checked;
@@ -1632,7 +1611,7 @@ function syncLayers() {
     rebuildMapLayers();
   }
 }
-['layer-universe','layer-pin','layer-known','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-corpus','layer-twinning','layer-donors','layer-basins'].forEach(id => {
+['layer-universe','layer-pin','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-corpus','layer-twinning','layer-donors','layer-basins'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
@@ -1704,7 +1683,6 @@ function edgeVisible(e) {
   // (hypothesis lines would otherwise point at hidden hromadas).
   if (pinThemeFilterNarrowed() && e.kind !== 'pin' && e.kind !== 'pin_agreement') return false;
   if (e.kind === 'pin' || e.kind === 'pin_agreement') return layers.pin;
-  if (e.kind === 'known') return layers.known;
   if (e.kind === 'thematic' || e.kind === 'hypothesis') return layers.thematic;
   if (e.kind === 'operational') return layers.operational;
   if (e.kind === 'complementary') return layers.complementary;
@@ -1875,10 +1853,6 @@ function strokeEdge(e, ax, ay, bx, by) {
     ctx.strokeStyle = 'rgba(25,158,112,0.3)';
     ctx.lineWidth = 0.9 / scale;
     ctx.setLineDash([]);
-  } else if (e.kind === 'known') {
-    ctx.strokeStyle = 'rgba(201,133,0,0.95)';
-    ctx.lineWidth = 2.6 / scale;
-    ctx.setLineDash([]);
   } else if (e.kind === 'operational') {
     ctx.strokeStyle = 'rgba(217,89,38,0.65)';
     ctx.lineWidth = 1.3 / scale;
@@ -1932,7 +1906,7 @@ function drawGraph() {
     }
   }
 
-  for (const kind of ['pin', 'pin_agreement', 'operational', 'complementary', 'thematic', 'hypothesis', 'explicit_ask', 'known', 'twinning', 'donor']) {
+  for (const kind of ['pin', 'pin_agreement', 'operational', 'complementary', 'thematic', 'hypothesis', 'explicit_ask', 'twinning', 'donor']) {
     for (const e of edges) {
       if (e.kind !== kind || !edgeVisible(e)) continue;
       ctx.globalAlpha = (hoverSet && e.source !== hover && e.target !== hover) ? HOVER_FADE_ALPHA : 1;
@@ -2013,8 +1987,6 @@ window.PAGE_I18N = {
     "layer.universe.desc": "Сірі ноди — материкові громади з координатами",
     "layer.pin.title": "Зареєстровані угоди МСС",
     "layer.pin.desc": "Бірюзові лінії — вже укладені договори між громадами",
-    "layer.known.title": "Перевірені приклади",
-    "layer.known.desc": "Золоті товсті лінії — кураторські пари для перевірки методу",
     "layer.thematic.title": "Сигнал · схожа стратегія",
     "layer.thematic.desc": "Пунктир — кандидат знайдено за схожістю цілей",
     "layer.operational.title": "Сигнал · зручний сусід",
@@ -2045,7 +2017,6 @@ window.PAGE_I18N = {
     "stat.pin": "Зареєстрованих угод",
     "stat.geo": "Угод із координатами",
     "stat.corpus": "Стратегій у корпусі",
-    "stat.known": "Перевірених прикладів",
     "stat.thematic": "Гіпотез «схожа стратегія»",
     "stat.operational": "Гіпотез «зручний сусід»",
     "stat.complementary": "Гіпотез «доповнення»",
@@ -2081,7 +2052,6 @@ window.PAGE_I18N = {
     "explain.complementary": "Гіпотеза: сила/DREAM однієї ↔ виклик іншої",
     "explain.explicit": "У стратегії прямо згадано міжмуніципальну співпрацю",
     "explain.explicitTheme": "Явний запит МСС · тема: {t}",
-    "explain.known": "Кураторський приклад із реєстру МСС для перевірки методу",
     "explain.pin": "Зареєстрована угода МСС",
     "explain.pinMany": "Зареєстровані угоди МСС ({n})",
     "explain.twinning": "Місто-побратим за кордоном (SKEW / стратегія)",
@@ -2115,8 +2085,6 @@ window.PAGE_I18N = {
     "layer.universe.desc": "Grey nodes — mainland hromadas with coordinates",
     "layer.pin.title": "Registered IMC agreements",
     "layer.pin.desc": "Teal lines — agreements already concluded between hromadas",
-    "layer.known.title": "Validated examples",
-    "layer.known.desc": "Thick gold lines — curated pairs for method validation",
     "layer.thematic.title": "Signal · similar strategy",
     "layer.thematic.desc": "Dashed — candidate found via goal similarity",
     "layer.operational.title": "Signal · convenient neighbour",
@@ -2147,7 +2115,6 @@ window.PAGE_I18N = {
     "stat.pin": "Registered agreements",
     "stat.geo": "Agreements with coordinates",
     "stat.corpus": "Strategies in the corpus",
-    "stat.known": "Validated examples",
     "stat.thematic": "“Similar strategy” hypotheses",
     "stat.operational": "“Convenient neighbour” hypotheses",
     "stat.complementary": "“Complement” hypotheses",
@@ -2183,7 +2150,6 @@ window.PAGE_I18N = {
     "explain.complementary": "Hypothesis: one side’s strength/DREAM ↔ the other’s challenge",
     "explain.explicit": "Strategy text explicitly mentions intermunicipal cooperation",
     "explain.explicitTheme": "Explicit IMC ask · theme: {t}",
-    "explain.known": "Curated IMC-registry example used to validate the method",
     "explain.pin": "Registered IMC agreement",
     "explain.pinMany": "Registered IMC agreements ({n})",
     "explain.twinning": "Twin city abroad (SKEW / strategy)",
