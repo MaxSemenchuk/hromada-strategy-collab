@@ -638,7 +638,7 @@
     </section>
     <p class="section-label" data-i18n="layers.label">Сигнали пошуку</p>
     <div class="layers" role="group" data-i18n-aria="layers.aria" aria-label="Шари мапи">
-      <label>
+      <label id="layer-universe-row">
         <input type="checkbox" id="layer-universe" checked/>
         <span class="sw universe" aria-hidden="true"></span>
         <span class="layer-copy">
@@ -727,7 +727,7 @@
       <button type="button" id="themes-tagged" data-i18n="themes.tagged">Лише з темою</button>
     </div>
     <p class="theme-filter-empty" id="theme-filter-empty" hidden data-i18n="themes.emptyPick">Оберіть хоча б одну тему — інакше угоди на мапі сховані.</p>
-    <p class="theme-filter-hint" data-i18n="themes.hint">Фільтрує бірюзові/фіолетові лінії реєстру і ховає громади без обраної теми. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).</p>
+    <p class="theme-filter-hint" data-i18n="themes.hint">Фільтрує бірюзові лінії реєстру і ховає громади без обраної теми. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).</p>
     <p class="section-label" data-i18n="stats.label">Цифри</p>
     <div class="stats">
       <div class="stat"><span data-i18n="stat.universe">Громад на мапі</span><b id="s-universe">—</b></div>
@@ -1641,6 +1641,11 @@ function setMode(next) {
   // HydroBASINS underlay renders on the Leaflet map only — the canvas force
   // graph has no geo projection to draw it on, so hide the toggle there.
   document.getElementById('layer-basins-row').hidden = mode !== 'map';
+  // The universe underlay (all mainland hromadas, faint grey dots) is a
+  // Leaflet-only layer — the canvas graph only ever draws DATA.nodes
+  // (the MSS network), never DATA.universe, so this toggle has zero
+  // effect there.
+  document.getElementById('layer-universe-row').hidden = mode !== 'map';
   if (mode === 'map') {
     mapEl.classList.remove('hidden');
     canvas.classList.remove('visible');
@@ -2010,7 +2015,7 @@ window.PAGE_I18N = {
     "themes.all": "Усі",
     "themes.none": "Жодної",
     "themes.tagged": "Лише з темою",
-    "themes.hint": "Фільтрує бірюзові/фіолетові лінії реєстру і ховає громади без обраної теми. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).",
+    "themes.hint": "Фільтрує бірюзові лінії реєстру і ховає громади без обраної теми. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).",
     "themes.empty": "Немає тем угод",
     "themes.emptyPick": "Оберіть хоча б одну тему — інакше угоди на мапі сховані.",
     "stats.label": "Цифри",
@@ -2108,7 +2113,7 @@ window.PAGE_I18N = {
     "themes.all": "All",
     "themes.none": "None",
     "themes.tagged": "Tagged only",
-    "themes.hint": "Filters teal/purple registry lines and hides hromadas without the selected theme(s). “Other” = title with no recognised theme (often just “joint project”).",
+    "themes.hint": "Filters teal registry lines and hides hromadas without the selected theme(s). “Other” = title with no recognised theme (often just “joint project”).",
     "themes.empty": "No agreement themes",
     "themes.emptyPick": "Pick at least one theme — otherwise agreements are hidden on the map.",
     "stats.label": "Figures",
