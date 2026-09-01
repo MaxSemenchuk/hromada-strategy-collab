@@ -106,6 +106,7 @@
     margin: 0 0 0.55rem;
   }
   .layers[hidden] { display: none; }
+  .layers label[hidden] { display: none; }
   .layers {
     display: grid;
     gap: 0.35rem;
@@ -711,7 +712,7 @@
           <span class="layer-desc" data-i18n="layer.twinning.desc">Фіолетові — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли</span>
         </span>
       </label>
-      <label class="layer">
+      <label class="layer" id="layer-donors-row">
         <input type="checkbox" id="layer-donors"/>
         <span class="sw donor" aria-hidden="true"></span>
         <span class="layer-copy">
@@ -1655,6 +1656,9 @@ function setMode(next) {
   document.getElementById('btn-graph').classList.toggle('active', mode === 'graph');
   document.getElementById('btn-map').classList.toggle('active', mode === 'map');
   document.getElementById('graph-layout').hidden = mode !== 'graph';
+  // Donor-program ties are graph-only hub edges (no lat/lon) — the toggle
+  // has zero effect on the Мапа layer, so don't show it there either.
+  document.getElementById('layer-donors-row').hidden = mode !== 'graph';
   if (mode === 'map') {
     mapEl.classList.remove('hidden');
     canvas.classList.remove('visible');
