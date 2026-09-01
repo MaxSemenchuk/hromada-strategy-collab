@@ -1273,7 +1273,9 @@ function renderDetail(n) {
   if (n.source_quality) badges.push(n.source_quality);
   if (n.degree) badges.push(n.degree + ' ' + t('popup.degreeShort'));
   if (n.twinning_count) badges.push(n.twinning_count + ' ' + t('popup.twinning'));
-  if (n.donor_programs && n.donor_programs.length) badges.push(n.donor_programs.join(', '));
+  // Donor programs are graph-only hub nodes (no lat/lon) — keep the badge
+  // out of the Мапа detail card too, so "donors only in Граф" holds end-to-end.
+  if (mode === 'graph' && n.donor_programs && n.donor_programs.length) badges.push(n.donor_programs.join(', '));
 
   const links = [];
   if (n.portal_url) {
@@ -1321,7 +1323,9 @@ function renderDetail(n) {
     resourcesHtml = `<p class="detail-empty">${esc(t('detail.loading'))}</p>`;
   }
 
-  const neighborGroups = neighborsOf(n.id);
+  // Donor-program ties are graph-only hub edges (no lat/lon) — keep them out
+  // of the "Зв'язки на мапі" list in Мапа mode too, same as the badge above.
+  const neighborGroups = neighborsOf(n.id).filter((g) => mode === 'graph' || g.kind !== 'donor');
   let neighborsHtml = '';
   if (!neighborGroups.length) {
     neighborsHtml = `<p class="detail-empty">${esc(t('detail.noNeighbors'))}</p>`;
@@ -1409,6 +1413,18 @@ const map = L.map('map', {
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
   attribution: '&copy; Esri, HERE, Garmin, OpenStreetMap contributors · межі: Natural Earth',
   maxZoom: 18,
+}).addTo(map);
+// Base has no admin boundaries or place labels (only sparse country names at
+// low zoom) — Esri's companion Reference layer adds oblast borders + city
+// labels. It needs its own pane: the default tile pane is crushed to 22%
+// brightness below (to match Base's photographic tone to our dark theme),
+// which would make Reference's already-dark-mode-styled labels unreadable.
+const referencePane = map.createPane('referencePane');
+referencePane.style.zIndex = 250; // above tilePane (200), below overlayPane (400) — the outside-UA mask still covers it there
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+  attribution: '&copy; Esri',
+  maxZoom: 18,
+  pane: 'referencePane',
 }).addTo(map);
 
 // Mask everything outside Ukraine (world ring + UA outline as hole)
