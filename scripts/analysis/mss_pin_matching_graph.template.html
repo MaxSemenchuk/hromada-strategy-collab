@@ -710,7 +710,7 @@
           <span class="layer-desc" data-i18n="layer.donors.desc">Червоні — у «Графі» донорські програми показані як окремі вузли</span>
         </span>
       </label>
-      <label class="layer">
+      <label class="layer" id="layer-basins-row">
         <input type="checkbox" id="layer-basins"/>
         <span class="sw basins" aria-hidden="true"></span>
         <span class="layer-copy">
@@ -1638,6 +1638,9 @@ function setMode(next) {
   // Donor-program ties are graph-only hub edges (no lat/lon) — the toggle
   // has zero effect on the Мапа layer, so don't show it there either.
   document.getElementById('layer-donors-row').hidden = mode !== 'graph';
+  // HydroBASINS underlay renders on the Leaflet map only — the canvas force
+  // graph has no geo projection to draw it on, so hide the toggle there.
+  document.getElementById('layer-basins-row').hidden = mode !== 'map';
   if (mode === 'map') {
     mapEl.classList.remove('hidden');
     canvas.classList.remove('visible');
