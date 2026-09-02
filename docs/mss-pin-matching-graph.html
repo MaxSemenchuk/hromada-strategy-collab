@@ -1677,8 +1677,22 @@ function refreshHint() {
   if (selectedId) renderDetail(resolveNode(selectedId));
 }
 
+// Граф packs ~957 force-laid-out nodes into one canvas — every extra edge
+// layer compounds the "hairball" density in a way the geographic Мапа view
+// never sees (there, edges just overlay fixed lat/lon markers). So the
+// speculative "схожа стратегія" signal (the single busiest default layer,
+// hundreds of dashed hypothesis lines) starts OFF the first time someone
+// opens Граф, even though it's on by default on the Мапа. Only the first
+// visit is affected — once a person touches any layer checkbox themselves
+// their choice sticks for the rest of the session.
+let graphEnteredOnce = false;
 function setMode(next) {
   mode = next;
+  if (mode === 'graph' && !graphEnteredOnce) {
+    graphEnteredOnce = true;
+    document.getElementById('layer-thematic').checked = false;
+    syncLayers();
+  }
   document.getElementById('btn-graph').classList.toggle('active', mode === 'graph');
   document.getElementById('btn-map').classList.toggle('active', mode === 'map');
   document.getElementById('btn-graph').setAttribute('aria-selected', String(mode === 'graph'));
@@ -1873,7 +1887,11 @@ canvas.addEventListener('wheel', (ev) => {
 
 function tickGraph() {
   const n = nodes.length;
-  const charge = layers.pin ? 420 : 1400;
+  // step=3 (sample 1/3 of pairs) is a perf tradeoff for the ~957-node PIN
+  // network — without it, all-pairs repulsion is O(n^2) every tick. That
+  // sampling thins out real repulsion pressure though, so the charge is
+  // scaled up to roughly compensate and keep the layout from clumping.
+  const charge = layers.pin ? 650 : 1400;
   const step = layers.pin ? 3 : 1;
   for (let i = 0; i < n; i += step) {
     for (let j = i + step; j < n; j += step) {
@@ -1895,7 +1913,10 @@ function tickGraph() {
     const isHub = e.kind === 'twinning' || e.kind === 'donor';
     const isPinAgreement = e.kind === 'pin_agreement';
     const rest = e.kind === 'pin' ? 70 : (isHub ? 160 : (isPinAgreement ? 90 : 110));
-    const k = e.kind === 'pin' ? 0.008 : (isHub ? 0.01 : (isPinAgreement ? 0.012 : 0.02));
+    // pin edges are the actual registered-agreement network — the one
+    // relationship that should read as "these belong together" at a
+    // glance — so it pulls harder than the speculative signal layers do.
+    const k = e.kind === 'pin' ? 0.016 : (isHub ? 0.01 : (isPinAgreement ? 0.012 : 0.02));
     const f = k * (dist - rest);
     const fx = (dx / dist) * f, fy = (dy / dist) * f;
     // A country like Poland has hundreds of twinning edges pointing at
@@ -1997,10 +2018,19 @@ function drawGraph() {
     }
   }
 
+  // At the default zoomed-out view, every non-PIN edge kind layered on top
+  // of the others is what turns the graph into an undifferentiated
+  // hairball — none of them are individually readable at that distance
+  // anyway. Fade everything but the actual registered-agreement network
+  // (pin/pin_agreement) out at low zoom and let it fade back in as the
+  // viewer zooms toward a scale where individual lines are legible.
+  const declutter = Math.max(0, Math.min(1, (scale - 0.35) / 0.65));
   for (const kind of ['pin', 'pin_agreement', 'operational', 'complementary', 'thematic', 'hypothesis', 'explicit_ask', 'plich_o_plich', 'twinning', 'donor']) {
+    const isCore = kind === 'pin' || kind === 'pin_agreement';
     for (const e of edges) {
       if (e.kind !== kind || !edgeVisible(e)) continue;
-      ctx.globalAlpha = (hoverSet && e.source !== hover && e.target !== hover) ? HOVER_FADE_ALPHA : 1;
+      const dimmed = hoverSet && e.source !== hover && e.target !== hover;
+      ctx.globalAlpha = (dimmed ? HOVER_FADE_ALPHA : 1) * (isCore || dimmed ? 1 : declutter);
       strokeEdge(e, e.source.x, e.source.y, e.target.x, e.target.y);
     }
   }
