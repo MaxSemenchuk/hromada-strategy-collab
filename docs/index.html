@@ -192,6 +192,49 @@
     .collab p { margin: 0 0 0.7rem; font-size: 0.92rem; color: var(--site-muted); }
     .collab a.email { font-weight: 700; color: var(--site-accent); text-decoration: none; }
     .collab a.email:hover { text-decoration: underline; }
+
+    .hromada-picker {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 14px; padding: 1.25rem 1.3rem; margin: 0 0 1.6rem;
+      box-shadow: var(--site-shadow);
+    }
+    .hromada-picker h2 {
+      font-family: var(--site-font); font-weight: 750; letter-spacing: -0.02em;
+      font-size: 1.05rem; margin: 0 0 0.5rem;
+    }
+    .hromada-picker > p { margin: 0 0 0.9rem; font-size: 0.9rem; color: var(--site-muted); }
+    .agent-controls {
+      display: flex; flex-wrap: wrap; gap: 0.65rem 1rem; align-items: flex-end;
+      margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--site-muted);
+    }
+    .agent-controls label { display: flex; flex-direction: column; gap: 0.25rem; min-width: 12rem; }
+    .agent-controls select {
+      font: inherit; font-size: 0.85rem; padding: 0.35rem 0.5rem;
+      border-radius: 8px; border: 1px solid var(--site-border); background: var(--site-surface);
+      max-width: min(100%, 22rem);
+    }
+    .agent-hint { font-size: 0.82rem; color: var(--site-faint); margin: 0 0 0.9rem; max-width: 62ch; }
+    .agent-cards { display: grid; gap: 0.75rem; }
+    .agent-cards .item {
+      background: var(--site-bg); border: 1px solid var(--site-border);
+      border-radius: 12px; padding: 0.9rem 1rem;
+    }
+    .agent-cards .tag {
+      font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase;
+      font-weight: 700; white-space: nowrap; display: block; margin-bottom: 0.3rem;
+    }
+    .agent-cards .tag.known { color: var(--site-secondary); }
+    .agent-cards .tag.hyp { color: var(--site-accent); }
+    .agent-cards .pair { font-weight: 650; color: var(--site-ink); display: block; }
+    .agent-cards .pkg { font-size: 0.88rem; font-weight: 600; color: var(--site-ink); margin: 0.2rem 0 0.35rem; }
+    .agent-cards .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0 0 0.4rem; }
+    .agent-cards .chip {
+      font-size: 0.68rem; letter-spacing: 0.02em; padding: 0.15rem 0.45rem;
+      border-radius: 6px; border: 1px solid var(--site-rule); color: var(--site-muted);
+      background: rgba(255,255,255,0.55);
+    }
+    .agent-cards .chip.high { border-color: #93c5fd; color: #1d4ed8; }
+    .agent-cards .why { margin: 0; font-size: 0.88rem; color: var(--site-muted); }
   </style>
 </head>
 <body>
@@ -414,6 +457,29 @@
           нагору без підказки, лише за текстом стратегій. Так і виглядає
           хороший кандидат: конкретна тема, а не загальне «сусідні громади».
         </p>
+      </div>
+
+      <div class="hromada-picker" id="hromada-picker">
+        <h2 data-i18n="hromada.picker.h2">Перевірте свою громаду</h2>
+        <p data-i18n="hromada.picker.p">
+          Оберіть громаду зі списку — покажемо кандидатів на партнерство одразу
+          за всіма сигналами (стратегія, сусідство, мережа МСС, ресурси/DREAM),
+          не лише за одним.
+        </p>
+        <div class="agent-controls">
+          <label>
+            <span data-i18n="hromada.picker.seed">Громада</span>
+            <select id="hr-agent-seed" aria-label="Громада"></select>
+          </label>
+          <label>
+            <span data-i18n="hromada.picker.motivation">Фокус (необов'язково)</span>
+            <select id="hr-agent-motivation" aria-label="Мотивація"></select>
+          </label>
+        </div>
+        <p class="agent-hint" id="hr-agent-hint" hidden></p>
+        <div class="agent-cards" id="hr-agent-cards">
+          <p class="lede" style="font-size:0.9rem;margin:0" data-i18n="hromada.picker.loading">Завантаження рекомендацій…</p>
+        </div>
       </div>
 
       <div class="lenses" data-i18n-aria="hromada.lenses.aria" aria-label="Що отримує громада">
@@ -714,6 +780,15 @@ window.PAGE_I18N = {
     "hromada.tools.aria": "Перейти",
     "hromada.tools.matches": "Переглянути кандидатів →",
     "hromada.tools.map": "Мапа угод МСС →",
+    "hromada.picker.h2": "Перевірте свою громаду",
+    "hromada.picker.p": "Оберіть громаду зі списку — покажемо кандидатів на партнерство одразу за всіма сигналами (стратегія, сусідство, мережа МСС, ресурси/DREAM), не лише за одним.",
+    "hromada.picker.seed": "Громада",
+    "hromada.picker.motivation": "Фокус (необов'язково)",
+    "hromada.picker.loading": "Завантаження рекомендацій…",
+    "hromada.picker.empty": "Немає кандидатів для цієї громади в поточному релізі — покриття (293 стратегії з ~870) ще неповне.",
+    "hromada.picker.error": "Не вдалося завантажити дані рекомендацій. Спробуйте оновити сторінку.",
+    "hromada.picker.tag.known": "✓ реальна угода",
+    "hromada.picker.tag.hyp": "гіпотеза",
 
     "funds.eyebrow": "Донорські програми та фонди",
     "funds.h1": "Куди не фінансувати двічі",
@@ -818,6 +893,16 @@ window.PAGE_I18N = {
     "footer.status": "<strong>Status:</strong> research pilot. ~1,000 hromadas with resources/DREAM; 293 strategies of ~870 approved; 1,463 in the base. The approach was checked against known IMC agreements.",
     "footer.note": "Data: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">data/releases/</a> (CC BY 4.0). Suggested pairs are hypotheses until confirmed in the registry or on the ground.",
 
+    "hromada.picker.h2": "Check your hromada",
+    "hromada.picker.p": "Pick a hromada from the list — we'll show partnership candidates across all signals at once (strategy, neighbourhood, IMC network, resources/DREAM), not just one.",
+    "hromada.picker.seed": "Hromada",
+    "hromada.picker.motivation": "Focus (optional)",
+    "hromada.picker.loading": "Loading recommendations…",
+    "hromada.picker.empty": "No candidates for this hromada in the current release — coverage (293 of ~870 strategies) is still incomplete.",
+    "hromada.picker.error": "Could not load recommendation data. Try reloading the page.",
+    "hromada.picker.tag.known": "✓ real agreement",
+    "hromada.picker.tag.hyp": "hypothesis",
+
     "funds.eyebrow": "Donor programmes and funds",
     "funds.h1": "Where not to fund twice",
     "funds.lede": "Funds already invest in hromadas — often in strategies themselves. The pilot's value for you is seeing where the next grant reinforces what's already in, instead of adding another isolated point.",
@@ -884,6 +969,137 @@ window.PAGE_I18N = {
   <script src="assets/nav.js" data-active="home"></script>
   <script>
 (function () {
+  var recommendData = null;
+  var recommendError = null;
+  var loaded = false;
+  var uiReady = false;
+
+  function t(key) { return window.HromadaI18n ? HromadaI18n.t(key) : key; }
+  function lang() { return (window.HromadaI18n && HromadaI18n.getLang && HromadaI18n.getLang()) || "uk"; }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function setupUi() {
+    if (!recommendData || uiReady) return;
+    var seedSel = document.getElementById("hr-agent-seed");
+    var motSel = document.getElementById("hr-agent-motivation");
+    if (!seedSel || !motSel) return;
+    var seeds = (recommendData.seeds || []).slice().sort(function (a, b) {
+      return (a.short || a.name || "").localeCompare(b.short || b.name || "", "uk");
+    });
+    seedSel.innerHTML = "";
+    seeds.forEach(function (s) {
+      var opt = document.createElement("option");
+      opt.value = s.key;
+      opt.textContent = (s.short || s.name) + (s.oblast ? " · " + s.oblast : "");
+      seedSel.appendChild(opt);
+    });
+    motSel.innerHTML = "";
+    (recommendData.motivations || []).forEach(function (m) {
+      var opt = document.createElement("option");
+      opt.value = m.id;
+      opt.textContent = lang() === "en" ? (m.label_en || m.id) : (m.label_uk || m.id);
+      motSel.appendChild(opt);
+    });
+    var general = (recommendData.motivations || []).find(function (m) { return m.id === "general"; });
+    if (general) motSel.value = "general";
+    seedSel.addEventListener("change", renderPicker);
+    motSel.addEventListener("change", renderPicker);
+    uiReady = true;
+  }
+
+  function refreshMotivationLabels() {
+    if (!recommendData) return;
+    var motSel = document.getElementById("hr-agent-motivation");
+    if (!motSel) return;
+    var cur = motSel.value;
+    Array.prototype.forEach.call(motSel.options, function (opt) {
+      var m = (recommendData.motivations || []).find(function (x) { return x.id === opt.value; });
+      if (m) opt.textContent = lang() === "en" ? (m.label_en || m.id) : (m.label_uk || m.id);
+    });
+    motSel.value = cur;
+  }
+
+  function chipsHtml(p) {
+    var chips = p.signal_chips || (p.signals || []).slice(0, 3);
+    if (!chips.length) return "";
+    return "<div class=\"chips\">" + chips.map(function (c) {
+      return "<span class=\"chip " + esc(c.strength || "") + "\">" + esc(c.label_uk || c.id) + "</span>";
+    }).join("") + "</div>";
+  }
+
+  function renderPicker() {
+    var wrap = document.getElementById("hr-agent-cards");
+    var hint = document.getElementById("hr-agent-hint");
+    if (!wrap) return;
+    if (recommendError) {
+      wrap.innerHTML = "<p class=\"lede\" style=\"font-size:0.9rem;margin:0\">" + t("hromada.picker.error") + "</p>";
+      if (hint) hint.hidden = true;
+      return;
+    }
+    if (!recommendData) {
+      wrap.innerHTML = "<p class=\"lede\" style=\"font-size:0.9rem;margin:0\">" + t("hromada.picker.loading") + "</p>";
+      return;
+    }
+    setupUi();
+    refreshMotivationLabels();
+    var seedSel = document.getElementById("hr-agent-seed");
+    var motSel = document.getElementById("hr-agent-motivation");
+    var seedKey = seedSel.value;
+    var motId = motSel.value;
+    var seed = (recommendData.bySeed || {})[seedKey];
+    var motMeta = (recommendData.motivations || []).find(function (m) { return m.id === motId; });
+    if (hint && motMeta) {
+      hint.hidden = false;
+      hint.textContent = lang() === "en" ? (motMeta.package_hint_en || "") : (motMeta.package_hint_uk || "");
+    }
+    var cards = seed && seed.by_motivation ? (seed.by_motivation[motId] || []) : [];
+    if (!cards.length) {
+      wrap.innerHTML = "<p class=\"lede\" style=\"font-size:0.9rem;margin:0\">" + t("hromada.picker.empty") + "</p>";
+      return;
+    }
+    wrap.innerHTML = cards.map(function (c) {
+      var tag = c.known
+        ? "<span class=\"tag known\">" + t("hromada.picker.tag.known") + "</span>"
+        : "<span class=\"tag hyp\">" + t("hromada.picker.tag.hyp") + "</span>";
+      var why = lang() === "en" ? (c.why_en || c.why_helps_you_en || "") : (c.why_uk || c.why_helps_you_uk || "");
+      return "<div class=\"item\">"
+        + tag
+        + "<span class=\"pair\">" + esc(c.partner_short || c.partner) + "</span>"
+        + "<div class=\"pkg\">" + esc((c.package && c.package.label_uk) || "—") + "</div>"
+        + chipsHtml(c)
+        + "<p class=\"why\">" + esc(why) + "</p>"
+        + "</div>";
+    }).join("");
+  }
+
+  function ensureHromadaPickerLoaded() {
+    if (loaded) { renderPicker(); return; }
+    loaded = true;
+    fetch("assets/recommend-for-preview.json")
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status + " " + r.statusText);
+        return r.json();
+      })
+      .then(function (data) {
+        recommendData = data;
+        recommendError = null;
+        renderPicker();
+      })
+      .catch(function (err) {
+        recommendData = null;
+        recommendError = String(err);
+        renderPicker();
+      });
+  }
+
+  document.addEventListener("hromada-lang", renderPicker);
+  window.HromadaPicker = { ensureLoaded: ensureHromadaPickerLoaded };
+})();
+  </script>
+  <script>
+(function () {
   var TABS = ["state", "associations", "hromada", "funds", "researcher"];
   var hub = document.getElementById("hub-view");
   var tabView = document.getElementById("tab-view");
@@ -906,6 +1122,7 @@ window.PAGE_I18N = {
     hub.hidden = true;
     tabView.hidden = false;
     window.scrollTo(0, 0);
+    if (id === "hromada" && window.HromadaPicker) window.HromadaPicker.ensureLoaded();
   }
 
   window.addEventListener("hashchange", function () { showTab(idFromHash()); });
