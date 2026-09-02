@@ -1027,6 +1027,22 @@ const oblastAnchors = (() => {
   return anchors;
 })();
 
+// Country/donor hub nodes have no `oblast` and sit outside the ring above,
+// so without their own anchors they all pile up at the origin — every
+// twinning/donor edge in the graph then converges on one indistinguishable
+// central knot. Spread them on their own inner ring instead so each hub's
+// spokes fan out from a distinct point.
+const hubAnchors = (() => {
+  const ids = nodes.filter(n => n.kind === 'country' || n.kind === 'donor').map(n => n.id).sort();
+  const anchors = Object.create(null);
+  const R = 380;
+  ids.forEach((id, i) => {
+    const angle = (i / Math.max(ids.length, 1)) * Math.PI * 2;
+    anchors[id] = { x: Math.cos(angle) * R, y: Math.sin(angle) * R * 0.85 };
+  });
+  return anchors;
+})();
+
 function resolveNode(nOrId) {
   if (!nOrId) return null;
   if (typeof nOrId === 'string') return allById[nOrId] || null;
@@ -1897,6 +1913,10 @@ function tickGraph() {
       const strength = clusterByOblast ? 0.012 : 0.004;
       node.vx += (anchor.x - node.x) * strength;
       node.vy += (anchor.y - node.y) * strength;
+    } else if (hubAnchors[node.id]) {
+      const anchor = hubAnchors[node.id];
+      node.vx += (anchor.x - node.x) * 0.01;
+      node.vy += (anchor.y - node.y) * 0.01;
     }
     if (node.fx != null) { node.x = node.fx; node.y = node.fy; node.vx = 0; node.vy = 0; continue; }
     node.vx *= 0.85; node.vy *= 0.85;
