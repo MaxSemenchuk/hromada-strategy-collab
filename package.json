@@ -23,6 +23,8 @@
     "twinning": "python3 scripts/analysis/build_twinning_layer.py",
     "fetch-interreg": "python3 scripts/analysis/build_interreg_layer.py --fetch-only",
     "interreg": "python3 scripts/analysis/build_interreg_layer.py",
+    "fetch-partnership-map": "python3 scripts/analysis/build_partnership_map.py --fetch-only",
+    "partnership-map": "python3 scripts/analysis/build_partnership_map.py",
     "plich-o-plich": "python3 scripts/analysis/build_plich_o_plich.py",
     "complementary-match": "python3 scripts/analysis/complementary_match.py",
     "extract-mss-intents": "python3 scripts/analysis/extract_mss_intents.py",

@@ -153,9 +153,33 @@ and self-describing, not a growth history.
 - **`twinning-partners.json`** — **UA–EU municipal twinning** (separate from
   domestic МСС). Sources: SKEW German–Ukrainian registry (`yarn twinning`,
   cache `data/cache/twinning/`); Cities4Cities news-title pairs + municipality
-  `markers.json` (`c4c_url` = listed for matchmaking); strategy named cities.
-  Aliases: `data/sources/twinning-name-aliases.json`. Does **not** fold into
-  matching `score`. Preview: `docs/assets/twinning-preview.json`.
+  `markers.json` (`c4c_url` = listed for matchmaking); strategy named cities;
+  **`partnership-map.json`** (decentralization.ua, merged in — see below).
+  366 hromadas total as of 2026-09-02 (up from 114 pre-merge), 1303 partner
+  rows. Non-DE decentralization_ua rows are additive (SKEW is DE-only, no
+  overlap possible); DE-country rows are checked against SKEW via a curated
+  pair list (`data/sources/twinning-de-duplicate-pairs.json`, 38 confirmed
+  duplicates) and tagged `partner.duplicate_of_skew` rather than deleted —
+  use `hromada.distinct_partner_count`, not `partner_count`, for a
+  non-inflated total. See `warning` field and `docs/ua-eu-twinning.md`.
+  Aliases: `data/sources/twinning-name-aliases.json`. Feeds the `twinning`
+  layer of `docs/mss-pin-matching-graph.html` (`yarn graph-pin-matching`,
+  country hub nodes via `COUNTRY_LABELS`). Does **not** fold into matching
+  `score`. Preview: `docs/assets/twinning-preview.json`.
+
+- **`partnership-map.json`** — **UA↔all-countries municipal partnerships**,
+  scraped from Мінрозвитку's own verified partnership pages
+  (`decentralization.ua/newgromada/<id>`, `yarn partnership-map`, cache
+  `data/cache/decentralization/`). Resolved by direct KATOTTG join (no
+  aliasing needed). Fills the non-Germany gap SKEW has (SKEW is DE-only):
+  288 hromadas / 1134 partner-city rows / 47 countries, led by Poland. The
+  Ministry's own `/twincities` Tableau dashboard claims a fuller dataset
+  (490/2119/1740) but has data-export explicitly disabled by its publisher
+  (`allow_view_underlying`/`allow_summary` both `false`) — deliberately not
+  scraped further, see `docs/external-data-sources.md`. Merged into
+  `twinning-partners.json` (see above); this file remains the standalone
+  single-source release. No per-partner date/type field. Does **not** fold
+  into matching `score`. Preview: `docs/assets/partnership-map-preview.json`.
 
 - **`plich-o-plich.json`** — **domestic rear↔forpost hromada partnerships**
   under the national «Пліч-о-Пліч» project. The site's own pair graphics are

@@ -1,0 +1,233 @@
+{
+  "_comment": "Manually verified (2026-09-02): decentralization.ua DE-country partner rows that are the SAME real-world German city as an existing SKEW partner for that hromada, just spelled differently (Cyrillic transliteration vs SKEW German spelling). Checked via difflib fuzzy-ratio on twinning-partners.json, then eyeballed against real German city names — a blind ratio threshold has real false positives (e.g. decentralization.ua Kelln/Cologne vs SKEW Kassel scored 0.60 but are different cities) so this list is curated, not auto-generated. Keyed by (katottg, decentralization_ua partner_name) -> matched SKEW partner_name. Used by build_twinning_layer.py to tag duplicate_of_skew instead of blind merge.",
+  "pairs": [
+    {
+      "katottg": "UA51100270000073549",
+      "short": "Одеська",
+      "dm_name": "Реґенсбурґ",
+      "skew_name": "Regensburg"
+    },
+    {
+      "katottg": "UA18040190000029215",
+      "short": "Житомирська",
+      "dm_name": "Дортмунд",
+      "skew_name": "Dortmund"
+    },
+    {
+      "katottg": "UA07080170000013585",
+      "short": "Луцька",
+      "dm_name": "Ліппе",
+      "skew_name": "Lippe (Landkreis)"
+    },
+    {
+      "katottg": "UA21100230000083101",
+      "short": "Ужгородська",
+      "dm_name": "Дармштадт",
+      "skew_name": "Darmstadt"
+    },
+    {
+      "katottg": "UA46020090000057315",
+      "short": "Трускавецька",
+      "dm_name": "Ватлінген",
+      "skew_name": "Wathlingen (Samtgemeinde)"
+    },
+    {
+      "katottg": "UA73060610000066784",
+      "short": "Чернівецька",
+      "dm_name": "Дюссельдорф",
+      "skew_name": "Düsseldorf"
+    },
+    {
+      "katottg": "UA73060610000066784",
+      "short": "Чернівецька",
+      "dm_name": "Маннгейм",
+      "skew_name": "Mannheim"
+    },
+    {
+      "katottg": "UA53080370000025447",
+      "short": "Полтавська",
+      "dm_name": "Фільдерштадт",
+      "skew_name": "Filderstadt"
+    },
+    {
+      "katottg": "UA53080370000025447",
+      "short": "Полтавська",
+      "dm_name": "Остфільдерн",
+      "skew_name": "Ostfildern"
+    },
+    {
+      "katottg": "UA53080370000025447",
+      "short": "Полтавська",
+      "dm_name": "Ляйнфельден-Ехтердінген",
+      "skew_name": "Leinfelden-Echterdingen"
+    },
+    {
+      "katottg": "UA48060150000071713",
+      "short": "Миколаївська",
+      "dm_name": "Бедбург",
+      "skew_name": "Bedburg"
+    },
+    {
+      "katottg": "UA48060150000071713",
+      "short": "Миколаївська",
+      "dm_name": "Ґановер",
+      "skew_name": "Hannover"
+    },
+    {
+      "katottg": "UA07020130000036300",
+      "short": "Нововолинська",
+      "dm_name": "Ноймюнстер",
+      "skew_name": "Neumünster"
+    },
+    {
+      "katottg": "UA56060470000086729",
+      "short": "Рівненська",
+      "dm_name": "Оберфіхтах",
+      "skew_name": "Oberviechtach"
+    },
+    {
+      "katottg": "UA73040190000062796",
+      "short": "Хотинська",
+      "dm_name": "Тельтов",
+      "skew_name": "Teltow"
+    },
+    {
+      "katottg": "UA46020030000019252",
+      "short": "Дрогобицька",
+      "dm_name": "Грайфсвальд",
+      "skew_name": "Greifswald"
+    },
+    {
+      "katottg": "UA07060190000036342",
+      "short": "Ковельська",
+      "dm_name": "Барзінгхаузен",
+      "skew_name": "Barsinghausen"
+    },
+    {
+      "katottg": "UA07060190000036342",
+      "short": "Ковельська",
+      "dm_name": "Вальсроде",
+      "skew_name": "Walsrode"
+    },
+    {
+      "katottg": "UA32080070000050759",
+      "short": "Бучанська",
+      "dm_name": "Бергіш Гладбах",
+      "skew_name": "Bergisch-Gladbach"
+    },
+    {
+      "katottg": "UA74100390000073425",
+      "short": "Чернігівська",
+      "dm_name": "Аахен",
+      "skew_name": "Aachen"
+    },
+    {
+      "katottg": "UA74100390000073425",
+      "short": "Чернігівська",
+      "dm_name": "Меммінген",
+      "skew_name": "Memmingen"
+    },
+    {
+      "katottg": "UA46040010000033885",
+      "short": "Бродівська",
+      "dm_name": "Вольфратсгаузен",
+      "skew_name": "Wolfratshausen"
+    },
+    {
+      "katottg": "UA07020010000096841",
+      "short": "Володимир-Волинська",
+      "dm_name": "Цвіккау",
+      "skew_name": "Zwickau"
+    },
+    {
+      "katottg": "UA23060070000082704",
+      "short": "Запорізька",
+      "dm_name": "Обергаузен",
+      "skew_name": "Oberhausen"
+    },
+    {
+      "katottg": "UA23060070000082704",
+      "short": "Запорізька",
+      "dm_name": "Маґдебурґ",
+      "skew_name": "Magdeburg"
+    },
+    {
+      "katottg": "UA21060050000029937",
+      "short": "Рахівська",
+      "dm_name": "Герзельберг-Гайніх",
+      "skew_name": "Hörselberg-Hainich"
+    },
+    {
+      "katottg": "UA59080270000073662",
+      "short": "Сумська",
+      "dm_name": "Целле",
+      "skew_name": "Celle"
+    },
+    {
+      "katottg": "UA61060430000094264",
+      "short": "Чортківська",
+      "dm_name": "Бад-Зоден-Зальмюнстер",
+      "skew_name": "Bad Soden-Salmünster"
+    },
+    {
+      "katottg": "UA32080150000035443",
+      "short": "Ірпінська",
+      "dm_name": "Борна",
+      "skew_name": "Borna"
+    },
+    {
+      "katottg": "UA32020010000093088",
+      "short": "Білоцерківська",
+      "dm_name": "Брауншвайґ",
+      "skew_name": "Braunschweig"
+    },
+    {
+      "katottg": "UA71080150000071745",
+      "short": "Канівська",
+      "dm_name": "Фірзен",
+      "skew_name": "Viersen"
+    },
+    {
+      "katottg": "UA46040070000032075",
+      "short": "Золочівська",
+      "dm_name": "Шонинген",
+      "skew_name": "Schöningen"
+    },
+    {
+      "katottg": "UA32120110000025177",
+      "short": "Обухівська",
+      "dm_name": "Радебойль",
+      "skew_name": "Radebeul"
+    },
+    {
+      "katottg": "UA46060330000065074",
+      "short": "Перемишлянська",
+      "dm_name": "Гюрт",
+      "skew_name": "Hürth"
+    },
+    {
+      "katottg": "UA07080030000051738",
+      "short": "Боратинська",
+      "dm_name": "Шпрендлінген",
+      "skew_name": "Sprendlingen-Gensingen"
+    },
+    {
+      "katottg": "UA53040030000088898",
+      "short": "Лубенська",
+      "dm_name": "Раунгайм",
+      "skew_name": "Raunheim"
+    },
+    {
+      "katottg": "UA21040050000032164",
+      "short": "Воловецька",
+      "dm_name": "Бад-Ендорф",
+      "skew_name": "Bad Endorf"
+    },
+    {
+      "katottg": "UA32080190000081428",
+      "short": "Макарівська",
+      "dm_name": "Вандліц",
+      "skew_name": "Wandlitz"
+    }
+  ]
+}

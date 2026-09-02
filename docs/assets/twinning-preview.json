@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-07-29T12:58:42.526309+00:00",
+  "generatedAt": "2026-09-02T13:25:54.544074+00:00",
   "caveat": "UA–EU twinning — SKEW + Cities4Cities news + strategy. Not domestic МСС.",
-  "hromadaCount": 178,
+  "hromadaCount": 366,
   "skewLinked": 179,
   "cities4citiesPartners": 11,
   "cities4citiesListed": 90,
   "top": [
     {
-      "short": "Полтавська",
-      "oblast": "Полтавська область",
-      "partner_count": 7,
+      "short": "Одеська",
+      "oblast": "Одеська область",
+      "partner_count": 40,
       "partners": [
-        "Leinfelden-Echterdingen (DE)",
-        "Filderstadt (DE)",
-        "Ostfildern (DE)",
-        "Mönchengladbach (DE)",
-        "Калмар (SE)"
+        "Regensburg (DE)",
+        "Bremen (DE)",
+        "Berlin-Lichtenberg (DE)",
+        "Mainz (DE)",
+        "Відень (AT)"
       ]
     },
     {
       "short": "Івано-Франківська",
       "oblast": "Івано-Франківська область",
-      "partner_count": 6,
+      "partner_count": 30,
       "partners": [
         "Dorsten (DE)",
         "Potsdam (DE)",
@@ -31,234 +31,279 @@
       ]
     },
     {
-      "short": "Львівська",
-      "oblast": "Львівська область",
-      "partner_count": 5,
+      "short": "Берегівська",
+      "oblast": "Закарпатська область",
+      "partner_count": 30,
       "partners": [
-        "Leipzig (DE)",
-        "Würzburg (DE)",
-        "Freiburg im Breisgau (DE)",
-        "Frankfurt am Main (DE)",
-        "Uppsala"
+        "Offenbach (Landkreis) (DE)",
+        "Масслейс (NL)",
+        "Корнталь-Мюнхінген (DE)",
+        "Лейпціг (DE)",
+        "Переворськ (PL)"
       ]
     },
     {
-      "short": "Жовківська",
-      "oblast": "Львівська область",
-      "partner_count": 4,
+      "short": "Житомирська",
+      "oblast": "Житомирська область",
+      "partner_count": 24,
       "partners": [
-        "Delitzsch (DE)",
-        "Wolfsburg (DE)",
-        "Altdorf bei Nürnberg (DE)",
-        "Weimar (DE)"
-      ]
-    },
-    {
-      "short": "Миколаївська",
-      "oblast": "Миколаївська область",
-      "partner_count": 4,
-      "partners": [
-        "Hannover (DE)",
-        "Bedburg (DE)",
-        "Sindelfingen (DE)",
-        "Berlin Tempelhof-Schöneberg (DE)"
-      ]
-    },
-    {
-      "short": "Одеська",
-      "oblast": "Одеська область",
-      "partner_count": 4,
-      "partners": [
-        "Regensburg (DE)",
-        "Bremen (DE)",
-        "Berlin-Lichtenberg (DE)",
-        "Mainz (DE)"
-      ]
-    },
-    {
-      "short": "Бродівська",
-      "oblast": "Львівська область",
-      "partner_count": 3,
-      "partners": [
-        "Wolfratshausen (DE)",
-        "Bendorf (DE)",
-        "Buchholz (DE)"
-      ]
-    },
-    {
-      "short": "Калуська",
-      "oblast": "Івано-Франківська область",
-      "partner_count": 3,
-      "partners": [
-        "München (DE)",
-        "Lippstadt (DE)",
-        "Lahr (Schwarzwald) (DE)"
-      ]
-    },
-    {
-      "short": "Ковельська",
-      "oblast": "Волинська область",
-      "partner_count": 3,
-      "partners": [
-        "Barsinghausen (DE)",
-        "Walsrode (DE)",
-        "Saarbrücken (DE)"
+        "Dortmund (DE)",
+        "Kassel (DE)",
+        "Відень (AT)",
+        "Мархтренк (AT)",
+        "Челмсфорд (GB)"
       ]
     },
     {
       "short": "Луцька",
       "oblast": "Волинська область",
-      "partner_count": 3,
+      "partner_count": 23,
       "partners": [
         "Lippe (Landkreis) (DE)",
         "Würzburg (DE)",
-        "Schweinfurt (DE)"
+        "Schweinfurt (DE)",
+        "Патри (GR)",
+        "Ґорі (GE)"
       ]
     },
     {
-      "short": "Мукачівська",
+      "short": "Ужгородська",
       "oblast": "Закарпатська область",
-      "partner_count": 3,
+      "partner_count": 23,
       "partners": [
-        "Hanau (DE)",
-        "Neustadt an der Weinstraße (DE)",
-        "Bamberg (DE)"
-      ]
-    },
-    {
-      "short": "Нововолинська",
-      "oblast": "Волинська область",
-      "partner_count": 3,
-      "partners": [
-        "Neumünster (DE)",
-        "Hoyerswerda (DE)",
-        "Obertshausen (DE)"
-      ]
-    },
-    {
-      "short": "Ніжинська",
-      "oblast": "Чернігівська область",
-      "partner_count": 3,
-      "partners": [
-        "Neustadt in Holstein (DE)",
-        "Frankenthal (Pfalz) (DE)",
-        "Wolfsburg (DE)"
-      ]
-    },
-    {
-      "short": "Первомайська",
-      "oblast": "Миколаївська область",
-      "partner_count": 3,
-      "partners": [
-        "Bad Kreuznach (Landkreis) (DE)",
-        "Augsburg (DE)",
-        "Berlin-Neukölln (DE)"
-      ]
-    },
-    {
-      "short": "Рівненська",
-      "oblast": "Рівненська область",
-      "partner_count": 3,
-      "partners": [
-        "Oberviechtach (DE)",
-        "Essen (DE)",
-        "Berlin-Pankow (DE)"
-      ]
-    },
-    {
-      "short": "Тернопільська",
-      "oblast": "Тернопільська область",
-      "partner_count": 3,
-      "partners": [
-        "Iserlohn (DE)",
-        "Erftstadt (DE)",
-        "Ronneby"
+        "Darmstadt (DE)",
+        "Fürth (DE)",
+        "Горсенс (DK)",
+        "Сіньчжо́у (CN)",
+        "Дармштадт (DE)"
       ]
     },
     {
       "short": "Трускавецька",
       "oblast": "Львівська область",
-      "partner_count": 3,
+      "partner_count": 21,
       "partners": [
         "Barth (DE)",
         "Wathlingen (Samtgemeinde) (DE)",
-        "Wathlingen (Samtgemeinde) (DE)"
+        "Wathlingen (Samtgemeinde) (DE)",
+        "Куба (AZ)",
+        "К&#39;янчіано-Терме (IT)"
       ]
     },
     {
-      "short": "Уманська",
-      "oblast": "Черкаська область",
-      "partner_count": 3,
+      "short": "Хмельницька",
+      "oblast": "Хмельницька область",
+      "partner_count": 20,
       "partners": [
-        "Koblenz (DE)",
-        "Norderstedt (DE)",
-        "Kristianstad"
-      ]
-    },
-    {
-      "short": "Херсонська",
-      "oblast": "Херсонська область",
-      "partner_count": 3,
-      "partners": [
-        "Bonn (DE)",
-        "Kiel (DE)",
-        "Norrköping"
-      ]
-    },
-    {
-      "short": "Хотинська",
-      "oblast": "Чернівецька область",
-      "partner_count": 3,
-      "partners": [
-        "Teltow (DE)",
-        "Ahlen (DE)",
-        "Eslöv"
+        "Stuttgart (DE)",
+        "Dresden (DE)",
+        "Шеффілд (GB)",
+        "Сілістра (BG)",
+        "Руставі (GE)"
       ]
     },
     {
       "short": "Чернівецька",
       "oblast": "Чернівецька область",
-      "partner_count": 3,
+      "partner_count": 19,
       "partners": [
         "Schwaben (Bezirk) (DE)",
         "Mannheim (DE)",
-        "Düsseldorf (DE)"
+        "Düsseldorf (DE)",
+        "Вольфсбурґ (AT)",
+        "Клагенфурт-ам-Вертерзе (AT)"
       ]
     },
     {
-      "short": "Бердичівська",
-      "oblast": "Житомирська область",
-      "partner_count": 2,
+      "short": "Вінницька",
+      "oblast": "Вінницька область",
+      "partner_count": 17,
       "partners": [
-        "Konstanz (DE)",
-        "Buchholz (DE)"
+        "Пітерборо (GB)",
+        "Руставі (GE)",
+        "Бат Ям (IL)",
+        "Панявежис (LT)",
+        "Карлсруе (DE)"
+      ]
+    },
+    {
+      "short": "Тернопільська",
+      "oblast": "Тернопільська область",
+      "partner_count": 17,
+      "partners": [
+        "Iserlohn (DE)",
+        "Erftstadt (DE)",
+        "Ronneby",
+        "Вільянді (EE)",
+        "Вільявісіоса-де-Одон (ES)"
+      ]
+    },
+    {
+      "short": "Полтавська",
+      "oblast": "Полтавська область",
+      "partner_count": 16,
+      "partners": [
+        "Leinfelden-Echterdingen (DE)",
+        "Filderstadt (DE)",
+        "Ostfildern (DE)",
+        "Mönchengladbach (DE)",
+        "Калмар (SE)"
+      ]
+    },
+    {
+      "short": "Миколаївська",
+      "oblast": "Миколаївська область",
+      "partner_count": 15,
+      "partners": [
+        "Hannover (DE)",
+        "Bedburg (DE)",
+        "Sindelfingen (DE)",
+        "Berlin Tempelhof-Schöneberg (DE)",
+        "Бургас (BG)"
+      ]
+    },
+    {
+      "short": "Мукачівська",
+      "oblast": "Закарпатська область",
+      "partner_count": 15,
+      "partners": [
+        "Hanau (DE)",
+        "Neustadt an der Weinstraße (DE)",
+        "Bamberg (DE)",
+        "Мелець (PL)",
+        "Пряшів (SK)"
+      ]
+    },
+    {
+      "short": "Нововолинська",
+      "oblast": "Волинська область",
+      "partner_count": 15,
+      "partners": [
+        "Neumünster (DE)",
+        "Hoyerswerda (DE)",
+        "Obertshausen (DE)",
+        "Кельме (LT)",
+        "Радвилішкіс (LT)"
+      ]
+    },
+    {
+      "short": "Рівненська",
+      "oblast": "Рівненська область",
+      "partner_count": 14,
+      "partners": [
+        "Oberviechtach (DE)",
+        "Essen (DE)",
+        "Berlin-Pankow (DE)",
+        "Видин (BG)",
+        "Кобулеті (GE)"
+      ]
+    },
+    {
+      "short": "Тячівська",
+      "oblast": "Закарпатська область",
+      "partner_count": 14,
+      "partners": [
+        "Тушин (PL)",
+        "Бухарест (RO)",
+        "Негрешть-Оаш (RO)",
+        "Бардіїв (SK)",
+        "Спішська Нова Весь (SK)"
+      ]
+    },
+    {
+      "short": "Хотинська",
+      "oblast": "Чернівецька область",
+      "partner_count": 14,
+      "partners": [
+        "Teltow (DE)",
+        "Ahlen (DE)",
+        "Eslöv",
+        "Тельтов (DE)",
+        "Валч (PL)"
       ]
     },
     {
       "short": "Броварська",
       "oblast": "Київська область",
-      "partner_count": 2,
+      "partner_count": 13,
       "partners": [
         "Jena (DE)",
-        "Erlangen (DE)"
+        "Erlangen (DE)",
+        "Сілламяе (EE)",
+        "Санта-Маринелла (IT)",
+        "Хенян (CN)"
       ]
     },
     {
-      "short": "Білогородська",
-      "oblast": "Київська область",
-      "partner_count": 2,
+      "short": "Дрогобицька",
+      "oblast": "Львівська область",
+      "partner_count": 13,
       "partners": [
-        "Lohmen (DE)",
-        "Bures-sur-Yvette"
+        "Greifswald (DE)",
+        "Смілтене (LV)",
+        "Грайфсвальд (DE)",
+        "Округ Хам’ян (KR)",
+        "Битом (PL)"
       ]
     },
     {
-      "short": "Білоцерківська",
-      "oblast": "Київська область",
-      "partner_count": 2,
+      "short": "Ковельська",
+      "oblast": "Волинська область",
+      "partner_count": 13,
       "partners": [
-        "Braunschweig (DE)",
-        "Lüneburg (DE)"
+        "Barsinghausen (DE)",
+        "Walsrode (DE)",
+        "Saarbrücken (DE)",
+        "Утена (LT)",
+        "Барзінгхаузен (DE)"
+      ]
+    },
+    {
+      "short": "Бучанська",
+      "oblast": "Київська область",
+      "partner_count": 12,
+      "partners": [
+        "Bergisch-Gladbach (DE)",
+        "Бергамо (IT)",
+        "Паланга (LT)",
+        "Бергіш Гладбах (DE)",
+        "Дрезден (DE)"
+      ]
+    },
+    {
+      "short": "Маріупольська",
+      "oblast": "Донецька область",
+      "partner_count": 12,
+      "partners": [
+        "Калімнос (GR)",
+        "Кітнос (GR)",
+        "Пірей (GR)",
+        "Салоніки (GR)",
+        "Зугдіді (GE)"
+      ]
+    },
+    {
+      "short": "Чернігівська",
+      "oblast": "Чернігівська область",
+      "partner_count": 12,
+      "partners": [
+        "Memmingen (DE)",
+        "Aachen (DE)",
+        "Габрово (BG)",
+        "Петах-Тіква (IL)",
+        "Огре (LV)"
+      ]
+    },
+    {
+      "short": "Білгород-Дністровська",
+      "oblast": "Одеська область",
+      "partner_count": 11,
+      "partners": [
+        "Ulm / Neu Ulm (DE)",
+        "Вагаршапат (AM)",
+        "Бобінген (DE)",
+        "Зіндельфінген (DE)",
+        "Сопот (PL)"
       ]
     }
   ]

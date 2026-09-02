@@ -230,6 +230,72 @@ a hromada council. See `coverage.org_type_breakdown` and
 
 ---
 
+## decentralization.ua — Ministry partnership map (all countries, not just DE)
+
+- **Reviewed:** 2026-09-02
+- **Page:** https://decentralization.ua/twincities (overview + Tableau dashboard)
+- **Scraped:** https://decentralization.ua/newgromada/&lt;id&gt; (per-hromada pages)
+- **Operator:** Мінрозвитку громад та територій, with Council of Europe
+  (Swiss-funded DECIDE project) and Programme "U-LEAD with Europe"
+
+Fills the exact gap SKEW leaves open: SKEW only covers Germany. This is the
+**Ukrainian side's own verified partnership registry**, covering every
+partner country at once (found: 47 country codes, led by Poland).
+Each hromada's own page (`/newgromada/<id>`) lists partner **country + partner
+city name**, with the hromada's own **KATOTTG printed on the page** — so
+resolution is a direct KATOTTG join, no transliteration/alias table needed
+(unlike SKEW, where the source only gives German-side Latin spellings).
+Trade-off vs SKEW: no per-partner "since" year or partnership-type field,
+just a verified country+city pair.
+
+```bash
+yarn partnership-map                 # fetch (listing + ~1440 hromada pages) + build release
+yarn partnership-map --offline       # rebuild from cache, no network
+yarn partnership-map --limit N       # fetch only first N hromadas (testing)
+yarn fetch-partnership-map           # refresh data/cache/decentralization/ only
+```
+
+→ `data/releases/partnership-map.json`. Current run: 1438/~1470 hromadas
+fetched, **288 hromadas with at least one partner, 1134 partner-city rows**,
+6 KATOTTG misses (hromadas with no `Katottg` in our own `hromadas.json`, a
+pre-existing gap — see `unmatched` in the release). That's already more than
+double SKEW's 114 confirmed hromadas and ~6× its 194 edges, and it spans all
+47 countries at once instead of only Germany.
+
+**Do not treat as authoritative-and-complete, and do not treat as a
+replacement for the SKEW layer**: the site itself labels `/newgromada` as
+"працює у тестовому режимі" (beta), and its own headline dashboard claims a
+higher total (490 hromadas / 2119 agreements / 1740 partners / 64 countries,
+"станом на кінець 2025") than what the scraped per-hromada pages currently
+show — the Tableau dashboard behind `/twincities` is evidently a fuller or
+more current dataset than the per-hromada page snapshot scraped here. Spot
+check: Poltava's page here lists 9 partners but is **missing Kalmar (SE)**,
+the flagship case documented in [ua-eu-twinning.md](ua-eu-twinning.md) — so
+this source and the SKEW/C4C/strategy layer each catch cases the other
+misses.
+
+**Tried and deliberately abandoned: scraping the `/twincities` Tableau
+dashboard for the fuller numbers.** Checked 2026-09-02: the embed's own
+session config reports `allow_view_underlying: false` and
+`allow_summary: false`, and a fresh `bootstrapSession` call against the
+data-export command path returns `410 Gone`. The publisher has explicitly
+turned off Tableau's "view/download data" feature for this workbook — that
+reads as an intentional access control, not an incidental gap, so we did not
+try to route around it (no reverse-engineered VizQL replay, no
+`tableauscraper`). The per-hromada `/newgromada` pages remain the ceiling of
+what this project pulls from decentralization.ua.
+
+**Merged 2026-09-02** into `twinning-partners.json` (union, not
+deduplicated — see that file's `warning` field and
+[ua-eu-twinning.md](ua-eu-twinning.md) for why cross-alphabet dedup isn't
+attempted). Also wired into the map/graph: `yarn graph-pin-matching`'s
+`twinning` layer now reads the merged file directly (no separate layer
+needed), taking `country_ids` from `COUNTRY_LABELS` in
+`build_pin_matching_graph.py`, extended 2026-09-02 to cover all ~47 country
+codes this source introduces.
+
+---
+
 ## Own revenues (data.gov.ua) — caveat
 
 CKAN packages titled «Власні доходи громад … на одиницю населення» are often
