@@ -115,7 +115,11 @@ This repo supports **prioritization at scale** by combining:
 1. **Goals-similarity** (from our matching pipeline) — thematic alignment with
    Lab themes, peer clusters, or a reference hromada already in the program.
 2. **`edem_total`** (from KSE `edem-data.csv`, with missingness handled) —
-   existing e-participation infrastructure as a readiness signal.
+   existing e-participation infrastructure as a readiness signal. Prefer
+   [`edem-barometer.json`](edem-barometer.md) (`yarn edem-barometer`) instead
+   where current, quantitative petition/participatory-budget activity matters
+   more than KSE's frozen 2022 binary flags — it's live but only covers 2 of
+   KSE's 4 tools, so treat the two as complementary, not a straight swap.
 
 A simple outreach score for hromada *h* relative to a reference set *R*:
 

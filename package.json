@@ -17,6 +17,7 @@
     "fetch-gisrr-strategies": "tsx scripts/retrieval/fetch-gisrr-strategies.ts",
     "structure-gisrr": "python3 scripts/analysis/structure_gisrr_batch.py",
     "hromada-resources": "python3 scripts/analysis/build_hromada_resources.py",
+    "edem-barometer": "python3 scripts/analysis/build_edem_barometer.py",
     "fetch-dream": "python3 scripts/analysis/fetch_dream_priorities.py",
     "fetch-twinning": "python3 scripts/analysis/build_twinning_layer.py --fetch-only",
     "twinning": "python3 scripts/analysis/build_twinning_layer.py",

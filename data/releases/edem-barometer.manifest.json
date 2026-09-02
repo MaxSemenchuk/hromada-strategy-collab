@@ -1,0 +1,42 @@
+{
+  "file": "edem-barometer.json",
+  "generated_at": "2026-09-01T17:49:25Z",
+  "coverage": {
+    "hromadas_total": 1424,
+    "connected_any": 599,
+    "with_petitions": 479,
+    "with_budget": 338,
+    "with_population": 1420,
+    "min_population_for_per_capita_rank": 1500,
+    "by_tier": {
+      "високий": 183,
+      "середній": 185,
+      "низький": 188,
+      "не підключено": 868
+    },
+    "by_tier_per_capita": {
+      "високий": 184,
+      "середній": 184,
+      "низький": 185,
+      "не підключено": 851,
+      "населення замале": 20
+    }
+  },
+  "source": {
+    "platform": "e-dem.ua (OpenCity / EGAP — Фонд Східна Європа, Мінцифра, SDC)",
+    "endpoints": [
+      "https://e-dem.ua/external_api/petitions/statistics.json",
+      "https://e-dem.ua/external_api/budgets/statistics.json"
+    ],
+    "join_key": "KOATUU (legacy, zero-padded to 10 digits) → katottg via KSE admin map",
+    "notes": [
+      "Live snapshot at generation time — not a historical panel; re-run to refresh.",
+      "consultations/open_city e-dem endpoints are platform-wide aggregates only, no per-hromada breakdown available — not included here.",
+      "on_*_platform=false does not distinguish 'no such tool' from 'uses a non-e-dem.ua e-participation platform' — e-dem.ua is dominant but not the only provider.",
+      "war_status_sept_2022 is KSE's Sept-2022 snapshot, NOT current — it will show hromadas occupied after that date (e.g. Avdiivka, fell Feb 2024) as 'not occupied'. Cross-check current status manually before treating an active-looking score as ground truth for frontline/occupied hromadas.",
+      "Scores are 0 for hromadas absent from the platform or with zero recorded activity; percentile ranks are computed only among hromadas with >0 on that metric, so a hromada present-but-idle scores 0 rather than an artificial mid-range rank.",
+      "Unmatched KOATUU rows (rayon/oblast councils excluded already): 13 petitions, 15 budgets — see docs/edem-barometer.md for what's typically left over.",
+      "overall_score (and its tiers) is ABSOLUTE — it favors big cities by population alone, not necessarily by per-resident engagement. Use overall_score_per_capita / tier_per_capita for a population-normalized view."
+    ]
+  }
+}

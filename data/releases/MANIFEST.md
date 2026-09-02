@@ -138,6 +138,18 @@ and self-describing, not a growth history.
   Site preview: `yarn build-resources-preview` → `docs/assets/resources-preview.json`
   (`docs/resources.html`).
 
+- **`edem-barometer.json`** — "digital democracy" rating per KATOTTG from
+  e-dem.ua's live public API (petitions + participatory budget only;
+  consultations/open-city are platform-wide aggregates, no per-hromada
+  breakdown). KOATUU→katottg via KSE admin map. Includes both an absolute
+  `overall_score`/`tier` (favors big cities by population) and a
+  population-normalized `overall_score_per_capita`/`tier_per_capita`
+  (ranked only for population >= 1500). Regenerate with `yarn edem-barometer`
+  (caches raw JSON under `data/cache/edem/`). Live snapshot, not a panel —
+  re-run to refresh. `war_status_sept_2022` is a Sept-2022 KSE snapshot and
+  misses later occupations (e.g. Avdiivka).
+  See [docs/edem-barometer.md](../../docs/edem-barometer.md).
+
 - **`twinning-partners.json`** — **UA–EU municipal twinning** (separate from
   domestic МСС). Sources: SKEW German–Ukrainian registry (`yarn twinning`,
   cache `data/cache/twinning/`); Cities4Cities news-title pairs + municipality

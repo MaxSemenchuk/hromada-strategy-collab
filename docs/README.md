@@ -25,6 +25,7 @@ hromadas with coordinates (metadata — not the strategy corpus). Click a point 
 | [`mss-cooperation-research.md`](mss-cooperation-research.md) | DOBRE + Tkachuk / ІГС practitioner framing, МСС forms |
 | [`ua-eu-twinning.md`](ua-eu-twinning.md) | UA–EU sister cities: format, SKEW/C4C, how partners are found, cases |
 | [`donor-programs.md`](donor-programs.md) | DOBRE, EGAP, U-LEAD, GIZ, USAID… — what each programme is |
+| [`edem-barometer.md`](edem-barometer.md) | Digital-democracy rating from e-dem.ua's live API (petitions + participatory budget) |
 | [`corpus-growth.md`](corpus-growth.md) | Priority corpus growth checklist |
 | [`research-questions.md`](research-questions.md) | Candidate new research questions (brainstorm, not yet scoped) |
 | [`hromada-project-passport.html`](hromada-project-passport.html) | Redirect → `index.html` (legacy URL) |
