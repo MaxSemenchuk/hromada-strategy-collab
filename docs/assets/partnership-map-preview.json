@@ -1,0 +1,388 @@
+{
+  "generatedAt": "2026-09-02T10:21:45.884400+00:00",
+  "caveat": "Ministry partnership map — decentralization.ua, verified end-2025 data.",
+  "hromadaCount": 288,
+  "totalPartnerCityRows": 1134,
+  "top": [
+    {
+      "short": "Одеська",
+      "oblast": "Одеська область",
+      "partner_count": 36,
+      "countries": [
+        "AM",
+        "AT",
+        "BG",
+        "CA",
+        "CN",
+        "CY",
+        "DE",
+        "EE",
+        "EG",
+        "ES",
+        "FI",
+        "FR",
+        "GB",
+        "GE",
+        "GR",
+        "HR",
+        "HU",
+        "IL",
+        "IN",
+        "IT",
+        "JP",
+        "LT",
+        "MA",
+        "MD",
+        "PL",
+        "RO",
+        "TR",
+        "US"
+      ]
+    },
+    {
+      "short": "Берегівська",
+      "oblast": "Закарпатська область",
+      "partner_count": 29,
+      "countries": [
+        "DE",
+        "HU",
+        "NL",
+        "PL",
+        "RO",
+        "SK"
+      ]
+    },
+    {
+      "short": "Івано-Франківська",
+      "oblast": "Івано-Франківська область",
+      "partner_count": 24,
+      "countries": [
+        "CN",
+        "CZ",
+        "GE",
+        "HU",
+        "LT",
+        "LV",
+        "MD",
+        "PL",
+        "PT",
+        "RO",
+        "US"
+      ]
+    },
+    {
+      "short": "Житомирська",
+      "oblast": "Житомирська область",
+      "partner_count": 22,
+      "countries": [
+        "AT",
+        "BG",
+        "CH",
+        "DE",
+        "ES",
+        "GB",
+        "GE",
+        "IT",
+        "NL",
+        "PL",
+        "PT"
+      ]
+    },
+    {
+      "short": "Ужгородська",
+      "oblast": "Закарпатська область",
+      "partner_count": 21,
+      "countries": [
+        "CN",
+        "CZ",
+        "DE",
+        "DK",
+        "FI",
+        "HR",
+        "HU",
+        "PL",
+        "RO",
+        "SK"
+      ]
+    },
+    {
+      "short": "Луцька",
+      "oblast": "Волинська область",
+      "partner_count": 20,
+      "countries": [
+        "CN",
+        "CZ",
+        "DE",
+        "FR",
+        "GE",
+        "GR",
+        "LT",
+        "PL",
+        "RO",
+        "SK",
+        "TR",
+        "US"
+      ]
+    },
+    {
+      "short": "Трускавецька",
+      "oblast": "Львівська область",
+      "partner_count": 18,
+      "countries": [
+        "AZ",
+        "DE",
+        "IT",
+        "PL",
+        "TR"
+      ]
+    },
+    {
+      "short": "Хмельницька",
+      "oblast": "Хмельницька область",
+      "partner_count": 18,
+      "countries": [
+        "BG",
+        "CN",
+        "CZ",
+        "GB",
+        "GE",
+        "IL",
+        "LT",
+        "MD",
+        "MX",
+        "PL",
+        "SE",
+        "TR",
+        "US",
+        "UZ"
+      ]
+    },
+    {
+      "short": "Вінницька",
+      "oblast": "Вінницька область",
+      "partner_count": 17,
+      "countries": [
+        "CH",
+        "DE",
+        "FR",
+        "GB",
+        "GE",
+        "IL",
+        "LT",
+        "MK",
+        "PL",
+        "TR",
+        "US"
+      ]
+    },
+    {
+      "short": "Чернівецька",
+      "oblast": "Чернівецька область",
+      "partner_count": 16,
+      "countries": [
+        "AT",
+        "CA",
+        "CZ",
+        "DE",
+        "FR",
+        "IL",
+        "IT",
+        "MD",
+        "PL",
+        "RO",
+        "US"
+      ]
+    },
+    {
+      "short": "Тернопільська",
+      "oblast": "Тернопільська область",
+      "partner_count": 14,
+      "countries": [
+        "DE",
+        "EE",
+        "ES",
+        "IT",
+        "LT",
+        "PL"
+      ]
+    },
+    {
+      "short": "Тячівська",
+      "oblast": "Закарпатська область",
+      "partner_count": 14,
+      "countries": [
+        "CZ",
+        "HU",
+        "PL",
+        "RO",
+        "SK"
+      ]
+    },
+    {
+      "short": "Дрогобицька",
+      "oblast": "Львівська область",
+      "partner_count": 12,
+      "countries": [
+        "DE",
+        "HR",
+        "KR",
+        "LV",
+        "PL"
+      ]
+    },
+    {
+      "short": "Маріупольська",
+      "oblast": "Донецька область",
+      "partner_count": 12,
+      "countries": [
+        "CN",
+        "CZ",
+        "GE",
+        "GR",
+        "IT",
+        "LT",
+        "PL",
+        "TR"
+      ]
+    },
+    {
+      "short": "Мукачівська",
+      "oblast": "Закарпатська область",
+      "partner_count": 12,
+      "countries": [
+        "CZ",
+        "HR",
+        "HU",
+        "PL",
+        "SK"
+      ]
+    },
+    {
+      "short": "Нововолинська",
+      "oblast": "Волинська область",
+      "partner_count": 12,
+      "countries": [
+        "CZ",
+        "DE",
+        "LT",
+        "PL",
+        "SK"
+      ]
+    },
+    {
+      "short": "Броварська",
+      "oblast": "Київська область",
+      "partner_count": 11,
+      "countries": [
+        "CN",
+        "EE",
+        "FR",
+        "HR",
+        "IT",
+        "PL",
+        "US"
+      ]
+    },
+    {
+      "short": "Бучанська",
+      "oblast": "Київська область",
+      "partner_count": 11,
+      "countries": [
+        "DE",
+        "IT",
+        "LT",
+        "PL",
+        "PT",
+        "SI",
+        "US"
+      ]
+    },
+    {
+      "short": "Миколаївська",
+      "oblast": "Миколаївська область",
+      "partner_count": 11,
+      "countries": [
+        "BG",
+        "DE",
+        "IT",
+        "PL",
+        "RO",
+        "TR"
+      ]
+    },
+    {
+      "short": "Перечинська",
+      "oblast": "Закарпатська область",
+      "partner_count": 11,
+      "countries": [
+        "CZ",
+        "HU",
+        "MK",
+        "PL",
+        "SK"
+      ]
+    },
+    {
+      "short": "Рівненська",
+      "oblast": "Рівненська область",
+      "partner_count": 11,
+      "countries": [
+        "BG",
+        "DE",
+        "GE",
+        "MC",
+        "PL",
+        "SK"
+      ]
+    },
+    {
+      "short": "Східницька",
+      "oblast": "Львівська область",
+      "partner_count": 11,
+      "countries": [
+        "DE",
+        "IT",
+        "LT",
+        "LV",
+        "PL",
+        "RO",
+        "SI"
+      ]
+    },
+    {
+      "short": "Хотинська",
+      "oblast": "Чернівецька область",
+      "partner_count": 11,
+      "countries": [
+        "DE",
+        "FR",
+        "PL",
+        "PT",
+        "RO"
+      ]
+    },
+    {
+      "short": "Білгород-Дністровська",
+      "oblast": "Одеська область",
+      "partner_count": 10,
+      "countries": [
+        "AM",
+        "DE",
+        "PL",
+        "RO",
+        "TR"
+      ]
+    },
+    {
+      "short": "Ковельська",
+      "oblast": "Волинська область",
+      "partner_count": 10,
+      "countries": [
+        "DE",
+        "LT",
+        "PL",
+        "US"
+      ]
+    }
+  ]
+}

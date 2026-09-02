@@ -37,6 +37,8 @@ CACHE_C4C_MARKERS = CACHE / "cities4cities-markers.json"
 CACHE_C4C_NEWS = CACHE / "cities4cities-news.json"
 HROMADAS = ROOT / "data" / "releases" / "hromadas.json"
 ALIASES = ROOT / "data" / "sources" / "twinning-name-aliases.json"
+PARTNERSHIP_MAP = ROOT / "data" / "releases" / "partnership-map.json"
+DE_DUPLICATE_PAIRS = ROOT / "data" / "sources" / "twinning-de-duplicate-pairs.json"
 OUT = ROOT / "data" / "releases" / "twinning-partners.json"
 MANIFEST = ROOT / "data" / "releases" / "twinning-partners.manifest.json"
 PREVIEW = ROOT / "docs" / "assets" / "twinning-preview.json"
@@ -1005,12 +1007,79 @@ def build_release(edges: list[dict]) -> None:
         elif link:
             entry.setdefault("c4c_url", link)
 
+    # decentralization.ua Ministry partnership map (yarn partnership-map) —
+    # merged additively. SKEW's German partner names are Latin/German-spelled;
+    # decentralization.ua's are Cyrillic transliterations of ALL countries —
+    # cross-alphabet string matching isn't reliable enough to auto-dedupe, so
+    # for the DE subset specifically (the only country where both sources
+    # can legitimately name the SAME city) we use a small manually-curated
+    # pair list (data/sources/twinning-de-duplicate-pairs.json, 38 pairs
+    # verified 2026-09-02) to tag `duplicate_of_skew` rather than either
+    # blindly merging or blindly keeping both as distinct. Everything outside
+    # that curated list (all non-DE countries, and DE rows not in the list)
+    # is treated as genuinely additional. See docs/ua-eu-twinning.md for the
+    # full caveat and the Poltava↔Kalmar counter-example (present via SKEW,
+    # absent from partnership-map.json — sources also miss cases the other
+    # has, so "additive" here does not mean "complete union" either).
+    decentralization_added = 0
+    hromadas_in_both = 0
+    de_duplicates_tagged = 0
+    de_dupe_lookup: dict[tuple[str, str], str] = {}
+    if DE_DUPLICATE_PAIRS.exists():
+        for pair in json.loads(DE_DUPLICATE_PAIRS.read_text(encoding="utf-8"))["pairs"]:
+            de_dupe_lookup[(pair["katottg"], pair["dm_name"])] = pair["skew_name"]
+    if PARTNERSHIP_MAP.exists():
+        dm_payload = json.loads(PARTNERSHIP_MAP.read_text(encoding="utf-8"))
+        for h in dm_payload.get("hromadas") or []:
+            code = (h.get("katottg") or "").strip()
+            if not code:
+                continue
+            row = by_katottg.get(code)
+            if not row:
+                continue
+            hcode = (row.get("Katottg") or row["Name"]).strip()
+            if hcode in by_hromada:
+                hromadas_in_both += 1
+            entry = by_hromada.setdefault(
+                hcode,
+                {
+                    "name": row["Name"],
+                    "short": short_name(row["Name"]),
+                    "katottg": row.get("Katottg"),
+                    "oblast": row.get("Oblast"),
+                    "partners": [],
+                },
+            )
+            for p in h.get("partners") or []:
+                dupe_of = de_dupe_lookup.get((code, p.get("partner_name")))
+                partner = {
+                    "partner_name": p.get("partner_name"),
+                    "partner_country": p.get("partner_country"),
+                    "partner_region": None,
+                    "type": "Municipal partnership",
+                    "since": None,
+                    "source": "decentralization_ua",
+                    "source_url": (
+                        "https://decentralization.ua/newgromada/"
+                        f"{h.get('decentralization_id') or ''}"
+                    ),
+                    "confidence": "registry",
+                }
+                if dupe_of:
+                    partner["duplicate_of_skew"] = dupe_of
+                    de_duplicates_tagged += 1
+                entry["partners"].append(partner)
+                decentralization_added += 1
+
     hromadas = sorted(
         by_hromada.values(),
         key=lambda h: (-len(h["partners"]), h["short"]),
     )
     for h in hromadas:
         h["partner_count"] = len(h["partners"])
+        h["distinct_partner_count"] = sum(
+            1 for p in h["partners"] if not p.get("duplicate_of_skew")
+        )
 
     generated = datetime.now(timezone.utc).isoformat()
     linked_edges = sum(1 for h in hromadas for p in h["partners"] if p["source"] == "skew")
@@ -1022,7 +1091,17 @@ def build_release(edges: list[dict]) -> None:
         "warning": (
             "UA–EU twinning layer — separate from domestic МСС. "
             "SKEW links are registry-sourced (DE–UA); Cities4Cities pairs come from "
-            "news titles (hypotheses); strategy mentions are hypotheses. "
+            "news titles (hypotheses); strategy mentions are hypotheses; "
+            "decentralization_ua entries are Ministry-verified. Non-DE decentralization_ua "
+            "rows are additive (SKEW is DE-only, so no overlap is possible). DE-country "
+            "decentralization_ua rows ARE checked against SKEW via a manually-curated "
+            "pair list (data/sources/twinning-de-duplicate-pairs.json, 38 pairs) — a "
+            "matched row carries partner.duplicate_of_skew (the SKEW name it duplicates); "
+            "use hromada.distinct_partner_count, not partner_count, when you need a "
+            "non-inflated total. Un-tagged DE rows are genuinely additional partners not "
+            "yet checked/confirmed either way for a handful of low-confidence cases — see "
+            "docs/ua-eu-twinning.md. None of the sources here is complete on its own — "
+            "each has confirmed cases the others miss. "
             "c4c_url marks listing in the C4C municipality database (seeking partners), "
             "not a confirmed twinning. Not folded into matching score."
         ),
@@ -1044,6 +1123,12 @@ def build_release(edges: list[dict]) -> None:
                 "name": "Named foreign partners in strategy extractions",
                 "path": "data/releases/hromadas.json",
             },
+            {
+                "id": "decentralization_ua",
+                "name": "Ministry of Communities and Territories Development — partnership map",
+                "url": "https://decentralization.ua/twincities",
+                "path": "data/releases/partnership-map.json",
+            },
         ],
         "coverage": {
             "skew_edges_raw": len(edges),
@@ -1057,6 +1142,9 @@ def build_release(edges: list[dict]) -> None:
             "cities4cities_news_unmatched": len(c4c_unmatched),
             "unmatched_skew": len(unmatched),
             "resolve_stats": dict(stats),
+            "decentralization_ua_partners_added": decentralization_added,
+            "hromadas_in_both_skew_and_decentralization": hromadas_in_both,
+            "decentralization_ua_de_duplicates_tagged": de_duplicates_tagged,
         },
         "hromadas": hromadas,
         "unmatched": unmatched[:200],
@@ -1114,7 +1202,10 @@ def build_release(edges: list[dict]) -> None:
     print(
         f"Wrote {OUT.relative_to(ROOT)} — {len(hromadas)} hromadas, "
         f"{linked_edges}/{len(edges)} SKEW edges linked, "
-        f"+{strategy_added} strategy, +{c4c_added} C4C news; "
+        f"+{strategy_added} strategy, +{c4c_added} C4C news, "
+        f"+{decentralization_added} decentralization.ua "
+        f"({de_duplicates_tagged} tagged duplicate_of_skew; "
+        f"{hromadas_in_both} hromadas overlap with SKEW/strategy/C4C); "
         f"C4C listed={c4c_listed}; unmatched_skew={len(unmatched)}"
     )
 

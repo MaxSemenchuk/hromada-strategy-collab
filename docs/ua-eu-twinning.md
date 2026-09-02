@@ -217,7 +217,8 @@ forums) — our matching layer does not replace that brokerage.
 
 ### Coverage gaps (do not overclaim)
 
-1. Non-DE EU countries: no SKEW equivalent in our pipeline
+1. Non-DE EU countries: no SKEW equivalent in our pipeline — **closed
+   2026-09-02** via decentralization.ua's Ministry partnership map, see below
 2. C4C: news pairs only (~11), not all ~100 claimed partnerships
 3. Pre-2022 twinning outside SKEW/C4C: often only on municipal websites
 4. Kyiv city / raions / utilities: intentionally skipped
@@ -226,3 +227,62 @@ forums) — our matching layer does not replace that brokerage.
 
 Commands: `yarn twinning`, `yarn twinning --offline`, map layer via
 `yarn graph-pin-matching` (indigo node highlight + card section).
+
+---
+
+## decentralization.ua partnership map — the non-DE gap-filler (2026-09-02)
+
+Separate release: `data/releases/partnership-map.json` (`yarn partnership-map`).
+Source: Мінрозвитку's own verified partnership registry, per-hromada pages at
+decentralization.ua/newgromada/&lt;id&gt;, resolved by direct **KATOTTG join**
+(the page prints the hromada's own KATOTTG — no transliteration needed).
+Full details, method, and caveats: [external-data-sources.md](external-data-sources.md#decentralizationua--ministry-partnership-map-all-countries-not-just-de).
+
+**Headline numbers**: 288 hromadas with ≥1 partner, 1134 partner-city rows,
+47 partner countries. Poland dominates (464 rows) — far ahead of Germany
+(81), Hungary (87), Romania (68). This is the first time this project has
+country-level breadth beyond SKEW's DE-only registry.
+
+**Treat as complementary to SKEW/C4C/strategy, not a replacement or
+superset** — each layer misses cases the other has (Poltava↔Kalmar, a
+documented flagship case above, is absent from the Ministry page;
+conversely the Ministry page picks up hundreds of PL/HU/RO/SK pairs SKEW
+never could, since SKEW is DE-only). The Ministry's own dashboard
+(decentralization.ua/twincities, Tableau-based) claims materially higher
+totals (490 hromadas / 2119 agreements / 1740 partners) than the per-hromada
+pages we scraped. **Deliberately not scraped further**: that dashboard's
+publisher has explicitly disabled Tableau's data-export commands
+(`allow_view_underlying: false`, `allow_summary: false` in its own session
+config — confirmed 2026-09-02, a fresh `bootstrapSession` returns `410
+Gone` on the download-data path) — read as an intentional access control,
+not a technical gap to route around, so we stopped there. No per-partner
+date or partnership-type field exists in this source, unlike SKEW's "since"
+year.
+
+**Merged 2026-09-02** into `twinning-partners.json` (`yarn twinning
+--offline` now also reads `partnership-map.json`): the release went from
+114 confirmed-partner hromadas to **366**, and the map/graph
+(`yarn graph-pin-matching`) now shows `twinning=364` hromadas across **48
+country hub nodes / 763 edges** (Граф view) — up from ~15 countries. Total
+partner rows: 1303 (skew 179, decentralization_ua 1109, cities4cities 11,
+strategy 4). Per-source counts (`coverage.decentralization_ua_partners_added`
+= 1109 of 1134; the other 25 lost to KATOTTG rows twinning-partners.json's
+own index doesn't carry) are the trustworthy per-source number.
+
+**Cross-source dedup (2026-09-02)**: non-DE decentralization_ua rows are
+additive and need no dedup — SKEW is DE-only, so there is no possible
+overlap. DE-country rows are the only overlap risk (94 of 366 hromadas have
+entries from both SKEW and decentralization_ua). Checked all 54 DE rows on
+those overlapping hromadas via fuzzy string match (`difflib`, transliterated
+with the same `to_de()` used for hromada-name resolution) **then manually
+verified against real German city names** — a blind ratio threshold isn't
+safe here (e.g. decentralization_ua's "Кельн" [Köln/Cologne] scored 0.60
+against SKEW's "Kassel" for the same hromada but is a different city).
+**38 of the 54 are confirmed real duplicates**, curated in
+`data/sources/twinning-de-duplicate-pairs.json` and tagged
+`partner.duplicate_of_skew` (the matched SKEW name) at build time — not
+deleted, just flagged, so the audit trail stays intact. Use
+`hromada.distinct_partner_count` (excludes tagged duplicates), not
+`partner_count`, for a non-inflated total. The other 16 looked similar by
+crude transliteration but are genuinely different cities (e.g. Kelln/Köln vs
+Kassel, Augsburg vs Bedburg) and were left as distinct additional partners.

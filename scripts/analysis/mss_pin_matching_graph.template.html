@@ -1888,10 +1888,15 @@ function tickGraph() {
   for (const node of nodes) {
     node.vx += -node.x * 0.0015;
     node.vy += -node.y * 0.0015;
-    if (clusterByOblast && node.oblast && oblastAnchors[node.oblast]) {
+    if (node.oblast && oblastAnchors[node.oblast]) {
+      // Even with grouping off, keep a faint pull toward the oblast anchor so
+      // the layout still separates into soft clusters within one "ball"
+      // instead of collapsing into an undifferentiated hairball; the checkbox
+      // just turns that pull up into hard geographic islands.
       const anchor = oblastAnchors[node.oblast];
-      node.vx += (anchor.x - node.x) * 0.012;
-      node.vy += (anchor.y - node.y) * 0.012;
+      const strength = clusterByOblast ? 0.012 : 0.004;
+      node.vx += (anchor.x - node.x) * strength;
+      node.vy += (anchor.y - node.y) * strength;
     }
     if (node.fx != null) { node.x = node.fx; node.y = node.fy; node.vx = 0; node.vy = 0; continue; }
     node.vx *= 0.85; node.vy *= 0.85;
