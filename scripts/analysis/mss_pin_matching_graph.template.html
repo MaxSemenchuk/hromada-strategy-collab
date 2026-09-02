@@ -1035,7 +1035,7 @@ const oblastAnchors = (() => {
 const hubAnchors = (() => {
   const ids = nodes.filter(n => n.kind === 'country' || n.kind === 'donor').map(n => n.id).sort();
   const anchors = Object.create(null);
-  const R = 380;
+  const R = 1500;
   ids.forEach((id, i) => {
     const angle = (i / Math.max(ids.length, 1)) * Math.PI * 2;
     anchors[id] = { x: Math.cos(angle) * R, y: Math.sin(angle) * R * 0.85 };
@@ -1898,8 +1898,16 @@ function tickGraph() {
     const k = e.kind === 'pin' ? 0.008 : (isHub ? 0.01 : (isPinAgreement ? 0.012 : 0.02));
     const f = k * (dist - rest);
     const fx = (dx / dist) * f, fy = (dy / dist) * f;
-    a.vx += fx; a.vy += fy;
-    b.vx -= fx; b.vy -= fy;
+    // A country like Poland has hundreds of twinning edges pointing at
+    // hromadas scattered all over the oblast ring; summed, that pull drags
+    // it straight back to the centroid (≈ the origin) no matter how strong
+    // its own anchor force is. Damp the force on whichever endpoint is a
+    // hub node so high-degree hubs stay near their anchor — the hromada
+    // side still gets the full pull, so edge length stays informative.
+    const aHub = hubAnchors[a.id] ? 0.15 : 1;
+    const bHub = hubAnchors[b.id] ? 0.15 : 1;
+    a.vx += fx * aHub; a.vy += fy * aHub;
+    b.vx -= fx * bHub; b.vy -= fy * bHub;
   }
   for (const node of nodes) {
     node.vx += -node.x * 0.0015;
@@ -1915,8 +1923,8 @@ function tickGraph() {
       node.vy += (anchor.y - node.y) * strength;
     } else if (hubAnchors[node.id]) {
       const anchor = hubAnchors[node.id];
-      node.vx += (anchor.x - node.x) * 0.01;
-      node.vy += (anchor.y - node.y) * 0.01;
+      node.vx += (anchor.x - node.x) * 0.03;
+      node.vy += (anchor.y - node.y) * 0.03;
     }
     if (node.fx != null) { node.x = node.fx; node.y = node.fy; node.vx = 0; node.vy = 0; continue; }
     node.vx *= 0.85; node.vy *= 0.85;
