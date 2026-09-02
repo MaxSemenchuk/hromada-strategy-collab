@@ -101,12 +101,34 @@ def main() -> None:
 
     candidates_path = ROOT / "data" / "releases" / "mss-candidates.json"
     candidates_meta = None
+    candidate_stats = None
     if candidates_path.exists():
         cand = json.loads(candidates_path.read_text(encoding="utf-8"))
+        registry_known = cand.get("registry_known") or []
+        hypotheses = cand.get("hypotheses") or []
         candidates_meta = {
-            "registryKnown": len(cand.get("registry_known") or []),
-            "hypotheses": len(cand.get("hypotheses") or []),
+            "registryKnown": len(registry_known),
+            "hypotheses": len(hypotheses),
             "caveat": cand.get("caveat"),
+        }
+
+        def bucket(key_fn) -> list[dict]:
+            counts: dict[str, int] = {}
+            for c in registry_known + hypotheses:
+                k = key_fn(c)
+                if not k:
+                    continue
+                counts[k] = counts.get(k, 0) + 1
+            return sorted(
+                ({"key": k, "count": v} for k, v in counts.items()),
+                key=lambda x: -x["count"],
+            )
+
+        candidate_stats = {
+            "total": len(registry_known) + len(hypotheses),
+            "byForm": bucket(lambda c: (c.get("package") or {}).get("form_id")),
+            "byTheme": bucket(lambda c: (c.get("package") or {}).get("theme")),
+            "byPrimary": bucket(lambda c: c.get("discovery_primary")),
         }
 
     payload = {
@@ -119,6 +141,7 @@ def main() -> None:
         "tracks": man.get("tracks"),
         "mssCandidate": man.get("mssCandidate"),
         "candidatesSidecar": candidates_meta,
+        "candidateStats": candidate_stats,
         "known": known,
         "pinCorpus": pin_corpus,
         "top": top,
