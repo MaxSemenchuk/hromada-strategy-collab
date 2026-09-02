@@ -274,3 +274,31 @@ def settlement_to_hromada() -> dict[str, str]:
         if h and h != "nan":
             mapping.setdefault(h, h)
     return mapping
+
+
+@lru_cache(maxsize=1)
+def koatuu_to_hromada() -> dict[str, str]:
+    """Map legacy KOATUU (10-digit, zero-padded) → hromada CATOTTG.
+
+    Sources both `settlement_code_old` (matches city/town self-administered
+    portals, e.g. e-dem.ua city councils) and `rada_code` (matches village/
+    settlement council-level portals) from KSE's admin map — a KOATUU value
+    can land on either depending on how the external platform registered the
+    community. First writer wins on the rare key collision (~0.1% of rows).
+    """
+    try:
+        admin = _fetch_csv("admin_map")
+    except Exception as exc:
+        print(f"WARNING: KSE admin map unavailable ({exc})")
+        return {}
+    mapping: dict[str, str] = {}
+    for _, row in admin.iterrows():
+        h = str(row.get("hromada_code") or "").strip()
+        if not h or h == "nan":
+            continue
+        for col in ("settlement_code_old", "rada_code"):
+            k = str(row.get(col) or "").strip()
+            if k and k != "nan":
+                k = k.zfill(10)
+                mapping.setdefault(k, h)
+    return mapping

@@ -76,6 +76,12 @@ and ACLED-based conflict-intensity/infrastructure-damage.
   (1 of which is a genuine zero). Anyone using `edem_total` from
   `full_dataset.csv` as-is should re-derive true missingness from
   `edem-data.csv` rather than trust the merged column.
+- **Superseded (partially) by our own live pull:** `yarn edem-barometer` hits
+  e-dem.ua's own public API directly instead of relying on KSE's 2022
+  scrape — current coverage, quantitative counts, but only petitions +
+  participatory budget (no consultations/open_hromada — the platform's
+  those two endpoints are aggregate-only). See
+  [edem-barometer.md](edem-barometer.md).
 
 ### Who uses it / how
 
