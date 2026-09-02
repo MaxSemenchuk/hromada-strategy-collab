@@ -26,6 +26,7 @@ hromadas with coordinates (metadata — not the strategy corpus). Click a point 
 | [`ua-eu-twinning.md`](ua-eu-twinning.md) | UA–EU sister cities: format, SKEW/C4C, how partners are found, cases |
 | [`donor-programs.md`](donor-programs.md) | DOBRE, EGAP, U-LEAD, GIZ, USAID… — what each programme is |
 | [`edem-barometer.md`](edem-barometer.md) | Digital-democracy rating from e-dem.ua's live API (petitions + participatory budget) |
+| [`plich-o-plich.md`](plich-o-plich.md) | Domestic rear↔forpost hromada partnerships, text-mined from plich-o-plich.gov.ua news (its pair graphics are vectorized SVG, not scrapable) |
 | [`corpus-growth.md`](corpus-growth.md) | Priority corpus growth checklist |
 | [`research-questions.md`](research-questions.md) | Candidate new research questions (brainstorm, not yet scoped) |
 | [`hromada-project-passport.html`](hromada-project-passport.html) | Redirect → `index.html` (legacy URL) |

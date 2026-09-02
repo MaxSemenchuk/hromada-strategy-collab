@@ -1,0 +1,24 @@
+{
+  "file": "plich-o-plich.json",
+  "generated_at": "2026-09-02T09:36:23Z",
+  "coverage": {
+    "articles_crawled": 518,
+    "articles_with_resolved_hromada": 304,
+    "edges_total": 511,
+    "edges_bilateral_confirmed": 77,
+    "edges_comention_only": 434,
+    "unique_hromadas_in_edges": 234
+  },
+  "source": {
+    "project": "Пліч-о-Пліч: згуртовані громади (Мінрозвитку/Кулеба office)",
+    "site": "https://www.plich-o-plich.gov.ua",
+    "method": "The oblast 'Учасники проєкту' pages render their pairs as pre-outlined SVG paths (text converted to vector shapes at design-export time, confirmed via live DOM inspection — zero <text>/<img>/<canvas> nodes carry the pair names) so they are NOT machine-readable, and show only one headline pair per oblast anyway. This dataset instead regex-extracts 'Adjective + громада' mentions (any grammatical case) from the /novyny/ news feed article bodies, resolves each against hromadas.json by name stem, and treats hromadas co-named in the same article as a partnership edge.",
+    "notes": [
+      "NOT an authoritative pairs registry — a lower-bound, best-effort text-mining extraction. Articles that name a partner only as a bare town/raion noun without the word 'громада' nearby (e.g. '...візит на Миронівщину') under-capture that side; the attached side still resolves normally.",
+      "Homonym hromada names (same adjective, different oblast) are left unresolved (match_type='ambiguous') rather than guessed when no oblast hint is present in the same article — see the KATOTTG homonym pattern in project notes.",
+      "An edge is 'two hromadas named in the same article', not a verified bilateral memorandum — trilateral/multilateral articles (3+ hromadas) produce one edge per pair, all attributed to that single article. A few roundup articles name 5-15 forpost hromadas at once (e.g. a summer-camp or memoranda-signing digest) — those produce a fully-connected clique of edges among everyone mentioned, which is NOT a claim that each of them partners with all the others. Use 'bilateral_confirmed' (true only if some article named exactly that pair and no one else) to filter to the higher-confidence direct-report edges; the rest are co-mention-only.",
+      "111 raw mentions across the corpus never matched any hromada stem (foreign partners, oblast/raion names misfired as adjectives, OCR-adjacent noise) — see top_unmatched_mentions below.",
+      "42 raw mentions matched >1 hromada with no oblast hint to disambiguate — see top_ambiguous_mentions below."
+    ]
+  }
+}

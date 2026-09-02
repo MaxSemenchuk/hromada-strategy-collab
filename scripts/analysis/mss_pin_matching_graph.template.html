@@ -19,6 +19,7 @@
     --line-ops: #d95926;
     --line-comp: #008300;
     --line-ask: #d55181;
+    --line-plich: #b45309;
     --dot-universe: #94a3b8;
     --dot-corpus: #c98500;
     --dot-twinning: #9085e9;
@@ -155,6 +156,7 @@
   .sw.ops { border-color: var(--line-ops); border-top-style: dotted; border-top-width: 2.5px; }
   .sw.comp { border-color: var(--line-comp); border-top-style: dashed; border-top-width: 2.5px; }
   .sw.ask { border-color: var(--line-ask); border-top-width: 2.5px; }
+  .sw.plich { border-color: var(--line-plich); border-top-width: 2.5px; }
   .sw.universe {
     width: 9px; height: 9px; border-radius: 50%;
     background: var(--dot-universe); border: 0; margin-top: 0.4rem; margin-left: 6px; margin-right: 7px;
@@ -688,6 +690,14 @@
         </span>
       </label>
       <label>
+        <input type="checkbox" id="layer-plich"/>
+        <span class="sw plich" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="layer.plich.title">Пліч-о-Пліч: тил↔форпост</span>
+          <span class="layer-desc" data-i18n="layer.plich.desc">Бурштинові — партнерства тилових і прифронтових громад (з новин проєкту)</span>
+        </span>
+      </label>
+      <label>
         <input type="checkbox" id="layer-corpus"/>
         <span class="sw corpus" aria-hidden="true"></span>
         <span class="layer-copy">
@@ -737,6 +747,7 @@
       <div class="stat"><span data-i18n="stat.pin">Зареєстрованих угод</span><b id="s-pin">—</b></div>
       <div class="stat"><span data-i18n="stat.geo">Угод із координатами</span><b id="s-geo">—</b></div>
       <div class="stat"><span data-i18n="stat.corpus">Стратегій у корпусі</span><b id="s-corpus">—</b></div>
+      <div class="stat"><span data-i18n="stat.plich">Пар «Пліч-о-Пліч»</span><b id="s-plich">—</b></div>
       <div class="stat"><span data-i18n="stat.thematic">Гіпотез «схожа стратегія»</span><b id="s-thematic">—</b></div>
       <div class="stat"><span data-i18n="stat.operational">Гіпотез «зручний сусід»</span><b id="s-operational">—</b></div>
       <div class="stat"><span data-i18n="stat.complementary">Гіпотез «доповнення»</span><b id="s-complementary">—</b></div>
@@ -765,6 +776,7 @@ document.getElementById('s-nodes').textContent = meta.pin_nodes;
 document.getElementById('s-pin').textContent = meta.pin_edges;
 document.getElementById('s-geo').textContent = meta.nodes_with_geo;
 document.getElementById('s-corpus').textContent = meta.corpus_size;
+document.getElementById('s-plich').textContent = meta.plich_o_plich_edges ?? 0;
 document.getElementById('s-thematic').textContent = meta.thematic_edges;
 document.getElementById('s-operational').textContent = meta.operational_edges;
 document.getElementById('s-complementary').textContent = meta.complementary_edges ?? 0;
@@ -779,7 +791,7 @@ let mode = 'map';
 let layers = {
   universe: true, pin: true,
   thematic: true, operational: false, complementary: false, explicitAsk: false,
-  corpus: false, twinning: false, donors: false, basins: false,
+  corpus: false, twinning: false, donors: false, basins: false, plich: false,
 };
 
 // ——— PIN theme filter (registry title heuristics; not legal IMC forms) ———
@@ -941,6 +953,7 @@ function kindLabel(kind) {
     operational: 'layer.operational.title',
     complementary: 'layer.complementary.title',
     explicit_ask: 'layer.explicitAsk.title',
+    plich_o_plich: 'layer.plich.title',
     twinning: 'layer.twinning.title',
     donor: 'layer.donors.title',
     pin_agreement: 'layer.pin.title',
@@ -953,6 +966,7 @@ function kindSwClass(kind) {
   if (kind === 'operational') return 'ops';
   if (kind === 'complementary') return 'comp';
   if (kind === 'explicit_ask') return 'ask';
+  if (kind === 'plich_o_plich') return 'plich';
   if (kind === 'twinning') return 'twinning';
   if (kind === 'donor') return 'donor';
   if (kind === 'pin_agreement') return 'pin';
@@ -1026,7 +1040,7 @@ function fmtPct(n) {
 
 function neighborsOf(id) {
   const groups = Object.create(null);
-  const order = ['pin', 'pin_agreement', 'thematic', 'operational', 'complementary', 'explicit_ask', 'hypothesis', 'twinning', 'donor'];
+  const order = ['pin', 'pin_agreement', 'thematic', 'operational', 'complementary', 'explicit_ask', 'plich_o_plich', 'hypothesis', 'twinning', 'donor'];
   // A hromada's own twinning partners already have a dedicated detail-card
   // section (per-city name/region/source) — only surface the aggregated
   // "twinning" neighbor group when viewing the country hub itself.
@@ -1064,6 +1078,10 @@ function neighborsOf(id) {
       fiscal_similarity: e.fiscal_similarity,
       mss_network: e.mss_network,
       same_oblast: e.same_oblast,
+      article_count: e.article_count,
+      first_seen: e.first_seen,
+      last_seen: e.last_seen,
+      source_url: e.source_url,
     });
   }
   for (const kind of Object.keys(groups)) {
@@ -1089,6 +1107,10 @@ function edgeBlurb(item) {
     return t('explain.pin');
   }
   if (kind === 'pin_agreement') return t('explain.pinAgreement');
+  if (kind === 'plich_o_plich') {
+    const n = item.article_count || 1;
+    return n > 1 ? t('explain.plichMany').replace('{n}', String(n)) : t('explain.plich');
+  }
   if (kind === 'twinning') return t('explain.twinning');
   if (kind === 'donor') return t('explain.donor');
   return '';
@@ -1209,7 +1231,9 @@ function agreementsHtml(item) {
 }
 
 function neighborCardHtml(item) {
-  const score = item.score != null ? Number(item.score).toFixed(2) : '';
+  const score = item.score != null
+    ? (item.kind === 'plich_o_plich' ? String(Math.round(Number(item.score))) : Number(item.score).toFixed(2))
+    : '';
   const blurb = edgeBlurb(item);
   const signals = edgeSignals(item);
   const agr = agreementsHtml(item);
@@ -1467,6 +1491,7 @@ const thematicEdgesLayer = L.layerGroup().addTo(map);
 const operationalEdgesLayer = L.layerGroup(); // default OFF — add on toggle
 const complementaryEdgesLayer = L.layerGroup();
 const explicitAskEdgesLayer = L.layerGroup();
+const plichEdgesLayer = L.layerGroup();
 const universeLayer = L.layerGroup().addTo(map);
 const nodesLayer = L.layerGroup().addTo(map);
 
@@ -1476,6 +1501,7 @@ function edgeStyle(kind) {
   if (kind === 'operational') return { color: '#d95926', weight: 2, opacity: 0.7, dashArray: '2 6' };
   if (kind === 'complementary') return { color: '#008300', weight: 2, opacity: 0.75, dashArray: '4 4' };
   if (kind === 'explicit_ask') return { color: '#d55181', weight: 2.5, opacity: 0.9 };
+  if (kind === 'plich_o_plich') return { color: '#b45309', weight: 2, opacity: 0.85 };
   // thematic (and legacy hypothesis)
   return { color: '#3987e5', weight: 2, opacity: 0.75, dashArray: '6 5' };
 }
@@ -1495,6 +1521,7 @@ function rebuildMapLayers() {
   operationalEdgesLayer.clearLayers();
   complementaryEdgesLayer.clearLayers();
   explicitAskEdgesLayer.clearLayers();
+  plichEdgesLayer.clearLayers();
   universeLayer.clearLayers();
   nodesLayer.clearLayers();
 
@@ -1515,6 +1542,7 @@ function rebuildMapLayers() {
     else if (e.kind === 'operational') operationalEdgesLayer.addLayer(line);
     else if (e.kind === 'complementary') complementaryEdgesLayer.addLayer(line);
     else if (e.kind === 'explicit_ask') explicitAskEdgesLayer.addLayer(line);
+    else if (e.kind === 'plich_o_plich') plichEdgesLayer.addLayer(line);
     else if (e.kind === 'thematic' || e.kind === 'hypothesis') thematicEdgesLayer.addLayer(line);
   }
 
@@ -1591,8 +1619,9 @@ function syncLayerVisibility() {
   show(operationalEdgesLayer, layers.operational);
   show(complementaryEdgesLayer, layers.complementary);
   show(explicitAskEdgesLayer, layers.explicitAsk);
+  show(plichEdgesLayer, layers.plich);
   // network nodes on when any network / corpus highlight layer is on
-  show(nodesLayer, layers.pin || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus || layers.twinning);
+  show(nodesLayer, layers.pin || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus || layers.twinning || layers.plich);
 }
 
 rebuildMapLayers();
@@ -1604,6 +1633,7 @@ function syncLayers() {
   layers.operational = document.getElementById('layer-operational').checked;
   layers.complementary = document.getElementById('layer-complementary').checked;
   layers.explicitAsk = document.getElementById('layer-explicit-ask').checked;
+  layers.plich = document.getElementById('layer-plich').checked;
   layers.corpus = document.getElementById('layer-corpus').checked;
   layers.twinning = document.getElementById('layer-twinning').checked;
   layers.donors = document.getElementById('layer-donors').checked;
@@ -1612,7 +1642,7 @@ function syncLayers() {
     rebuildMapLayers();
   }
 }
-['layer-universe','layer-pin','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-corpus','layer-twinning','layer-donors','layer-basins'].forEach(id => {
+['layer-universe','layer-pin','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-plich','layer-corpus','layer-twinning','layer-donors','layer-basins'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
@@ -1696,7 +1726,7 @@ window.addEventListener('resize', () => {
 function networkNodeVisible(n) {
   if (n.kind === 'country' || n.kind === 'donor' || n.kind === 'agreement') return true;
   return layers.pin || layers.thematic || layers.operational || layers.complementary
-    || layers.explicitAsk || layers.corpus || layers.twinning;
+    || layers.explicitAsk || layers.corpus || layers.twinning || layers.plich;
 }
 
 function edgeVisible(e) {
@@ -1709,6 +1739,7 @@ function edgeVisible(e) {
   if (e.kind === 'operational') return layers.operational;
   if (e.kind === 'complementary') return layers.complementary;
   if (e.kind === 'explicit_ask') return layers.explicitAsk;
+  if (e.kind === 'plich_o_plich') return layers.plich;
   if (e.kind === 'twinning') return layers.twinning;
   if (e.kind === 'donor') return layers.donors;
   return true;
@@ -1888,6 +1919,10 @@ function strokeEdge(e, ax, ay, bx, by) {
     ctx.strokeStyle = 'rgba(213,81,129,0.9)';
     ctx.lineWidth = 2 / scale;
     ctx.setLineDash([]);
+  } else if (e.kind === 'plich_o_plich') {
+    ctx.strokeStyle = 'rgba(180,83,9,0.85)';
+    ctx.lineWidth = 1.8 / scale;
+    ctx.setLineDash([]);
   } else if (e.kind === 'twinning') {
     ctx.strokeStyle = 'rgba(144,133,233,0.4)';
     ctx.lineWidth = 1 / scale;
@@ -1929,7 +1964,7 @@ function drawGraph() {
     }
   }
 
-  for (const kind of ['pin', 'pin_agreement', 'operational', 'complementary', 'thematic', 'hypothesis', 'explicit_ask', 'twinning', 'donor']) {
+  for (const kind of ['pin', 'pin_agreement', 'operational', 'complementary', 'thematic', 'hypothesis', 'explicit_ask', 'plich_o_plich', 'twinning', 'donor']) {
     for (const e of edges) {
       if (e.kind !== kind || !edgeVisible(e)) continue;
       ctx.globalAlpha = (hoverSet && e.source !== hover && e.target !== hover) ? HOVER_FADE_ALPHA : 1;
@@ -2020,6 +2055,8 @@ window.PAGE_I18N = {
     "layer.complementary.desc": "Зелені — сила/DREAM однієї ↔ виклик іншої",
     "layer.explicitAsk.title": "Сигнал · явний запит МСС",
     "layer.explicitAsk.desc": "Рожеві — у стратегії прямо згадано кооперацію",
+    "layer.plich.title": "Пліч-о-Пліч: тил↔форпост",
+    "layer.plich.desc": "Бурштинові — партнерства тилових і прифронтових громад (з новин проєкту)",
     "layer.corpus.title": "Громади зі стратегіями",
     "layer.corpus.desc": "Підсвітити громади, чиї тексти вже в аналізі",
     "layer.twinning.title": "Міста-побратими ЄС",
@@ -2046,6 +2083,7 @@ window.PAGE_I18N = {
     "stat.operational": "Гіпотез «зручний сусід»",
     "stat.complementary": "Гіпотез «доповнення»",
     "stat.explicitAsk": "Явних запитів МСС",
+    "stat.plich": "Пар «Пліч-о-Пліч»",
     "stat.twinning": "З побратимами ЄС",
     "stat.twinningCountries": "Країн-побратимів (Граф)",
     "stat.donors": "Донорських програм (Граф)",
@@ -2082,6 +2120,8 @@ window.PAGE_I18N = {
     "explain.twinning": "Місто-побратим за кордоном (SKEW / стратегія)",
     "explain.donor": "Учасниця тієї ж донорської програми",
     "explain.pinAgreement": "Учасниця багатосторонньої угоди МСС",
+    "explain.plich": "Пліч-о-Пліч: партнерство тил↔форпост",
+    "explain.plichMany": "Пліч-о-Пліч: партнерство тил↔форпост ({n} статей)",
     "explain.regNo": "№{n}",
     "explain.sharedThemes": "Спільні теми стратегій",
     "explain.mssPackage": "Кандидат договору МСС (тема · форма)",
@@ -2119,6 +2159,8 @@ window.PAGE_I18N = {
     "layer.complementary.desc": "Green — one side’s strength/DREAM ↔ the other’s challenge",
     "layer.explicitAsk.title": "Signal · explicit IMC ask",
     "layer.explicitAsk.desc": "Pink — strategy text names inter-municipal cooperation",
+    "layer.plich.title": "Пліч-о-Пліч: rear↔forpost",
+    "layer.plich.desc": "Amber — partnerships between rear and frontline hromadas (from project news)",
     "layer.corpus.title": "Hromadas with strategies",
     "layer.corpus.desc": "Highlight hromadas whose texts are already in the analysis",
     "layer.twinning.title": "EU twin cities",
@@ -2145,6 +2187,7 @@ window.PAGE_I18N = {
     "stat.operational": "“Convenient neighbour” hypotheses",
     "stat.complementary": "“Complement” hypotheses",
     "stat.explicitAsk": "Explicit IMC asks",
+    "stat.plich": "Пліч-о-Пліч pairs",
     "stat.twinning": "With EU twin cities",
     "stat.twinningCountries": "Twin countries (Graph)",
     "stat.donors": "Donor programs (Graph)",
@@ -2181,6 +2224,8 @@ window.PAGE_I18N = {
     "explain.twinning": "Twin city abroad (SKEW / strategy)",
     "explain.donor": "Participant in the same donor program",
     "explain.pinAgreement": "Party to a multi-party IMC agreement",
+    "explain.plich": "Пліч-о-Пліч: rear↔forpost partnership",
+    "explain.plichMany": "Пліч-о-Пліч: rear↔forpost partnership ({n} articles)",
     "explain.regNo": "No. {n}",
     "explain.sharedThemes": "Shared strategy themes",
     "explain.mssPackage": "IMC agreement candidate (theme · form)",
