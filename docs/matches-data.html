@@ -268,6 +268,8 @@ window.PAGE_I18N = {
     "ask.kicker": "Сигнал · явний запит",
     "ask.h2": "Явний запит МСС у тексті стратегії",
     "ask.lede": "У документі прямо згадано міжмуніципальну кооперацію / МСС — сильний сигнал для кандидата договору. Не реєстрова угода. Джерело: <code>mss-intents.json</code>.",
+    "ask.section.pairs": "Пари з найвищим score",
+    "ask.section.samples": "Приклади цитат (одна громада)",
     "th.compScore": "Comp.",
     "th.why": "Чому",
     "th.theme": "Тема",
@@ -321,6 +323,8 @@ window.PAGE_I18N = {
     "ask.kicker": "Signal · explicit ask",
     "ask.h2": "Explicit IMC language in the strategy text",
     "ask.lede": "The document directly mentions inter-municipal cooperation / IMC — a strong signal for an agreement candidate. Not a registry agreement. Source: <code>mss-intents.json</code>.",
+    "ask.section.pairs": "Highest-score pairs",
+    "ask.section.samples": "Example quotes (single hromada)",
     "th.compScore": "Comp.",
     "th.why": "Why",
     "th.theme": "Theme",
@@ -471,6 +475,11 @@ window.PAGE_I18N = {
         + "</tr>";
     }
 
+    function maybeEllipsis(s, cap) {
+      s = String(s == null ? "" : s);
+      return s.length === cap ? s + "…" : s;
+    }
+
     function askRow(p) {
       if (p.a_short && p.b_short) {
         return "<tr data-form=\"" + esc(formIdOf(p)) + "\">"
@@ -478,15 +487,21 @@ window.PAGE_I18N = {
           + "<td style=\"font-weight:600\">" + esc(packageLabel(p)) + "</td>"
           + "<td style=\"font-size:0.82rem\">" + esc(p.suggested_form || "—") + "</td>"
           + "<td style=\"font-size:0.82rem;color:var(--site-muted)\">"
-          + esc((p.reasons && p.reasons[0]) || "—") + "</td>"
+          + esc(maybeEllipsis((p.reasons && p.reasons[0]) || "—", 149)) + "</td>"
           + "</tr>";
       }
       return "<tr>"
         + "<td><span class=\"pair\">" + esc(p.short) + "</span></td>"
         + "<td>" + esc(p.theme || "—") + "</td>"
         + "<td>—</td>"
-        + "<td style=\"font-size:0.82rem;color:var(--site-muted)\">" + esc(p.quote || "—") + "</td>"
+        + "<td style=\"font-size:0.82rem;color:var(--site-muted)\">" + esc(maybeEllipsis(p.quote || "—", 180)) + "</td>"
         + "</tr>";
+    }
+
+    function askSectionRow(labelKey) {
+      return "<tr><td colspan=\"4\" style=\"border-bottom:none;padding-top:1.1rem;"
+        + "font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--site-faint);font-weight:700\">"
+        + esc(t(labelKey)) + "</td></tr>";
     }
 
     var FORM_OPTIONS = [
@@ -546,11 +561,16 @@ window.PAGE_I18N = {
       if (!body) return;
       var edges = (askData && askData.top) || [];
       var samples = (askData && askData.samples) || [];
-      var rows = edges.slice(0, 15).map(askRow);
-      if (!rows.length && samples.length) {
-        rows = samples.slice(0, 12).map(askRow);
+      var parts = [];
+      if (edges.length) {
+        parts.push(askSectionRow("ask.section.pairs"));
+        parts = parts.concat(edges.slice(0, 15).map(askRow));
       }
-      body.innerHTML = rows.join("") || "<tr><td colspan=\"4\">" + t("empty.ask") + "</td></tr>";
+      if (samples.length) {
+        parts.push(askSectionRow("ask.section.samples"));
+        parts = parts.concat(samples.slice(0, 15).map(askRow));
+      }
+      body.innerHTML = parts.join("") || "<tr><td colspan=\"4\">" + t("empty.ask") + "</td></tr>";
     }
 
     function renderAll() {
