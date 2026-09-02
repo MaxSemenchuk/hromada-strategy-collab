@@ -21,6 +21,8 @@ Overlay policy (2026-07-24 / layers 2026-07-29 / basins 2026-08-03):
     complementary — resource/DREAM ↔ Challenges (default OFF)
     explicit_ask  — МСС language in strategy text (default OFF)
     twinning      — UA–EU sister cities from SKEW / strategy (node highlight, default OFF)
+    plich_o_plich — domestic rear↔forpost pairs, text-mined from news (default OFF;
+                    bilateral_confirmed edges only — see docs/plich-o-plich.md)
     basins        — HydroBASINS lev06 underlay (default OFF; not in score)
     universe      — all release hromadas with KSE lat/lon (metadata underlay)
 """
@@ -53,6 +55,7 @@ EDGES = ROOT / "data/releases/matching-edges.json"
 COMPLEMENTARY = ROOT / "data/releases/matching-edges.complementary.json"
 EXPLICIT_ASK = ROOT / "data/releases/matching-edges.explicit-ask.json"
 TWINNING = ROOT / "data/releases/twinning-partners.json"
+PLICH_O_PLICH = ROOT / "data/releases/plich-o-plich.json"
 HROMADAS = ROOT / "data/releases/hromadas.json"
 OBLASTS = ROOT / "docs/geo/ukraine-oblasts.geojson"
 OUTLINE = ROOT / "docs/geo/ukraine-outline.geojson"
@@ -659,11 +662,39 @@ def build_payload() -> dict:
             limit=TOP_EXPLICIT_ASK,
         )
 
+    # Domestic Пліч-о-Пліч rear↔forpost pairs, text-mined from project news
+    # (see docs/plich-o-plich.md). Only bilateral_confirmed edges — the
+    # source release also carries co-mention-only edges from multi-hromada
+    # roundup articles, which are a clique-of-everyone-mentioned, not a
+    # claimed pairwise partnership, so those are deliberately left out here.
+    plich_o_plich_edges: list[dict] = []
+    if PLICH_O_PLICH.exists():
+        plich_payload = json.loads(PLICH_O_PLICH.read_text(encoding="utf-8"))
+        for e in plich_payload.get("edges") or []:
+            if not e.get("bilateral_confirmed"):
+                continue
+            ca, cb = e.get("a_katottg"), e.get("b_katottg")
+            if not ca or not cb or ca == cb:
+                continue
+            plich_o_plich_edges.append(
+                {
+                    "a": ca,
+                    "b": cb,
+                    "kind": "plich_o_plich",
+                    "score": e.get("article_count"),
+                    "article_count": e.get("article_count"),
+                    "first_seen": e.get("first_seen"),
+                    "last_seen": e.get("last_seen"),
+                    "source_url": (e.get("source_urls") or [None])[0],
+                }
+            )
+
     for e in (
         thematic_edges
         + operational_edges
         + complementary_edges
         + explicit_ask_edges
+        + plich_o_plich_edges
     ):
         for code in (e["a"], e["b"]):
             if code not in pin_nodes:
@@ -906,6 +937,7 @@ def build_payload() -> dict:
             "operational_edges": len(operational_edges),
             "complementary_edges": len(complementary_edges),
             "explicit_ask_edges": len(explicit_ask_edges),
+            "plich_o_plich_edges": len(plich_o_plich_edges),
             # legacy alias: thematic only (combined-score hyp layer removed)
             "hypothesis_edges": len(thematic_edges),
             "nodes_with_geo": with_geo,
@@ -941,6 +973,12 @@ def build_payload() -> dict:
                 if twinning_by_code
                 else None
             ),
+            "plich_o_plich_source": (
+                "data/releases/plich-o-plich.json (news text-mining; "
+                "bilateral_confirmed edges only)"
+                if plich_o_plich_edges
+                else None
+            ),
             "top_thematic": TOP_THEMATIC,
             "top_operational": TOP_OPERATIONAL,
             "top_complementary": TOP_COMPLEMENTARY,
@@ -949,6 +987,7 @@ def build_payload() -> dict:
                 "thematic=goals_cosine track; operational=geo neighbours; "
                 "complementary=resource/DREAM↔Challenges; explicit_ask=МСС language; "
                 "twinning=UA–EU sister cities (node highlight); "
+                "plich_o_plich=domestic rear↔forpost pairs, bilateral_confirmed only; "
                 "basins=HydroBASINS lev06 underlay (not in score); "
                 "pin theme filter=mss_suggest on registry title/form; "
                 "no combined-score hyp layer; "
@@ -967,6 +1006,7 @@ def build_payload() -> dict:
             + operational_edges
             + complementary_edges
             + explicit_ask_edges
+            + plich_o_plich_edges
             + twinning_edges
             + donor_edges
         ),

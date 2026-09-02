@@ -157,6 +157,19 @@ and self-describing, not a growth history.
   Aliases: `data/sources/twinning-name-aliases.json`. Does **not** fold into
   matching `score`. Preview: `docs/assets/twinning-preview.json`.
 
+- **`plich-o-plich.json`** — **domestic rear↔forpost hromada partnerships**
+  under the national «Пліч-о-Пліч» project. The site's own pair graphics are
+  vectorized SVG (text converted to outline paths, not scrapable) and show
+  only one headline pair per oblast, so this is instead text-mined from the
+  `/novyny/` news feed (~520 articles): "Adjective + громада" mentions
+  (any grammatical case) resolved against `hromadas.json` by name stem,
+  co-occurrence within one article = one edge. Lower-bound / best-effort, not
+  an authoritative registry — see `source.notes` in the file and
+  [docs/plich-o-plich.md](../../docs/plich-o-plich.md). Regenerate with
+  `yarn plich-o-plich` (cache `data/cache/plich-o-plich/`). Feeds an (off by
+  default) layer on `docs/mss-pin-matching-graph.html` — `bilateral_confirmed`
+  edges only, via `build_pin_matching_graph.py` (`yarn graph-pin-matching`).
+
 ## Coverage, read before using
 
 - Live export covers **1,469** metadata rows; **77** have strategy extractions
