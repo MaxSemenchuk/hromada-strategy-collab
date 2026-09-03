@@ -149,6 +149,22 @@
       border-bottom: 1px solid var(--site-border);
     }
   }
+  .theme-subfilter {
+    margin: -0.1rem 0 0.35rem 1.5rem;
+    padding-left: 0.7rem;
+    border-left: 2px solid var(--site-border);
+  }
+  .theme-subfilter summary {
+    cursor: pointer;
+    font-size: 0.76rem;
+    font-weight: 650;
+    color: var(--site-muted);
+    list-style: none;
+    padding: 0.3rem 0;
+  }
+  .theme-subfilter summary::-webkit-details-marker { display: none; }
+  .theme-subfilter summary::before { content: '▸ '; }
+  .theme-subfilter[open] summary::before { content: '▾ '; }
   .layers[hidden] { display: none; }
   .layers label[hidden] { display: none; }
   .layers {
@@ -708,6 +724,17 @@
           <span class="layer-desc" data-i18n="layer.pin.desc">Бірюзові лінії — вже укладені договори між громадами</span>
         </span>
       </label>
+      <details class="theme-subfilter">
+        <summary data-i18n="themes.label">Теми угод МСС</summary>
+        <div class="theme-filters" id="theme-filters" role="group" aria-label="Фільтр тем угод"></div>
+        <div class="theme-filter-actions">
+          <button type="button" id="themes-all" data-i18n="themes.all">Усі</button>
+          <button type="button" id="themes-none" data-i18n="themes.none">Жодної</button>
+          <button type="button" id="themes-tagged" data-i18n="themes.tagged">Лише з темою</button>
+        </div>
+        <p class="theme-filter-empty" id="theme-filter-empty" hidden data-i18n="themes.emptyPick">Оберіть хоча б одну тему — інакше угоди на мапі сховані.</p>
+        <p class="theme-filter-hint" data-i18n="themes.hint">Фільтрує лише бірюзові лінії реєстру — інші сигнали (гіпотези, побратими, Пліч-о-Пліч тощо) від цього фільтра не залежать. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).</p>
+      </details>
       <label class="layer">
         <input type="checkbox" id="layer-twinning"/>
         <span class="sw twinning" aria-hidden="true"></span>
@@ -787,15 +814,6 @@
         </span>
       </label>
     </div>
-    <p class="section-label" data-i18n="themes.label">Теми угод МСС</p>
-    <div class="theme-filters" id="theme-filters" role="group" aria-label="Фільтр тем угод"></div>
-    <div class="theme-filter-actions">
-      <button type="button" id="themes-all" data-i18n="themes.all">Усі</button>
-      <button type="button" id="themes-none" data-i18n="themes.none">Жодної</button>
-      <button type="button" id="themes-tagged" data-i18n="themes.tagged">Лише з темою</button>
-    </div>
-    <p class="theme-filter-empty" id="theme-filter-empty" hidden data-i18n="themes.emptyPick">Оберіть хоча б одну тему — інакше угоди на мапі сховані.</p>
-    <p class="theme-filter-hint" data-i18n="themes.hint">Фільтрує лише бірюзові лінії реєстру — інші сигнали (гіпотези, побратими, Пліч-о-Пліч тощо) від цього фільтра не залежать. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).</p>
     <details>
       <summary class="section-label" data-i18n="stats.label">Цифри</summary>
       <div class="stats">
