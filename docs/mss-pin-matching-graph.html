@@ -105,6 +105,50 @@
     font-weight: 700;
     margin: 0 0 0.55rem;
   }
+  summary.section-label { cursor: pointer; }
+  summary.section-label::-webkit-details-marker { display: none; }
+  summary.section-label::before { content: '▸ '; }
+  details[open] > summary.section-label::before { content: '▾ '; }
+  .search-field {
+    position: relative;
+    margin: 0 0 1rem;
+  }
+  .search-field input {
+    width: 100%;
+    font: inherit;
+    font-size: 0.85rem;
+    color: var(--site-ink);
+    background: var(--site-bg);
+    border: 1px solid var(--site-border);
+    border-radius: 10px;
+    padding: 0.55rem 0.7rem;
+  }
+  .search-field input:focus {
+    outline: 2px solid var(--site-accent);
+    outline-offset: 1px;
+  }
+  .search-field .search-hint {
+    font-size: 0.72rem;
+    color: var(--site-faint);
+    margin: 0.35rem 0 0;
+  }
+  /* Mobile: the mode toggle + search stay reachable at the top of the
+     (long) sidebar without scrolling past every filter first — see the
+     .wrap media query below for why the map itself comes first in DOM. */
+  @media (max-width: 900px) {
+    .sticky-controls {
+      position: sticky;
+      top: var(--site-nav-h, 56px);
+      z-index: 20;
+      background: var(--site-surface);
+      padding-top: 0.6rem;
+      margin-left: -1.2rem;
+      margin-right: -1.2rem;
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+      border-bottom: 1px solid var(--site-border);
+    }
+  }
   .layers[hidden] { display: none; }
   .layers label[hidden] { display: none; }
   .layers {
@@ -605,6 +649,7 @@
     aside {
       order: 2;
       max-height: none;
+      overflow-y: visible;
       border-right: 0;
       border-bottom: 1px solid var(--site-border);
     }
@@ -617,9 +662,16 @@
     <span class="eyebrow" data-i18n="sidebar.eyebrow">Матчинг · мапа</span>
     <h1 data-i18n="sidebar.h1">Міжмуніципальна співпраця на мапі</h1>
     <p class="lede" data-i18n="sidebar.lede">Зареєстровані угоди МСС поруч із кандидатами договорів (тема · форма). Оверлеї — сигнали пошуку, не типи МСС. Клац по громаді — картка з деталями.</p>
-    <div class="toggle" role="tablist" data-i18n-aria="mode.aria" aria-label="Режим перегляду">
-      <button type="button" id="btn-map" class="active" role="tab" aria-selected="true" data-i18n="mode.map">Мапа</button>
-      <button type="button" id="btn-graph" role="tab" aria-selected="false" data-i18n="mode.graph">Граф</button>
+    <div class="sticky-controls">
+      <div class="toggle" role="tablist" data-i18n-aria="mode.aria" aria-label="Режим перегляду">
+        <button type="button" id="btn-map" class="active" role="tab" aria-selected="true" data-i18n="mode.map">Мапа</button>
+        <button type="button" id="btn-graph" role="tab" aria-selected="false" data-i18n="mode.graph">Граф</button>
+      </div>
+      <div class="search-field">
+        <input type="text" id="hromada-search" list="hromada-search-list" autocomplete="off"
+          placeholder="Знайти громаду за назвою…"/>
+        <datalist id="hromada-search-list"></datalist>
+      </div>
     </div>
     <p class="section-label" id="graph-layout-label" data-i18n="graphLayout.label" hidden>Розкладка графа</p>
     <div class="layers" id="graph-layout" role="group" aria-label="Розкладка графа" style="margin-bottom:0.9rem" hidden>
@@ -640,7 +692,7 @@
       <div class="detail-body" id="detail-body"></div>
     </section>
     <p class="section-label" data-i18n="layers.label">Сигнали пошуку</p>
-    <div class="layers" role="group" data-i18n-aria="layers.aria" aria-label="Шари мапи">
+    <div class="layers" id="layer-universe-box" role="group" data-i18n-aria="layers.aria" aria-label="Шари мапи">
       <label id="layer-universe-row">
         <input type="checkbox" id="layer-universe" checked/>
         <span class="sw universe" aria-hidden="true"></span>
@@ -649,6 +701,12 @@
           <span class="layer-desc" data-i18n="layer.universe.desc">Сірі ноди — материкові громади з координатами</span>
         </span>
       </label>
+    </div>
+    <!-- Split the flat 11-checkbox list into "is this a real, already-signed
+         tie, or a search hypothesis, or just backdrop context" — the single
+         distinction people actually reason with when scanning the legend. -->
+    <p class="section-label" data-i18n="layers.group.confirmed">Підтверджені зв'язки</p>
+    <div class="layers">
       <label>
         <input type="checkbox" id="layer-pin" checked/>
         <span class="sw pin" aria-hidden="true"></span>
@@ -657,6 +715,33 @@
           <span class="layer-desc" data-i18n="layer.pin.desc">Бірюзові лінії — вже укладені договори між громадами</span>
         </span>
       </label>
+      <label class="layer">
+        <input type="checkbox" id="layer-twinning"/>
+        <span class="sw twinning" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="layer.twinning.title">Міста-побратими ЄС</span>
+          <span class="layer-desc" data-i18n="layer.twinning.desc">Фіолетові — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли</span>
+        </span>
+      </label>
+      <label>
+        <input type="checkbox" id="layer-plich"/>
+        <span class="sw plich" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="layer.plich.title">Пліч-о-Пліч: тил↔форпост</span>
+          <span class="layer-desc" data-i18n="layer.plich.desc">Бурштинові — партнерства тилових і прифронтових громад (з новин проєкту)</span>
+        </span>
+      </label>
+      <label class="layer" id="layer-donors-row">
+        <input type="checkbox" id="layer-donors"/>
+        <span class="sw donor" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="layer.donors.title">Донорські програми</span>
+          <span class="layer-desc" data-i18n="layer.donors.desc">Червоні — у «Графі» донорські програми показані як окремі вузли</span>
+        </span>
+      </label>
+    </div>
+    <p class="section-label" data-i18n="layers.group.hypotheses">Гіпотези пошуку</p>
+    <div class="layers">
       <label>
         <input type="checkbox" id="layer-thematic" checked/>
         <span class="sw hyp" aria-hidden="true"></span>
@@ -689,36 +774,15 @@
           <span class="layer-desc" data-i18n="layer.explicitAsk.desc">Рожеві — у стратегії прямо згадано кооперацію</span>
         </span>
       </label>
-      <label>
-        <input type="checkbox" id="layer-plich"/>
-        <span class="sw plich" aria-hidden="true"></span>
-        <span class="layer-copy">
-          <span class="layer-title" data-i18n="layer.plich.title">Пліч-о-Пліч: тил↔форпост</span>
-          <span class="layer-desc" data-i18n="layer.plich.desc">Бурштинові — партнерства тилових і прифронтових громад (з новин проєкту)</span>
-        </span>
-      </label>
+    </div>
+    <p class="section-label" data-i18n="layers.group.backdrop">Підкладки</p>
+    <div class="layers">
       <label>
         <input type="checkbox" id="layer-corpus"/>
         <span class="sw corpus" aria-hidden="true"></span>
         <span class="layer-copy">
           <span class="layer-title" data-i18n="layer.corpus.title">Громади зі стратегіями</span>
           <span class="layer-desc" data-i18n="layer.corpus.desc">Підсвітити громади, чиї тексти вже в аналізі</span>
-        </span>
-      </label>
-      <label class="layer">
-        <input type="checkbox" id="layer-twinning"/>
-        <span class="sw twinning" aria-hidden="true"></span>
-        <span class="layer-copy">
-          <span class="layer-title" data-i18n="layer.twinning.title">Міста-побратими ЄС</span>
-          <span class="layer-desc" data-i18n="layer.twinning.desc">Фіолетові — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли</span>
-        </span>
-      </label>
-      <label class="layer" id="layer-donors-row">
-        <input type="checkbox" id="layer-donors"/>
-        <span class="sw donor" aria-hidden="true"></span>
-        <span class="layer-copy">
-          <span class="layer-title" data-i18n="layer.donors.title">Донорські програми</span>
-          <span class="layer-desc" data-i18n="layer.donors.desc">Червоні — у «Графі» донорські програми показані як окремі вузли</span>
         </span>
       </label>
       <label class="layer" id="layer-basins-row">
@@ -739,24 +803,26 @@
     </div>
     <p class="theme-filter-empty" id="theme-filter-empty" hidden data-i18n="themes.emptyPick">Оберіть хоча б одну тему — інакше угоди на мапі сховані.</p>
     <p class="theme-filter-hint" data-i18n="themes.hint">Фільтрує бірюзові лінії реєстру і ховає громади без обраної теми. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).</p>
-    <p class="section-label" data-i18n="stats.label">Цифри</p>
-    <div class="stats">
-      <div class="stat"><span data-i18n="stat.universe">Громад на мапі</span><b id="s-universe">—</b></div>
-      <div class="stat"><span data-i18n="stat.portal">З посиланням на портал</span><b id="s-portal">—</b></div>
-      <div class="stat"><span data-i18n="stat.nodes">Громад з угодами МСС</span><b id="s-nodes">—</b></div>
-      <div class="stat"><span data-i18n="stat.pin">Зареєстрованих угод</span><b id="s-pin">—</b></div>
-      <div class="stat"><span data-i18n="stat.geo">Угод із координатами</span><b id="s-geo">—</b></div>
-      <div class="stat"><span data-i18n="stat.corpus">Стратегій у корпусі</span><b id="s-corpus">—</b></div>
-      <div class="stat"><span data-i18n="stat.plich">Пар «Пліч-о-Пліч»</span><b id="s-plich">—</b></div>
-      <div class="stat"><span data-i18n="stat.thematic">Гіпотез «схожа стратегія»</span><b id="s-thematic">—</b></div>
-      <div class="stat"><span data-i18n="stat.operational">Гіпотез «зручний сусід»</span><b id="s-operational">—</b></div>
-      <div class="stat"><span data-i18n="stat.complementary">Гіпотез «доповнення»</span><b id="s-complementary">—</b></div>
-      <div class="stat"><span data-i18n="stat.explicitAsk">Явних запитів МСС</span><b id="s-explicit-ask">—</b></div>
-      <div class="stat"><span data-i18n="stat.twinning">З побратимами ЄС</span><b id="s-twinning">—</b></div>
-      <div class="stat"><span data-i18n="stat.twinningCountries">Країн-побратимів (Граф)</span><b id="s-twinning-countries">—</b></div>
-      <div class="stat"><span data-i18n="stat.donors">Донорських програм (Граф)</span><b id="s-donors">—</b></div>
-      <div class="stat"><span data-i18n="stat.basins">Водозборів (підкладка)</span><b id="s-basins">—</b></div>
-    </div>
+    <details>
+      <summary class="section-label" data-i18n="stats.label">Цифри</summary>
+      <div class="stats">
+        <div class="stat"><span data-i18n="stat.universe">Громад на мапі</span><b id="s-universe">—</b></div>
+        <div class="stat"><span data-i18n="stat.portal">З посиланням на портал</span><b id="s-portal">—</b></div>
+        <div class="stat"><span data-i18n="stat.nodes">Громад з угодами МСС</span><b id="s-nodes">—</b></div>
+        <div class="stat"><span data-i18n="stat.pin">Зареєстрованих угод</span><b id="s-pin">—</b></div>
+        <div class="stat"><span data-i18n="stat.geo">Угод із координатами</span><b id="s-geo">—</b></div>
+        <div class="stat"><span data-i18n="stat.corpus">Стратегій у корпусі</span><b id="s-corpus">—</b></div>
+        <div class="stat"><span data-i18n="stat.plich">Пар «Пліч-о-Пліч»</span><b id="s-plich">—</b></div>
+        <div class="stat"><span data-i18n="stat.thematic">Гіпотез «схожа стратегія»</span><b id="s-thematic">—</b></div>
+        <div class="stat"><span data-i18n="stat.operational">Гіпотез «зручний сусід»</span><b id="s-operational">—</b></div>
+        <div class="stat"><span data-i18n="stat.complementary">Гіпотез «доповнення»</span><b id="s-complementary">—</b></div>
+        <div class="stat"><span data-i18n="stat.explicitAsk">Явних запитів МСС</span><b id="s-explicit-ask">—</b></div>
+        <div class="stat"><span data-i18n="stat.twinning">З побратимами ЄС</span><b id="s-twinning">—</b></div>
+        <div class="stat"><span data-i18n="stat.twinningCountries">Країн-побратимів (Граф)</span><b id="s-twinning-countries">—</b></div>
+        <div class="stat"><span data-i18n="stat.donors">Донорських програм (Граф)</span><b id="s-donors">—</b></div>
+        <div class="stat"><span data-i18n="stat.basins">Водозборів (підкладка)</span><b id="s-basins">—</b></div>
+      </div>
+    </details>
     <p class="hint" id="hint">Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по громаді відкриває картку з деталями.</p>
   </aside>
   <main>
@@ -916,6 +982,8 @@ const hint = document.getElementById('hint');
 const detailEl = document.getElementById('detail');
 const detailTitle = document.getElementById('detail-title');
 const detailBody = document.getElementById('detail-body');
+const searchInput = document.getElementById('hromada-search');
+const searchList = document.getElementById('hromada-search-list');
 
 let width = 0, height = 0, dpr = 1;
 let camX = 0, camY = 0, scale = 0.55;
@@ -1674,6 +1742,7 @@ function refreshHint() {
   hint.textContent = (window.HromadaI18n && window.HromadaI18n.t)
     ? window.HromadaI18n.t(key)
     : fallback;
+  searchInput.placeholder = t('search.placeholder');
   if (selectedId) renderDetail(resolveNode(selectedId));
 }
 
@@ -1710,6 +1779,7 @@ function setMode(next) {
   // (the MSS network), never DATA.universe, so this toggle has zero
   // effect there.
   document.getElementById('layer-universe-row').hidden = mode !== 'map';
+  document.getElementById('layer-universe-box').hidden = mode !== 'map';
   if (mode === 'map') {
     mapEl.classList.remove('hidden');
     canvas.classList.remove('visible');
@@ -1734,6 +1804,66 @@ if (window.HromadaI18n && window.HromadaI18n.onChange) {
     if (mode === 'map' && typeof rebuildMapLayers === 'function') rebuildMapLayers();
   });
 }
+
+// ——— Hromada name search ———
+// Indexes DATA.universe (all 1424 hromadas, not just the ~957 with a
+// network signal) so "find my own hromada" works even for one with no
+// registered agreement or hypothesis yet.
+const searchIndex = new Map(); // display label -> hromada id
+(function buildSearchIndex() {
+  const seen = new Set();
+  const frag = document.createDocumentFragment();
+  for (const n of universe) {
+    if (!n.id || seen.has(n.id)) continue;
+    seen.add(n.id);
+    const name = n.full_name || n.label || n.id;
+    const label = n.oblast ? `${name} — ${n.oblast}` : name;
+    searchIndex.set(label, n.id);
+    const opt = document.createElement('option');
+    opt.value = label;
+    frag.appendChild(opt);
+  }
+  searchList.appendChild(frag);
+})();
+
+function goToHromadaId(id) {
+  const n = resolveNode(id);
+  if (!n) return;
+  // Only hromadas with a network signal got a force-layout position
+  // (see `nodes` above) — Граф has nothing to jump to for the rest, so
+  // fall back to Мапа, which always has coordinates for all 1424.
+  const hasGraphPos = n.x != null && n.y != null;
+  if (mode === 'graph' && !hasGraphPos) setMode('map');
+  selectHromada(id);
+  if (mode === 'map' && n.lat != null) {
+    map.setView([n.lat, n.lon], Math.max(map.getZoom(), 10));
+  } else if (mode === 'graph' && hasGraphPos) {
+    camX = n.x; camY = n.y; scale = Math.max(scale, 1.6);
+  }
+}
+
+function submitSearch() {
+  const raw = searchInput.value.trim();
+  if (!raw) return;
+  if (searchIndex.has(raw)) {
+    goToHromadaId(searchIndex.get(raw));
+    searchInput.blur();
+    return;
+  }
+  const lower = raw.toLowerCase();
+  for (const [label, id] of searchIndex) {
+    if (label.toLowerCase().includes(lower)) {
+      goToHromadaId(id);
+      searchInput.value = label;
+      searchInput.blur();
+      return;
+    }
+  }
+}
+searchInput.addEventListener('change', submitSearch);
+searchInput.addEventListener('keydown', (ev) => {
+  if (ev.key === 'Enter') { ev.preventDefault(); submitSearch(); }
+});
 
 // ——— Force graph (canvas) ———
 function resizeCanvas() {
@@ -2101,11 +2231,15 @@ window.PAGE_I18N = {
     "mode.aria": "Режим перегляду",
     "mode.map": "Мапа",
     "mode.graph": "Граф",
+    "search.placeholder": "Знайти громаду за назвою…",
     "graphLayout.label": "Розкладка графа",
     "cluster.title": "Групувати за областями",
     "cluster.desc": "Лише в «Графі» — тримає громади ближче до вузла їхньої області",
     "layers.label": "Сигнали пошуку",
     "layers.aria": "Сигнали пошуку на мапі",
+    "layers.group.confirmed": "Підтверджені зв'язки",
+    "layers.group.hypotheses": "Гіпотези пошуку",
+    "layers.group.backdrop": "Підкладки",
     "layer.universe.title": "Усі громади",
     "layer.universe.desc": "Сірі ноди — материкові громади з координатами",
     "layer.pin.title": "Зареєстровані угоди МСС",
@@ -2162,7 +2296,14 @@ window.PAGE_I18N = {
     "popup.degree": "звʼязків у реєстрі МСС",
     "popup.degreeShort": "звʼязків у реєстрі",
     "popup.noLink": "Немає посилання на портал або стратегію",
+    "popup.twinning": "побратимів",
+    "popup.c4c": "Профіль на Cities4Cities",
     "detail.close": "Закрити",
+    "detail.twinning": "Міста-побратими",
+    "detail.noTwinning": "Немає міст-побратимів",
+    "detail.twinningSource": "Джерело",
+    "detail.since": "з",
+    "detail.strategyMention": "згадка в стратегії",
     "detail.resources": "Ресурси та DREAM",
     "detail.neighbors": "Звʼязки на мапі",
     "detail.loading": "Завантаження ресурсів…",
@@ -2205,11 +2346,15 @@ window.PAGE_I18N = {
     "mode.aria": "View mode",
     "mode.map": "Map",
     "mode.graph": "Graph",
+    "search.placeholder": "Find a hromada by name…",
     "graphLayout.label": "Graph layout",
     "cluster.title": "Group by oblast",
     "cluster.desc": "Graph mode only — keeps hromadas near their oblast's anchor",
     "layers.label": "Discovery signals",
     "layers.aria": "Discovery signals on the map",
+    "layers.group.confirmed": "Confirmed links",
+    "layers.group.hypotheses": "Search hypotheses",
+    "layers.group.backdrop": "Underlays",
     "layer.universe.title": "All hromadas",
     "layer.universe.desc": "Grey nodes — mainland hromadas with coordinates",
     "layer.pin.title": "Registered IMC agreements",
@@ -2266,7 +2411,14 @@ window.PAGE_I18N = {
     "popup.degree": "links in the IMC registry",
     "popup.degreeShort": "registry links",
     "popup.noLink": "No portal or strategy link",
+    "popup.twinning": "twin cities",
+    "popup.c4c": "Cities4Cities profile",
     "detail.close": "Close",
+    "detail.twinning": "Sister cities",
+    "detail.noTwinning": "No sister cities",
+    "detail.twinningSource": "Source",
+    "detail.since": "since",
+    "detail.strategyMention": "mentioned in strategy",
     "detail.resources": "Resources & DREAM",
     "detail.neighbors": "Links on the map",
     "detail.loading": "Loading resources…",
