@@ -1655,9 +1655,12 @@ function rebuildMapLayers() {
 
   // Multi-party agreement hubs: small non-interactive markers where the
   // pin_agreement spokes above converge (synthetic centroid position, not a
-  // real place) — mirrors the Граф view's hub-node treatment.
+  // real place) — mirrors the Граф view's hub-node treatment. Same theme
+  // check as the spokes themselves, so the hub doesn't outlive its own
+  // (now theme-filtered-out) edges as an orphaned, unclickable blob.
   for (const n of nodes) {
     if (n.kind !== 'agreement' || n.lat == null) continue;
+    if (!pinThemeOk({ kind: 'pin_agreement', theme_ids: n.theme_id ? [n.theme_id] : undefined })) continue;
     const marker = L.circleMarker([n.lat, n.lon], {
       radius: 3 + Math.min(n.party_count || 0, 20) * 0.25,
       color: '#199e70',
