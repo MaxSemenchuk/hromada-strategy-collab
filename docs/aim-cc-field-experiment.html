@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AIM-CC 2026 · польовий експеримент</title>
+  <meta name="description" content="Чи підвищує персональна рекомендація партнера залученість громад — попередня реєстрація польового експерименту для AIM-CC 2026."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/site.css"/>
+  <style>
+    body {
+      background:
+        radial-gradient(820px 440px at 8% -12%, rgba(14, 116, 144, 0.10), transparent 55%),
+        radial-gradient(640px 380px at 100% 0%, rgba(37, 99, 235, 0.07), transparent 50%),
+        var(--site-bg);
+      color: var(--site-ink);
+      font-family: var(--site-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { max-width: 860px; margin: 0 auto; padding: 2.4rem 1.5rem 3rem; }
+    .eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--site-accent); font-weight: 700; display: block; margin-bottom: 0.7rem;
+    }
+    h1 {
+      font-family: var(--site-font); font-weight: 750; letter-spacing: -0.02em;
+      font-size: clamp(1.55rem, 3.4vw, 2.15rem); line-height: 1.22; margin: 0 0 0.75rem;
+      max-width: 26ch; text-wrap: balance;
+    }
+    .lede { color: var(--site-muted); max-width: 66ch; margin: 0 0 1rem; }
+    .meta-row {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.1rem; margin: 0 0 1.8rem;
+      font-size: 0.86rem; color: var(--site-muted);
+    }
+    .meta-row strong { color: var(--site-ink); }
+    .status-pill {
+      display: inline-block; padding: 0.2rem 0.65rem; border-radius: 999px;
+      background: var(--site-accent-soft); color: var(--site-accent);
+      font-weight: 700; font-size: 0.78rem;
+    }
+    h2 {
+      font-family: var(--site-font); font-weight: 700; letter-spacing: -0.01em;
+      font-size: 1.2rem; margin: 2.1rem 0 0.7rem;
+    }
+    p { margin: 0 0 0.9rem; }
+    .card {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 14px; box-shadow: var(--site-shadow); padding: 1.1rem 1.3rem;
+      margin: 0 0 1.1rem;
+    }
+    .arms {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin: 0 0 1.3rem;
+    }
+    @media (max-width: 680px) { .arms { grid-template-columns: 1fr; } }
+    .arm-card {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 14px; padding: 1rem 1.15rem; box-shadow: var(--site-shadow);
+    }
+    .arm-card .kicker {
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--site-accent); font-weight: 700; margin-bottom: 0.35rem;
+    }
+    .arm-card h3 { margin: 0 0 0.4rem; font-size: 1.02rem; }
+    .arm-card p { color: var(--site-muted); font-size: 0.92rem; margin: 0; }
+    .num-list { margin: 0 0 1.1rem; padding-left: 1.2rem; }
+    .num-list li { margin: 0 0 0.5rem; color: var(--site-ink); }
+    .num-list .sub { color: var(--site-muted); font-size: 0.92rem; }
+    .cov {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin: 0 0 1.4rem;
+    }
+    @media (max-width: 680px) { .cov { grid-template-columns: 1fr; } }
+    .cov .box {
+      background: var(--site-surface); border: 1px solid var(--site-border);
+      border-radius: 12px; padding: 0.85rem 1rem; text-align: center;
+    }
+    .cov .box .n { display: block; font-weight: 800; font-size: 1.35rem; color: var(--site-accent); }
+    .cov .box .lbl { display: block; font-size: 0.82rem; color: var(--site-muted); margin-top: 0.2rem; }
+    .callout {
+      border-left: 3px solid var(--site-secondary); background: var(--site-accent-soft);
+      border-radius: 0 10px 10px 0; padding: 0.85rem 1.05rem; margin: 0 0 1.2rem;
+      color: var(--site-ink); font-size: 0.94rem;
+    }
+    .links { margin: 0 0 1rem; }
+    .links a {
+      color: var(--site-accent); text-decoration: none; font-weight: 600;
+      border-bottom: 1px solid color-mix(in srgb, var(--site-accent) 30%, transparent);
+    }
+    .links a:hover { color: var(--site-accent-hover); }
+    footer.page-footer {
+      margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--site-border);
+      color: var(--site-faint); font-size: 0.84rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="eyebrow" data-i18n="eyebrow">AIM-CC 2026 · попередня реєстрація</span>
+    <h1 data-i18n="h1">Чи допомагає персональна рекомендація партнера, чи достатньо просто персонального звіту?</h1>
+    <p class="lede" data-i18n="lede">
+      Пілотний польовий експеримент серед українських громад: порівнюємо звіт із конкретною
+      рекомендацією партнера (за модельним підбором) проти чесного «плацебо» — персонального
+      бенчмарку без назви партнера.
+    </p>
+    <div class="meta-row">
+      <span class="status-pill" data-i18n="status">Чернетка · консультація AIM-CC 2026</span>
+      <span data-i18n-html="meta.version">Версія <strong>0.5</strong> · 2026-09-03</span>
+      <span data-i18n-html="meta.contact">Контакт: <strong>Max Semenchuk</strong> · max.semenchuk@gmail.com</span>
+    </div>
+
+    <div class="callout" data-i18n-html="callout.hypothesis">
+      Рекомендація в звіті завжди подається як <strong>гіпотеза</strong> («ось партнер, вартий уваги, і чому») —
+      ніколи як «ШІ визначив вас ідеальними партнерами» чи перевірений показник сумісності.
+    </div>
+
+    <h2 data-i18n="q.h2">Питання дослідження</h2>
+    <p data-i18n-html="q.p">
+      Серед українських територіальних громад зі структурованими цілями стратегії — чи громада,
+      яка отримує персональний звіт із <strong>підібраною моделлю рекомендацією партнера</strong>
+      (цілі · географія · мережа МСС · доповнення ресурсів), демонструє більше <strong>залученості
+      й неспровокованих звернень</strong>, ніж громада, що отримує звіт лише з бенчмарком, без
+      конкретного партнера?
+    </p>
+
+    <h2 data-i18n="design.h2">Дизайн: два плеча, рандомізація на рівні громади</h2>
+    <p data-i18n="design.p">
+      Ключова зміна версії 0.5: одиниця рандомізації — одна громада, а не пара. Це знімає
+      обмеження попереднього пар-орієнтованого дизайну (жорсткий стеля у 146 пар незалежно
+      від розподілу вибірки) і дозволяє охопити суттєво більше громад тим самим корпусом.
+    </p>
+    <div class="arms">
+      <div class="arm-card">
+        <div class="kicker" data-i18n="arm.r.kicker">Плече R</div>
+        <h3 data-i18n="arm.r.h3">Звіт із рекомендацією</h3>
+        <p data-i18n="arm.r.p">Власний зріз цілей + топ-партнер від recommend_for.py (цілі 45% · гео 25% · мережа МСС 15% · доповнення 15%), пакет (тема + форма угоди) і коротке пояснення «чому це вам допомагає».</p>
+      </div>
+      <div class="arm-card">
+        <div class="kicker" data-i18n="arm.b.kicker">Плече B0</div>
+        <h3 data-i18n="arm.b.h3">Бенчмарк-плацебо</h3>
+        <p data-i18n="arm.b.p">Та сама персональна подача (зріз цілей, індекс цифрової демократії, контекст сусідів за населенням/областю) — але без названого партнера. Чесний контроль, не порожня сторінка.</p>
+      </div>
+    </div>
+
+    <h2 data-i18n="outcome.h2">Що вимірюємо</h2>
+    <p data-i18n-html="outcome.p">
+      <strong>Основний показник:</strong> неспровоковане звернення по інтро/консультацію протягом
+      30 днів після першого перегляду звіту — найсильніший сигнал, який не є вимушеною відповіддю
+      на прохання. Додатково: клік у секцію рекомендації, відповідь на звіт протягом 21 дня,
+      звернення протягом 90 днів, нова угода в реєстрі МСС протягом 12 місяців (дослідницьке).
+    </p>
+
+    <h2 data-i18n="scale.h2">Масштаб пілоту</h2>
+    <div class="cov">
+      <div class="box"><span class="n">293</span><span class="lbl" data-i18n="scale.goals">громад із розібраними цілями стратегії (пул плеча R)</span></div>
+      <div class="box"><span class="n">125–146</span><span class="lbl" data-i18n="scale.perarm">громад на плече в пілоті</span></div>
+      <div class="box"><span class="n">~32–40%</span><span class="lbl" data-i18n="scale.power">потужність за поточними орієнтовними ставками</span></div>
+    </div>
+    <p class="lede" data-i18n-html="scale.note">
+      Це свідомо недостатньо потужний пілот для малих ефектів — мета зараз: перевірити
+      здійсненність і напрям ефекту, а не остаточний висновок. Усі цифри — з синтетичного
+      (без жодного контакту з громадами) прогону на ілюстративних припущеннях; перед реальним
+      запуском прогін повторюється на актуальному корпусі.
+    </p>
+
+    <h2 data-i18n="ethics.h2">Етика й прозорість</h2>
+    <ul class="num-list">
+      <li data-i18n="ethics.1">Рекомендація завжди подається як гіпотеза, ніколи як підтверджена сумісність.</li>
+      <li data-i18n="ethics.2">Плече B0 отримує чесну, персональну цінність (власний зріз + бенчмарк) — відсутність партнера є єдиною відмінністю, не відсутність зусиль.</li>
+      <li data-i18n="ethics.3">Публічні матеріали — лише агреговані показники; жодна громада, що не дала згоди, не називається.</li>
+      <li data-i18n="ethics.4">Дані й методи вже відкриті за MIT + CC BY 4.0; протокол фіксується цим документом і датованим git-тегом на момент запуску.</li>
+    </ul>
+
+    <h2 data-i18n="more.h2">Більше деталей</h2>
+    <p class="links" data-i18n-html="more.p">
+      Повний технічний препринт (гіпотези, план аналізу, питання менторам AIM-CC, журнал змін):
+      <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/internal/aim-cc-field-experiment-prereg.md">aim-cc-field-experiment-prereg.md</a>
+      · синтетичний (без контакту з громадами) прогін дизайну:
+      <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/scripts/analysis/aim_cc_synthetic_experiment.py">aim_cc_synthetic_experiment.py</a>
+      · дані: <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases">data/releases/</a> (CC BY 4.0).
+    </p>
+
+    <footer class="page-footer" data-i18n-html="footer.note">
+      Це дослідницький протокол, не запущений експеримент — жодну громаду ще не залучали.
+      Коментарі й зауваження вітаються до заморозки протоколу.
+    </footer>
+  </div>
+
+<script>
+window.PAGE_I18N = {
+  uk: {
+    "doc.title": "AIM-CC 2026 · польовий експеримент",
+    "eyebrow": "AIM-CC 2026 · попередня реєстрація",
+    "h1": "Чи допомагає персональна рекомендація партнера, чи достатньо просто персонального звіту?",
+    "lede": "Пілотний польовий експеримент серед українських громад: порівнюємо звіт із конкретною рекомендацією партнера (за модельним підбором) проти чесного «плацебо» — персонального бенчмарку без назви партнера.",
+    "status": "Чернетка · консультація AIM-CC 2026",
+    "meta.version": "Версія <strong>0.5</strong> · 2026-09-03",
+    "meta.contact": "Контакт: <strong>Max Semenchuk</strong> · max.semenchuk@gmail.com",
+    "callout.hypothesis": "Рекомендація в звіті завжди подається як <strong>гіпотеза</strong> («ось партнер, вартий уваги, і чому») — ніколи як «ШІ визначив вас ідеальними партнерами» чи перевірений показник сумісності.",
+    "q.h2": "Питання дослідження",
+    "q.p": "Серед українських територіальних громад зі структурованими цілями стратегії — чи громада, яка отримує персональний звіт із <strong>підібраною моделлю рекомендацією партнера</strong> (цілі · географія · мережа МСС · доповнення ресурсів), демонструє більше <strong>залученості й неспровокованих звернень</strong>, ніж громада, що отримує звіт лише з бенчмарком, без конкретного партнера?",
+    "design.h2": "Дизайн: два плеча, рандомізація на рівні громади",
+    "design.p": "Ключова зміна версії 0.5: одиниця рандомізації — одна громада, а не пара. Це знімає обмеження попереднього пар-орієнтованого дизайну (жорсткий стеля у 146 пар незалежно від розподілу вибірки) і дозволяє охопити суттєво більше громад тим самим корпусом.",
+    "arm.r.kicker": "Плече R",
+    "arm.r.h3": "Звіт із рекомендацією",
+    "arm.r.p": "Власний зріз цілей + топ-партнер від recommend_for.py (цілі 45% · гео 25% · мережа МСС 15% · доповнення 15%), пакет (тема + форма угоди) і коротке пояснення «чому це вам допомагає».",
+    "arm.b.kicker": "Плече B0",
+    "arm.b.h3": "Бенчмарк-плацебо",
+    "arm.b.p": "Та сама персональна подача (зріз цілей, індекс цифрової демократії, контекст сусідів за населенням/областю) — але без названого партнера. Чесний контроль, не порожня сторінка.",
+    "outcome.h2": "Що вимірюємо",
+    "outcome.p": "<strong>Основний показник:</strong> неспровоковане звернення по інтро/консультацію протягом 30 днів після першого перегляду звіту — найсильніший сигнал, який не є вимушеною відповіддю на прохання. Додатково: клік у секцію рекомендації, відповідь на звіт протягом 21 дня, звернення протягом 90 днів, нова угода в реєстрі МСС протягом 12 місяців (дослідницьке).",
+    "scale.h2": "Масштаб пілоту",
+    "scale.goals": "громад із розібраними цілями стратегії (пул плеча R)",
+    "scale.perarm": "громад на плече в пілоті",
+    "scale.power": "потужність за поточними орієнтовними ставками",
+    "scale.note": "Це свідомо недостатньо потужний пілот для малих ефектів — мета зараз: перевірити здійсненність і напрям ефекту, а не остаточний висновок. Усі цифри — з синтетичного (без жодного контакту з громадами) прогону на ілюстративних припущеннях; перед реальним запуском прогін повторюється на актуальному корпусі.",
+    "ethics.h2": "Етика й прозорість",
+    "ethics.1": "Рекомендація завжди подається як гіпотеза, ніколи як підтверджена сумісність.",
+    "ethics.2": "Плече B0 отримує чесну, персональну цінність (власний зріз + бенчмарк) — відсутність партнера є єдиною відмінністю, не відсутність зусиль.",
+    "ethics.3": "Публічні матеріали — лише агреговані показники; жодна громада, що не дала згоди, не називається.",
+    "ethics.4": "Дані й методи вже відкриті за MIT + CC BY 4.0; протокол фіксується цим документом і датованим git-тегом на момент запуску.",
+    "more.h2": "Більше деталей",
+    "more.p": "Повний технічний препринт (гіпотези, план аналізу, питання менторам AIM-CC, журнал змін): <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/internal/aim-cc-field-experiment-prereg.md\">aim-cc-field-experiment-prereg.md</a> · синтетичний (без контакту з громадами) прогін дизайну: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/scripts/analysis/aim_cc_synthetic_experiment.py\">aim_cc_synthetic_experiment.py</a> · дані: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">data/releases/</a> (CC BY 4.0).",
+    "footer.note": "Це дослідницький протокол, не запущений експеримент — жодну громаду ще не залучали. Коментарі й зауваження вітаються до заморозки протоколу."
+  },
+  en: {
+    "doc.title": "AIM-CC 2026 · field experiment",
+    "eyebrow": "AIM-CC 2026 · pre-registration",
+    "h1": "Does a personal partner recommendation help, or is a personal report enough on its own?",
+    "lede": "A pilot field experiment among Ukrainian hromadas: a report with a specific, model-selected partner recommendation versus an honest placebo — a personal benchmark report with no partner named.",
+    "status": "Draft · AIM-CC 2026 consultation",
+    "meta.version": "Version <strong>0.5</strong> · 2026-09-03",
+    "meta.contact": "Contact: <strong>Max Semenchuk</strong> · max.semenchuk@gmail.com",
+    "callout.hypothesis": "The report always frames the recommendation as a <strong>hypothesis</strong> (\"here's a partner worth exploring, and why\") — never as \"AI matched you as perfect partners\" or a verified compatibility score.",
+    "q.h2": "Research question",
+    "q.p": "Among Ukrainian territorial communities (hromadas) with structured development-strategy goals — does a hromada that receives a personalized report containing a <strong>model-selected partner recommendation</strong> (goals · geography · IMC network · complementary need) show more <strong>engagement and unprompted follow-up</strong> than a hromada that receives a benchmark-only report with no specific partner named?",
+    "design.h2": "Design: two arms, hromada-level randomization",
+    "design.p": "The key change in v0.5: the unit of randomization is one hromada, not a pair. This removes the previous pair-based design's hard ceiling (146 pairs total, regardless of how the sample was split) and lets the same corpus reach substantially more hromadas.",
+    "arm.r.kicker": "Arm R",
+    "arm.r.h3": "Recommendation report",
+    "arm.r.p": "Own goals summary + the top partner pick from recommend_for.py (goals 45% · geo 25% · IMC network 15% · complementary 15%), a package (theme + agreement form), and a short \"why this helps you\" note.",
+    "arm.b.kicker": "Arm B0",
+    "arm.b.h3": "Benchmark placebo",
+    "arm.b.p": "Same personalized framing (own goals summary, digital-democracy index, population/oblast peer context) — but no specific partner named. A real control, not a blank page.",
+    "outcome.h2": "What we measure",
+    "outcome.p": "<strong>Primary outcome:</strong> an unprompted request for an intro/consult within 30 days of first viewing the report — the strongest signal, since it isn't a forced reply to an ask. Secondary: clicking into the recommendation section, replying to the report within 21 days, an inbound request within 90 days, a new entry in the public IMC registry within 12 months (exploratory).",
+    "scale.h2": "Pilot scale",
+    "scale.goals": "hromadas with parsed strategy goals (Arm R's pool)",
+    "scale.perarm": "hromadas per arm in the pilot",
+    "scale.power": "statistical power at current illustrative rates",
+    "scale.note": "This is deliberately an underpowered pilot for small effects — the goal now is feasibility and directional effect size, not a definitive claim. All numbers come from a synthetic (no hromada contacted) run on illustrative assumptions; re-run against the live corpus before any real launch decision.",
+    "ethics.h2": "Ethics & transparency",
+    "ethics.1": "The recommendation is always presented as a hypothesis, never as verified compatibility.",
+    "ethics.2": "Arm B0 still gets honest, personal value (own summary + benchmark) — the missing partner is the only difference, not missing effort.",
+    "ethics.3": "Public materials report aggregate rates only; no non-consenting hromada is named.",
+    "ethics.4": "Data and methods are already open under MIT + CC BY 4.0; the protocol is frozen by this document plus a dated git tag at launch.",
+    "more.h2": "More detail",
+    "more.p": "Full technical pre-registration (hypotheses, analysis plan, questions for AIM-CC mentors, deviations log): <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/internal/aim-cc-field-experiment-prereg.md\">aim-cc-field-experiment-prereg.md</a> · synthetic (no hromada contacted) design dry-run: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/scripts/analysis/aim_cc_synthetic_experiment.py\">aim_cc_synthetic_experiment.py</a> · data: <a href=\"https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases\">data/releases/</a> (CC BY 4.0).",
+    "footer.note": "This is a research protocol, not a launched experiment — no hromada has been contacted yet. Comments welcome before the protocol is frozen."
+  }
+};
+</script>
+<script src="assets/i18n.js"></script>
+<script>
+if (window.HromadaI18n && window.PAGE_I18N) window.HromadaI18n.apply(window.PAGE_I18N);
+</script>
+<script src="assets/nav.js" data-active="aim-cc"></script>
+</body>
+</html>
