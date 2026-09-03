@@ -795,8 +795,7 @@
       <button type="button" id="themes-tagged" data-i18n="themes.tagged">Лише з темою</button>
     </div>
     <p class="theme-filter-empty" id="theme-filter-empty" hidden data-i18n="themes.emptyPick">Оберіть хоча б одну тему — інакше угоди на мапі сховані.</p>
-    <p class="theme-filter-empty" id="theme-filter-narrowed" hidden data-i18n="themes.narrowedNotice">Із обраною темою показано лише реєстрові угоди за нею — інші сигнали (гіпотези, побратими, Пліч-о-Пліч тощо) тимчасово приховані, навіть якщо їхні прапорці ввімкнені. Натисніть «Усі», щоб повернути їх.</p>
-    <p class="theme-filter-hint" data-i18n="themes.hint">Фільтрує бірюзові лінії реєстру і ховає громади без обраної теми. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).</p>
+    <p class="theme-filter-hint" data-i18n="themes.hint">Фільтрує лише бірюзові лінії реєстру — інші сигнали (гіпотези, побратими, Пліч-о-Пліч тощо) від цього фільтра не залежать. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).</p>
     <details>
       <summary class="section-label" data-i18n="stats.label">Цифри</summary>
       <div class="stats">
@@ -865,35 +864,6 @@ function pinThemeOk(e) {
   return ids.some((id) => selectedThemes.has(id));
 }
 
-/** True when the theme checklist is not «all themes» (incl. empty selection). */
-function pinThemeFilterNarrowed() {
-  if (!pinThemeCatalog.length) return false;
-  return selectedThemes.size < pinThemeCatalog.length;
-}
-
-/** Hromada ids that sit on at least one theme-matching PIN edge. */
-function themedPinNodeIds() {
-  const ids = new Set();
-  // `edges` is created later in this script; guard for early calls.
-  if (typeof edges === 'undefined' || !edges) return ids;
-  for (const e of edges) {
-    const kind = e.kind || 'pin';
-    if (kind !== 'pin' && kind !== 'pin_agreement') continue;
-    if (!pinThemeOk(e)) continue;
-    if (e.source && e.source.id) ids.add(e.source.id);
-    else if (e.a) ids.add(e.a);
-    if (e.target && e.target.id) ids.add(e.target.id);
-    else if (e.b) ids.add(e.b);
-  }
-  return ids;
-}
-
-function nodeVisibleForThemeFilter(n, themedIds) {
-  if (!pinThemeFilterNarrowed()) return true;
-  const ids = themedIds || themedPinNodeIds();
-  return ids.has(n.id);
-}
-
 /** DOM checkboxes are the source of truth — avoids desync with selectedThemes. */
 function syncSelectedThemesFromDom() {
   const inputs = document.querySelectorAll('#theme-filters input[data-theme-id]');
@@ -940,10 +910,6 @@ function refreshThemeFilterView() {
   const emptyEl = document.getElementById('theme-filter-empty');
   if (emptyEl) {
     emptyEl.hidden = selectedThemes.size > 0 || !pinThemeCatalog.length;
-  }
-  const narrowedEl = document.getElementById('theme-filter-narrowed');
-  if (narrowedEl) {
-    narrowedEl.hidden = !pinThemeFilterNarrowed();
   }
   if (mode === 'graph') {
     if (typeof drawGraph === 'function') drawGraph();
@@ -1607,19 +1573,16 @@ function rebuildMapLayers() {
   universeLayer.clearLayers();
   nodesLayer.clearLayers();
 
-  const themedIds = pinThemeFilterNarrowed() ? themedPinNodeIds() : null;
   // Which edge kinds actually got drawn for each hromada this pass — used
   // below so a node only lights up for a signal that's currently visible,
   // instead of the whole node layer switching on when ANY one toggle is on.
   const nodeKinds = new Map();
 
   for (const e of edges) {
-    if (themedIds) {
-      if (e.kind !== 'pin' && e.kind !== 'pin_agreement') continue;
-      if (!pinThemeOk(e)) continue;
-    } else if (!pinThemeOk(e) && (e.kind === 'pin' || e.kind === 'pin_agreement')) {
-      continue;
-    }
+    // The theme filter only ever narrows which PIN/pin_agreement lines
+    // qualify — it never hides a hromada or any other signal type, so
+    // there's nothing here for hypothesis/twinning/etc. edges to skip.
+    if ((e.kind === 'pin' || e.kind === 'pin_agreement') && !pinThemeOk(e)) continue;
     const a = e.source, b = e.target;
     if (a.lat == null || b.lat == null) continue;
     const line = L.polyline([[a.lat, a.lon], [b.lat, b.lon]], edgeStyle(e.kind));
@@ -1657,7 +1620,6 @@ function rebuildMapLayers() {
   // real place) — mirrors the Граф view's hub-node treatment.
   for (const n of nodes) {
     if (n.kind !== 'agreement' || n.lat == null) continue;
-    if (themedIds && !themedIds.has(n.id)) continue;
     const marker = L.circleMarker([n.lat, n.lon], {
       radius: 3 + Math.min(n.party_count || 0, 20) * 0.25,
       color: '#199e70',
@@ -1674,7 +1636,6 @@ function rebuildMapLayers() {
   // Faint universe underlay (all mainland hromadas with KSE geo)
   for (const n of universe) {
     if (n.lat == null) continue;
-    if (themedIds && !themedIds.has(n.id)) continue;
     const selected = selectedId === n.id;
     const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
     const marker = L.circleMarker([n.lat, n.lon], {
@@ -1691,7 +1652,6 @@ function rebuildMapLayers() {
 
   for (const n of nodes) {
     if (n.lat == null || n.kind === 'agreement') continue;
-    if (themedIds && !themedIds.has(n.id)) continue;
     const selected = selectedId === n.id;
     // A node only lights up for a signal that's actually toggled on —
     // except the selected one, which stays visible so search/click always
@@ -1913,10 +1873,9 @@ function networkNodeVisible(n) {
 }
 
 function edgeVisible(e) {
+  // The theme filter only narrows which PIN/pin_agreement edges qualify —
+  // every other signal type is untouched by it.
   if ((e.kind === 'pin' || e.kind === 'pin_agreement') && !pinThemeOk(e)) return false;
-  // When themes are narrowed, focus the view on matching registry edges only
-  // (hypothesis lines would otherwise point at hidden hromadas).
-  if (pinThemeFilterNarrowed() && e.kind !== 'pin' && e.kind !== 'pin_agreement') return false;
   if (e.kind === 'pin' || e.kind === 'pin_agreement') return layers.pin;
   if (e.kind === 'thematic' || e.kind === 'hypothesis') return layers.thematic;
   if (e.kind === 'operational') return layers.operational;
@@ -1946,7 +1905,6 @@ function findNode(wx, wy) {
   const hit = Math.max(14, 12 / scale);
   let best = null, bestD = hit * hit;
   for (const n of nodes) {
-    if (!nodeVisibleForThemeFilter(n)) continue;
     if (!networkNodeVisible(n)) continue;
     const dx = n.x - wx, dy = n.y - wy;
     const d = dx * dx + dy * dy;
@@ -2189,7 +2147,6 @@ function drawGraph() {
   }
   ctx.globalAlpha = 1;
   for (const n of nodes) {
-    if (!nodeVisibleForThemeFilter(n)) continue;
     if (!networkNodeVisible(n)) continue;
     const isHub = n.kind === 'country' || n.kind === 'donor' || n.kind === 'agreement';
     const hubEdgeKind = n.kind === 'country' ? 'twinning' : n.kind === 'donor' ? 'donor' : 'pin_agreement';
@@ -2287,10 +2244,9 @@ window.PAGE_I18N = {
     "themes.all": "Усі",
     "themes.none": "Жодної",
     "themes.tagged": "Лише з темою",
-    "themes.hint": "Фільтрує бірюзові лінії реєстру і ховає громади без обраної теми. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).",
+    "themes.hint": "Фільтрує лише бірюзові лінії реєстру — інші сигнали (гіпотези, побратими, Пліч-о-Пліч тощо) від цього фільтра не залежать. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).",
     "themes.empty": "Немає тем угод",
     "themes.emptyPick": "Оберіть хоча б одну тему — інакше угоди на мапі сховані.",
-    "themes.narrowedNotice": "Із обраною темою показано лише реєстрові угоди за нею — інші сигнали (гіпотези, побратими, Пліч-о-Пліч тощо) тимчасово приховані, навіть якщо їхні прапорці ввімкнені. Натисніть «Усі», щоб повернути їх.",
     "stats.label": "Цифри",
     "stat.universe": "Громад на мапі",
     "stat.portal": "З посиланням на портал",
@@ -2401,10 +2357,9 @@ window.PAGE_I18N = {
     "themes.all": "All",
     "themes.none": "None",
     "themes.tagged": "Tagged only",
-    "themes.hint": "Filters teal registry lines and hides hromadas without the selected theme(s). “Other” = title with no recognised theme (often just “joint project”).",
+    "themes.hint": "Filters teal registry lines only — other signals (hypotheses, twin cities, Пліч-о-Пліч, etc.) aren't affected by this filter. “Other” = title with no recognised theme (often just “joint project”).",
     "themes.empty": "No agreement themes",
     "themes.emptyPick": "Pick at least one theme — otherwise agreements are hidden on the map.",
-    "themes.narrowedNotice": "With a theme selected, only registry agreements for it are shown — other signals (hypotheses, twin cities, Пліч-о-Пліч, etc.) are hidden for now, even if their checkboxes are on. Click \"All\" to bring them back.",
     "stats.label": "Figures",
     "stat.universe": "Hromadas on the map",
     "stat.portal": "With a portal link",
