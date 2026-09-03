@@ -795,6 +795,7 @@
       <button type="button" id="themes-tagged" data-i18n="themes.tagged">Лише з темою</button>
     </div>
     <p class="theme-filter-empty" id="theme-filter-empty" hidden data-i18n="themes.emptyPick">Оберіть хоча б одну тему — інакше угоди на мапі сховані.</p>
+    <p class="theme-filter-empty" id="theme-filter-narrowed" hidden data-i18n="themes.narrowedNotice">Із обраною темою показано лише реєстрові угоди за нею — інші сигнали (гіпотези, побратими, Пліч-о-Пліч тощо) тимчасово приховані, навіть якщо їхні прапорці ввімкнені. Натисніть «Усі», щоб повернути їх.</p>
     <p class="theme-filter-hint" data-i18n="themes.hint">Фільтрує бірюзові лінії реєстру і ховає громади без обраної теми. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).</p>
     <details>
       <summary class="section-label" data-i18n="stats.label">Цифри</summary>
@@ -939,6 +940,10 @@ function refreshThemeFilterView() {
   const emptyEl = document.getElementById('theme-filter-empty');
   if (emptyEl) {
     emptyEl.hidden = selectedThemes.size > 0 || !pinThemeCatalog.length;
+  }
+  const narrowedEl = document.getElementById('theme-filter-narrowed');
+  if (narrowedEl) {
+    narrowedEl.hidden = !pinThemeFilterNarrowed();
   }
   if (mode === 'graph') {
     if (typeof drawGraph === 'function') drawGraph();
@@ -2285,6 +2290,7 @@ window.PAGE_I18N = {
     "themes.hint": "Фільтрує бірюзові лінії реєстру і ховає громади без обраної теми. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).",
     "themes.empty": "Немає тем угод",
     "themes.emptyPick": "Оберіть хоча б одну тему — інакше угоди на мапі сховані.",
+    "themes.narrowedNotice": "Із обраною темою показано лише реєстрові угоди за нею — інші сигнали (гіпотези, побратими, Пліч-о-Пліч тощо) тимчасово приховані, навіть якщо їхні прапорці ввімкнені. Натисніть «Усі», щоб повернути їх.",
     "stats.label": "Цифри",
     "stat.universe": "Громад на мапі",
     "stat.portal": "З посиланням на портал",
@@ -2398,6 +2404,7 @@ window.PAGE_I18N = {
     "themes.hint": "Filters teal registry lines and hides hromadas without the selected theme(s). “Other” = title with no recognised theme (often just “joint project”).",
     "themes.empty": "No agreement themes",
     "themes.emptyPick": "Pick at least one theme — otherwise agreements are hidden on the map.",
+    "themes.narrowedNotice": "With a theme selected, only registry agreements for it are shown — other signals (hypotheses, twin cities, Пліч-о-Пліч, etc.) are hidden for now, even if their checkboxes are on. Click \"All\" to bring them back.",
     "stats.label": "Figures",
     "stat.universe": "Hromadas on the map",
     "stat.portal": "With a portal link",
