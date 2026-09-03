@@ -298,11 +298,20 @@ def partner_of(edge: dict[str, Any], seed_name: str) -> str:
 
 
 def agent_rank(edge: dict[str, Any], motivation: str) -> float:
-    """Policy score for ordering — not the product claim and not v7.1 score."""
+    """Policy score for ordering — not the product claim and not v7.1 score.
+
+    goals_cosine is discounted by template_collision (near-verbatim subgoal
+    lines shared between the pair's two source documents — same consultant/
+    boilerplate, not necessarily shared real priorities). This only affects
+    ranking here, not the released match.py score/track — measured impact:
+    8.2% of top-5 slots (74/293 seed hromadas) carried a collision>0.1
+    "match" before this discount.
+    """
     pol = MOTIVATIONS[motivation]
     w = pol["weights"]
+    goals_adj = _f(edge, "goals_cosine") * (1.0 - _f(edge, "template_collision"))
     rank = (
-        w.get("goals", 0) * _f(edge, "goals_cosine")
+        w.get("goals", 0) * goals_adj
         + w.get("geo", 0) * _f(edge, "geo_score")
         + w.get("network", 0) * _f(edge, "mss_network")
         + w.get("complementary", 0) * _f(edge, "complementary_score")
@@ -431,6 +440,7 @@ def card_from_edge(
         "agent_rank": round(rank_value, 4),
         "lab_score": edge.get("score"),
         "goals_cosine": edge.get("goals_cosine"),
+        "template_collision": edge.get("template_collision"),
         "geo_score": edge.get("geo_score"),
         "mss_network": edge.get("mss_network"),
         "complementary_score": edge.get("complementary_score"),
