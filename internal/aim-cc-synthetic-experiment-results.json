@@ -1,0 +1,152 @@
+{
+  "generated_from": "internal/aim-cc-field-experiment-prereg.md",
+  "note": "SYNTHETIC — no hromada contacted. Priors are illustrative, not fitted.",
+  "design": "report",
+  "guaranteed_view": true,
+  "goals_ready_hromadas": 293,
+  "max_per_arm_no_reuse": 146,
+  "requested_exceeds_corpus_ceiling": false,
+  "seed": 42,
+  "mc_reps": 2000,
+  "report_engagement_priors_assumed": {
+    "R": {
+      "opened_given_delivered": 0.5,
+      "clicked_recommendation_given_opened": 0.55,
+      "replied_any_given_opened": 0.12,
+      "inbound_request_30d_given_opened": 0.06,
+      "inbound_request_90d_given_opened": 0.1
+    },
+    "B0": {
+      "opened_given_delivered": 0.38,
+      "clicked_recommendation_given_opened": 0.0,
+      "replied_any_given_opened": 0.06,
+      "inbound_request_30d_given_opened": 0.015,
+      "inbound_request_90d_given_opened": 0.025
+    }
+  },
+  "power_table": [
+    {
+      "design": "report",
+      "n_per_arm": 125,
+      "total_hromadas": 250,
+      "power_opened_R_vs_B0": 0.0,
+      "power_inbound_30d_R_vs_B0": 0.322
+    }
+  ],
+  "mechanics_check": {
+    "accepted_R": 125,
+    "accepted_B0": 125
+  },
+  "illustrative_draw_n_per_arm": 125,
+  "event_log_analysis": {
+    "by_arm": {
+      "R": {
+        "n_sent": 125,
+        "n_delivered": 125,
+        "opened": {
+          "n": 125,
+          "rate": 1.0,
+          "wilson_ci": [
+            0.97,
+            1.0
+          ]
+        },
+        "replied_any": {
+          "n": 18,
+          "rate": 0.144,
+          "wilson_ci": [
+            0.093,
+            0.216
+          ]
+        },
+        "inbound_request_30d": {
+          "n": 6,
+          "rate": 0.048,
+          "wilson_ci": [
+            0.022,
+            0.101
+          ]
+        },
+        "inbound_request_90d": {
+          "n": 8,
+          "rate": 0.064,
+          "wilson_ci": [
+            0.033,
+            0.121
+          ]
+        },
+        "clicked_recommendation_of_opened": 0.52,
+        "engagement_codes": {
+          "opened_no_followup": 117,
+          "asked_about_own_strategy_only": 2,
+          "asked_general_consult": 3,
+          "asked_intro_to_recommended_partner": 3
+        }
+      },
+      "B0": {
+        "n_sent": 125,
+        "n_delivered": 125,
+        "opened": {
+          "n": 125,
+          "rate": 1.0,
+          "wilson_ci": [
+            0.97,
+            1.0
+          ]
+        },
+        "replied_any": {
+          "n": 9,
+          "rate": 0.072,
+          "wilson_ci": [
+            0.038,
+            0.131
+          ]
+        },
+        "inbound_request_30d": {
+          "n": 2,
+          "rate": 0.016,
+          "wilson_ci": [
+            0.004,
+            0.056
+          ]
+        },
+        "inbound_request_90d": {
+          "n": 2,
+          "rate": 0.016,
+          "wilson_ci": [
+            0.004,
+            0.056
+          ]
+        },
+        "clicked_recommendation_of_opened": 0.0,
+        "engagement_codes": {
+          "opened_no_followup": 123,
+          "asked_general_consult": 1,
+          "asked_intro_to_recommended_partner": 1
+        }
+      }
+    },
+    "analysis": {
+      "R_vs_B0_opened": {
+        "risk_difference": 0.0,
+        "fisher_p_value": 1.0,
+        "significant_at_0.05": false
+      },
+      "R_vs_B0_replied_any": {
+        "risk_difference": 0.072,
+        "fisher_p_value": 0.1017,
+        "significant_at_0.05": false
+      },
+      "R_vs_B0_inbound_request_30d": {
+        "risk_difference": 0.032,
+        "fisher_p_value": 0.2811,
+        "significant_at_0.05": false
+      },
+      "R_vs_B0_inbound_request_90d": {
+        "risk_difference": 0.048,
+        "fisher_p_value": 0.1023,
+        "significant_at_0.05": false
+      }
+    }
+  }
+}

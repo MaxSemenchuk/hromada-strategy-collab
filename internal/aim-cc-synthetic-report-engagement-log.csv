@@ -1,0 +1,251 @@
+report_id,arm,hromada,katottg,block,recommended_partner,package_label_uk,send_day,deliverable,opened,opened_day,clicked_recommendation,replied_any,reply_day,inbound_request_90d,inbound_request_30d,inbound_day,engagement_code
+R001,R,Юрковецька сільська територіальна громада,UA73060650000012771,west/mid,Рукшинська сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,2,True,False,,False,False,,opened_no_followup
+R002,R,Коломийська міська територіальна громада,UA26080070000092582,west/large,Вижницька міська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,5,True,False,,False,False,,opened_no_followup
+R003,R,Ставненська сільська територіальна громада,UA21100170000051803,west/small,Перечинська міська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,1,True,False,,False,False,,opened_no_followup
+R004,R,Заліщицька міська територіальна громада,UA61060170000051011,west/large,Кадубовецька сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,0,False,False,,False,False,,opened_no_followup
+R005,R,Ставищенська селищна територіальна громада,UA32020170000020698,center/mid,Баришівська селищна територіальна громада,Безпека / ЦЗ — спільний проєкт,0,True,True,1,False,True,1,False,False,,opened_no_followup
+R006,R,Бучанська міська територіальна громада,UA32080070000050759,center/large,Гостомельська селищна територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,1,False,False,,True,True,18,asked_about_own_strategy_only
+R007,R,Гайсинська міська територіальна громада,UA05040030000050131,center/large,Райгородська сільська територіальна громада,Туризм / кластер — спільний проєкт,0,True,True,6,False,False,,False,False,,opened_no_followup
+R008,R,Котелевська селищна територіальна громада,UA53080170000047487,center/mid,Гоголівська селищна територіальна громада,Освіта — спільне утримання,0,True,True,6,False,False,,False,False,,opened_no_followup
+R009,R,Шепетівська міська територіальна громада,UA68060330000029010,west/large,Бабинська сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,1,True,False,,False,False,,opened_no_followup
+R010,R,Ганнівська сільська територіальна громада,UA35060010000018331,center/small,Єланецька селищна територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,5,True,True,10,False,False,,opened_no_followup
+R011,R,Широківська сільська територіальна громада,UA48020230000095751,south/small,Галицинівська сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,7,False,False,,False,False,,opened_no_followup
+R012,R,Гребінківська міська територіальна громада,UA53040010000091190,center/mid,Лубенська міська територіальна громада,Безпека / ЦЗ — спільний проєкт,0,True,True,5,False,False,,False,False,,opened_no_followup
+R013,R,Ворохтянська селищна територіальна громада,UA26120010000096774,west/small,Зеленська сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,0,True,False,,False,False,,opened_no_followup
+R014,R,Ямпільська міська територіальна громада,UA05080110000056824,center/large,Липовецька міська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,2,False,False,,False,False,,opened_no_followup
+R015,R,Вертіївська сільська територіальна громада,UA74040090000047246,north/small,Ніжинська міська територіальна громада,Освіта — спільне утримання,0,True,True,2,True,False,,False,False,,opened_no_followup
+R016,R,Криничанська селищна територіальна громада,UA12040170000019083,east/mid,Кам'янська міська територіальна громада,Безпека / ЦЗ — спільний проєкт,0,True,True,1,True,False,,False,False,,opened_no_followup
+R017,R,Бердичівська міська територіальна громада,UA18020030000035625,center/large,Житомирська міська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,1,False,False,,False,False,,opened_no_followup
+R018,R,Вакулівська сільська територіальна громада,UA12060030000081794,east/small,Криничанська селищна територіальна громада,Пожежна охорона — спільне утримання,0,True,True,0,False,False,,False,False,,opened_no_followup
+R019,R,Любецька селищна територіальна громада,UA74100230000068041,north/small,Кіптівська сільська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,6,True,False,,False,False,,opened_no_followup
+R020,R,Дар’ївська сільська територіальна громада,UA65100070000064512,south/small,Херсонська міська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,5,False,False,,False,False,,opened_no_followup
+R021,R,Уланівська сільська територіальна громада,UA05120150000069474,center/mid,Бердичівська міська територіальна громада,Пожежна охорона — спільне утримання,0,True,True,2,True,False,,False,False,,opened_no_followup
+R022,R,Поляницька сільська територіальна громада,UA26120130000088448,west/small,Рахівська міська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,5,True,False,,False,False,,opened_no_followup
+R023,R,Малинська сільська територіальна громада,UA56060370000023028,west/small,Головинська сільська територіальна громада,тема не визначена — спільний проєкт,0,True,True,7,False,False,,True,False,43,asked_general_consult
+R024,R,Кам'янопотоківська сільська територіальна громада,UA53020070000049284,center/mid,Піщанська сільська територіальна громада,тема не визначена — спільний проєкт,0,True,True,3,True,False,,False,False,,opened_no_followup
+R025,R,Підгородненська міська територіальна громада,UA12020210000032285,east/large,Слобожанська селищна територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,6,False,False,,False,False,,opened_no_followup
+R026,R,Гадяцька міська територіальна громада,UA53060090000098426,center/large,Зіньківська міська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,1,True,False,,False,False,,opened_no_followup
+R027,R,Магдалинівська селищна територіальна громада,UA12100050000045992,east/mid,Іларіонівська селищна територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,3,True,False,,False,False,,opened_no_followup
+R028,R,Зіньківська міська територіальна громада,UA53080090000014431,center/large,Гадяцька міська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,3,True,False,,False,False,,opened_no_followup
+R029,R,Пирятинська міська територіальна громада,UA53040090000048649,center/large,Гребінківська міська територіальна громада,Освіта — спільне утримання,0,True,True,7,True,True,8,False,False,,opened_no_followup
+R030,R,Ромоданівська селищна територіальна громада,UA53060270000016329,center/small,Гоголівська селищна територіальна громада,Туризм / кластер — спільний проєкт,0,True,True,3,False,False,,False,False,,opened_no_followup
+R031,R,Лівинецька сільська територіальна громада,UA73040070000053425,west/small,Клішковецька сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,7,False,True,10,False,False,,opened_no_followup
+R032,R,Олешанська сільська територіальна громада,UA26040250000061081,west/small,Тлумацька міська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,0,False,False,,False,False,,opened_no_followup
+R033,R,Миляцька сільська територіальна громада,UA56080110000056503,west/small,Дубровицька міська територіальна громада,Пожежна охорона — спільне утримання,0,True,True,2,False,False,,False,False,,opened_no_followup
+R034,R,Білгород-Дністровська міська територіальна громада,UA51040010000016896,south/large,Одеська міська територіальна громада,тема не визначена — спільний проєкт,0,True,True,5,False,False,,False,False,,opened_no_followup
+R035,R,Райгородська сільська територіальна громада,UA05040190000039450,center/small,Немирівська міська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,3,True,False,,False,False,,opened_no_followup
+R036,R,Кагарлицька міська територіальна громада,UA32120050000067577,center/large,Бородянська селищна територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,0,False,False,,False,False,,opened_no_followup
+R037,R,Вашковецька сільська територіальна громада,UA73040010000039325,west/small,Лівинецька сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,5,True,False,,False,False,,opened_no_followup
+R038,R,Дубенська міська територіальна громада,UA56040110000061997,west/large,Тараканівська сільська територіальна громада,тема не визначена — спільний проєкт,0,True,True,6,True,False,,False,False,,opened_no_followup
+R039,R,Лютенська сільська територіальна громада,UA53060210000044776,center/small,Великобудищанська сільська територіальна громада,Туризм / кластер — спільний проєкт,0,True,True,4,True,False,,False,False,,opened_no_followup
+R040,R,Виноградівська міська територіальна громада,UA21020110000091104,west/large,Великобичківська селищна територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,6,True,False,,False,False,,opened_no_followup
+R041,R,Кропивницька міська територіальна громада,UA35040210000014072,center/large,Жовтоводська міська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,4,False,False,,False,False,,opened_no_followup
+R042,R,Буринська міська територіальна громада,UA59020030000072865,north/mid,Путивльська міська територіальна громада,Безпека / ЦЗ — спільний проєкт,0,True,True,5,False,False,,False,False,,opened_no_followup
+R043,R,Красноградська міська територіальна громада,UA63060050000033240,east/large,Коломацька селищна територіальна громада,Соціальні послуги — спільне утримання,0,True,True,0,True,False,,False,False,,opened_no_followup
+R044,R,Тячівська міська територіальна громада,UA21080150000014443,west/mid,Великобичківська селищна територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,4,True,False,,False,False,,opened_no_followup
+R045,R,Деражненська сільська територіальна громада,UA56060190000073111,west/small,Головинська сільська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,6,True,False,,False,False,,opened_no_followup
+R046,R,Більшівцівська селищна територіальна громада,UA26040010000011271,west/small,Дубовецька сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,4,False,False,,False,False,,opened_no_followup
+R047,R,Перечинська міська територіальна громада,UA21100130000055002,west/mid,Дубриницько-Малоберезнянська сільська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,1,True,False,,False,False,,opened_no_followup
+R048,R,Северинівська сільська територіальна громада,UA05060110000027268,center/small,Жмеринська міська територіальна громада,тема не визначена — спільний проєкт,0,True,True,6,False,True,8,False,False,,opened_no_followup
+R049,R,Рогатинська міська територіальна громада,UA26040270000047749,west/large,Дубовецька сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,5,True,False,,False,False,,opened_no_followup
+R050,R,Березанська міська територіальна громада,UA32060030000048241,center/mid,Бориспільська міська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,2,True,False,,False,False,,opened_no_followup
+R051,R,Опішнянська селищна територіальна громада,UA53080350000070563,center/small,Машівська селищна територіальна громада,тема не визначена — спільний проєкт,0,True,True,7,True,False,,False,False,,opened_no_followup
+R052,R,Миргородська міська територіальна громада,UA53060230000098362,center/large,Великосорочинська сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,3,False,False,,False,False,,opened_no_followup
+R053,R,Клесівська селищна територіальна громада,UA56080090000098391,west/mid,Сарненська міська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,3,True,False,,False,False,,opened_no_followup
+R054,R,Скороходівська селищна територіальна громада,UA53080410000094938,center/small,Зіньківська міська територіальна громада,тема не визначена — спільний проєкт,0,True,True,0,True,True,2,False,False,,opened_no_followup
+R055,R,Новодністровська міська територіальна громада,UA73040130000087963,west/mid,Сокирянська міська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,3,True,True,7,False,False,,opened_no_followup
+R056,R,Сарненська міська територіальна громада,UA56080170000055864,west/large,Клесівська селищна територіальна громада,тема не визначена — спільний проєкт,0,True,True,6,True,False,,False,False,,opened_no_followup
+R057,R,Мостівська сільська територіальна громада,UA48040150000011861,south/small,Бузька сільська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,0,True,True,3,False,False,,opened_no_followup
+R058,R,Петропавлівська селищна територіальна громада,UA12140230000057328,east/mid,Криворізька міська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,4,False,False,,False,False,,opened_no_followup
+R059,R,Єланецька селищна територіальна громада,UA48040130000074078,south/mid,Чорноморська сільська територіальна громада,Туризм / кластер — спільний проєкт,0,True,True,1,True,False,,False,False,,opened_no_followup
+R060,R,Костопільська міська територіальна громада,UA56060350000045909,west/large,Дубенська міська територіальна громада,Безпека / ЦЗ — спільний проєкт,0,True,True,3,True,False,,False,False,,opened_no_followup
+R061,R,Семенівська селищна територіальна громада,UA53020230000086353,center/mid,Гадяцька міська територіальна громада,Безпека / ЦЗ — спільний проєкт,0,True,True,3,False,False,,False,False,,opened_no_followup
+R062,R,Шпанівська сільська територіальна громада,UA56060510000062151,west/mid,Березнівська міська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,3,True,True,8,False,False,,opened_no_followup
+R063,R,Кадубовецька сільська територіальна громада,UA73060210000010691,west/small,Заліщицька міська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,3,False,False,,False,False,,opened_no_followup
+R064,R,Вижницька міська територіальна громада,UA73020090000031499,west/mid,Коломийська міська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,4,False,False,,False,False,,opened_no_followup
+R065,R,Дубовиківська сільська територіальна громада,UA12140070000025486,east/small,Васильківська селищна територіальна громада,тема не визначена — спільний проєкт,0,True,True,4,False,False,,False,False,,opened_no_followup
+R066,R,Луцька міська територіальна громада,UA07080170000013585,west/large,Львівська міська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,1,True,True,5,False,False,,opened_no_followup
+R067,R,Богородчанська селищна територіальна громада,UA26040030000091528,west/large,Яремчанська міська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,3,True,False,,True,True,4,asked_about_own_strategy_only
+R068,R,Губиниська селищна територіальна громада,UA12100010000093577,east/mid,Криничанська селищна територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,3,True,False,,False,False,,opened_no_followup
+R069,R,Козинська селищна територіальна громада,UA32120070000050717,center/small,Бучанська міська територіальна громада,Освіта — спільне утримання,0,True,True,7,False,False,,False,False,,opened_no_followup
+R070,R,Лихівська селищна територіальна громада,UA12040190000056469,east/small,Божедарівська селищна територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,4,True,False,,False,False,,opened_no_followup
+R071,R,Ясінянська селищна територіальна громада,UA21060070000049340,west/mid,Вижницька міська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,7,True,False,,False,False,,opened_no_followup
+R072,R,Глевахівська селищна територіальна громада,UA32140070000012102,center/mid,Баришівська селищна територіальна громада,Безпека / ЦЗ — спільний проєкт,0,True,True,4,True,False,,False,False,,opened_no_followup
+R073,R,Бородянська селищна територіальна громада,UA32080030000070006,center/mid,Дмитрівська сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,6,True,False,,False,False,,opened_no_followup
+R074,R,Первомайська міська територіальна громада,UA48080130000028458,south/large,Мигіївська сільська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,4,False,False,,False,False,,opened_no_followup
+R075,R,Бузька сільська територіальна громада,UA48040030000013036,south/small,Мостівська сільська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,7,False,False,,False,False,,opened_no_followup
+R076,R,Зеленська сільська територіальна громада,UA26020050000098694,west/small,Ворохтянська селищна територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,2,True,True,2,False,False,,opened_no_followup
+R077,R,Вапнярська селищна територіальна громада,UA05100030000051497,center/mid,Ободівська сільська територіальна громада,тема не визначена — спільний проєкт,0,True,True,6,True,False,,False,False,,opened_no_followup
+R078,R,Городківська сільська територіальна громада,UA05100050000038768,center/mid,Ямпільська міська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,4,False,False,,False,False,,opened_no_followup
+R079,R,Великоберезовицька селищна територіальна громада,UA61040070000079091,west/large,Великогаївська сільська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,0,True,False,,False,False,,opened_no_followup
+R080,R,Білицька селищна територіальна громада,UA53080010000088479,center/mid,Новосанжарська селищна територіальна громада,тема не визначена — спільний проєкт,0,True,True,3,False,False,,True,True,27,asked_general_consult
+R081,R,Ужгородська міська територіальна громада,UA21100230000083101,west/large,Мукачівська міська територіальна громада,тема не визначена — спільний проєкт,0,True,True,7,True,True,8,False,False,,opened_no_followup
+R082,R,Бершадська міська територіальна громада,UA05040010000022470,center/large,Тульчинська міська територіальна громада,Туризм / кластер — спільний проєкт,0,True,True,3,True,False,,False,False,,opened_no_followup
+R083,R,Мостиська міська територіальна громада,UA46140030000023506,west/large,Жовківська міська територіальна громада,Архітектура / містобудування — делегування,0,True,True,4,True,True,9,False,False,,opened_no_followup
+R084,R,Корнинська сільська територіальна громада,UA56060330000075139,west/small,Головинська сільська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,0,True,False,,False,False,,opened_no_followup
+R085,R,Дубов’язівська селищна територіальна громада,UA59020050000012539,north/small,Глухівська міська територіальна громада,Освіта — спільне утримання,0,True,True,4,False,False,,False,False,,opened_no_followup
+R086,R,Полтавська міська територіальна громада,UA53080370000025447,center/large,Мачухівська сільська територіальна громада,тема не визначена — спільний проєкт,0,True,True,6,False,False,,False,False,,opened_no_followup
+R087,R,Українська міська територіальна громада,UA32120150000062718,center/large,Вороньківська сільська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,7,True,False,,False,False,,opened_no_followup
+R088,R,Софіївська селищна територіальна громада,UA12060270000017282,east/small,Нивотрудівська сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,5,True,False,,False,False,,opened_no_followup
+R089,R,Мачухівська сільська територіальна громада,UA53080230000047239,center/small,Полтавська міська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,4,True,True,9,True,True,14,asked_general_consult
+R090,R,Новомосковська міська територіальна громада,UA12100070000011492,east/large,Слобожанська селищна територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,1,False,False,,False,False,,opened_no_followup
+R091,R,Холмківська сільська територіальна громада,UA21100250000028639,west/mid,Великобичківська селищна територіальна громада,Освіта — спільне утримання,0,True,True,0,False,True,0,False,False,,opened_no_followup
+R092,R,Олександрійська сільська територіальна громада,UA56060430000081857,west/mid,Мізоцька селищна територіальна громада,тема не визначена — спільний проєкт,0,True,True,7,True,False,,True,True,23,asked_intro_to_recommended_partner
+R093,R,Вишнівська селищна територіальна громада,UA12040070000083117,east/small,Божедарівська селищна територіальна громада,Пожежна охорона — спільне утримання,0,True,True,7,True,False,,False,False,,opened_no_followup
+R094,R,Обухівська селищна територіальна громада,UA12020170000068526,east/mid,Криничанська селищна територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,6,True,False,,False,False,,opened_no_followup
+R095,R,Козелецька селищна територіальна громада,UA74100190000086457,north/mid,Сухополов'янська сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,1,False,False,,False,False,,opened_no_followup
+R096,R,Рахівська міська територіальна громада,UA21060050000029937,west/large,Богданська сільська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,6,False,False,,False,False,,opened_no_followup
+R097,R,Кутська селищна територіальна громада,UA26100050000019570,west/mid,Вижницька міська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,6,True,False,,False,False,,opened_no_followup
+R098,R,Тлумацька міська територіальна громада,UA26040350000024417,west/large,Олешанська сільська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,1,False,True,4,False,False,,opened_no_followup
+R099,R,Дубровицька міська територіальна громада,UA56080070000040721,west/large,Миляцька сільська територіальна громада,тема не визначена — спільний проєкт,0,True,True,3,False,False,,False,False,,opened_no_followup
+R100,R,Нивотрудівська сільська територіальна громада,UA12060210000077302,east/small,Апостолівська міська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,6,True,False,,False,False,,opened_no_followup
+R101,R,Полицька сільська територіальна громада,UA56020130000066130,west/small,Сарненська міська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,7,False,False,,False,False,,opened_no_followup
+R102,R,Михайлівська сільська територіальна громада,UA53080270000062586,center/small,Ланнівська сільська територіальна громада,тема не визначена — спільний проєкт,0,True,True,2,True,False,,False,False,,opened_no_followup
+R103,R,Коломацька селищна територіальна громада,UA63020070000090466,east/small,Красноградська міська територіальна громада,Соціальні послуги — спільне утримання,0,True,True,4,True,False,,False,False,,opened_no_followup
+R104,R,Ріпкинська селищна територіальна громада,UA74100330000029082,north/mid,Вертіївська сільська територіальна громада,Освіта — спільне утримання,0,True,True,3,False,False,,False,False,,opened_no_followup
+R105,R,Лозуватська сільська територіальна громада,UA12060190000043514,east/mid,Криворізька міська територіальна громада,Безпека / ЦЗ — спільний проєкт,0,True,True,5,False,False,,True,True,22,asked_intro_to_recommended_partner
+R106,R,Узинська міська територіальна громада,UA32020230000012716,center/mid,Бориспільська міська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,4,False,False,,False,False,,opened_no_followup
+R107,R,Коростенська міська територіальна громада,UA18060090000061708,center/large,Бердичівська міська територіальна громада,Туризм / кластер — спільний проєкт,0,True,True,5,False,False,,False,False,,opened_no_followup
+R108,R,Ланнівська сільська територіальна громада,UA53080190000081150,center/small,Білицька селищна територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,3,False,False,,False,False,,opened_no_followup
+R109,R,Хотинська міська територіальна громада,UA73040190000062796,west/mid,Лівинецька сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,5,True,False,,False,False,,opened_no_followup
+R110,R,Шишацька селищна територіальна громада,UA53060330000036503,center/mid,Великосорочинська сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,3,False,False,,False,False,,opened_no_followup
+R111,R,Герцаївська міська територіальна громада,UA73060130000078771,west/mid,Глибоцька селищна територіальна громада,Пожежна охорона — спільне утримання,0,True,True,6,False,True,11,False,False,,opened_no_followup
+R112,R,Чутівська селищна територіальна громада,UA53080450000087891,center/mid,Скороходівська селищна територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,6,False,False,,True,False,75,asked_intro_to_recommended_partner
+R113,R,Гоголівська селищна територіальна громада,UA53060110000084138,center/small,Великосорочинська сільська територіальна громада,Туризм / кластер — спільний проєкт,0,True,True,2,False,False,,False,False,,opened_no_followup
+R114,R,Житомирська міська територіальна громада,UA18040190000029215,center/large,Бердичівська міська територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,7,False,False,,False,False,,opened_no_followup
+R115,R,Терешківська сільська територіальна громада,UA53080430000085474,center/mid,Новоселівська сільська територіальна громада,тема не визначена — спільний проєкт,0,True,True,6,False,False,,False,False,,opened_no_followup
+R116,R,Монастириська міська територіальна громада,UA61060310000061998,west/mid,Тлумацька міська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,6,False,False,,False,False,,opened_no_followup
+R117,R,Вараська міська територіальна громада,UA56020030000068439,west/large,Малинська сільська територіальна громада,Безпека / ЦЗ — спільний проєкт,0,True,True,2,False,False,,False,False,,opened_no_followup
+R118,R,Миколаївська сільська територіальна громада,UA12140170000037152,east/mid,Петропавлівська селищна територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,0,False,False,,False,False,,opened_no_followup
+R119,R,Баришівська селищна територіальна громада,UA32060010000086043,center/large,Глевахівська селищна територіальна громада,Безпека / ЦЗ — спільний проєкт,0,True,True,6,True,False,,False,False,,opened_no_followup
+R120,R,Дубовецька сільська територіальна громада,UA26040130000010870,west/small,Олешанська сільська територіальна громада,ЦНАП / адмінпослуги — делегування,0,True,True,5,False,False,,False,False,,opened_no_followup
+R121,R,Обухівська міська територіальна громада,UA32120110000025177,center/large,Дмитрівська сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,2,True,False,,False,False,,opened_no_followup
+R122,R,Клішковецька сільська територіальна громада,UA73040050000080963,west/mid,Юрковецька сільська територіальна громада,Поводження з відходами / довкілля — спільне КП,0,True,True,0,True,False,,False,False,,opened_no_followup
+R123,R,Коблівська сільська територіальна громада,UA48060090000097375,south/small,Нечаянська сільська територіальна громада,Безпека / ЦЗ — спільний проєкт,0,True,True,2,False,True,3,False,False,,opened_no_followup
+R124,R,Коломацька сільська територіальна громада,UA53080150000085889,center/small,Гоголівська селищна територіальна громада,Вода / захист від повеней — спільне КП,0,True,True,6,True,False,,False,False,,opened_no_followup
+R125,R,Малолюбашанська сільська територіальна громада,UA56060390000090915,west/small,Соснівська селищна територіальна громада,тема не визначена — спільний проєкт,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0001,B0,Кролевецька міська територіальна громада,UA59020090000085438,north/large,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0002,B0,Новгород-Сіверська міська територіальна громада,UA74060030000026607,north/mid,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0003,B0,Саксаганська сільська територіальна громада,UA12040230000099388,east/small,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0004,B0,Васильківська селищна територіальна громада,UA12140030000091432,east/mid,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0005,B0,Верховинська селищна територіальна громада,UA26020030000088465,west/mid,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0006,B0,Кочубеївська сільська територіальна громада,UA65020110000081240,south/small,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0007,B0,Великодимерська селищна територіальна громада,UA32060070000092009,center/large,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0008,B0,Сергіївська сільська територіальна громада,UA53060310000047988,center/small,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0009,B0,Білогородська сільська територіальна громада,UA32080010000060215,center/large,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0010,B0,Кіптівська сільська територіальна громада,UA74100170000043593,north/small,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0011,B0,Здолбунівська міська територіальна громада,UA56060250000052338,west/large,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0012,B0,Тульчинська міська територіальна громада,UA05100150000050790,center/large,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0013,B0,Липовецька міська територіальна громада,UA05020110000052014,center/mid,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0014,B0,Іларіонівська селищна територіальна громада,UA12140110000060935,east/mid,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0015,B0,Запорізька міська територіальна громада,UA23060070000082704,east/large,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0016,B0,Мізоцька селищна територіальна громада,UA56060410000055190,west/mid,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0017,B0,Вишнівська громада,UA07060050000091514,west/small,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0018,B0,Новоселівська сільська територіальна громада,UA53080330000062155,center/small,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0019,B0,Ляшківська сільська територіальна громада,UA12020070000057092,east/small,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0020,B0,Дубриницько-Малоберезнянська сільська територіальна громада,UA21100070000018509,west/small,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0021,B0,Згурівська селищна територіальна громада,UA32060110000050416,center/mid,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0022,B0,Литовезька сільська територіальна громада,UA07020090000019505,west/small,,,0,True,True,7,False,True,7,False,False,,opened_no_followup
+B0023,B0,Сокирянська міська територіальна громада,UA73040170000011490,west/large,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0024,B0,Іршавська міська територіальна громада,UA21120130000025618,west/large,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0025,B0,Новооржицька селищна територіальна громада,UA53040050000091161,center/mid,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0026,B0,Козинська сільська територіальна громада,UA56040130000011543,west/small,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0027,B0,Дунаєвецька міська територіальна громада,UA68020050000040518,west/large,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0028,B0,Попівська сільська територіальна громада,UA59020130000060377,north/mid,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0029,B0,Скалатська міська територіальна громада,UA61040430000018305,west/mid,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0030,B0,Жванецька сільська територіальна громада,UA68020070000084437,west/small,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0031,B0,Селятинська сільська територіальна громада,UA73020150000076225,west/small,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0032,B0,Холминська селищна територіальна громада,UA74020090000083820,north/small,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0033,B0,Білозерська селищна територіальна громада,UA65100010000048953,south/mid,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0034,B0,Коцюбинська селищна територіальна громада,UA32080170000086616,center/mid,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0035,B0,Чернігівська міська територіальна громада,UA74100390000073425,north/large,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0036,B0,Немовицька сільська територіальна громада,UA56080130000056682,west/mid,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0037,B0,Острожецька сільська територіальна громада,UA56040210000047101,west/small,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0038,B0,Бугринська сільська територіальна громада,UA56060070000034529,west/small,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0039,B0,Боярська міська територіальна громада,UA32140030000074165,center/large,,,0,True,True,4,False,False,,True,True,27,asked_general_consult
+B0040,B0,Нижньоворітська сільська територіальна громада,UA21040190000088960,west/mid,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0041,B0,Криворізька міська територіальна громада,UA12060170000091033,east/large,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0042,B0,Свалявська міська територіальна громада,UA21040230000091606,west/large,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0043,B0,Оржицька селищна територіальна громада,UA53040070000083099,center/mid,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0044,B0,Вишківська селищна територіальна громада,UA21120030000076462,west/mid,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0045,B0,Галицька міська територіальна громада,UA26040090000025932,west/mid,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0046,B0,Рівненська міська територіальна громада,UA56060470000086729,west/large,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0047,B0,Дубівська селищна територіальна громада,UA21080070000025254,west/mid,,,0,True,True,3,False,False,,True,True,25,asked_intro_to_recommended_partner
+B0048,B0,Жмеринська міська територіальна громада,UA05060050000058111,center/large,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0049,B0,Тараканівська сільська територіальна громада,UA56040350000014945,west/small,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0050,B0,Березівська сільська територіальна громада,UA59100010000064812,north/small,,,0,True,True,4,False,True,8,False,False,,opened_no_followup
+B0051,B0,Новоолександрівська сільська територіальна громада,UA65020170000056973,south/small,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0052,B0,Слобожанська селищна територіальна громада,UA12020250000010438,east/large,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0053,B0,Корецька міська територіальна громада,UA56060310000066585,west/large,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0054,B0,Заводська міська територіальна громада,UA53060130000040567,center/mid,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0055,B0,Косівська міська територіальна громада,UA26100010000076570,west/large,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0056,B0,Галицинівська сільська територіальна громада,UA48060070000087404,south/small,,,0,True,True,4,False,True,4,False,False,,opened_no_followup
+B0057,B0,Тересвянська селищна територіальна громада,UA21080130000093757,west/mid,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0058,B0,Марганецька міська територіальна громада,UA12080010000029838,east/large,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0059,B0,Мукачівська міська територіальна громада,UA21040150000092428,west/large,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0060,B0,Новослобідська сільська територіальна громада,UA59020110000066430,north/small,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0061,B0,П'ятихатська міська територіальна громада,UA12040210000039759,east/mid,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0062,B0,Великосорочинська сільська територіальна громада,UA53060070000077527,center/small,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0063,B0,Рокитнянська селищна територіальна громада,UA32020130000010013,center/large,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0064,B0,Вікнянська сільська територіальна громада,UA73060090000047054,west/small,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0065,B0,Джуринська сільська територіальна громада,UA05060030000026125,center/mid,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0066,B0,Лубенська міська територіальна громада,UA53040030000088898,center/large,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0067,B0,Космацька сільська територіальна громада,UA26100030000012148,west/small,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0068,B0,Жовківська міська територіальна громада,UA46060130000059055,west/large,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0069,B0,Тернопільська міська територіальна громада,UA61040490000035010,west/large,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0070,B0,Боянська сільська територіальна громада,UA73060010000052133,west/small,,,0,True,True,7,False,True,12,False,False,,opened_no_followup
+B0071,B0,Березнівська міська територіальна громада,UA56060030000057923,west/large,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0072,B0,Сухополов'янська сільська територіальна громада,UA74080170000055617,north/mid,,,0,True,True,3,False,True,6,False,False,,opened_no_followup
+B0073,B0,Пришибська сільська територіальна громада,UA53020210000023587,center/small,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0074,B0,Банилівська сільська територіальна громада,UA73020010000044067,west/small,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0075,B0,Миколаївська міська територіальна громада,UA48060150000071713,south/large,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0076,B0,Парафіївська селищна територіальна громада,UA74080110000023749,north/small,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0077,B0,Бабинська сільська територіальна громада,UA56060010000018261,west/small,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0078,B0,Головинська сільська територіальна громада,UA56060130000072276,west/small,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0079,B0,Чагорська сільська територіальна громада,UA73060590000095243,west/mid,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0080,B0,Новобузька міська територіальна громада,UA48020150000051082,south/mid,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0081,B0,Глибоцька селищна територіальна громада,UA73060150000088691,west/mid,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0082,B0,Байковецька сільська територіальна громада,UA61040010000042862,west/mid,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0083,B0,Лохвицька міська територіальна громада,UA53060190000015369,center/mid,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0084,B0,Бердянська міська територіальна громада,UA23020050000046501,east/large,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0085,B0,Славутицька міська територіальна громада,UA32100130000093505,center/mid,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0086,B0,Соснівська селищна територіальна громада,UA56060490000031684,west/small,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0087,B0,Великогаївська сільська територіальна громада,UA61040110000010646,west/mid,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0088,B0,Жовтоводська міська територіальна громада,UA12040110000091524,east/large,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0089,B0,Куликівська селищна територіальна громада,UA74100210000053397,north/mid,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0090,B0,Повчанська сільська територіальна громада,UA56040250000064519,west/small,,,0,True,True,7,False,True,12,False,False,,opened_no_followup
+B0091,B0,Мигіївська сільська територіальна громада,UA48080110000010732,south/small,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0092,B0,Білоцерківська міська територіальна громада,UA32020010000093088,center/large,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0093,B0,Великобудищанська сільська територіальна громада,UA53060050000024229,center/small,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0094,B0,Снігурівська міська територіальна громада,UA48020190000083597,south/mid,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0095,B0,Глухівська міська територіальна громада,UA59100030000078744,north/large,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0096,B0,Яблунівська селищна територіальна громада,UA26100090000038366,west/mid,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0097,B0,Рокитнівська селищна територіальна громада,UA56080150000069525,west/large,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0098,B0,Збаразька міська територіальна громада,UA61040150000098181,west/large,,,0,True,True,6,False,False,,False,False,,opened_no_followup
+B0099,B0,Горінчівська сільська територіальна громада,UA21120050000055437,west/mid,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0100,B0,Радивилівська міська територіальна громада,UA56040290000025511,west/mid,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0101,B0,Борщівська міська територіальна громада,UA61060050000068464,west/large,,,0,True,True,0,False,False,,False,False,,opened_no_followup
+B0102,B0,Рукшинська сільська територіальна громада,UA73040150000056182,west/small,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0103,B0,Новосанжарська селищна територіальна громада,UA53080310000072384,center/mid,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0104,B0,Дрогобицька міська територіальна громада,UA46020030000019252,west/large,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0105,B0,Нечаянська сільська територіальна громада,UA48060190000070297,south/small,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0106,B0,Оболонська сільська територіальна громада,UA53020150000098867,center/small,,,0,True,True,1,False,True,3,False,False,,opened_no_followup
+B0107,B0,Великобичківська селищна територіальна громада,UA21060030000020114,west/large,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0108,B0,Вільнозапорізька сільська територіальна громада,UA48020050000023194,south/small,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0109,B0,Журавненська селищна територіальна громада,UA46100070000076013,west/mid,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0110,B0,Іванівська сільська територіальна громада,UA05120050000063063,center/mid,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0111,B0,Сенчанська сільська територіальна громада,UA53060290000047345,center/small,,,0,True,True,2,False,False,,False,False,,opened_no_followup
+B0112,B0,Волоківська сільська територіальна громада,UA73060110000070017,west/small,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0113,B0,Тисменицька міська територіальна громада,UA26040330000019235,west/large,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0114,B0,Новоборисівська сільська територіальна громада,UA51140110000053825,south/small,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0115,B0,Солотвинська селищна територіальна громада,UA26040290000025886,west/large,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0116,B0,Немирівська міська територіальна громада,UA05020170000049432,center/large,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0117,B0,Лука-Мелешківська сільська територіальна громада,UA05020150000074651,center/mid,,,0,True,True,0,False,True,3,False,False,,opened_no_followup
+B0118,B0,Зазимська сільська територіальна громада,UA32060090000096236,center/mid,,,0,True,True,1,False,False,,False,False,,opened_no_followup
+B0119,B0,Дніпровська міська територіальна громада,UA12020010000033698,east/large,,,0,True,True,5,False,False,,False,False,,opened_no_followup
+B0120,B0,Новогалещинська селищна територіальна громада,UA53020130000091122,center/small,,,0,True,True,4,False,False,,False,False,,opened_no_followup
+B0121,B0,Апостолівська міська територіальна громада,UA12060010000090992,east/mid,,,0,True,True,3,False,True,6,False,False,,opened_no_followup
+B0122,B0,Лозівська міська територіальна громада,UA63100050000079487,east/large,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0123,B0,Острозька міська територіальна громада,UA56060450000083945,west/large,,,0,True,True,3,False,False,,False,False,,opened_no_followup
+B0124,B0,Кам'янська міська територіальна громада,UA12040150000015189,east/large,,,0,True,True,7,False,False,,False,False,,opened_no_followup
+B0125,B0,Бурштинська міська територіальна громада,UA26040070000065724,west/large,,,0,True,True,0,False,False,,False,False,,opened_no_followup
