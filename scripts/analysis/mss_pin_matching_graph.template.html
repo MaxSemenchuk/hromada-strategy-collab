@@ -692,21 +692,14 @@
       <div class="detail-body" id="detail-body"></div>
     </section>
     <p class="section-label" data-i18n="layers.label">Сигнали пошуку</p>
-    <div class="layers" id="layer-universe-box" role="group" data-i18n-aria="layers.aria" aria-label="Шари мапи">
-      <label id="layer-universe-row">
-        <input type="checkbox" id="layer-universe" checked/>
-        <span class="sw universe" aria-hidden="true"></span>
-        <span class="layer-copy">
-          <span class="layer-title" data-i18n="layer.universe.title">Усі громади</span>
-          <span class="layer-desc" data-i18n="layer.universe.desc">Сірі ноди — материкові громади з координатами</span>
-        </span>
-      </label>
-    </div>
-    <!-- Split the flat 11-checkbox list into "is this a real, already-signed
+    <!-- Split the flat checkbox list into "is this a real, already-signed
          tie, or a search hypothesis, or just backdrop context" — the single
-         distinction people actually reason with when scanning the legend. -->
+         distinction people actually reason with when scanning the legend.
+         The base grey "all hromadas" layer used to be a togglable checkbox
+         here too, but there's no real reason to ever hide it — it's the
+         substrate every other signal sits on — so it's always on now. -->
     <p class="section-label" data-i18n="layers.group.confirmed">Підтверджені зв'язки</p>
-    <div class="layers">
+    <div class="layers" role="group" data-i18n-aria="layers.aria" aria-label="Шари мапи">
       <label>
         <input type="checkbox" id="layer-pin" checked/>
         <span class="sw pin" aria-hidden="true"></span>
@@ -1610,6 +1603,10 @@ function rebuildMapLayers() {
   nodesLayer.clearLayers();
 
   const themedIds = pinThemeFilterNarrowed() ? themedPinNodeIds() : null;
+  // Which edge kinds actually got drawn for each hromada this pass — used
+  // below so a node only lights up for a signal that's currently visible,
+  // instead of the whole node layer switching on when ANY one toggle is on.
+  const nodeKinds = new Map();
 
   for (const e of edges) {
     if (themedIds) {
@@ -1628,6 +1625,26 @@ function rebuildMapLayers() {
     else if (e.kind === 'explicit_ask') explicitAskEdgesLayer.addLayer(line);
     else if (e.kind === 'plich_o_plich') plichEdgesLayer.addLayer(line);
     else if (e.kind === 'thematic' || e.kind === 'hypothesis') thematicEdgesLayer.addLayer(line);
+    for (const id of [a.id, b.id]) {
+      if (!nodeKinds.has(id)) nodeKinds.set(id, new Set());
+      nodeKinds.get(id).add(e.kind);
+    }
+  }
+
+  // Does this hromada currently have at least one signal that's both real
+  // (has a drawn edge / matching flag) and toggled on in the sidebar?
+  function nodeSignalActive(n) {
+    const kinds = nodeKinds.get(n.id);
+    if (layers.pin && (n.in_pin || (kinds && (kinds.has('pin') || kinds.has('pin_agreement'))))) return true;
+    if (layers.corpus && n.in_corpus) return true;
+    if (layers.twinning && (n.twinning_count || n.c4c_url)) return true;
+    if (!kinds) return false;
+    if (layers.thematic && (kinds.has('thematic') || kinds.has('hypothesis'))) return true;
+    if (layers.operational && kinds.has('operational')) return true;
+    if (layers.complementary && kinds.has('complementary')) return true;
+    if (layers.explicitAsk && kinds.has('explicit_ask')) return true;
+    if (layers.plich && kinds.has('plich_o_plich')) return true;
+    return false;
   }
 
   // Multi-party agreement hubs: small non-interactive markers where the
@@ -1670,9 +1687,13 @@ function rebuildMapLayers() {
   for (const n of nodes) {
     if (n.lat == null || n.kind === 'agreement') continue;
     if (themedIds && !themedIds.has(n.id)) continue;
+    const selected = selectedId === n.id;
+    // A node only lights up for a signal that's actually toggled on —
+    // except the selected one, which stays visible so search/click always
+    // has something to point at even if its only signal is toggled off.
+    if (!selected && !nodeSignalActive(n)) continue;
     const corpusGlow = layers.corpus && n.in_corpus;
     const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
-    const selected = selectedId === n.id;
     const r = (selected ? 6.5 : 3) + Math.min(n.degree || 0, 24) * 0.15 + (twinGlow ? 1.2 : 0);
     const marker = L.circleMarker([n.lat, n.lon], {
       radius: r,
@@ -1704,14 +1725,17 @@ function syncLayerVisibility() {
   show(complementaryEdgesLayer, layers.complementary);
   show(explicitAskEdgesLayer, layers.explicitAsk);
   show(plichEdgesLayer, layers.plich);
-  // network nodes on when any network / corpus highlight layer is on
-  show(nodesLayer, layers.pin || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus || layers.twinning || layers.plich);
+  // network nodes on when any network / corpus highlight layer is on, or
+  // when something is selected (e.g. via search) — its marker must render
+  // even if every toggle happens to be off.
+  show(nodesLayer, layers.pin || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus || layers.twinning || layers.plich || selectedId != null);
 }
 
 rebuildMapLayers();
 
 function syncLayers() {
-  layers.universe = document.getElementById('layer-universe').checked;
+  // layers.universe has no checkbox — it's the base grey layer every other
+  // signal sits on, always on (see the comment above the sidebar markup).
   layers.pin = document.getElementById('layer-pin').checked;
   layers.thematic = document.getElementById('layer-thematic').checked;
   layers.operational = document.getElementById('layer-operational').checked;
@@ -1726,7 +1750,7 @@ function syncLayers() {
     rebuildMapLayers();
   }
 }
-['layer-universe','layer-pin','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-plich','layer-corpus','layer-twinning','layer-donors','layer-basins'].forEach(id => {
+['layer-pin','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-plich','layer-corpus','layer-twinning','layer-donors','layer-basins'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
@@ -1774,12 +1798,6 @@ function setMode(next) {
   // HydroBASINS underlay renders on the Leaflet map only — the canvas force
   // graph has no geo projection to draw it on, so hide the toggle there.
   document.getElementById('layer-basins-row').hidden = mode !== 'map';
-  // The universe underlay (all mainland hromadas, faint grey dots) is a
-  // Leaflet-only layer — the canvas graph only ever draws DATA.nodes
-  // (the MSS network), never DATA.universe, so this toggle has zero
-  // effect there.
-  document.getElementById('layer-universe-row').hidden = mode !== 'map';
-  document.getElementById('layer-universe-box').hidden = mode !== 'map';
   if (mode === 'map') {
     mapEl.classList.remove('hidden');
     canvas.classList.remove('visible');
@@ -2240,8 +2258,6 @@ window.PAGE_I18N = {
     "layers.group.confirmed": "Підтверджені зв'язки",
     "layers.group.hypotheses": "Гіпотези пошуку",
     "layers.group.backdrop": "Підкладки",
-    "layer.universe.title": "Усі громади",
-    "layer.universe.desc": "Сірі ноди — материкові громади з координатами",
     "layer.pin.title": "Зареєстровані угоди МСС",
     "layer.pin.desc": "Бірюзові лінії — вже укладені договори між громадами",
     "layer.thematic.title": "Сигнал · схожа стратегія",
@@ -2355,8 +2371,6 @@ window.PAGE_I18N = {
     "layers.group.confirmed": "Confirmed links",
     "layers.group.hypotheses": "Search hypotheses",
     "layers.group.backdrop": "Underlays",
-    "layer.universe.title": "All hromadas",
-    "layer.universe.desc": "Grey nodes — mainland hromadas with coordinates",
     "layer.pin.title": "Registered IMC agreements",
     "layer.pin.desc": "Teal lines — agreements already concluded between hromadas",
     "layer.thematic.title": "Signal · similar strategy",
