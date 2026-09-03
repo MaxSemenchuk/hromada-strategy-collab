@@ -21,6 +21,7 @@ hromadas with coordinates (metadata — not the strategy corpus). Click a point 
 | [`funds.html`](funds.html) | Donor portfolio: shared next grant / bridges / hubs |
 | [`resources.html`](resources.html) | KSE resource proxies × DREAM revealed priorities |
 | [`mss-pin-matching-graph.html`](mss-pin-matching-graph.html) | Full PIN map + four hypothesis overlays |
+| [`aim-cc-field-experiment.html`](aim-cc-field-experiment.html) | AIM-CC 2026 pre-registration summary (bilingual) — links to the full technical prereg on GitHub |
 | [`strategy-writing-guide.md`](strategy-writing-guide.md) | How to write strategies that surface МСС signals |
 | [`mss-cooperation-research.md`](mss-cooperation-research.md) | DOBRE + Tkachuk / ІГС practitioner framing, МСС forms |
 | [`ua-eu-twinning.md`](ua-eu-twinning.md) | UA–EU sister cities: format, SKEW/C4C, how partners are found, cases |

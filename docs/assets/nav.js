@@ -24,6 +24,11 @@
       href: "mss-pin-matching-graph.html",
       id: "map",
       label: { uk: "Мапа угод МСС", en: "IMC map" }
+    },
+    {
+      href: "aim-cc-field-experiment.html",
+      id: "aim-cc",
+      label: { uk: "AIM-CC експеримент", en: "AIM-CC experiment" }
     }
   ];
 
