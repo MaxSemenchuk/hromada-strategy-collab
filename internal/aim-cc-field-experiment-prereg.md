@@ -4,13 +4,15 @@
 **Status:** Draft for AIM-CC 2026 consultation (not locked). Comments welcome before freeze.
 **Contact:** Max Semenchuk · max.semenchuk@gmail.com · W3I Civic Tech Lab pilot
 **Repo / data:** https://github.com/MaxSemenchuk/hromada-strategy-collab · CC BY 4.0 releases
-**Date:** 2026-09-03 · **Version:** 0.5 (primary design pivoted to hromada-level report+engagement — see §12 Deviations log; original pair-based design kept as Appendix A)
+**Date:** 2026-09-04 · **Version:** 0.6 (Arm R now shows up to 3 ranked candidates, not one; added exploratory site-engagement outcome — see §12 Deviations log; original pair-based design kept as Appendix A)
 
 ---
 
 ## 1. Research question
 
-Among Ukrainian territorial communities (*hromadas*) with structured development-strategy Goals, does a hromada that receives a personalized report containing a **model-selected partner recommendation** (multi-signal: goals · geo · MSS network · complementary need, via `recommend_for.py`'s "general" policy) show more **engagement and unprompted follow-up** than a hromada that receives a **benchmark-only report with no specific partner** (placebo)?
+Among Ukrainian territorial communities (*hromadas*) with structured development-strategy Goals, does a hromada that receives a personalized report containing **1–3 model-selected candidate partners** (multi-signal: goals · geo · MSS network · complementary need, via `recommend_for.py`'s "general" policy, each candidate shown with its four signals kept separate — never collapsed into one blended score) show more **engagement and unprompted follow-up** than a hromada that receives a **benchmark-only report with no specific partner** (placebo)?
+
+**Why a short list, not a single "top pick" (changed in v0.6):** a lone recommendation is a cleaner treatment in principle, but it makes the whole arm hostage to one ranking call — if the #1 candidate happens to be a poor real-world fit for an idiosyncratic reason the model can't see, the hromada never sees an alternative and Arm R looks worse than the underlying approach deserves. Showing 1–3 ranked candidates keeps the arm's content still clearly "model-selected, explained, hypothesis-framed" (not a search-results page — no filters, no pagination) while reducing that single-point-of-failure risk. This does **not** turn Arm R into a different kind of arm (no new randomization unit, no new corpus split) — see §12.
 
 Secondary / exploratory (demoted from primary in v0.1–0.4 — see Appendix A): does a *thematic* (goals-similar) vs *operational* (geo-proximate) discovery signal produce different follow-up quality? This needs a dedicated geo-only arm, which the primary design below does not carry.
 
@@ -27,8 +29,8 @@ Note: the report presents the recommendation as a **hypothesis** ("here's a part
 
 | Arm | Content | Rationale |
 |-----|---------|-----------|
-| **R — Recommendation report** | Own Goals/context summary + the top model-selected partner pick from `recommend_for.py` (motivation="general": goals 45% + geo 25% + MSS-network 15% + complementary 15%) — partner, package (theme + suggested Law 1508-VII form), 1–3 signal chips, short "чому це вам допомагає" | Tests whether a real, multi-signal match recommendation drives engagement/follow-up beyond just being paid attention to |
-| **B0 — Benchmark placebo** | Same personalized framing (own Goals summary, civic-tech barometer score from `edem-barometer.json`, population/oblast peer context) but **no specific partner named** | Isolates the effect of the recommendation itself from "someone made me a personalized report" — a real control, not a null/junk page (§9) |
+| **R — Recommendation report** | Own Goals/context summary + **up to 3 ranked candidate partners** from `recommend_for.py` (motivation="general": goals 45% + geo 25% + MSS-network 15% + complementary 15% — used only to rank candidates against each other, never shown as a blended score) — each candidate shown with its own package (theme + suggested Law 1508-VII form), the four raw signals kept separate, and a short "чому це вам допомагає" | Tests whether real, multi-signal match candidates drive engagement/follow-up beyond just being paid attention to, without making the arm hostage to a single ranking call |
+| **B0 — Benchmark placebo** | Same personalized framing (own Goals summary, civic-tech barometer score from `edem-barometer.json`, population/oblast peer context) **plus aggregate, non-identifying counts across the same four signal families** (e.g. "N nearby hromadas with overlapping goals," "M geographically close," "K with an existing MSS-network tie nearby") but **no specific partner named** | Isolates the effect of naming a partner from "someone made me a personalized report" — a real, signal-balanced control, not a page that just happens to be mostly a digital-democracy score (§9) |
 
 The original 3-arm pair-based design (Arms A/B/C, testing thematic vs operational vs random-pair control) is retained as **Appendix A** — not deleted, demoted from primary scope. Its H2/H3 (does a geo-specific arm convert differently than a thematic one) become exploratory future work, since Arm R here blends goals+geo+network rather than isolating one signal.
 
@@ -62,6 +64,8 @@ This remains an **underpowered pilot** for small effects at the "Pilot" and "Ful
 **Secondary (ordered ladder):**
 1. clicked into the recommendation section (Arm R only) · 2. replied to the report at all, within 21 days · 3. inbound request within 90 days (cumulative, includes the 30-day ones) · 4. (exploratory, 12 months) new entry in the public МСС registry / KSE PIN edge.
 
+**Exploratory (added v0.6, not yet instrumented):** site engagement beyond the report itself — e.g. visited the PIN matching map, the matches list, or another hromada's profile within 30 days of first portal view. Motivation: the report is a doorway into a larger tool (§2's "portal view" delivery), so a hromada that self-serves through the map after a B0 (no-partner) report is a real form of "found a partner," not a null outcome — and if B0 hromadas self-serve at a rate close to Arm R's recommendation-click rate, that's directly informative about whether an assisted recommendation beats generic self-service tools open to both arms. **Blocked on instrumentation:** the public docs site currently has no page-view analytics; this outcome can't be measured until privacy-conscious, aggregate-only tracking is added and separately reviewed (§9) — recorded here as intent, not yet part of the analysis plan.
+
 **Moderator (exploratory, carried over from v0.1–0.4 §6):** seed has explicit МСС language in strategy (`mss-intents.json`); `edem_total` civic-tech proxy; same-rayon vs cross-rayon; confirmed EU twin (SKEW/C4C), per [docs/ua-eu-twinning.md](../docs/ua-eu-twinning.md).
 
 ## 7. Hypotheses
@@ -70,6 +74,7 @@ This remains an **underpowered pilot** for small effects at the "Pilot" and "Ful
 - **H2 (secondary):** P(clicked-and-replied | R) > P(replied | B0) — engagement without the follow-up ask
 - **H3 (moderation, exploratory):** explicit-ask seeds show a larger R−B0 gap than non-ask seeds
 - **H4 (exploratory future work, from Appendix A):** does a thematic-only vs geo-only recommendation change follow-up conversion? Needs its own arm, not tested by the primary R/B0 design.
+- **H5 (exploratory, added v0.6):** among Arm R hromadas that reach out, does the ask concentrate on the #1-ranked candidate more than #2/#3? Tests whether the model's ranking order itself carries value, vs. the mere presence of named candidates — coded from the qualitative call log (§8), no new arm needed.
 
 **Null of interest:** R ≈ B0 on inbound follow-up → a real, multi-signal recommendation adds nothing over a generic personalized report; the value people respond to is "someone made this for me," not the match itself.
 
@@ -78,7 +83,7 @@ This remains an **underpowered pilot** for small effects at the "Pilot" and "Ful
 - **Main:** difference in primary inbound-@30d rates R vs B0; Fisher exact or Barnard (small N); report risk difference + Wilson CI.
 - **No covariate fishing:** adjust only for pre-registered blocks (logistic / CMH if sparse).
 - **Attrition:** portal-technical failures (broken link, page didn't render) coded separately from "viewed but didn't engage"; primary analysis ITT among successfully viewed reports.
-- **Qualitative:** short code per hromada that reaches out — "asked intro to recommended partner / asked general consult / asked about own strategy only" (carried over in spirit from v0.1–0.4's post-call code).
+- **Qualitative:** short code per hromada that reaches out — "asked intro to recommended partner / asked general consult / asked about own strategy only" (carried over in spirit from v0.1–0.4's post-call code). For Arm R, also record **which ranked candidate** (#1/#2/#3/more than one) the ask names, to support H5.
 - **Selection-bias caveat (H2):** "clicked-and-replied" conditions on engaging with content in the first place, which the design doesn't force — same caveat as v0.1–0.4's H3: report with the caveat, don't attempt a Heckman-style correction at pilot N.
 
 ## 9. Ethics & transparency
@@ -105,6 +110,8 @@ This remains an **underpowered pilot** for small effects at the "Pilot" and "Ful
 Numbers in §4 come from a synthetic (no hromada contacted) Monte-Carlo dry-run — `scripts/analysis/aim_cc_synthetic_experiment.py --design report --guaranteed-view` — using elicited, illustrative funnel priors (open/reply/inbound rates), not real data; see `internal/aim-cc-synthetic-experiment-results.json` for the full run and `internal/aim-cc-synthetic-report-engagement-log.csv` for one simulated per-hromada log. Re-run before quoting any N or power number for a real launch decision — the goals-ready corpus size (293) and the priors are exactly the kind of thing that drifts.
 
 ## 12. Deviations log
+
+**2026-09-04 (v0.6) — Arm R widened to 1–3 candidates; added an exploratory engagement outcome.** Two changes, from design-review feedback: (1) Arm R now shows **up to 3 ranked candidate partners** instead of exactly one — each still shown as four separate signals plus a package and a "чому це вам допомагає" line, never a blended score, so the arm's content is still recognizably "model-selected candidates, explained," not a search-results list. Reason: a single top-1 pick makes the whole arm hostage to one ranking call; a short ranked list is more robust to an unlucky #1 without changing the randomization unit or corpus split. Added **H5** (exploratory) to check whether contact concentrates on the #1-ranked candidate, so the ranking's own value stays testable even with multiple candidates shown. (2) Added **site engagement beyond the report** (visited the PIN map / matches list / another hromada profile within 30 days) as an exploratory secondary outcome, motivated by the tool being a portal, not a one-page report — flagged in §6 as blocked on adding page-view analytics, which does not exist on the site yet and is not implemented by this revision.
 
 **2026-09-03 (v0.5) — primary design changed.** From pair-level intro RCT (Arms A/B/C: thematic vs operational vs random-pair control, §1–8 through v0.4) to hromada-level report+engagement RCT (Arms R/B0: recommendation report vs benchmark placebo). Reason: a synthetic dry-run of the v0.4 design (`scripts/analysis/aim_cc_synthetic_experiment.py`) showed its no-hromada-reuse rule hard-caps total reach at **146 pairs** (293 goals-ready hromadas ÷ 2) *combined across every arm*, regardless of how N is split — the §4 "stretch" target of reaching hromadas via a partner association could not exceed that ceiling no matter the association's reach. Switching the randomization unit to one hromada removes the pairing constraint entirely; assuming a "guaranteed portal view" delivery (report renders on visit, no independent email-open funnel step) further raised simulated power at fixed N by roughly 2–3× versus a cold-email delivery of the same design (e.g. ≈13% → ≈40% power at the same 292-hromada ceiling). The old A/B/C design is retained as Appendix A, not deleted; its H2/H3 (geo vs thematic conversion) are demoted to exploratory future work since the primary design's Arm R blends signals rather than isolating one. All supporting power/rate numbers are from elicited-prior synthetic simulation, not observed funnel data.
 

@@ -107,7 +107,7 @@
     </p>
     <div class="meta-row">
       <span class="status-pill" data-i18n="status">Чернетка · консультація AIM-CC 2026</span>
-      <span data-i18n-html="meta.version">Версія <strong>0.5</strong> · 2026-09-03</span>
+      <span data-i18n-html="meta.version">Версія <strong>0.6</strong> · 2026-09-04</span>
       <span data-i18n-html="meta.contact">Контакт: <strong>Max Semenchuk</strong> · max.semenchuk@gmail.com</span>
     </div>
 
@@ -119,10 +119,10 @@
     <h2 data-i18n="q.h2">Питання дослідження</h2>
     <p data-i18n-html="q.p">
       Серед українських територіальних громад зі структурованими цілями стратегії — чи громада,
-      яка отримує персональний звіт із <strong>підібраною моделлю рекомендацією партнера</strong>
-      (цілі · географія · мережа МСС · доповнення ресурсів), демонструє більше <strong>залученості
-      й неспровокованих звернень</strong>, ніж громада, що отримує звіт лише з бенчмарком, без
-      конкретного партнера?
+      яка отримує персональний звіт із <strong>1–3 модельно підібраними кандидатами партнерства</strong>
+      (цілі · географія · мережа МСС · доповнення ресурсів — кожен сигнал окремо, без зведення в один бал),
+      демонструє більше <strong>залученості й неспровокованих звернень</strong>, ніж громада, що отримує
+      звіт лише з бенчмарком, без жодного партнера?
     </p>
 
     <h2 data-i18n="design.h2">Дизайн: два плеча, рандомізація на рівні громади</h2>
@@ -135,13 +135,13 @@
       <div class="arm-card">
         <div class="kicker" data-i18n="arm.r.kicker">Плече R</div>
         <h3 data-i18n="arm.r.h3">Звіт із рекомендацією</h3>
-        <p data-i18n="arm.r.p">Власний зріз цілей + топ-партнер від recommend_for.py, показаний як чотири окремі сигнали (цілі · гео · мережа МСС · доповнення — 45/25/15/15% лише для внутрішнього сортування), пакет (тема + форма угоди) і коротке пояснення «чому це вам допомагає».</p>
+        <p data-i18n="arm.r.p">Власний зріз цілей + до 3 ранжованих кандидатів від recommend_for.py, кожен показаний як чотири окремі сигнали (цілі · гео · мережа МСС · доповнення — 45/25/15/15% лише для внутрішнього сортування), пакет (тема + форма угоди) і коротке пояснення «чому це вам допомагає».</p>
         <p class="links" style="margin-top: 0.5rem;"><a href="aim-cc-recommendation-example.html" data-i18n="arm.r.example">Приклад такого звіту →</a></p>
       </div>
       <div class="arm-card">
         <div class="kicker" data-i18n="arm.b.kicker">Плече B0</div>
         <h3 data-i18n="arm.b.h3">Бенчмарк-плацебо</h3>
-        <p data-i18n="arm.b.p">Та сама персональна подача (зріз цілей, індекс цифрової демократії, контекст сусідів за населенням/областю) — але без названого партнера. Чесний контроль, не порожня сторінка.</p>
+        <p data-i18n="arm.b.p">Та сама персональна подача (зріз цілей, індекс цифрової демократії, контекст сусідів) плюс агреговані, неперсоніфіковані лічильники по тих самих чотирьох сигналах (скільки громад поруч мають схожі цілі, географічно близькі, з мережевим зв'язком) — але без названого партнера. Чесний, збалансований контроль, не «просто едем-бал».</p>
         <p class="links" style="margin-top: 0.5rem;"><a href="aim-cc-benchmark-example.html" data-i18n="arm.b.example">Приклад такого звіту →</a></p>
       </div>
     </div>
@@ -198,20 +198,20 @@ window.PAGE_I18N = {
     "h1": "Чи допомагає персональна рекомендація партнера, чи достатньо просто персонального звіту?",
     "lede": "Пілотний польовий експеримент серед українських громад: порівнюємо звіт із конкретною рекомендацією партнера (за модельним підбором) проти чесного «плацебо» — персонального бенчмарку без назви партнера.",
     "status": "Чернетка · консультація AIM-CC 2026",
-    "meta.version": "Версія <strong>0.5</strong> · 2026-09-03",
+    "meta.version": "Версія <strong>0.6</strong> · 2026-09-04",
     "meta.contact": "Контакт: <strong>Max Semenchuk</strong> · max.semenchuk@gmail.com",
     "callout.hypothesis": "Рекомендація в звіті завжди подається як <strong>гіпотеза</strong> («ось партнер, вартий уваги, і чому») — ніколи як «ШІ визначив вас ідеальними партнерами» чи перевірений показник сумісності.",
     "q.h2": "Питання дослідження",
-    "q.p": "Серед українських територіальних громад зі структурованими цілями стратегії — чи громада, яка отримує персональний звіт із <strong>підібраною моделлю рекомендацією партнера</strong> (цілі · географія · мережа МСС · доповнення ресурсів), демонструє більше <strong>залученості й неспровокованих звернень</strong>, ніж громада, що отримує звіт лише з бенчмарком, без конкретного партнера?",
+    "q.p": "Серед українських територіальних громад зі структурованими цілями стратегії — чи громада, яка отримує персональний звіт із <strong>1–3 модельно підібраними кандидатами партнерства</strong> (цілі · географія · мережа МСС · доповнення ресурсів — кожен сигнал окремо, без зведення в один бал), демонструє більше <strong>залученості й неспровокованих звернень</strong>, ніж громада, що отримує звіт лише з бенчмарком, без жодного партнера?",
     "design.h2": "Дизайн: два плеча, рандомізація на рівні громади",
     "design.p": "Ключова зміна версії 0.5: одиниця рандомізації — одна громада, а не пара. Це знімає обмеження попереднього пар-орієнтованого дизайну (жорсткий стеля у 146 пар незалежно від розподілу вибірки) і дозволяє охопити суттєво більше громад тим самим корпусом.",
     "arm.r.kicker": "Плече R",
     "arm.r.h3": "Звіт із рекомендацією",
-    "arm.r.p": "Власний зріз цілей + топ-партнер від recommend_for.py, показаний як чотири окремі сигнали (цілі · гео · мережа МСС · доповнення — 45/25/15/15% лише для внутрішнього сортування), пакет (тема + форма угоди) і коротке пояснення «чому це вам допомагає».",
+    "arm.r.p": "Власний зріз цілей + до 3 ранжованих кандидатів від recommend_for.py, кожен показаний як чотири окремі сигнали (цілі · гео · мережа МСС · доповнення — 45/25/15/15% лише для внутрішнього сортування), пакет (тема + форма угоди) і коротке пояснення «чому це вам допомагає».",
     "arm.r.example": "Приклад такого звіту →",
     "arm.b.kicker": "Плече B0",
     "arm.b.h3": "Бенчмарк-плацебо",
-    "arm.b.p": "Та сама персональна подача (зріз цілей, індекс цифрової демократії, контекст сусідів за населенням/областю) — але без названого партнера. Чесний контроль, не порожня сторінка.",
+    "arm.b.p": "Та сама персональна подача (зріз цілей, індекс цифрової демократії, контекст сусідів) плюс агреговані, неперсоніфіковані лічильники по тих самих чотирьох сигналах (скільки громад поруч мають схожі цілі, географічно близькі, з мережевим зв'язком) — але без названого партнера. Чесний, збалансований контроль, не «просто едем-бал».",
     "arm.b.example": "Приклад такого звіту →",
     "outcome.h2": "Що вимірюємо",
     "outcome.p": "<strong>Основний показник:</strong> неспровоковане звернення по інтро/консультацію протягом 30 днів після першого перегляду звіту — найсильніший сигнал, який не є вимушеною відповіддю на прохання. Додатково: клік у секцію рекомендації, відповідь на звіт протягом 21 дня, звернення протягом 90 днів, нова угода в реєстрі МСС протягом 12 місяців (дослідницьке).",
@@ -235,20 +235,20 @@ window.PAGE_I18N = {
     "h1": "Does a personal partner recommendation help, or is a personal report enough on its own?",
     "lede": "A pilot field experiment among Ukrainian hromadas: a report with a specific, model-selected partner recommendation versus an honest placebo — a personal benchmark report with no partner named.",
     "status": "Draft · AIM-CC 2026 consultation",
-    "meta.version": "Version <strong>0.5</strong> · 2026-09-03",
+    "meta.version": "Version <strong>0.6</strong> · 2026-09-04",
     "meta.contact": "Contact: <strong>Max Semenchuk</strong> · max.semenchuk@gmail.com",
     "callout.hypothesis": "The report always frames the recommendation as a <strong>hypothesis</strong> (\"here's a partner worth exploring, and why\") — never as \"AI matched you as perfect partners\" or a verified compatibility score.",
     "q.h2": "Research question",
-    "q.p": "Among Ukrainian territorial communities (hromadas) with structured development-strategy goals — does a hromada that receives a personalized report containing a <strong>model-selected partner recommendation</strong> (goals · geography · IMC network · complementary need) show more <strong>engagement and unprompted follow-up</strong> than a hromada that receives a benchmark-only report with no specific partner named?",
+    "q.p": "Among Ukrainian territorial communities (hromadas) with structured development-strategy goals — does a hromada that receives a personalized report containing <strong>1–3 model-selected candidate partners</strong> (goals · geography · IMC network · complementary need — each signal kept separate, never collapsed into one score) show more <strong>engagement and unprompted follow-up</strong> than a hromada that receives a benchmark-only report with no partner named?",
     "design.h2": "Design: two arms, hromada-level randomization",
     "design.p": "The key change in v0.5: the unit of randomization is one hromada, not a pair. This removes the previous pair-based design's hard ceiling (146 pairs total, regardless of how the sample was split) and lets the same corpus reach substantially more hromadas.",
     "arm.r.kicker": "Arm R",
     "arm.r.h3": "Recommendation report",
-    "arm.r.p": "Own goals summary + the top partner pick from recommend_for.py, shown as four separate signals (goals · geo · IMC network · complementary — 45/25/15/15% used only for internal sorting), a package (theme + agreement form), and a short \"why this helps you\" note.",
+    "arm.r.p": "Own goals summary + up to 3 ranked candidates from recommend_for.py, each shown as four separate signals (goals · geo · IMC network · complementary — 45/25/15/15% used only for internal sorting), a package (theme + agreement form), and a short \"why this helps you\" note.",
     "arm.r.example": "Example of this report →",
     "arm.b.kicker": "Arm B0",
     "arm.b.h3": "Benchmark placebo",
-    "arm.b.p": "Same personalized framing (own goals summary, digital-democracy index, population/oblast peer context) — but no specific partner named. A real control, not a blank page.",
+    "arm.b.p": "Same personalized framing (own goals summary, digital-democracy index, population/oblast peer context) plus aggregate, non-identifying counts across the same four signal families (how many nearby hromadas share goals, are geographically close, have an existing network tie) — but no specific partner named. A real, signal-balanced control, not just a digital-democracy score.",
     "arm.b.example": "Example of this report →",
     "outcome.h2": "What we measure",
     "outcome.p": "<strong>Primary outcome:</strong> an unprompted request for an intro/consult within 30 days of first viewing the report — the strongest signal, since it isn't a forced reply to an ask. Secondary: clicking into the recommendation section, replying to the report within 21 days, an inbound request within 90 days, a new entry in the public IMC registry within 12 months (exploratory).",

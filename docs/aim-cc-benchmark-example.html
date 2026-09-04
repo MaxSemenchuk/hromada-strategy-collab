@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Приклад звіту плеча B0 · AIM-CC 2026</title>
-  <meta name="description" content="Приклад бенчмарк-звіту (плече B0) для однієї громади — макет для перегляду дизайну польового експерименту AIM-CC 2026."/>
+  <meta name="description" content="Приклад бенчмарк-звіту (плече B0) для однієї громади — збалансований по чотирьох сигналах (цілі · гео · мережа · доповнення), не лише по едем-індексу, макет для перегляду дизайну польового експерименту AIM-CC 2026."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -17,6 +17,10 @@
       --tier-mid-soft: #fffbeb;
       --tier-low: #dc2626;
       --tier-low-soft: #fef2f2;
+      --sig-geo: #0e7490;
+      --sig-goals: #7c3aed;
+      --sig-net: #b45309;
+      --sig-comp: #15803d;
     }
     body {
       background:
@@ -129,6 +133,15 @@
       padding: 0.55rem 0.8rem; margin: 0.6rem 0 0;
     }
 
+    .sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0 0 0.9rem; }
+    @media (max-width: 560px) { .sig-grid { grid-template-columns: 1fr; } }
+    .sig-box {
+      background: var(--site-bg); border: 1px solid var(--site-border); border-radius: 12px;
+      padding: 0.8rem 0.95rem; border-top: 3px solid var(--sig-box-accent, var(--site-border));
+    }
+    .sig-box .n { display: block; font-weight: 800; font-size: 1.3rem; color: var(--site-ink); }
+    .sig-box .lbl { font-size: 0.82rem; color: var(--site-muted); }
+
     .no-partner {
       border: 1px dashed var(--site-border); border-radius: 12px; padding: 0.9rem 1rem;
       background: var(--site-bg); font-size: 0.88rem; color: var(--site-muted);
@@ -156,8 +169,9 @@
     <h1>Як виглядає звіт плеча B0 (бенчмарк-плацебо) для однієї громади</h1>
     <p class="lede">
       Нижче — макет сторінки, яку в пілоті AIM-CC побачить громада контрольної групи: власний зріз цілей стратегії
-      + чесний бенчмарк цифрової активності серед сусідів, але без назви партнера. Це саме той матеріал, що описаний
-      у <a href="aim-cc-field-experiment.html">протоколі експерименту</a> як «плече B0».
+      + чесний бенчмарк, збалансований по тих самих чотирьох сигналах, що й у плечі R (цілі · гео · мережа МСС ·
+      доповнення), а не лише індекс цифрової демократії — але без назви партнера. Це саме той матеріал, що
+      описаний у <a href="aim-cc-field-experiment.html">протоколі експерименту</a> як «плече B0».
     </p>
     <div class="meta-row">
       <span class="status-pill">Макет, не надіслано</span>
@@ -246,23 +260,57 @@
       </div>
 
       <div class="rsection">
+        <h3><span class="ico">🧩</span> Контекст мережі за чотирма сигналами</h3>
+        <p>
+          Ті самі чотири сигнали, якими <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/scripts/analysis/recommend_for.py">recommend_for.py</a>
+          підбирає партнерів у плечі R — тут показані агреговано, без жодного імені, щоб бенчмарк був
+          збалансованим, а не лише про індекс цифрової демократії.
+        </p>
+        <div class="sig-grid">
+          <div class="sig-box" style="--sig-box-accent:var(--sig-goals)">
+            <span class="n">32 з ~291</span>
+            <span class="lbl">громад мають помітний перетин цілей стратегії з вашою (≥30% за goals_cosine)</span>
+          </div>
+          <div class="sig-box" style="--sig-box-accent:var(--sig-geo)">
+            <span class="n">10</span>
+            <span class="lbl">сусідніх громад поблизу (geo_score ≥ 0.5) мають розібрані цілі стратегії — потенційний географічний пул</span>
+          </div>
+          <div class="sig-box" style="--sig-box-accent:var(--sig-net)">
+            <span class="n">4</span>
+            <span class="lbl">кандидати мають мережевий сигнал МСС; з них <strong>2</strong> — вже підтверджені (known: true) партнерства по сусідству</span>
+          </div>
+          <div class="sig-box" style="--sig-box-accent:var(--sig-comp)">
+            <span class="n">8</span>
+            <span class="lbl">кандидатів мають профіль ресурсів (е-петиції / бюджет участі / DREAM), що доповнює ваш</span>
+          </div>
+        </div>
+        <p class="per-capita-note">
+          Це той самий пул, який бачить модель для вашої громади — просто без назв. У плечі R ви побачили б до
+          трьох ранжованих кандидатів із цього пулу разом із поясненням «чому»; тут — лише агреговані числа.
+        </p>
+      </div>
+
+      <div class="rsection">
         <h3><span class="ico">🤝</span> Партнер для співпраці</h3>
         <div class="no-partner">
           <strong>Цей звіт свідомо не називає конкретного партнера.</strong> Це контрольна версія (плече B0)
           дослідження — усі громади в цій групі отримують той самий чесний персональний бенчмарк, без підбору
-          пари. Плече R того самого пілоту показує ще й одну модельну рекомендацію партнера з поясненням «чому».
+          пари. Плече R того самого пілоту показує ще й до трьох ранжованих кандидатів партнерства з поясненням
+          «чому».
         </div>
       </div>
 
       <div class="report-foot">
-        Джерела: e-dem.ua (петиції, бюджет участі) · реєстр стратегій data.gov.ua · методологія балів —
-        <a href="edem-barometer.md">docs/edem-barometer.md</a>. Дані відкриті за CC BY 4.0.
+        Джерела: e-dem.ua (петиції, бюджет участі) · реєстр стратегій data.gov.ua · агреговані лічильники сигналів —
+        <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/scripts/analysis/recommend_for.py">recommend_for.py</a>
+        · методологія едем-балів — <a href="edem-barometer.md">docs/edem-barometer.md</a>. Дані відкриті за CC BY 4.0.
       </div>
     </div>
 
     <h2 class="doc-h2">Чому саме так</h2>
     <ul class="num-list">
       <li>Кожне число на макеті — реальний, перерахований показник з відкритого релізу, не вигадана ілюстрація: якщо цю сторінку колись згенерують насправді, вона виглядатиме приблизно так само для будь-якої іншої громади з даними.</li>
+      <li>Бенчмарк збалансований по тих самих чотирьох сигналах, що й рекомендація в плечі R (цілі · гео · мережа · доповнення), а не лише по індексу цифрової демократії — інакше плече B0 непомітно перетворювалося б на «звіт про едем», а не на чесний, рівноцінний контроль.</li>
       <li>Навмисно показано і сильну сторону (петиції), і прогалину (бюджет участі) — щоб плече B0 було чесним контролем, а не «порожньою похвалою», яка читалася б як шаблон.</li>
       <li>Абсолютний і подушовий бал показано поруч — великі міста не виграють лише за рахунок розміру (див. методологію в edem-barometer.md).</li>
       <li>Секція «партнер» лишається явно порожньою з поясненням — саме ця відсутність і є єдиною відмінністю від плеча R.</li>

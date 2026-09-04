@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Приклад звіту плеча R · AIM-CC 2026</title>
-  <meta name="description" content="Приклад бенчмарк+рекомендація звіту (плече R) для однієї громади — макет із чотирма окремими сигналами замість одного формульного бала."/>
+  <meta name="description" content="Приклад бенчмарк+рекомендація звіту (плече R) для однієї громади — макет із до трьох кандидатів, кожен із чотирма окремими сигналами замість одного формульного бала."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -140,7 +140,12 @@
       background: var(--site-bg);
     }
     .partner-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.8rem; flex-wrap: wrap; margin: 0 0 0.3rem; }
-    .partner-head h4 { margin: 0; font-size: 1.05rem; font-family: var(--site-font); font-weight: 800; color: var(--site-ink); }
+    .partner-head h4 { margin: 0; font-size: 1.05rem; font-family: var(--site-font); font-weight: 800; color: var(--site-ink); display: flex; align-items: center; gap: 0.5rem; }
+    .rank-chip {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 1.6rem; height: 1.6rem; padding: 0 0.35rem; border-radius: 999px;
+      background: var(--site-accent); color: #fff; font-size: 0.78rem; font-weight: 800;
+    }
     .partner-sub { font-size: 0.85rem; color: var(--site-muted); margin: 0 0 0.9rem; }
 
     .no-average {
@@ -216,14 +221,15 @@
 <body>
   <div class="page">
     <span class="eyebrow">AIM-CC 2026 · приклад матеріалу дослідження</span>
-    <h1>Як виглядає звіт плеча R (рекомендація партнера) для однієї громади</h1>
+    <h1>Як виглядає звіт плеча R (кандидати партнерства) для однієї громади</h1>
     <p class="lede">
       Нижче — макет сторінки, яку в пілоті AIM-CC побачить громада групи з рекомендацією: власний зріз цілей
       стратегії + бенчмарк цифрової активності (як у <a href="aim-cc-benchmark-example.html">плечі B0</a>) плюс
-      один партнер, вартий уваги. Ключова відмінність цього макета: рекомендацію показано як
-      <strong>чотири окремі сигнали</strong>, а не один зведений бал за формулою — саме так, як задумано в
+      до трьох ранжованих кандидатів партнерства (не один «переможець»). Ключова відмінність цього макета: кожен
+      кандидат показаний як <strong>чотири окремі сигнали</strong>, а не один зведений бал за формулою — саме
+      так, як задумано в
       <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/scripts/analysis/recommend_for.py">recommend_for.py</a>
-      (внутрішній «agent_rank» — лише для сортування кандидатів, не для інтерфейсу).
+      (внутрішній «agent_rank» визначає лише порядок №1–№3, не показується як число).
     </p>
     <div class="meta-row">
       <span class="status-pill">Макет, не надіслано</span>
@@ -232,10 +238,11 @@
 
     <div class="callout">
       <strong>Це приклад для перегляду дизайну, а не запущений експеримент.</strong>
-      Бучанську й Гостомельську громади використано тому, що для обох є повний публічний набір даних, і тому що
-      цей конкретний випадок добре показує, чому чотири сигнали не варто усереднювати в один бал: географія й
-      доповнення ресурсів — на максимумі, перетин цілей — високий, а мережевий сигнал МСС — нульовий. Жодну з
-      громад не запрошували і не контактували в рамках пілоту.
+      Бучанську громаду й трьох її сусідів по Бучанському району використано тому, що для всіх є повний
+      публічний набір даних, і тому що ці конкретні кандидати добре показують, чому чотири сигнали не варто
+      усереднювати в один бал: у кандидата №1 географія й доповнення ресурсів — на максимумі, перетин цілей —
+      високий, а мережевий сигнал МСС — нульовий; у №2 і №3 профіль інакший. Жодну з громад не запрошували і
+      не контактували в рамках пілоту.
     </div>
 
     <div class="report-label">Так це побачить представник громади</div>
@@ -243,7 +250,7 @@
       <div class="report-head">
         <div>
           <h2>Бучанська міська територіальна громада</h2>
-          <div class="sub">Київська область · Бучанський район · 57 085 мешканців · персональний огляд + рекомендація партнера</div>
+          <div class="sub">Київська область · Бучанський район · 57 085 мешканців · персональний огляд + кандидати партнерства</div>
         </div>
         <div class="report-date">Сформовано 1 вересня 2026</div>
       </div>
@@ -297,18 +304,21 @@
       </div>
 
       <div class="rsection">
-        <h3><span class="ico">🤝</span> Партнер, вартий уваги</h3>
+        <h3><span class="ico">🤝</span> Кандидати, варті уваги</h3>
+        <p>Нижче — до трьох кандидатів, не один «переможець». Короткий список стійкіший до того, що модель
+        помиляється саме в кандидаті №1 з якоїсь причини, якої дані не бачать — і водночас це досі підібрані
+        кандидати з поясненням, а не список пошуку з фільтрами.</p>
 
         <div class="no-average">
           <span class="ico">ℹ️</span>
-          <span>Чотири сигнали нижче <strong>не усереднюються в один прихований бал</strong>. Внутрішній
-          «agent_rank» використовується лише для сортування кандидатів між собою — його немає в цьому звіті.
-          Дивіться на кожен сигнал окремо й робіть власний висновок.</span>
+          <span>Чотири сигнали в кожній картці <strong>не усереднюються в один прихований бал</strong>. Внутрішній
+          «agent_rank» використовується лише для сортування кандидатів між собою (і визначає порядок №1–№3
+          нижче) — самого числа в цьому звіті немає. Дивіться на кожен сигнал окремо й робіть власний висновок.</span>
         </div>
 
-        <div class="partner-card">
+        <div class="partner-card" style="margin-bottom:0.9rem;">
           <div class="partner-head">
-            <h4>Гостомельська селищна територіальна громада</h4>
+            <h4><span class="rank-chip">№1</span> Гостомельська селищна територіальна громада</h4>
             <span class="tier-badge neutral"><span class="dot"></span>гіпотеза, не підтверджене партнерство</span>
           </div>
           <div class="partner-sub">Той самий Бучанський район · 16 979 мешканців · сусідня громада</div>
@@ -349,10 +359,108 @@
 
           <div class="pkg-box">
             <span class="pkg-label">Типовий пакет: ЦНАП / адмінпослуги — делегування</span><span class="pkg-conf">середня впевненість</span>
-            <p class="pkg-why">Чому це вам допомагає: пакет «ЦНАП / адмінпослуги — делегування»; перетин цілей; зручний сусід. Обидві громади вже в одному районі — типовий наступний крок тут не спільний проєкт «з нуля», а делегування чи спільне утримання вже наявної послуги.</p>
+            <p class="pkg-why">Чому це вам допомагає: обидві громади вже в одному районі — типовий наступний крок тут не спільний проєкт «з нуля», а делегування чи спільне утримання вже наявної послуги.</p>
           </div>
 
-          <p class="hypothesis-foot">Це гіпотеза, ще не перевірене співробітництво (<code>known: false</code> у реєстрі). Якщо громади самі підтвердять контакт чи угоду — статус зміниться.</p>
+          <p class="hypothesis-foot">Це гіпотеза, ще не перевірене співробітництво (<code>known: false</code> у реєстрі).</p>
+        </div>
+
+        <div class="partner-card" style="margin-bottom:0.9rem;">
+          <div class="partner-head">
+            <h4><span class="rank-chip">№2</span> Вишнева міська територіальна громада</h4>
+            <span class="tier-badge neutral"><span class="dot"></span>гіпотеза, не підтверджене партнерство</span>
+          </div>
+          <div class="partner-sub">Той самий Бучанський район · 64 230 мешканців · сусідня громада</div>
+
+          <div class="signal-grid">
+            <div class="signal">
+              <span class="lbl"><span class="swatch" style="background:var(--sig-geo)"></span>Географічна близькість</span>
+              <span class="val">85%</span>
+              <div class="track"><div class="fill geo" style="width:85%"></div></div>
+              <span class="note">Близька, хоч і не межова громада того самого району.</span>
+            </div>
+
+            <div class="signal">
+              <span class="lbl"><span class="swatch" style="background:var(--sig-goals)"></span>Перетин цілей стратегії</span>
+              <span class="val">50%</span>
+              <div class="track"><div class="fill goals" style="width:50%"></div></div>
+              <span class="note">Помірний перетин, без ознак шаблонного тексту (template_collision = 0) — це найчистіший сигнал цілей із трьох кандидатів.</span>
+            </div>
+
+            <div class="signal">
+              <span class="lbl"><span class="swatch" style="background:var(--sig-net)"></span>Мережа МСС (реєстр)</span>
+              <span class="val">0%</span>
+              <div class="track"><div class="fill net zero" style="width:100%;background:var(--site-border)"></div></div>
+              <span class="note">Так само немає відомого попереднього контакту в реєстрі.</span>
+            </div>
+
+            <div class="signal">
+              <span class="lbl"><span class="swatch" style="background:var(--sig-comp)"></span>Доповнення ресурсів</span>
+              <span class="val">100%</span>
+              <div class="track"><div class="fill comp" style="width:100%"></div></div>
+              <span class="note">Доповнюючий профіль ресурсів/DREAM щодо Бучі.</span>
+            </div>
+          </div>
+
+          <div class="partner-edem">
+            <span>Індекс цифрової демократії Вишневого: <strong>76.3 / 100</strong> (високий; подушово — 49.5)</span>
+          </div>
+
+          <div class="pkg-box">
+            <span class="pkg-label">Типовий пакет: Пожежна охорона — спільне утримання</span><span class="pkg-conf">середня впевненість</span>
+            <p class="pkg-why">Чому це вам допомагає: пріор реєстру Мінрегіону для теми «пожежна охорона» у зручних сусідів — типовий кандидат на спільне утримання підрозділу, а не проєкт з нуля.</p>
+          </div>
+
+          <p class="hypothesis-foot">Це гіпотеза, ще не перевірене співробітництво (<code>known: false</code> у реєстрі).</p>
+        </div>
+
+        <div class="partner-card">
+          <div class="partner-head">
+            <h4><span class="rank-chip">№3</span> Коцюбинська селищна територіальна громада</h4>
+            <span class="tier-badge neutral"><span class="dot"></span>гіпотеза, не підтверджене партнерство</span>
+          </div>
+          <div class="partner-sub">Той самий Бучанський район · 14 360 мешканців · сусідня громада</div>
+
+          <div class="signal-grid">
+            <div class="signal">
+              <span class="lbl"><span class="swatch" style="background:var(--sig-geo)"></span>Географічна близькість</span>
+              <span class="val">100%</span>
+              <div class="track"><div class="fill geo" style="width:100%"></div></div>
+              <span class="note">Сусідня громада в тому ж районі.</span>
+            </div>
+
+            <div class="signal">
+              <span class="lbl"><span class="swatch" style="background:var(--sig-goals)"></span>Перетин цілей стратегії</span>
+              <span class="val">44%</span>
+              <div class="track"><div class="fill goals" style="width:44.2%"></div><div class="collision-mark" style="left:33.3%" title="~10% — шаблонний текст"></div></div>
+              <span class="note">Нижчий перетин цілей, ніж у №1–№2, і теж частково (≈10%) шаблонний текст — тому ця картка третя, а не перша.</span>
+            </div>
+
+            <div class="signal">
+              <span class="lbl"><span class="swatch" style="background:var(--sig-net)"></span>Мережа МСС (реєстр)</span>
+              <span class="val">0%</span>
+              <div class="track"><div class="fill net zero" style="width:100%;background:var(--site-border)"></div></div>
+              <span class="note">Немає відомого попереднього контакту в реєстрі.</span>
+            </div>
+
+            <div class="signal">
+              <span class="lbl"><span class="swatch" style="background:var(--sig-comp)"></span>Доповнення ресурсів</span>
+              <span class="val">100%</span>
+              <div class="track"><div class="fill comp" style="width:100%"></div></div>
+              <span class="note">Доповнюючий профіль ресурсів/DREAM щодо Бучі.</span>
+            </div>
+          </div>
+
+          <div class="partner-edem">
+            <span>Індекс цифрової демократії Коцюбинського: <strong>0 / 100</strong> (не підключено до e-dem.ua)</span>
+          </div>
+
+          <div class="pkg-box">
+            <span class="pkg-label">Типовий пакет: ЦНАП / адмінпослуги — делегування</span><span class="pkg-conf">середня впевненість</span>
+            <p class="pkg-why">Чому це вам допомагає: та сама логіка «зручний сусід + адмінпослуги», що й у №1, зі слабшим перетином цілей.</p>
+          </div>
+
+          <p class="hypothesis-foot">Це гіпотеза, ще не перевірене співробітництво (<code>known: false</code> у реєстрі).</p>
         </div>
       </div>
 
@@ -367,11 +475,12 @@
 
     <h2 class="doc-h2">Чому саме так</h2>
     <ul class="num-list">
+      <li>Показано до трьох ранжованих кандидатів, а не один «переможець» — так одна невдала оцінка ранжування для кандидата №1 не залишає громаду взагалі без варіантів, а порядок карток (не число) все одно передає, кого модель вважає сильнішим.</li>
       <li>Кожен сигнал (гео · цілі · мережа · доповнення) показано окремо смугою й числом — жодного єдиного «матч-балу». Внутрішній <code>agent_rank</code> існує лише для сортування кандидатів між собою в коді, і в UI-копії коду прямо позначений як такий, що не повинен туди потрапляти.</li>
       <li><code>template_collision</code> (спільний шаблонний текст стратегій) показано як позначку на смузі «перетин цілей», а не приховано — так громада бачить, коли частина «збігу» може бути наслідком того самого консультанта чи держпрограми, а не спільного бачення.</li>
-      <li>Нульовий сигнал мережі МСС показано чесно, а не замасковано середнім чи прочерком без пояснення — відсутність історії контактів це теж інформація, а не привід виключити партнера з переліку.</li>
-      <li>Партнер завжди подається як гіпотеза «варта уваги», ніколи як підтверджена сумісність чи «ШІ визначив вас ідеальними партнерами».</li>
-      <li>Абсолютний і подушовий edem-бал показано і для вас, і для партнера — як і в плечі B0 — щоб великі й малі громади порівнювалися чесно.</li>
+      <li>Нульовий сигнал мережі МСС показано чесно, а не замасковано середнім чи прочерком без пояснення — відсутність історії контактів це теж інформація, а не привід виключити кандидата з переліку.</li>
+      <li>Кожен кандидат завжди подається як гіпотеза «варта уваги», ніколи як підтверджена сумісність чи «ШІ визначив вас ідеальними партнерами».</li>
+      <li>Абсолютний і подушовий edem-бал показано і для вас, і для кожного кандидата — як і в плечі B0 — щоб великі й малі громади порівнювалися чесно.</li>
     </ul>
 
     <p class="lede">
