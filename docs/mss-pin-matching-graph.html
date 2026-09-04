@@ -1503,10 +1503,19 @@ const map = L.map('map', {
 });
 // CARTO's anonymous basemap tiles now require an API key (watermarked otherwise);
 // Esri's Canvas tiles stay free/keyless, so we use those instead.
+let currentTileAttribution = null;
+function refreshTileAttribution() {
+  const ctrl = map.attributionControl;
+  if (!ctrl) return;
+  const next = `&copy; Esri, HERE, Garmin, OpenStreetMap contributors · ${t('map.attribution.boundaries')}`;
+  if (currentTileAttribution) ctrl.removeAttribution(currentTileAttribution);
+  ctrl.addAttribution(next);
+  currentTileAttribution = next;
+}
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-  attribution: '&copy; Esri, HERE, Garmin, OpenStreetMap contributors · межі: Natural Earth',
   maxZoom: 18,
 }).addTo(map);
+refreshTileAttribution();
 // Base has no admin boundaries or place labels (only sparse country names at
 // low zoom) — Esri's companion Reference layer adds oblast borders + city
 // labels. It needs its own pane: the default tile pane is crushed to 22%
@@ -1670,7 +1679,7 @@ function rebuildMapLayers() {
       opacity: 0.6,
       interactive: false,
     });
-    marker.bindTooltip(`${n.full_name || n.label} · ${n.party_count} учасників`, { sticky: true });
+    marker.bindTooltip(`${n.full_name || n.label} · ${n.party_count} ${t('map.hub.participants')}`, { sticky: true });
     pinAgreementHubsLayer.addLayer(marker);
   }
 
@@ -1827,11 +1836,13 @@ document.getElementById('btn-graph').onclick = () => setMode('graph');
 document.getElementById('btn-map').onclick = () => setMode('map');
 document.addEventListener('hromada-lang', () => {
   refreshHint();
+  refreshTileAttribution();
   if (mode === 'map' && typeof rebuildMapLayers === 'function') rebuildMapLayers();
 });
 if (window.HromadaI18n && window.HromadaI18n.onChange) {
   window.HromadaI18n.onChange(() => {
     refreshHint();
+    refreshTileAttribution();
     if (mode === 'map' && typeof rebuildMapLayers === 'function') rebuildMapLayers();
   });
 }
@@ -2366,7 +2377,9 @@ window.PAGE_I18N = {
     "explain.sigGeo": "гео {n}",
     "explain.sigDream": "DREAM {n}",
     "explain.sigFiscal": "бюджет {n}",
-    "explain.sameOblast": "та сама область"
+    "explain.sameOblast": "та сама область",
+    "map.attribution.boundaries": "межі: Natural Earth",
+    "map.hub.participants": "учасників"
   },
   en: {
     "doc.title": "IMC map — hromada matching",
@@ -2479,7 +2492,9 @@ window.PAGE_I18N = {
     "explain.sigGeo": "geo {n}",
     "explain.sigDream": "DREAM {n}",
     "explain.sigFiscal": "fiscal {n}",
-    "explain.sameOblast": "same oblast"
+    "explain.sameOblast": "same oblast",
+    "map.attribution.boundaries": "boundaries: Natural Earth",
+    "map.hub.participants": "participants"
   }
 };
 </script>
