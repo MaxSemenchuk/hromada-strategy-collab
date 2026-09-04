@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T09:41:31.513070+00:00",
+  "generatedAt": "2026-09-03T22:56:29.219117+00:00",
   "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
   "productUnit": "mss_candidate",
   "pairCount": 42771,
@@ -163,27 +163,32 @@
         "confidence": "medium",
         "rationale": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС",
         "label_uk": "Агломерація / метрополія — агломерація",
+        "label_en": "Agglomeration / metropolitan area — agglomeration",
         "caveat": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
       ],
@@ -191,24 +196,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "Напрям III. Єдність громади — волонтерство, інтеграція ВПО, Львівська агломерація",
-        "b": "Стратегічна ціль 2. Визнання Жовківської громади надійним партнером у Львівській агломерації та транскордонному співробітництві",
-        "similarity": 0.776
-      }
+      ]
     },
     {
       "a": "Верховинська селищна територіальна громада",
@@ -224,7 +227,7 @@
       "suggested_theme": "ЦНАП / адмінпослуги",
       "suggested_form": "делегування",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "registry_known",
@@ -234,28 +237,33 @@
         "form": "делегування",
         "form_id": "delegation",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування",
+        "label_en": "Admin services (CNAP) — delegation"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -263,24 +271,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
       ],
-      "goals_evidence": {
-        "a": "1.2. Енергетична самодостатність",
-        "b": "1.2. Енергетична самодостатність",
-        "similarity": 1.0
-      },
       "template_collision": 0.417
     },
     {
@@ -297,7 +303,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "registry_known",
@@ -307,28 +313,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -336,24 +347,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "Ціль 3. Розвинута економіка та туристична пропозиція",
-        "b": "Ціль 3. Розвинена економіка (підприємництво, туризм, ВДЕ)",
-        "similarity": 0.841
-      }
+      ]
     },
     {
       "a": "Клішковецька сільська територіальна громада",
@@ -369,7 +378,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "registry_known",
@@ -379,28 +388,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -408,24 +422,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "1.1. Підтримка підприємництва та сприятливих умов для економічної діяльності й інвестування",
-        "b": "2.3. Підтримка бізнесу та залучення інвестицій",
-        "similarity": 0.827
-      }
+      ]
     },
     {
       "a": "Клішковецька сільська територіальна громада",
@@ -441,7 +453,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "registry_known",
@@ -451,28 +463,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
       ],
@@ -480,24 +497,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "2.1. Розвиток пропозиції у сфері відпочинку",
-        "b": "2.2. Розвиток і просування пропозиції з проведення вільного часу, яка посилює туристичний бренд громади",
-        "similarity": 0.679
-      }
+      ]
     },
     {
       "a": "Ніжинська міська територіальна громада",
@@ -513,7 +528,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою",
       "kind": "mss_candidate",
       "discovery_primary": "strategy_goals",
       "status": "registry_known",
@@ -523,28 +538,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         },
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "medium"
         }
       ],
@@ -552,24 +572,22 @@
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "1.x. Логістичний потенціал (аеродром / сухий порт)",
-        "b": "1.1. Розвиток виробництва",
-        "similarity": 0.421
-      }
+      ]
     },
     {
       "a": "Ніжинська міська територіальна громада",
@@ -585,7 +603,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою",
       "kind": "mss_candidate",
       "discovery_primary": "strategy_goals",
       "status": "registry_known",
@@ -595,28 +613,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         },
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "medium"
         }
       ],
@@ -624,24 +647,22 @@
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "2.x. Розвиток туристичного продукту та бренду громади",
-        "b": "1.2. Маркетинг громади (бренд, інвестиційні пропозиції)",
-        "similarity": 0.636
-      }
+      ]
     },
     {
       "a": "Рукшинська сільська територіальна громада",
@@ -657,7 +678,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "registry_known",
@@ -667,28 +688,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
       ],
@@ -696,24 +722,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "2.1. Створення та просування туристичних продуктів",
-        "b": "2.2. Розвиток і просування пропозиції з проведення вільного часу, яка посилює туристичний бренд громади",
-        "similarity": 0.701
-      }
+      ]
     },
     {
       "a": "Батуринська міська територіальна громада",
@@ -729,7 +753,7 @@
       "suggested_theme": "Туризм / кластер",
       "suggested_form": "спільний проєкт",
       "suggest_confidence": "high",
-      "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+      "suggest_rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія",
       "kind": "mss_candidate",
       "discovery_primary": "strategy_goals",
       "status": "registry_known",
@@ -739,28 +763,33 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт"
+        "rationale": "тема «Туризм / кластер» · правило за темою · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт",
+        "label_en": "Tourism / cluster — joint project"
       },
       "signals": [
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         },
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "low"
         }
       ],
@@ -768,24 +797,22 @@
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
-      ],
-      "goals_evidence": {
-        "a": "1.1. Стимулювання розвитку аграрного сектору економіки та переробки",
-        "b": "1.1. Розвиток виробництва",
-        "similarity": 0.498
-      }
+      ]
     },
     {
       "a": "Вашковецька сільська територіальна громада",
@@ -801,7 +828,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "registry_known",
@@ -811,28 +838,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
       ],
@@ -840,24 +872,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "Ціль 1. Економічний розвиток і зайнятість",
-        "b": "Стратегічна ціль 2. Створення сприятливих умов для розвитку бізнесу, промисловості та залучення інвестицій",
-        "similarity": 0.419
-      }
+      ]
     },
     {
       "a": "Слобожанська селищна територіальна громада",
@@ -873,7 +903,7 @@
       "suggested_theme": "ЦНАП / адмінпослуги",
       "suggested_form": "делегування",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "registry_known",
@@ -883,28 +913,33 @@
         "form": "делегування",
         "form_id": "delegation",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування",
+        "label_en": "Admin services (CNAP) — delegation"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
       ],
@@ -912,24 +947,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "Ціль 1. Економічний розвиток громади (інвестклімат, маркетинг громади, використання господарського потенціалу)",
-        "b": "Стратегічна ціль 1: Сталий економічний розвиток громади",
-        "similarity": 0.467
-      }
+      ]
     },
     {
       "a": "Тернопільська міська територіальна громада",
@@ -945,7 +978,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "registry_known",
@@ -955,28 +988,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "medium"
         }
       ],
@@ -984,24 +1022,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "підтримка підприємництва, залучення інвестицій, розвиток промислового та агропромислового секторів, туристичного потенціалу, створення робочих місць.",
-        "b": "Стратегічна ціль 2. Забезпечення інноваційного економічного розвитку та фінансової спроможності",
-        "similarity": 0.339
-      }
+      ]
     }
   ],
   "pinCorpus": [
@@ -5129,7 +5165,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5139,28 +5175,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
       ],
@@ -5168,24 +5209,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "2.3. Підтримка бізнесу та залучення інвестицій",
-        "b": "1.2. Розвиток бізнесу та залучення інвестицій",
-        "similarity": 0.839
-      }
+      ]
     },
     {
       "a": "Бориспільська міська територіальна громада",
@@ -5201,7 +5240,7 @@
       "suggested_theme": "ЦНАП / адмінпослуги",
       "suggested_form": "делегування",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5211,28 +5250,33 @@
         "form": "делегування",
         "form_id": "delegation",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування",
+        "label_en": "Admin services (CNAP) — delegation"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -5240,24 +5284,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "Чисте довкілля та екологічна безпека",
-        "b": "Екологічна безпека та збереження довкілля",
-        "similarity": 0.888
-      }
+      ]
     },
     {
       "a": "Великобичківська селищна територіальна громада",
@@ -5273,7 +5315,7 @@
       "suggested_theme": "Пожежна охорона",
       "suggested_form": "спільне утримання",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
+      "suggest_rationale": "тема «Пожежна охорона» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5283,23 +5325,27 @@
         "form": "спільне утримання",
         "form_id": "joint_finance",
         "confidence": "medium",
-        "rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
-        "label_uk": "Пожежна охорона — спільне утримання"
+        "rationale": "тема «Пожежна охорона» · правило за темою · зручний сусід",
+        "label_uk": "Пожежна охорона — спільне утримання",
+        "label_en": "Fire protection — joint upkeep"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -5307,24 +5353,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
-      "goals_evidence": {
-        "a": "Забезпечення якісних і доступних медичних і соціальних послуг мешканцям громади",
-        "b": "Забезпечення якісних і доступних медичних та послуг соціального захисту у громаді",
-        "similarity": 0.967
-      },
       "template_collision": 0.083
     },
     {
@@ -5341,7 +5385,7 @@
       "suggested_theme": "Пожежна охорона",
       "suggested_form": "спільне утримання",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
+      "suggest_rationale": "тема «Пожежна охорона» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5351,23 +5395,27 @@
         "form": "спільне утримання",
         "form_id": "joint_finance",
         "confidence": "medium",
-        "rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
-        "label_uk": "Пожежна охорона — спільне утримання"
+        "rationale": "тема «Пожежна охорона» · правило за темою · зручний сусід",
+        "label_uk": "Пожежна охорона — спільне утримання",
+        "label_en": "Fire protection — joint upkeep"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -5375,24 +5423,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
-      "goals_evidence": {
-        "a": "Забезпечення просторово-інфраструктурного розвитку громади",
-        "b": "Забезпечення просторово-інфраструктурного розвитку громади",
-        "similarity": 1.0
-      },
       "template_collision": 0.333
     },
     {
@@ -5409,7 +5455,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5419,23 +5465,27 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -5443,24 +5493,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
-      "goals_evidence": {
-        "a": "Формування ефективної системи підтримки підприємництва і фермерства у громаді",
-        "b": "Формування ефективної системи підтримки підприємництва і фермерства у громаді",
-        "similarity": 1.0
-      },
       "template_collision": 0.167
     },
     {
@@ -5477,7 +5525,7 @@
       "suggested_theme": "ЦНАП / адмінпослуги",
       "suggested_form": "делегування",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5487,28 +5535,33 @@
         "form": "делегування",
         "form_id": "delegation",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування",
+        "label_en": "Admin services (CNAP) — delegation"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -5516,24 +5569,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "Стратегічна ціль 2. Економічний розвиток та зайнятість",
-        "b": "Стратегічна ціль 2. Підвищення економічної спроможності, інвестиції, підприємництво і фермерство",
-        "similarity": 0.726
-      }
+      ]
     },
     {
       "a": "Новодністровська міська територіальна громада",
@@ -5549,7 +5600,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5559,28 +5610,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
       ],
@@ -5588,24 +5644,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
       ],
-      "goals_evidence": {
-        "a": "1.2. Розвиток малого та середнього бізнесу",
-        "b": "2.1. Розвиток малого та середнього бізнесу",
-        "similarity": 0.986
-      },
       "template_collision": 0.059
     },
     {
@@ -5622,7 +5676,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5632,28 +5686,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -5661,24 +5720,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "A.1. Розвиток туристичної інфраструктури",
-        "b": "3.1. Розвиток туризму та туристичної інфраструктури",
-        "similarity": 0.895
-      }
+      ]
     },
     {
       "a": "Головинська сільська територіальна громада",
@@ -5694,7 +5751,7 @@
       "suggested_theme": "ЦНАП / адмінпослуги",
       "suggested_form": "делегування",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5704,23 +5761,27 @@
         "form": "делегування",
         "form_id": "delegation",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування",
+        "label_en": "Admin services (CNAP) — delegation"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -5728,24 +5789,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
-      "goals_evidence": {
-        "a": "Створення умов для здорового та активного способу життя",
-        "b": "Створення умов для здорового та активного способу життя",
-        "similarity": 1.0
-      },
       "template_collision": 0.333
     },
     {
@@ -5762,7 +5821,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5772,28 +5831,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -5801,24 +5865,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
       ],
-      "goals_evidence": {
-        "a": "Розвиток туристичної інфраструктури (маршрути, вело, трампліни, канатна дорога, біатлон, глемпінги)",
-        "b": "Інфраструктура активного відпочинку; рафтинг (кляуза); маршрути Бистрець–Шпиці, Угорські скелі",
-        "similarity": 0.719
-      },
       "template_collision": 0.143
     },
     {
@@ -5835,7 +5897,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою",
       "kind": "mss_candidate",
       "discovery_primary": "strategy_goals",
       "status": "hypothesis",
@@ -5845,23 +5907,27 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт»",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         },
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "medium"
         }
       ],
@@ -5869,24 +5935,22 @@
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         },
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "medium"
         }
       ],
-      "goals_evidence": {
-        "a": "Забезпечення якісних освітніх послуг у громаді",
-        "b": "Забезпечення якісних освітніх послуг у громаді",
-        "similarity": 1.0
-      },
       "template_collision": 0.25
     },
     {
@@ -5903,7 +5967,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5913,28 +5977,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
       ],
@@ -5942,24 +6011,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "Розвиток туристичного та рекреаційного потенціалу",
-        "b": "Розвиток туризму",
-        "similarity": 0.836
-      }
+      ]
     },
     {
       "a": "Дубівська селищна територіальна громада",
@@ -5975,7 +6042,7 @@
       "suggested_theme": "Пожежна охорона",
       "suggested_form": "спільне утримання",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
+      "suggest_rationale": "тема «Пожежна охорона» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -5985,23 +6052,27 @@
         "form": "спільне утримання",
         "form_id": "joint_finance",
         "confidence": "medium",
-        "rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
-        "label_uk": "Пожежна охорона — спільне утримання"
+        "rationale": "тема «Пожежна охорона» · правило за темою · зручний сусід",
+        "label_uk": "Пожежна охорона — спільне утримання",
+        "label_en": "Fire protection — joint upkeep"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -6009,24 +6080,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
-      "goals_evidence": {
-        "a": "Формування стійкості муніципальної енергетики та енергоефективності громади",
-        "b": "Формування стійкості (сталості) розвитку та енергоефективності муніципальної енергетики громади",
-        "similarity": 0.943
-      },
       "template_collision": 0.083
     },
     {
@@ -6043,7 +6112,7 @@
       "suggested_theme": "ЦНАП / адмінпослуги",
       "suggested_form": "делегування",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -6053,28 +6122,33 @@
         "form": "делегування",
         "form_id": "delegation",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування",
+        "label_en": "Admin services (CNAP) — delegation"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
       ],
@@ -6082,24 +6156,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "Розвиток туристичного потенціалу громади",
-        "b": "Розвиток можливостей для рекреації і активного дозвілля для мешканців громади і туристів",
-        "similarity": 0.793
-      }
+      ]
     },
     {
       "a": "Бучанська міська територіальна громада",
@@ -6115,7 +6187,7 @@
       "suggested_theme": "ЦНАП / адмінпослуги",
       "suggested_form": "делегування",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -6125,23 +6197,27 @@
         "form": "делегування",
         "form_id": "delegation",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+        "label_uk": "ЦНАП / адмінпослуги — делегування",
+        "label_en": "Admin services (CNAP) — delegation"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -6149,24 +6225,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
-      "goals_evidence": {
-        "a": "А.4.3. Сприяння соціальній згуртованості на основі спільних цінностей, історичної пам'яті та активної громадянської позиції, налагодження ефективної взаємодії у різних сферах діяльності з міжнародними партнерами",
-        "b": "4.2. Сприяння соціальній згуртованості на основі спільних цінностей, історичної пам’яті та активної громадянської позиції, налагодження ефективної взаємодії у різних сферах діяльності з міжнародними партнерами",
-        "similarity": 0.99
-      },
       "template_collision": 0.172
     },
     {
@@ -6183,7 +6257,7 @@
       "suggested_theme": "Пожежна охорона",
       "suggested_form": "спільне утримання",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
+      "suggest_rationale": "тема «Пожежна охорона» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -6193,23 +6267,27 @@
         "form": "спільне утримання",
         "form_id": "joint_finance",
         "confidence": "medium",
-        "rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
-        "label_uk": "Пожежна охорона — спільне утримання"
+        "rationale": "тема «Пожежна охорона» · правило за темою · зручний сусід",
+        "label_uk": "Пожежна охорона — спільне утримання",
+        "label_en": "Fire protection — joint upkeep"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -6217,24 +6295,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
-      "goals_evidence": {
-        "a": "Створення умов для здорового та активного способу життя",
-        "b": "Створення умов для здорового та активного способу життя",
-        "similarity": 1.0
-      },
       "template_collision": 0.4
     },
     {
@@ -6251,7 +6327,7 @@
       "suggested_theme": "ЦНАП / адмінпослуги",
       "suggested_form": "делегування",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -6261,28 +6337,33 @@
         "form": "делегування",
         "form_id": "delegation",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування",
+        "label_en": "Admin services (CNAP) — delegation"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
       ],
@@ -6290,24 +6371,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "4.1. Розвиток малого і середнього підприємництва",
-        "b": "2.3. Розвиток підприємництва та бізнесу",
-        "similarity": 0.853
-      }
+      ]
     },
     {
       "a": "Кам'янопотоківська сільська територіальна громада",
@@ -6323,7 +6402,7 @@
       "suggested_theme": "ЦНАП / адмінпослуги",
       "suggested_form": "делегування",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -6333,28 +6412,33 @@
         "form": "делегування",
         "form_id": "delegation",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування",
+        "label_en": "Admin services (CNAP) — delegation"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "medium"
         }
       ],
@@ -6362,24 +6446,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "Формування сприятливих умов для розвитку підприємницької діяльності",
-        "b": "Формування сприятливих умов для розвитку підприємництва",
-        "similarity": 0.973
-      }
+      ]
     },
     {
       "a": "Бабинська сільська територіальна громада",
@@ -6395,7 +6477,7 @@
       "suggested_theme": "Поводження з відходами / довкілля",
       "suggested_form": "спільне КП",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -6405,28 +6487,33 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП"
+        "rationale": "тема «Поводження з відходами / довкілля» · правило за темою · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -6434,24 +6521,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
       ],
-      "goals_evidence": {
-        "a": "Підвищення рівня громадської активності в громаді",
-        "b": "Підвищення соціальної активності мешканців громади",
-        "similarity": 0.913
-      },
       "template_collision": 0.091
     },
     {
@@ -6468,7 +6553,7 @@
       "suggested_theme": "ЦНАП / адмінпослуги",
       "suggested_form": "делегування",
       "suggest_confidence": "medium",
-      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "suggest_rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -6478,28 +6563,33 @@
         "form": "делегування",
         "form_id": "delegation",
         "confidence": "medium",
-        "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "ЦНАП / адмінпослуги — делегування"
+        "rationale": "тема «ЦНАП / адмінпослуги» · правило за темою · зручний сусід",
+        "label_uk": "ЦНАП / адмінпослуги — делегування",
+        "label_en": "Admin services (CNAP) — delegation"
       },
       "signals": [
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         },
         {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
           "strength": "high"
         }
       ],
@@ -6507,24 +6597,22 @@
         {
           "id": "geo",
           "label_uk": "зручний сусід",
+          "label_en": "handy neighbour",
           "strength": "high"
         },
         {
           "id": "network",
           "label_uk": "мережа МСС",
+          "label_en": "IMC network",
           "strength": "high"
         },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
           "strength": "high"
         }
-      ],
-      "goals_evidence": {
-        "a": "Розвиток зеленого, спортивного, історико-культурного туризму",
-        "b": "Сталий розвиток культури та туризму",
-        "similarity": 0.832
-      }
+      ]
     }
   ]
 }

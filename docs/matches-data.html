@@ -396,6 +396,7 @@ window.PAGE_I18N = {
     }
 
     function packageLabel(p) {
+      if (lang() === "en" && p.package && p.package.label_en) return p.package.label_en;
       if (p.package && p.package.label_uk) return p.package.label_uk;
       var theme = p.suggested_theme || (p.package && p.package.theme) || "";
       var form = p.suggested_form || (p.package && p.package.form) || "";
@@ -430,7 +431,8 @@ window.PAGE_I18N = {
       var chips = p.signal_chips || (p.signals || []).slice(0, 3);
       if (!chips.length) return "—";
       return "<div class=\"chips\">" + chips.map(function (c) {
-        return "<span class=\"chip " + esc(c.strength || "") + "\">" + esc(c.label_uk || c.id) + "</span>";
+        var label = lang() === "en" ? (c.label_en || c.label_uk || c.id) : (c.label_uk || c.id);
+        return "<span class=\"chip " + esc(c.strength || "") + "\">" + esc(label) + "</span>";
       }).join("") + "</div>";
     }
 

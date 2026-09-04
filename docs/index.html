@@ -1104,7 +1104,8 @@ window.PAGE_I18N = {
     var chips = p.signal_chips || (p.signals || []).slice(0, 3);
     if (!chips.length) return "";
     return "<div class=\"chips\">" + chips.map(function (c) {
-      return "<span class=\"chip " + esc(c.strength || "") + "\">" + esc(c.label_uk || c.id) + "</span>";
+      var label = lang() === "en" ? (c.label_en || c.label_uk || c.id) : (c.label_uk || c.id);
+      return "<span class=\"chip " + esc(c.strength || "") + "\">" + esc(label) + "</span>";
     }).join("") + "</div>";
   }
 
@@ -1143,10 +1144,13 @@ window.PAGE_I18N = {
         ? "<span class=\"tag known\">" + t("hromada.picker.tag.known") + "</span>"
         : "<span class=\"tag hyp\">" + t("hromada.picker.tag.hyp") + "</span>";
       var why = lang() === "en" ? (c.why_en || c.why_helps_you_en || "") : (c.why_uk || c.why_helps_you_uk || "");
+      var pkgLabel = lang() === "en"
+        ? ((c.package && c.package.label_en) || (c.package && c.package.label_uk) || "—")
+        : ((c.package && c.package.label_uk) || "—");
       return "<div class=\"item\">"
         + tag
         + "<span class=\"pair\">" + esc(c.partner_short || c.partner) + "</span>"
-        + "<div class=\"pkg\">" + esc((c.package && c.package.label_uk) || "—") + "</div>"
+        + "<div class=\"pkg\">" + esc(pkgLabel) + "</div>"
         + chipsHtml(c)
         + "<p class=\"why\">" + esc(why) + "</p>"
         + "</div>";

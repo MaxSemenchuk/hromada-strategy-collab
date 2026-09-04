@@ -925,9 +925,10 @@ function renderThemeFilters() {
   }
   root.innerHTML = pinThemeCatalog.map((th) => {
     const checked = selectedThemes.has(th.id) ? 'checked' : '';
+    const label = lang() === 'en' ? (th.label_en || th.label_uk || th.id) : (th.label_uk || th.id);
     return `<label>
       <input type="checkbox" data-theme-id="${escLocal(th.id)}" ${checked}/>
-      <span>${escLocal(th.label_uk || th.id)}</span>
+      <span>${escLocal(label)}</span>
       <span class="theme-n">${escLocal(String(th.n ?? 0))}</span>
     </label>`;
   }).join('');
@@ -1004,6 +1005,10 @@ function t(key) {
   return (window.HromadaI18n && window.HromadaI18n.t)
     ? window.HromadaI18n.t(key)
     : key;
+}
+
+function lang() {
+  return (window.HromadaI18n && window.HromadaI18n.getLang && window.HromadaI18n.getLang()) || 'uk';
 }
 
 function fmtNum(n) {
@@ -1239,14 +1244,15 @@ function packageHtml(item) {
   const form = pkg.form || item.suggested_form;
   if (!theme && !form) return '';
   if (item.kind === 'pin') return '';
-  const line = pkg.label_uk || [theme, form].filter(Boolean).join(' — ');
+  const isEn = lang() === 'en';
+  const line = (isEn ? pkg.label_en : pkg.label_uk) || [theme, form].filter(Boolean).join(' — ');
   const conf = (pkg.confidence || item.suggest_confidence)
     ? ` <span class="agr-meta">(${esc(pkg.confidence || item.suggest_confidence)})</span>`
     : '';
   const chips = (item.signals || []).slice(0, 3);
   const chipsHtml = chips.length
     ? `<div class="agr-meta" style="margin-top:0.3rem">${chips.map((c) =>
-        esc(c.label_uk || c.id)).join(' · ')}</div>`
+        esc((isEn ? c.label_en : c.label_uk) || c.id)).join(' · ')}</div>`
     : '';
   const caveat = (pkg.caveat || item.suggest_caveat)
     ? `<span class="agr-meta">${esc(pkg.caveat || item.suggest_caveat)}</span>`
@@ -1837,12 +1843,14 @@ document.getElementById('btn-map').onclick = () => setMode('map');
 document.addEventListener('hromada-lang', () => {
   refreshHint();
   refreshTileAttribution();
+  renderThemeFilters();
   if (mode === 'map' && typeof rebuildMapLayers === 'function') rebuildMapLayers();
 });
 if (window.HromadaI18n && window.HromadaI18n.onChange) {
   window.HromadaI18n.onChange(() => {
     refreshHint();
     refreshTileAttribution();
+    renderThemeFilters();
     if (mode === 'map' && typeof rebuildMapLayers === 'function') rebuildMapLayers();
   });
 }
@@ -2502,6 +2510,7 @@ window.PAGE_I18N = {
 <script>
 if (window.HromadaI18n && window.PAGE_I18N) window.HromadaI18n.apply(window.PAGE_I18N);
 if (typeof refreshHint === 'function') refreshHint();
+if (typeof refreshTileAttribution === 'function') refreshTileAttribution();
 </script>
 <script src="assets/nav.js" data-active="map"></script>
 </body>
