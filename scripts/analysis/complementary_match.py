@@ -29,6 +29,7 @@ from mss_suggest import SECTOR_TO_THEME, annotate_edges, theme_label  # noqa: E4
 HROMADAS = ROOT / "data" / "releases" / "hromadas.json"
 RESOURCES = ROOT / "data" / "releases" / "hromada-resources.json"
 DREAM = ROOT / "data" / "releases" / "dream-priorities.json"
+TWINNING = ROOT / "data" / "releases" / "twinning-partners.json"
 OUT = ROOT / "data" / "releases" / "matching-edges.complementary.json"
 MANIFEST = ROOT / "data" / "releases" / "matching-edges.complementary.manifest.json"
 PREVIEW = ROOT / "docs" / "assets" / "complementary-preview.json"
@@ -62,6 +63,11 @@ RESOURCE_NEED_PATTERNS: list[tuple[str, re.Pattern[str], str]] = [
     ("competence", re.compile(r"молодь|бізнес|кадр|підприєм", re.I), "competence"),
     ("fiscal", re.compile(r"бюджет|фінанс|доход|інвест", re.I), "fiscal_capacity"),
     ("water", re.compile(r"вод[оа]|каналіз|ЖКГ", re.I), "dfrr_or_infra"),
+    (
+        "international",
+        re.compile(r"міжнарод|донор|грант|євроінтеграц|партнер\w*\s+(закордон|іноземн)", re.I),
+        "international_ties",
+    ),
 ]
 
 
@@ -115,6 +121,11 @@ def load_profiles() -> dict[str, dict]:
             "youth_centers": None,
             "business_support_centers": None,
             "dfrr_years": None,
+            # A hromada with donor-program or EU-twinning experience is
+            # itself a resource — "we've done this before, we can help you
+            # navigate it too" — not evidence of a tie to any specific
+            # candidate partner. See twinning merge below.
+            "international_ties": bool(row.get("DonorsPrograms")),
         }
 
     if RESOURCES.exists():
@@ -154,9 +165,20 @@ def load_profiles() -> dict[str, dict]:
                     "youth_centers": None,
                     "business_support_centers": None,
                     "dfrr_years": None,
+                    "international_ties": False,
                 }
             else:
                 profiles[code]["dream_sectors"] = list(row.get("top_sectors") or [])
+
+    if TWINNING.exists():
+        for row in json.loads(TWINNING.read_text(encoding="utf-8")).get("hromadas") or []:
+            code = (row.get("katottg") or "").strip()
+            if code not in profiles:
+                continue
+            # registry confidence only (SKEW, decentralization_ua) — not
+            # the lower-confidence Cities4Cities/strategy hypothesis rows.
+            if any(p.get("confidence") == "registry" for p in row.get("partners") or []):
+                profiles[code]["international_ties"] = True
 
     return profiles
 
@@ -173,6 +195,8 @@ def resource_offers(p: dict) -> set[str]:
         offers.add("fiscal_capacity")
     if (p.get("dfrr_years") or 0) >= 2:
         offers.add("dfrr_or_infra")
+    if p.get("international_ties"):
+        offers.add("international_ties")
     return offers
 
 
@@ -229,6 +253,7 @@ def pair_reasons_weighted(a: dict, b: dict) -> tuple[list[str], float]:
         "competence": "competence (молодь/бізнес)",
         "fiscal_capacity": "фіскальна ємність",
         "dfrr_or_infra": "досвід ДФРР/інфри",
+        "international_ties": "міжнародні зв'язки / досвід з донорами",
     }
     for need in sorted(a_res & b_needs):
         reasons.append(f"ресурс «{labels.get(need, need)}» у {a['short']} ↔ потреба в {b['short']}")

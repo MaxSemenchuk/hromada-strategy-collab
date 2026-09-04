@@ -93,6 +93,33 @@ def partnerships_network_pairs() -> set[frozenset[str]]:
     return pairs
 
 
+@lru_cache(maxsize=1)
+def plich_o_plich_pairs() -> dict[frozenset[str], float]:
+    """Domestic МСС network signal from Пліч-о-пліч news-mention mining
+    (data/releases/plich-o-plich.json) — separate from the KSE academic
+    partnerships snapshot above, same kind of signal (a real, ongoing
+    domestic hromada-to-hromada cooperation program). bilateral_confirmed
+    edges (a memorandum, or an article naming exactly that pair) score the
+    same as a KSE tie (1.0); comention-only edges (could be inflated by a
+    multi-hromada roundup article's fully-connected clique — see the
+    dataset's own notes) score lower, not full confidence."""
+    path = ROOT / "data" / "releases" / "plich-o-plich.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(f"WARNING: plich-o-plich.json unavailable ({exc})")
+        return {}
+    pairs: dict[frozenset[str], float] = {}
+    for e in data.get("edges") or []:
+        a, b = e.get("a_katottg"), e.get("b_katottg")
+        if not a or not b:
+            continue
+        score = 1.0 if e.get("bilateral_confirmed") else 0.5
+        key = frozenset((a, b))
+        pairs[key] = max(pairs.get(key, 0.0), score)
+    return pairs
+
+
 def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     r = 6371.0
     p1, p2 = math.radians(lat1), math.radians(lat2)
@@ -153,9 +180,14 @@ def geo_score(
 
 
 def mss_network_score(katottg_a: str | None, katottg_b: str | None) -> float:
+    """Domestic МСС network-tie signal — KSE academic snapshot OR'd with
+    Пліч-о-пліч (higher of the two when both have a row for this pair)."""
     if not katottg_a or not katottg_b:
         return 0.0
-    return 1.0 if frozenset((katottg_a, katottg_b)) in partnerships_network_pairs() else 0.0
+    key = frozenset((katottg_a, katottg_b))
+    if key in partnerships_network_pairs():
+        return 1.0
+    return plich_o_plich_pairs().get(key, 0.0)
 
 
 def edem_total(katottg: str | None) -> float | None:
