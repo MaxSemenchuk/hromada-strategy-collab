@@ -107,7 +107,7 @@
     </p>
     <div class="meta-row">
       <span class="status-pill" data-i18n="status">Чернетка · консультація AIM-CC 2026</span>
-      <span data-i18n-html="meta.version">Версія <strong>0.6</strong> · 2026-09-04</span>
+      <span data-i18n-html="meta.version">Версія <strong>0.7</strong> · 2026-09-04</span>
       <span data-i18n-html="meta.contact">Контакт: <strong>Max Semenchuk</strong> · max.semenchuk@gmail.com</span>
     </div>
 
@@ -156,15 +156,17 @@
 
     <h2 data-i18n="scale.h2">Масштаб пілоту</h2>
     <div class="cov">
-      <div class="box"><span class="n">293</span><span class="lbl" data-i18n="scale.goals">громад із розібраними цілями стратегії (пул плеча R)</span></div>
-      <div class="box"><span class="n">125–146</span><span class="lbl" data-i18n="scale.perarm">громад на плече в пілоті</span></div>
-      <div class="box"><span class="n">~32–40%</span><span class="lbl" data-i18n="scale.power">потужність за поточними орієнтовними ставками</span></div>
+      <div class="box"><span class="n">1 424</span><span class="lbl" data-i18n="scale.goals">громад у пулі плеча R (293 з цілями стратегії + решта — за гео/мережею/доповненням)</span></div>
+      <div class="box"><span class="n">125–146</span><span class="lbl" data-i18n="scale.perarm">громад на плече — цифра з попередньої 293-громадної стелі, ще не перерахована</span></div>
+      <div class="box"><span class="n">~32–40%</span><span class="lbl" data-i18n="scale.power">потужність — та сама стара цифра, потребує повторного прогону</span></div>
     </div>
     <p class="lede" data-i18n-html="scale.note">
       Це свідомо недостатньо потужний пілот для малих ефектів — мета зараз: перевірити
-      здійсненність і напрям ефекту, а не остаточний висновок. Усі цифри — з синтетичного
-      (без жодного контакту з громадами) прогону на ілюстративних припущеннях; перед реальним
-      запуском прогін повторюється на актуальному корпусі.
+      здійсненність і напрям ефекту, а не остаточний висновок. Пул плеча R більше не обмежений
+      293 громадами з розібраними цілями — <code>recommend_for.py</code> тепер підбирає кандидатів
+      і без цілей, за гео/мережею/доповненням. Цифри N та потужності праворуч — ще старі, з
+      293-громадної стелі; синтетичний прогін на розширеному пулі поки не повторено, тож не
+      цитуйте їх як актуальні.
     </p>
 
     <h2 data-i18n="ethics.h2">Етика й прозорість</h2>
@@ -198,7 +200,7 @@ window.PAGE_I18N = {
     "h1": "Чи допомагає персональна рекомендація партнера, чи достатньо просто персонального звіту?",
     "lede": "Пілотний польовий експеримент серед українських громад: порівнюємо звіт із конкретною рекомендацією партнера (за модельним підбором) проти чесного «плацебо» — персонального бенчмарку без назви партнера.",
     "status": "Чернетка · консультація AIM-CC 2026",
-    "meta.version": "Версія <strong>0.6</strong> · 2026-09-04",
+    "meta.version": "Версія <strong>0.7</strong> · 2026-09-04",
     "meta.contact": "Контакт: <strong>Max Semenchuk</strong> · max.semenchuk@gmail.com",
     "callout.hypothesis": "Рекомендація в звіті завжди подається як <strong>гіпотеза</strong> («ось партнер, вартий уваги, і чому») — ніколи як «ШІ визначив вас ідеальними партнерами» чи перевірений показник сумісності.",
     "q.h2": "Питання дослідження",
@@ -216,10 +218,10 @@ window.PAGE_I18N = {
     "outcome.h2": "Що вимірюємо",
     "outcome.p": "<strong>Основний показник:</strong> неспровоковане звернення по інтро/консультацію протягом 30 днів після першого перегляду звіту — найсильніший сигнал, який не є вимушеною відповіддю на прохання. Додатково: клік у секцію рекомендації, відповідь на звіт протягом 21 дня, звернення протягом 90 днів, нова угода в реєстрі МСС протягом 12 місяців (дослідницьке).",
     "scale.h2": "Масштаб пілоту",
-    "scale.goals": "громад із розібраними цілями стратегії (пул плеча R)",
-    "scale.perarm": "громад на плече в пілоті",
-    "scale.power": "потужність за поточними орієнтовними ставками",
-    "scale.note": "Це свідомо недостатньо потужний пілот для малих ефектів — мета зараз: перевірити здійсненність і напрям ефекту, а не остаточний висновок. Усі цифри — з синтетичного (без жодного контакту з громадами) прогону на ілюстративних припущеннях; перед реальним запуском прогін повторюється на актуальному корпусі.",
+    "scale.goals": "громад у пулі плеча R (293 з цілями стратегії + решта — за гео/мережею/доповненням)",
+    "scale.perarm": "громад на плече — цифра з попередньої 293-громадної стелі, ще не перерахована",
+    "scale.power": "потужність — та сама стара цифра, потребує повторного прогону",
+    "scale.note": "Це свідомо недостатньо потужний пілот для малих ефектів — мета зараз: перевірити здійсненність і напрям ефекту, а не остаточний висновок. Пул плеча R більше не обмежений 293 громадами з розібраними цілями — <code>recommend_for.py</code> тепер підбирає кандидатів і без цілей, за гео/мережею/доповненням. Цифри N та потужності праворуч — ще старі, з 293-громадної стелі; синтетичний прогін на розширеному пулі поки не повторено, тож не цитуйте їх як актуальні.",
     "ethics.h2": "Етика й прозорість",
     "ethics.1": "Рекомендація завжди подається як гіпотеза, ніколи як підтверджена сумісність.",
     "ethics.2": "Плече B0 отримує чесну, персональну цінність (власний зріз + бенчмарк) — відсутність партнера є єдиною відмінністю, не відсутність зусиль.",
@@ -235,7 +237,7 @@ window.PAGE_I18N = {
     "h1": "Does a personal partner recommendation help, or is a personal report enough on its own?",
     "lede": "A pilot field experiment among Ukrainian hromadas: a report with a specific, model-selected partner recommendation versus an honest placebo — a personal benchmark report with no partner named.",
     "status": "Draft · AIM-CC 2026 consultation",
-    "meta.version": "Version <strong>0.6</strong> · 2026-09-04",
+    "meta.version": "Version <strong>0.7</strong> · 2026-09-04",
     "meta.contact": "Contact: <strong>Max Semenchuk</strong> · max.semenchuk@gmail.com",
     "callout.hypothesis": "The report always frames the recommendation as a <strong>hypothesis</strong> (\"here's a partner worth exploring, and why\") — never as \"AI matched you as perfect partners\" or a verified compatibility score.",
     "q.h2": "Research question",
@@ -253,10 +255,10 @@ window.PAGE_I18N = {
     "outcome.h2": "What we measure",
     "outcome.p": "<strong>Primary outcome:</strong> an unprompted request for an intro/consult within 30 days of first viewing the report — the strongest signal, since it isn't a forced reply to an ask. Secondary: clicking into the recommendation section, replying to the report within 21 days, an inbound request within 90 days, a new entry in the public IMC registry within 12 months (exploratory).",
     "scale.h2": "Pilot scale",
-    "scale.goals": "hromadas with parsed strategy goals (Arm R's pool)",
-    "scale.perarm": "hromadas per arm in the pilot",
-    "scale.power": "statistical power at current illustrative rates",
-    "scale.note": "This is deliberately an underpowered pilot for small effects — the goal now is feasibility and directional effect size, not a definitive claim. All numbers come from a synthetic (no hromada contacted) run on illustrative assumptions; re-run against the live corpus before any real launch decision.",
+    "scale.goals": "hromadas in Arm R's pool (293 with parsed goals + the rest via geo/network/complementary)",
+    "scale.perarm": "hromadas per arm — figure from the old 293-hromada ceiling, not yet recomputed",
+    "scale.power": "statistical power — same stale figure, needs a re-run",
+    "scale.note": "This is deliberately an underpowered pilot for small effects — the goal now is feasibility and directional effect size, not a definitive claim. Arm R's pool is no longer capped at the 293 hromadas with parsed goals — <code>recommend_for.py</code> now matches goals-less hromadas too, on geo/network/complementary. The N and power figures to the right are still the old ones from the 293-hromada ceiling; the synthetic run hasn't been repeated on the widened pool yet, so don't quote them as current.",
     "ethics.h2": "Ethics & transparency",
     "ethics.1": "The recommendation is always presented as a hypothesis, never as verified compatibility.",
     "ethics.2": "Arm B0 still gets honest, personal value (own summary + benchmark) — the missing partner is the only difference, not missing effort.",
