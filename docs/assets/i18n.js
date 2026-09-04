@@ -91,11 +91,18 @@
     if (typeof fn === "function") listeners.push(fn);
   }
 
+  // Persist ?lang= immediately (synchronous, no DOM dependency) so any
+  // later script — notably nav.js, which renders before DOMContentLoaded —
+  // reads the right language via getLang(). Deferring this into boot()
+  // used to lose the race: nav.js rendered its (data-i18n-less) brand/menu
+  // text off the stale/default lang, and nothing ever re-synced it since
+  // apply() only touches [data-i18n*] elements.
+  try {
+    var qLang = new URLSearchParams(location.search).get("lang");
+    if (qLang === "en" || qLang === "uk") persist(normalize(qLang));
+  } catch (e) { /* ignore */ }
+
   function boot() {
-    try {
-      var q = new URLSearchParams(location.search).get("lang");
-      if (q === "en" || q === "uk") persist(normalize(q));
-    } catch (e) { /* ignore */ }
     if (global.PAGE_I18N) apply(global.PAGE_I18N);
     else document.documentElement.lang = getLang();
   }

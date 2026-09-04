@@ -372,6 +372,10 @@ window.PAGE_I18N = {
       return window.HromadaI18n ? HromadaI18n.t(key) : key;
     }
 
+    function lang() {
+      return (window.HromadaI18n && HromadaI18n.getLang && HromadaI18n.getLang()) || "uk";
+    }
+
     function pct(x) {
       if (x == null || Number.isNaN(x)) return "—";
       return (x * 100).toFixed(1) + "%";
@@ -504,36 +508,54 @@ window.PAGE_I18N = {
         + esc(t(labelKey)) + "</td></tr>";
     }
 
-    var FORM_OPTIONS = [
-      ["joint_project", "спільний проєкт"],
-      ["joint_finance", "спільне утримання"],
-      ["delegation", "делегування"],
-      ["joint_enterprise", "спільне КП"],
-      ["joint_body", "спільний орган"],
-      ["agglomeration", "агломерація"]
-    ];
+    var FORM_ORDER = ["joint_project", "joint_finance", "delegation", "joint_enterprise", "joint_body", "agglomeration"];
+    var FORM_LABELS = {
+      uk: {
+        joint_project: "спільний проєкт",
+        joint_finance: "спільне утримання",
+        delegation: "делегування",
+        joint_enterprise: "спільне КП",
+        joint_body: "спільний орган",
+        agglomeration: "агломерація"
+      },
+      en: {
+        joint_project: "joint project",
+        joint_finance: "joint upkeep",
+        delegation: "delegation",
+        joint_enterprise: "joint municipal enterprise",
+        joint_body: "joint body",
+        agglomeration: "agglomeration"
+      }
+    };
+    function formOptionLabel(id) {
+      var d = FORM_LABELS[lang()] || FORM_LABELS.uk;
+      return d[id] || id;
+    }
 
     var formFilterReady = false;
     function setupFormFilter() {
-      if (formFilterReady) return;
       var wrap = document.getElementById("form-filter");
       var sel = document.getElementById("form-select");
       if (!wrap || !sel) return;
-      FORM_OPTIONS.forEach(function (pair) {
-        var opt = document.createElement("option");
-        opt.value = pair[0];
-        opt.textContent = pair[1];
-        sel.appendChild(opt);
-      });
-      wrap.hidden = false;
-      sel.addEventListener("change", function () {
-        var v = sel.value;
-        document.querySelectorAll("tr[data-form]").forEach(function (el) {
-          var f = el.getAttribute("data-form") || "";
-          el.style.display = (!v || f === v) ? "" : "none";
+      if (!formFilterReady) {
+        FORM_ORDER.forEach(function (id) {
+          var opt = document.createElement("option");
+          opt.value = id;
+          sel.appendChild(opt);
         });
+        wrap.hidden = false;
+        sel.addEventListener("change", function () {
+          var v = sel.value;
+          document.querySelectorAll("tr[data-form]").forEach(function (el) {
+            var f = el.getAttribute("data-form") || "";
+            el.style.display = (!v || f === v) ? "" : "none";
+          });
+        });
+        formFilterReady = true;
+      }
+      Array.prototype.forEach.call(sel.options, function (opt) {
+        if (opt.value) opt.textContent = formOptionLabel(opt.value);
       });
-      formFilterReady = true;
     }
 
     function renderTables(data) {

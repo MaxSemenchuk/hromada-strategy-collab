@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Приклад звіту плеча B0 · AIM-CC 2026</title>
+  <meta name="description" content="Приклад бенчмарк-звіту (плече B0) для однієї громади — макет для перегляду дизайну польового експерименту AIM-CC 2026."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/site.css"/>
+  <style>
+    :root {
+      --tier-high: #16a34a;
+      --tier-high-soft: #f0fdf4;
+      --tier-mid: #d97706;
+      --tier-mid-soft: #fffbeb;
+      --tier-low: #dc2626;
+      --tier-low-soft: #fef2f2;
+    }
+    body {
+      background:
+        radial-gradient(820px 440px at 8% -12%, rgba(14, 116, 144, 0.10), transparent 55%),
+        radial-gradient(640px 380px at 100% 0%, rgba(37, 99, 235, 0.07), transparent 50%),
+        var(--site-bg);
+      color: var(--site-ink);
+      font-family: var(--site-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { max-width: 860px; margin: 0 auto; padding: 2.4rem 1.5rem 3rem; }
+    .eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--site-accent); font-weight: 700; display: block; margin-bottom: 0.7rem;
+    }
+    h1 {
+      font-family: var(--site-font); font-weight: 750; letter-spacing: -0.02em;
+      font-size: clamp(1.4rem, 3.2vw, 1.9rem); line-height: 1.25; margin: 0 0 0.75rem;
+      max-width: 32ch; text-wrap: balance;
+    }
+    .lede { color: var(--site-muted); max-width: 66ch; margin: 0 0 1rem; }
+    .meta-row {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.1rem; margin: 0 0 1.4rem;
+      font-size: 0.86rem; color: var(--site-muted);
+    }
+    .meta-row strong { color: var(--site-ink); }
+    .status-pill {
+      display: inline-block; padding: 0.2rem 0.65rem; border-radius: 999px;
+      background: var(--site-accent-soft); color: var(--site-accent);
+      font-weight: 700; font-size: 0.78rem;
+    }
+    .callout {
+      background: var(--site-accent-soft); border: 1px solid #bfdbfe; border-radius: 14px;
+      padding: 0.95rem 1.15rem; margin: 0 0 2rem; font-size: 0.92rem; color: #1e3a8a;
+    }
+    .callout strong { color: #1e3a8a; }
+    .callout a { color: #1e3a8a; }
+    .links a { color: var(--site-accent); }
+
+    /* --- the mocked report itself --- */
+    .report-label {
+      display: flex; align-items: center; gap: 0.6rem; margin: 0 0 0.7rem;
+      font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--site-faint); font-weight: 700;
+    }
+    .report-label::after { content: ""; flex: 1; height: 1px; background: var(--site-border); }
+    .report-frame {
+      background: var(--site-surface); border: 1.5px dashed #93c5fd; border-radius: 20px;
+      padding: 1.7rem 1.7rem 1.4rem; box-shadow: var(--site-shadow); margin: 0 0 2.2rem;
+    }
+    @media (max-width: 560px) { .report-frame { padding: 1.3rem 1.1rem 1.1rem; } }
+    .report-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin: 0 0 1.3rem; }
+    .report-head h2 {
+      font-family: var(--site-font); font-weight: 800; letter-spacing: -0.01em;
+      font-size: 1.25rem; margin: 0 0 0.25rem; color: var(--site-ink);
+    }
+    .report-head .sub { color: var(--site-muted); font-size: 0.88rem; }
+    .report-date { font-size: 0.8rem; color: var(--site-faint); white-space: nowrap; }
+    .tier-badge {
+      display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.75rem;
+      border-radius: 999px; font-weight: 700; font-size: 0.85rem; white-space: nowrap;
+    }
+    .tier-badge.high { background: var(--tier-high-soft); color: var(--tier-high); }
+    .tier-badge.mid { background: var(--tier-mid-soft); color: var(--tier-mid); }
+    .tier-badge.low { background: var(--tier-low-soft); color: var(--tier-low); }
+    .tier-badge .dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: currentColor; }
+
+    .rsection { margin: 0 0 1.6rem; }
+    .rsection:last-child { margin-bottom: 0; }
+    .rsection h3 {
+      font-family: var(--site-font); font-weight: 700; letter-spacing: -0.005em;
+      font-size: 0.98rem; margin: 0 0 0.6rem; color: var(--site-ink);
+      display: flex; align-items: center; gap: 0.45rem;
+    }
+    .rsection h3 .ico { font-size: 1.05rem; }
+    .rsection p { margin: 0 0 0.6rem; font-size: 0.94rem; }
+    .goal-list { margin: 0; padding-left: 1.15rem; font-size: 0.93rem; }
+    .goal-list li { margin: 0 0 0.35rem; }
+    .strat-meta { font-size: 0.83rem; color: var(--site-muted); margin: 0.5rem 0 0; }
+
+    .score-hero {
+      display: flex; align-items: center; gap: 1.2rem; margin: 0 0 1rem;
+      background: var(--site-bg); border: 1px solid var(--site-border); border-radius: 14px;
+      padding: 1rem 1.2rem; flex-wrap: wrap;
+    }
+    .score-num { font-family: var(--site-font); font-weight: 800; font-size: 2.2rem; color: var(--site-ink); line-height: 1; }
+    .score-num span { font-size: 1.05rem; font-weight: 600; color: var(--site-faint); }
+    .score-hero .score-note { font-size: 0.85rem; color: var(--site-muted); flex: 1; min-width: 200px; }
+
+    .bar-row { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 0.2rem 0.8rem; align-items: center; margin: 0 0 0.55rem; font-size: 0.86rem; }
+    .bar-row .lbl { color: var(--site-ink); }
+    .bar-row .val { color: var(--site-muted); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+    .bar-track { grid-column: 1 / -1; height: 8px; border-radius: 999px; background: var(--site-border); overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 999px; background: var(--site-secondary); }
+    .bar-fill.zero { background: var(--site-border); position: relative; }
+
+    .peer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0 0 0.8rem; }
+    @media (max-width: 560px) { .peer-grid { grid-template-columns: 1fr; } }
+    .peer-box {
+      background: var(--site-bg); border: 1px solid var(--site-border); border-radius: 12px;
+      padding: 0.8rem 0.95rem;
+    }
+    .peer-box .n { display: block; font-weight: 800; font-size: 1.3rem; color: var(--site-accent); }
+    .peer-box .lbl { font-size: 0.82rem; color: var(--site-muted); }
+    .per-capita-note {
+      font-size: 0.82rem; color: var(--site-muted); background: var(--site-bg);
+      border-left: 3px solid var(--site-secondary); border-radius: 0 8px 8px 0;
+      padding: 0.55rem 0.8rem; margin: 0.6rem 0 0;
+    }
+
+    .no-partner {
+      border: 1px dashed var(--site-border); border-radius: 12px; padding: 0.9rem 1rem;
+      background: var(--site-bg); font-size: 0.88rem; color: var(--site-muted);
+    }
+    .no-partner strong { color: var(--site-ink); }
+
+    .report-foot {
+      margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--site-border);
+      font-size: 0.78rem; color: var(--site-faint); line-height: 1.55;
+    }
+    .report-foot a { color: var(--site-faint); text-decoration: underline; }
+
+    h2.doc-h2 {
+      font-family: var(--site-font); font-weight: 700; letter-spacing: -0.01em;
+      font-size: 1.15rem; margin: 2rem 0 0.7rem;
+    }
+    .num-list { margin: 0 0 1.1rem; padding-left: 1.2rem; }
+    .num-list li { margin: 0 0 0.5rem; color: var(--site-ink); font-size: 0.94rem; }
+    .page-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--site-border); color: var(--site-muted); font-size: 0.88rem; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="eyebrow">AIM-CC 2026 · приклад матеріалу дослідження</span>
+    <h1>Як виглядає звіт плеча B0 (бенчмарк-плацебо) для однієї громади</h1>
+    <p class="lede">
+      Нижче — макет сторінки, яку в пілоті AIM-CC побачить громада контрольної групи: власний зріз цілей стратегії
+      + чесний бенчмарк цифрової активності серед сусідів, але без назви партнера. Це саме той матеріал, що описаний
+      у <a href="aim-cc-field-experiment.html">протоколі експерименту</a> як «плече B0».
+    </p>
+    <div class="meta-row">
+      <span class="status-pill">Макет, не надіслано</span>
+      <span>Дані: <strong>реальні й відкриті</strong> (e-dem.ua, реєстр стратегій data.gov.ua)</span>
+    </div>
+
+    <div class="callout">
+      <strong>Це приклад для перегляду дизайну, а не запущений експеримент.</strong>
+      Ніжинську громаду використано тому, що для неї є повний, публічний і показовий набір даних —
+      її ніхто не запрошував і не контактував у рамках пілоту. Цифри нижче обчислені з відкритого релізу
+      <a href="edem-barometer.md">індексу цифрової демократії</a> станом на 2026-09-01 і публічного
+      <a href="https://data.gov.ua/dataset/0e6dcf9a-f240-4967-8cbf-9e2bffe8a79d">реєстру стратегій</a> — жодних приватних чи неопублікованих джерел.
+    </div>
+
+    <div class="report-label">Так це побачить представник громади</div>
+    <div class="report-frame">
+      <div class="report-head">
+        <div>
+          <h2>Ніжинська міська територіальна громада</h2>
+          <div class="sub">Чернігівська область · 61 919 мешканців · персональний огляд цифрової активності</div>
+        </div>
+        <div class="report-date">Сформовано 1 вересня 2026</div>
+      </div>
+
+      <div class="rsection">
+        <h3><span class="ico">🎯</span> Ваші стратегічні цілі</h3>
+        <p>Стратегія розвитку громади (2019, горизонт до 2027) визначає чотири цілі:</p>
+        <ol class="goal-list">
+          <li>Створення сприятливих умов для розвитку бізнесу, промисловості та залучення інвестицій</li>
+          <li>Розвиток туристичного потенціалу громади</li>
+          <li>Покращення комфорту проживання, безпеки та довкілля громади</li>
+          <li>Розвиток соціального капіталу громади</li>
+        </ol>
+        <p class="strat-meta">Джерело: офіційний текст стратегії, реєстр data.gov.ua · портал громади: nizhynrada.gov.ua</p>
+      </div>
+
+      <div class="rsection">
+        <h3><span class="ico">📊</span> Індекс цифрової демократії</h3>
+        <div class="score-hero">
+          <div class="score-num">46.1<span>&nbsp;/ 100</span></div>
+          <span class="tier-badge high"><span class="dot"></span>високий рівень</span>
+          <div class="score-note">Середнє чотирьох показників участі на е-платформах петицій і бюджету участі (percentile-ранг серед громад із ненульовою активністю).</div>
+        </div>
+
+        <div class="bar-row">
+          <span class="lbl">Активність е-петицій (кількість)</span><span class="val">94.2 / 100</span>
+          <div class="bar-track"><div class="bar-fill" style="width:94.2%"></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="lbl">Участь у голосуванні за петиції</span><span class="val">90.3 / 100</span>
+          <div class="bar-track"><div class="bar-fill" style="width:90.3%"></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="lbl">Активність бюджету участі</span><span class="val">не підключено</span>
+          <div class="bar-track"><div class="bar-fill zero" style="width:100%"></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="lbl">Масштаб бюджету участі (грн)</span><span class="val">не підключено</span>
+          <div class="bar-track"><div class="bar-fill zero" style="width:100%"></div></div>
+        </div>
+
+        <p class="per-capita-note">
+          У перерахунку на душу населення (де це коректно порівнювати) бал майже той самий — <strong>47.0 / 100, теж «високий»</strong> —
+          тобто високу активність не пояснює лише розмір громади.
+        </p>
+      </div>
+
+      <div class="rsection">
+        <h3><span class="ico">🧭</span> Як ви виглядаете серед сусідів</h3>
+        <div class="peer-grid">
+          <div class="peer-box">
+            <span class="n">4-те з 18</span>
+            <span class="lbl">місце в Чернігівській області серед громад з активністю на е-платформах (середній бал по області серед активних — 27.2)</span>
+          </div>
+          <div class="peer-box">
+            <span class="n">56-те зі 132</span>
+            <span class="lbl">місце серед громад схожого розміру (30–100 тис. мешканців) по всій Україні (середній бал у групі — 46.3)</span>
+          </div>
+        </div>
+        <p>
+          Це означає: у своїй області ви — один із лідерів е-демократії; серед громад вашого масштабу по країні —
+          приблизно на рівні середнього. Найсильніша сторона — е-петиції: і за кількістю, і за явкою голосів
+          ви входите в топ-5% громад країни. Бюджет участі поки не підключено до жодної обласної чи всеукраїнської
+          платформи — це канал залучення мешканців, який у вас поки не використовується.
+        </p>
+      </div>
+
+      <div class="rsection">
+        <h3><span class="ico">🤝</span> Партнер для співпраці</h3>
+        <div class="no-partner">
+          <strong>Цей звіт свідомо не називає конкретного партнера.</strong> Це контрольна версія (плече B0)
+          дослідження — усі громади в цій групі отримують той самий чесний персональний бенчмарк, без підбору
+          пари. Плече R того самого пілоту показує ще й одну модельну рекомендацію партнера з поясненням «чому».
+        </div>
+      </div>
+
+      <div class="report-foot">
+        Джерела: e-dem.ua (петиції, бюджет участі) · реєстр стратегій data.gov.ua · методологія балів —
+        <a href="edem-barometer.md">docs/edem-barometer.md</a>. Дані відкриті за CC BY 4.0.
+      </div>
+    </div>
+
+    <h2 class="doc-h2">Чому саме так</h2>
+    <ul class="num-list">
+      <li>Кожне число на макеті — реальний, перерахований показник з відкритого релізу, не вигадана ілюстрація: якщо цю сторінку колись згенерують насправді, вона виглядатиме приблизно так само для будь-якої іншої громади з даними.</li>
+      <li>Навмисно показано і сильну сторону (петиції), і прогалину (бюджет участі) — щоб плече B0 було чесним контролем, а не «порожньою похвалою», яка читалася б як шаблон.</li>
+      <li>Абсолютний і подушовий бал показано поруч — великі міста не виграють лише за рахунок розміру (див. методологію в edem-barometer.md).</li>
+      <li>Секція «партнер» лишається явно порожньою з поясненням — саме ця відсутність і є єдиною відмінністю від плеча R.</li>
+    </ul>
+
+    <p class="lede">
+      Повний дизайн пілота, гіпотези й етичні застереження — у <a href="aim-cc-field-experiment.html">картці експерименту AIM-CC 2026</a>
+      та повному <a href="https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/internal/aim-cc-field-experiment-prereg.md">препринті</a>.
+    </p>
+
+    <footer class="page-footer">
+      Це макет для внутрішнього перегляду дизайну, не інтерфейс запущеного продукту й не надісланий лист.
+      Жодну громаду ще не залучали до пілоту.
+    </footer>
+  </div>
+
+<script src="assets/nav.js" data-active="aim-cc" data-langs="uk"></script>
+</body>
+</html>
