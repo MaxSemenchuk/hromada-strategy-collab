@@ -17,6 +17,7 @@ from recommend_for import (  # noqa: E402
     recommend_for,
     resolve_seed,
     index_hromadas,
+    weights_without_goals,
 )
 
 
@@ -184,6 +185,32 @@ def test_motivations_cover_mvp() -> None:
         assert "weights" in MOTIVATIONS[mid]
 
 
+def test_weights_without_goals_redistributes_and_sums_to_one() -> None:
+    for mid in MOTIVATIONS:
+        w = weights_without_goals(mid)
+        assert set(w) == {"geo", "network", "complementary"}
+        assert abs(sum(w.values()) - 1.0) < 1e-9
+        orig = MOTIVATIONS[mid]["weights"]
+        # ratios between geo/network/complementary stay unchanged
+        if orig.get("network"):
+            assert abs(
+                w["geo"] / w["network"] - orig.get("geo", 0) / orig["network"]
+            ) < 1e-9
+
+
+def test_agent_rank_ignores_goals_when_unavailable() -> None:
+    high_goals_no_signal = _edge(goals_cosine=0.9, geo_score=0.0, mss_network=0.0)
+    unavailable = dict(high_goals_no_signal, goals_available=False, geo_score=0.5)
+    # goals_cosine=0.9 is ignored entirely, not scored as present
+    assert agent_rank(unavailable, "general") == agent_rank(
+        dict(high_goals_no_signal, goals_available=False, goals_cosine=0.0, geo_score=0.5),
+        "general",
+    )
+    # and the redistributed geo weight actually applies (> plain geo*0.25)
+    plain_weight_only = MOTIVATIONS["general"]["weights"]["geo"] * 0.5
+    assert agent_rank(unavailable, "general") > plain_weight_only
+
+
 def main() -> None:
     test_policy_cut_costs_prefers_geo_cnap()
     test_policy_tourism_prefers_goals()
@@ -192,6 +219,8 @@ def main() -> None:
     test_recommend_for_orders_by_policy()
     test_resolve_seed_by_substring()
     test_motivations_cover_mvp()
+    test_weights_without_goals_redistributes_and_sums_to_one()
+    test_agent_rank_ignores_goals_when_unavailable()
     print("test_recommend_for: ok")
 
 
