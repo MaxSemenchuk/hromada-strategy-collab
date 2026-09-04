@@ -3,11 +3,12 @@
   "note": "SYNTHETIC — no hromada contacted. Priors are illustrative, not fitted.",
   "design": "report",
   "guaranteed_view": true,
+  "matchable_pool_hromadas": 1424,
   "goals_ready_hromadas": 293,
-  "max_per_arm_no_reuse": 146,
+  "max_per_arm_no_reuse": 712,
   "requested_exceeds_corpus_ceiling": false,
   "seed": 42,
-  "mc_reps": 2000,
+  "mc_reps": 3000,
   "report_engagement_priors_assumed": {
     "R": {
       "opened_given_delivered": 0.5,
@@ -27,14 +28,65 @@
   "power_table": [
     {
       "design": "report",
+      "n_per_arm": 8,
+      "total_hromadas": 16,
+      "power_opened_R_vs_B0": 0.0,
+      "power_inbound_30d_R_vs_B0": 0.0
+    },
+    {
+      "design": "report",
+      "n_per_arm": 12,
+      "total_hromadas": 24,
+      "power_opened_R_vs_B0": 0.0,
+      "power_inbound_30d_R_vs_B0": 0.0
+    },
+    {
+      "design": "report",
+      "n_per_arm": 20,
+      "total_hromadas": 40,
+      "power_opened_R_vs_B0": 0.0,
+      "power_inbound_30d_R_vs_B0": 0.004
+    },
+    {
+      "design": "report",
       "n_per_arm": 125,
       "total_hromadas": 250,
       "power_opened_R_vs_B0": 0.0,
-      "power_inbound_30d_R_vs_B0": 0.322
+      "power_inbound_30d_R_vs_B0": 0.331
+    },
+    {
+      "design": "report",
+      "n_per_arm": 146,
+      "total_hromadas": 292,
+      "power_opened_R_vs_B0": 0.0,
+      "power_inbound_30d_R_vs_B0": 0.392
+    },
+    {
+      "design": "report",
+      "n_per_arm": 300,
+      "total_hromadas": 600,
+      "power_opened_R_vs_B0": 0.0,
+      "power_inbound_30d_R_vs_B0": 0.809
+    },
+    {
+      "design": "report",
+      "n_per_arm": 500,
+      "total_hromadas": 1000,
+      "power_opened_R_vs_B0": 0.0,
+      "power_inbound_30d_R_vs_B0": 0.97
+    },
+    {
+      "design": "report",
+      "n_per_arm": 712,
+      "total_hromadas": 1424,
+      "power_opened_R_vs_B0": 0.0,
+      "power_inbound_30d_R_vs_B0": 0.994
     }
   ],
   "mechanics_check": {
+    "accepted_R_no_goals": 101,
     "accepted_R": 125,
+    "accepted_R_goals": 24,
     "accepted_B0": 125
   },
   "illustrative_draw_n_per_arm": 125,
@@ -52,35 +104,35 @@
           ]
         },
         "replied_any": {
-          "n": 18,
-          "rate": 0.144,
+          "n": 15,
+          "rate": 0.12,
           "wilson_ci": [
-            0.093,
-            0.216
+            0.074,
+            0.189
           ]
         },
         "inbound_request_30d": {
-          "n": 6,
-          "rate": 0.048,
+          "n": 4,
+          "rate": 0.032,
           "wilson_ci": [
-            0.022,
-            0.101
+            0.013,
+            0.079
           ]
         },
         "inbound_request_90d": {
-          "n": 8,
-          "rate": 0.064,
+          "n": 9,
+          "rate": 0.072,
           "wilson_ci": [
-            0.033,
-            0.121
+            0.038,
+            0.131
           ]
         },
         "clicked_recommendation_of_opened": 0.52,
         "engagement_codes": {
-          "opened_no_followup": 117,
+          "opened_no_followup": 116,
           "asked_about_own_strategy_only": 2,
-          "asked_general_consult": 3,
-          "asked_intro_to_recommended_partner": 3
+          "asked_intro_to_recommended_partner": 6,
+          "asked_general_consult": 1
         }
       },
       "B0": {
@@ -95,11 +147,11 @@
           ]
         },
         "replied_any": {
-          "n": 9,
-          "rate": 0.072,
+          "n": 8,
+          "rate": 0.064,
           "wilson_ci": [
-            0.038,
-            0.131
+            0.033,
+            0.121
           ]
         },
         "inbound_request_30d": {
@@ -111,18 +163,18 @@
           ]
         },
         "inbound_request_90d": {
-          "n": 2,
-          "rate": 0.016,
+          "n": 3,
+          "rate": 0.024,
           "wilson_ci": [
-            0.004,
-            0.056
+            0.008,
+            0.068
           ]
         },
         "clicked_recommendation_of_opened": 0.0,
         "engagement_codes": {
-          "opened_no_followup": 123,
-          "asked_general_consult": 1,
-          "asked_intro_to_recommended_partner": 1
+          "opened_no_followup": 122,
+          "asked_intro_to_recommended_partner": 2,
+          "asked_about_own_strategy_only": 1
         }
       }
     },
@@ -133,18 +185,18 @@
         "significant_at_0.05": false
       },
       "R_vs_B0_replied_any": {
-        "risk_difference": 0.072,
-        "fisher_p_value": 0.1017,
+        "risk_difference": 0.056,
+        "fisher_p_value": 0.1883,
         "significant_at_0.05": false
       },
       "R_vs_B0_inbound_request_30d": {
-        "risk_difference": 0.032,
-        "fisher_p_value": 0.2811,
+        "risk_difference": 0.016,
+        "fisher_p_value": 0.6837,
         "significant_at_0.05": false
       },
       "R_vs_B0_inbound_request_90d": {
         "risk_difference": 0.048,
-        "fisher_p_value": 0.1023,
+        "fisher_p_value": 0.1362,
         "significant_at_0.05": false
       }
     }
