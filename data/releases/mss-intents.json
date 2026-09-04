@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-07T14:10:20.563170+00:00",
-  "hromadaCount": 85,
+  "generatedAt": "2026-09-03T22:55:40.083351+00:00",
+  "hromadaCount": 86,
   "warning": "Quotes are extraction hypotheses — verify in source PDF before outreach.",
   "hromadas": [
     {
@@ -163,6 +163,21 @@
           "quote": "3. Одеса — центр міжнародної взаємодії та міжмуніципального співробітництва (євроінтеграція, транскордонне та міжмуніципальне співробітництво, культурна/економічна дипломатія)",
           "field": "goals",
           "theme": null
+        }
+      ],
+      "named_neighbours": []
+    },
+    {
+      "name": "Вінницька міська територіальна громада",
+      "short": "Вінницька",
+      "katottg": "UA05020030000031457",
+      "oblast": "Вінницька область",
+      "intent_count": 1,
+      "intents": [
+        {
+          "quote": "Обласні громади (координація з регіональною стратегією)",
+          "field": "curated",
+          "theme": "мережа"
         }
       ],
       "named_neighbours": []

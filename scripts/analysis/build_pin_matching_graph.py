@@ -43,6 +43,7 @@ from edge_io import ensure_packages, load_matching_edges  # noqa: E402
 from goal_overlap import explain_goal_overlap  # noqa: E402
 from mss_suggest import (  # noqa: E402
     THEME_LABELS,
+    THEME_LABELS_EN,
     classify_registry_theme,
     theme_label,
 )
@@ -618,6 +619,7 @@ def build_payload() -> dict:
         {
             "id": tid,
             "label_uk": THEME_LABELS.get(tid, tid),
+            "label_en": THEME_LABELS_EN.get(tid, tid),
             "n": pin_theme_counts[tid],
         }
         for tid in sorted(

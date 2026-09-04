@@ -37,11 +37,17 @@ def slim_card(c: dict) -> dict:
         "partner_short": c["partner_short"],
         "package": {
             "label_uk": pkg.get("label_uk"),
+            "label_en": pkg.get("label_en"),
             "theme_id": pkg.get("theme_id"),
             "form_id": pkg.get("form_id"),
         },
         "signal_chips": [
-            {"id": ch.get("id"), "label_uk": ch.get("label_uk"), "strength": ch.get("strength")}
+            {
+                "id": ch.get("id"),
+                "label_uk": ch.get("label_uk"),
+                "label_en": ch.get("label_en"),
+                "strength": ch.get("strength"),
+            }
             for ch in (c.get("signal_chips") or [])[:3]
         ],
         "why_uk": c.get("why_helps_you_uk"),

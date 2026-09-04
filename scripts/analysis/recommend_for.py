@@ -334,9 +334,13 @@ def _why_helps(
 ) -> str:
     """One short mutual-benefit line — never a score pitch."""
     pkg = edge.get("package") or {}
-    label = pkg.get("label_uk") or (
+    label_uk = pkg.get("label_uk") or (
         f"{edge.get('suggested_theme') or 'тема'} — "
         f"{edge.get('suggested_form') or 'спільний проєкт'}"
+    )
+    label_en = pkg.get("label_en") or (
+        f"{edge.get('suggested_theme_en') or 'theme'} — "
+        f"{edge.get('suggested_form_en') or 'joint project'}"
     )
     theme_id = pkg.get("theme_id") or edge.get("suggested_theme_id")
     geo = _f(edge, "geo_score")
@@ -345,6 +349,7 @@ def _why_helps(
     waterish = theme_id in ("water", "utilities")
 
     if lang == "en":
+        label = label_en
         if motivation == "cut_costs_service":
             near = "Neighbour for shared service / cost cut" if geo >= 0.5 else "Service-share candidate"
             return f"{near}: {label}."
@@ -365,6 +370,7 @@ def _why_helps(
             bits.append("handy neighbour")
         return "; ".join(bits) + "."
 
+    label = label_uk
     if motivation == "cut_costs_service":
         near = "Зручний сусід для спільної послуги / економії" if geo >= 0.5 else "Кандидат спільної послуги"
         return f"{near}: «{label}»."
@@ -403,6 +409,10 @@ def card_from_edge(
         "label_uk": (
             f"{edge.get('suggested_theme') or 'тема не визначена'} — "
             f"{edge.get('suggested_form') or 'спільний проєкт'}"
+        ),
+        "label_en": (
+            f"{edge.get('suggested_theme_en') or 'theme not specified'} — "
+            f"{edge.get('suggested_form_en') or 'joint project'}"
         ),
         "confidence": edge.get("suggest_confidence"),
         "rationale": edge.get("suggest_rationale"),

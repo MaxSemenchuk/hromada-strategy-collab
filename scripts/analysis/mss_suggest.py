@@ -55,6 +55,37 @@ FORM_LABELS: dict[str, str] = {
     "agglomeration": "агломерація",
 }
 
+# English counterparts — UI language toggle (docs/*.html), not for release scoring.
+THEME_LABELS_EN: dict[str, str] = {
+    "cnap": "Admin services (CNAP)",
+    "fire": "Fire protection",
+    "waste": "Waste management / environment",
+    "water": "Water / flood protection",
+    "education": "Education",
+    "health": "Healthcare",
+    "social": "Social services",
+    "tourism": "Tourism / cluster",
+    "culture": "Culture / sport",
+    "utilities": "Utilities / heating / gas / public amenities",
+    "energy": "Energy efficiency",
+    "archive": "Archives",
+    "roads": "Roads / infrastructure",
+    "archbud": "Architecture / urban planning",
+    "registration": "State registration",
+    "agglomeration": "Agglomeration / metropolitan area",
+    "security": "Security / civil defense",
+    "other": "Other / not specified",
+}
+
+FORM_LABELS_EN: dict[str, str] = {
+    "joint_project": "joint project",
+    "joint_finance": "joint upkeep",
+    "delegation": "delegation",
+    "joint_enterprise": "joint municipal enterprise",
+    "joint_body": "joint body",
+    "agglomeration": "agglomeration",
+}
+
 # theme_id → list of compiled patterns (scored on blob).
 # Tuned on MinRegion registry titles: many "other" rows are empty boilerplate;
 # the rest often hide subject in quotes ( damб / ПМСД / спорт / трудовий архів ).
@@ -220,6 +251,18 @@ def form_label(form_id: str | None) -> str | None:
     if not form_id:
         return None
     return FORM_LABELS.get(form_id, form_id)
+
+
+def theme_label_en(theme_id: str | None) -> str | None:
+    if not theme_id:
+        return None
+    return THEME_LABELS_EN.get(theme_id, theme_id)
+
+
+def form_label_en(form_id: str | None) -> str | None:
+    if not form_id:
+        return None
+    return FORM_LABELS_EN.get(form_id, form_id)
 
 
 def detect_theme_scores(text: str) -> Counter[str]:
@@ -430,8 +473,10 @@ def suggest_package(
     out: dict[str, Any] = {
         "suggested_theme": theme_label(theme_id),
         "suggested_theme_id": theme_id,
+        "suggested_theme_en": theme_label_en(theme_id),
         "suggested_form": form_label(form_id),
         "suggested_form_id": form_id,
+        "suggested_form_en": form_label_en(form_id),
         "suggest_confidence": confidence,
         "suggest_rationale": form_rationale,
     }
@@ -532,8 +577,10 @@ def annotate_edges(
                 pkg = {
                     "suggested_theme": theme_label(theme_id),
                     "suggested_theme_id": theme_id,
+                    "suggested_theme_en": theme_label_en(theme_id),
                     "suggested_form": form_label(form_id),
                     "suggested_form_id": form_id,
+                    "suggested_form_en": form_label_en(form_id),
                     "suggest_confidence": confidence,
                     "suggest_rationale": form_rationale
                     + " · агломерація лише з одного боку — не піднято до форми",
