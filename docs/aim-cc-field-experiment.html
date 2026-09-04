@@ -157,16 +157,18 @@
     <h2 data-i18n="scale.h2">Масштаб пілоту</h2>
     <div class="cov">
       <div class="box"><span class="n">1 424</span><span class="lbl" data-i18n="scale.goals">громад у пулі плеча R (293 з цілями стратегії + решта — за гео/мережею/доповненням)</span></div>
-      <div class="box"><span class="n">125–146</span><span class="lbl" data-i18n="scale.perarm">громад на плече — цифра з попередньої 293-громадної стелі, ще не перерахована</span></div>
-      <div class="box"><span class="n">~32–40%</span><span class="lbl" data-i18n="scale.power">потужність — та сама стара цифра, потребує повторного прогону</span></div>
+      <div class="box"><span class="n">300</span><span class="lbl" data-i18n="scale.perarm">громад на плече — тепер досяжно без нових даних (стеля зросла до 712/плече)</span></div>
+      <div class="box"><span class="n">~81%</span><span class="lbl" data-i18n="scale.power">потужність за поточними орієнтовними ставками при N=300/плече</span></div>
     </div>
     <p class="lede" data-i18n-html="scale.note">
-      Це свідомо недостатньо потужний пілот для малих ефектів — мета зараз: перевірити
-      здійсненність і напрям ефекту, а не остаточний висновок. Пул плеча R більше не обмежений
-      293 громадами з розібраними цілями — <code>recommend_for.py</code> тепер підбирає кандидатів
-      і без цілей, за гео/мережею/доповненням. Цифри N та потужності праворуч — ще старі, з
-      293-громадної стелі; синтетичний прогін на розширеному пулі поки не повторено, тож не
-      цитуйте їх як актуальні.
+      Це свідомо недостатньо потужний пілот для малих ефектів при мінімальному N — мета зараз:
+      перевірити здійсненність і напрям ефекту, а не остаточний висновок. Пул плеча R більше не
+      обмежений 293 громадами з розібраними цілями — <code>recommend_for.py</code> тепер підбирає
+      кандидатів і без цілей, за гео/мережею/доповненням, і стеля «без повторного використання
+      громади» зросла зі 146 до 712 громад на плече. Цифри тут — з повторного синтетичного прогону
+      на розширеному пулі (2026-09-04, ілюстративні ставки, не реальні дані); при 125/плече
+      потужність ≈33%, при 300/плече — вже ≈81% без жодного нового збору даних. Деталі: §4
+      препринту.
     </p>
 
     <h2 data-i18n="ethics.h2">Етика й прозорість</h2>
@@ -219,9 +221,9 @@ window.PAGE_I18N = {
     "outcome.p": "<strong>Основний показник:</strong> неспровоковане звернення по інтро/консультацію протягом 30 днів після першого перегляду звіту — найсильніший сигнал, який не є вимушеною відповіддю на прохання. Додатково: клік у секцію рекомендації, відповідь на звіт протягом 21 дня, звернення протягом 90 днів, нова угода в реєстрі МСС протягом 12 місяців (дослідницьке).",
     "scale.h2": "Масштаб пілоту",
     "scale.goals": "громад у пулі плеча R (293 з цілями стратегії + решта — за гео/мережею/доповненням)",
-    "scale.perarm": "громад на плече — цифра з попередньої 293-громадної стелі, ще не перерахована",
-    "scale.power": "потужність — та сама стара цифра, потребує повторного прогону",
-    "scale.note": "Це свідомо недостатньо потужний пілот для малих ефектів — мета зараз: перевірити здійсненність і напрям ефекту, а не остаточний висновок. Пул плеча R більше не обмежений 293 громадами з розібраними цілями — <code>recommend_for.py</code> тепер підбирає кандидатів і без цілей, за гео/мережею/доповненням. Цифри N та потужності праворуч — ще старі, з 293-громадної стелі; синтетичний прогін на розширеному пулі поки не повторено, тож не цитуйте їх як актуальні.",
+    "scale.perarm": "громад на плече — тепер досяжно без нових даних (стеля зросла до 712/плече)",
+    "scale.power": "потужність за поточними орієнтовними ставками при N=300/плече",
+    "scale.note": "Це свідомо недостатньо потужний пілот для малих ефектів при мінімальному N — мета зараз: перевірити здійсненність і напрям ефекту, а не остаточний висновок. Пул плеча R більше не обмежений 293 громадами з розібраними цілями — <code>recommend_for.py</code> тепер підбирає кандидатів і без цілей, за гео/мережею/доповненням, і стеля «без повторного використання громади» зросла зі 146 до 712 громад на плече. Цифри тут — з повторного синтетичного прогону на розширеному пулі (2026-09-04, ілюстративні ставки, не реальні дані); при 125/плече потужність ≈33%, при 300/плече — вже ≈81% без жодного нового збору даних. Деталі: §4 препринту.",
     "ethics.h2": "Етика й прозорість",
     "ethics.1": "Рекомендація завжди подається як гіпотеза, ніколи як підтверджена сумісність.",
     "ethics.2": "Плече B0 отримує чесну, персональну цінність (власний зріз + бенчмарк) — відсутність партнера є єдиною відмінністю, не відсутність зусиль.",
@@ -256,9 +258,9 @@ window.PAGE_I18N = {
     "outcome.p": "<strong>Primary outcome:</strong> an unprompted request for an intro/consult within 30 days of first viewing the report — the strongest signal, since it isn't a forced reply to an ask. Secondary: clicking into the recommendation section, replying to the report within 21 days, an inbound request within 90 days, a new entry in the public IMC registry within 12 months (exploratory).",
     "scale.h2": "Pilot scale",
     "scale.goals": "hromadas in Arm R's pool (293 with parsed goals + the rest via geo/network/complementary)",
-    "scale.perarm": "hromadas per arm — figure from the old 293-hromada ceiling, not yet recomputed",
-    "scale.power": "statistical power — same stale figure, needs a re-run",
-    "scale.note": "This is deliberately an underpowered pilot for small effects — the goal now is feasibility and directional effect size, not a definitive claim. Arm R's pool is no longer capped at the 293 hromadas with parsed goals — <code>recommend_for.py</code> now matches goals-less hromadas too, on geo/network/complementary. The N and power figures to the right are still the old ones from the 293-hromada ceiling; the synthetic run hasn't been repeated on the widened pool yet, so don't quote them as current.",
+    "scale.perarm": "hromadas per arm — now reachable with no new data (ceiling rose to 712/arm)",
+    "scale.power": "statistical power at current illustrative rates, at N=300/arm",
+    "scale.note": "This is deliberately an underpowered pilot for small effects at the minimum N — the goal now is feasibility and directional effect size, not a definitive claim. Arm R's pool is no longer capped at the 293 hromadas with parsed goals — <code>recommend_for.py</code> now matches goals-less hromadas too, on geo/network/complementary — and the no-hromada-reuse ceiling rose from 146 to 712 per arm. These figures come from a re-run synthetic simulation on the widened pool (2026-09-04, illustrative rates, not real data); power is ≈33% at 125/arm and already ≈81% at 300/arm with no new data collection. Details: prereg §4.",
     "ethics.h2": "Ethics & transparency",
     "ethics.1": "The recommendation is always presented as a hypothesis, never as verified compatibility.",
     "ethics.2": "Arm B0 still gets honest, personal value (own summary + benchmark) — the missing partner is the only difference, not missing effort.",

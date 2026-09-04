@@ -247,6 +247,7 @@ def hromada_block_key(h: dict[str, Any], cuts: tuple[float, float]) -> str:
 def build_report_sample(
     hromadas: dict[str, dict[str, Any]],
     edges: list[dict[str, Any]],
+    matchable_pool: set[str],
     goals_ready: set[str],
     n_per_arm: int,
     rng: np.random.Generator,
@@ -254,9 +255,15 @@ def build_report_sample(
     """Draws n_per_arm DISTINCT hromadas for arm R (gets a real recommend_for
     top pick in its report) and n_per_arm more, non-overlapping, for arm B0
     (benchmark-only report) — unit is one hromada, no pairing, so up to
-    len(goals_ready) hromadas total are available (not //2)."""
+    len(matchable_pool) hromadas total are available (not //2).
+
+    v0.7: matchable_pool (every hromada with a KATOTTG, ~1,424) replaces the
+    old goals_ready-only pool (293) as the sampling frame — recommend_for.py
+    now matches goals-less hromadas too (geo/network/complementary, see
+    recommend_for.weights_without_goals). goals_ready still decides, per
+    seed, which recommend_for path runs."""
     complementary = json.loads(COMPLEMENTARY_PATH.read_text(encoding="utf-8"))
-    candidates = list(goals_ready)
+    candidates = list(matchable_pool)
     rng.shuffle(candidates)
 
     diag = Counter()
@@ -271,7 +278,14 @@ def build_report_sample(
             continue
         seed_name = hromadas[kat]["Name"]
         try:
-            cards = rf.recommend_for(seed_name, motivation="general", k=3, edges=edges, complementary=complementary)
+            if kat in goals_ready:
+                cards = rf.recommend_for(
+                    seed_name, motivation="general", k=3, edges=edges, complementary=complementary
+                )
+            else:
+                cards = rf.recommend_for_no_goals(
+                    hromadas[kat], motivation="general", k=3, hromadas=list(hromadas.values())
+                )
         except Exception:
             diag["recommend_for_error"] += 1
             continue
@@ -280,10 +294,12 @@ def build_report_sample(
             diag["no_eligible_card"] += 1
             continue
         used.add(kat)
+        diag["accepted_R_no_goals" if kat not in goals_ready else "accepted_R_goals"] += 1
         sample["R"].append(
             {
                 "katottg": kat,
                 "name": seed_name,
+                "goals_available": kat in goals_ready,
                 "partner": card.get("partner"),
                 "package_label_uk": (card.get("package") or {}).get("label_uk"),
                 "why_helps_you_uk": card.get("why_helps_you_uk"),
@@ -469,6 +485,7 @@ def run_report_design(
     args: argparse.Namespace,
     hromadas: dict[str, dict[str, Any]],
     edges: list[dict[str, Any]],
+    matchable_pool: set[str],
     goals_ready: set[str],
     cuts: tuple[float, float],
     rng: np.random.Generator,
@@ -476,8 +493,14 @@ def run_report_design(
     """"Send every hromada its own report, measure engagement + unprompted
     follow-up" design — unit is ONE hromada, so it sidesteps the pair-based
     corpus ceiling entirely (see the 3arm/2arm/hist_control note in main()).
+
+    v0.7: the sampling frame is matchable_pool (every hromada with a
+    KATOTTG, ~1,424) — recommend_for.py's goals-less fallback means Arm R
+    no longer needs goals_ready (293) as its ceiling. goals_ready is still
+    threaded through to build_report_sample so each seed uses the right
+    recommend_for path.
     """
-    max_per_arm = len(goals_ready) // 2  # R and B0 split the pool, no pair reuse either
+    max_per_arm = len(matchable_pool) // 2  # R and B0 split the pool, no pair reuse either
 
     base_sizes = list(PILOT_SIZES.values())
     if args.totals:
@@ -493,9 +516,9 @@ def run_report_design(
     draw_n = args.n_per_arm or (
         max(1, args.total_hromadas // 2) if args.total_hromadas else PILOT_SIZES["preferred"]
     )
-    corpus_capped = draw_n * 2 > len(goals_ready)
+    corpus_capped = draw_n * 2 > len(matchable_pool)
 
-    sample, mechanics_diag = build_report_sample(hromadas, edges, goals_ready, draw_n, rng)
+    sample, mechanics_diag = build_report_sample(hromadas, edges, matchable_pool, goals_ready, draw_n, rng)
     event_log = simulate_report_log(sample, hromadas, cuts, rng, guaranteed_view=args.guaranteed_view)
     event_analysis = analyze_report_log(event_log)
 
@@ -504,6 +527,7 @@ def run_report_design(
         "note": "SYNTHETIC — no hromada contacted. Priors are illustrative, not fitted.",
         "design": "report",
         "guaranteed_view": args.guaranteed_view,
+        "matchable_pool_hromadas": len(matchable_pool),
         "goals_ready_hromadas": len(goals_ready),
         "max_per_arm_no_reuse": max_per_arm,
         "requested_exceeds_corpus_ceiling": corpus_capped,
@@ -531,8 +555,9 @@ def run_report_design(
         return
 
     print(f"SYNTHETIC dry-run of the 'send every hromada its own report' design — no hromada contacted.")
-    print(f"Unit = 1 hromada (no pairing) -> corpus ceiling is {len(goals_ready)} total (R+B0 combined), "
-          f"not //2 like the pair-based designs.")
+    print(f"Unit = 1 hromada (no pairing) -> corpus ceiling is {len(matchable_pool)} total (R+B0 combined), "
+          f"not //2 like the pair-based designs. ({len(goals_ready)} of those have parsed Goals text; the "
+          f"rest are matched via recommend_for_no_goals — geo/network/complementary only, v0.7.)")
     if args.guaranteed_view:
         print(
             "MECHANISM: portal-view, not email — every sampled hromada is assumed to actually see its "
@@ -1156,7 +1181,13 @@ def main() -> None:
     total_pairs_in_corpus = len(edges)
 
     if args.design == "report":
-        run_report_design(args, hromadas, edges, goals_ready, cuts, rng)
+        # v0.7: sampling frame is every hromada with a KATOTTG (hromadas is
+        # already keyed by Katottg, see load_hromadas), not just goals_ready —
+        # recommend_for.py now matches goals-less seeds too. Population
+        # tertile cuts for blocking are recomputed over that wider frame.
+        matchable_pool = set(hromadas.keys())
+        cuts_matchable = population_tertiles(hromadas, matchable_pool)
+        run_report_design(args, hromadas, edges, matchable_pool, goals_ready, cuts_matchable, rng)
         return
 
     pool_sizes = {arm: len(p) for arm, p in pools.items()}
