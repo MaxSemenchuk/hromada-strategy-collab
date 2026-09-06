@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "8811", "--directory", "docs"],
       "port": 8811
+    },
+    {
+      "name": "mcp-test-ui",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["tsx", "mcp-server/test-ui/server.ts"],
+      "port": 5175
     }
   ]
 }

@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>hromada-data — MCP test chat</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f5f2;
+    --panel: #ffffff;
+    --border: #ddd8ce;
+    --text: #22201c;
+    --muted: #756f63;
+    --accent: #8a5a3b;
+    --accent-bg: #f1e6db;
+    --user-bubble: #efece5;
+    --assistant-bubble: #ffffff;
+    --error: #b3432b;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17150f;
+      --panel: #201d17;
+      --border: #37322a;
+      --text: #ece7db;
+      --muted: #9b9282;
+      --accent: #d99a6c;
+      --accent-bg: #322a20;
+      --user-bubble: #2a2620;
+      --assistant-bubble: #201d17;
+      --error: #e07a5f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+  }
+  aside {
+    border-right: 1px solid var(--border);
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  h1 {
+    font-size: 15px;
+    margin: 0 0 2px;
+    font-weight: 600;
+  }
+  .subtitle { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
+  .status-row { display: flex; align-items: center; gap: 6px; font-size: 12.5px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #999; flex: none; }
+  .dot.ok { background: #4a9c5d; }
+  .dot.bad { background: var(--error); }
+  section.block {
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  label { display: block; font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 5px; }
+  input[type="password"], select, textarea {
+    width: 100%;
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 13px;
+    font-family: inherit;
+  }
+  select { margin-bottom: 10px; }
+  .field { margin-bottom: 10px; }
+  .hint { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+  ul.plain { list-style: none; margin: 0; padding: 0; font-size: 12.5px; }
+  ul.plain li { padding: 3px 0; border-bottom: 1px dashed var(--border); }
+  ul.plain li:last-child { border-bottom: none; }
+  .tool-name { font-family: var(--mono); color: var(--accent); }
+  .table-list { max-height: 180px; overflow-y: auto; font-family: var(--mono); font-size: 11.5px; color: var(--muted); line-height: 1.6; }
+  button {
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button:disabled { opacity: .5; cursor: default; }
+  main { display: flex; flex-direction: column; min-width: 0; }
+  #log { flex: 1; overflow-y: auto; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px; }
+  .turn { max-width: 720px; }
+  .turn.user { align-self: flex-end; }
+  .turn.assistant { align-self: flex-start; }
+  .bubble {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+  }
+  .turn.user .bubble { background: var(--user-bubble); }
+  .turn.assistant .bubble { background: var(--assistant-bubble); }
+  .turn.error .bubble { border-color: var(--error); color: var(--error); }
+  .tool-trace { margin-top: 6px; }
+  .tool-trace summary {
+    cursor: pointer;
+    font-size: 11.5px;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+  .tool-call {
+    margin-top: 6px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    background: var(--accent-bg);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    overflow-x: auto;
+  }
+  .tool-call .tc-name { color: var(--accent); font-weight: 600; }
+  .tool-call pre { margin: 4px 0 0; white-space: pre-wrap; word-break: break-word; }
+  #composer { border-top: 1px solid var(--border); padding: 14px 24px; display: flex; gap: 8px; }
+  #composer textarea { resize: none; flex: 1; min-height: 42px; max-height: 160px; }
+  .empty-state { color: var(--muted); font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+  <aside>
+    <div>
+      <h1>hromada-data</h1>
+      <p class="subtitle">MCP test connection &amp; chat</p>
+      <div class="status-row"><span class="dot" id="statusDot"></span><span id="statusText">connecting…</span></div>
+    </div>
+
+    <section class="block">
+      <label for="apiKey">OpenAI API key</label>
+      <input type="password" id="apiKey" placeholder="sk-…" autocomplete="off" />
+      <div class="hint" id="apiKeyHint">Kept in this browser's localStorage only; sent to the local test server per request, never written to disk. Leave blank to use the server's OPENAI_API_KEY (.env), if set.</div>
+    </section>
+
+    <section class="block">
+      <label for="model">Model</label>
+      <input list="modelOptions" id="model" value="gpt-5" autocomplete="off" />
+      <datalist id="modelOptions">
+        <option value="gpt-5">
+        <option value="gpt-5-mini">
+        <option value="gpt-4o">
+        <option value="gpt-4o-mini">
+      </datalist>
+      <div class="hint" style="margin-bottom:10px">Free text — type any model id your key has access to.</div>
+      <button id="resetBtn" style="width:100%">Reset conversation</button>
+    </section>
+
+    <section class="block">
+      <label>MCP tools (<span id="toolCount">0</span>)</label>
+      <ul class="plain" id="toolList"></ul>
+    </section>
+
+    <section class="block">
+      <label>Loaded tables (<span id="tableCount">0</span>)</label>
+      <div class="table-list" id="tableList"></div>
+    </section>
+  </aside>
+
+  <main>
+    <div id="log">
+      <div class="empty-state">Ask anything about the dataset, e.g. "які 5 громад мають найбільший score у matching_edges і чому?" — Claude will call list_tables/query itself.</div>
+    </div>
+    <div id="composer">
+      <textarea id="input" placeholder="Спитай щось про дані…" rows="1"></textarea>
+      <button id="sendBtn" class="primary">Send</button>
+    </div>
+  </main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const apiKeyInput = $("apiKey");
+const modelSelect = $("model");
+const log = $("log");
+const input = $("input");
+const sendBtn = $("sendBtn");
+let hasServerKey = false;
+
+try {
+  apiKeyInput.value = localStorage.getItem("hromada_mcp_openai_key") || "";
+  modelSelect.value = localStorage.getItem("hromada_mcp_openai_model") || modelSelect.value;
+} catch {}
+
+apiKeyInput.addEventListener("input", () => {
+  try { localStorage.setItem("hromada_mcp_openai_key", apiKeyInput.value); } catch {}
+});
+modelSelect.addEventListener("change", () => {
+  try { localStorage.setItem("hromada_mcp_openai_model", modelSelect.value); } catch {}
+});
+
+function clearEmptyState() {
+  const empty = log.querySelector(".empty-state");
+  if (empty) empty.remove();
+}
+
+function addBubble(role, text, toolCalls) {
+  clearEmptyState();
+  const turn = document.createElement("div");
+  turn.className = "turn " + role + (role === "assistant" && text?.startsWith("⚠") ? " error" : "");
+  const bubble = document.createElement("div");
+  bubble.className = "bubble";
+  bubble.textContent = text;
+  turn.appendChild(bubble);
+
+  if (toolCalls && toolCalls.length > 0) {
+    const details = document.createElement("details");
+    details.className = "tool-trace";
+    const summary = document.createElement("summary");
+    summary.textContent = `${toolCalls.length} tool call${toolCalls.length > 1 ? "s" : ""}`;
+    details.appendChild(summary);
+    for (const tc of toolCalls) {
+      const box = document.createElement("div");
+      box.className = "tool-call";
+      const name = document.createElement("div");
+      name.innerHTML = `<span class="tc-name">${tc.name}</span>${tc.isError ? " (error)" : ""}`;
+      box.appendChild(name);
+      const input = document.createElement("pre");
+      input.textContent = "→ " + JSON.stringify(tc.input);
+      box.appendChild(input);
+      const output = document.createElement("pre");
+      const truncated = tc.output.length > 1500 ? tc.output.slice(0, 1500) + "\n…(truncated)" : tc.output;
+      output.textContent = "← " + truncated;
+      box.appendChild(output);
+      details.appendChild(box);
+    }
+    turn.appendChild(details);
+  }
+
+  log.appendChild(turn);
+  log.scrollTop = log.scrollHeight;
+  return turn;
+}
+
+async function loadStatus() {
+  try {
+    const res = await fetch("/api/status");
+    const data = await res.json();
+    $("statusDot").className = "dot " + (data.connected ? "ok" : "bad");
+    $("statusText").textContent = data.connected
+      ? `connected · ${data.mcpServer}`
+      : "disconnected";
+    $("toolCount").textContent = data.tools.length;
+    $("toolList").innerHTML = data.tools
+      .map((t) => `<li><span class="tool-name">${t.name}</span></li>`)
+      .join("");
+    $("tableCount").textContent = data.tables.count;
+    $("tableList").innerHTML = data.tables.names.map((n) => `<div>${n}</div>`).join("");
+    hasServerKey = Boolean(data.hasServerKey);
+    if (hasServerKey) {
+      $("apiKeyHint").textContent = "Server has OPENAI_API_KEY set (.env) — leave blank to use it, or paste your own to override.";
+    }
+  } catch (err) {
+    $("statusDot").className = "dot bad";
+    $("statusText").textContent = "server unreachable";
+  }
+}
+
+async function send() {
+  const message = input.value.trim();
+  const apiKey = apiKeyInput.value.trim();
+  if (!message) return;
+  if (!apiKey && !hasServerKey) {
+    addBubble("assistant", "⚠ Paste your OpenAI API key in the sidebar first.");
+    return;
+  }
+
+  addBubble("user", message);
+  input.value = "";
+  input.style.height = "auto";
+  sendBtn.disabled = true;
+  input.disabled = true;
+
+  const thinking = addBubble("assistant", "…");
+
+  try {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ apiKey, model: modelSelect.value, message }),
+    });
+    const data = await res.json();
+    thinking.remove();
+    if (!res.ok) {
+      addBubble("assistant", "⚠ " + (data.error || "Request failed."));
+    } else {
+      addBubble("assistant", data.reply, data.toolCalls);
+    }
+  } catch (err) {
+    thinking.remove();
+    addBubble("assistant", "⚠ " + err.message);
+  } finally {
+    sendBtn.disabled = false;
+    input.disabled = false;
+    input.focus();
+  }
+}
+
+sendBtn.addEventListener("click", send);
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    send();
+  }
+});
+input.addEventListener("input", () => {
+  input.style.height = "auto";
+  input.style.height = Math.min(input.scrollHeight, 160) + "px";
+});
+
+$("resetBtn").addEventListener("click", async () => {
+  await fetch("/api/reset", { method: "POST" });
+  log.innerHTML = "";
+  clearEmptyState();
+  const empty = document.createElement("div");
+  empty.className = "empty-state";
+  empty.textContent = "Conversation reset.";
+  log.appendChild(empty);
+});
+
+loadStatus();
+</script>
+</body>
+</html>
