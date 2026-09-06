@@ -199,7 +199,7 @@ button from it. Data reuse follows [DATA-LICENSE.md](DATA-LICENSE.md) (CC BY
 4.0), code follows [LICENSE](LICENSE) (MIT). This repo is archived on Zenodo,
 same as [KSE-Loc-Data-Hub](https://github.com/kse-ua/KSE-Loc-Data-Hub)
 ([10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573)):
-<!-- DOI badge goes here once Zenodo mints one from the first GitHub Release -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22552879.svg)](https://doi.org/10.5281/zenodo.22552879)
 
 ## Usage
 
