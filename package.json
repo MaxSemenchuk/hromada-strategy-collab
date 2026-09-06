@@ -7,6 +7,8 @@
     "node": "20.x"
   },
   "scripts": {
+    "mcp-server": "tsx mcp-server/index.ts",
+    "mcp-test-ui": "tsx mcp-server/test-ui/server.ts",
     "structure-hromada": "tsx scripts/structure-hromada-strategy.ts",
     "export-hromadas": "tsx scripts/export-hromadas.ts --from-snapshot data/research-log/hromadas_full54.json",
     "export-hromadas:snapshot": "tsx scripts/export-hromadas.ts --from-snapshot data/research-log/hromadas_full54.json",
@@ -51,9 +53,14 @@
     "build-resources-preview": "python3 scripts/analysis/build_resources_preview.py"
   },
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^16.4.5",
+    "openai": "^7.10.0",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
     "@types/node": "^20",
     "tsx": "^4.19.1",
     "typescript": "^5"

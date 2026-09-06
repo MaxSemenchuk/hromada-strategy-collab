@@ -176,6 +176,25 @@ yarn match   # reads the release JSON
 Former NocoDB setup/import/live-export scripts live under
 [`scripts/legacy/nocodb/`](scripts/legacy/nocodb/) and are **not** wired into yarn.
 
+### Ask-anything MCP server
+
+[`mcp-server/`](mcp-server/) loads every `data/releases/*.json` file into an
+in-memory SQLite database and exposes it over MCP (`list_tables`,
+`describe_table`, `query`, `get_context`) so an LLM client can answer
+arbitrary questions with SQL instead of only the pre-baked slices above.
+Registered project-wide in [`.mcp.json`](.mcp.json); run standalone with
+`yarn mcp-server`. Nested JSON fields (e.g. `package`, `signals`) are kept as
+JSON text columns — query them with SQLite's `json_extract`/`json_each`.
+Always call `get_context` before interpreting results — it surfaces the
+methodology caveats above (score vs. `known: true`, `track` semantics, etc.).
+
+**Browser test page:** `yarn mcp-test-ui` (or the `mcp-test-ui` launch config)
+serves a local chat UI at `http://localhost:5175` that connects to the MCP
+server and runs the tool-use loop against the OpenAI API (function calling) —
+either `OPENAI_API_KEY` in `.env` (gitignored) or a key pasted in the sidebar
+(browser-only, never written to disk). Try natural-language questions and see
+each `list_tables`/`query` call it makes.
+
 ## License & data
 
 Code (`scripts/`) is MIT. The dataset in [data/releases/](data/releases/) is
@@ -199,7 +218,7 @@ button from it. Data reuse follows [DATA-LICENSE.md](DATA-LICENSE.md) (CC BY
 4.0), code follows [LICENSE](LICENSE) (MIT). This repo is archived on Zenodo,
 same as [KSE-Loc-Data-Hub](https://github.com/kse-ua/KSE-Loc-Data-Hub)
 ([10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573)):
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22552879.svg)](https://doi.org/10.5281/zenodo.22552879)
+<!-- DOI badge goes here once Zenodo mints one from the first GitHub Release -->
 
 ## Usage
 
