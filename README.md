@@ -192,6 +192,15 @@ open-data asset (for other researchers or a hromada-data hackathon) without
 also exposing draft outreach material or an unlabeled, partially-complete
 snapshot as if it were a finished dataset.
 
+## How to cite
+
+See [CITATION.cff](CITATION.cff) — GitHub renders a "Cite this repository"
+button from it. Data reuse follows [DATA-LICENSE.md](DATA-LICENSE.md) (CC BY
+4.0), code follows [LICENSE](LICENSE) (MIT). This repo is archived on Zenodo,
+same as [KSE-Loc-Data-Hub](https://github.com/kse-ua/KSE-Loc-Data-Hub)
+([10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573)):
+<!-- DOI badge goes here once Zenodo mints one from the first GitHub Release -->
+
 ## Usage
 
 ```bash
