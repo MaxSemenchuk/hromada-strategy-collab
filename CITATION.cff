@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or the dataset under data/releases/, please cite it
+  as below. The dataset is CC BY 4.0 (see DATA-LICENSE.md); the code is MIT
+  (see LICENSE).
+title: Hromada Strategy Collaboration Mapping
+type: software
+authors:
+  - family-names: Semenchuk
+    given-names: Max
+    affiliation: W3I
+    email: max.semenchuk@gmail.com
+repository-code: "https://github.com/MaxSemenchuk/hromada-strategy-collab"
+url: "https://github.com/MaxSemenchuk/hromada-strategy-collab"
+license: MIT
+version: 0.1.0
+date-released: "2026-09-07"
+keywords:
+  - inter-municipal cooperation
+  - hromada
+  - Ukraine
+  - decentralization
+  - open data
