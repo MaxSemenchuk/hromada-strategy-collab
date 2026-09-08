@@ -1,5 +1,9 @@
 # Hromada Strategy Collaboration Mapping
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22552879.svg)](https://doi.org/10.5281/zenodo.22552879)
+[![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE)
+[![Data license: CC BY 4.0](https://img.shields.io/badge/data%20license-CC%20BY%204.0-lightgrey.svg)](DATA-LICENSE.md)
+
 **Product unit:** candidate **МСС** (inter-municipal cooperation) agreements —
 pair · theme · legal form (one of five under Law 1508-VII) — instead of ad-hoc,
 relationship-based matchmaking. Strategy-text NLP is **one discovery signal**
