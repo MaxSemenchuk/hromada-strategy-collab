@@ -927,7 +927,7 @@ function renderThemeFilters() {
     const checked = selectedThemes.has(th.id) ? 'checked' : '';
     return `<label>
       <input type="checkbox" data-theme-id="${escLocal(th.id)}" ${checked}/>
-      <span>${escLocal(th.label_uk || th.id)}</span>
+      <span>${escLocal(biLabel(th.label_en, th.label_uk) || th.id)}</span>
       <span class="theme-n">${escLocal(String(th.n ?? 0))}</span>
     </label>`;
   }).join('');
@@ -1004,6 +1004,22 @@ function t(key) {
   return (window.HromadaI18n && window.HromadaI18n.t)
     ? window.HromadaI18n.t(key)
     : key;
+}
+
+function isEnLang() {
+  return !!(window.HromadaI18n && window.HromadaI18n.getLang && window.HromadaI18n.getLang() === 'en');
+}
+
+/** Node display name — falls back to the Ukrainian field when no EN one exists. */
+function displayName(n) {
+  if (!n) return '';
+  if (isEnLang() && (n.full_name_en || n.label_en)) return n.full_name_en || n.label_en;
+  return n.full_name || n.label || '';
+}
+
+/** Bilingual-pair picker: prefer the *_en field in English, else the UK one. */
+function biLabel(en, uk) {
+  return (isEnLang() && en) ? en : (uk || en || '');
 }
 
 function fmtNum(n) {
@@ -1136,7 +1152,7 @@ function neighborsOf(id) {
     if (!groups[kind]) groups[kind] = [];
     groups[kind].push({
       id: otherId,
-      label: (other && (other.full_name || other.label)) || otherId,
+      label: (other && displayName(other)) || otherId,
       score: e.score,
       kind,
       theme: e.theme,
@@ -1178,7 +1194,7 @@ function edgeBlurb(item) {
   if (kind === 'complementary') return t('explain.complementary');
   if (kind === 'explicit_ask') {
     return item.theme
-      ? t('explain.explicitTheme').replace('{t}', item.theme)
+      ? t('explain.explicitTheme').replace('{t}', biLabel(item.theme_en, item.theme))
       : t('explain.explicit');
   }
   if (kind === 'thematic' || kind === 'hypothesis') return t('explain.thematic');
@@ -1216,17 +1232,18 @@ function edgeSignals(item) {
     && item.kind !== 'pin'
     && !(item.themes && item.themes.length)
   ) {
-    out.push(item.theme);
+    out.push(biLabel(item.theme_en, item.theme));
   }
   return out;
 }
 
 function themesHtml(item) {
   const themes = (item.themes || []).slice(0, 6);
+  const themesEn = (item.themes_en || []).slice(0, 6);
   if (!themes.length) return '';
   return (
     `<div class="detail-themes" aria-label="${esc(t('explain.sharedThemes'))}">`
-    + themes.map((th) => `<span class="detail-theme">${esc(th)}</span>`).join('')
+    + themes.map((th, i) => `<span class="detail-theme">${esc(biLabel(themesEn[i], th))}</span>`).join('')
     + `</div>`
   );
 }
@@ -1239,14 +1256,14 @@ function packageHtml(item) {
   const form = pkg.form || item.suggested_form;
   if (!theme && !form) return '';
   if (item.kind === 'pin') return '';
-  const line = pkg.label_uk || [theme, form].filter(Boolean).join(' — ');
+  const line = biLabel(pkg.label_en, pkg.label_uk) || [theme, form].filter(Boolean).join(' — ');
   const conf = (pkg.confidence || item.suggest_confidence)
     ? ` <span class="agr-meta">(${esc(pkg.confidence || item.suggest_confidence)})</span>`
     : '';
   const chips = (item.signals || []).slice(0, 3);
   const chipsHtml = chips.length
     ? `<div class="agr-meta" style="margin-top:0.3rem">${chips.map((c) =>
-        esc(c.label_uk || c.id)).join(' · ')}</div>`
+        esc(biLabel(c.label_en, c.label_uk) || c.id)).join(' · ')}</div>`
     : '';
   const caveat = (pkg.caveat || item.suggest_caveat)
     ? `<span class="agr-meta">${esc(pkg.caveat || item.suggest_caveat)}</span>`
@@ -1352,7 +1369,7 @@ function renderDetail(n) {
     detailBody.innerHTML = '';
     return;
   }
-  const title = n.full_name || n.label || n.id;
+  const title = displayName(n) || n.id;
   detailTitle.textContent = title;
   const bits = [];
   if (n.oblast) bits.push(esc(n.oblast));
@@ -1438,7 +1455,7 @@ function renderDetail(n) {
     twinningHtml = `<div class="detail-twins">${twins.map((p) => {
       const meta = [
         p.country || null,
-        p.region || null,
+        biLabel(p.region_en, p.region) || null,
         p.since ? (t('detail.since') + ' ' + p.since) : null,
         p.source === 'skew' ? 'SKEW' : (p.source === 'cities4cities' ? 'Cities4Cities' : (p.source === 'strategy' ? t('detail.strategyMention') : p.source)),
       ].filter(Boolean).join(' · ');
@@ -1679,7 +1696,7 @@ function rebuildMapLayers() {
       opacity: 0.6,
       interactive: false,
     });
-    marker.bindTooltip(`${n.full_name || n.label} · ${n.party_count} ${t('map.hub.participants')}`, { sticky: true });
+    marker.bindTooltip(`${displayName(n)} · ${n.party_count} ${t('map.hub.participants')}`, { sticky: true });
     pinAgreementHubsLayer.addLayer(marker);
   }
 
@@ -1834,17 +1851,16 @@ function setMode(next) {
 }
 document.getElementById('btn-graph').onclick = () => setMode('graph');
 document.getElementById('btn-map').onclick = () => setMode('map');
-document.addEventListener('hromada-lang', () => {
+function onLangChange() {
   refreshHint();
   refreshTileAttribution();
+  if (typeof renderThemeFilters === 'function') renderThemeFilters();
   if (mode === 'map' && typeof rebuildMapLayers === 'function') rebuildMapLayers();
-});
+  if (mode === 'graph' && typeof drawGraph === 'function') drawGraph();
+}
+document.addEventListener('hromada-lang', onLangChange);
 if (window.HromadaI18n && window.HromadaI18n.onChange) {
-  window.HromadaI18n.onChange(() => {
-    refreshHint();
-    refreshTileAttribution();
-    if (mode === 'map' && typeof rebuildMapLayers === 'function') rebuildMapLayers();
-  });
+  window.HromadaI18n.onChange(onLangChange);
 }
 
 // ——— Hromada name search ———
@@ -1858,7 +1874,7 @@ const searchIndex = new Map(); // display label -> hromada id
   for (const n of universe) {
     if (!n.id || seen.has(n.id)) continue;
     seen.add(n.id);
-    const name = n.full_name || n.label || n.id;
+    const name = displayName(n) || n.id;
     const label = n.oblast ? `${name} — ${n.oblast}` : name;
     searchIndex.set(label, n.id);
     const opt = document.createElement('option');
@@ -2032,7 +2048,7 @@ window.addEventListener('mousemove', (ev) => {
     tip.style.display = 'block';
     tip.style.left = (w.sx + 14) + 'px';
     tip.style.top = (w.sy + 14) + 'px';
-    const title = hover.full_name || hover.label;
+    const title = displayName(hover);
     const metaBits = [];
     if (hover.oblast) metaBits.push(hover.oblast);
     if (hover.type) metaBits.push(hover.type);
@@ -2243,7 +2259,7 @@ function drawGraph() {
     // hubs are not — those only label on hover, like regular hromadas.
     const alwaysLabel = n.kind === 'country' || n.kind === 'donor';
     if (hi || alwaysLabel) {
-      const label = n.kind === 'agreement' ? (n.label || '') : (n.full_name || n.label || '');
+      const label = n.kind === 'agreement' ? (n.label || '') : (displayName(n) || '');
       const fs = (isHub ? 12 : 11) / scale;
       ctx.font = `${isHub ? 700 : 600} ${fs}px Manrope, "Segoe UI", sans-serif`;
       ctx.lineWidth = 3 / scale;

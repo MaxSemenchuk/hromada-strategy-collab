@@ -29,6 +29,15 @@ SIGNAL_LABELS: dict[str, str] = {
     "structural": "ресурси / DREAM",
 }
 
+SIGNAL_LABELS_EN: dict[str, str] = {
+    "strategy_goals": "similar strategy",
+    "geo": "convenient neighbour",
+    "complementary": "complementary resources",
+    "explicit_ask": "explicit IMC request",
+    "network": "IMC network",
+    "structural": "resources / DREAM",
+}
+
 TRACK_TO_PRIMARY: dict[str, str] = {
     "thematic": "strategy_goals",
     "operational": "geo",
@@ -53,6 +62,8 @@ def _strength_from_score(value: float | None, *, high: float, medium: float) -> 
 
 def package_from_edge(e: dict[str, Any]) -> dict[str, Any]:
     """Build package block from mss_suggest fields already on the edge."""
+    from mss_suggest import form_label_en, theme_label_en
+
     theme = e.get("suggested_theme")
     theme_id = e.get("suggested_theme_id")
     form = e.get("suggested_form")
@@ -61,6 +72,9 @@ def package_from_edge(e: dict[str, Any]) -> dict[str, Any]:
     form_part = form or "спільний проєкт"
     # Human line for hromada-facing UI (not legal-code jargon alone)
     label_uk = f"{theme_part} — {form_part}"
+    theme_part_en = theme_label_en(theme_id) or "theme not identified"
+    form_part_en = form_label_en(form_id) or "joint project"
+    label_en = f"{theme_part_en} — {form_part_en}"
     pkg: dict[str, Any] = {
         "theme": theme,
         "theme_id": theme_id,
@@ -69,6 +83,7 @@ def package_from_edge(e: dict[str, Any]) -> dict[str, Any]:
         "confidence": e.get("suggest_confidence") or "low",
         "rationale": e.get("suggest_rationale"),
         "label_uk": label_uk,
+        "label_en": label_en,
     }
     if e.get("suggest_caveat"):
         pkg["caveat"] = e["suggest_caveat"]
@@ -92,6 +107,7 @@ def build_signals(e: dict[str, Any]) -> list[dict[str, str]]:
                 {
                     "id": "strategy_goals",
                     "label_uk": SIGNAL_LABELS["strategy_goals"],
+                    "label_en": SIGNAL_LABELS_EN["strategy_goals"],
                     "strength": strength,
                 }
             )
@@ -107,6 +123,7 @@ def build_signals(e: dict[str, Any]) -> list[dict[str, str]]:
                 {
                     "id": "geo",
                     "label_uk": SIGNAL_LABELS["geo"],
+                    "label_en": SIGNAL_LABELS_EN["geo"],
                     "strength": strength,
                 }
             )
@@ -122,6 +139,7 @@ def build_signals(e: dict[str, Any]) -> list[dict[str, str]]:
                 {
                     "id": "complementary",
                     "label_uk": SIGNAL_LABELS["complementary"],
+                    "label_en": SIGNAL_LABELS_EN["complementary"],
                     "strength": strength,
                 }
             )
@@ -139,6 +157,7 @@ def build_signals(e: dict[str, Any]) -> list[dict[str, str]]:
                 {
                     "id": "explicit_ask",
                     "label_uk": SIGNAL_LABELS["explicit_ask"],
+                    "label_en": SIGNAL_LABELS_EN["explicit_ask"],
                     "strength": strength,
                 }
             )
@@ -149,6 +168,7 @@ def build_signals(e: dict[str, Any]) -> list[dict[str, str]]:
             {
                 "id": "network",
                 "label_uk": SIGNAL_LABELS["network"],
+                "label_en": SIGNAL_LABELS_EN["network"],
                 "strength": "high" if float(net) >= 1.0 else "medium",
             }
         )
@@ -168,6 +188,7 @@ def build_signals(e: dict[str, Any]) -> list[dict[str, str]]:
                 {
                     "id": "structural",
                     "label_uk": SIGNAL_LABELS["structural"],
+                    "label_en": SIGNAL_LABELS_EN["structural"],
                     "strength": _strength_from_score(best, high=0.75, medium=0.45),
                 }
             )
@@ -234,7 +255,12 @@ def _short_row(e: dict[str, Any]) -> dict[str, Any]:
     signals = e.get("signals") or build_signals(e)
     # UI chips: top 3
     chips = [
-        {"id": s["id"], "label_uk": s["label_uk"], "strength": s["strength"]}
+        {
+            "id": s["id"],
+            "label_uk": s["label_uk"],
+            "label_en": s.get("label_en"),
+            "strength": s["strength"],
+        }
         for s in signals[:3]
     ]
     row: dict[str, Any] = {
