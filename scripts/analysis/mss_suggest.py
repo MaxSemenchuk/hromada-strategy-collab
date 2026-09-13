@@ -55,6 +55,37 @@ FORM_LABELS: dict[str, str] = {
     "agglomeration": "агломерація",
 }
 
+# English mirrors of the two tables above — same ids, UI/release only.
+THEME_LABELS_EN: dict[str, str] = {
+    "cnap": "ASC / admin services",
+    "fire": "Fire protection",
+    "waste": "Waste management / environment",
+    "water": "Water / flood protection",
+    "education": "Education",
+    "health": "Healthcare",
+    "social": "Social services",
+    "tourism": "Tourism / cluster",
+    "culture": "Culture / sport",
+    "utilities": "Utilities / heating / gas / amenities",
+    "energy": "Energy efficiency",
+    "archive": "Archival services",
+    "roads": "Roads / infrastructure",
+    "archbud": "Architecture / urban planning",
+    "registration": "State registration",
+    "agglomeration": "Agglomeration / metro area",
+    "security": "Security / civil defense",
+    "other": "Other / unspecified",
+}
+
+FORM_LABELS_EN: dict[str, str] = {
+    "joint_project": "joint project",
+    "joint_finance": "joint funding / maintenance",
+    "delegation": "delegation",
+    "joint_enterprise": "joint municipal enterprise",
+    "joint_body": "joint body",
+    "agglomeration": "agglomeration",
+}
+
 # theme_id → list of compiled patterns (scored on blob).
 # Tuned on MinRegion registry titles: many "other" rows are empty boilerplate;
 # the rest often hide subject in quotes ( damб / ПМСД / спорт / трудовий архів ).
@@ -216,10 +247,22 @@ def theme_label(theme_id: str | None) -> str | None:
     return THEME_LABELS.get(theme_id, theme_id)
 
 
+def theme_label_en(theme_id: str | None) -> str | None:
+    if not theme_id:
+        return None
+    return THEME_LABELS_EN.get(theme_id, theme_id)
+
+
 def form_label(form_id: str | None) -> str | None:
     if not form_id:
         return None
     return FORM_LABELS.get(form_id, form_id)
+
+
+def form_label_en(form_id: str | None) -> str | None:
+    if not form_id:
+        return None
+    return FORM_LABELS_EN.get(form_id, form_id)
 
 
 def detect_theme_scores(text: str) -> Counter[str]:

@@ -43,8 +43,10 @@ from edge_io import ensure_packages, load_matching_edges  # noqa: E402
 from goal_overlap import explain_goal_overlap  # noqa: E402
 from mss_suggest import (  # noqa: E402
     THEME_LABELS,
+    THEME_LABELS_EN,
     classify_registry_theme,
     theme_label,
+    theme_label_en,
 )
 from tracks import operational_slice, thematic_slice  # noqa: E402
 
@@ -120,6 +122,74 @@ COUNTRY_LABELS = {
     "MC": "Монако",
     "MX": "Мексика",
     "UZ": "Узбекистан",
+}
+
+COUNTRY_LABELS_EN: dict[str, str] = {
+    "DE": "Germany",
+    "PL": "Poland",
+    "SE": "Sweden",
+    "BG": "Bulgaria",
+    "HU": "Hungary",
+    "RO": "Romania",
+    "SK": "Slovakia",
+    "LT": "Lithuania",
+    "CZ": "Czechia",
+    "GE": "Georgia",
+    "LV": "Latvia",
+    "US": "USA",
+    "IT": "Italy",
+    "FR": "France",
+    "EE": "Estonia",
+    "CN": "China",
+    "MD": "Moldova",
+    "TR": "Turkey",
+    "GR": "Greece",
+    "CA": "Canada",
+    "SI": "Slovenia",
+    "IL": "Israel",
+    "HR": "Croatia",
+    "MK": "North Macedonia",
+    "FI": "Finland",
+    "AT": "Austria",
+    "GB": "United Kingdom",
+    "ES": "Spain",
+    "PT": "Portugal",
+    "AZ": "Azerbaijan",
+    "CH": "Switzerland",
+    "DK": "Denmark",
+    "AM": "Armenia",
+    "NL": "Netherlands",
+    "ZA": "South Africa",
+    "CY": "Cyprus",
+    "GT": "Guatemala",
+    "PE": "Peru",
+    "KR": "South Korea",
+    "NO": "Norway",
+    "BE": "Belgium",
+    "EG": "Egypt",
+    "IN": "India",
+    "MA": "Morocco",
+    "JP": "Japan",
+    "MC": "Monaco",
+    "MX": "Mexico",
+    "UZ": "Uzbekistan",
+}
+
+# Donor program labels that come through as raw Ukrainian strings in
+# hromadas.json DonorsPrograms (most programs are already Latin acronyms).
+DONOR_LABELS_EN: dict[str, str] = {
+    "ЄІБ": "EIB",
+    "ЄБРР": "EBRD",
+    "МФ Відродження": "International Renaissance Foundation",
+    "ПРООН/UNDP": "UNDP",
+    "Ре:Форм": "Re:form",
+}
+
+# Twinning partner_region values that are Ukrainian free text rather than a
+# German Land name (which twinning-partners.json otherwise carries verbatim).
+REGION_LABELS_EN: dict[str, str] = {
+    "Німеччина, побратимство SKEW": "Germany, SKEW twinning",
+    "Польща": "Poland",
 }
 
 # Registry titles are noisy: legal boilerplate, typos (теритріальн*), genitive forms.
@@ -320,7 +390,13 @@ def _agreement_item(num: str, registry: dict[str, dict]) -> tuple[dict, str]:
         else (agreement_essence(raw_title, form) or f"№{num}")
     )
     tid, _score = classify_registry_theme(raw_title, form, title)
-    item: dict = {"n": num, "title": title, "theme_id": tid, "theme": theme_label(tid) or tid}
+    item: dict = {
+        "n": num,
+        "title": title,
+        "theme_id": tid,
+        "theme": theme_label(tid) or tid,
+        "theme_en": theme_label_en(tid) or tid,
+    }
     if form and form.casefold() != title.casefold():
         item["form"] = form
     return item, tid
@@ -395,6 +471,9 @@ def load_pin(
             edge["themes"] = [
                 theme_label(t) or t for t in theme_ids if t != "other"
             ][:6]
+            edge["themes_en"] = [
+                theme_label_en(t) or t for t in theme_ids if t != "other"
+            ][:6]
             if len(agreements) == 1 and agreements[0].get("form"):
                 edge["form"] = agreements[0]["form"]
         edges.append(edge)
@@ -417,6 +496,7 @@ def load_pin(
             "party_count": len(codes),
             "theme_id": tid,
             "theme": item.get("theme") if tid != "other" else None,
+            "theme_en": item.get("theme_en") if tid != "other" else None,
         }
         for code in codes:
             edges.append({
@@ -425,7 +505,9 @@ def load_pin(
                 "kind": "pin_agreement",
                 "theme_id": tid,
                 "theme": item.get("theme"),
+                "theme_en": item.get("theme_en"),
                 "themes": [item["theme"]] if tid != "other" else [],
+                "themes_en": [item["theme_en"]] if tid != "other" else [],
                 "theme_ids": [tid],
                 "agreements": [item],
                 "reasons": [item["title"]],
@@ -618,6 +700,7 @@ def build_payload() -> dict:
         {
             "id": tid,
             "label_uk": THEME_LABELS.get(tid, tid),
+            "label_en": THEME_LABELS_EN.get(tid, tid),
             "n": pin_theme_counts[tid],
         }
         for tid in sorted(
@@ -758,11 +841,13 @@ def build_payload() -> dict:
                 continue
             partners = []
             for p in h.get("partners") or []:
+                region = p.get("partner_region")
                 partners.append(
                     {
                         "name": p.get("partner_name"),
                         "country": p.get("partner_country"),
-                        "region": p.get("partner_region"),
+                        "region": region,
+                        "region_en": REGION_LABELS_EN.get(region, region),
                         "type": p.get("type"),
                         "since": p.get("since"),
                         "source": p.get("source"),
@@ -788,11 +873,14 @@ def build_payload() -> dict:
             node_id = f"country:{iso}"
             if node_id not in country_nodes:
                 label = COUNTRY_LABELS.get(iso, iso)
+                label_en = COUNTRY_LABELS_EN.get(iso, iso)
                 country_nodes[node_id] = {
                     "id": node_id,
                     "kind": "country",
                     "label": label,
                     "full_name": label,
+                    "label_en": label_en,
+                    "full_name_en": label_en,
                     "iso2": iso,
                     "degree": 0,
                 }
@@ -812,11 +900,14 @@ def build_payload() -> dict:
         for program in programs:
             node_id = f"donor:{program}"
             if node_id not in donor_nodes:
+                label_en = DONOR_LABELS_EN.get(program, program)
                 donor_nodes[node_id] = {
                     "id": node_id,
                     "kind": "donor",
                     "label": program,
                     "full_name": program,
+                    "label_en": label_en,
+                    "full_name_en": label_en,
                     "degree": 0,
                 }
             donor_nodes[node_id]["degree"] += 1

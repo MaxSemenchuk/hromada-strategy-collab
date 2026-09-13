@@ -363,11 +363,19 @@ def _why_helps(
 ) -> str:
     """One short mutual-benefit line — never a score pitch."""
     pkg = edge.get("package") or {}
-    label = pkg.get("label_uk") or (
+    label_uk = pkg.get("label_uk") or (
         f"{edge.get('suggested_theme') or 'тема'} — "
         f"{edge.get('suggested_form') or 'спільний проєкт'}"
     )
     theme_id = pkg.get("theme_id") or edge.get("suggested_theme_id")
+    form_id = pkg.get("form_id") or edge.get("suggested_form_id")
+    from mss_suggest import form_label_en, theme_label_en
+
+    label_en = pkg.get("label_en") or (
+        f"{theme_label_en(theme_id) or 'theme not identified'} — "
+        f"{form_label_en(form_id) or 'joint project'}"
+    )
+    label = label_en if lang == "en" else label_uk
     geo = _f(edge, "geo_score")
     goals = _f(edge, "goals_cosine")
     comp = _f(edge, "complementary_score")
@@ -424,18 +432,27 @@ def card_from_edge(
     rank_value: float,
 ) -> dict[str, Any]:
     partner = partner_of(edge, seed_name)
-    pkg = edge.get("package") or {
-        "theme": edge.get("suggested_theme"),
-        "theme_id": edge.get("suggested_theme_id"),
-        "form": edge.get("suggested_form"),
-        "form_id": edge.get("suggested_form_id"),
-        "label_uk": (
-            f"{edge.get('suggested_theme') or 'тема не визначена'} — "
-            f"{edge.get('suggested_form') or 'спільний проєкт'}"
-        ),
-        "confidence": edge.get("suggest_confidence"),
-        "rationale": edge.get("suggest_rationale"),
-    }
+    if edge.get("package"):
+        pkg = edge["package"]
+    else:
+        from mss_suggest import form_label_en, theme_label_en
+
+        pkg = {
+            "theme": edge.get("suggested_theme"),
+            "theme_id": edge.get("suggested_theme_id"),
+            "form": edge.get("suggested_form"),
+            "form_id": edge.get("suggested_form_id"),
+            "label_uk": (
+                f"{edge.get('suggested_theme') or 'тема не визначена'} — "
+                f"{edge.get('suggested_form') or 'спільний проєкт'}"
+            ),
+            "label_en": (
+                f"{theme_label_en(edge.get('suggested_theme_id')) or 'theme not identified'} — "
+                f"{form_label_en(edge.get('suggested_form_id')) or 'joint project'}"
+            ),
+            "confidence": edge.get("suggest_confidence"),
+            "rationale": edge.get("suggest_rationale"),
+        }
     chips = edge.get("signal_chips") or (edge.get("signals") or [])[:3]
     status = edge.get("status") or (
         "registry_known" if edge.get("known") else "hypothesis"

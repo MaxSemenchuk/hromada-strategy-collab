@@ -396,9 +396,13 @@ window.PAGE_I18N = {
     }
 
     function packageLabel(p) {
-      if (p.package && p.package.label_uk) return p.package.label_uk;
-      var theme = p.suggested_theme || (p.package && p.package.theme) || "";
-      var form = p.suggested_form || (p.package && p.package.form) || "";
+      var pkg = p.package;
+      if (pkg) {
+        var label = lang() === "en" ? (pkg.label_en || pkg.label_uk) : pkg.label_uk;
+        if (label) return label;
+      }
+      var theme = p.suggested_theme || (pkg && pkg.theme) || "";
+      var form = p.suggested_form || (pkg && pkg.form) || "";
       if (theme && form) return theme + " — " + form;
       return theme || form || "—";
     }
@@ -430,7 +434,8 @@ window.PAGE_I18N = {
       var chips = p.signal_chips || (p.signals || []).slice(0, 3);
       if (!chips.length) return "—";
       return "<div class=\"chips\">" + chips.map(function (c) {
-        return "<span class=\"chip " + esc(c.strength || "") + "\">" + esc(c.label_uk || c.id) + "</span>";
+        var label = lang() === "en" ? (c.label_en || c.label_uk || c.id) : (c.label_uk || c.id);
+        return "<span class=\"chip " + esc(c.strength || "") + "\">" + esc(label) + "</span>";
       }).join("") + "</div>";
     }
 
