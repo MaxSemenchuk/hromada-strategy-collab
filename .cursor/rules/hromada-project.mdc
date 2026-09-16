@@ -69,19 +69,36 @@ and `yarn report-pin-corpus`.
 
 Still separate (do **not** fold into combined `score`):
 - `yarn complementary-match` — resource/DREAM ↔ Challenges (asymmetric;
-  different from DREAM-title *similarity*; this is «навіщо», not trust)
+  v3 kitchen-sink sectors capped; named deficit↔offer; this is «навіщо»,
+  not trust). Different from DREAM-title *similarity*.
+- `yarn extract-strategy-entities` — named objects + GISRR SWOT/task extras;
+  shared-asset overlay. Neighbour NER feeds `social_capital` named (0.70)
+  via explicit-ask, not the 0.60 Goals slot.
 - HydroBASINS / `same_basin` — map underlay only
 - `yarn hromada-resources` / `yarn fetch-dream` — structural covariates
   (`dream_overlap` stays on operational_score)
 
 PIN map (`yarn graph-pin-matching`): paint **thematic**, **operational**,
-**complementary**, and **explicit_ask** overlays separately — never top-N by
-combined `score` (sparse corpus → geo bias). **Twinning** stays a node highlight
+**complementary**, **explicit_ask**, and **shared_asset** overlays separately —
+never top-N by combined `score` (sparse corpus → geo bias). **Twinning** stays a node highlight
 layer (EU sister cities in the hromada card + indigo glow) *and* a weak
 pairwise input to `social_capital`. **Interreg** (keep.eu LPA) is a separate
-cyan node highlight. **Law 3668-IX** registered international agreements feed
-the card + «Теми UA–ЄС» filter + a revealed EU-place pool — not v7 `score`,
+cyan node highlight; official keep.eu `themes[]` also feed the «Теми UA–ЄС»
+filter. **Law 3668-IX** registered international agreements feed the card +
+that same filter + a revealed EU-place pool — not v7 `score`,
 never `known: true`, never Law 1508 forms.
+
+**3668 snapshot (2026-09-16):** 312 filled rows → **197 matched / 107
+hromadas** (7% of 1463); 41 oblast skipped, 74 unmatched. PL 164/312 then
+RO 52, MD 27 (78% together). Lviv+Volyn+Chernivtsi = 129 agreements.
+Culture on 142/197 is kitchen-sink sphere text, not specialization; 27
+untagged. 2025 spike (57) includes Bucharest 19.11.2025 Chernivtsi↔RO pack
+and Kyiv 06.06.2025 batch; **2024 = 0**. Of 107: 72 also twinning, 11 also
+Interreg LPA (themes rarely overlap), 31 only 3668. Stem collision:
+Миколаївська city swallowed Lviv-oblast gmina deals — check title, not only
+KATOTTG. Incomplete vs Ministry ~2119 dashboard. Western PL/RO corridor,
+not a distant-EU twin finder. Analytics canvas:
+`canvases/law-3668-agreements.canvas.tsx` (Cursor canvases folder).
 
 ## Hard rules
 
@@ -94,7 +111,7 @@ never `known: true`, never Law 1508 forms.
 7. Product unit is an **МСС candidate agreement** (`package` theme·form +
    `signals[]`). Do not present combined `score` as «strategy match». Signal
    labels (`схожа стратегія` / `зручний сусід` / `доповнення` / `явний запит` /
-   `місто-побратим ЄС` / `схожі проєкти DREAM`) are discovery evidence — **not** the five legal IMC forms.
+   `спільний обʼєкт` / `місто-побратим ЄС` / `схожі проєкти DREAM`) are discovery evidence — **not** the five legal IMC forms.
    Browse by hypothesis strength; form filter is secondary (do not primary-nav by
    form buckets — most suggestions default to спільний проєкт).
 8. `suggested_theme` / `suggested_form` / `package` are IMC-package hypotheses

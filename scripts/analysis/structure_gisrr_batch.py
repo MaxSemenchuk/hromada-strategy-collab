@@ -19,12 +19,15 @@ import argparse
 import html as htmllib
 import json
 import re
+import sys
 import unicodedata
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+from strategy_text import ASSET_HINT_RE  # noqa: E402
 GISRR = ROOT / "data" / "cache" / "gisrr"
 CATALOG = GISRR / "catalog.json"
 DETAILS = GISRR / "details"
@@ -39,6 +42,7 @@ MSS_RE = re.compile(
 )
 SWOT_STRENGTH = {"1"}
 SWOT_CHALLENGE = {"2", "4"}  # weaknesses + threats
+SWOT_OPP = {"3"}  # opportunities — IMC language often lives here, not in Goals
 
 
 def strip_html(v: object) -> str:
@@ -148,6 +152,7 @@ def convert_detail(detail: dict, catalog_entry: dict) -> dict | None:
     # SWOT
     strengths: list[str] = []
     challenges: list[str] = []
+    opportunities: list[str] = []
     for block in rows.get("swot") or []:
         btype = str(block.get("type") or "")
         for item in block.get("swot_list") or []:
@@ -161,6 +166,8 @@ def convert_detail(detail: dict, catalog_entry: dict) -> dict | None:
                 strengths.append(name)
             elif itype in SWOT_CHALLENGE:
                 challenges.append(name)
+            elif itype in SWOT_OPP and MSS_RE.search(name):
+                opportunities.append(name)
 
     # Trends as extra challenges if SWOT thin
     if len(challenges) < 3:
@@ -171,18 +178,26 @@ def convert_detail(detail: dict, catalog_entry: dict) -> dict | None:
             if len(bit) > 20:
                 challenges.append(bit)
 
-    # Tasks → projects (cap)
+    # Tasks → projects: first 25 plus leftover IMC/named-object lines the cap would drop
     tasks = [
         clean_line(t.get("task_name") or "")
         for t in rows.get("tasks") or []
         if clean_line(t.get("task_name") or "")
     ]
-    projects_lines = [f"- {t}" for t in tasks[:25] if len(t) > 15]
+    long_tasks = [t for t in tasks if len(t) > 15]
+    head = long_tasks[:25]
+    extra = [
+        t
+        for t in long_tasks[25:]
+        if MSS_RE.search(t) or ASSET_HINT_RE.search(t)
+    ]
+    projects_lines = [f"- {t}" for t in (head + extra)[:40]]
 
     # MSS intents from goals/subgoals/tasks
     mss_intents: list[dict] = []
     scan_lines = (
-        [s["text"] for s in strategic]
+        opportunities
+        + [s["text"] for s in strategic]
         + [o["text"] for o in operational]
         + tasks
         + [strip_html(doc.get("strategic_vision") or "")]

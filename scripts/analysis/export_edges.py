@@ -39,6 +39,7 @@ THEMATIC = ROOT / "data" / "releases" / "matching-edges.thematic.json"
 OPERATIONAL = ROOT / "data" / "releases" / "matching-edges.operational.json"
 COMPLEMENTARY = ROOT / "data" / "releases" / "matching-edges.complementary.json"
 EXPLICIT_ASK = ROOT / "data" / "releases" / "matching-edges.explicit-ask.json"
+SHARED_ASSET = ROOT / "data" / "releases" / "matching-edges.shared-asset.json"
 
 SLICE_LIMIT = 50
 
@@ -73,13 +74,19 @@ def main() -> None:
     explicit_ask = (
         json.loads(EXPLICIT_ASK.read_text(encoding="utf-8")) if EXPLICIT_ASK.exists() else []
     )
-    # Annotate slice files already on disk (complementary / explicit-ask from own yarn cmds)
+    shared_asset = (
+        json.loads(SHARED_ASSET.read_text(encoding="utf-8")) if SHARED_ASSET.exists() else []
+    )
+    # Annotate slice files already on disk (complementary / explicit-ask / shared-asset)
     if complementary:
         annotate_candidates(complementary)
         write_json(COMPLEMENTARY, complementary, compact=False)
     if explicit_ask:
         annotate_candidates(explicit_ask)
         write_json(EXPLICIT_ASK, explicit_ask, compact=False)
+    if shared_asset:
+        annotate_candidates(shared_asset)
+        write_json(SHARED_ASSET, shared_asset, compact=False)
 
     sidecar = write_candidates_sidecar(
         matching_edges=edges,
@@ -87,6 +94,7 @@ def main() -> None:
         operational=operational,
         complementary=complementary,
         explicit_ask=explicit_ask,
+        shared_asset=shared_asset,
     )
 
     known = sum(1 for e in edges if e.get("known"))
@@ -212,6 +220,14 @@ def main() -> None:
             "complementary": {
                 "path": "matching-edges.complementary.json",
                 "note": "Separate yarn complementary-match — resource/DREAM ↔ Challenges",
+            },
+            "explicitAsk": {
+                "path": "matching-edges.explicit-ask.json",
+                "note": "Separate yarn extract-mss-intents — МСС language + named neighbours",
+            },
+            "sharedAsset": {
+                "path": "matching-edges.shared-asset.json",
+                "note": "Separate yarn extract-strategy-entities — same named object in two strategies",
             },
         },
         "dreamPriority": {

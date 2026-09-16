@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 from build_intl_agreements import country_iso, kind_id, ua_level  # noqa: E402
-from intl_theme import classify_intl_themes, names_overlap  # noqa: E402
+from intl_theme import classify_intl_themes, keep_eu_project_themes, map_keep_eu_themes, names_overlap  # noqa: E402
 
 
 def test_themes() -> None:
@@ -40,6 +40,54 @@ def test_themes() -> None:
     assert empty == [] or "economy" not in empty
 
 
+def test_keep_eu_themes() -> None:
+    culture = map_keep_eu_themes(
+        [{"id": 20, "title": "Cultural heritage and arts"}, {"id": 24, "title": "Tourism"}]
+    )
+    assert culture == ["culture", "tourism"], culture
+
+    health = map_keep_eu_themes([{"id": 3, "title": "Health and social services"}])
+    assert health == ["health", "social"], health
+
+    unmapped = map_keep_eu_themes([{"id": 14, "title": "Evaluation systems and results"}])
+    assert unmapped == []
+
+    bcp = keep_eu_project_themes(
+        {
+            "themes": [
+                {"id": 26, "title": "Safety"},
+                {"id": 38, "title": "Infrastructure"},
+                {"id": 41, "title": "Knowledge and technology transfer"},
+            ],
+            "priority_policy_objective": "",
+            "priority_specific_objective": {
+                "id": 28,
+                "content": "ISO6.2. Enhance efficient public administration",
+            },
+            "intervention_type": {
+                "id": 174,
+                "content": "174 Interreg: border crossing management and mobility and migration management",
+            },
+            "interreg_specific_objective": "",
+        },
+        name_en="Joint actions for the opening of the international BCP Yablunivka-Remeta",
+        acronym="BCP",
+    )
+    assert bcp["theme_source"] == "keep.eu+title", bcp
+    assert "security" in bcp["theme_ids"] and "roads" in bcp["theme_ids"]
+    assert "borders" in bcp["theme_ids"], bcp["theme_ids"]
+    assert bcp["intervention"].startswith("174")
+    assert bcp["keep_themes"][0]["title"] == "Safety"
+
+    official_only = keep_eu_project_themes(
+        {"themes": [{"id": 24, "title": "Tourism"}]},
+        name_en="Partnership agreement",
+        acronym="X",
+    )
+    assert official_only["theme_source"] == "keep.eu"
+    assert official_only["theme_ids"] == ["tourism"]
+
+
 def test_kind_and_country() -> None:
     assert kind_id("транскордонне та міжтериторіальне співробітництво") == "cbc_interterritorial"
     assert kind_id("міжтериторіальне співробітництво") == "interterritorial"
@@ -68,6 +116,7 @@ def test_name_overlap() -> None:
 
 def main() -> None:
     test_themes()
+    test_keep_eu_themes()
     test_kind_and_country()
     test_ua_level()
     test_name_overlap()

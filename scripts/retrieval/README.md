@@ -1,6 +1,6 @@
 # Retrieval batch workflow
 
-Scale strategy extraction beyond the current ~385-hromada Goals corpus without
+Scale strategy extraction beyond the current ~394-hromada Goals corpus without
 burning 60–150k agent tokens per hromada on anti-bot retrieval.
 
 ## Pipeline
@@ -78,7 +78,7 @@ structured goals/subgoals/tasks + prose blocks. Cache only — not folded into
 yarn structure-gisrr                 # upsert Goals for GISRR ТГ missing text
 yarn structure-gisrr --dry-run
 yarn structure-gisrr --limit 10
-yarn build-goals-hierarchy && yarn extract-mss-intents && yarn match
+yarn extract-strategy-entities && yarn extract-mss-intents && yarn complementary-match && yarn export-matching-edges && yarn graph-pin-matching
 ```
 
 ## МСС registry (ground truth)

@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """Complementary matching: resource / DREAM priority of A ↔ challenge of B.
 
-Separate from v6 goals-cosine. Does not set known=true. Hypotheses only.
+v3: kitchen-sink sector hits are capped; named deficits (worn water pipe,
+missing landfill, …) outweigh generic «освіта / культура». Separate from
+v7 goals-cosine. Does not set known=true. Hypotheses only.
 
 Signals:
   - DREAM top_sectors(A) hit keyword patterns in Challenges(B) (and reverse)
   - Strengths(A) sector tags hit Challenges(B) (and reverse)
+  - Named deficit of B matched by Strengths/Projects offer of A
   - Resource proxies (health / competence / fiscal) when the other side's
     Challenges mention the matching need
 
@@ -26,6 +29,14 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 from mss_candidate import annotate_candidates  # noqa: E402
 from mss_suggest import SECTOR_TO_THEME, annotate_edges, theme_label  # noqa: E402
+from strategy_text import (  # noqa: E402
+    KITCHEN_SINK_CAP,
+    KITCHEN_SINK_SECTORS,
+    OFFER_LABELS,
+    deficit_kinds,
+    offer_kinds,
+    sector_hit_weight,
+)
 HROMADAS = ROOT / "data" / "releases" / "hromadas.json"
 RESOURCES = ROOT / "data" / "releases" / "hromada-resources.json"
 DREAM = ROOT / "data" / "releases" / "dream-priorities.json"
@@ -104,6 +115,7 @@ def load_profiles() -> dict[str, dict]:
             continue
         challenges = (row.get("Challenges") or "").strip()
         strengths = (row.get("Strengths") or "").strip()
+        projects = (row.get("Projects") or "").strip()
         profiles[code] = {
             "katottg": code,
             "name": name,
@@ -111,8 +123,11 @@ def load_profiles() -> dict[str, dict]:
             "oblast": row.get("Oblast"),
             "challenges": challenges,
             "strengths": strengths,
+            "projects": projects,
             "challenge_sectors": sectors_in_text(challenges),
             "strength_sectors": sectors_in_text(strengths),
+            "deficit_kinds": deficit_kinds(challenges),
+            "offer_kinds": offer_kinds(strengths, projects),
             "dream_sectors": [],
             "own_income_per_capita": None,
             "health_primary": None,
@@ -155,8 +170,11 @@ def load_profiles() -> dict[str, dict]:
                     "oblast": None,
                     "challenges": "",
                     "strengths": "",
+                    "projects": "",
                     "challenge_sectors": set(),
                     "strength_sectors": set(),
+                    "deficit_kinds": set(),
+                    "offer_kinds": set(),
                     "dream_sectors": list(row.get("top_sectors") or []),
                     "own_income_per_capita": None,
                     "health_primary": None,
@@ -213,12 +231,17 @@ def resource_needs(challenges: str) -> set[str]:
 def pair_reasons_weighted(a: dict, b: dict) -> tuple[list[str], float]:
     """Directed + symmetric complementary reasons with anti-saturation weights.
 
-    Weights: DREAM sector hit 1.0, Strengths 0.85, resource proxy 0.55.
+    v3: specific sectors (water/waste/energy/…) keep DREAM 1.0 / Strengths 0.85.
+    Kitchen-sink sectors (освіта/культура/МСБ/…) are cheap and capped at 0.5
+    total so a pair cannot saturate on template SWOT. Named deficit↔offer
+    (worn water pipe, missing landfill, …) is 1.6. Resource proxy 0.55.
     Score = 1 - exp(-0.40 * weight_sum), then ×1.2 if same oblast (capped at 1).
-    Require weight_sum ≥ 1.2 (roughly two weak hits or one strong + oblast).
+    Require weight_sum ≥ 1.2.
     """
     reasons: list[str] = []
-    weight_sum = 0.0
+    kitchen_reasons: list[str] = []
+    specific_w = 0.0
+    kitchen_w = 0.0
 
     a_dream = set(a.get("dream_sectors") or [])
     a_str = set(a.get("strength_sectors") or [])
@@ -227,21 +250,46 @@ def pair_reasons_weighted(a: dict, b: dict) -> tuple[list[str], float]:
     b_need = set(b.get("challenge_sectors") or [])
     a_need = set(a.get("challenge_sectors") or [])
 
-    for s in sorted((a_dream | a_str) & b_need):
-        if s in a_dream:
-            src, w = "DREAM", 1.0
+    def add_sector(src: str, sector: str, offer_short: str, need_short: str) -> None:
+        nonlocal specific_w, kitchen_w
+        w = sector_hit_weight(sector, source=src)
+        line = f"{src} «{sector}» у {offer_short} ↔ виклик у {need_short}"
+        if sector in KITCHEN_SINK_SECTORS:
+            kitchen_w += w
+            kitchen_reasons.append(line)
         else:
-            src, w = "Strengths", 0.85
-        reasons.append(f"{src} «{s}» у {a['short']} ↔ виклик у {b['short']}")
-        weight_sum += w
+            specific_w += w
+            reasons.append(line)
 
+    for s in sorted((a_dream | a_str) & b_need):
+        src = "DREAM" if s in a_dream else "Strengths"
+        add_sector(src, s, a["short"], b["short"])
     for s in sorted((b_dream | b_str) & a_need):
-        if s in b_dream:
-            src, w = "DREAM", 1.0
-        else:
-            src, w = "Strengths", 0.85
-        reasons.append(f"{src} «{s}» у {b['short']} ↔ виклик у {a['short']}")
-        weight_sum += w
+        src = "DREAM" if s in b_dream else "Strengths"
+        add_sector(src, s, b["short"], a["short"])
+
+    kitchen_w = min(kitchen_w, KITCHEN_SINK_CAP)
+    if kitchen_reasons:
+        extra = len(kitchen_reasons) - 1
+        suffix = f" (+{extra} шаблонних секторів)" if extra > 0 else ""
+        reasons.append(kitchen_reasons[0] + suffix)
+
+    a_off = set(a.get("offer_kinds") or [])
+    b_off = set(b.get("offer_kinds") or [])
+    a_def = set(a.get("deficit_kinds") or [])
+    b_def = set(b.get("deficit_kinds") or [])
+    for kind in sorted(a_off & b_def):
+        reasons.append(
+            f"конкретний ресурс «{OFFER_LABELS.get(kind, kind)}» у {a['short']} "
+            f"↔ дефіцит у {b['short']}"
+        )
+        specific_w += 1.6
+    for kind in sorted(b_off & a_def):
+        reasons.append(
+            f"конкретний ресурс «{OFFER_LABELS.get(kind, kind)}» у {b['short']} "
+            f"↔ дефіцит у {a['short']}"
+        )
+        specific_w += 1.6
 
     a_res = resource_offers(a)
     b_res = resource_offers(b)
@@ -257,18 +305,19 @@ def pair_reasons_weighted(a: dict, b: dict) -> tuple[list[str], float]:
     }
     for need in sorted(a_res & b_needs):
         reasons.append(f"ресурс «{labels.get(need, need)}» у {a['short']} ↔ потреба в {b['short']}")
-        weight_sum += 0.55
+        specific_w += 0.55
     for need in sorted(b_res & a_needs):
         reasons.append(f"ресурс «{labels.get(need, need)}» у {b['short']} ↔ потреба в {a['short']}")
-        weight_sum += 0.55
+        specific_w += 0.55
 
-    # de-dupe preserve order
+    weight_sum = specific_w + kitchen_w
     seen: set[str] = set()
     out: list[str] = []
     for r in reasons:
         if r not in seen:
             seen.add(r)
             out.append(r)
+    out.sort(key=lambda r: (0 if "↔ дефіцит" in r else 1))
     return out, weight_sum
 
 
@@ -299,7 +348,7 @@ def main() -> None:
     with_offer = [
         p
         for p in profiles.values()
-        if p.get("dream_sectors") or p.get("strength_sectors") or resource_offers(p)
+        if p.get("dream_sectors") or p.get("strength_sectors") or p.get("offer_kinds") or resource_offers(p)
     ]
     print(f"Profiles: {len(profiles)}; with challenges={len(with_challenges)}; with offers={len(with_offer)}")
 
@@ -317,13 +366,14 @@ def main() -> None:
             score = complementary_score(wsum, same)
             if score <= 0:
                 continue
-            scored.append((score, offer_p, reasons))
-        scored.sort(key=lambda x: -x[0])
+            named_n = sum(1 for r in reasons if "↔ дефіцит" in r)
+            scored.append((score, named_n, wsum, offer_p, reasons))
+        scored.sort(key=lambda x: (-x[0], -x[1], -x[2]))
         # Prefer same-oblast in the shortlist: take up to 8 same-ob + fill to 12
-        same_first = [x for x in scored if same_oblast(x[1], need_p)]
-        cross = [x for x in scored if not same_oblast(x[1], need_p)]
+        same_first = [x for x in scored if same_oblast(x[3], need_p)]
+        cross = [x for x in scored if not same_oblast(x[3], need_p)]
         shortlist = same_first[:8] + cross[: max(0, 12 - len(same_first[:8]))]
-        for score, offer_p, reasons in shortlist:
+        for score, named_n, _wsum, offer_p, reasons in shortlist:
             key = frozenset((need_p["katottg"], offer_p["katottg"]))
             prev = edge_map.get(key)
             if prev is None or score > prev["complementary_score"]:
@@ -339,6 +389,7 @@ def main() -> None:
                     "reason_count": len(reasons),
                     "reasons": reasons[:6],
                     "same_oblast": same_oblast(need_p, offer_p),
+                    "named_deficit": named_n > 0,
                     "known": False,
                 }
 
@@ -346,6 +397,7 @@ def main() -> None:
         edge_map.values(),
         key=lambda e: (
             -e["complementary_score"],
+            -int(bool(e.get("named_deficit"))),
             -int(e["same_oblast"]),
             -e["reason_count"],
             e["a_short"],
@@ -381,6 +433,7 @@ def main() -> None:
             {
                 "generatedAt": generated,
                 "pairCount": len(edges),
+                "namedDeficitPairs": sum(1 for e in edges if e.get("named_deficit")),
                 "mssSuggest": {
                     "annotated": suggest["annotated"],
                     "withTheme": suggest["with_theme"],
@@ -390,8 +443,9 @@ def main() -> None:
                     "withTheme": candidates["with_theme"],
                 },
                 "method": (
-                    "complementary v2: weighted DREAM/Strengths/resource → Challenges; "
-                    "score=1-exp(-0.4·w) ×1.2 same-oblast; min weight 1.2; prefer same-oblast shortlist; "
+                    "complementary v3: named deficit↔offer + capped kitchen-sink sectors; "
+                    "weighted DREAM/Strengths/resource → Challenges; "
+                    "prefer named-deficit then same-oblast shortlist; "
                     "+ suggested_theme/form (mss_suggest) + mss_candidate package/signals"
                 ),
                 "warning": (
@@ -421,6 +475,7 @@ def main() -> None:
                 "b_short": e["b_short"],
                 "complementary_score": e["complementary_score"],
                 "same_oblast": e["same_oblast"],
+                "named_deficit": bool(e.get("named_deficit")),
                 "suggested_theme": e.get("suggested_theme"),
                 "suggested_form": e.get("suggested_form"),
                 "reasons": e["reasons"][:3],

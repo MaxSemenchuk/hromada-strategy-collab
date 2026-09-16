@@ -67,16 +67,17 @@ signals appears to be genuine whitespace.
 
 - **~1,463 mainland hromadas** in the metadata layer (KATOTTG code, oblast, rayon,
   type, population) — effectively the full universe, not a sample.
-- **~385 hromadas** with non-empty `Goals` for matching (**392** text-mined:
-  **361** full-strategy, **24** partial, **7** proxy-info). Grown from the
+- **~394 hromadas** with non-empty `Goals` for matching (**401** text-mined:
+  **370** full-strategy, **24** partial, **7** proxy-info). Grown from the
   original 77-hromada pilot via GISRR fold-ins (194 then +87 on 2026-09-15),
   wave-C, western PIN-hub extraction, two in-session PIN-priority structures
-  (Козельщинська, Великоберезнянська), and a 2026-09-16 thin-oblast wave
-  (Боратинська, Рожищенська, Леськівська). See
+  (Козельщинська, Великоберезнянська), a 2026-09-16 thin-oblast wave
+  (Боратинська, Рожищенська, Леськівська), and a UA-VPN PIN pack
+  (Колочавська, Міжгірська, Синевирська, Полянська, Ківерцівська,
+  Маневицька, Воловецька, Неліпинська, Надвірнянська). See
   [project-history.md](docs/project-history.md). (Honest retrieval nulls are
-  recorded separately where no strategy could be found.) Matching edges are
-  still the 2026-09-15 382-hromada rematch until the next `yarn match`.
-- **181 hromadas** (12%) tagged with at least one donor/technical-assistance
+  recorded separately where no strategy could be found.)
+- **185 hromadas** (13%) tagged with at least one donor/technical-assistance
   program (DOBRE, DECIDE, GIZ, ПРООН/UNDP, EGAP, DESPRO, МФ Відродження, U-LEAD,
   Ре:Форм, STRATEGY LAB, JICA, ЄІБ, ЄБРР, AFD) — a floor, not a ceiling (`DonorsPrograms` on
   the release JSON).
@@ -88,14 +89,15 @@ signals appears to be genuine whitespace.
   Complementary DREAM↔Challenges and basin remain separate layers; sector-tag
   `dream_overlap` is still only an operational-slice boost.
 - Extra layers (not the 0.15 slot, not `known: true`):
-  **complementary** (resource/DREAM ↔ Challenges), **resources** / **DREAM
+  **complementary** (resource/DREAM ↔ Challenges, v3 named-deficit), **shared
+  named objects** (річка/кластер), **resources** / **DREAM
   priorities**, HydroBASINS underlay. Twinning and explicit-ask stay map/JSON
   overlays *and* feed `social_capital` at lower weight.
 - Stakeholder site under [`docs/`](docs/) (GitHub Pages): landing · matches ·
   funds · resources · PIN map (discovery-signal overlays). Browse sidecar:
   `data/releases/mss-candidates.json`. Still pilot / concept-validation stage.
 
-**Read this before reusing the data:** the ~385-hromada Goals subset is a
+**Read this before reusing the data:** the ~394-hromada Goals subset is a
 pilot sample, not a completed sweep of the 1,463 — most rows will have no
 strategy content yet. Every candidate is an **unverified hypothesis** unless
 `known: true` / `status: registry_known`.
@@ -203,12 +205,13 @@ JSON text columns — query them with SQLite's `json_extract`/`json_each`.
 Always call `get_context` before interpreting results — it surfaces the
 methodology caveats above (score vs. `known: true`, `track` semantics, etc.).
 
-**Browser test page:** `yarn mcp-test-ui` (or the `mcp-test-ui` launch config)
-serves a local chat UI at `http://localhost:5175` that connects to the MCP
-server and runs the tool-use loop against the OpenAI API (function calling) —
-either `OPENAI_API_KEY` in `.env` (gitignored) or a key pasted in the sidebar
-(browser-only, never written to disk). Try natural-language questions and see
-each `list_tables`/`query` call it makes.
+**Browser chat:** `yarn mcp-test-ui` (alias `yarn chat`) serves the stakeholder
+site at `http://localhost:5175/` with a floating corpus chat (bottom-right).
+The model routes to SQL (`query`), full-text `search_chunks` (strategy fields
+**and** `docs/*.html` / `docs/*.md` site copy), and IMC packages — not a dump
+of raw PDFs into v7 `score`. API key: `OPENAI_API_KEY` in `.env` or paste in
+the widget gear. MCP lab UI (tool traces): `http://localhost:5175/lab`.
+GitHub Pages cannot call localhost; use the local server for chat.
 
 ## License & data
 
@@ -259,7 +262,9 @@ yarn recommend-for --seed "Галицька" --motivation water_basin
 yarn test-recommend-for && yarn build-recommend-preview
 # docs: agent-centric vs global score → docs/agent-centric-recommendations.md
 
-# Hierarchy + explicit МСС language + complementary (benefit layer, not score)
+# Hierarchy + explicit МСС language + complementary / named objects (not score)
+yarn extract-strategy-entities   # named objects, neighbour NER, GISRR SWOT/tasks
+yarn test-strategy-text && yarn test-complementary-match
 yarn build-goals-hierarchy
 yarn extract-mss-intents
 yarn complementary-match
@@ -267,6 +272,8 @@ yarn twinning                    # UA–EU twinning overlay; also feeds social_c
 yarn twinning --offline          # rebuild from data/cache/twinning/ only
 yarn intl-agreements             # Law 3668-IX international agreement register
 yarn intl-agreements --offline
+yarn interreg                    # keep.eu Interreg partners + official themes
+yarn interreg --offline          # rebuild from data/cache/interreg/
 yarn test-intl-theme
 yarn graph-pin-matching
 
@@ -290,8 +297,9 @@ slice files (rich local cache under `data/cache/matching/` after export).
 Fund portfolio lenses (within-program pairs, bridge pairs, hubs) live in
 `donor-synergy.json` and on the stakeholder site at [`docs/funds.html`](docs/funds.html).
 Resource / competence covariates: `hromada-resources.json`; DREAM project
-priorities: `dream-priorities.json`; complementary / explicit-ask edges:
-`matching-edges.complementary.json` / `matching-edges.explicit-ask.json`;
+priorities: `dream-priorities.json`; complementary / explicit-ask / shared-asset edges:
+`matching-edges.complementary.json` / `matching-edges.explicit-ask.json` /
+`matching-edges.shared-asset.json` (`yarn extract-strategy-entities`);
 UA–EU twinning: `twinning-partners.json`;
 international agreements (Law 3668-IX): `intl-agreements.json`;
 Interreg: `interreg-partners.json`

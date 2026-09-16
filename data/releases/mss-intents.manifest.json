@@ -1,14 +1,16 @@
 {
-  "generatedAt": "2026-09-15T19:50:42.152512+00:00",
-  "hromadaCount": 115,
-  "explicitAskEdges": 408,
+  "generatedAt": "2026-09-16T18:24:47.851316+00:00",
+  "hromadaCount": 218,
+  "explicitAskEdges": 589,
+  "namedNeighbourEdges": 18,
   "mssSuggest": {
-    "annotated": 408,
-    "withTheme": 5
+    "annotated": 589,
+    "withTheme": 23
   },
   "mssCandidate": {
-    "annotated": 408,
-    "withTheme": 5
+    "annotated": 589,
+    "withTheme": 23
   },
-  "method": "regex МСС/кооперація on strategy fields + curated hierarchy intents + suggested_theme/form (mss_suggest) + mss_candidate package/signals"
+  "namedNeighbourHromadas": 9,
+  "method": "regex МСС/кооперація on strategy fields + curated hierarchy intents + GISRR SWOT/task extras from strategy-entities + neighbour NER + suggested_theme/form (mss_suggest) + mss_candidate package/signals"
 }

@@ -136,6 +136,20 @@ def test_complementary_explicit() -> None:
     annotate_candidate(ask)
     assert ask["discovery_primary"] == "explicit_ask"
 
+    shared = {
+        "track": "shared_asset",
+        "shared_asset_score": 0.95,
+        "known": False,
+        "suggested_theme": "Вода / ЖКГ",
+        "suggested_theme_id": "water",
+        "suggested_form": "спільний проєкт",
+        "suggested_form_id": "joint_project",
+        "suggest_confidence": "medium",
+    }
+    annotate_candidate(shared)
+    assert shared["discovery_primary"] == "shared_asset"
+    assert any(s["id"] == "shared_asset" for s in shared["signals"])
+
 
 def test_sidecar_smoke(tmp_path: Path | None = None) -> None:
     from pathlib import Path as P
@@ -184,6 +198,7 @@ def test_sidecar_smoke(tmp_path: Path | None = None) -> None:
             operational=[],
             complementary=[],
             explicit_ask=[],
+            shared_asset=[],
             top_n_per_slice=10,
             out_path=td_path / "mss-candidates.json",
             manifest_path=td_path / "mss-candidates.manifest.json",

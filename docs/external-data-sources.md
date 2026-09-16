@@ -191,8 +191,12 @@ and partner organisations (32,000+ projects, 150,000+ partnerships since
    (paginated project list, filtered via a `programmes.available: [{id}, ...]`
    body — plain GET query params are silently ignored, this shape was found
    by capturing the real browser request) and `GET /api/project/<id>/`
-   (full detail incl. `partnerships[].partner` — name, country, town,
-   coordinates, `organisation_type`, budget).
+  (full detail incl. `partnerships[].partner` — name, country, town,
+  coordinates, `organisation_type`, budget, plus `themes[]`,
+  `priority_policy_objective`, `priority_specific_objective`,
+  `intervention_type`). Those official theme fields are copied into
+  `interreg-partners.json` (`keep_themes`, `theme_ids`, `theme_source`).
+  Rebuild from cache without a network hit: `yarn interreg --offline`.
 
 Separate release layer (not in v7 `score`, not `known: true`):
 

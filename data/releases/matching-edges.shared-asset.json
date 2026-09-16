@@ -1,0 +1,462 @@
+[
+  {
+    "a": "Батуринська міська територіальна громада",
+    "b": "Козелецька селищна територіальна громада",
+    "a_short": "Батуринська",
+    "b_short": "Козелецька",
+    "a_katottg": "UA74040010000076097",
+    "b_katottg": "UA74100190000086457",
+    "track": "shared_asset",
+    "shared_asset_score": 1.0,
+    "theme": "туризм",
+    "asset_kind": "cluster",
+    "asset_key": "місцями козацької сили",
+    "asset_name": "Місцями козацької сили",
+    "reasons": [
+      "спільний обʼєкт «Місцями козацької сили» (cluster) у стратегіях Батуринська і Козелецька"
+    ],
+    "same_oblast": true,
+    "known": false,
+    "suggested_theme": "Туризм / кластер",
+    "suggested_theme_id": "tourism",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "high",
+    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Туризм / кластер",
+      "theme_id": "tourism",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "high",
+      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону",
+      "label_uk": "Туризм / кластер — спільний проєкт",
+      "label_en": "Tourism / cluster — joint project"
+    },
+    "signals": [
+      {
+        "id": "shared_asset",
+        "label_uk": "спільний обʼєкт",
+        "label_en": "shared named object",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "shared_asset",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Вишківська селищна територіальна громада",
+    "b": "Дубівська селищна територіальна громада",
+    "a_short": "Вишківська",
+    "b_short": "Дубівська",
+    "a_katottg": "UA21120030000076462",
+    "b_katottg": "UA21080070000025254",
+    "track": "shared_asset",
+    "shared_asset_score": 1.0,
+    "theme": "вода",
+    "asset_kind": "river",
+    "asset_key": "тиса",
+    "asset_name": "Тиса",
+    "reasons": [
+      "спільний обʼєкт «Тиса» (river) у стратегіях Вишківська і Дубівська"
+    ],
+    "same_oblast": true,
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою",
+      "label_uk": "Інше / не визначено — спільний проєкт",
+      "label_en": "Other / unspecified — joint project"
+    },
+    "signals": [
+      {
+        "id": "shared_asset",
+        "label_uk": "спільний обʼєкт",
+        "label_en": "shared named object",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "shared_asset",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Криворізька міська територіальна громада",
+    "b": "Лозуватська сільська територіальна громада",
+    "a_short": "Криворізька",
+    "b_short": "Лозуватська",
+    "a_katottg": "UA12060170000091033",
+    "b_katottg": "UA12060190000043514",
+    "track": "shared_asset",
+    "shared_asset_score": 1.0,
+    "theme": "вода",
+    "asset_kind": "river",
+    "asset_key": "інгулець",
+    "asset_name": "Інгулець",
+    "reasons": [
+      "спільний обʼєкт «Інгулець» (river) у стратегіях Криворізька і Лозуватська"
+    ],
+    "same_oblast": true,
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою",
+      "label_uk": "Інше / не визначено — спільний проєкт",
+      "label_en": "Other / unspecified — joint project"
+    },
+    "signals": [
+      {
+        "id": "shared_asset",
+        "label_uk": "спільний обʼєкт",
+        "label_en": "shared named object",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "shared_asset",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Кролевецька міська територіальна громада",
+    "b": "Путивльська міська територіальна громада",
+    "a_short": "Кролевецька",
+    "b_short": "Путивльська",
+    "a_katottg": "UA59020090000085438",
+    "b_katottg": "UA59020150000078955",
+    "track": "shared_asset",
+    "shared_asset_score": 1.0,
+    "theme": "вода",
+    "asset_kind": "river",
+    "asset_key": "сейм",
+    "asset_name": "Сейм",
+    "reasons": [
+      "спільний обʼєкт «Сейм» (river) у стратегіях Кролевецька і Путивльська"
+    ],
+    "same_oblast": true,
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою",
+      "label_uk": "Інше / не визначено — спільний проєкт",
+      "label_en": "Other / unspecified — joint project"
+    },
+    "signals": [
+      {
+        "id": "shared_asset",
+        "label_uk": "спільний обʼєкт",
+        "label_en": "shared named object",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "shared_asset",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Миргородська міська територіальна громада",
+    "b": "Сергіївська сільська територіальна громада",
+    "a_short": "Миргородська",
+    "b_short": "Сергіївська",
+    "a_katottg": "UA53060230000098362",
+    "b_katottg": "UA53060310000047988",
+    "track": "shared_asset",
+    "shared_asset_score": 1.0,
+    "theme": "вода",
+    "asset_kind": "river",
+    "asset_key": "хорол",
+    "asset_name": "Хорол",
+    "reasons": [
+      "спільний обʼєкт «Хорол» (river) у стратегіях Миргородська і Сергіївська"
+    ],
+    "same_oblast": true,
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою",
+      "label_uk": "Інше / не визначено — спільний проєкт",
+      "label_en": "Other / unspecified — joint project"
+    },
+    "signals": [
+      {
+        "id": "shared_asset",
+        "label_uk": "спільний обʼєкт",
+        "label_en": "shared named object",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "shared_asset",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Новомосковська міська територіальна громада",
+    "b": "Миколаївська сільська територіальна громада",
+    "a_short": "Новомосковська",
+    "b_short": "Миколаївська",
+    "a_katottg": "UA12100070000011492",
+    "b_katottg": "UA12140170000037152",
+    "track": "shared_asset",
+    "shared_asset_score": 1.0,
+    "theme": "вода",
+    "asset_kind": "river",
+    "asset_key": "самар",
+    "asset_name": "Самара",
+    "reasons": [
+      "спільний обʼєкт «Самара» (river) у стратегіях Новомосковська і Миколаївська"
+    ],
+    "same_oblast": true,
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою",
+      "label_uk": "Інше / не визначено — спільний проєкт",
+      "label_en": "Other / unspecified — joint project"
+    },
+    "signals": [
+      {
+        "id": "shared_asset",
+        "label_uk": "спільний обʼєкт",
+        "label_en": "shared named object",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "shared_asset",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Ніжинська міська територіальна громада",
+    "b": "Вертіївська сільська територіальна громада",
+    "a_short": "Ніжинська",
+    "b_short": "Вертіївська",
+    "a_katottg": "UA74040250000063494",
+    "b_katottg": "UA74040090000047246",
+    "track": "shared_asset",
+    "shared_asset_score": 1.0,
+    "theme": "вода",
+    "asset_kind": "river",
+    "asset_key": "остер",
+    "asset_name": "Остер",
+    "reasons": [
+      "спільний обʼєкт «Остер» (river) у стратегіях Ніжинська і Вертіївська"
+    ],
+    "same_oblast": true,
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою",
+      "label_uk": "Інше / не визначено — спільний проєкт",
+      "label_en": "Other / unspecified — joint project"
+    },
+    "signals": [
+      {
+        "id": "shared_asset",
+        "label_uk": "спільний обʼєкт",
+        "label_en": "shared named object",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "shared_asset",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Яремчанська міська територіальна громада",
+    "b": "Матеївецька сільська територіальна громада",
+    "a_short": "Яремчанська",
+    "b_short": "Матеївецька",
+    "a_katottg": "UA26120150000021671",
+    "b_katottg": "UA26080110000076323",
+    "track": "shared_asset",
+    "shared_asset_score": 1.0,
+    "theme": "вода",
+    "asset_kind": "river",
+    "asset_key": "прут",
+    "asset_name": "Прут",
+    "reasons": [
+      "спільний обʼєкт «Прут» (river) у стратегіях Яремчанська і Матеївецька"
+    ],
+    "same_oblast": true,
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою",
+      "label_uk": "Інше / не визначено — спільний проєкт",
+      "label_en": "Other / unspecified — joint project"
+    },
+    "signals": [
+      {
+        "id": "shared_asset",
+        "label_uk": "спільний обʼєкт",
+        "label_en": "shared named object",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "shared_asset",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Батуринська міська територіальна громада",
+    "b": "Кролевецька міська територіальна громада",
+    "a_short": "Батуринська",
+    "b_short": "Кролевецька",
+    "a_katottg": "UA74040010000076097",
+    "b_katottg": "UA59020090000085438",
+    "track": "shared_asset",
+    "shared_asset_score": 0.95,
+    "theme": "вода",
+    "asset_kind": "river",
+    "asset_key": "сейм",
+    "asset_name": "Сейм",
+    "reasons": [
+      "спільний обʼєкт «Сейм» (river) у стратегіях Батуринська і Кролевецька"
+    ],
+    "same_oblast": false,
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою",
+      "label_uk": "Інше / не визначено — спільний проєкт",
+      "label_en": "Other / unspecified — joint project"
+    },
+    "signals": [
+      {
+        "id": "shared_asset",
+        "label_uk": "спільний обʼєкт",
+        "label_en": "shared named object",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "shared_asset",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Батуринська міська територіальна громада",
+    "b": "Путивльська міська територіальна громада",
+    "a_short": "Батуринська",
+    "b_short": "Путивльська",
+    "a_katottg": "UA74040010000076097",
+    "b_katottg": "UA59020150000078955",
+    "track": "shared_asset",
+    "shared_asset_score": 0.95,
+    "theme": "вода",
+    "asset_kind": "river",
+    "asset_key": "сейм",
+    "asset_name": "Сейм",
+    "reasons": [
+      "спільний обʼєкт «Сейм» (river) у стратегіях Батуринська і Путивльська"
+    ],
+    "same_oblast": false,
+    "known": false,
+    "suggested_theme": "Інше / не визначено",
+    "suggested_theme_id": "other",
+    "suggested_form": "спільний проєкт",
+    "suggested_form_id": "joint_project",
+    "suggest_confidence": "low",
+    "suggest_rationale": "тема «Інше / не визначено» · правило за темою",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Інше / не визначено",
+      "theme_id": "other",
+      "form": "спільний проєкт",
+      "form_id": "joint_project",
+      "confidence": "low",
+      "rationale": "тема «Інше / не визначено» · правило за темою",
+      "label_uk": "Інше / не визначено — спільний проєкт",
+      "label_en": "Other / unspecified — joint project"
+    },
+    "signals": [
+      {
+        "id": "shared_asset",
+        "label_uk": "спільний обʼєкт",
+        "label_en": "shared named object",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "shared_asset",
+    "status": "hypothesis"
+  }
+]

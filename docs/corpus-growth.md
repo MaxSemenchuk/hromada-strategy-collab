@@ -20,15 +20,16 @@ Then for each candidate:
 
 ## Target (pilot)
 
-- **Done (GISRR 2026-08 + 2026-09-15 + thin-oblast 2026-09-16):** ~385 Goals
-  in release (GISRR catalog 315 ТГ; second fold-in upserted 87 new; then
-  Боратинська + Рожищенська + Леськівська). Next prioritize:
+- **Done (GISRR 2026-08 + 2026-09-15 + thin-oblast + UA-VPN PIN 2026-09-16):**
+  ~394 Goals in release (GISRR catalog 315 ТГ; second fold-in upserted 87
+  new; then Боратинська + Рожищенська + Леськівська; then UA-VPN pack
+  Колочава / Міжгір’я / Синевир / Поляна / Ківерці / Маневичі / Воловець /
+  Неліпино / Надвірна). Next prioritize:
   - high `corpusPinLinks` in `corpus-growth-priority.json` (remaining western
     PIN hubs without a public strategy: Слобідсько-Кульчієвецька,
-    Китайгородська, Іване-Пустенська, Надвірнянська). Zakarpattia PIN
-    cluster portals (Колочава, Міжгір’я, Синевир, Поляна…) are geo-blocked
-    from this environment (Cloudflare 1009 / KZ).
-  - still-thin oblasts (Волинська 4/53, Черкаська 4/66, Житомирська 3/65,
+    Китайгородська, Іване-Пустенська). Жденіївська / Пилипецька still
+    drafting or without a portal PDF.
+  - still-thin oblasts (Волинська 6/53, Черкаська 4/66, Житомирська 3/65,
     Хмельницька 3/60)
   - сільські / селищні (міські зараз надпредставлені)
 

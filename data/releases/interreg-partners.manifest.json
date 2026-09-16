@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T17:15:52.268980+00:00",
+  "generatedAt": "2026-09-16T13:58:36.775511+00:00",
   "hromadasWithPartners": 100,
   "hromadasWithLocalAuthorityPartner": 43,
   "projectsScanned": 1553,
@@ -9,6 +9,12 @@
     "current": 221,
     "historical": 514
   },
+  "themeSourceProjects": {
+    "keep.eu+title": 306,
+    "keep.eu": 1237,
+    "title": 5,
+    "none": 5
+  },
   "unmatchedPartnerships": 582,
   "programmeIds": [
     335,
@@ -17,5 +23,5 @@
     369,
     387
   ],
-  "method": "keep.eu public search+detail API; name-stem + town matching, no API key required"
+  "method": "keep.eu public search+detail API; name-stem + town matching; official themes[] mapped via intl_theme.keep_eu_project_themes"
 }

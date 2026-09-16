@@ -39,11 +39,17 @@ Shared chrome: [`assets/site.css`](assets/site.css), [`assets/nav.js`](assets/na
 Repo **Settings → Pages → Deploy from a branch**: `main` / `/docs`
 (or GitHub Actions via `.github/workflows/deploy-pages.yml`).
 
-Local preview:
+Local preview (static only, no chat):
 
 ```bash
 cd docs && python3 -m http.server 8765
 # open http://127.0.0.1:8765/
+```
+
+Site + corpus chat (SQL + strategy FTS + these pages indexed):
+
+```bash
+yarn mcp-test-ui   # http://localhost:5175/
 ```
 
 Markdown files in this folder (`*.md`) are research docs for the repo, not
