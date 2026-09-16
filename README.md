@@ -51,10 +51,15 @@ signals appears to be genuine whitespace.
 2. **Package** — rule-based `suggested_theme` / `suggested_form` (`mss_suggest.py`)
    normalized to `package` + `signals[]` (`mss_candidate.py`). Five Law 1508-VII
    forms (+ agglomeration caveat). Never set `known: true` from suggestions.
-3. **Rank within signals** — v7.1 pairwise: `0.60 × goals_cosine + 0.25 × geo +
-   0.15 × mss_network` (hierarchy-aware Goals; bipartite×0.65 + centroid×0.35
-   length/hub blend). Combined `score` is an internal rank for one path — UI
-   leads with package + evidence chips.
+3. **Rank within signals** — v7.3 pairwise: `0.60 × priority + 0.25 × geo +
+   0.15 × social_capital`. `priority` is hierarchy-aware Goals cosine when both
+   sides have strategy text (plus a 10% DREAM-title blend); DREAM project titles
+   fill the same slot when a side has no Goals. `social_capital` uses the
+   KSE/Пліч `mss_network` tie as the floor and adds named/explicit-ask,
+   registry UA–EU twinning, and shared donor programmes at lower weight.
+   Combined `score` is an internal rank for one path — UI leads with package +
+   evidence chips. Complementary (resource/DREAM ↔ Challenges) and basin stay
+   separate layers.
 4. **Validate** — curated `known: true` / `status: registry_known` against
    registry-confirmed agreements (`yarn test-known-pairs`).
 
@@ -75,14 +80,17 @@ signals appears to be genuine whitespace.
   program (DOBRE, DECIDE, GIZ, ПРООН/UNDP, EGAP, DESPRO, МФ Відродження, U-LEAD,
   Ре:Форм, STRATEGY LAB, JICA, ЄІБ, ЄБРР, AFD) — a floor, not a ceiling (`DonorsPrograms` on
   the release JSON).
-- Matching **v7.1** (`0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`):
-  goals_cosine prefers operational lines when hierarchy is present
-  (`goals-hierarchy.json`) and blends bipartite soft-align with a document
-  centroid (length / hub mitigation). Combined score weights unchanged from v6.
-- Extra layers (not folded into combined `score`):
-  **complementary** (resource/DREAM ↔ Challenges), **explicit-ask** (МСС language
-  in strategy text), **resources** / **DREAM priorities**, **twinning** (UA–EU
-  sister cities via SKEW + strategy mentions — `yarn twinning`).
+- Matching **v7.3** (`0.60 × priority + 0.25 × geo + 0.15 × social_capital`):
+  `priority` is Goals cosine when both sides have strategy text (10% DREAM-title
+  blend if both also have DREAM projects) and DREAM project-title cosine when a
+  side has no parsed Goals. The 0.15 slot is readiness / social capital
+  (`mss_network` floor + named/explicit-ask + twinning + shared donors).
+  Complementary DREAM↔Challenges and basin remain separate layers; sector-tag
+  `dream_overlap` is still only an operational-slice boost.
+- Extra layers (not the 0.15 slot, not `known: true`):
+  **complementary** (resource/DREAM ↔ Challenges), **resources** / **DREAM
+  priorities**, HydroBASINS underlay. Twinning and explicit-ask stay map/JSON
+  overlays *and* feed `social_capital` at lower weight.
 - Stakeholder site under [`docs/`](docs/) (GitHub Pages): landing · matches ·
   funds · resources · PIN map (discovery-signal overlays). Browse sidecar:
   `data/releases/mss-candidates.json`. Still pilot / concept-validation stage.
@@ -106,7 +114,7 @@ scripts/
 ├── export-hromadas.ts                   # research-log snapshot → data/releases/hromadas.json
 ├── hromada-output/                      # per-hromada structured JSON (provenance)
 ├── retrieval/                           # CKAN search, download-raw, fetch-mss-registry, batch queue
-├── analysis/                            # matching, PIN map, sidecars (canon: match.py v7.1)
+├── analysis/                            # matching, PIN map, sidecars (canon: match.py v7.2)
 │   └── legacy/                          # archived Pass 1–5 / early embed scripts (do not run)
 └── legacy/nocodb/                       # archived NocoDB sync (setup/import/live export)
 data/
@@ -240,21 +248,22 @@ yarn structure-hromada --name "Ніжинська громада" --json structu
 yarn export-hromadas
 yarn export-hromadas:snapshot
 
-# Recompute matching edges (v7.1: goals + length/hub blend + KSE geo + mss)
+# Recompute matching edges (v7.3: priority + geo + social_capital)
 # Combined score ≠ pure strategy match — also writes track labels + dual slices
-# export-matching-edges also adds fiscal/DREAM boost + suggested_theme/form (score unchanged)
-yarn match && yarn export-matching-edges && yarn test-length-norm && yarn test-known-pairs && yarn report-pin-corpus && yarn test-tracks && yarn test-mss-suggest && yarn build-matches-preview
+# export-matching-edges attaches fiscal/DREAM boost, packages, and rescores the
+# 0.15 slot as social_capital (no embeddings)
+yarn match && yarn export-matching-edges && yarn test-length-norm && yarn test-known-pairs && yarn test-social-capital && yarn test-dream-proxy && yarn report-pin-corpus && yarn test-tracks && yarn test-mss-suggest && yarn build-matches-preview
 
 # Agent-centric recommendations for one seed (re-rank existing edges; no rematch)
 yarn recommend-for --seed "Галицька" --motivation water_basin
 yarn test-recommend-for && yarn build-recommend-preview
 # docs: agent-centric vs global score → docs/agent-centric-recommendations.md
 
-# Hierarchy + explicit МСС language + complementary (separate from combined score)
+# Hierarchy + explicit МСС language + complementary (benefit layer, not score)
 yarn build-goals-hierarchy
 yarn extract-mss-intents
 yarn complementary-match
-yarn twinning                    # UA–EU twinning (SKEW cache + strategy mentions)
+yarn twinning                    # UA–EU twinning overlay; also feeds social_capital
 yarn twinning --offline          # rebuild from data/cache/twinning/ only
 yarn graph-pin-matching
 

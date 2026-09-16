@@ -2,7 +2,7 @@
 """Agent-centric МСС recommendations for one seed hromada.
 
 Re-ranks existing release edges for seed A by motivation / job-to-be-done.
-Does NOT rematch the corpus, change v7.1 weights, or set known:true.
+Does NOT rematch the corpus, change v7.2 lab weights, or set known:true.
 
 Usage:
   yarn recommend-for --seed "Галицька" --motivation water_basin
@@ -229,6 +229,13 @@ def _f(edge: dict[str, Any], key: str) -> float:
         return 0.0
 
 
+def _network_value(edge: dict[str, Any]) -> float:
+    """0.15-slot readiness: social_capital when present, else mss_network floor."""
+    if edge.get("social_capital") is not None:
+        return _f(edge, "social_capital")
+    return _f(edge, "mss_network")
+
+
 def merge_complementary(
     edges: list[dict[str, Any]],
     complementary: list[dict[str, Any]],
@@ -274,6 +281,7 @@ def merge_complementary(
             row.setdefault("goals_cosine", 0.0)
             row.setdefault("geo_score", 0.0)
             row.setdefault("mss_network", 0.0)
+            row.setdefault("social_capital", row.get("mss_network") or 0.0)
             row.setdefault("score", None)
             row.setdefault("known", False)
             by_pair[pk] = row
@@ -328,21 +336,28 @@ def agent_rank(edge: dict[str, Any], motivation: str) -> float:
     "match" before this discount.
 
     When the seed has no Goals text (``goals_available: False`` on the
-    edge), goals_cosine is dropped entirely rather than scored as 0 — see
-    ``weights_without_goals``.
+    edge), DREAM title cosine fills the goals slot when present; otherwise
+    the goals weight is redistributed — see ``weights_without_goals``.
     """
     pol = MOTIVATIONS[motivation]
     goals_available = edge.get("goals_available", True)
-    w = pol["weights"] if goals_available else weights_without_goals(motivation)
-    goals_adj = (
-        _f(edge, "goals_cosine") * (1.0 - _f(edge, "template_collision"))
-        if goals_available
-        else 0.0
-    )
+    dream_sim = _f(edge, "dream_cosine")
+    if goals_available:
+        w = pol["weights"]
+        goals_adj = _f(edge, "goals_cosine") * (1.0 - _f(edge, "template_collision"))
+        if goals_adj == 0.0 and dream_sim > 0:
+            # Mixed pair: strategy on one side, DREAM titles on the other.
+            goals_adj = dream_sim
+    elif dream_sim > 0:
+        w = pol["weights"]
+        goals_adj = dream_sim
+    else:
+        w = weights_without_goals(motivation)
+        goals_adj = 0.0
     rank = (
         w.get("goals", 0) * goals_adj
         + w.get("geo", 0) * _f(edge, "geo_score")
-        + w.get("network", 0) * _f(edge, "mss_network")
+        + w.get("network", 0) * _network_value(edge)
         + w.get("complementary", 0) * _f(edge, "complementary_score")
     )
     theme_id = (edge.get("package") or {}).get("theme_id") or edge.get(
@@ -490,6 +505,7 @@ def card_from_edge(
         "template_collision": edge.get("template_collision"),
         "geo_score": edge.get("geo_score"),
         "mss_network": edge.get("mss_network"),
+        "social_capital": edge.get("social_capital"),
         "complementary_score": edge.get("complementary_score"),
     }
 
@@ -540,14 +556,14 @@ def recommend_for_no_goals(
     ``match.py`` only ever scores pairs within the 293 Goals-ready hromadas
     (its ``load_hromadas`` filters on non-empty Goals before any pairwise
     work happens), so a goals-less seed has zero rows in the released
-    matching-edges.json — not a low score, no row at all. geo_score and
-    mss_network_score only need a KATOTTG (present for 1,424 of 1,463
-    hromadas); complementary_score only needs Challenges/Strengths/DREAM
-    data, which complementary_match.load_profiles already indexes for the
-    full corpus. Neither needs Goals text. This computes those three
-    signals directly against every other hromada instead of leaving the
-    seed unmatchable — goals_cosine is always 0 with ``goals_available:
-    False``, so ranking uses ``weights_without_goals``.
+    matching-edges.json — not a low score, no row at all. geo_score,
+    mss_network_score and social_capital_score only need a KATOTTG
+    (present for 1,424 of 1,463 hromadas); complementary_score only needs
+    Challenges/Strengths/DREAM data, which complementary_match.load_profiles
+    already indexes for the full corpus. Neither needs Goals text. This
+    computes those signals directly against every other hromada instead of
+    leaving the seed unmatchable — goals_cosine is always 0 with
+    ``goals_available: False``, so ranking uses ``weights_without_goals``.
     """
     seed_name = (seed_row.get("Name") or "").strip()
     seed_kat = (seed_row.get("Katottg") or "").strip()
@@ -555,6 +571,7 @@ def recommend_for_no_goals(
         return []
 
     from enrich_from_kse import geo_score, mss_network_score
+    from social_capital import social_capital_score
     import complementary_match as cm
 
     rows = hromadas if hromadas is not None else load_json(HROMADAS)
@@ -576,6 +593,13 @@ def recommend_for_no_goals(
             row.get("Rayon"),
         )
         net = mss_network_score(seed_kat, kat)
+        sc, sc_parts = social_capital_score(
+            seed_kat,
+            kat,
+            name_a=seed_name,
+            name_b=name,
+            mss_network=net,
+        )
         comp = 0.0
         reasons: list[str] = []
         cand_profile = profiles.get(kat)
@@ -587,7 +611,7 @@ def recommend_for_no_goals(
                 comp = cm.complementary_score(
                     wsum, cm.same_oblast(cand_profile, seed_profile)
                 )
-        if geo <= 0 and net <= 0 and comp <= 0:
+        if geo <= 0 and net <= 0 and comp <= 0 and sc <= 0:
             continue
         edge = {
             "a": seed_name,
@@ -599,6 +623,8 @@ def recommend_for_no_goals(
             "template_collision": 0.0,
             "geo_score": geo,
             "mss_network": net,
+            "social_capital": sc,
+            "social_capital_parts": sc_parts,
             "complementary_score": comp if reasons else None,
             "complementary_reasons": reasons or None,
             "known": False,
@@ -637,6 +663,10 @@ def recommend_payload(
     if seed_row is None:
         raise SystemExit(f"Resolved seed {resolved['name']!r} missing from corpus rows")
     seed_has_goals = bool((seed_row.get("Goals") or "").strip())
+    if edges is None:
+        from edge_io import load_matching_edges
+
+        edges = load_matching_edges(prefer_rich_cache=True)
     if seed_has_goals:
         cards = recommend_for(
             resolved["name"],
@@ -646,9 +676,21 @@ def recommend_payload(
             complementary=complementary,
         )
     else:
-        cards = recommend_for_no_goals(
-            seed_row, motivation=motivation, k=k, hromadas=rows
-        )
+        incident = edges_for_seed(edges, resolved["name"])
+        if incident:
+            for e in incident:
+                e["goals_available"] = False
+            cards = recommend_for(
+                resolved["name"],
+                motivation=motivation,
+                k=k,
+                edges=incident,
+                complementary=complementary,
+            )
+        else:
+            cards = recommend_for_no_goals(
+                seed_row, motivation=motivation, k=k, hromadas=rows
+            )
     pol = MOTIVATIONS[motivation]
     return {
         "kind": "mss_agent_recommendations",
@@ -657,8 +699,8 @@ def recommend_payload(
             "сигнали · «чому це вам допомагає». Не «у вас високий score». "
             "Гіпотези, доки known: true. Global v7.1 score лишається lab-валідацією."
             if seed_has_goals
-            else "Ця громада без розібраних цілей стратегії — кандидати підібрані "
-            "лише за геолокацією, мережею МСС і доповненням ресурсів (без цілей). "
+            else "Ця громада без розібраних цілей стратегії — пріоритети з DREAM-проєктів "
+            "(якщо є в матриці) або гео / мережа МСС / доповнення ресурсів. "
             "Гіпотези, доки known: true."
         ),
         "caveat_en": (
@@ -666,9 +708,9 @@ def recommend_payload(
             "signals · “why it helps you”. Never “you have a high score”. "
             "Hypotheses until known: true. Global v7.1 score remains lab validation."
             if seed_has_goals
-            else "This hromada has no parsed strategy Goals — candidates are "
-            "matched on geography, MSS network, and complementary need only "
-            "(no goals signal). Hypotheses until known: true."
+            else "This hromada has no parsed strategy Goals — DREAM project titles "
+            "fill the priority slot when present, else geography / MSS network / "
+            "complementary need. Hypotheses until known: true."
         ),
         "seed": {**resolved, "goals_available": seed_has_goals},
         "motivation": {

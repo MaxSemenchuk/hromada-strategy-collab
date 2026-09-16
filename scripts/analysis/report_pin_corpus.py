@@ -37,7 +37,7 @@ def katottg_map() -> dict[str, str]:
     for r in rows:
         name = r.get("Name")
         code = r.get("Katottg")
-        if name and code and (r.get("Goals") or "").strip():
+        if name and code:
             # Prefer first occurrence; duplicate Katottg names are a data quirk.
             out.setdefault(name, code)
     return out
@@ -69,6 +69,8 @@ def build_rows(edges: list[dict], name_to_code: dict[str, str]) -> list[dict]:
             "track": e.get("track"),
             "known": bool(e.get("known")),
             "rank": rank_map.get(frozenset([e["a"], e["b"]])),
+            "priority_source": e.get("priority_source") or "goals",
+            "dream_cosine": e.get("dream_cosine"),
         }
         prev = by_codes.get(key)
         if prev is None or (row["known"] and not prev["known"]):
@@ -97,7 +99,8 @@ def update_manifest(rows: list[dict]) -> None:
         "inTopN": in_top,
         "topN": SOFT_TOP_N,
         "note": (
-            "All mss_network>0 pairs with Goals on both sides. "
+            "All mss_network>0 pairs in the scored matrix (Goals–Goals plus "
+            "DREAM-title proxy when a side has no strategy). "
             "Curated known=true stays the hard regression set; this file is the broader KSE check."
         ),
     }
@@ -114,7 +117,7 @@ def main() -> None:
 
     payload = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "method": "PIN∩corpus: matching edges with mss_network>0 (KSE partnerships)",
+        "method": "PIN∩scored: matching edges with mss_network>0 (Goals and/or DREAM-title proxy)",
         "pairCount": len(rows),
         "curatedKnownCount": sum(1 for r in rows if r["known"]),
         "otherPinCorpusCount": sum(1 for r in rows if not r["known"]),
@@ -122,7 +125,7 @@ def main() -> None:
         "inSoftTopN": sum(1 for r in rows if r["rank"] is not None and r["rank"] <= SOFT_TOP_N),
         "warning": (
             "Not a substitute for known=true regression. "
-            "Combined score already includes mss_network (15%) — ranks are partly circular."
+            "Combined score already includes social_capital (15%; mss_network is the floor) — ranks are partly circular."
         ),
         "pairs": rows,
     }

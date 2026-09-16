@@ -8,14 +8,18 @@ short «чому це вам допомагає». Discovery signals ≠ legal f
 
 | Layer | Role |
 | ----- | ---- |
-| **Global v7.1 score** (`0.60·goals + 0.25·geo + 0.15·mss_network`) | Lab / known-pair recovery baseline. Keep for `yarn test-known-pairs` and PIN∩corpus rank reports. **Not** the stakeholder UX claim. |
+| **Global v7.3 score** (`0.60·priority + 0.25·geo + 0.15·social_capital`) | Lab / known-pair recovery baseline. `priority` is Goals cosine, with DREAM project titles filling the slot when a side has no strategy. `social_capital` uses `mss_network` as the floor and adds named/explicit-ask, registry twinning, shared donors. Keep for `yarn test-known-pairs` and PIN∩corpus rank reports. **Not** the stakeholder UX claim. |
 | **Agent-conditioned policy** | When municipality **A** opens the tool, re-rank *A’s* candidate edges by motivation / job-to-be-done. Output cards for A — never «у вас високий score». |
 
 `mss_network` in the lab score is partly circular for registry recovery — fine for
 validation. In agent UX it is only a **signal chip** («мережа МСС»), not proof.
-Complementary / DREAM may inform agent policies; they are **not** folded into
-v7.1 `score`. HydroBASINS / `same_basin` stays map context for water motivation —
-never lab score, never `known: true`.
+The 0.15 slot is `social_capital` (readiness): named neighbour / explicit-ask,
+registry UA–EU twinning, and shared donor programmes add at lower weight — never
+`known: true`. Complementary / DREAM-*need* matching may inform agent policies;
+they stay out of the lab formula (benefit, not trust). Symmetric DREAM *title*
+similarity is the Goals-channel proxy when strategy text is missing. HydroBASINS
+/ `same_basin` stays map context for water motivation — never lab score, never
+`known: true`.
 
 ## Motivations v0
 
@@ -45,7 +49,7 @@ data/releases/hromadas.json                       (seed resolve by Name / KATOTT
                                               └── matches.html «Для цієї громади»
 ```
 
-Does **not** rematch the corpus. Does **not** change `KNOWN_PAIRS` or v7.1
+Does **not** rematch the corpus. Does **not** change `KNOWN_PAIRS` or v7.2
 weights. Packages remain hypotheses unless `known: true` (curated only).
 
 ```bash

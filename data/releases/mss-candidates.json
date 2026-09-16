@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T18:10:37.079250+00:00",
+  "generatedAt": "2026-09-16T12:11:48.003434+00:00",
   "kind": "mss_candidates",
   "caveat": "Кандидати договорів МСС (гіпотези). package.form — правова форма за правилами, не факт реєстру. known/registry_known — лише кураторська валідація. Стратегії / geo / complementary / explicit-ask — сигнали пошуку.",
   "counts": {
@@ -77,6 +77,7 @@
       "goals_cosine": 0.603,
       "geo_score": 0.85,
       "mss_network": 1.0,
+      "social_capital": 1.0,
       "operational_score": 0.698,
       "suggest_confidence": "medium"
     },
@@ -121,6 +122,18 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "donor",
+          "label_uk": "спільна донорська програма",
+          "label_en": "shared donor programme",
+          "strength": "medium"
+        },
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
         }
       ],
       "signal_chips": [
@@ -146,10 +159,12 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": true,
-      "score": 0.7,
+      "score": 0.699,
       "goals_cosine": 0.499,
       "geo_score": 1.0,
       "mss_network": 1.0,
+      "social_capital": 1.0,
+      "explicit_ask_score": 0.75,
       "operational_score": 0.77,
       "suggest_confidence": "medium"
     },
@@ -194,6 +209,18 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "donor",
+          "label_uk": "спільна донорська програма",
+          "label_en": "shared donor programme",
+          "strength": "medium"
+        },
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
         }
       ],
       "signal_chips": [
@@ -223,6 +250,8 @@
       "goals_cosine": 0.412,
       "geo_score": 1.0,
       "mss_network": 1.0,
+      "social_capital": 1.0,
+      "explicit_ask_score": 0.75,
       "operational_score": 0.768,
       "suggest_confidence": "medium"
     },
@@ -263,6 +292,18 @@
           "strength": "high"
         },
         {
+          "id": "donor",
+          "label_uk": "спільна донорська програма",
+          "label_en": "shared donor programme",
+          "strength": "medium"
+        },
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
+        },
+        {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
@@ -292,10 +333,12 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": true,
-      "score": 0.641,
+      "score": 0.642,
       "goals_cosine": 0.465,
       "geo_score": 0.85,
       "mss_network": 1.0,
+      "social_capital": 1.0,
+      "explicit_ask_score": 0.75,
       "operational_score": 0.642,
       "suggest_confidence": "medium"
     },
@@ -336,6 +379,24 @@
           "strength": "high"
         },
         {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        },
+        {
+          "id": "donor",
+          "label_uk": "спільна донорська програма",
+          "label_en": "shared donor programme",
+          "strength": "medium"
+        },
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -369,6 +430,8 @@
       "goals_cosine": 0.517,
       "geo_score": 0.6,
       "mss_network": 1.0,
+      "social_capital": 1.0,
+      "explicit_ask_score": 0.75,
       "suggest_confidence": "medium"
     },
     {
@@ -408,6 +471,18 @@
           "strength": "high"
         },
         {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        },
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -441,6 +516,8 @@
       "goals_cosine": 0.458,
       "geo_score": 0.6,
       "mss_network": 1.0,
+      "social_capital": 1.0,
+      "explicit_ask_score": 0.75,
       "suggest_confidence": "medium"
     },
     {
@@ -480,6 +557,18 @@
           "strength": "high"
         },
         {
+          "id": "donor",
+          "label_uk": "спільна донорська програма",
+          "label_en": "shared donor programme",
+          "strength": "medium"
+        },
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
+        },
+        {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
@@ -513,6 +602,8 @@
       "goals_cosine": 0.282,
       "geo_score": 1.0,
       "mss_network": 1.0,
+      "social_capital": 1.0,
+      "explicit_ask_score": 0.75,
       "operational_score": 0.685,
       "suggest_confidence": "medium"
     },
@@ -547,6 +638,24 @@
           "strength": "high"
         },
         {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        },
+        {
+          "id": "donor",
+          "label_uk": "спільна донорська програма",
+          "label_en": "shared donor programme",
+          "strength": "medium"
+        },
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
+        },
+        {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
@@ -573,19 +682,21 @@
           "strength": "high"
         },
         {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "medium"
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": true,
-      "score": 0.52,
+      "score": 0.519,
       "goals_cosine": 0.47,
       "geo_score": 0.35,
       "mss_network": 1.0,
+      "social_capital": 1.0,
+      "explicit_ask_score": 0.75,
       "suggest_confidence": "high"
     },
     {
@@ -654,10 +765,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": true,
-      "score": 0.519,
+      "score": 0.518,
       "goals_cosine": 0.26,
       "geo_score": 0.85,
       "mss_network": 1.0,
+      "social_capital": 1.0,
       "operational_score": 0.669,
       "suggest_confidence": "medium"
     },
@@ -702,6 +814,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
         }
       ],
       "signal_chips": [
@@ -731,6 +849,7 @@
       "goals_cosine": 0.168,
       "geo_score": 1.0,
       "mss_network": 1.0,
+      "social_capital": 1.0,
       "operational_score": 0.792,
       "suggest_confidence": "medium"
     },
@@ -771,6 +890,12 @@
           "strength": "high"
         },
         {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
+        },
+        {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
@@ -804,6 +929,8 @@
       "goals_cosine": 0.126,
       "geo_score": 0.85,
       "mss_network": 1.0,
+      "social_capital": 1.0,
+      "explicit_ask_score": 0.75,
       "operational_score": 0.67,
       "suggest_confidence": "medium"
     }
@@ -2171,6 +2298,46 @@
     },
     {
       "kind": "mss_candidate",
+      "a": "Боратинська сільська територіальна громада",
+      "b": "Рожищенська міська територіальна громада",
+      "a_short": "Боратинська",
+      "b_short": "Рожищенська",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Інше / не визначено",
+        "theme_id": "other",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "low",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "label_uk": "Інше / не визначено — спільний проєкт",
+        "label_en": "Other / unspecified — joint project"
+      },
+      "signals": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
+        }
+      ],
+      "discovery_primary": "explicit_ask",
+      "track": "explicit-ask",
+      "known": false,
+      "explicit_ask_score": 0.75,
+      "suggest_confidence": "low",
+      "source_slice": "explicit-ask"
+    },
+    {
+      "kind": "mss_candidate",
       "a": "Борщівська міська територіальна громада",
       "b": "Монастириська міська територіальна громада",
       "a_short": "Борщівська",
@@ -2371,46 +2538,6 @@
     },
     {
       "kind": "mss_candidate",
-      "a": "Буринська міська територіальна громада",
-      "b": "Путивльська міська територіальна громада",
-      "a_short": "Буринська",
-      "b_short": "Путивльська",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Інше / не визначено",
-        "theme_id": "other",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
-        "label_uk": "Інше / не визначено — спільний проєкт",
-        "label_en": "Other / unspecified — joint project"
-      },
-      "signals": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "label_en": "explicit IMC request",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "label_en": "explicit IMC request",
-          "strength": "medium"
-        }
-      ],
-      "discovery_primary": "explicit_ask",
-      "track": "explicit-ask",
-      "known": false,
-      "explicit_ask_score": 0.75,
-      "suggest_confidence": "low",
-      "source_slice": "explicit-ask"
-    },
-    {
-      "kind": "mss_candidate",
       "a": "Миколаївська міська територіальна громада",
       "b": "Жовківська міська територіальна громада",
       "a_short": null,
@@ -2438,6 +2565,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
         }
       ],
       "signal_chips": [
@@ -2452,15 +2585,22 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.472,
+      "score": 0.517,
       "goals_cosine": 0.786,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.3,
       "suggest_confidence": "medium",
       "source_slice": "thematic"
     },
@@ -2516,6 +2656,7 @@
       "goals_cosine": 0.777,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -2567,10 +2708,11 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.465,
+      "score": 0.464,
       "goals_cosine": 0.774,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -2626,6 +2768,7 @@
       "goals_cosine": 0.773,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -2677,10 +2820,11 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.462,
+      "score": 0.461,
       "goals_cosine": 0.769,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -2736,6 +2880,7 @@
       "goals_cosine": 0.763,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -2775,10 +2920,11 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.456,
+      "score": 0.455,
       "goals_cosine": 0.759,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -2834,6 +2980,7 @@
       "goals_cosine": 0.751,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -2889,6 +3036,7 @@
       "goals_cosine": 0.745,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -2956,6 +3104,7 @@
       "goals_cosine": 0.742,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3011,6 +3160,7 @@
       "goals_cosine": 0.742,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3043,6 +3193,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
         }
       ],
       "signal_chips": [
@@ -3057,15 +3213,22 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.443,
+      "score": 0.488,
       "goals_cosine": 0.738,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.3,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3094,6 +3257,12 @@
           "strength": "high"
         },
         {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        },
+        {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
@@ -3114,25 +3283,26 @@
           "strength": "high"
         },
         {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        },
+        {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "medium"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "low"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.53,
+      "score": 0.575,
       "goals_cosine": 0.737,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.3,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3165,6 +3335,18 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        },
+        {
+          "id": "donor",
+          "label_uk": "спільна донорська програма",
+          "label_en": "shared donor programme",
+          "strength": "medium"
         }
       ],
       "signal_chips": [
@@ -3179,15 +3361,22 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.441,
+      "score": 0.523,
       "goals_cosine": 0.735,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.55,
       "suggest_confidence": "medium",
       "source_slice": "thematic"
     },
@@ -3243,6 +3432,7 @@
       "goals_cosine": 0.731,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3271,6 +3461,12 @@
           "strength": "high"
         },
         {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        },
+        {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
@@ -3291,25 +3487,26 @@
           "strength": "high"
         },
         {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        },
+        {
           "id": "structural",
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "medium"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "low"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.525,
+      "score": 0.571,
       "goals_cosine": 0.73,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.3,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3377,6 +3574,7 @@
       "goals_cosine": 0.729,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3440,10 +3638,11 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.523,
+      "score": 0.524,
       "goals_cosine": 0.727,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3487,6 +3686,7 @@
       "goals_cosine": 0.727,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3538,10 +3738,11 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.435,
+      "score": 0.436,
       "goals_cosine": 0.726,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3597,6 +3798,7 @@
       "goals_cosine": 0.725,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3652,6 +3854,7 @@
       "goals_cosine": 0.716,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3695,6 +3898,7 @@
       "goals_cosine": 0.716,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3750,6 +3954,7 @@
       "goals_cosine": 0.711,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3817,6 +4022,7 @@
       "goals_cosine": 0.709,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3872,6 +4078,75 @@
       "goals_cosine": 0.709,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
+      "suggest_confidence": "high",
+      "source_slice": "thematic"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Коростенська міська територіальна громада",
+      "b": "Дунаєвецька міська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт",
+        "label_en": "Tourism / cluster — joint project"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "strategy_goals",
+      "track": "thematic",
+      "known": false,
+      "score": 0.468,
+      "goals_cosine": 0.705,
+      "geo_score": 0.0,
+      "mss_network": 0.0,
+      "social_capital": 0.3,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -3927,61 +4202,7 @@
       "goals_cosine": 0.705,
       "geo_score": 0.0,
       "mss_network": 0.0,
-      "suggest_confidence": "high",
-      "source_slice": "thematic"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Коростенська міська територіальна громада",
-      "b": "Дунаєвецька міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт",
-        "label_en": "Tourism / cluster — joint project"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "strategy_goals",
-      "track": "thematic",
-      "known": false,
-      "score": 0.423,
-      "goals_cosine": 0.705,
-      "geo_score": 0.0,
-      "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -4037,6 +4258,7 @@
       "goals_cosine": 0.702,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -4100,10 +4322,11 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.508,
+      "score": 0.507,
       "goals_cosine": 0.7,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -4155,10 +4378,11 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.42,
+      "score": 0.419,
       "goals_cosine": 0.699,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -4214,6 +4438,7 @@
       "goals_cosine": 0.692,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -4257,6 +4482,7 @@
       "goals_cosine": 0.691,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -4312,6 +4538,7 @@
       "goals_cosine": 0.689,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -4346,6 +4573,12 @@
           "strength": "high"
         },
         {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -4366,19 +4599,20 @@
           "strength": "high"
         },
         {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "low"
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.497,
+      "score": 0.542,
       "goals_cosine": 0.683,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.3,
       "suggest_confidence": "medium",
       "source_slice": "thematic"
     },
@@ -4434,6 +4668,7 @@
       "goals_cosine": 0.683,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -4468,6 +4703,12 @@
           "strength": "high"
         },
         {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -4488,19 +4729,20 @@
           "strength": "high"
         },
         {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "low"
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.497,
+      "score": 0.542,
       "goals_cosine": 0.682,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.3,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -4556,6 +4798,7 @@
       "goals_cosine": 0.68,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -4590,6 +4833,12 @@
           "strength": "high"
         },
         {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -4610,19 +4859,20 @@
           "strength": "high"
         },
         {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "low"
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.495,
+      "score": 0.54,
       "goals_cosine": 0.679,
       "geo_score": 0.35,
       "mss_network": 0.0,
+      "social_capital": 0.3,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -4678,6 +4928,7 @@
       "goals_cosine": 0.679,
       "geo_score": 0.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "suggest_confidence": "high",
       "source_slice": "thematic"
     },
@@ -5523,6 +5774,46 @@
     },
     {
       "kind": "mss_candidate",
+      "a": "Путивльська міська територіальна громада",
+      "b": "Буринська міська територіальна громада",
+      "a_short": "Путивльська",
+      "b_short": "Буринська",
+      "status": "hypothesis",
+      "package": {
+        "theme": "Безпека / ЦЗ",
+        "theme_id": "security",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Безпека / ЦЗ» · пріор реєстру Мінрегіону · доповнення ресурсів",
+        "label_uk": "Безпека / ЦЗ — спільний проєкт",
+        "label_en": "Security / civil defense — joint project"
+      },
+      "signals": [
+        {
+          "id": "complementary",
+          "label_uk": "доповнення ресурсів",
+          "label_en": "complementary resources",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "complementary",
+          "label_uk": "доповнення ресурсів",
+          "label_en": "complementary resources",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "complementary",
+      "track": "complementary",
+      "known": false,
+      "complementary_score": 1.0,
+      "suggest_confidence": "high",
+      "source_slice": "complementary"
+    },
+    {
+      "kind": "mss_candidate",
       "a": "Студениківська сільська територіальна громада",
       "b": "Баришівська селищна територіальна громада",
       "a_short": "Студениківська",
@@ -6243,46 +6534,6 @@
     },
     {
       "kind": "mss_candidate",
-      "a": "Бучанська міська територіальна громада",
-      "b": "Березанська міська територіальна громада",
-      "a_short": "Бучанська",
-      "b_short": "Березанська",
-      "status": "hypothesis",
-      "package": {
-        "theme": "Безпека / ЦЗ",
-        "theme_id": "security",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Безпека / ЦЗ» · пріор реєстру Мінрегіону · доповнення ресурсів",
-        "label_uk": "Безпека / ЦЗ — спільний проєкт",
-        "label_en": "Security / civil defense — joint project"
-      },
-      "signals": [
-        {
-          "id": "complementary",
-          "label_uk": "доповнення ресурсів",
-          "label_en": "complementary resources",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "complementary",
-          "label_uk": "доповнення ресурсів",
-          "label_en": "complementary resources",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "complementary",
-      "track": "complementary",
-      "known": false,
-      "complementary_score": 1.0,
-      "suggest_confidence": "high",
-      "source_slice": "complementary"
-    },
-    {
-      "kind": "mss_candidate",
       "a": "Ланнівська сільська територіальна громада",
       "b": "Красноградська міська територіальна громада",
       "a_short": null,
@@ -6341,10 +6592,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.451,
+      "score": 0.452,
       "goals_cosine": 0.336,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.997,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -6413,6 +6665,7 @@
       "goals_cosine": 0.163,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.995,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -6481,6 +6734,7 @@
       "goals_cosine": 0.041,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.977,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -6545,10 +6799,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.259,
+      "score": 0.258,
       "goals_cosine": 0.014,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.966,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -6613,10 +6868,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.292,
+      "score": 0.293,
       "goals_cosine": 0.071,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.965,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -6685,6 +6941,7 @@
       "goals_cosine": 0.187,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.958,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -6753,6 +7010,7 @@
       "goals_cosine": 0.457,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.941,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -6821,6 +7079,7 @@
       "goals_cosine": 0.158,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.939,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -6889,6 +7148,7 @@
       "goals_cosine": 0.458,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.93,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -6957,6 +7217,7 @@
       "goals_cosine": 0.198,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.929,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7021,10 +7282,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.544,
+      "score": 0.545,
       "goals_cosine": 0.491,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.925,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7093,6 +7355,7 @@
       "goals_cosine": 0.339,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.925,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7161,6 +7424,7 @@
       "goals_cosine": 0.517,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.918,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7229,6 +7493,7 @@
       "goals_cosine": 0.128,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.918,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7297,6 +7562,7 @@
       "goals_cosine": 0.185,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.915,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7365,6 +7631,7 @@
       "goals_cosine": 0.4,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.901,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7433,6 +7700,7 @@
       "goals_cosine": 0.314,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.899,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7501,6 +7769,7 @@
       "goals_cosine": 0.246,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.899,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7569,6 +7838,7 @@
       "goals_cosine": 0.316,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.897,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7637,6 +7907,7 @@
       "goals_cosine": 0.444,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.897,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7705,6 +7976,7 @@
       "goals_cosine": 0.419,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.897,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7773,6 +8045,7 @@
       "goals_cosine": 0.254,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.896,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7841,6 +8114,7 @@
       "goals_cosine": 0.344,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.896,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7905,10 +8179,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.387,
+      "score": 0.388,
       "goals_cosine": 0.292,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.896,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -7977,6 +8252,7 @@
       "goals_cosine": 0.434,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.895,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8041,10 +8317,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.267,
+      "score": 0.268,
       "goals_cosine": 0.092,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.895,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8113,6 +8390,7 @@
       "goals_cosine": 0.638,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.894,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8181,6 +8459,7 @@
       "goals_cosine": 0.299,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.894,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8249,6 +8528,7 @@
       "goals_cosine": 0.297,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.894,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8317,6 +8597,7 @@
       "goals_cosine": 0.177,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.894,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8385,6 +8666,7 @@
       "goals_cosine": 0.248,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.893,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8424,6 +8706,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
         }
       ],
       "signal_chips": [
@@ -8449,10 +8737,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.429,
+      "score": 0.474,
       "goals_cosine": 0.298,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.3,
       "operational_score": 0.892,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8521,6 +8810,7 @@
       "goals_cosine": 0.332,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.892,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8560,6 +8850,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
         }
       ],
       "signal_chips": [
@@ -8585,10 +8881,12 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.303,
+      "score": 0.362,
       "goals_cosine": 0.15,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.4,
+      "explicit_ask_score": 0.75,
       "operational_score": 0.892,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8653,10 +8951,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.416,
+      "score": 0.415,
       "goals_cosine": 0.338,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.891,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8725,6 +9024,7 @@
       "goals_cosine": 0.465,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.89,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8793,6 +9093,7 @@
       "goals_cosine": 0.059,
       "geo_score": 1.0,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.889,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8832,6 +9133,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "donor",
+          "label_uk": "спільна донорська програма",
+          "label_en": "shared donor programme",
+          "strength": "medium"
         }
       ],
       "signal_chips": [
@@ -8857,10 +9164,11 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.295,
+      "score": 0.333,
       "goals_cosine": 0.138,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.25,
       "operational_score": 0.889,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8929,6 +9237,7 @@
       "goals_cosine": 0.519,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.0,
       "operational_score": 0.888,
       "suggest_confidence": "medium",
       "source_slice": "operational"
@@ -8968,6 +9277,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
+        },
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
         }
       ],
       "signal_chips": [
@@ -8993,10 +9308,12 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.431,
+      "score": 0.491,
       "goals_cosine": 0.365,
       "geo_score": 0.85,
       "mss_network": 0.0,
+      "social_capital": 0.4,
+      "explicit_ask_score": 0.75,
       "operational_score": 0.888,
       "suggest_confidence": "medium",
       "source_slice": "operational"

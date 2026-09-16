@@ -33,16 +33,18 @@ and self-describing, not a growth history.
 
 - **Agent-centric recommendations** (seed A · motivation → top-K packages) —
   CLI `yarn recommend-for`; UI preview `docs/assets/recommend-for-preview.json`
-  via `yarn build-recommend-preview`. Does not rematch or change v7.1 weights.
+  via `yarn build-recommend-preview`. Does not rematch or change v7.3 weights.
   See [docs/agent-centric-recommendations.md](../../docs/agent-centric-recommendations.md).
 
 - **`matching-edges.json`** — full pairwise **slim** matrix (compact JSON):
-  core scores (`score`, `goals_cosine`, `geo_score`, `mss_network`), `known`,
+  core scores (`score`, `goals_cosine`, `geo_score`, `mss_network`,
+  `social_capital`, optional `dream_cosine` / `priority_source`), `known`,
   `track`, optional `operational_score`, plus `a`/`b` (+ katottg). Unverified
-  hypotheses unless `known: true`. Method v7.1: 60% goals-cosine
-  (hierarchy-aware; bipartite×0.65 + document-centroid×0.35 length/hub blend)
-  + 25% KSE geography + 15% KSE existing partnership network. Combined `score`
-  ranks one discovery path — not “strategy match”.
+  hypotheses unless `known: true`. Method v7.3: 60% priority (Goals cosine; 10% DREAM-title blend when both
+  exist; DREAM titles proxy when Goals missing) + 25% KSE geography + 15%
+  `social_capital` (`mss_network` floor + named/explicit-ask + both-sides
+  registry twinning + shared donors). Combined `score` ranks one discovery path —
+  not “strategy match”. Complementary DREAM↔Challenges is a separate file.
 
   **Packages / signals** (`kind`, `package`, `signals`, `discovery_primary`,
   `status`, `suggested_*`) are **not** duplicated on every matrix row — they
@@ -98,7 +100,7 @@ and self-describing, not a growth history.
 
   Operational boost fields on every edge (`fiscal_similarity`, `dream_overlap`,
   `operational_score`) do **not** change v7 combined `score` weights
-  (`0.60×goals + 0.25×geo + 0.15×mss_network`). Goals cosine may use hierarchy
+  (`0.60×priority + 0.25×geo + 0.15×social_capital`). Goals cosine may use hierarchy
   when operational lines exist (`yarn build-goals-hierarchy`).
 
   After tracks, `yarn export-matching-edges` attaches an **IMC package

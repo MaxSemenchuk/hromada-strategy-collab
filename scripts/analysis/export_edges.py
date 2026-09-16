@@ -2,7 +2,8 @@
 """Label matching edges with dual tracks and write thematic/operational slices.
 
 Does not recompute embeddings — works on the existing matching-edges.json.
-Combined `score` is left unchanged; see tracks.py / project-history.md.
+Combined `score` is rescored with social_capital in the 0.15 slot
+(see social_capital.py); embeddings are not recomputed.
 Also attaches operational boost fields (fiscal / DREAM) without altering score.
 
 Release matrix stays slim (core scores, compact JSON). Rich package/signals
@@ -28,6 +29,8 @@ from edge_io import (  # noqa: E402
 from enrich_operational import enrich_edges  # noqa: E402
 from mss_candidate import annotate_candidates, write_candidates_sidecar  # noqa: E402
 from mss_suggest import annotate_edges, load_hromadas_by_name  # noqa: E402
+from social_capital import annotate_edges as annotate_social_capital  # noqa: E402
+from social_capital import rescore_edges  # noqa: E402
 from tracks import assign_tracks, operational_slice, thematic_slice  # noqa: E402
 
 EDGES = ROOT / "data" / "releases" / "matching-edges.json"
@@ -47,6 +50,9 @@ def main() -> None:
     # Prefer the rich cache written by match.py (carries template_collision,
     # goals_evidence — dropped from the slim public matrix by RELEASE_CORE_KEYS).
     edges = load_matching_edges(prefer_rich_cache=True)
+    social = annotate_social_capital(edges)
+    rescore_edges(edges)
+    edges.sort(key=lambda e: -float(e.get("score") or 0))
     meta = assign_tracks(edges)
     boost = enrich_edges(edges)
     suggest = annotate_edges(edges, hromadas_by_name=load_hromadas_by_name())
@@ -88,7 +94,12 @@ def main() -> None:
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "pairCount": len(edges),
         "knownValidationPairs": known,
-        "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
+        "method": (
+            "v7.3: 60% priority (Goals cosine; 10% DREAM-title blend when both exist; "
+            "DREAM titles proxy when Goals missing) + 25% KSE geo + 15% social_capital "
+            "(mss_network floor + named/explicit-ask + twinning + shared donors). "
+            "Complementary DREAM↔Challenges and basin stay separate layers."
+        ),
         "model": "intfloat/multilingual-e5-small",
         "license": "CC BY 4.0 — see DATA-LICENSE.md",
         "storage": {
@@ -126,8 +137,17 @@ def main() -> None:
             "geoThematicMax": meta["geoThematicMax"],
             "geoOperationalMin": meta["geoOperationalMin"],
         },
+        "socialCapital": {
+            "note": (
+                "0.15 slot is social_capital (readiness). mss_network stays the "
+                "KSE|Пліч pairwise field. Never known=true from twinning/donors/named."
+            ),
+            "annotated": social["annotated"],
+            "positive": social["positive"],
+            "aboveMssNetwork": social["above_mss_network"],
+        },
         "operationalBoost": {
-            "note": "Extra fields on edges; v7 combined-score weights unchanged from v6",
+            "note": "Extra fields on edges; do not fold sector-tag dream_overlap into combined score",
             "fields": ["fiscal_similarity", "dream_overlap", "operational_score"],
             "enriched": boost["enriched"],
             "withOperationalScore": boost["with_operational_score"],
@@ -194,6 +214,17 @@ def main() -> None:
                 "note": "Separate yarn complementary-match — resource/DREAM ↔ Challenges",
             },
         },
+        "dreamPriority": {
+            "note": (
+                "DREAM project-title cosine fills the 0.60 priority slot when a side "
+                "lacks Goals (dream_proxy / mixed). Small 10% blend when both have Goals. "
+                "Not sector-tag Jaccard. Complementary layer unchanged."
+            ),
+            "counts": {
+                src: sum(1 for e in edges if e.get("priority_source") == src)
+                for src in ("goals", "mixed", "dream_proxy")
+            },
+        },
     }
     MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
@@ -206,6 +237,10 @@ def main() -> None:
         f"operational={meta['counts']['operational']} "
         f"mixed={meta['counts']['mixed']} "
         f"(goals p{meta['goalsPercentile']} floor={meta['goalsFloor']})"
+    )
+    print(
+        f"  social_capital: {social['positive']} >0, "
+        f"{social['above_mss_network']} above mss_network floor"
     )
     print(
         f"  operational boost: {boost['with_operational_score']} edges with operational_score"

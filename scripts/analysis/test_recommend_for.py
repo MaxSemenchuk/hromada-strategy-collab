@@ -185,6 +185,12 @@ def test_motivations_cover_mvp() -> None:
         assert "weights" in MOTIVATIONS[mid]
 
 
+def test_agent_rank_uses_social_capital() -> None:
+    low = _edge(geo_score=0.0, goals_cosine=0.0, mss_network=0.0)
+    high = _edge(geo_score=0.0, goals_cosine=0.0, mss_network=0.0, social_capital=1.0)
+    assert agent_rank(high, "general") > agent_rank(low, "general")
+
+
 def test_weights_without_goals_redistributes_and_sums_to_one() -> None:
     for mid in MOTIVATIONS:
         w = weights_without_goals(mid)
@@ -211,6 +217,12 @@ def test_agent_rank_ignores_goals_when_unavailable() -> None:
     assert agent_rank(unavailable, "general") > plain_weight_only
 
 
+def test_agent_rank_uses_dream_cosine_without_goals() -> None:
+    geo_only = _edge(goals_cosine=0.0, geo_score=0.4, mss_network=0.0, goals_available=False)
+    with_dream = dict(geo_only, dream_cosine=0.5)
+    assert agent_rank(with_dream, "tourism_cluster") > agent_rank(geo_only, "tourism_cluster")
+
+
 def main() -> None:
     test_policy_cut_costs_prefers_geo_cnap()
     test_policy_tourism_prefers_goals()
@@ -219,8 +231,10 @@ def main() -> None:
     test_recommend_for_orders_by_policy()
     test_resolve_seed_by_substring()
     test_motivations_cover_mvp()
+    test_agent_rank_uses_social_capital()
     test_weights_without_goals_redistributes_and_sums_to_one()
     test_agent_rank_ignores_goals_when_unavailable()
+    test_agent_rank_uses_dream_cosine_without_goals()
     print("test_recommend_for: ok")
 
 

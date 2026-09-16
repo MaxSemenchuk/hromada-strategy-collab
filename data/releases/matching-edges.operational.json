@@ -4,7 +4,7 @@
     "b": "Красноградська міська територіальна громада",
     "a_katottg": "UA53080190000081150",
     "b_katottg": "UA63060050000033240",
-    "score": 0.451,
+    "score": 0.452,
     "goals_cosine": 0.336,
     "geo_score": 1.0,
     "mss_network": 0.0,
@@ -57,7 +57,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Михайлівська селищна територіальна громада",
@@ -117,7 +123,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Вишнівська селищна територіальна громада",
@@ -177,14 +189,20 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Козинська сільська територіальна громада",
     "b": "Повчанська сільська територіальна громада",
     "a_katottg": "UA56040130000011543",
     "b_katottg": "UA56040250000064519",
-    "score": 0.259,
+    "score": 0.258,
     "goals_cosine": 0.014,
     "geo_score": 1.0,
     "mss_network": 0.0,
@@ -237,14 +255,20 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Гребінківська міська територіальна громада",
     "b": "Пирятинська міська територіальна громада",
     "a_katottg": "UA53040010000091190",
     "b_katottg": "UA53040090000048649",
-    "score": 0.292,
+    "score": 0.293,
     "goals_cosine": 0.071,
     "geo_score": 1.0,
     "mss_network": 0.0,
@@ -297,7 +321,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Брацлавська селищна територіальна громада",
@@ -357,7 +387,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Апостолівська міська територіальна громада",
@@ -417,7 +453,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Козельщинська селищна територіальна громада",
@@ -477,7 +519,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Пісочинська селищна територіальна громада",
@@ -537,7 +585,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Курилівська сільська територіальна громада",
@@ -597,14 +651,20 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Білокриницька сільська територіальна громада",
     "b": "Корнинська сільська територіальна громада",
     "a_katottg": "UA56060050000010769",
     "b_katottg": "UA56060330000075139",
-    "score": 0.544,
+    "score": 0.545,
     "goals_cosine": 0.491,
     "geo_score": 1.0,
     "mss_network": 0.0,
@@ -657,7 +717,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Новогалещинська селищна територіальна громада",
@@ -717,7 +783,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "П'ятихатська міська територіальна громада",
@@ -777,7 +849,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Рівненська міська територіальна громада",
@@ -837,7 +915,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Лубенська міська територіальна громада",
@@ -897,7 +981,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Галицька міська територіальна громада",
@@ -957,7 +1047,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Рівненська міська територіальна громада",
@@ -1017,7 +1113,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Боянська сільська територіальна громада",
@@ -1077,7 +1179,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Васильківська селищна територіальна громада",
@@ -1137,7 +1245,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Малинська сільська територіальна громада",
@@ -1197,7 +1311,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Єланецька селищна територіальна громада",
@@ -1257,7 +1377,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Львівська міська територіальна громада",
@@ -1317,7 +1443,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Лубенська міська територіальна громада",
@@ -1377,14 +1509,20 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Боремельська сільська територіальна громада",
     "b": "Острожецька сільська територіальна громада",
     "a_katottg": "UA56040030000031906",
     "b_katottg": "UA56040210000047101",
-    "score": 0.387,
+    "score": 0.388,
     "goals_cosine": 0.292,
     "geo_score": 0.85,
     "mss_network": 0.0,
@@ -1437,7 +1575,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Герцаївська міська територіальна громада",
@@ -1497,14 +1641,20 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Вишнівська селищна територіальна громада",
     "b": "Жовтоводська міська територіальна громада",
     "a_katottg": "UA12040070000083117",
     "b_katottg": "UA12040110000091524",
-    "score": 0.267,
+    "score": 0.268,
     "goals_cosine": 0.092,
     "geo_score": 0.85,
     "mss_network": 0.0,
@@ -1557,7 +1707,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Малоданилівська селищна територіальна громада",
@@ -1617,7 +1773,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Краснолуцька сільська територіальна громада",
@@ -1677,7 +1839,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Машівська селищна територіальна громада",
@@ -1737,7 +1905,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Заводська міська територіальна громада",
@@ -1797,7 +1971,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Гребінківська міська територіальна громада",
@@ -1857,14 +2037,20 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Тисменицька міська територіальна громада",
     "b": "Тлумацька міська територіальна громада",
     "a_katottg": "UA26040330000019235",
     "b_katottg": "UA26040350000024417",
-    "score": 0.429,
+    "score": 0.474,
     "goals_cosine": 0.298,
     "geo_score": 1.0,
     "mss_network": 0.0,
@@ -1914,10 +2100,24 @@
         "label_uk": "ресурси / DREAM",
         "label_en": "resources / DREAM",
         "strength": "high"
+      },
+      {
+        "id": "twinning",
+        "label_uk": "місто-побратим ЄС",
+        "label_en": "EU twin city",
+        "strength": "high"
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.3,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.3,
+      "flags": [
+        "twinning_both"
+      ]
+    }
   },
   {
     "a": "Білоцерківська сільська територіальна громада",
@@ -1977,14 +2177,20 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Герцаївська міська територіальна громада",
     "b": "Лівинецька сільська територіальна громада",
     "a_katottg": "UA73060130000078771",
     "b_katottg": "UA73040070000053425",
-    "score": 0.303,
+    "score": 0.362,
     "goals_cosine": 0.15,
     "geo_score": 0.85,
     "mss_network": 0.0,
@@ -2034,17 +2240,32 @@
         "label_uk": "ресурси / DREAM",
         "label_en": "resources / DREAM",
         "strength": "high"
+      },
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "label_en": "explicit IMC request",
+        "strength": "medium"
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.4,
+    "social_capital_parts": {
+      "direct": 0.4,
+      "extras": 0.0,
+      "flags": [
+        "cointent"
+      ]
+    },
+    "explicit_ask_score": 0.75
   },
   {
     "a": "Бабинська сільська територіальна громада",
     "b": "Корнинська сільська територіальна громада",
     "a_katottg": "UA56060010000018261",
     "b_katottg": "UA56060330000075139",
-    "score": 0.416,
+    "score": 0.415,
     "goals_cosine": 0.338,
     "geo_score": 0.85,
     "mss_network": 0.0,
@@ -2097,7 +2318,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Малинська сільська територіальна громада",
@@ -2157,7 +2384,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Рокитнянська селищна територіальна громада",
@@ -2217,14 +2450,20 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Лівинецька сільська територіальна громада",
     "b": "Недобоївська сільська територіальна громада",
     "a_katottg": "UA73040070000053425",
     "b_katottg": "UA73040110000040354",
-    "score": 0.295,
+    "score": 0.333,
     "goals_cosine": 0.138,
     "geo_score": 0.85,
     "mss_network": 0.0,
@@ -2274,10 +2513,24 @@
         "label_uk": "ресурси / DREAM",
         "label_en": "resources / DREAM",
         "strength": "high"
+      },
+      {
+        "id": "donor",
+        "label_uk": "спільна донорська програма",
+        "label_en": "shared donor programme",
+        "strength": "medium"
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.25,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.25,
+      "flags": [
+        "shared_donor"
+      ]
+    }
   },
   {
     "a": "Банилівська сільська територіальна громада",
@@ -2337,14 +2590,20 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Козельщинська селищна територіальна громада",
     "b": "Омельницька сільська територіальна громада",
     "a_katottg": "UA53020090000045206",
     "b_katottg": "UA53020170000049108",
-    "score": 0.431,
+    "score": 0.491,
     "goals_cosine": 0.365,
     "geo_score": 0.85,
     "mss_network": 0.0,
@@ -2394,10 +2653,25 @@
         "label_uk": "ресурси / DREAM",
         "label_en": "resources / DREAM",
         "strength": "high"
+      },
+      {
+        "id": "explicit_ask",
+        "label_uk": "явний запит МСС",
+        "label_en": "explicit IMC request",
+        "strength": "medium"
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.4,
+    "social_capital_parts": {
+      "direct": 0.4,
+      "extras": 0.0,
+      "flags": [
+        "cointent"
+      ]
+    },
+    "explicit_ask_score": 0.75
   },
   {
     "a": "Козельщинська селищна територіальна громада",
@@ -2457,7 +2731,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Журавненська селищна територіальна громада",
@@ -2517,7 +2797,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Боянська сільська територіальна громада",
@@ -2577,14 +2863,20 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Славутицька міська територіальна громада",
     "b": "Ріпкинська селищна територіальна громада",
     "a_katottg": "UA32100130000093505",
     "b_katottg": "UA74100330000029082",
-    "score": 0.299,
+    "score": 0.298,
     "goals_cosine": 0.143,
     "geo_score": 0.85,
     "mss_network": 0.0,
@@ -2637,7 +2929,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Костопільська міська територіальна громада",
@@ -2697,7 +2995,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Драбинівська сільська територіальна громада",
@@ -2757,7 +3061,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Харківська міська територіальна громада",
@@ -2817,7 +3127,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Лохвицька міська територіальна громада",
@@ -2877,7 +3193,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Дмитрівська сільська територіальна громада",
@@ -2937,7 +3259,13 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   },
   {
     "a": "Матеївецька сільська територіальна громада",
@@ -2997,6 +3325,12 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis"
+    "status": "hypothesis",
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    }
   }
 ]

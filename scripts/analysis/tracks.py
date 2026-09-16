@@ -30,8 +30,18 @@ TRACK_MIXED = "mixed"
 
 
 def goals_percentile_threshold(edges: list[dict], percentile: float = GOALS_PERCENTILE) -> float:
-    """Inclusive percentile of goals_cosine over the edge list."""
-    vals = sorted(float(e.get("goals_cosine") or 0.0) for e in edges)
+    """Inclusive percentile of goals_cosine over Goals–Goals edges.
+
+    DREAM-proxy rows store goals_cosine=0 and would collapse the floor if
+    mixed into this distribution.
+    """
+    vals = sorted(
+        float(e.get("goals_cosine") or 0.0)
+        for e in edges
+        if e.get("priority_source", "goals") == "goals"
+    )
+    if not vals:
+        vals = sorted(float(e.get("goals_cosine") or 0.0) for e in edges)
     if not vals:
         return 0.0
     # nearest-rank, 1-indexed
@@ -82,6 +92,7 @@ def thematic_slice(edges: list[dict], *, limit: int | None = None) -> list[dict]
         for e in edges
         if e.get("track") == TRACK_THEMATIC
         and not e.get("known")
+        and e.get("priority_source", "goals") == "goals"
         and float(e.get("template_collision") or 0) < TEMPLATE_COLLISION_MAX
     ]
     out.sort(key=lambda e: (-float(e.get("goals_cosine") or 0), -float(e.get("score") or 0)))
@@ -101,6 +112,7 @@ def operational_slice(edges: list[dict], *, limit: int | None = None) -> list[di
         if e.get("track") == TRACK_OPERATIONAL
         and float(e.get("mss_network") or 0) == 0.0
         and not e.get("known")
+        and e.get("priority_source", "goals") == "goals"
         and float(e.get("template_collision") or 0) < TEMPLATE_COLLISION_MAX
     ]
 
