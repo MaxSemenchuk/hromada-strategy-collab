@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Regression: Пліч-о-пліч feeds mss_network_score; EU-twinning/donor
-experience feeds complementary_score as a resource offer (not a pairwise
-network tie — see docs discussion in aim-cc-field-experiment-prereg.md)."""
+experience is social_capital (readiness), not a domestic PIN edge — see
+social_capital.py and docs/ua-eu-twinning.md."""
 
 from __future__ import annotations
 

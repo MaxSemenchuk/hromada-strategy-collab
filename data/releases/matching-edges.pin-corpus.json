@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-15T18:08:14.024763+00:00",
-  "method": "PIN∩corpus: matching edges with mss_network>0 (KSE partnerships)",
+  "generatedAt": "2026-09-16T12:12:17.689308+00:00",
+  "method": "PIN∩scored: matching edges with mss_network>0 (Goals and/or DREAM-title proxy)",
   "pairCount": 412,
   "curatedKnownCount": 11,
   "otherPinCorpusCount": 401,
   "softTopN": 50,
-  "inSoftTopN": 29,
-  "warning": "Not a substitute for known=true regression. Combined score already includes mss_network (15%) — ranks are partly circular.",
+  "inSoftTopN": 28,
+  "warning": "Not a substitute for known=true regression. Combined score already includes social_capital (15%; mss_network is the floor) — ranks are partly circular.",
   "pairs": [
     {
       "a": "Львівська міська територіальна громада",
@@ -21,7 +21,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 1
+      "rank": 3,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рукшинська сільська територіальна громада",
@@ -36,7 +38,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 4
+      "rank": 8,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Верховинська селищна територіальна громада",
@@ -51,7 +55,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": true,
-      "rank": 5
+      "rank": 10,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бориспільська міська територіальна громада",
@@ -66,7 +72,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 9
+      "rank": 11,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -75,13 +83,15 @@
       "b_katottg": "UA26040130000010870",
       "a_short": "Галицька",
       "b_short": "Дубовецька",
-      "score": 0.7,
+      "score": 0.699,
       "goals_cosine": 0.499,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "track": "operational",
       "known": true,
-      "rank": 11
+      "rank": 14,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Богданська сільська територіальна громада",
@@ -96,7 +106,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 15
+      "rank": 17,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Заліщицька міська територіальна громада",
@@ -111,22 +123,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 18
-    },
-    {
-      "a": "Дубриницько-Малоберезнянська сільська територіальна громада",
-      "b": "Перечинська міська територіальна громада",
-      "a_katottg": "UA21100070000018509",
-      "b_katottg": "UA21100130000055002",
-      "a_short": "Дубриницько-Малоберезнянська",
-      "b_short": "Перечинська",
-      "score": 0.67,
-      "goals_cosine": 0.449,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "track": "operational",
-      "known": false,
-      "rank": 19
+      "rank": 20,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Золочівська селищна територіальна громада",
@@ -141,7 +140,26 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 20
+      "rank": 21,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Дубриницько-Малоберезнянська сільська територіальна громада",
+      "b": "Перечинська міська територіальна громада",
+      "a_katottg": "UA21100070000018509",
+      "b_katottg": "UA21100130000055002",
+      "a_short": "Дубриницько-Малоберезнянська",
+      "b_short": "Перечинська",
+      "score": 0.669,
+      "goals_cosine": 0.449,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "track": "operational",
+      "known": false,
+      "rank": 22,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Новодністровська міська територіальна громада",
@@ -150,13 +168,15 @@
       "b_katottg": "UA73040170000011490",
       "a_short": "Новодністровська",
       "b_short": "Сокирянська",
-      "score": 0.669,
+      "score": 0.668,
       "goals_cosine": 0.51,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 22
+      "rank": 23,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ворохтянська селищна територіальна громада",
@@ -171,7 +191,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 25
+      "rank": 26,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Недобоївська сільська територіальна громада",
@@ -186,13 +208,15 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 26
+      "rank": 27,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кам'янопотоківська сільська територіальна громада",
       "b": "Піщанська сільська територіальна громада",
       "a_katottg": "UA53020070000049284",
-      "b_katottg": "UA53020190000090557",
+      "b_katottg": "UA71040170000034734",
       "a_short": "Кам'янопотоківська",
       "b_short": "Піщанська",
       "score": 0.652,
@@ -201,7 +225,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 29
+      "rank": 29,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бабинська сільська територіальна громада",
@@ -216,7 +242,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 30
+      "rank": 30,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Клішковецька сільська територіальна громада",
@@ -231,7 +259,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": true,
-      "rank": 31
+      "rank": 31,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Липоводолинська селищна територіальна громада",
@@ -246,7 +276,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 33
+      "rank": 33,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вікнянська сільська територіальна громада",
@@ -261,7 +293,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 34
+      "rank": 34,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Новоселівська сільська територіальна громада",
@@ -276,7 +310,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 35
+      "rank": 35,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великобудищанська сільська територіальна громада",
@@ -291,7 +327,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 36
+      "rank": 36,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Клішковецька сільська територіальна громада",
@@ -300,13 +338,15 @@
       "b_katottg": "UA73040190000062796",
       "a_short": "Клішковецька",
       "b_short": "Хотинська",
-      "score": 0.641,
+      "score": 0.642,
       "goals_cosine": 0.465,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": true,
-      "rank": 37
+      "rank": 37,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Новодністровська міська територіальна громада",
@@ -321,7 +361,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 38
+      "rank": 38,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -336,7 +378,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 40
+      "rank": 40,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Гадяцька міська територіальна громада",
@@ -351,7 +395,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 41
+      "rank": 42,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -360,13 +406,15 @@
       "b_katottg": "UA26080070000092582",
       "a_short": "Вижницька",
       "b_short": "Коломийська",
-      "score": 0.632,
+      "score": 0.633,
       "goals_cosine": 0.45,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 43
+      "rank": 44,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Малоданилівська селищна територіальна громада",
@@ -381,7 +429,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 45
+      "rank": 46,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -396,7 +446,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 46
+      "rank": 47,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великобудищанська сільська територіальна громада",
@@ -405,13 +457,15 @@
       "b_katottg": "UA53060210000044776",
       "a_short": "Великобудищанська",
       "b_short": "Лютенська",
-      "score": 0.624,
+      "score": 0.625,
       "goals_cosine": 0.437,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 48
+      "rank": 49,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубенська міська територіальна громада",
@@ -426,7 +480,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 49
+      "rank": 50,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -441,7 +497,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 50
+      "rank": 51,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Клішковецька сільська територіальна громада",
@@ -456,7 +514,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 51
+      "rank": 52,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -471,7 +531,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 52
+      "rank": 53,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубенська міська територіальна громада",
@@ -486,7 +548,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 53
+      "rank": 54,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Зіньківська міська територіальна громада",
@@ -495,13 +559,15 @@
       "b_katottg": "UA53080350000070563",
       "a_short": "Зіньківська",
       "b_short": "Опішнянська",
-      "score": 0.615,
+      "score": 0.616,
       "goals_cosine": 0.422,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 55
+      "rank": 56,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рахівська міська територіальна громада",
@@ -516,7 +582,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 56
+      "rank": 57,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Мачухівська сільська територіальна громада",
@@ -531,7 +599,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 57
+      "rank": 58,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вікнянська сільська територіальна громада",
@@ -546,7 +616,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 58
+      "rank": 60,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великоберезнянська селищна територіальна громада",
@@ -561,7 +633,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 59
+      "rank": 61,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Заліщицька міська територіальна громада",
@@ -576,7 +650,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 60
+      "rank": 62,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ніжинська міська територіальна громада",
@@ -591,7 +667,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": true,
-      "rank": 61
+      "rank": 63,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Драбинівська сільська територіальна громада",
@@ -606,7 +684,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 62
+      "rank": 64,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Полтавська міська територіальна громада",
@@ -621,7 +701,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 63
+      "rank": 65,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Клішковецька сільська територіальна громада",
@@ -636,7 +718,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 64
+      "rank": 66,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рукшинська сільська територіальна громада",
@@ -651,7 +735,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 65
+      "rank": 67,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Полтавська міська територіальна громада",
@@ -660,13 +746,15 @@
       "b_katottg": "UA53080470000053547",
       "a_short": "Полтавська",
       "b_short": "Щербанівська",
-      "score": 0.607,
+      "score": 0.608,
       "goals_cosine": 0.346,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 66
+      "rank": 68,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кадубовецька сільська територіальна громада",
@@ -681,7 +769,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 67
+      "rank": 69,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великобудищанська сільська територіальна громада",
@@ -696,7 +786,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 69
+      "rank": 71,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -711,7 +803,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 70
+      "rank": 73,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -726,7 +820,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 71
+      "rank": 74,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубриницько-Малоберезнянська сільська територіальна громада",
@@ -735,13 +831,15 @@
       "b_katottg": "UA21100170000051803",
       "a_short": "Дубриницько-Малоберезнянська",
       "b_short": "Ставненська",
-      "score": 0.6,
+      "score": 0.601,
       "goals_cosine": 0.397,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 72
+      "rank": 75,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Новодністровська міська територіальна громада",
@@ -756,7 +854,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 77
+      "rank": 80,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вікнянська сільська територіальна громада",
@@ -771,7 +871,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 78
+      "rank": 81,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Коломацька сільська територіальна громада",
@@ -786,7 +888,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 79
+      "rank": 82,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Богданська сільська територіальна громада",
@@ -801,7 +905,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 80
+      "rank": 83,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -816,7 +922,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 81
+      "rank": 84,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -831,7 +939,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 83
+      "rank": 87,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Клесівська селищна територіальна громада",
@@ -846,7 +956,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 84
+      "rank": 88,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кельменецька селищна територіальна громада",
@@ -861,7 +973,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 85
+      "rank": 89,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -876,7 +990,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 87
+      "rank": 90,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -891,7 +1007,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 88
+      "rank": 91,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -906,7 +1024,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 89
+      "rank": 92,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ворохтянська селищна територіальна громада",
@@ -921,7 +1041,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 90
+      "rank": 94,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кельменецька селищна територіальна громада",
@@ -936,7 +1058,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 93
+      "rank": 98,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -951,7 +1075,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 94
+      "rank": 100,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Зеленська сільська територіальна громада",
@@ -966,7 +1092,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 95
+      "rank": 101,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Верховинська селищна територіальна громада",
@@ -981,7 +1109,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 96
+      "rank": 102,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Сокирянська міська територіальна громада",
@@ -996,7 +1126,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 97
+      "rank": 103,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Заліщицька міська територіальна громада",
@@ -1011,7 +1143,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 98
+      "rank": 104,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великобудищанська сільська територіальна громада",
@@ -1026,7 +1160,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 99
+      "rank": 106,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ніжинська міська територіальна громада",
@@ -1041,7 +1177,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": true,
-      "rank": 100
+      "rank": 109,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Богданська сільська територіальна громада",
@@ -1056,22 +1194,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 101
-    },
-    {
-      "a": "Олешанська сільська територіальна громада",
-      "b": "Заліщицька міська територіальна громада",
-      "a_katottg": "UA26040250000061081",
-      "b_katottg": "UA61060170000051011",
-      "a_short": "Олешанська",
-      "b_short": "Заліщицька",
-      "score": 0.573,
-      "goals_cosine": 0.454,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 102
+      "rank": 110,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Лютенська сільська територіальна громада",
@@ -1080,13 +1205,32 @@
       "b_katottg": "UA53060310000047988",
       "a_short": "Лютенська",
       "b_short": "Сергіївська",
-      "score": 0.572,
+      "score": 0.573,
       "goals_cosine": 0.35,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 103
+      "rank": 111,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Заліщицька міська територіальна громада",
+      "a_katottg": "UA26040250000061081",
+      "b_katottg": "UA61060170000051011",
+      "a_short": "Олешанська",
+      "b_short": "Заліщицька",
+      "score": 0.572,
+      "goals_cosine": 0.454,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "track": "mixed",
+      "known": false,
+      "rank": 112,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Коломийська міська територіальна громада",
@@ -1101,7 +1245,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 104
+      "rank": 114,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Борщівська міська територіальна громада",
@@ -1116,7 +1262,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 106
+      "rank": 117,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рукшинська сільська територіальна громада",
@@ -1131,7 +1279,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": true,
-      "rank": 109
+      "rank": 119,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Монастириська міська територіальна громада",
@@ -1146,7 +1296,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 110
+      "rank": 121,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ясінянська селищна територіальна громада",
@@ -1161,7 +1313,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 111
+      "rank": 122,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -1170,13 +1324,15 @@
       "b_katottg": "UA26040350000024417",
       "a_short": "Дубовецька",
       "b_short": "Тлумацька",
-      "score": 0.566,
+      "score": 0.567,
       "goals_cosine": 0.34,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 112
+      "rank": 123,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вікнянська сільська територіальна громада",
@@ -1191,7 +1347,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 113
+      "rank": 124,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Клішковецька сільська територіальна громада",
@@ -1206,7 +1364,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 114
+      "rank": 125,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Заліщицька міська територіальна громада",
@@ -1221,7 +1381,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 115
+      "rank": 127,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рукшинська сільська територіальна громада",
@@ -1236,7 +1398,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 116
+      "rank": 128,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Клішковецька сільська територіальна громада",
@@ -1251,7 +1415,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 118
+      "rank": 130,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -1266,7 +1432,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 120
+      "rank": 133,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -1275,13 +1443,15 @@
       "b_katottg": "UA61060170000051011",
       "a_short": "Городенківська",
       "b_short": "Заліщицька",
-      "score": 0.56,
+      "score": 0.559,
       "goals_cosine": 0.328,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 121
+      "rank": 135,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ворохтянська селищна територіальна громада",
@@ -1296,7 +1466,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 123
+      "rank": 136,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Богданська сільська територіальна громада",
@@ -1311,7 +1483,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 126
+      "rank": 139,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Борщівська міська територіальна громада",
@@ -1326,7 +1500,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 127
+      "rank": 140,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -1341,7 +1517,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 128
+      "rank": 142,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ясінянська селищна територіальна громада",
@@ -1356,7 +1534,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 130
+      "rank": 144,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -1371,7 +1551,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 132
+      "rank": 146,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Богданська сільська територіальна громада",
@@ -1386,7 +1568,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 133
+      "rank": 147,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Гадяцька міська територіальна громада",
@@ -1401,7 +1585,26 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 134
+      "rank": 148,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Юрковецька сільська територіальна громада",
+      "a_katottg": "UA73060090000047054",
+      "b_katottg": "UA73060650000012771",
+      "a_short": "Вікнянська",
+      "b_short": "Юрковецька",
+      "score": 0.554,
+      "goals_cosine": 0.256,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "track": "operational",
+      "known": false,
+      "rank": 150,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -1416,7 +1619,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 136
+      "rank": 152,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -1431,28 +1636,15 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 137
-    },
-    {
-      "a": "Вікнянська сільська територіальна громада",
-      "b": "Юрковецька сільська територіальна громада",
-      "a_katottg": "UA73060090000047054",
-      "b_katottg": "UA73060650000012771",
-      "a_short": "Вікнянська",
-      "b_short": "Юрковецька",
-      "score": 0.553,
-      "goals_cosine": 0.256,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "track": "operational",
-      "known": false,
-      "rank": 138
+      "rank": 153,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Омельницька сільська територіальна громада",
       "b": "Піщанська сільська територіальна громада",
       "a_katottg": "UA53020170000049108",
-      "b_katottg": "UA53020190000090557",
+      "b_katottg": "UA71040170000034734",
       "a_short": "Омельницька",
       "b_short": "Піщанська",
       "score": 0.553,
@@ -1461,7 +1653,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 139
+      "rank": 154,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Висоцька сільська територіальна громада",
@@ -1476,7 +1670,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 140
+      "rank": 155,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Перечинська міська територіальна громада",
@@ -1491,7 +1687,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 142
+      "rank": 157,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Борщівська міська територіальна громада",
@@ -1506,7 +1704,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 143
+      "rank": 158,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубровицька міська територіальна громада",
@@ -1521,7 +1721,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 144
+      "rank": 159,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кельменецька селищна територіальна громада",
@@ -1530,13 +1732,15 @@
       "b_katottg": "UA73040070000053425",
       "a_short": "Кельменецька",
       "b_short": "Лівинецька",
-      "score": 0.551,
+      "score": 0.55,
       "goals_cosine": 0.313,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 145
+      "rank": 160,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -1551,7 +1755,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 146
+      "rank": 161,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Коломийська міська територіальна громада",
@@ -1566,7 +1772,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 148
+      "rank": 163,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Повчанська сільська територіальна громада",
@@ -1581,22 +1789,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 149
-    },
-    {
-      "a": "Лівинецька сільська територіальна громада",
-      "b": "Жванецька сільська територіальна громада",
-      "a_katottg": "UA73040070000053425",
-      "b_katottg": "UA68020070000084437",
-      "a_short": "Лівинецька",
-      "b_short": "Жванецька",
-      "score": 0.549,
-      "goals_cosine": 0.31,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "track": "operational",
-      "known": false,
-      "rank": 150
+      "rank": 164,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Широківська сільська територіальна громада",
@@ -1611,7 +1806,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 151
+      "rank": 165,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Мачухівська сільська територіальна громада",
@@ -1626,7 +1823,26 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 152
+      "rank": 166,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Лівинецька сільська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "a_katottg": "UA73040070000053425",
+      "b_katottg": "UA68020070000084437",
+      "a_short": "Лівинецька",
+      "b_short": "Жванецька",
+      "score": 0.548,
+      "goals_cosine": 0.31,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "track": "operational",
+      "known": false,
+      "rank": 167,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -1641,7 +1857,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 153
+      "rank": 168,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Козельщинська селищна територіальна громада",
@@ -1656,7 +1874,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 154
+      "rank": 169,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -1671,7 +1891,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 155
+      "rank": 170,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -1686,7 +1908,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 156
+      "rank": 171,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Парафіївська селищна територіальна громада",
@@ -1701,7 +1925,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 158
+      "rank": 173,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -1716,7 +1942,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 159
+      "rank": 176,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -1731,7 +1959,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 163
+      "rank": 181,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Заліщицька міська територіальна громада",
@@ -1746,7 +1976,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 164
+      "rank": 182,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -1761,7 +1993,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 168
+      "rank": 187,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великоберезнянська селищна територіальна громада",
@@ -1776,22 +2010,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 169
-    },
-    {
-      "a": "Галицька міська територіальна громада",
-      "b": "Монастириська міська територіальна громада",
-      "a_katottg": "UA26040090000025932",
-      "b_katottg": "UA61060310000061998",
-      "a_short": "Галицька",
-      "b_short": "Монастириська",
-      "score": 0.54,
-      "goals_cosine": 0.295,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "track": "operational",
-      "known": false,
-      "rank": 173
+      "rank": 188,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ясінянська селищна територіальна громада",
@@ -1806,7 +2027,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 174
+      "rank": 192,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Зеленська сільська територіальна громада",
@@ -1821,7 +2044,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 176
+      "rank": 193,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Висоцька сільська територіальна громада",
@@ -1836,7 +2061,26 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 177
+      "rank": 194,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Монастириська міська територіальна громада",
+      "a_katottg": "UA26040090000025932",
+      "b_katottg": "UA61060310000061998",
+      "a_short": "Галицька",
+      "b_short": "Монастириська",
+      "score": 0.539,
+      "goals_cosine": 0.295,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "track": "operational",
+      "known": false,
+      "rank": 196,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Космацька сільська територіальна громада",
@@ -1845,13 +2089,15 @@
       "b_katottg": "UA26120130000088448",
       "a_short": "Космацька",
       "b_short": "Поляницька",
-      "score": 0.539,
+      "score": 0.538,
       "goals_cosine": 0.293,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 178
+      "rank": 199,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Богданська сільська територіальна громада",
@@ -1866,7 +2112,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 180
+      "rank": 200,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Косівська міська територіальна громада",
@@ -1881,7 +2129,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 181
+      "rank": 201,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Борщівська міська територіальна громада",
@@ -1890,13 +2140,15 @@
       "b_katottg": "UA73040070000053425",
       "a_short": "Борщівська",
       "b_short": "Лівинецька",
-      "score": 0.537,
+      "score": 0.536,
       "goals_cosine": 0.394,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 184
+      "rank": 206,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рахівська міська територіальна громада",
@@ -1911,7 +2163,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 187
+      "rank": 208,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Лівинецька сільська територіальна громада",
@@ -1926,7 +2180,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 189
+      "rank": 210,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вікнянська сільська територіальна громада",
@@ -1941,7 +2197,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 191
+      "rank": 214,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кельменецька селищна територіальна громада",
@@ -1956,7 +2214,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 192
+      "rank": 215,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Менська міська територіальна громада",
@@ -1965,13 +2225,15 @@
       "b_katottg": "UA74060030000026607",
       "a_short": "Менська",
       "b_short": "Новгород-Сіверська",
-      "score": 0.532,
+      "score": 0.531,
       "goals_cosine": 0.49,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 196
+      "rank": 219,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -1986,7 +2248,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 198
+      "rank": 220,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Нижньоворітська сільська територіальна громада",
@@ -2001,22 +2265,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 199
-    },
-    {
-      "a": "Городенківська міська територіальна громада",
-      "b": "Вікнянська сільська територіальна громада",
-      "a_katottg": "UA26080030000014307",
-      "b_katottg": "UA73060090000047054",
-      "a_short": "Городенківська",
-      "b_short": "Вікнянська",
-      "score": 0.53,
-      "goals_cosine": 0.278,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "track": "operational",
-      "known": false,
-      "rank": 202
+      "rank": 221,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Борщівська міська територіальна громада",
@@ -2031,7 +2282,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 203
+      "rank": 222,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Городенківська міська територіальна громада",
+      "b": "Вікнянська сільська територіальна громада",
+      "a_katottg": "UA26080030000014307",
+      "b_katottg": "UA73060090000047054",
+      "a_short": "Городенківська",
+      "b_short": "Вікнянська",
+      "score": 0.529,
+      "goals_cosine": 0.278,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "track": "operational",
+      "known": false,
+      "rank": 226,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -2046,7 +2316,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 206
+      "rank": 227,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кам'янопотоківська сільська територіальна громада",
@@ -2061,7 +2333,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 209
+      "rank": 229,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Верховинська селищна територіальна громада",
@@ -2076,7 +2350,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 210
+      "rank": 230,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дівичківська сільська територіальна громада",
@@ -2091,7 +2367,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 212
+      "rank": 234,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -2106,7 +2384,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 215
+      "rank": 237,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -2121,7 +2401,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 216
+      "rank": 238,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Полтавська міська територіальна громада",
@@ -2136,7 +2418,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 221
+      "rank": 241,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -2151,13 +2435,15 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 222
+      "rank": 242,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Пришибська сільська територіальна громада",
       "b": "Піщанська сільська територіальна громада",
       "a_katottg": "UA53020210000023587",
-      "b_katottg": "UA53020190000090557",
+      "b_katottg": "UA71040170000034734",
       "a_short": "Пришибська",
       "b_short": "Піщанська",
       "score": 0.524,
@@ -2166,37 +2452,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 225
-    },
-    {
-      "a": "Полтавська міська територіальна громада",
-      "b": "Терешківська сільська територіальна громада",
-      "a_katottg": "UA53080370000025447",
-      "b_katottg": "UA53080430000085474",
-      "a_short": "Полтавська",
-      "b_short": "Терешківська",
-      "score": 0.523,
-      "goals_cosine": 0.204,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "track": "operational",
-      "known": false,
-      "rank": 227
-    },
-    {
-      "a": "Лохвицька міська територіальна громада",
-      "b": "Заводська міська територіальна громада",
-      "a_katottg": "UA53060190000015369",
-      "b_katottg": "UA53060130000040567",
-      "a_short": "Лохвицька",
-      "b_short": "Заводська",
-      "score": 0.523,
-      "goals_cosine": 0.204,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "track": "operational",
-      "known": false,
-      "rank": 228
+      "rank": 245,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кам'янопотоківська сільська територіальна громада",
@@ -2211,7 +2469,43 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 231
+      "rank": 248,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Полтавська міська територіальна громада",
+      "b": "Терешківська сільська територіальна громада",
+      "a_katottg": "UA53080370000025447",
+      "b_katottg": "UA53080430000085474",
+      "a_short": "Полтавська",
+      "b_short": "Терешківська",
+      "score": 0.522,
+      "goals_cosine": 0.204,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "track": "operational",
+      "known": false,
+      "rank": 250,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Лохвицька міська територіальна громада",
+      "b": "Заводська міська територіальна громада",
+      "a_katottg": "UA53060190000015369",
+      "b_katottg": "UA53060130000040567",
+      "a_short": "Лохвицька",
+      "b_short": "Заводська",
+      "score": 0.522,
+      "goals_cosine": 0.204,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "track": "operational",
+      "known": false,
+      "rank": 251,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ясінянська селищна територіальна громада",
@@ -2226,7 +2520,26 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 232
+      "rank": 252,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Верховинська селищна територіальна громада",
+      "b": "Космацька сільська територіальна громада",
+      "a_katottg": "UA26020030000088465",
+      "b_katottg": "UA26100030000012148",
+      "a_short": "Верховинська",
+      "b_short": "Космацька",
+      "score": 0.52,
+      "goals_cosine": 0.262,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "track": "operational",
+      "known": false,
+      "rank": 257,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Батуринська міська територіальна громада",
@@ -2235,13 +2548,15 @@
       "b_katottg": "UA74100190000086457",
       "a_short": "Батуринська",
       "b_short": "Козелецька",
-      "score": 0.52,
+      "score": 0.519,
       "goals_cosine": 0.47,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "track": "thematic",
       "known": true,
-      "rank": 236
+      "rank": 259,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Полтавська міська територіальна громада",
@@ -2256,22 +2571,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 239
-    },
-    {
-      "a": "Вашковецька сільська територіальна громада",
-      "b": "Сокирянська міська територіальна громада",
-      "a_katottg": "UA73040010000039325",
-      "b_katottg": "UA73040170000011490",
-      "a_short": "Вашковецька",
-      "b_short": "Сокирянська",
-      "score": 0.519,
-      "goals_cosine": 0.26,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "track": "operational",
-      "known": true,
-      "rank": 240
+      "rank": 260,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -2286,22 +2588,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 241
+      "rank": 261,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
-      "a": "Верховинська селищна територіальна громада",
-      "b": "Космацька сільська територіальна громада",
-      "a_katottg": "UA26020030000088465",
-      "b_katottg": "UA26100030000012148",
-      "a_short": "Верховинська",
-      "b_short": "Космацька",
-      "score": 0.519,
-      "goals_cosine": 0.262,
+      "a": "Вашковецька сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "a_katottg": "UA73040010000039325",
+      "b_katottg": "UA73040170000011490",
+      "a_short": "Вашковецька",
+      "b_short": "Сокирянська",
+      "score": 0.518,
+      "goals_cosine": 0.26,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
-      "known": false,
-      "rank": 242
+      "known": true,
+      "rank": 263,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Краснолуцька сільська територіальна громада",
@@ -2310,13 +2616,15 @@
       "b_katottg": "UA53060210000044776",
       "a_short": "Краснолуцька",
       "b_short": "Лютенська",
-      "score": 0.519,
+      "score": 0.518,
       "goals_cosine": 0.26,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 243
+      "rank": 264,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Жовківська міська територіальна громада",
@@ -2331,7 +2639,26 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 244
+      "rank": 265,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Городенківська міська територіальна громада",
+      "a_katottg": "UA26040090000025932",
+      "b_katottg": "UA26080030000014307",
+      "a_short": "Галицька",
+      "b_short": "Городенківська",
+      "score": 0.517,
+      "goals_cosine": 0.361,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "track": "mixed",
+      "known": false,
+      "rank": 268,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Полтавська міська територіальна громада",
@@ -2346,22 +2673,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 246
-    },
-    {
-      "a": "Галицька міська територіальна громада",
-      "b": "Городенківська міська територіальна громада",
-      "a_katottg": "UA26040090000025932",
-      "b_katottg": "UA26080030000014307",
-      "a_short": "Галицька",
-      "b_short": "Городенківська",
-      "score": 0.516,
-      "goals_cosine": 0.361,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 247
+      "rank": 273,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Верховинська селищна територіальна громада",
@@ -2370,13 +2684,15 @@
       "b_katottg": "UA26120130000088448",
       "a_short": "Верховинська",
       "b_short": "Поляницька",
-      "score": 0.516,
+      "score": 0.515,
       "goals_cosine": 0.255,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 248
+      "rank": 277,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -2391,7 +2707,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 251
+      "rank": 278,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рахівська міська територіальна громада",
@@ -2406,7 +2724,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 252
+      "rank": 279,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Космацька сільська територіальна громада",
@@ -2421,7 +2741,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 257
+      "rank": 285,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Заліщицька міська територіальна громада",
@@ -2436,7 +2758,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 258
+      "rank": 286,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Горішньоплавнівська міська територіальна громада",
@@ -2451,7 +2775,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 264
+      "rank": 292,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ворохтянська селищна територіальна громада",
@@ -2466,7 +2792,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 267
+      "rank": 295,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -2481,7 +2809,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 268
+      "rank": 296,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Мачухівська сільська територіальна громада",
@@ -2496,7 +2826,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 269
+      "rank": 297,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ніжинська міська територіальна громада",
@@ -2511,7 +2843,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 270
+      "rank": 299,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -2526,7 +2860,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 275
+      "rank": 303,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -2541,7 +2877,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 276
+      "rank": 304,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Заліщицька міська територіальна громада",
@@ -2556,7 +2894,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 277
+      "rank": 305,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Монастириська міська територіальна громада",
@@ -2571,22 +2911,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 281
-    },
-    {
-      "a": "Яремчанська міська територіальна громада",
-      "b": "Верховинська селищна територіальна громада",
-      "a_katottg": "UA26120150000021671",
-      "b_katottg": "UA26020030000088465",
-      "a_short": "Яремчанська",
-      "b_short": "Верховинська",
-      "score": 0.506,
-      "goals_cosine": 0.238,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "track": "operational",
-      "known": false,
-      "rank": 282
+      "rank": 308,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -2601,7 +2928,26 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 284
+      "rank": 314,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Верховинська селищна територіальна громада",
+      "a_katottg": "UA26120150000021671",
+      "b_katottg": "UA26020030000088465",
+      "a_short": "Яремчанська",
+      "b_short": "Верховинська",
+      "score": 0.505,
+      "goals_cosine": 0.238,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "track": "operational",
+      "known": false,
+      "rank": 316,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -2616,7 +2962,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 287
+      "rank": 317,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Гадяцька міська територіальна громада",
@@ -2631,7 +2979,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 289
+      "rank": 319,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кобеляцька міська територіальна громада",
@@ -2646,7 +2996,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 290
+      "rank": 320,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -2655,13 +3007,15 @@
       "b_katottg": "UA21060070000049340",
       "a_short": "Яремчанська",
       "b_short": "Ясінянська",
-      "score": 0.504,
+      "score": 0.505,
       "goals_cosine": 0.237,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 291
+      "rank": 321,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рахівська міська територіальна громада",
@@ -2670,13 +3024,15 @@
       "b_katottg": "UA26100030000012148",
       "a_short": "Рахівська",
       "b_short": "Космацька",
-      "score": 0.504,
+      "score": 0.505,
       "goals_cosine": 0.341,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 293
+      "rank": 322,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Новоселівська сільська територіальна громада",
@@ -2691,7 +3047,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 294
+      "rank": 326,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -2706,7 +3064,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 295
+      "rank": 328,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Заліщицька міська територіальна громада",
@@ -2721,7 +3081,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 299
+      "rank": 334,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Рахівська міська територіальна громада",
+      "b": "Верховинська селищна територіальна громада",
+      "a_katottg": "UA21060050000029937",
+      "b_katottg": "UA26020030000088465",
+      "a_short": "Рахівська",
+      "b_short": "Верховинська",
+      "score": 0.502,
+      "goals_cosine": 0.336,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "track": "mixed",
+      "known": false,
+      "rank": 335,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тернопільська міська територіальна громада",
@@ -2736,22 +3115,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": true,
-      "rank": 302
-    },
-    {
-      "a": "Рахівська міська територіальна громада",
-      "b": "Верховинська селищна територіальна громада",
-      "a_katottg": "UA21060050000029937",
-      "b_katottg": "UA26020030000088465",
-      "a_short": "Рахівська",
-      "b_short": "Верховинська",
-      "score": 0.501,
-      "goals_cosine": 0.336,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 303
+      "rank": 338,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Коломацька сільська територіальна громада",
@@ -2766,7 +3132,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 304
+      "rank": 339,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Богданська сільська територіальна громада",
@@ -2781,7 +3149,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 306
+      "rank": 342,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Монастириська міська територіальна громада",
@@ -2796,7 +3166,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 307
+      "rank": 343,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ободівська сільська територіальна громада",
@@ -2811,7 +3183,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 309
+      "rank": 345,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Зеленська сільська територіальна громада",
@@ -2826,7 +3200,26 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 310
+      "rank": 348,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Городнянська міська територіальна громада",
+      "b": "Сновська міська територіальна громада",
+      "a_katottg": "UA74100050000019554",
+      "b_katottg": "UA74020050000033944",
+      "a_short": "Городнянська",
+      "b_short": "Сновська",
+      "score": 0.499,
+      "goals_cosine": 0.277,
+      "geo_score": 0.85,
+      "mss_network": 0.5,
+      "track": "operational",
+      "known": false,
+      "rank": 350,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Краснолуцька сільська територіальна громада",
@@ -2841,7 +3234,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 316
+      "rank": 352,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -2856,7 +3251,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 320
+      "rank": 355,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Коломацька сільська територіальна громада",
@@ -2871,7 +3268,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 322
+      "rank": 357,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -2880,13 +3279,15 @@
       "b_katottg": "UA26040350000024417",
       "a_short": "Бурштинська",
       "b_short": "Тлумацька",
-      "score": 0.495,
+      "score": 0.496,
       "goals_cosine": 0.326,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 327
+      "rank": 365,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рахівська міська територіальна громада",
@@ -2901,7 +3302,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 328
+      "rank": 366,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Космацька сільська територіальна громада",
@@ -2916,7 +3319,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 329
+      "rank": 367,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Снігурівська міська територіальна громада",
@@ -2931,7 +3336,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 331
+      "rank": 368,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Монастириська міська територіальна громада",
@@ -2946,7 +3353,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 332
+      "rank": 371,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -2961,7 +3370,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 334
+      "rank": 374,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кельменецька селищна територіальна громада",
@@ -2976,7 +3387,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 335
+      "rank": 375,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вільнозапорізька сільська територіальна громада",
@@ -2991,7 +3404,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 344
+      "rank": 387,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -3006,7 +3421,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 347
+      "rank": 388,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Здолбунівська міська територіальна громада",
@@ -3021,7 +3438,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 349
+      "rank": 390,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кадубовецька сільська територіальна громада",
@@ -3036,7 +3455,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 351
+      "rank": 392,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Монастириська міська територіальна громада",
@@ -3045,13 +3466,15 @@
       "b_katottg": "UA73040050000080963",
       "a_short": "Монастириська",
       "b_short": "Клішковецька",
-      "score": 0.489,
+      "score": 0.49,
       "goals_cosine": 0.42,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 352
+      "rank": 393,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Омельницька сільська територіальна громада",
@@ -3066,7 +3489,26 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 355
+      "rank": 396,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Галицинівська сільська територіальна громада",
+      "b": "Широківська сільська територіальна громада",
+      "a_katottg": "UA48060070000087404",
+      "b_katottg": "UA48020230000095751",
+      "a_short": "Галицинівська",
+      "b_short": "Широківська",
+      "score": 0.489,
+      "goals_cosine": 0.378,
+      "geo_score": 0.6,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 399,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Миргородська міська територіальна громада",
@@ -3081,22 +3523,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 360
-    },
-    {
-      "a": "Монастириська міська територіальна громада",
-      "b": "Лівинецька сільська територіальна громада",
-      "a_katottg": "UA61060310000061998",
-      "b_katottg": "UA73040070000053425",
-      "a_short": "Монастириська",
-      "b_short": "Лівинецька",
-      "score": 0.487,
-      "goals_cosine": 0.415,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "track": "thematic",
-      "known": false,
-      "rank": 361
+      "rank": 403,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кельменецька селищна територіальна громада",
@@ -3111,7 +3540,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 362
+      "rank": 405,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Монастириська міська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "a_katottg": "UA61060310000061998",
+      "b_katottg": "UA73040070000053425",
+      "a_short": "Монастириська",
+      "b_short": "Лівинецька",
+      "score": 0.486,
+      "goals_cosine": 0.415,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "track": "thematic",
+      "known": false,
+      "rank": 411,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -3120,13 +3568,15 @@
       "b_katottg": "UA26120130000088448",
       "a_short": "Вижницька",
       "b_short": "Поляницька",
-      "score": 0.486,
+      "score": 0.485,
       "goals_cosine": 0.309,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 364
+      "rank": 419,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кельменецька селищна територіальна громада",
@@ -3135,13 +3585,15 @@
       "b_katottg": "UA68020070000084437",
       "a_short": "Кельменецька",
       "b_short": "Жванецька",
-      "score": 0.486,
+      "score": 0.485,
       "goals_cosine": 0.205,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 366
+      "rank": 420,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Козельщинська селищна територіальна громада",
@@ -3150,13 +3602,15 @@
       "b_katottg": "UA53080230000047239",
       "a_short": "Козельщинська",
       "b_short": "Мачухівська",
-      "score": 0.486,
+      "score": 0.485,
       "goals_cosine": 0.309,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 369
+      "rank": 421,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -3171,22 +3625,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 383
-    },
-    {
-      "a": "Богданська сільська територіальна громада",
-      "b": "Ворохтянська селищна територіальна громада",
-      "a_katottg": "UA21060010000011784",
-      "b_katottg": "UA26120010000096774",
-      "a_short": "Богданська",
-      "b_short": "Ворохтянська",
-      "score": 0.482,
-      "goals_cosine": 0.198,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "track": "operational",
-      "known": false,
-      "rank": 384
+      "rank": 431,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ясінянська селищна територіальна громада",
@@ -3201,7 +3642,26 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 385
+      "rank": 432,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Богданська сільська територіальна громада",
+      "b": "Ворохтянська селищна територіальна громада",
+      "a_katottg": "UA21060010000011784",
+      "b_katottg": "UA26120010000096774",
+      "a_short": "Богданська",
+      "b_short": "Ворохтянська",
+      "score": 0.481,
+      "goals_cosine": 0.198,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "track": "operational",
+      "known": false,
+      "rank": 438,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ясінянська селищна територіальна громада",
@@ -3216,7 +3676,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 387
+      "rank": 439,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Оболонська сільська територіальна громада",
@@ -3225,13 +3687,15 @@
       "b_katottg": "UA53020230000086353",
       "a_short": "Оболонська",
       "b_short": "Семенівська",
-      "score": 0.48,
+      "score": 0.481,
       "goals_cosine": 0.197,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 393
+      "rank": 441,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кадубовецька сільська територіальна громада",
@@ -3246,7 +3710,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 396
+      "rank": 450,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кадубовецька сільська територіальна громада",
@@ -3261,7 +3727,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 397
+      "rank": 451,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -3276,7 +3744,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 400
+      "rank": 456,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Монастириська міська територіальна громада",
@@ -3291,7 +3761,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 401
+      "rank": 457,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -3306,7 +3778,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 405
+      "rank": 461,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Коломийська міська територіальна громада",
@@ -3321,7 +3795,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 406
+      "rank": 462,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Студениківська сільська територіальна громада",
@@ -3336,7 +3812,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 410
+      "rank": 466,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Богданська сільська територіальна громада",
@@ -3351,7 +3829,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 413
+      "rank": 469,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Нижньоворітська сільська територіальна громада",
@@ -3366,7 +3846,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 414
+      "rank": 470,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Борщівська міська територіальна громада",
@@ -3381,7 +3863,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 415
+      "rank": 471,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Житомирська міська територіальна громада",
+      "b": "Коростенська міська територіальна громада",
+      "a_katottg": "UA18040190000029215",
+      "b_katottg": "UA18060090000061708",
+      "a_short": "Житомирська",
+      "b_short": "Коростенська",
+      "score": 0.475,
+      "goals_cosine": 0.445,
+      "geo_score": 0.35,
+      "mss_network": 0.5,
+      "track": "thematic",
+      "known": false,
+      "rank": 472,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -3396,7 +3897,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 417
+      "rank": 474,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Новодністровська міська територіальна громада",
@@ -3411,7 +3914,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 432
+      "rank": 487,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -3426,7 +3931,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 439
+      "rank": 493,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Зеленська сільська територіальна громада",
@@ -3441,7 +3948,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 440
+      "rank": 494,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Коломацька сільська територіальна громада",
+      "b": "Новоселівська сільська територіальна громада",
+      "a_katottg": "UA53080150000085889",
+      "b_katottg": "UA53080330000062155",
+      "a_short": "Коломацька",
+      "b_short": "Новоселівська",
+      "score": 0.47,
+      "goals_cosine": 0.116,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "track": "operational",
+      "known": false,
+      "rank": 496,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -3456,22 +3982,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 443
-    },
-    {
-      "a": "Коломацька сільська територіальна громада",
-      "b": "Новоселівська сільська територіальна громада",
-      "a_katottg": "UA53080150000085889",
-      "b_katottg": "UA53080330000062155",
-      "a_short": "Коломацька",
-      "b_short": "Новоселівська",
-      "score": 0.469,
-      "goals_cosine": 0.116,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "track": "operational",
-      "known": false,
-      "rank": 445
+      "rank": 499,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -3486,7 +3999,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 446
+      "rank": 506,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Борщівська міська територіальна громада",
@@ -3495,13 +4010,15 @@
       "b_katottg": "UA73060650000012771",
       "a_short": "Борщівська",
       "b_short": "Юрковецька",
-      "score": 0.467,
+      "score": 0.468,
       "goals_cosine": 0.175,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 453
+      "rank": 508,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Клішковецька сільська територіальна громада",
@@ -3516,7 +4033,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 454
+      "rank": 513,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кадубовецька сільська територіальна громада",
@@ -3531,7 +4050,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 465
+      "rank": 522,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Лівинецька сільська територіальна громада",
@@ -3546,7 +4067,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 466
+      "rank": 523,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Борщівська міська територіальна громада",
@@ -3561,7 +4084,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 470
+      "rank": 529,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -3576,7 +4101,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 473
+      "rank": 532,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -3591,7 +4118,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 474
+      "rank": 533,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Лівинецька сільська територіальна громада",
@@ -3606,7 +4135,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 476
+      "rank": 535,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городнянська міська територіальна громада",
@@ -3621,7 +4152,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 477
+      "rank": 536,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Борщівська міська територіальна громада",
@@ -3636,7 +4169,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 483
+      "rank": 545,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Коломийська міська територіальна громада",
@@ -3651,7 +4186,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 487
+      "rank": 549,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -3666,7 +4203,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 488
+      "rank": 550,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -3681,7 +4220,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 492
+      "rank": 554,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -3696,7 +4237,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 493
+      "rank": 555,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Козелецька селищна територіальна громада",
@@ -3711,7 +4254,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 502
+      "rank": 569,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ясінянська селищна територіальна громада",
@@ -3726,7 +4271,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 505
+      "rank": 570,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кадубовецька сільська територіальна громада",
@@ -3741,7 +4288,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 514
+      "rank": 575,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Козельщинська селищна територіальна громада",
@@ -3756,7 +4305,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 515
+      "rank": 576,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -3771,7 +4322,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 520
+      "rank": 584,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Заліщицька міська територіальна громада",
@@ -3786,22 +4339,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 521
-    },
-    {
-      "a": "Борщівська міська територіальна громада",
-      "b": "Жванецька сільська територіальна громада",
-      "a_katottg": "UA61060050000068464",
-      "b_katottg": "UA68020070000084437",
-      "a_short": "Борщівська",
-      "b_short": "Жванецька",
-      "score": 0.456,
-      "goals_cosine": 0.259,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 528
+      "rank": 585,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городнянська міська територіальна громада",
@@ -3816,7 +4356,43 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 529
+      "rank": 594,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Борщівська міська територіальна громада",
+      "b": "Жванецька сільська територіальна громада",
+      "a_katottg": "UA61060050000068464",
+      "b_katottg": "UA68020070000084437",
+      "a_short": "Борщівська",
+      "b_short": "Жванецька",
+      "score": 0.455,
+      "goals_cosine": 0.259,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "track": "mixed",
+      "known": false,
+      "rank": 602,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Олешанська сільська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "a_katottg": "UA26040250000061081",
+      "b_katottg": "UA73040070000053425",
+      "a_short": "Олешанська",
+      "b_short": "Лівинецька",
+      "score": 0.455,
+      "goals_cosine": 0.362,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "track": "mixed",
+      "known": false,
+      "rank": 604,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Львівська міська територіальна громада",
@@ -3831,7 +4407,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 537
+      "rank": 609,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -3846,22 +4424,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 538
-    },
-    {
-      "a": "Олешанська сільська територіальна громада",
-      "b": "Лівинецька сільська територіальна громада",
-      "a_katottg": "UA26040250000061081",
-      "b_katottg": "UA73040070000053425",
-      "a_short": "Олешанська",
-      "b_short": "Лівинецька",
-      "score": 0.454,
-      "goals_cosine": 0.362,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 540
+      "rank": 610,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Немирівська міська територіальна громада",
@@ -3876,22 +4441,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 541
-    },
-    {
-      "a": "Городнянська міська територіальна громада",
-      "b": "Сновська міська територіальна громада",
-      "a_katottg": "UA74100050000019554",
-      "b_katottg": "UA74020050000033944",
-      "a_short": "Городнянська",
-      "b_short": "Сновська",
-      "score": 0.454,
-      "goals_cosine": 0.277,
-      "geo_score": 0.85,
-      "mss_network": 0.5,
-      "track": "operational",
-      "known": false,
-      "rank": 543
+      "rank": 612,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кадубовецька сільська територіальна громада",
@@ -3906,7 +4458,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 548
+      "rank": 619,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Батуринська міська територіальна громада",
@@ -3921,7 +4475,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 551
+      "rank": 624,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Менська міська територіальна громада",
@@ -3936,22 +4492,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 554
-    },
-    {
-      "a": "Галицинівська сільська територіальна громада",
-      "b": "Широківська сільська територіальна громада",
-      "a_katottg": "UA48060070000087404",
-      "b_katottg": "UA48020230000095751",
-      "a_short": "Галицинівська",
-      "b_short": "Широківська",
-      "score": 0.452,
-      "goals_cosine": 0.378,
-      "geo_score": 0.6,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 556
+      "rank": 626,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великоберезнянська селищна територіальна громада",
@@ -3966,7 +4509,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 557
+      "rank": 632,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Верховинська селищна територіальна громада",
@@ -3981,7 +4526,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 558
+      "rank": 633,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -3996,7 +4543,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 571
+      "rank": 649,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Богданська сільська територіальна громада",
@@ -4011,7 +4560,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 581
+      "rank": 660,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Зеленська сільська територіальна громада",
@@ -4026,7 +4577,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 583
+      "rank": 661,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ясінянська селищна територіальна громада",
@@ -4041,7 +4594,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 597
+      "rank": 680,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -4056,7 +4611,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 609
+      "rank": 696,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Клішковецька сільська територіальна громада",
@@ -4071,7 +4628,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 615
+      "rank": 699,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -4086,7 +4645,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 629
+      "rank": 713,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великоберезнянська селищна територіальна громада",
@@ -4101,22 +4662,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 630
-    },
-    {
-      "a": "Вікнянська сільська територіальна громада",
-      "b": "Кельменецька селищна територіальна громада",
-      "a_katottg": "UA73060090000047054",
-      "b_katottg": "UA73040030000042378",
-      "a_short": "Вікнянська",
-      "b_short": "Кельменецька",
-      "score": 0.441,
-      "goals_cosine": 0.234,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 638
+      "rank": 714,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рівненська міська територіальна громада",
@@ -4131,7 +4679,26 @@
       "mss_network": 0.5,
       "track": "thematic",
       "known": false,
-      "rank": 641
+      "rank": 719,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Вікнянська сільська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "a_katottg": "UA73060090000047054",
+      "b_katottg": "UA73040030000042378",
+      "a_short": "Вікнянська",
+      "b_short": "Кельменецька",
+      "score": 0.44,
+      "goals_cosine": 0.234,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "track": "mixed",
+      "known": false,
+      "rank": 721,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубриницько-Малоберезнянська сільська територіальна громада",
@@ -4146,7 +4713,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 652
+      "rank": 734,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -4161,7 +4730,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 653
+      "rank": 735,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Сокирянська міська територіальна громада",
@@ -4176,7 +4747,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 656
+      "rank": 738,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Слобожанська селищна територіальна громада",
@@ -4191,7 +4764,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": true,
-      "rank": 658
+      "rank": 745,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ворохтянська селищна територіальна громада",
@@ -4206,7 +4781,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 662
+      "rank": 747,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -4221,7 +4798,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 663
+      "rank": 748,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -4236,7 +4815,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 675
+      "rank": 760,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Липоводолинська селищна територіальна громада",
@@ -4251,7 +4832,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 682
+      "rank": 762,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рахівська міська територіальна громада",
@@ -4266,7 +4849,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 691
+      "rank": 777,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кутська селищна територіальна громада",
@@ -4281,7 +4866,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 692
+      "rank": 778,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Новосанжарська селищна територіальна громада",
@@ -4296,7 +4883,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 697
+      "rank": 781,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -4311,7 +4900,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 707
+      "rank": 796,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рахівська міська територіальна громада",
@@ -4326,7 +4917,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 714
+      "rank": 808,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Широківська сільська територіальна громада",
@@ -4341,22 +4934,9 @@
       "mss_network": 0.5,
       "track": "thematic",
       "known": false,
-      "rank": 716
-    },
-    {
-      "a": "Дубовецька сільська територіальна громада",
-      "b": "Заліщицька міська територіальна громада",
-      "a_katottg": "UA26040130000010870",
-      "b_katottg": "UA61060170000051011",
-      "a_short": "Дубовецька",
-      "b_short": "Заліщицька",
-      "score": 0.43,
-      "goals_cosine": 0.32,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 727
+      "rank": 809,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -4371,22 +4951,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 728
+      "rank": 823,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
-      "a": "Житомирська міська територіальна громада",
-      "b": "Коростенська міська територіальна громада",
-      "a_katottg": "UA18040190000029215",
-      "b_katottg": "UA18060090000061708",
-      "a_short": "Житомирська",
-      "b_short": "Коростенська",
+      "a": "Дубовецька сільська територіальна громада",
+      "b": "Заліщицька міська територіальна громада",
+      "a_katottg": "UA26040130000010870",
+      "b_katottg": "UA61060170000051011",
+      "a_short": "Дубовецька",
+      "b_short": "Заліщицька",
       "score": 0.429,
-      "goals_cosine": 0.445,
+      "goals_cosine": 0.32,
       "geo_score": 0.35,
-      "mss_network": 0.5,
-      "track": "thematic",
+      "mss_network": 1.0,
+      "track": "mixed",
       "known": false,
-      "rank": 733
+      "rank": 833,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Коблівська сільська територіальна громада",
@@ -4401,7 +4985,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 739
+      "rank": 834,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Бориспільська міська територіальна громада",
+      "b": "Бучанська міська територіальна громада",
+      "a_katottg": "UA32040010000010116",
+      "b_katottg": "UA32080070000050759",
+      "a_short": "Бориспільська",
+      "b_short": "Бучанська",
+      "score": 0.428,
+      "goals_cosine": 0.264,
+      "geo_score": 0.6,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 842,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Терешківська сільська територіальна громада",
@@ -4416,22 +5019,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 749
-    },
-    {
-      "a": "Галицька міська територіальна громада",
-      "b": "Борщівська міська територіальна громада",
-      "a_katottg": "UA26040090000025932",
-      "b_katottg": "UA61060050000068464",
-      "a_short": "Галицька",
-      "b_short": "Борщівська",
-      "score": 0.424,
-      "goals_cosine": 0.31,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 768
+      "rank": 851,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -4440,13 +5030,15 @@
       "b_katottg": "UA26080030000014307",
       "a_short": "Бурштинська",
       "b_short": "Городенківська",
-      "score": 0.424,
+      "score": 0.425,
       "goals_cosine": 0.312,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 769
+      "rank": 869,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Новгород-Сіверська міська територіальна громада",
@@ -4461,7 +5053,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 774
+      "rank": 874,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Борщівська міська територіальна громада",
+      "a_katottg": "UA26040090000025932",
+      "b_katottg": "UA61060050000068464",
+      "a_short": "Галицька",
+      "b_short": "Борщівська",
+      "score": 0.423,
+      "goals_cosine": 0.31,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "track": "mixed",
+      "known": false,
+      "rank": 882,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Юрковецька сільська територіальна громада",
@@ -4470,13 +5081,15 @@
       "b_katottg": "UA68020070000084437",
       "a_short": "Юрковецька",
       "b_short": "Жванецька",
-      "score": 0.423,
+      "score": 0.422,
       "goals_cosine": 0.204,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 783
+      "rank": 898,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -4491,7 +5104,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 798
+      "rank": 916,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Верховинська селищна територіальна громада",
@@ -4506,7 +5121,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 811
+      "rank": 932,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -4521,7 +5138,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 829
+      "rank": 955,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вижницька міська територіальна громада",
@@ -4536,7 +5155,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 841
+      "rank": 963,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -4551,7 +5172,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 843
+      "rank": 964,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -4566,7 +5189,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 844
+      "rank": 965,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городнянська міська територіальна громада",
@@ -4581,7 +5206,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 870
+      "rank": 996,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Брацлавська селищна територіальна громада",
@@ -4596,7 +5223,26 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 876
+      "rank": 1003,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Горішньоплавнівська міська територіальна громада",
+      "b": "Кобеляцька міська територіальна громада",
+      "a_katottg": "UA53020030000081709",
+      "b_katottg": "UA53080130000014699",
+      "a_short": "Горішньоплавнівська",
+      "b_short": "Кобеляцька",
+      "score": 0.412,
+      "goals_cosine": 0.186,
+      "geo_score": 0.6,
+      "mss_network": 1.0,
+      "track": "mixed",
+      "known": false,
+      "rank": 1033,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -4611,7 +5257,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 904
+      "rank": 1041,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вікнянська сільська територіальна громада",
@@ -4626,22 +5274,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 905
-    },
-    {
-      "a": "Горішньоплавнівська міська територіальна громада",
-      "b": "Кобеляцька міська територіальна громада",
-      "a_katottg": "UA53020030000081709",
-      "b_katottg": "UA53080130000014699",
-      "a_short": "Горішньоплавнівська",
-      "b_short": "Кобеляцька",
-      "score": 0.411,
-      "goals_cosine": 0.186,
-      "geo_score": 0.6,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 909
+      "rank": 1042,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -4656,7 +5291,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 915
+      "rank": 1056,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Лівинецька сільська територіальна громада",
@@ -4671,7 +5308,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 921
+      "rank": 1060,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -4686,7 +5325,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 935
+      "rank": 1083,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Городенківська міська територіальна громада",
@@ -4701,7 +5342,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 937
+      "rank": 1084,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вікнянська сільська територіальна громада",
@@ -4716,7 +5359,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 942
+      "rank": 1086,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -4731,7 +5376,43 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 962
+      "rank": 1118,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Тлумацька міська територіальна громада",
+      "a_katottg": "UA26120150000021671",
+      "b_katottg": "UA26040350000024417",
+      "a_short": "Яремчанська",
+      "b_short": "Тлумацька",
+      "score": 0.405,
+      "goals_cosine": 0.225,
+      "geo_score": 0.6,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 1142,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Білогородська сільська територіальна громада",
+      "b": "Таращанська міська територіальна громада",
+      "a_katottg": "UA32080010000060215",
+      "b_katottg": "UA32020190000084133",
+      "a_short": "Білогородська",
+      "b_short": "Таращанська",
+      "score": 0.401,
+      "goals_cosine": 0.335,
+      "geo_score": 0.35,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 1203,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубенська міська територіальна громада",
@@ -4746,7 +5427,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 1035
+      "rank": 1208,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Роменська міська територіальна громада",
@@ -4761,7 +5444,9 @@
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 1044
+      "rank": 1212,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -4776,7 +5461,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1046
+      "rank": 1226,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -4791,7 +5478,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1049
+      "rank": 1227,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Монастириська міська територіальна громада",
@@ -4806,7 +5495,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1065
+      "rank": 1250,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дівичківська сільська територіальна громада",
@@ -4815,13 +5506,32 @@
       "b_katottg": "UA32040190000043384",
       "a_short": "Дівичківська",
       "b_short": "Циблівська",
-      "score": 0.399,
+      "score": 0.398,
       "goals_cosine": 0.06,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "track": "operational",
       "known": false,
-      "rank": 1070
+      "rank": 1268,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Галицинівська сільська територіальна громада",
+      "b": "Снігурівська міська територіальна громада",
+      "a_katottg": "UA48060070000087404",
+      "b_katottg": "UA48020190000083597",
+      "a_short": "Галицинівська",
+      "b_short": "Снігурівська",
+      "score": 0.398,
+      "goals_cosine": 0.225,
+      "geo_score": 0.6,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 1273,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -4830,13 +5540,15 @@
       "b_katottg": "UA73020090000031499",
       "a_short": "Яремчанська",
       "b_short": "Вижницька",
-      "score": 0.396,
+      "score": 0.397,
       "goals_cosine": 0.161,
       "geo_score": 0.6,
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1111
+      "rank": 1298,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -4851,7 +5563,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1114
+      "rank": 1308,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -4866,7 +5580,9 @@
       "mss_network": 1.0,
       "track": "thematic",
       "known": false,
-      "rank": 1143
+      "rank": 1347,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Рахівська міська територіальна громада",
@@ -4881,7 +5597,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1145
+      "rank": 1348,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ніжинська міська територіальна громада",
@@ -4896,7 +5614,43 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1173
+      "rank": 1389,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Чернігівська міська територіальна громада",
+      "b": "Сновська міська територіальна громада",
+      "a_katottg": "UA74100390000073425",
+      "b_katottg": "UA74020050000033944",
+      "a_short": "Чернігівська",
+      "b_short": "Сновська",
+      "score": 0.389,
+      "goals_cosine": 0.198,
+      "geo_score": 0.6,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 1451,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Заліщицька міська територіальна громада",
+      "b": "Кельменецька селищна територіальна громада",
+      "a_katottg": "UA61060170000051011",
+      "b_katottg": "UA73040030000042378",
+      "a_short": "Заліщицька",
+      "b_short": "Кельменецька",
+      "score": 0.386,
+      "goals_cosine": 0.247,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "track": "mixed",
+      "known": false,
+      "rank": 1510,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -4911,22 +5665,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1302
-    },
-    {
-      "a": "Заліщицька міська територіальна громада",
-      "b": "Кельменецька селищна територіальна громада",
-      "a_katottg": "UA61060170000051011",
-      "b_katottg": "UA73040030000042378",
-      "a_short": "Заліщицька",
-      "b_short": "Кельменецька",
-      "score": 0.385,
-      "goals_cosine": 0.247,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 1303
+      "rank": 1528,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Козельщинська селищна територіальна громада",
@@ -4941,7 +5682,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1322
+      "rank": 1544,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -4956,22 +5699,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1328
+      "rank": 1566,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
-      "a": "Бориспільська міська територіальна громада",
-      "b": "Бучанська міська територіальна громада",
-      "a_katottg": "UA32040010000010116",
-      "b_katottg": "UA32080070000050759",
-      "a_short": "Бориспільська",
-      "b_short": "Бучанська",
-      "score": 0.383,
-      "goals_cosine": 0.264,
+      "a": "Сумська міська територіальна громада",
+      "b": "Новослобідська сільська територіальна громада",
+      "a_katottg": "UA59080270000073662",
+      "b_katottg": "UA59020110000066430",
+      "a_short": "Сумська",
+      "b_short": "Новослобідська",
+      "score": 0.381,
+      "goals_cosine": 0.197,
       "geo_score": 0.6,
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 1338
+      "rank": 1605,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Ворохтянська селищна територіальна громада",
@@ -4986,7 +5733,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1364
+      "rank": 1607,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -5001,7 +5750,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1381
+      "rank": 1642,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Заліщицька міська територіальна громада",
@@ -5016,7 +5767,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1386
+      "rank": 1644,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Чернігівська міська територіальна громада",
+      "b": "Городнянська міська територіальна громада",
+      "a_katottg": "UA74100390000073425",
+      "b_katottg": "UA74100050000019554",
+      "a_short": "Чернігівська",
+      "b_short": "Городнянська",
+      "score": 0.38,
+      "goals_cosine": 0.184,
+      "geo_score": 0.6,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 1652,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -5031,7 +5801,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1408
+      "rank": 1664,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Козельщинська селищна територіальна громада",
@@ -5046,7 +5818,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1414
+      "rank": 1668,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Батуринська міська територіальна громада",
@@ -5061,22 +5835,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1442
-    },
-    {
-      "a": "Галицька міська територіальна громада",
-      "b": "Лівинецька сільська територіальна громада",
-      "a_katottg": "UA26040090000025932",
-      "b_katottg": "UA73040070000053425",
-      "a_short": "Галицька",
-      "b_short": "Лівинецька",
-      "score": 0.376,
-      "goals_cosine": 0.376,
-      "geo_score": 0.0,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 1466
+      "rank": 1722,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Коростенська міська територіальна громада",
@@ -5091,7 +5852,26 @@
       "mss_network": 0.5,
       "track": "thematic",
       "known": false,
-      "rank": 1476
+      "rank": 1751,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Галицька міська територіальна громада",
+      "b": "Лівинецька сільська територіальна громада",
+      "a_katottg": "UA26040090000025932",
+      "b_katottg": "UA73040070000053425",
+      "a_short": "Галицька",
+      "b_short": "Лівинецька",
+      "score": 0.376,
+      "goals_cosine": 0.376,
+      "geo_score": 0.0,
+      "mss_network": 1.0,
+      "track": "mixed",
+      "known": false,
+      "rank": 1754,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Роменська міська територіальна громада",
@@ -5106,7 +5886,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1551
+      "rank": 1836,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Монастириська міська територіальна громада",
@@ -5121,22 +5903,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1672
-    },
-    {
-      "a": "Білогородська сільська територіальна громада",
-      "b": "Таращанська міська територіальна громада",
-      "a_katottg": "UA32080010000060215",
-      "b_katottg": "UA32020190000084133",
-      "a_short": "Білогородська",
-      "b_short": "Таращанська",
-      "score": 0.363,
-      "goals_cosine": 0.335,
-      "geo_score": 0.35,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 1772
+      "rank": 2003,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -5151,22 +5920,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1825
-    },
-    {
-      "a": "Яремчанська міська територіальна громада",
-      "b": "Тлумацька міська територіальна громада",
-      "a_katottg": "UA26120150000021671",
-      "b_katottg": "UA26040350000024417",
-      "a_short": "Яремчанська",
-      "b_short": "Тлумацька",
-      "score": 0.36,
-      "goals_cosine": 0.225,
-      "geo_score": 0.6,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 1849
+      "rank": 2182,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Кадубовецька сільська територіальна громада",
@@ -5181,22 +5937,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1864
-    },
-    {
-      "a": "Галицинівська сільська територіальна громада",
-      "b": "Снігурівська міська територіальна громада",
-      "a_katottg": "UA48060070000087404",
-      "b_katottg": "UA48020190000083597",
-      "a_short": "Галицинівська",
-      "b_short": "Снігурівська",
-      "score": 0.36,
-      "goals_cosine": 0.225,
-      "geo_score": 0.6,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 1873
+      "rank": 2222,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -5211,7 +5954,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1890
+      "rank": 2258,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -5220,13 +5965,32 @@
       "b_katottg": "UA68020070000084437",
       "a_short": "Тлумацька",
       "b_short": "Жванецька",
-      "score": 0.358,
+      "score": 0.357,
       "goals_cosine": 0.2,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 1925
+      "rank": 2334,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Великоберезовицька селищна територіальна громада",
+      "b": "Тлумацька міська територіальна громада",
+      "a_katottg": "UA61040070000079091",
+      "b_katottg": "UA26040350000024417",
+      "a_short": "Великоберезовицька",
+      "b_short": "Тлумацька",
+      "score": 0.356,
+      "goals_cosine": 0.26,
+      "geo_score": 0.35,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 2368,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Косівська міська територіальна громада",
@@ -5241,7 +6005,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 2020
+      "rank": 2410,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -5256,7 +6022,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 2094
+      "rank": 2502,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Коростенська міська територіальна громада",
@@ -5271,7 +6039,9 @@
       "mss_network": 0.5,
       "track": "thematic",
       "known": false,
-      "rank": 2132
+      "rank": 2527,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Сумська міська територіальна громада",
@@ -5286,7 +6056,9 @@
       "mss_network": 0.5,
       "track": "operational",
       "known": false,
-      "rank": 2152
+      "rank": 2558,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -5301,7 +6073,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 2155
+      "rank": 2567,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Клесівська селищна територіальна громада",
@@ -5316,7 +6090,26 @@
       "mss_network": 0.5,
       "track": "thematic",
       "known": false,
-      "rank": 2164
+      "rank": 2570,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Вінницька міська територіальна громада",
+      "a_katottg": "UA26120150000021671",
+      "b_katottg": "UA05020030000031457",
+      "a_short": "Яремчанська",
+      "b_short": "Вінницька",
+      "score": 0.349,
+      "goals_cosine": 0.331,
+      "geo_score": 0.0,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 2641,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицинівська сільська територіальна громада",
@@ -5331,22 +6124,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 2250
-    },
-    {
-      "a": "Козелецька селищна територіальна громада",
-      "b": "Парафіївська селищна територіальна громада",
-      "a_katottg": "UA74100190000086457",
-      "b_katottg": "UA74080110000023749",
-      "a_short": "Козелецька",
-      "b_short": "Парафіївська",
-      "score": 0.346,
-      "goals_cosine": 0.181,
-      "geo_score": 0.35,
-      "mss_network": 1.0,
-      "track": "mixed",
-      "known": false,
-      "rank": 2285
+      "rank": 2659,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Білогородська сільська територіальна громада",
@@ -5361,7 +6141,26 @@
       "mss_network": 0.5,
       "track": "thematic",
       "known": false,
-      "rank": 2306
+      "rank": 2726,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Козелецька селищна територіальна громада",
+      "b": "Парафіївська селищна територіальна громада",
+      "a_katottg": "UA74100190000086457",
+      "b_katottg": "UA74080110000023749",
+      "a_short": "Козелецька",
+      "b_short": "Парафіївська",
+      "score": 0.346,
+      "goals_cosine": 0.181,
+      "geo_score": 0.35,
+      "mss_network": 1.0,
+      "track": "mixed",
+      "known": false,
+      "rank": 2732,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -5370,13 +6169,15 @@
       "b_katottg": "UA73060650000012771",
       "a_short": "Дубовецька",
       "b_short": "Юрковецька",
-      "score": 0.345,
+      "score": 0.346,
       "goals_cosine": 0.18,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 2326
+      "rank": 2739,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -5391,22 +6192,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 2329
-    },
-    {
-      "a": "Чернігівська міська територіальна громада",
-      "b": "Сновська міська територіальна громада",
-      "a_katottg": "UA74100390000073425",
-      "b_katottg": "UA74020050000033944",
-      "a_short": "Чернігівська",
-      "b_short": "Сновська",
-      "score": 0.344,
-      "goals_cosine": 0.198,
-      "geo_score": 0.6,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 2353
+      "rank": 2767,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Монастириська міська територіальна громада",
@@ -5421,22 +6209,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 2359
-    },
-    {
-      "a": "Сумська міська територіальна громада",
-      "b": "Новослобідська сільська територіальна громада",
-      "a_katottg": "UA59080270000073662",
-      "b_katottg": "UA59020110000066430",
-      "a_short": "Сумська",
-      "b_short": "Новослобідська",
-      "score": 0.343,
-      "goals_cosine": 0.197,
-      "geo_score": 0.6,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 2384
+      "rank": 2805,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -5451,22 +6226,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 2499
+      "rank": 2975,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
-      "a": "Чернігівська міська територіальна громада",
-      "b": "Городнянська міська територіальна громада",
-      "a_katottg": "UA74100390000073425",
-      "b_katottg": "UA74100050000019554",
-      "a_short": "Чернігівська",
-      "b_short": "Городнянська",
+      "a": "Яремчанська міська територіальна громада",
+      "b": "Менська міська територіальна громада",
+      "a_katottg": "UA26120150000021671",
+      "b_katottg": "UA74020030000069340",
+      "a_short": "Яремчанська",
+      "b_short": "Менська",
       "score": 0.336,
-      "goals_cosine": 0.184,
-      "geo_score": 0.6,
+      "goals_cosine": 0.36,
+      "geo_score": 0.0,
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 2653
+      "rank": 3155,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -5481,7 +6260,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 2745
+      "rank": 3241,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -5496,7 +6277,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 2748
+      "rank": 3242,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -5511,7 +6294,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 3125
+      "rank": 3652,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Студениківська сільська територіальна громада",
@@ -5526,22 +6311,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 3409
+      "rank": 3943,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
-      "a": "Великоберезовицька селищна територіальна громада",
-      "b": "Тлумацька міська територіальна громада",
-      "a_katottg": "UA61040070000079091",
-      "b_katottg": "UA26040350000024417",
-      "a_short": "Великоберезовицька",
-      "b_short": "Тлумацька",
-      "score": 0.319,
-      "goals_cosine": 0.26,
-      "geo_score": 0.35,
+      "a": "Городнянська міська територіальна громада",
+      "b": "Пирятинська міська територіальна громада",
+      "a_katottg": "UA74100050000019554",
+      "b_katottg": "UA53040090000048649",
+      "a_short": "Городнянська",
+      "b_short": "Пирятинська",
+      "score": 0.32,
+      "goals_cosine": 0.334,
+      "geo_score": 0.0,
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 3485
+      "rank": 4014,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Борщівська міська територіальна громада",
@@ -5556,7 +6345,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 3547
+      "rank": 4124,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Коростенська міська територіальна громада",
+      "b": "Широківська сільська територіальна громада",
+      "a_katottg": "UA18060090000061708",
+      "b_katottg": "UA48020230000095751",
+      "a_short": "Коростенська",
+      "b_short": "Широківська",
+      "score": 0.316,
+      "goals_cosine": 0.401,
+      "geo_score": 0.0,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 4262,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Олешанська сільська територіальна громада",
@@ -5571,22 +6379,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 3727
-    },
-    {
-      "a": "Коростенська міська територіальна громада",
-      "b": "Широківська сільська територіальна громада",
-      "a_katottg": "UA18060090000061708",
-      "b_katottg": "UA48020230000095751",
-      "a_short": "Коростенська",
-      "b_short": "Широківська",
-      "score": 0.315,
-      "goals_cosine": 0.401,
-      "geo_score": 0.0,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 3734
+      "rank": 4320,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Новослобідська сільська територіальна громада",
@@ -5601,7 +6396,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 3753
+      "rank": 4330,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Борщівська міська територіальна громада",
@@ -5616,7 +6413,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 3783
+      "rank": 4395,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вінницька міська територіальна громада",
@@ -5631,7 +6430,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 3889
+      "rank": 4503,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -5646,7 +6447,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 4125
+      "rank": 4773,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -5661,22 +6464,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 4322
-    },
-    {
-      "a": "Яремчанська міська територіальна громада",
-      "b": "Менська міська територіальна громада",
-      "a_katottg": "UA26120150000021671",
-      "b_katottg": "UA74020030000069340",
-      "a_short": "Яремчанська",
-      "b_short": "Менська",
-      "score": 0.291,
-      "goals_cosine": 0.36,
-      "geo_score": 0.0,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 5409
+      "rank": 5005,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
@@ -5691,7 +6481,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 5850
+      "rank": 6719,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -5706,37 +6498,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 6764
+      "rank": 7739,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
-      "a": "Городнянська міська територіальна громада",
-      "b": "Пирятинська міська територіальна громада",
-      "a_katottg": "UA74100050000019554",
-      "b_katottg": "UA53040090000048649",
-      "a_short": "Городнянська",
-      "b_short": "Пирятинська",
-      "score": 0.276,
-      "goals_cosine": 0.334,
+      "a": "Рівненська міська територіальна громада",
+      "b": "Любецька селищна територіальна громада",
+      "a_katottg": "UA56060470000086729",
+      "b_katottg": "UA74100230000068041",
+      "a_short": "Рівненська",
+      "b_short": "Любецька",
+      "score": 0.271,
+      "goals_cosine": 0.326,
       "geo_score": 0.0,
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 6934
-    },
-    {
-      "a": "Яремчанська міська територіальна громада",
-      "b": "Вінницька міська територіальна громада",
-      "a_katottg": "UA26120150000021671",
-      "b_katottg": "UA05020030000031457",
-      "a_short": "Яремчанська",
-      "b_short": "Вінницька",
-      "score": 0.274,
-      "goals_cosine": 0.331,
-      "geo_score": 0.0,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 7073
+      "rank": 8477,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Галицька міська територіальна громада",
@@ -5751,22 +6532,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 7438
-    },
-    {
-      "a": "Рівненська міська територіальна громада",
-      "b": "Любецька селищна територіальна громада",
-      "a_katottg": "UA56060470000086729",
-      "b_katottg": "UA74100230000068041",
-      "a_short": "Рівненська",
-      "b_short": "Любецька",
-      "score": 0.27,
-      "goals_cosine": 0.326,
-      "geo_score": 0.0,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 7527
+      "rank": 8488,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -5775,19 +6543,21 @@
       "b_katottg": "UA73040170000011490",
       "a_short": "Бурштинська",
       "b_short": "Сокирянська",
-      "score": 0.27,
+      "score": 0.271,
       "goals_cosine": 0.201,
       "geo_score": 0.0,
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 7539
+      "rank": 8517,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Яремчанська міська територіальна громада",
       "b": "Олександрівська селищна територіальна громада",
       "a_katottg": "UA26120150000021671",
-      "b_katottg": "UA14120170000011133",
+      "b_katottg": "UA48040190000026236",
       "a_short": "Яремчанська",
       "b_short": "Олександрівська",
       "score": 0.269,
@@ -5796,7 +6566,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 7636
+      "rank": 8678,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Житомирська міська територіальна громада",
@@ -5811,7 +6583,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 7644
+      "rank": 8683,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великоберезовицька селищна територіальна громада",
@@ -5826,7 +6600,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 7884
+      "rank": 8994,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -5841,7 +6617,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 8035
+      "rank": 9152,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Дубовецька сільська територіальна громада",
@@ -5856,7 +6634,26 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 8036
+      "rank": 9153,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Куликівська селищна територіальна громада",
+      "b": "Красносільська сільська територіальна громада",
+      "a_katottg": "UA46060230000093092",
+      "b_katottg": "UA51100190000060999",
+      "a_short": "Куликівська",
+      "b_short": "Красносільська",
+      "score": 0.265,
+      "goals_cosine": 0.192,
+      "geo_score": 0.0,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 9351,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бершадська міська територіальна громада",
@@ -5871,7 +6668,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 8326
+      "rank": 9425,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великоберезовицька селищна територіальна громада",
@@ -5880,19 +6679,21 @@
       "b_katottg": "UA74020030000069340",
       "a_short": "Великоберезовицька",
       "b_short": "Менська",
-      "score": 0.252,
+      "score": 0.251,
       "goals_cosine": 0.294,
       "geo_score": 0.0,
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 10125
+      "rank": 11515,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великоберезовицька селищна територіальна громада",
       "b": "Олександрівська селищна територіальна громада",
       "a_katottg": "UA61040070000079091",
-      "b_katottg": "UA14120170000011133",
+      "b_katottg": "UA48040190000026236",
       "a_short": "Великоберезовицька",
       "b_short": "Олександрівська",
       "score": 0.242,
@@ -5901,7 +6702,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 11881
+      "rank": 13299,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Запорізька міська територіальна громада",
@@ -5916,7 +6719,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 12038
+      "rank": 13456,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Житомирська міська територіальна громада",
@@ -5931,7 +6736,26 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 12615
+      "rank": 14043,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Вінницька міська територіальна громада",
+      "b": "Тлумацька міська територіальна громада",
+      "a_katottg": "UA05020030000031457",
+      "b_katottg": "UA26040350000024417",
+      "a_short": "Вінницька",
+      "b_short": "Тлумацька",
+      "score": 0.232,
+      "goals_cosine": 0.186,
+      "geo_score": 0.0,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 15528,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
@@ -5946,7 +6770,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 14128
+      "rank": 15635,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Бурштинська міська територіальна громада",
@@ -5961,7 +6787,9 @@
       "mss_network": 1.0,
       "track": "mixed",
       "known": false,
-      "rank": 15210
+      "rank": 16846,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Снігурівська міська територіальна громада",
@@ -5976,7 +6804,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 18358
+      "rank": 19933,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Великоберезовицька селищна територіальна громада",
@@ -5985,19 +6815,21 @@
       "b_katottg": "UA21100130000055002",
       "a_short": "Великоберезовицька",
       "b_short": "Перечинська",
-      "score": 0.21,
+      "score": 0.211,
       "goals_cosine": 0.226,
       "geo_score": 0.0,
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 19257
+      "rank": 20674,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Менська міська територіальна громада",
       "b": "Олександрівська селищна територіальна громада",
       "a_katottg": "UA74020030000069340",
-      "b_katottg": "UA14120170000011133",
+      "b_katottg": "UA48040190000026236",
       "a_short": "Менська",
       "b_short": "Олександрівська",
       "score": 0.208,
@@ -6006,22 +6838,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 19922
-    },
-    {
-      "a": "Куликівська селищна територіальна громада",
-      "b": "Красносільська сільська територіальна громада",
-      "a_katottg": "UA74100210000053397",
-      "b_katottg": "UA51100190000060999",
-      "a_short": "Куликівська",
-      "b_short": "Красносільська",
-      "score": 0.19,
-      "goals_cosine": 0.192,
-      "geo_score": 0.0,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 25281
+      "rank": 21461,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Коростенська міська територіальна громада",
@@ -6036,28 +6855,15 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 25560
-    },
-    {
-      "a": "Вінницька міська територіальна громада",
-      "b": "Тлумацька міська територіальна громада",
-      "a_katottg": "UA05020030000031457",
-      "b_katottg": "UA26040350000024417",
-      "a_short": "Вінницька",
-      "b_short": "Тлумацька",
-      "score": 0.187,
-      "goals_cosine": 0.186,
-      "geo_score": 0.0,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 26017
+      "rank": 27205,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Вінницька міська територіальна громада",
       "b": "Олександрівська селищна територіальна громада",
       "a_katottg": "UA05020030000031457",
-      "b_katottg": "UA14120170000011133",
+      "b_katottg": "UA48040190000026236",
       "a_short": "Вінницька",
       "b_short": "Олександрівська",
       "score": 0.186,
@@ -6066,7 +6872,26 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 26351
+      "rank": 28129,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Запорізька міська територіальна громада",
+      "b": "Перечинська міська територіальна громада",
+      "a_katottg": "UA23060070000082704",
+      "b_katottg": "UA21100130000055002",
+      "a_short": "Запорізька",
+      "b_short": "Перечинська",
+      "score": 0.184,
+      "goals_cosine": 0.107,
+      "geo_score": 0.0,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 29038,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Березнегуватська селищна територіальна громада",
@@ -6081,7 +6906,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 28228
+      "rank": 29968,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Житомирська міська територіальна громада",
@@ -6096,13 +6923,15 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 28313
+      "rank": 30107,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Тлумацька міська територіальна громада",
       "b": "Олександрівська селищна територіальна громада",
       "a_katottg": "UA26040350000024417",
-      "b_katottg": "UA14120170000011133",
+      "b_katottg": "UA48040190000026236",
       "a_short": "Тлумацька",
       "b_short": "Олександрівська",
       "score": 0.171,
@@ -6111,7 +6940,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 31477
+      "rank": 33181,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Білогородська сільська територіальна громада",
@@ -6126,7 +6957,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 32284
+      "rank": 33924,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Житомирська міська територіальна громада",
@@ -6141,7 +6974,26 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 33868
+      "rank": 35552,
+      "priority_source": "goals",
+      "dream_cosine": null
+    },
+    {
+      "a": "Вінницька міська територіальна громада",
+      "b": "Менська міська територіальна громада",
+      "a_katottg": "UA05020030000031457",
+      "b_katottg": "UA74020030000069340",
+      "a_short": "Вінницька",
+      "b_short": "Менська",
+      "score": 0.155,
+      "goals_cosine": 0.058,
+      "geo_score": 0.0,
+      "mss_network": 0.5,
+      "track": "mixed",
+      "known": false,
+      "rank": 38969,
+      "priority_source": "goals",
+      "dream_cosine": null
     },
     {
       "a": "Хотинська міська територіальна громада",
@@ -6156,37 +7008,9 @@
       "mss_network": 0.5,
       "track": "mixed",
       "known": false,
-      "rank": 42703
-    },
-    {
-      "a": "Запорізька міська територіальна громада",
-      "b": "Перечинська міська територіальна громада",
-      "a_katottg": "UA23060070000082704",
-      "b_katottg": "UA21100130000055002",
-      "a_short": "Запорізька",
-      "b_short": "Перечинська",
-      "score": 0.139,
-      "goals_cosine": 0.107,
-      "geo_score": 0.0,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 42853
-    },
-    {
-      "a": "Вінницька міська територіальна громада",
-      "b": "Менська міська територіальна громада",
-      "a_katottg": "UA05020030000031457",
-      "b_katottg": "UA74020030000069340",
-      "a_short": "Вінницька",
-      "b_short": "Менська",
-      "score": 0.11,
-      "goals_cosine": 0.058,
-      "geo_score": 0.0,
-      "mss_network": 0.5,
-      "track": "mixed",
-      "known": false,
-      "rank": 52817
+      "rank": 44075,
+      "priority_source": "goals",
+      "dream_cosine": null
     }
   ]
 }

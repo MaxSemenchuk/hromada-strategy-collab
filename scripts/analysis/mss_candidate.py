@@ -26,7 +26,10 @@ SIGNAL_LABELS: dict[str, str] = {
     "complementary": "доповнення ресурсів",
     "explicit_ask": "явний запит МСС",
     "network": "мережа МСС",
+    "twinning": "місто-побратим ЄС",
+    "donor": "спільна донорська програма",
     "structural": "ресурси / DREAM",
+    "dream_similar": "схожі проєкти DREAM",
 }
 
 SIGNAL_LABELS_EN: dict[str, str] = {
@@ -35,7 +38,10 @@ SIGNAL_LABELS_EN: dict[str, str] = {
     "complementary": "complementary resources",
     "explicit_ask": "explicit IMC request",
     "network": "IMC network",
+    "twinning": "EU twin city",
+    "donor": "shared donor programme",
     "structural": "resources / DREAM",
+    "dream_similar": "similar DREAM projects",
 }
 
 TRACK_TO_PRIMARY: dict[str, str] = {
@@ -173,6 +179,26 @@ def build_signals(e: dict[str, Any]) -> list[dict[str, str]]:
             }
         )
 
+    flags = set((e.get("social_capital_parts") or {}).get("flags") or [])
+    if "twinning_both" in flags:
+        signals.append(
+            {
+                "id": "twinning",
+                "label_uk": SIGNAL_LABELS["twinning"],
+                "label_en": SIGNAL_LABELS_EN["twinning"],
+                "strength": "high",
+            }
+        )
+    if "shared_donor" in flags:
+        signals.append(
+            {
+                "id": "donor",
+                "label_uk": SIGNAL_LABELS["donor"],
+                "label_en": SIGNAL_LABELS_EN["donor"],
+                "strength": "medium",
+            }
+        )
+
     fiscal = e.get("fiscal_similarity")
     dream = e.get("dream_overlap")
     op = e.get("operational_score")
@@ -193,6 +219,26 @@ def build_signals(e: dict[str, Any]) -> list[dict[str, str]]:
                 }
             )
 
+    dream_sim = e.get("dream_cosine")
+    source = e.get("priority_source") or ""
+    if dream_sim is not None:
+        sim = float(dream_sim)
+        show = (source in ("dream_proxy", "mixed") and sim > 0) or sim >= 0.35
+        if show:
+            strength = _strength_from_score(sim, high=0.35, medium=0.2)
+            if source in ("dream_proxy", "mixed") and STRENGTH_ORDER[strength] < STRENGTH_ORDER[
+                "medium"
+            ]:
+                strength = "medium"
+            signals.append(
+                {
+                    "id": "dream_similar",
+                    "label_uk": SIGNAL_LABELS["dream_similar"],
+                    "label_en": SIGNAL_LABELS_EN["dream_similar"],
+                    "strength": strength,
+                }
+            )
+
     # Stable order: stronger first, then id
     signals.sort(
         key=lambda s: (-STRENGTH_ORDER.get(s["strength"], 0), s["id"]),
@@ -202,6 +248,9 @@ def build_signals(e: dict[str, Any]) -> list[dict[str, str]]:
 
 def discovery_primary_for(e: dict[str, Any], signals: list[dict[str, str]]) -> str:
     track = e.get("track") or ""
+    source = e.get("priority_source") or ""
+    if source in ("dream_proxy", "mixed"):
+        return "dream_similar"
     if track in TRACK_TO_PRIMARY:
         primary = TRACK_TO_PRIMARY[track]
         # mixed: prefer strongest non-network signal if present
@@ -284,6 +333,7 @@ def _short_row(e: dict[str, Any]) -> dict[str, Any]:
         "goals_cosine",
         "geo_score",
         "mss_network",
+        "social_capital",
         "complementary_score",
         "explicit_ask_score",
         "operational_score",

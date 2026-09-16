@@ -26,10 +26,13 @@ RELEASE_CORE_KEYS = (
     "goals_cosine",
     "geo_score",
     "mss_network",
+    "social_capital",
     "known",
     "track",
     "operational_score",
     "template_collision",
+    "dream_cosine",
+    "priority_source",
 )
 
 
@@ -39,7 +42,7 @@ def slim_edge(edge: dict[str, Any]) -> dict[str, Any]:
         if key not in edge:
             continue
         val = edge[key]
-        if key == "operational_score" and val is None:
+        if key in ("operational_score", "dream_cosine") and val is None:
             continue
         out[key] = val
     return out

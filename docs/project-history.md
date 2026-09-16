@@ -655,6 +655,51 @@ operational. **No rematch yet** — matching-edges still the 382-hromada
 matrix. Zakarpattia PIN cluster (Колочава, Міжгір’я, Синевир…) remains
 blocked (Cloudflare error 1009 from KZ).
 
+## DREAM title proxy in combined score (v7.2, 2026-09-16)
+
+Hromadas without parsed Goals were previously unmatchable in `match.py`
+(`recommend_for_no_goals` was a live geo/network/complementary fallback).
+v7.2 keeps the 0.60 / 0.25 / 0.15 weights but the 0.60 slot is **priority**:
+
+- both sides have Goals → 0.90×goals_cosine + 0.10×DREAM-title cosine
+- one or both lack Goals → 0.90×DREAM project-title cosine (Goals text vs
+  titles when mixed)
+- emit DREAM-proxy pairs only if PIN-linked or nearby (geo≥0.85 DREAM↔DREAM,
+  geo≥0.6 mixed) so the release matrix does not explode to ~500k templated
+  «капремонт школи» pairs
+
+This is **not** complementary matching (asymmetric resource/DREAM ↔ Challenges)
+and **not** sector-tag Jaccard (`dream_overlap` stays on `operational_score`).
+`known: true` is never set from DREAM. Thematic/operational slices stay
+Goals–Goals so the stakeholder top-50 does not shift until a rematch+review.
+Run `yarn match` to rebuild the matrix; `yarn test-dream-proxy` is the unit
+gate that does not need the embedding model.
+
+## Social capital in the 0.15 slot (v7.3, 2026-09-16)
+
+The third formula component is no longer a binary KSE/Пліч edge. Weights stay
+`0.60 / 0.25 / 0.15`; the 0.15 slot is **`social_capital`** — readiness /
+social capital for the *pair*:
+
+| Input | Weight | Notes |
+| ----- | ------ | ----- |
+| KSE PIN or Пліч-о-пліч bilateral | 1.00 | same as old `mss_network` floor |
+| Пліч comention | 0.50 | already in `mss_network` |
+| Named neighbour in strategy (explicit-ask 0.95) | 0.70 | «хтось назвав» — not a registry fact |
+| Both use МСС language, same oblast | 0.40 | co-intent, weaker |
+| Both have registry UA–EU twinning | 0.30 | practiced international partnership |
+| One side twinning | — | dropped (hub bias / too dense) |
+| Shared donor programme (not STRATEGY LAB / Ре:Форм) | 0.25 | same cohort rooms |
+| Both have some other domestic IMC | — | dropped (too dense in PIN-heavy Goals corpus) |
+
+Direct ties take **max**; affiliations **add**; cap 1.0. Field `mss_network`
+is unchanged for PIN∩corpus and operational-slice exclusion. Never
+`known: true` from twinning / donors / named. Complementary and HydroBASINS
+stay out (benefit and hydrology, not trust).
+
+Apply without rematch: `yarn export-matching-edges` (rescores existing
+goals+geo). Gate: `yarn test-social-capital`.
+
 ---
 
 ## Stakeholder artifacts

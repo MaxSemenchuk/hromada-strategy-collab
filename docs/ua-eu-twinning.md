@@ -5,8 +5,11 @@ Research notes (2026-07-29 layer build; narrative insights 2026-08-03).
 [`twinning-partners.json`](../data/releases/twinning-partners.json).
 Sources: [external-data-sources.md](./external-data-sources.md#skew--germanukrainian-municipal-partnerships-twinning).
 
-Do **not** fold twinning into v7 combined `score`. Product label:
-`місто-побратим ЄС`.
+Do **not** treat twinning as Law 1508-VII МСС, and never set `known: true` from
+it. Registry-confidence twinning (SKEW / decentralization.gov.ua) is a **weak
+pairwise input** to `social_capital` (the 0.15 readiness slot: both sides
+practiced an international partnership). Product overlay label stays
+`місто-побратим ЄС` — node highlight, not a domestic IMC edge.
 
 ---
 

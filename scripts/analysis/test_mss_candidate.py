@@ -73,6 +73,24 @@ def test_signals_and_primary() -> None:
     assert any(s["id"] == "geo" for s in operational["signals"])
     assert any(s["id"] == "structural" for s in operational["signals"])
 
+    proxy = {
+        "track": "operational",
+        "goals_cosine": 0.0,
+        "dream_cosine": 0.42,
+        "geo_score": 0.9,
+        "mss_network": 0,
+        "priority_source": "dream_proxy",
+        "known": False,
+        "suggested_theme": "Освіта",
+        "suggested_theme_id": "education",
+        "suggested_form": "спільний проєкт",
+        "suggested_form_id": "joint_project",
+        "suggest_confidence": "low",
+    }
+    annotate_candidate(proxy)
+    assert proxy["discovery_primary"] == "dream_similar"
+    assert any(s["id"] == "dream_similar" for s in proxy["signals"])
+
     known = {
         "track": "mixed",
         "goals_cosine": 0.1,

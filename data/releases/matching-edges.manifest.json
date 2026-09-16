@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-15T18:10:37.098940+00:00",
+  "generatedAt": "2026-09-16T12:11:48.019504+00:00",
   "pairCount": 72760,
   "knownValidationPairs": 11,
-  "method": "v7.1: 60% goals_cosine (hierarchy-aware; 0.65 bipartite + 0.35 centroid) + 25% KSE geo + 15% KSE mss_network",
+  "method": "v7.3: 60% priority (Goals cosine; 10% DREAM-title blend when both exist; DREAM titles proxy when Goals missing) + 25% KSE geo + 15% social_capital (mss_network floor + named/explicit-ask + twinning + shared donors). Complementary DREAM\u2194Challenges and basin stay separate layers.",
   "model": "intfloat/multilingual-e5-small",
   "license": "CC BY 4.0 \u2014 see DATA-LICENSE.md",
   "storage": {
@@ -26,8 +26,14 @@
     "geoThematicMax": 0.35,
     "geoOperationalMin": 0.85
   },
+  "socialCapital": {
+    "note": "0.15 slot is social_capital (readiness). mss_network stays the KSE|\u041f\u043b\u0456\u0447 pairwise field. Never known=true from twinning/donors/named.",
+    "annotated": 72760,
+    "positive": 8409,
+    "aboveMssNetwork": 8015
+  },
   "operationalBoost": {
-    "note": "Extra fields on edges; v7 combined-score weights unchanged from v6",
+    "note": "Extra fields on edges; do not fold sector-tag dream_overlap into combined score",
     "fields": [
       "fiscal_similarity",
       "dream_overlap",
@@ -95,5 +101,22 @@
       "path": "matching-edges.complementary.json",
       "note": "Separate yarn complementary-match \u2014 resource/DREAM \u2194 Challenges"
     }
+  },
+  "dreamPriority": {
+    "note": "DREAM project-title cosine fills the 0.60 priority slot when a side lacks Goals (dream_proxy / mixed). Small 10% blend when both have Goals. Not sector-tag Jaccard. Complementary layer unchanged.",
+    "counts": {
+      "goals": 0,
+      "mixed": 0,
+      "dream_proxy": 0
+    }
+  },
+  "pinCorpusOverlap": {
+    "path": "matching-edges.pin-corpus.json",
+    "count": 412,
+    "curatedKnown": 11,
+    "otherPinCorpus": 401,
+    "inTopN": 28,
+    "topN": 50,
+    "note": "All mss_network>0 pairs in the scored matrix (Goals\u2013Goals plus DREAM-title proxy when a side has no strategy). Curated known=true stays the hard regression set; this file is the broader KSE check."
   }
 }

@@ -11,7 +11,7 @@ command list; only non-obvious environment caveats are documented here.
   `yarn structure-hromada … --write-release`, optional `yarn export-hromadas` from a
   research-log snapshot (commands in `README.md`).
 - **Python analysis scripts** (`scripts/analysis/*.py`) — offline corpus matching;
-  canon is `yarn match` → `match.py` v7.1.
+  canon is `yarn match` → `match.py` v7.3.
 
 ### Node / yarn gotchas
 - The active `node` is `/exec-daemon/node` (v22.x) and cannot be robustly overridden
@@ -36,7 +36,7 @@ command list; only non-obvious environment caveats are documented here.
   Legacy research scripts under `scripts/analysis/legacy/` may additionally need `scipy`,
   `networkx`, and `openpyxl`.
 - **Canonical commands** (self-contained — they resolve their own paths, no scratch dir needed):
-  `yarn match` (v7.1 scoring → `data/releases/matching-edges.json`) and `yarn test-known-pairs`
+  `yarn match` (v7.3 scoring → `data/releases/matching-edges.json`) and `yarn test-known-pairs`
   (regression check that the known МСС pairs rank well). Use these as the hello-world.
 - **Legacy scripts** live in `scripts/analysis/legacy/` (e.g. `matching23.py`,
   `embed_matching_v5.py`). They read/write hard-coded, CWD-relative filenames and expect

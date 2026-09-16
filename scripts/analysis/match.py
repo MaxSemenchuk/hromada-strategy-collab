@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
 """
-Pairwise hromada matching v7.1 — hierarchy-aware goals + KSE covariates.
+Pairwise hromada matching v7.3 — hierarchy-aware goals + DREAM title proxy + KSE.
 
 Combines mean-centered sub-goal embeddings (v5 DF-weighting) with KSE enrichment:
-  60% goals_cosine + 25% geo + 15% mss_network
+  60% priority + 25% geo + 15% social_capital
+
+priority occupies the old goals_cosine slot:
+  both have Goals          → 0.90×goals_cosine + 0.10×dream_cosine (dream optional)
+  one/both lack Goals      → 0.90×DREAM title cosine (or Goals↔DREAM-title cross)
+social_capital (0.15) is readiness / social capital: KSE/Пліч `mss_network`
+is the floor; named/explicit-ask, UA–EU twinning, shared donors add at lower
+weight (see social_capital.py). Never known=true from those extras.
+  complementary DREAM↔Challenges stays a separate layer; sector-tag Jaccard
+  (dream_overlap) stays on operational_score only; basin stays map context.
 
 v7 goals_cosine: when both sides have operational lines (from goals-hierarchy.json
 or parsed Goals text), blend 0.65×operational_sim + 0.35×strategic_sim; else
@@ -47,7 +56,21 @@ from sentence_transformers import SentenceTransformer
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 from edge_io import write_release_edges, write_rich_cache  # noqa: E402
+from dream_priority import (  # noqa: E402
+    SOURCE_DREAM,
+    SOURCE_GOALS,
+    SOURCE_MIXED,
+    WEIGHT_GEO,
+    WEIGHT_GOALS,
+    WEIGHT_SOCIAL,
+    combined_match_score,
+    has_usable_dream_proxy,
+    keep_priority_edge,
+    load_dream_lines_by_katottg,
+    priority_channel,
+)
 from enrich_from_kse import geo_score, mss_network_score  # noqa: E402
+from social_capital import social_capital_score  # noqa: E402
 from goals_hierarchy import load_hierarchy_index, record_subgoals  # noqa: E402
 from tracks import assign_tracks  # noqa: E402
 
@@ -69,9 +92,7 @@ KNOWN_PAIRS = {
     frozenset(["Клішковецька сільська територіальна громада", "Рукшинська сільська територіальна громада"]),
 }
 
-WEIGHT_GOALS = 0.60
-WEIGHT_GEO = 0.25
-WEIGHT_MSS = 0.15
+WEIGHT_MSS = WEIGHT_SOCIAL  # back-compat: 0.15 slot is social_capital
 # When both sides have operational goals
 WEIGHT_OPS_IN_GOALS = 0.65
 WEIGHT_STRAT_IN_GOALS = 0.35
@@ -80,25 +101,54 @@ WEIGHT_BIPARTITE = 0.65
 WEIGHT_CENTROID = 0.35
 
 
+def _has_parsed_goals(row: dict) -> bool:
+    return row.get("SourceQuality") in ("full-strategy", "partial", "proxy-info") and bool(
+        (row.get("Goals") or "").strip()
+    )
+
+
 def load_hromadas(path: Path) -> list[dict]:
+    """Goals-ready rows only — used by template-collision / hierarchy tests."""
     raw = json.loads(path.read_text(encoding="utf-8"))
     rows = raw if isinstance(raw, list) else raw.get("list", [])
-    return [
-        r
-        for r in rows
-        if r.get("SourceQuality") in ("full-strategy", "partial", "proxy-info")
-        and (r.get("Goals") or "").strip()
-    ]
+    return [r for r in rows if _has_parsed_goals(r)]
+
+
+def load_matchable(path: Path) -> list[dict]:
+    """Goals-ready rows plus DREAM-only rows with enough project titles to proxy."""
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    rows = raw if isinstance(raw, list) else raw.get("list", [])
+    dream_by_kat = load_dream_lines_by_katottg()
+    out: list[dict] = []
+    seen: set[str] = set()
+    for r in rows:
+        kat = (r.get("Katottg") or r.get("KATOTTG") or r.get("Koatuu / Katottg") or "").strip()
+        name = (r.get("Name") or "").strip()
+        key = kat or name
+        if not key or key in seen:
+            continue
+        goals_ok = _has_parsed_goals(r)
+        dream_ok = has_usable_dream_proxy(dream_by_kat.get(kat) or [])
+        if not goals_ok and not dream_ok:
+            continue
+        seen.add(key)
+        out.append(r)
+    return out
 
 
 def build_records(hromadas: list[dict]) -> list[dict]:
     hierarchy = load_hierarchy_index()
+    dream_by_kat = load_dream_lines_by_katottg()
     records = []
     for r in hromadas:
         goals = (r.get("Goals") or "").strip()
         name = r.get("Name") or ""
         katottg = r.get("Katottg") or r.get("KATOTTG") or r.get("Koatuu / Katottg")
+        kat = (katottg or "").strip()
         strat, ops, all_lines = record_subgoals(name, katottg, goals, hierarchy)
+        has_goals = _has_parsed_goals(r)
+        dream_lines = dream_by_kat.get(kat) or []
+        subgoals = all_lines if all_lines else ([goals] if has_goals and goals else [])
         records.append(
             {
                 "name": name,
@@ -108,7 +158,9 @@ def build_records(hromadas: list[dict]) -> list[dict]:
                 "goals": goals,
                 "strategic": strat,
                 "operational": ops,
-                "subgoals": all_lines if all_lines else [goals],
+                "subgoals": subgoals,
+                "has_goals": has_goals,
+                "dream_lines": dream_lines,
             }
         )
     return records
@@ -357,16 +409,74 @@ def template_collision_fraction(
     return min(frac(na_lines, normed_b), frac(nb_lines, normed_a))
 
 
+def _scatter_submatrix(
+    n: int,
+    ids: list[int],
+    sub: np.ndarray,
+    *,
+    fill: float = 0.0,
+) -> np.ndarray:
+    """Lift a compact ids×ids similarity matrix onto an n×n grid."""
+    out = np.full((n, n), fill, dtype=float)
+    if not ids:
+        return out
+    idx = np.asarray(ids, dtype=int)
+    out[np.ix_(idx, idx)] = sub
+    return out
+
+
 def match_all(records: list[dict], model: SentenceTransformer) -> list[dict]:
     n = len(records)
-    goals_mat, goals_evidence = goals_similarity(records, model)
-    edges = []
+    g_ids = [i for i, r in enumerate(records) if r["has_goals"]]
+    d_ids = [i for i, r in enumerate(records) if r["dream_lines"]]
+
+    if g_ids:
+        goals_sub, goals_ev_sub = goals_similarity([records[i] for i in g_ids], model)
+    else:
+        goals_sub, goals_ev_sub = np.zeros((0, 0)), {}
+    goals_mat = _scatter_submatrix(n, g_ids, goals_sub, fill=0.0)
+    goals_evidence: Evidence = {}
+    for (a, b), ev in goals_ev_sub.items():
+        goals_evidence[(g_ids[a], g_ids[b])] = ev
+
+    dream_mat = np.full((n, n), np.nan)
+    dream_evidence: Evidence = {}
+    if d_ids:
+        dream_recs = [{"subgoals": records[i]["dream_lines"]} for i in d_ids]
+        dream_sub, dream_ev_sub = _indexed_similarity(dream_recs, model, "subgoals")
+        dream_mat = _scatter_submatrix(n, d_ids, dream_sub, fill=np.nan)
+        for (a, b), ev in dream_ev_sub.items():
+            dream_evidence[(d_ids[a], d_ids[b])] = ev
+
+    prio_recs = [
+        {"subgoals": (r["subgoals"] if r["has_goals"] else r["dream_lines"])} for r in records
+    ]
+    prio_mat, prio_ev = _indexed_similarity(prio_recs, model, "subgoals")
+
+    edges: list[dict] = []
+    kept_by_source: dict[str, int] = {}
 
     for i in range(n):
         for j in range(i + 1, n):
             if _is_homonym_pair(records[i], records[j]):
                 continue
-            g = float(goals_mat[i, j])
+            both_goals = records[i]["has_goals"] and records[j]["has_goals"]
+            g = float(goals_mat[i, j]) if both_goals else 0.0
+            dream_val = dream_mat[i, j]
+            if both_goals:
+                dream_cosine = None if np.isnan(dream_val) else float(dream_val)
+            elif not records[i]["has_goals"] and not records[j]["has_goals"]:
+                dream_cosine = None if np.isnan(dream_val) else float(dream_val)
+            else:
+                # Goals↔DREAM-only compared in the joint priority-line space
+                # so strategy text can match project titles.
+                dream_cosine = float(prio_mat[i, j])
+            p, source = priority_channel(
+                goals_cosine=g,
+                dream_cosine=dream_cosine,
+                has_goals_a=records[i]["has_goals"],
+                has_goals_b=records[j]["has_goals"],
+            )
             geo = geo_score(
                 records[i]["katottg"],
                 records[j]["katottg"],
@@ -376,9 +486,20 @@ def match_all(records: list[dict], model: SentenceTransformer) -> list[dict]:
                 records[j]["rayon"],
             )
             mss = mss_network_score(records[i]["katottg"], records[j]["katottg"])
-            combined = WEIGHT_GOALS * g + WEIGHT_GEO * geo + WEIGHT_MSS * mss
+            if not keep_priority_edge(source, geo_score=geo, mss_network=mss):
+                continue
+            sc, sc_parts = social_capital_score(
+                records[i]["katottg"],
+                records[j]["katottg"],
+                name_a=records[i]["name"],
+                name_b=records[j]["name"],
+                mss_network=mss,
+            )
+            combined = combined_match_score(p, geo, sc)
             pk = frozenset([records[i]["name"], records[j]["name"]])
-            collision = template_collision_fraction(records[i]["subgoals"], records[j]["subgoals"])
+            collision_lines_a = records[i]["subgoals"] if records[i]["has_goals"] else []
+            collision_lines_b = records[j]["subgoals"] if records[j]["has_goals"] else []
+            collision = template_collision_fraction(collision_lines_a, collision_lines_b)
             edge = {
                 "a": records[i]["name"],
                 "b": records[j]["name"],
@@ -388,13 +509,33 @@ def match_all(records: list[dict], model: SentenceTransformer) -> list[dict]:
                 "goals_cosine": round(g, 3),
                 "geo_score": round(geo, 3),
                 "mss_network": round(mss, 3),
+                "social_capital": round(sc, 3),
+                "social_capital_parts": sc_parts,
                 "known": pk in KNOWN_PAIRS,
                 "template_collision": round(collision, 3),
+                "priority_source": source,
             }
+            if dream_cosine is not None:
+                edge["dream_cosine"] = round(float(dream_cosine), 3)
             ev = goals_evidence.get((i, j))
             if ev is not None:
                 edge["goals_evidence"] = {"a": ev[0], "b": ev[1], "similarity": round(ev[2], 3)}
+            elif source != SOURCE_GOALS:
+                pev = prio_ev.get((i, j)) or dream_evidence.get((i, j))
+                if pev is not None:
+                    edge["dream_evidence"] = {
+                        "a": pev[0],
+                        "b": pev[1],
+                        "similarity": round(pev[2], 3),
+                    }
             edges.append(edge)
+            kept_by_source[source] = kept_by_source.get(source, 0) + 1
+
+    print(
+        f"Kept edges by priority_source: goals={kept_by_source.get(SOURCE_GOALS, 0)} "
+        f"mixed={kept_by_source.get(SOURCE_MIXED, 0)} "
+        f"dream_proxy={kept_by_source.get(SOURCE_DREAM, 0)}"
+    )
     return sorted(edges, key=lambda e: -e["score"])
 
 
@@ -411,9 +552,14 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=ROOT / "data" / "releases" / "matching-edges.json")
     args = parser.parse_args()
 
-    hromadas = load_hromadas(args.input)
+    hromadas = load_matchable(args.input)
     records = build_records(hromadas)
-    print(f"Matching {len(records)} hromadas from {args.input}...")
+    n_goals = sum(1 for r in records if r["has_goals"])
+    n_dream_only = sum(1 for r in records if not r["has_goals"])
+    print(
+        f"Matching {len(records)} hromadas from {args.input} "
+        f"({n_goals} with Goals, {n_dream_only} DREAM-proxy)..."
+    )
 
     from sentence_transformers import models as st_models
 
@@ -445,7 +591,7 @@ def main() -> None:
         tag = " KNOWN" if e["known"] else ""
         print(
             f"{idx:>2}. {e['score']:.3f} [{e['track']}] "
-            f"({e['goals_cosine']}/{e['geo_score']}/{e['mss_network']}) "
+            f"({e['goals_cosine']}/{e['geo_score']}/{e.get('social_capital', e['mss_network'])}) "
             f"{e['a'][:28]} <-> {e['b'][:28]}{tag}"
         )
 

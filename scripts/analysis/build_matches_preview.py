@@ -30,6 +30,7 @@ def slim(e: dict) -> dict:
         "goals_cosine": e.get("goals_cosine"),
         "geo_score": e.get("geo_score"),
         "mss_network": e.get("mss_network"),
+        "social_capital": e.get("social_capital"),
         "known": bool(e.get("known")),
         "track": e.get("track"),
         "a_short": short_name(e["a"]),

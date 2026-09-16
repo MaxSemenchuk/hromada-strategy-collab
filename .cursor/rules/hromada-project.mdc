@@ -53,26 +53,32 @@ networks as permanent. Write-up:
 
 ## Matching pipeline (current)
 
-`yarn match` → `scripts/analysis/match.py` v7.1:
-`0.60 × goals_cosine + 0.25 × geo + 0.15 × mss_network`
+`yarn match` → `scripts/analysis/match.py` v7.3:
+`0.60 × priority + 0.25 × geo + 0.15 × social_capital`
 
-Goals: mean-centered sub-goal embeddings (`multilingual-e5-small`). When
-`goals-hierarchy.json` (or parsed Goals text) has operational lines on both
-sides, goals_cosine blends **0.65×operational + 0.35×strategic**. Each pairwise
-goals similarity further blends **0.65×bipartite + 0.35×document-centroid**
-(length / hub mitigation). After changes, run `yarn test-length-norm`,
-`yarn test-known-pairs` and `yarn report-pin-corpus`.
+`priority` is Goals cosine when both sides have strategy text (plus **0.10 ×
+DREAM title cosine** if both also have DREAM projects). When a side has no
+Goals, DREAM project titles fill that same 0.60 slot (0.90×, mixed or
+`dream_proxy`). `social_capital` is readiness / social capital: KSE/Пліч
+`mss_network` is the floor; named neighbour / explicit-ask, **both-sides**
+registry UA–EU twinning, and shared donor programmes add at lower weight (capped at 1.0).
+One-sided twinning is not a pair signal. Never `known: true` from those extras.
+After changes, run `yarn test-length-norm`,
+`yarn test-known-pairs`, `yarn test-social-capital`, `yarn test-dream-proxy`
+and `yarn report-pin-corpus`.
 
-Separate layers (do not fold into combined `score`):
-- `yarn complementary-match` — resource/DREAM ↔ Challenges
-- `yarn extract-mss-intents` — explicit МСС language → `mss-intents.json`
-- `yarn twinning` — UA–EU twinning (SKEW DE–UA registry + strategy mentions) → `twinning-partners.json`
-- `yarn hromada-resources` / `yarn fetch-dream` — structural + DREAM covariates
+Still separate (do **not** fold into combined `score`):
+- `yarn complementary-match` — resource/DREAM ↔ Challenges (asymmetric;
+  different from DREAM-title *similarity*; this is «навіщо», not trust)
+- HydroBASINS / `same_basin` — map underlay only
+- `yarn hromada-resources` / `yarn fetch-dream` — structural covariates
+  (`dream_overlap` stays on operational_score)
 
 PIN map (`yarn graph-pin-matching`): paint **thematic**, **operational**,
 **complementary**, and **explicit_ask** overlays separately — never top-N by
-combined `score` (sparse corpus → geo bias). **Twinning** is a node highlight
-layer (EU sister cities in the hromada card + indigo glow on map/graph).
+combined `score` (sparse corpus → geo bias). **Twinning** stays a node highlight
+layer (EU sister cities in the hromada card + indigo glow) *and* a weak
+pairwise input to `social_capital`.
 
 ## Hard rules
 
@@ -85,7 +91,7 @@ layer (EU sister cities in the hromada card + indigo glow on map/graph).
 7. Product unit is an **МСС candidate agreement** (`package` theme·form +
    `signals[]`). Do not present combined `score` as «strategy match». Signal
    labels (`схожа стратегія` / `зручний сусід` / `доповнення` / `явний запит` /
-   `місто-побратим ЄС`) are discovery evidence — **not** the five legal IMC forms.
+   `місто-побратим ЄС` / `схожі проєкти DREAM`) are discovery evidence — **not** the five legal IMC forms.
    Browse by hypothesis strength; form filter is secondary (do not primary-nav by
    form buckets — most suggestions default to спільний проєкт).
 8. `suggested_theme` / `suggested_form` / `package` are IMC-package hypotheses
