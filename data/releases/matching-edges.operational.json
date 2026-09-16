@@ -4,12 +4,19 @@
     "b": "Красноградська міська територіальна громада",
     "a_katottg": "UA53080190000081150",
     "b_katottg": "UA63060050000033240",
-    "score": 0.452,
-    "goals_cosine": 0.336,
+    "score": 0.451,
+    "goals_cosine": 0.335,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "2.2. Формування привабливих і функціональних публічних просторів",
       "b": "В3. Формування комфортного, безпечного та естетично привабливого життєвого середовища",
@@ -57,13 +64,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Михайлівська селищна територіальна громада",
@@ -74,8 +75,15 @@
     "goals_cosine": 0.163,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Забезпечення розвитку сільського господарства",
       "b": "бізнес, розвиток фермерського господарства.",
@@ -123,13 +131,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Вишнівська селищна територіальна громада",
@@ -137,11 +139,18 @@
     "a_katottg": "UA12040070000083117",
     "b_katottg": "UA12040230000099388",
     "score": 0.275,
-    "goals_cosine": 0.041,
+    "goals_cosine": 0.042,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Створення безпечного середовища і охорона довкілля.",
       "b": "ОЦ 2.4. Підвищення рівня безпеки в громаді, у тому числі - екологічної.",
@@ -189,13 +198,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Козинська сільська територіальна громада",
@@ -203,11 +206,18 @@
     "a_katottg": "UA56040130000011543",
     "b_katottg": "UA56040250000064519",
     "score": 0.258,
-    "goals_cosine": 0.014,
+    "goals_cosine": 0.013,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "B.2. Туристично-культурний потенціал",
       "b": "Розвиток та популяризація туристичного потенціалу громади.",
@@ -255,25 +265,26 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Гребінківська міська територіальна громада",
     "b": "Пирятинська міська територіальна громада",
     "a_katottg": "UA53040010000091190",
     "b_katottg": "UA53040090000048649",
-    "score": 0.293,
-    "goals_cosine": 0.071,
+    "score": 0.291,
+    "goals_cosine": 0.069,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "В.4.Ефективне врядування, активна громада",
       "b": "Підвищення активності та участі громадян у місцевому розвитку та спроможності місцевого самоврядування.",
@@ -321,29 +332,30 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
     "b": "Райгородська сільська територіальна громада",
     "a_katottg": "UA05100010000023453",
     "b_katottg": "UA05040190000039450",
-    "score": 0.362,
-    "goals_cosine": 0.187,
+    "score": 0.363,
+    "goals_cosine": 0.188,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Стратегічна ціль 1: Розвиток малого та середнього підприємництва",
       "b": "СТРАТЕГІЧНА ЦІЛЬ 1. КОНКУРЕНТОЗДАТНИЙ РЕГІОН НА ОСНОВІ ІННОВАЦІЙНОГО ТА СТАЛОГО РОЗВИТКУ",
-      "similarity": -0.015
+      "similarity": -0.014
     },
     "track": "operational",
     "fiscal_similarity": 0.864,
@@ -387,13 +399,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Апостолівська міська територіальна громада",
@@ -404,12 +410,19 @@
     "goals_cosine": 0.457,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Якісні та доступні публічні послуги задовольняють потреби усіх груп населення",
       "b": "Забезпечення населення якісними комунальними послугами, підвищення ефективності роботи житлово-комунального господарства громади",
-      "similarity": 0.542
+      "similarity": 0.543
     },
     "track": "operational",
     "fiscal_similarity": 0.812,
@@ -453,25 +466,26 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Козельщинська селищна територіальна громада",
     "b": "Новогалещинська селищна територіальна громада",
     "a_katottg": "UA53020090000045206",
     "b_katottg": "UA53020130000091122",
-    "score": 0.345,
-    "goals_cosine": 0.158,
+    "score": 0.344,
+    "goals_cosine": 0.157,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "2.1. Залучення інвестицій та підвищення економічної активності малого і середнього бізнесу",
       "b": "Впровадження інновацій та розвиток інвестиційної діяльності",
@@ -519,25 +533,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Пісочинська селищна територіальна громада",
     "b": "Солоницівська селищна територіальна громада",
     "a_katottg": "UA63120210000075842",
     "b_katottg": "UA63120250000081463",
-    "score": 0.525,
+    "score": 0.515,
     "goals_cosine": 0.458,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.3,
     "goals_evidence": {
       "a": "Операційна ціль 3.2. Розбудова якісної освітньої інфраструктури.",
       "b": "Оперативна ціль 3.2 Розвиток освітнього середовища",
@@ -585,25 +601,26 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Курилівська сільська територіальна громада",
     "b": "Петропавлівська сільська територіальна громада",
     "a_katottg": "UA63080110000021737",
     "b_katottg": "UA63080130000077600",
-    "score": 0.369,
-    "goals_cosine": 0.198,
+    "score": 0.368,
+    "goals_cosine": 0.197,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "В.1. Організація доступної та ефективної системи надання медичних послуг і створення умов для здорового способу життя населення",
       "b": "Оперативна ціль 1.2. Реалізація комплексної та ефективної соціальної і медичної політики",
@@ -651,25 +668,26 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Білокриницька сільська територіальна громада",
     "b": "Корнинська сільська територіальна громада",
     "a_katottg": "UA56060050000010769",
     "b_katottg": "UA56060330000075139",
-    "score": 0.545,
-    "goals_cosine": 0.491,
+    "score": 0.544,
+    "goals_cosine": 0.49,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Створення умов для розвитку малого та середнього бізнесу в громаді",
       "b": "Стимулювання розвитку малого та середнього бізнесу",
@@ -717,13 +735,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Новогалещинська селищна територіальна громада",
@@ -734,8 +746,15 @@
     "goals_cosine": 0.339,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.071,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Впровадження сучасних технологій енергоефективності",
       "b": "Забезпечення енергозбереження та формування енергоефективного середовища.",
@@ -783,25 +802,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "П'ятихатська міська територіальна громада",
     "b": "Саксаганська сільська територіальна громада",
     "a_katottg": "UA12040210000039759",
     "b_katottg": "UA12040230000099388",
-    "score": 0.56,
-    "goals_cosine": 0.517,
+    "score": 0.559,
+    "goals_cosine": 0.516,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.498,
     "goals_evidence": {
       "a": "2.2 Розвиток та покращення дорожньо-транспортної інфраструктури",
       "b": "ОЦ 2.1. Вдосконалення транспортної системи та модернізація технічної (інженерної) інфраструктури",
@@ -830,6 +851,12 @@
     },
     "signals": [
       {
+        "id": "dream_similar",
+        "label_uk": "схожі проєкти DREAM",
+        "label_en": "similar DREAM projects",
+        "strength": "high"
+      },
+      {
         "id": "geo",
         "label_uk": "зручний сусід",
         "label_en": "convenient neighbour",
@@ -849,25 +876,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Рівненська міська територіальна громада",
     "b": "Олександрійська сільська територіальна громада",
     "a_katottg": "UA56060470000086729",
     "b_katottg": "UA56060430000081857",
-    "score": 0.327,
-    "goals_cosine": 0.128,
+    "score": 0.339,
+    "goals_cosine": 0.129,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.329,
     "goals_evidence": {
       "a": "розвиток підприємництва, залучення інвестицій, створення робочих місць, підтримка стартапів та інновацій.",
       "b": "Стратегічна ціль 1. Покращення інвестиційного та бізнесклімату в громаді",
@@ -915,25 +944,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Лубенська міська територіальна громада",
     "b": "Оржицька селищна територіальна громада",
     "a_katottg": "UA53040030000088898",
     "b_katottg": "UA53040070000083099",
-    "score": 0.324,
+    "score": 0.323,
     "goals_cosine": 0.185,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.182,
     "goals_evidence": {
       "a": "В 4. Активізація участі громадськості у житті громади",
       "b": "Посилити участь громадян в прийнятті управлінських рішень та розвитку громади",
@@ -981,13 +1012,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Галицька міська територіальна громада",
@@ -998,8 +1023,15 @@
     "goals_cosine": 0.4,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Ціль 3. Розвинута економіка та туристична пропозиція",
       "b": "Ціль 1. Сприятливе середовище для економіки (МСБ, с/г переробка, туризм)",
@@ -1047,13 +1079,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Рівненська міська територіальна громада",
@@ -1064,12 +1090,19 @@
     "goals_cosine": 0.314,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Стратегічна ціль 2: Комфортна та безпечна громада",
       "b": "Стратегічна ціль 4. Екологічно чиста громада",
-      "similarity": 0.356
+      "similarity": 0.355
     },
     "track": "operational",
     "fiscal_similarity": 0.677,
@@ -1113,25 +1146,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Боянська сільська територіальна громада",
     "b": "Волоківська сільська територіальна громада",
     "a_katottg": "UA73060010000052133",
     "b_katottg": "UA73060110000070017",
-    "score": 0.36,
+    "score": 0.345,
     "goals_cosine": 0.246,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.0,
     "goals_evidence": {
       "a": "Модернізація транспортно-логістичної інфраструктури.",
       "b": "Якісна дорожня інфраструктура та доступні транспортні послуги",
@@ -1179,25 +1214,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Васильківська селищна територіальна громада",
     "b": "Дубовиківська сільська територіальна громада",
     "a_katottg": "UA12140030000091432",
     "b_katottg": "UA12140070000025486",
-    "score": 0.44,
+    "score": 0.447,
     "goals_cosine": 0.316,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.433,
     "goals_evidence": {
       "a": "3.1. Забезпечення безпеки та захисту громадян і громадянок",
       "b": "Оперативна ціль 4.4. Створення безпечного середовища у громаді та забезпечення громадської безпеки",
@@ -1226,6 +1263,12 @@
     },
     "signals": [
       {
+        "id": "dream_similar",
+        "label_uk": "схожі проєкти DREAM",
+        "label_en": "similar DREAM projects",
+        "strength": "high"
+      },
+      {
         "id": "geo",
         "label_uk": "зручний сусід",
         "label_en": "convenient neighbour",
@@ -1245,25 +1288,26 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Малинська сільська територіальна громада",
     "b": "Полицька сільська територіальна громада",
     "a_katottg": "UA56060370000023028",
     "b_katottg": "UA56020130000066130",
-    "score": 0.479,
-    "goals_cosine": 0.444,
+    "score": 0.478,
+    "goals_cosine": 0.443,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Розвиток системи управління твердими побутовими відходами",
       "b": "Вдосконалення системи управління відходами",
@@ -1311,13 +1355,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Єланецька селищна територіальна громада",
@@ -1328,8 +1366,15 @@
     "goals_cosine": 0.419,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Оперативна ціль А3. Підтримка розвитку підприємництва та залучення інвестицій",
       "b": "Оперативна ціль 1.2. Залучення інвестицій та формування позитивного інвестиційного клімату",
@@ -1377,25 +1422,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Львівська міська територіальна громада",
     "b": "Підберізцівська сільська територіальна громада",
     "a_katottg": "UA46060250000025047",
     "b_katottg": "UA46060350000036006",
-    "score": 0.402,
+    "score": 0.421,
     "goals_cosine": 0.254,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.565,
     "goals_evidence": {
       "a": "Напрям VII. Співпраця з міжнародними партнерами — агломерація, глобальні цілі, інвестиції",
       "b": "Стратегічна ціль 2. КОНКУРЕНТОСПРОМОЖНА ЕКОНОМІКА",
@@ -1424,6 +1471,12 @@
     },
     "signals": [
       {
+        "id": "dream_similar",
+        "label_uk": "схожі проєкти DREAM",
+        "label_en": "similar DREAM projects",
+        "strength": "high"
+      },
+      {
         "id": "geo",
         "label_uk": "зручний сусід",
         "label_en": "convenient neighbour",
@@ -1443,13 +1496,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Лубенська міська територіальна громада",
@@ -1460,8 +1507,15 @@
     "goals_cosine": 0.344,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Б 1. Розвиток житлово-комунального господарства та інфраструктури",
       "b": "С.1. Комплексний розвиток інфраструктури населених пунктів",
@@ -1509,25 +1563,26 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Боремельська сільська територіальна громада",
     "b": "Острожецька сільська територіальна громада",
     "a_katottg": "UA56040030000031906",
     "b_katottg": "UA56040210000047101",
-    "score": 0.388,
-    "goals_cosine": 0.292,
+    "score": 0.387,
+    "goals_cosine": 0.291,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Створення сприятливих умов для розвитку малого та середнього бізнесу",
       "b": "Сприяння розвитку малого та середнього бізнесу",
@@ -1575,25 +1630,26 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Герцаївська міська територіальна громада",
     "b": "Недобоївська сільська територіальна громада",
     "a_katottg": "UA73060130000078771",
     "b_katottg": "UA73040110000040354",
-    "score": 0.473,
-    "goals_cosine": 0.434,
+    "score": 0.472,
+    "goals_cosine": 0.433,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Стратегічна ціль 1. Покращення просторового упорядкування, управління нерухомістю, охорони навколишнього середовища та природи, а також водного господарства",
       "b": "Стратегічна ціль 1. Стале економічне зростання на основі стратегічного розташування та транспортної доступності громади, місцевої спеціалізації на садівництві та міцних мереж співпраці Включає такі операційні цілі Операційна",
@@ -1641,29 +1697,30 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Вишнівська селищна територіальна громада",
     "b": "Жовтоводська міська територіальна громада",
     "a_katottg": "UA12040070000083117",
     "b_katottg": "UA12040110000091524",
-    "score": 0.268,
-    "goals_cosine": 0.092,
+    "score": 0.267,
+    "goals_cosine": 0.091,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Створення безпечного середовища і охорона довкілля.",
       "b": "Б1. Створення умов для поліпшення стану довкілля",
-      "similarity": 0.575
+      "similarity": 0.574
     },
     "track": "operational",
     "fiscal_similarity": 0.993,
@@ -1707,25 +1764,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Малоданилівська селищна територіальна громада",
     "b": "Пісочинська селищна територіальна громада",
     "a_katottg": "UA63120130000010762",
     "b_katottg": "UA63120210000075842",
-    "score": 0.633,
+    "score": 0.605,
     "goals_cosine": 0.638,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.173,
     "goals_evidence": {
       "a": "ОПЕРАТИВНА ЦІЛЬ 1.5. Протидія військовим і безпековим викликам",
       "b": "Операційна ціль 2.3. Безпечна і згуртована громада.",
@@ -1773,13 +1832,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Краснолуцька сільська територіальна громада",
@@ -1787,11 +1840,18 @@
     "a_katottg": "UA53060170000064030",
     "b_katottg": "UA59060130000041204",
     "score": 0.429,
-    "goals_cosine": 0.299,
+    "goals_cosine": 0.298,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "1.3. Підвищення безпеки життя у громаді.",
       "b": "Підвищення безпеки життєдіяльності",
@@ -1839,13 +1899,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Машівська селищна територіальна громада",
@@ -1853,11 +1907,18 @@
     "a_katottg": "UA53080250000097618",
     "b_katottg": "UA53080430000085474",
     "score": 0.391,
-    "goals_cosine": 0.297,
+    "goals_cosine": 0.298,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Покращення можливостей для розвитку бізнесу та залучення інвестицій.",
       "b": "Створення конкурентних умов для залучення інвестицій",
@@ -1905,29 +1966,30 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Заводська міська територіальна громада",
     "b": "Чорнухинська селищна територіальна громада",
     "a_katottg": "UA53060130000040567",
     "b_katottg": "UA53040130000097690",
-    "score": 0.319,
-    "goals_cosine": 0.177,
+    "score": 0.318,
+    "goals_cosine": 0.176,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "3.3. Підвищення рівня екологічної безпеки та охорона довкілля",
       "b": "С.3. Безпека довкілля та життєдіяльності",
-      "similarity": 0.592
+      "similarity": 0.591
     },
     "track": "operational",
     "fiscal_similarity": 0.99,
@@ -1971,13 +2033,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Гребінківська міська територіальна громада",
@@ -1985,15 +2041,22 @@
     "a_katottg": "UA53040010000091190",
     "b_katottg": "UA53040050000091161",
     "score": 0.361,
-    "goals_cosine": 0.248,
+    "goals_cosine": 0.247,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "А.2. Підтримка малого та середнього бізнесу",
       "b": "2.3. Ефективний бізнес та підтримка розвитку МСП",
-      "similarity": 0.752
+      "similarity": 0.751
     },
     "track": "operational",
     "fiscal_similarity": 0.986,
@@ -2037,25 +2100,29 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Тисменицька міська територіальна громада",
     "b": "Тлумацька міська територіальна громада",
     "a_katottg": "UA26040330000019235",
     "b_katottg": "UA26040350000024417",
-    "score": 0.474,
-    "goals_cosine": 0.298,
+    "score": 0.48,
+    "goals_cosine": 0.297,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.3,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.3,
+      "flags": [
+        "twinning_both"
+      ]
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.417,
     "goals_evidence": {
       "a": "Збільшення можливостей для розвитку малого і середнього бізнесу",
       "b": "1.1. Покращення можливостей для розвитку малого бізнесу та залучення інвестицій",
@@ -2084,6 +2151,12 @@
     },
     "signals": [
       {
+        "id": "dream_similar",
+        "label_uk": "схожі проєкти DREAM",
+        "label_en": "similar DREAM projects",
+        "strength": "high"
+      },
+      {
         "id": "geo",
         "label_uk": "зручний сусід",
         "label_en": "convenient neighbour",
@@ -2109,31 +2182,30 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.3,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.3,
-      "flags": [
-        "twinning_both"
-      ]
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Білоцерківська сільська територіальна громада",
     "b": "Шишацька селищна територіальна громада",
     "a_katottg": "UA53060010000060316",
     "b_katottg": "UA53060330000036503",
-    "score": 0.412,
-    "goals_cosine": 0.332,
+    "score": 0.411,
+    "goals_cosine": 0.331,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "2.2. Створення привабливих умов для вітчизняних та іноземних інвесторів",
       "b": "3.2 Створення умов для залучення інвестицій",
-      "similarity": 0.763
+      "similarity": 0.762
     },
     "track": "operational",
     "fiscal_similarity": 0.986,
@@ -2177,31 +2249,35 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Герцаївська міська територіальна громада",
     "b": "Лівинецька сільська територіальна громада",
     "a_katottg": "UA73060130000078771",
     "b_katottg": "UA73040070000053425",
-    "score": 0.362,
-    "goals_cosine": 0.15,
+    "score": 0.363,
+    "goals_cosine": 0.151,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.4,
+    "social_capital_parts": {
+      "direct": 0.4,
+      "extras": 0.0,
+      "flags": [
+        "cointent"
+      ]
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Покращення іміджу громади:",
       "b": "3.2. Естетика простору громади",
       "similarity": 0.635
     },
     "track": "operational",
+    "explicit_ask_score": 0.75,
     "fiscal_similarity": 0.983,
     "dream_overlap": null,
     "operational_score": 0.892,
@@ -2249,16 +2325,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.4,
-    "social_capital_parts": {
-      "direct": 0.4,
-      "extras": 0.0,
-      "flags": [
-        "cointent"
-      ]
-    },
-    "explicit_ask_score": 0.75
+    "status": "hypothesis"
   },
   {
     "a": "Бабинська сільська територіальна громада",
@@ -2269,8 +2336,15 @@
     "goals_cosine": 0.338,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Розвиток малого та середнього підприємництва",
       "b": "Стимулювання розвитку малого та середнього бізнесу",
@@ -2318,13 +2392,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Малинська сільська територіальна громада",
@@ -2335,8 +2403,15 @@
     "goals_cosine": 0.465,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.1,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Розвиток комунального господарства",
       "b": "Розвиток комунального господарства",
@@ -2384,25 +2459,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Рокитнянська селищна територіальна громада",
     "b": "Таращанська міська територіальна громада",
     "a_katottg": "UA32020130000010013",
     "b_katottg": "UA32020190000084133",
-    "score": 0.285,
+    "score": 0.302,
     "goals_cosine": 0.059,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.331,
     "goals_evidence": {
       "a": "Операційна ціль 1.1. Сприятливий інвестиційний та безпечний і зручний бізнес-клімат в громадіі по залученню інвестицій",
       "b": "Сприяння розвитку бізнесу та залученню інвестицій",
@@ -2450,13 +2527,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Лівинецька сільська територіальна громада",
@@ -2467,12 +2538,21 @@
     "goals_cosine": 0.138,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.25,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.25,
+      "flags": [
+        "shared_donor"
+      ]
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Стратегічна ціль 3. Задоволення інфраструктурних потреб жителів і підприємців",
       "b": "ціль 2.2: Розвиток дорожньої інфраструктури і збільшення мобільності мешканців і мешканок",
-      "similarity": 0.464
+      "similarity": 0.463
     },
     "track": "operational",
     "fiscal_similarity": 0.976,
@@ -2522,27 +2602,26 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.25,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.25,
-      "flags": [
-        "shared_donor"
-      ]
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Банилівська сільська територіальна громада",
     "b": "Ставчанська сільська територіальна громада",
     "a_katottg": "UA73020010000044067",
     "b_katottg": "UA73060470000040033",
-    "score": 0.524,
-    "goals_cosine": 0.519,
+    "score": 0.523,
+    "goals_cosine": 0.518,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.333,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "2.2. Підвищення якості муніципальних послуг у громаді",
       "b": "Підвищення якості муніципальних послуг у громаді",
@@ -2590,13 +2669,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Козельщинська селищна територіальна громада",
@@ -2607,14 +2680,24 @@
     "goals_cosine": 0.365,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.4,
+    "social_capital_parts": {
+      "direct": 0.4,
+      "extras": 0.0,
+      "flags": [
+        "cointent"
+      ]
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "3.3. Збереження і відтворення довкілля",
       "b": "А.1.3. Поліпшення стану довкілля та раціонального використання природних ресурсів",
       "similarity": 0.775
     },
     "track": "operational",
+    "explicit_ask_score": 0.75,
     "fiscal_similarity": 0.972,
     "dream_overlap": null,
     "operational_score": 0.888,
@@ -2662,28 +2745,26 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.4,
-    "social_capital_parts": {
-      "direct": 0.4,
-      "extras": 0.0,
-      "flags": [
-        "cointent"
-      ]
-    },
-    "explicit_ask_score": 0.75
+    "status": "hypothesis"
   },
   {
     "a": "Козельщинська селищна територіальна громада",
     "b": "Новосанжарська селищна територіальна громада",
     "a_katottg": "UA53020090000045206",
     "b_katottg": "UA53080310000072384",
-    "score": 0.463,
-    "goals_cosine": 0.417,
+    "score": 0.466,
+    "goals_cosine": 0.423,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "2.1. Залучення інвестицій та підвищення економічної активності малого і середнього бізнесу",
       "b": "3.1. Розвиток місцевого бізнесу та залучення інвестицій",
@@ -2731,25 +2812,26 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Журавненська селищна територіальна громада",
     "b": "Більшівцівська селищна територіальна громада",
     "a_katottg": "UA46100070000076013",
     "b_katottg": "UA26040010000011271",
-    "score": 0.397,
-    "goals_cosine": 0.307,
+    "score": 0.394,
+    "goals_cosine": 0.303,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Ціль 3. Безпечна сучасна інженерна інфраструктура",
       "b": "Ціль 3. Технічна інфраструктура (дороги, вода, ТПВ)",
@@ -2797,29 +2879,31 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Боянська сільська територіальна громада",
     "b": "Недобоївська сільська територіальна громада",
     "a_katottg": "UA73060010000052133",
     "b_katottg": "UA73040110000040354",
-    "score": 0.329,
-    "goals_cosine": 0.194,
+    "score": 0.318,
+    "goals_cosine": 0.195,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.0,
     "goals_evidence": {
       "a": "Стратегічна ціль 1. Потужний економічний та логістичний центр з сучасною інфраструктурою",
       "b": "Стратегічна ціль 1. Стале економічне зростання на основі стратегічного розташування та транспортної доступності громади, місцевої спеціалізації на садівництві та міцних мереж співпраці Включає такі операційні цілі Операційна",
-      "similarity": 0.399
+      "similarity": 0.4
     },
     "track": "operational",
     "fiscal_similarity": 0.88,
@@ -2863,25 +2947,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Славутицька міська територіальна громада",
     "b": "Ріпкинська селищна територіальна громада",
     "a_katottg": "UA32100130000093505",
     "b_katottg": "UA74100330000029082",
-    "score": 0.298,
-    "goals_cosine": 0.143,
+    "score": 0.308,
+    "goals_cosine": 0.144,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.297,
     "goals_evidence": {
       "a": "Оперативна ціль 3. Створення комфортних та безпечних умов для життя",
       "b": "Створення безпечних умов для життєдіяльності в громаді",
@@ -2929,29 +3015,31 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Костопільська міська територіальна громада",
     "b": "Малолюбашанська сільська територіальна громада",
     "a_katottg": "UA56060350000045909",
     "b_katottg": "UA56060390000090915",
-    "score": 0.416,
+    "score": 0.424,
     "goals_cosine": 0.276,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.417,
     "goals_evidence": {
       "a": "Підвищення якості та доступності послуг в галузях освіти, культури, фізичної культури та спорту",
       "b": "Покращення якості надання соціальних, освітніх, культурних та медичних послуг",
-      "similarity": 0.614
+      "similarity": 0.615
     },
     "track": "operational",
     "fiscal_similarity": 0.7,
@@ -2976,6 +3064,12 @@
     },
     "signals": [
       {
+        "id": "dream_similar",
+        "label_uk": "схожі проєкти DREAM",
+        "label_en": "similar DREAM projects",
+        "strength": "high"
+      },
+      {
         "id": "geo",
         "label_uk": "зручний сусід",
         "label_en": "convenient neighbour",
@@ -2995,25 +3089,26 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Драбинівська сільська територіальна громада",
     "b": "Машівська селищна територіальна громада",
     "a_katottg": "UA53080070000036333",
     "b_katottg": "UA53080250000097618",
-    "score": 0.554,
-    "goals_cosine": 0.57,
+    "score": 0.555,
+    "goals_cosine": 0.571,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.091,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Цифровізація економічної, суспільної та соціальних сфер громади",
       "b": "Цифрова трансформація громади.",
@@ -3061,25 +3156,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Харківська міська територіальна громада",
     "b": "Солоницівська селищна територіальна громада",
     "a_katottg": "UA63120270000028556",
     "b_katottg": "UA63120250000081463",
-    "score": 0.506,
+    "score": 0.499,
     "goals_cosine": 0.427,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.3,
     "goals_evidence": {
       "a": "Мета 5. Інвестиційна привабливість",
       "b": "Оперативна ціль 1.3 Залучення інвестицій",
@@ -3127,29 +3224,31 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Лохвицька міська територіальна громада",
     "b": "Сенчанська сільська територіальна громада",
     "a_katottg": "UA53060190000015369",
     "b_katottg": "UA53060290000047345",
-    "score": 0.297,
+    "score": 0.313,
     "goals_cosine": 0.078,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.353,
     "goals_evidence": {
       "a": "Ціль A. Економічна спроможність (інвестклімат, підприємництво, туризм)",
       "b": "Стратегічна ціль 1. Економічний розвиток громади і продуктивна зайнятість",
-      "similarity": 0.413
+      "similarity": 0.412
     },
     "track": "operational",
     "fiscal_similarity": 0.804,
@@ -3174,6 +3273,12 @@
     },
     "signals": [
       {
+        "id": "dream_similar",
+        "label_uk": "схожі проєкти DREAM",
+        "label_en": "similar DREAM projects",
+        "strength": "high"
+      },
+      {
         "id": "geo",
         "label_uk": "зручний сусід",
         "label_en": "convenient neighbour",
@@ -3193,25 +3298,27 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Дмитрівська сільська територіальна громада",
     "b": "Коцюбинська селищна територіальна громада",
     "a_katottg": "UA32080130000056481",
     "b_katottg": "UA32080170000086616",
-    "score": 0.392,
-    "goals_cosine": 0.237,
+    "score": 0.41,
+    "goals_cosine": 0.244,
     "geo_score": 1.0,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
+    "dream_cosine": 0.478,
     "goals_evidence": {
       "a": "1.2.Розвиток підприємництва",
       "b": "3.1. Сприяння розвитку бізнесу та залученню інвестицій",
@@ -3240,6 +3347,12 @@
     },
     "signals": [
       {
+        "id": "dream_similar",
+        "label_uk": "схожі проєкти DREAM",
+        "label_en": "similar DREAM projects",
+        "strength": "high"
+      },
+      {
         "id": "geo",
         "label_uk": "зручний сусід",
         "label_en": "convenient neighbour",
@@ -3259,13 +3372,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   },
   {
     "a": "Матеївецька сільська територіальна громада",
@@ -3273,11 +3380,18 @@
     "a_katottg": "UA26080110000076323",
     "b_katottg": "UA26040250000061081",
     "score": 0.441,
-    "goals_cosine": 0.38,
+    "goals_cosine": 0.381,
     "geo_score": 0.85,
     "mss_network": 0.0,
+    "social_capital": 0.0,
+    "social_capital_parts": {
+      "direct": 0.0,
+      "extras": 0.0,
+      "flags": []
+    },
     "known": false,
     "template_collision": 0.0,
+    "priority_source": "goals",
     "goals_evidence": {
       "a": "Стратегічна ціль 1. Матеївецька сільська територіальна громада – територія розвинутого підприємництва",
       "b": "B. Громада розвинутого фермерства, туризму, підприємництва",
@@ -3325,12 +3439,6 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "social_capital": 0.0,
-    "social_capital_parts": {
-      "direct": 0.0,
-      "extras": 0.0,
-      "flags": []
-    }
+    "status": "hypothesis"
   }
 ]

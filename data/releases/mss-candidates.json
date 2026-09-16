@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T12:11:48.003434+00:00",
+  "generatedAt": "2026-09-16T13:39:09.126620+00:00",
   "kind": "mss_candidates",
   "caveat": "Кандидати договорів МСС (гіпотези). package.form — правова форма за правилами, не факт реєстру. known/registry_known — лише кураторська валідація. Стратегії / geo / complementary / explicit-ask — сигнали пошуку.",
   "counts": {
@@ -7,6 +7,99 @@
     "hypotheses": 160
   },
   "registry_known": [
+    {
+      "kind": "mss_candidate",
+      "a": "Галицька міська територіальна громада",
+      "b": "Дубовецька сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "registry_known",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
+      },
+      "signals": [
+        {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "label_en": "convenient neighbour",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "label_en": "IMC network",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "donor",
+          "label_uk": "спільна донорська програма",
+          "label_en": "shared donor programme",
+          "strength": "medium"
+        },
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "label_en": "convenient neighbour",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "label_en": "IMC network",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": true,
+      "score": 0.704,
+      "goals_cosine": 0.499,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "social_capital": 1.0,
+      "explicit_ask_score": 0.75,
+      "operational_score": 0.77,
+      "suggest_confidence": "medium"
+    },
     {
       "kind": "mss_candidate",
       "a": "Верховинська селищна територіальна громада",
@@ -73,186 +166,12 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": true,
-      "score": 0.724,
-      "goals_cosine": 0.603,
+      "score": 0.704,
+      "goals_cosine": 0.602,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "social_capital": 1.0,
       "operational_score": 0.698,
-      "suggest_confidence": "medium"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Галицька міська територіальна громада",
-      "b": "Дубовецька сільська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "registry_known",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП",
-        "label_en": "Waste management / environment — joint municipal enterprise"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "label_en": "IMC network",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "donor",
-          "label_uk": "спільна донорська програма",
-          "label_en": "shared donor programme",
-          "strength": "medium"
-        },
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "label_en": "explicit IMC request",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "label_en": "IMC network",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": true,
-      "score": 0.699,
-      "goals_cosine": 0.499,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "social_capital": 1.0,
-      "explicit_ask_score": 0.75,
-      "operational_score": 0.77,
-      "suggest_confidence": "medium"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Клішковецька сільська територіальна громада",
-      "b": "Рукшинська сільська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "registry_known",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП",
-        "label_en": "Waste management / environment — joint municipal enterprise"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "label_en": "IMC network",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "donor",
-          "label_uk": "спільна донорська програма",
-          "label_en": "shared donor programme",
-          "strength": "medium"
-        },
-        {
-          "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
-          "label_en": "explicit IMC request",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "label_en": "IMC network",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": true,
-      "score": 0.647,
-      "goals_cosine": 0.412,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "social_capital": 1.0,
-      "explicit_ask_score": 0.75,
-      "operational_score": 0.768,
       "suggest_confidence": "medium"
     },
     {
@@ -333,13 +252,100 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": true,
-      "score": 0.642,
-      "goals_cosine": 0.465,
+      "score": 0.633,
+      "goals_cosine": 0.464,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "social_capital": 1.0,
       "explicit_ask_score": 0.75,
       "operational_score": 0.642,
+      "suggest_confidence": "medium"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Клішковецька сільська територіальна громада",
+      "b": "Рукшинська сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "registry_known",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "label_en": "convenient neighbour",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "label_en": "IMC network",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "donor",
+          "label_uk": "спільна донорська програма",
+          "label_en": "shared donor programme",
+          "strength": "medium"
+        },
+        {
+          "id": "explicit_ask",
+          "label_uk": "явний запит МСС",
+          "label_en": "explicit IMC request",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "label_en": "convenient neighbour",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "label_en": "IMC network",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": true,
+      "score": 0.628,
+      "goals_cosine": 0.411,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "social_capital": 1.0,
+      "explicit_ask_score": 0.75,
+      "operational_score": 0.768,
       "suggest_confidence": "medium"
     },
     {
@@ -360,6 +366,12 @@
         "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
+        {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
         {
           "id": "network",
           "label_uk": "мережа МСС",
@@ -405,6 +417,12 @@
       ],
       "signal_chips": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "network",
           "label_uk": "мережа МСС",
           "label_en": "IMC network",
@@ -415,18 +433,12 @@
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
           "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "high"
         }
       ],
-      "discovery_primary": "strategy_goals",
+      "discovery_primary": "dream_similar",
       "track": "mixed",
       "known": true,
-      "score": 0.61,
+      "score": 0.606,
       "goals_cosine": 0.517,
       "geo_score": 0.6,
       "mss_network": 1.0,
@@ -512,7 +524,7 @@
       "discovery_primary": "strategy_goals",
       "track": "mixed",
       "known": true,
-      "score": 0.575,
+      "score": 0.561,
       "goals_cosine": 0.458,
       "geo_score": 0.6,
       "mss_network": 1.0,
@@ -598,13 +610,167 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": true,
-      "score": 0.569,
-      "goals_cosine": 0.282,
+      "score": 0.558,
+      "goals_cosine": 0.281,
       "geo_score": 1.0,
       "mss_network": 1.0,
       "social_capital": 1.0,
       "explicit_ask_score": 0.75,
       "operational_score": 0.685,
+      "suggest_confidence": "medium"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Вашковецька сільська територіальна громада",
+      "b": "Сокирянська міська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "registry_known",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "label_en": "convenient neighbour",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "label_en": "IMC network",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
+          "strength": "medium"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "label_en": "convenient neighbour",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "label_en": "IMC network",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": true,
+      "score": 0.513,
+      "goals_cosine": 0.259,
+      "geo_score": 0.85,
+      "mss_network": 1.0,
+      "social_capital": 1.0,
+      "operational_score": 0.669,
+      "suggest_confidence": "medium"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Тернопільська міська територіальна громада",
+      "b": "Байковецька сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "registry_known",
+      "package": {
+        "theme": "Поводження з відходами / довкілля",
+        "theme_id": "waste",
+        "form": "спільне КП",
+        "form_id": "joint_enterprise",
+        "confidence": "medium",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+        "label_uk": "Поводження з відходами / довкілля — спільне КП",
+        "label_en": "Waste management / environment — joint municipal enterprise"
+      },
+      "signals": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "label_en": "convenient neighbour",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "label_en": "IMC network",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        },
+        {
+          "id": "structural",
+          "label_uk": "ресурси / DREAM",
+          "label_en": "resources / DREAM",
+          "strength": "high"
+        },
+        {
+          "id": "twinning",
+          "label_uk": "місто-побратим ЄС",
+          "label_en": "EU twin city",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "geo",
+          "label_uk": "зручний сусід",
+          "label_en": "convenient neighbour",
+          "strength": "high"
+        },
+        {
+          "id": "network",
+          "label_uk": "мережа МСС",
+          "label_en": "IMC network",
+          "strength": "high"
+        },
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "geo",
+      "track": "operational",
+      "known": true,
+      "score": 0.506,
+      "goals_cosine": 0.168,
+      "geo_score": 1.0,
+      "mss_network": 1.0,
+      "social_capital": 1.0,
+      "operational_score": 0.792,
       "suggest_confidence": "medium"
     },
     {
@@ -691,167 +857,13 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": true,
-      "score": 0.519,
+      "score": 0.5,
       "goals_cosine": 0.47,
       "geo_score": 0.35,
       "mss_network": 1.0,
       "social_capital": 1.0,
       "explicit_ask_score": 0.75,
       "suggest_confidence": "high"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Вашковецька сільська територіальна громада",
-      "b": "Сокирянська міська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "registry_known",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП",
-        "label_en": "Waste management / environment — joint municipal enterprise"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "label_en": "IMC network",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "medium"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "label_en": "IMC network",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": true,
-      "score": 0.518,
-      "goals_cosine": 0.26,
-      "geo_score": 0.85,
-      "mss_network": 1.0,
-      "social_capital": 1.0,
-      "operational_score": 0.669,
-      "suggest_confidence": "medium"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Тернопільська міська територіальна громада",
-      "b": "Байковецька сільська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "registry_known",
-      "package": {
-        "theme": "Поводження з відходами / довкілля",
-        "theme_id": "waste",
-        "form": "спільне КП",
-        "form_id": "joint_enterprise",
-        "confidence": "medium",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-        "label_uk": "Поводження з відходами / довкілля — спільне КП",
-        "label_en": "Waste management / environment — joint municipal enterprise"
-      },
-      "signals": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "label_en": "IMC network",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "high"
-        },
-        {
-          "id": "twinning",
-          "label_uk": "місто-побратим ЄС",
-          "label_en": "EU twin city",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "high"
-        },
-        {
-          "id": "network",
-          "label_uk": "мережа МСС",
-          "label_en": "IMC network",
-          "strength": "high"
-        },
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "geo",
-      "track": "operational",
-      "known": true,
-      "score": 0.501,
-      "goals_cosine": 0.168,
-      "geo_score": 1.0,
-      "mss_network": 1.0,
-      "social_capital": 1.0,
-      "operational_score": 0.792,
-      "suggest_confidence": "medium"
     },
     {
       "kind": "mss_candidate",
@@ -925,8 +937,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": true,
-      "score": 0.438,
-      "goals_cosine": 0.126,
+      "score": 0.439,
+      "goals_cosine": 0.127,
       "geo_score": 0.85,
       "mss_network": 1.0,
       "social_capital": 1.0,
@@ -2555,6 +2567,12 @@
       },
       "signals": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -2575,6 +2593,12 @@
       ],
       "signal_chips": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -2585,18 +2609,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
-        },
-        {
-          "id": "twinning",
-          "label_uk": "місто-побратим ЄС",
-          "label_en": "EU twin city",
-          "strength": "high"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.517,
+      "score": 0.493,
       "goals_cosine": 0.786,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -2708,7 +2726,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.464,
+      "score": 0.428,
       "goals_cosine": 0.774,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -2735,6 +2753,12 @@
       },
       "signals": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -2748,6 +2772,12 @@
         }
       ],
       "signal_chips": [
+        {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
@@ -2764,7 +2794,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.464,
+      "score": 0.449,
       "goals_cosine": 0.773,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -2876,7 +2906,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.458,
+      "score": 0.421,
       "goals_cosine": 0.763,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -2921,7 +2951,7 @@
       "track": "thematic",
       "known": false,
       "score": 0.455,
-      "goals_cosine": 0.759,
+      "goals_cosine": 0.758,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -2976,7 +3006,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.538,
+      "score": 0.496,
       "goals_cosine": 0.751,
       "geo_score": 0.35,
       "mss_network": 0.0,
@@ -3032,7 +3062,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.447,
+      "score": 0.405,
       "goals_cosine": 0.745,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -3127,6 +3157,12 @@
       },
       "signals": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -3140,6 +3176,12 @@
         }
       ],
       "signal_chips": [
+        {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
@@ -3156,7 +3198,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.445,
+      "score": 0.429,
       "goals_cosine": 0.742,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -3183,6 +3225,12 @@
       },
       "signals": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -3203,6 +3251,12 @@
       ],
       "signal_chips": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -3213,18 +3267,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
-        },
-        {
-          "id": "twinning",
-          "label_uk": "місто-побратим ЄС",
-          "label_en": "EU twin city",
-          "strength": "high"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.488,
+      "score": 0.472,
       "goals_cosine": 0.738,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -3298,7 +3346,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.575,
+      "score": 0.542,
       "goals_cosine": 0.737,
       "geo_score": 0.35,
       "mss_network": 0.0,
@@ -3324,6 +3372,12 @@
         "label_en": "Culture / sport — joint project"
       },
       "signals": [
+        {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
@@ -3351,6 +3405,12 @@
       ],
       "signal_chips": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -3361,18 +3421,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
-        },
-        {
-          "id": "twinning",
-          "label_uk": "місто-побратим ЄС",
-          "label_en": "EU twin city",
-          "strength": "high"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.523,
+      "score": 0.508,
       "goals_cosine": 0.735,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -3502,7 +3556,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.571,
+      "score": 0.545,
       "goals_cosine": 0.73,
       "geo_score": 0.35,
       "mss_network": 0.0,
@@ -3570,9 +3624,53 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.525,
-      "goals_cosine": 0.729,
+      "score": 0.496,
+      "goals_cosine": 0.728,
       "geo_score": 0.35,
+      "mss_network": 0.0,
+      "social_capital": 0.0,
+      "suggest_confidence": "high",
+      "source_slice": "thematic"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Райгородська сільська територіальна громада",
+      "b": "Петропавлівська сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт",
+        "label_en": "Tourism / cluster — joint project"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "strategy_goals",
+      "track": "thematic",
+      "known": false,
+      "score": 0.436,
+      "goals_cosine": 0.727,
+      "geo_score": 0.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
       "suggest_confidence": "high",
@@ -3638,53 +3736,9 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.524,
-      "goals_cosine": 0.727,
+      "score": 0.523,
+      "goals_cosine": 0.726,
       "geo_score": 0.35,
-      "mss_network": 0.0,
-      "social_capital": 0.0,
-      "suggest_confidence": "high",
-      "source_slice": "thematic"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Райгородська сільська територіальна громада",
-      "b": "Петропавлівська сільська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт",
-        "label_en": "Tourism / cluster — joint project"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "strategy_goals",
-      "track": "thematic",
-      "known": false,
-      "score": 0.436,
-      "goals_cosine": 0.727,
-      "geo_score": 0.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
       "suggest_confidence": "high",
@@ -3794,8 +3848,52 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.435,
+      "score": 0.399,
       "goals_cosine": 0.725,
+      "geo_score": 0.0,
+      "mss_network": 0.0,
+      "social_capital": 0.0,
+      "suggest_confidence": "high",
+      "source_slice": "thematic"
+    },
+    {
+      "kind": "mss_candidate",
+      "a": "Мереф'янська міська територіальна громада",
+      "b": "Берестівська сільська територіальна громада",
+      "a_short": null,
+      "b_short": null,
+      "status": "hypothesis",
+      "package": {
+        "theme": "Туризм / кластер",
+        "theme_id": "tourism",
+        "form": "спільний проєкт",
+        "form_id": "joint_project",
+        "confidence": "high",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
+        "label_uk": "Туризм / кластер — спільний проєкт",
+        "label_en": "Tourism / cluster — joint project"
+      },
+      "signals": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        }
+      ],
+      "signal_chips": [
+        {
+          "id": "strategy_goals",
+          "label_uk": "схожа стратегія",
+          "label_en": "similar strategy",
+          "strength": "high"
+        }
+      ],
+      "discovery_primary": "strategy_goals",
+      "track": "thematic",
+      "known": false,
+      "score": 0.43,
+      "goals_cosine": 0.716,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -3850,52 +3948,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.43,
-      "goals_cosine": 0.716,
-      "geo_score": 0.0,
-      "mss_network": 0.0,
-      "social_capital": 0.0,
-      "suggest_confidence": "high",
-      "source_slice": "thematic"
-    },
-    {
-      "kind": "mss_candidate",
-      "a": "Мереф'янська міська територіальна громада",
-      "b": "Берестівська сільська територіальна громада",
-      "a_short": null,
-      "b_short": null,
-      "status": "hypothesis",
-      "package": {
-        "theme": "Туризм / кластер",
-        "theme_id": "tourism",
-        "form": "спільний проєкт",
-        "form_id": "joint_project",
-        "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · схожа стратегія",
-        "label_uk": "Туризм / кластер — спільний проєкт",
-        "label_en": "Tourism / cluster — joint project"
-      },
-      "signals": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        }
-      ],
-      "signal_chips": [
-        {
-          "id": "strategy_goals",
-          "label_uk": "схожа стратегія",
-          "label_en": "similar strategy",
-          "strength": "high"
-        }
-      ],
-      "discovery_primary": "strategy_goals",
-      "track": "thematic",
-      "known": false,
-      "score": 0.43,
-      "goals_cosine": 0.716,
+      "score": 0.395,
+      "goals_cosine": 0.715,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -4142,7 +4196,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.468,
+      "score": 0.441,
       "goals_cosine": 0.705,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -4254,7 +4308,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.421,
+      "score": 0.391,
       "goals_cosine": 0.702,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -4281,6 +4335,12 @@
       },
       "signals": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -4301,6 +4361,12 @@
       ],
       "signal_chips": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -4311,18 +4377,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
-        },
-        {
-          "id": "geo",
-          "label_uk": "зручний сусід",
-          "label_en": "convenient neighbour",
-          "strength": "low"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.507,
+      "score": 0.495,
       "goals_cosine": 0.7,
       "geo_score": 0.35,
       "mss_network": 0.0,
@@ -4434,8 +4494,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.415,
-      "goals_cosine": 0.692,
+      "score": 0.395,
+      "goals_cosine": 0.693,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -4561,6 +4621,12 @@
       },
       "signals": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -4587,6 +4653,12 @@
       ],
       "signal_chips": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -4597,18 +4669,12 @@
           "label_uk": "ресурси / DREAM",
           "label_en": "resources / DREAM",
           "strength": "high"
-        },
-        {
-          "id": "twinning",
-          "label_uk": "місто-побратим ЄС",
-          "label_en": "EU twin city",
-          "strength": "high"
         }
       ],
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.542,
+      "score": 0.538,
       "goals_cosine": 0.683,
       "geo_score": 0.35,
       "mss_network": 0.0,
@@ -4664,7 +4730,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.41,
+      "score": 0.383,
       "goals_cosine": 0.683,
       "geo_score": 0.0,
       "mss_network": 0.0,
@@ -4738,7 +4804,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.542,
+      "score": 0.51,
       "goals_cosine": 0.682,
       "geo_score": 0.35,
       "mss_network": 0.0,
@@ -4765,6 +4831,12 @@
       },
       "signals": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
@@ -4778,6 +4850,12 @@
         }
       ],
       "signal_chips": [
+        {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
         {
           "id": "strategy_goals",
           "label_uk": "схожа стратегія",
@@ -4794,8 +4872,8 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.408,
-      "goals_cosine": 0.68,
+      "score": 0.399,
+      "goals_cosine": 0.681,
       "geo_score": 0.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -4868,7 +4946,7 @@
       "discovery_primary": "strategy_goals",
       "track": "thematic",
       "known": false,
-      "score": 0.54,
+      "score": 0.516,
       "goals_cosine": 0.679,
       "geo_score": 0.35,
       "mss_network": 0.0,
@@ -6592,8 +6670,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.452,
-      "goals_cosine": 0.336,
+      "score": 0.451,
+      "goals_cosine": 0.335,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -6731,7 +6809,7 @@
       "track": "operational",
       "known": false,
       "score": 0.275,
-      "goals_cosine": 0.041,
+      "goals_cosine": 0.042,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -6800,7 +6878,7 @@
       "track": "operational",
       "known": false,
       "score": 0.258,
-      "goals_cosine": 0.014,
+      "goals_cosine": 0.013,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -6868,8 +6946,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.293,
-      "goals_cosine": 0.071,
+      "score": 0.291,
+      "goals_cosine": 0.069,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -6937,8 +7015,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.362,
-      "goals_cosine": 0.187,
+      "score": 0.363,
+      "goals_cosine": 0.188,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -7075,8 +7153,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.345,
-      "goals_cosine": 0.158,
+      "score": 0.344,
+      "goals_cosine": 0.157,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -7144,7 +7222,7 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.525,
+      "score": 0.515,
       "goals_cosine": 0.458,
       "geo_score": 1.0,
       "mss_network": 0.0,
@@ -7213,8 +7291,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.369,
-      "goals_cosine": 0.198,
+      "score": 0.368,
+      "goals_cosine": 0.197,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -7282,8 +7360,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.545,
-      "goals_cosine": 0.491,
+      "score": 0.544,
+      "goals_cosine": 0.49,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -7379,6 +7457,12 @@
       },
       "signals": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -7399,6 +7483,12 @@
       ],
       "signal_chips": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -7409,19 +7499,13 @@
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
           "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "high"
         }
       ],
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.56,
-      "goals_cosine": 0.517,
+      "score": 0.559,
+      "goals_cosine": 0.516,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -7489,8 +7573,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.327,
-      "goals_cosine": 0.128,
+      "score": 0.339,
+      "goals_cosine": 0.129,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -7558,7 +7642,7 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.324,
+      "score": 0.323,
       "goals_cosine": 0.185,
       "geo_score": 0.85,
       "mss_network": 0.0,
@@ -7765,7 +7849,7 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.36,
+      "score": 0.345,
       "goals_cosine": 0.246,
       "geo_score": 0.85,
       "mss_network": 0.0,
@@ -7793,6 +7877,12 @@
       },
       "signals": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -7813,6 +7903,12 @@
       ],
       "signal_chips": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -7823,18 +7919,12 @@
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
           "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "high"
         }
       ],
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.44,
+      "score": 0.447,
       "goals_cosine": 0.316,
       "geo_score": 1.0,
       "mss_network": 0.0,
@@ -7903,8 +7993,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.479,
-      "goals_cosine": 0.444,
+      "score": 0.478,
+      "goals_cosine": 0.443,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -8000,6 +8090,12 @@
       },
       "signals": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -8020,6 +8116,12 @@
       ],
       "signal_chips": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -8030,18 +8132,12 @@
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
           "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "high"
         }
       ],
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.402,
+      "score": 0.421,
       "goals_cosine": 0.254,
       "geo_score": 1.0,
       "mss_network": 0.0,
@@ -8179,8 +8275,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.388,
-      "goals_cosine": 0.292,
+      "score": 0.387,
+      "goals_cosine": 0.291,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -8248,8 +8344,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.473,
-      "goals_cosine": 0.434,
+      "score": 0.472,
+      "goals_cosine": 0.433,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -8317,8 +8413,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.268,
-      "goals_cosine": 0.092,
+      "score": 0.267,
+      "goals_cosine": 0.091,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -8386,7 +8482,7 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.633,
+      "score": 0.605,
       "goals_cosine": 0.638,
       "geo_score": 1.0,
       "mss_network": 0.0,
@@ -8456,7 +8552,7 @@
       "track": "operational",
       "known": false,
       "score": 0.429,
-      "goals_cosine": 0.299,
+      "goals_cosine": 0.298,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -8525,7 +8621,7 @@
       "track": "operational",
       "known": false,
       "score": 0.391,
-      "goals_cosine": 0.297,
+      "goals_cosine": 0.298,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -8593,8 +8689,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.319,
-      "goals_cosine": 0.177,
+      "score": 0.318,
+      "goals_cosine": 0.176,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -8663,7 +8759,7 @@
       "track": "operational",
       "known": false,
       "score": 0.361,
-      "goals_cosine": 0.248,
+      "goals_cosine": 0.247,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -8689,6 +8785,12 @@
         "label_en": "ASC / admin services — delegation"
       },
       "signals": [
+        {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
         {
           "id": "geo",
           "label_uk": "зручний сусід",
@@ -8716,6 +8818,12 @@
       ],
       "signal_chips": [
         {
+          "id": "dream_similar",
+          "label_uk": "схожі проєкти DREAM",
+          "label_en": "similar DREAM projects",
+          "strength": "high"
+        },
+        {
           "id": "geo",
           "label_uk": "зручний сусід",
           "label_en": "convenient neighbour",
@@ -8726,19 +8834,13 @@
           "label_uk": "схожа стратегія",
           "label_en": "similar strategy",
           "strength": "high"
-        },
-        {
-          "id": "structural",
-          "label_uk": "ресурси / DREAM",
-          "label_en": "resources / DREAM",
-          "strength": "high"
         }
       ],
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.474,
-      "goals_cosine": 0.298,
+      "score": 0.48,
+      "goals_cosine": 0.297,
       "geo_score": 1.0,
       "mss_network": 0.0,
       "social_capital": 0.3,
@@ -8806,8 +8908,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.412,
-      "goals_cosine": 0.332,
+      "score": 0.411,
+      "goals_cosine": 0.331,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "social_capital": 0.0,
@@ -8881,8 +8983,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.362,
-      "goals_cosine": 0.15,
+      "score": 0.363,
+      "goals_cosine": 0.151,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "social_capital": 0.4,
@@ -9089,7 +9191,7 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.285,
+      "score": 0.302,
       "goals_cosine": 0.059,
       "geo_score": 1.0,
       "mss_network": 0.0,
@@ -9233,8 +9335,8 @@
       "discovery_primary": "geo",
       "track": "operational",
       "known": false,
-      "score": 0.524,
-      "goals_cosine": 0.519,
+      "score": 0.523,
+      "goals_cosine": 0.518,
       "geo_score": 0.85,
       "mss_network": 0.0,
       "social_capital": 0.0,
