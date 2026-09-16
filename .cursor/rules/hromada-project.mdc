@@ -78,7 +78,10 @@ PIN map (`yarn graph-pin-matching`): paint **thematic**, **operational**,
 **complementary**, and **explicit_ask** overlays separately — never top-N by
 combined `score` (sparse corpus → geo bias). **Twinning** stays a node highlight
 layer (EU sister cities in the hromada card + indigo glow) *and* a weak
-pairwise input to `social_capital`.
+pairwise input to `social_capital`. **Interreg** (keep.eu LPA) is a separate
+cyan node highlight. **Law 3668-IX** registered international agreements feed
+the card + «Теми UA–ЄС» filter + a revealed EU-place pool — not v7 `score`,
+never `known: true`, never Law 1508 forms.
 
 ## Hard rules
 

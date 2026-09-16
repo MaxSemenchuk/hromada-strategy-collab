@@ -169,6 +169,26 @@ and self-describing, not a growth history.
   country hub nodes via `COUNTRY_LABELS`). Does **not** fold into matching
   `score`. Preview: `docs/assets/twinning-preview.json`.
 
+- **`intl-agreements.json`** — **registered international territorial
+  cooperation agreements** (Law 3668-IX / CMU 357-2025), from
+  [data.gov.ua](https://data.gov.ua/dataset/6c460279-bac0-45ba-ab71-b255289a49f2)
+  (`yarn intl-agreements`, cache `data/cache/intl-agreements/`). This is the
+  international analogue of PIN: named parties, legal **kind**
+  (cross-border / interterritorial / transnational), free-text **sphere**.
+  Not sister-city branding and not Interreg. Current snapshot: 312 filled
+  rows, **107 hromadas / 197 agreements** name-stem matched (41 oblast-level
+  skipped, 74 unmatched pre-amalgamation councils). `theme_ids` via
+  `intl_theme.py` (heuristic). Incomplete vs the Ministry twincities
+  dashboard. Feeds the map card + «Теми UA–ЄС» filter + EU candidate pool.
+  Does **not** fold into matching `score`; never `known: true`. Preview:
+  `docs/assets/intl-agreements-preview.json`.
+
+- **`interreg-partners.json`** — **Interreg / keep.eu** UA-partner projects
+  (`yarn interreg`). Map overlay: cyan LPA (local public authority) nodes.
+  Project **titles** are classified with `intl_theme.py` at graph time — keep.eu
+  official `themes[]` / ISO are not yet persisted in the release. Not IMC,
+  not twinning, not Law 3668. Does **not** fold into matching `score`.
+
 - **`partnership-map.json`** — **UA↔all-countries municipal partnerships**,
   scraped from Мінрозвитку's own verified partnership pages
   (`decentralization.ua/newgromada/<id>`, `yarn partnership-map`, cache

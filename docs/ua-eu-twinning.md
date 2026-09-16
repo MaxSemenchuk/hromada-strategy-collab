@@ -195,13 +195,39 @@ base, consistent with the "running since 2015, surge from 2022" note above.
 
 ### Caveat
 
-No per-edge theme tag exists in the data — the "Typical themes" table above is
-narrative/qualitative (SKEW policy descriptions + case docs), not a tally.
-Don't present it as counted statistics.
+SKEW/C4C/partnership-map still have **no per-edge theme**. The "Typical themes"
+table above stays narrative. Counted themes now come from a **separate**
+layer: Law 3668-IX registered agreements (`yarn intl-agreements` →
+`intl-agreements.json`) plus Interreg project titles. Do not present the
+qualitative table as a tally, and do not treat 3668 `theme_ids` as SKEW
+twinning themes.
 
 Method: ad hoc analysis, 2026-08-16, not a committed script — rerun by joining
 `twinning-partners.json` `.hromadas[]` against `hromadas.json` on
 `katottg`/`Katottg`, filtering `partner_count > 0` for the "confirmed" group.
+
+---
+
+## Registered agreements (Law 3668-IX) and Interreg — map overlay (2026-09-16)
+
+Three UA–EU layers stay distinct on `yarn graph-pin-matching`:
+
+| Layer | What | Theme source | Map |
+|---|---|---|---|
+| Twinning | Sister cities / solidarity | none on the edge | violet nodes; country hubs in Graph |
+| **3668 register** | MinRegion-registered international territorial agreements | free-text `сфера` + title → `intl_theme` | card section + «Теми UA–ЄС» filter |
+| Interreg | keep.eu projects | English title / acronym | cyan nodes if `is_local_authority` |
+
+**EU pairing candidates** on the hromada card are a *revealed-cooperation pool*:
+EU places that already appear on a 3668 agreement (or a theme-matched twin)
+with some Ukrainian hromada on a shared theme. Not embedding cosine, not
+Interreg eligibility, not «AI знайде близнюка». Warm intros (SKEW / JTS /
+associations) still required.
+
+Commands: `yarn intl-agreements`, `yarn test-intl-theme`, then
+`yarn graph-pin-matching`. Keep.eu official `themes[]` / ISO fields are still
+dropped at release time — title heuristics only until a keep.eu re-fetch
+persists them.
 
 ---
 
