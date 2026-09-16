@@ -265,6 +265,9 @@ yarn extract-mss-intents
 yarn complementary-match
 yarn twinning                    # UA–EU twinning overlay; also feeds social_capital
 yarn twinning --offline          # rebuild from data/cache/twinning/ only
+yarn intl-agreements             # Law 3668-IX international agreement register
+yarn intl-agreements --offline
+yarn test-intl-theme
 yarn graph-pin-matching
 
 # Structural proxies (KSE budget/DFRR/competence/health) + DREAM revealed priorities
@@ -289,7 +292,9 @@ Fund portfolio lenses (within-program pairs, bridge pairs, hubs) live in
 Resource / competence covariates: `hromada-resources.json`; DREAM project
 priorities: `dream-priorities.json`; complementary / explicit-ask edges:
 `matching-edges.complementary.json` / `matching-edges.explicit-ask.json`;
-UA–EU twinning: `twinning-partners.json`
+UA–EU twinning: `twinning-partners.json`;
+international agreements (Law 3668-IX): `intl-agreements.json`;
+Interreg: `interreg-partners.json`
 (see [docs/external-data-sources.md](docs/external-data-sources.md) and
 [matches.html](docs/matches.html)). Writing guide:
 [docs/strategy-writing-guide.md](docs/strategy-writing-guide.md).

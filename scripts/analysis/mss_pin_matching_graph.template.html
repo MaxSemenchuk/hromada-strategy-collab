@@ -23,6 +23,7 @@
     --dot-universe: #94a3b8;
     --dot-corpus: #c98500;
     --dot-twinning: #9085e9;
+    --dot-interreg: #0ea5e9;
     --dot-donor: #e66767;
     --basin-stroke: #38bdf8;
   }
@@ -235,6 +236,10 @@
   .sw.twinning {
     width: 9px; height: 9px; border-radius: 50%;
     background: var(--dot-twinning); border: 0; margin-top: 0.4rem; margin-left: 6px; margin-right: 7px;
+  }
+  .sw.interreg {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--dot-interreg); border: 0; margin-top: 0.4rem; margin-left: 6px; margin-right: 7px;
   }
   .sw.donor {
     width: 9px; height: 9px; border-radius: 50%;
@@ -743,6 +748,25 @@
           <span class="layer-desc" data-i18n="layer.twinning.desc">Фіолетові — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли</span>
         </span>
       </label>
+      <label class="layer">
+        <input type="checkbox" id="layer-interreg"/>
+        <span class="sw interreg" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="layer.interreg.title">Interreg (рада громади)</span>
+          <span class="layer-desc" data-i18n="layer.interreg.desc">Блакитні — keep.eu, лише Local public authority; не twinning і не МСС</span>
+        </span>
+      </label>
+      <details class="theme-subfilter">
+        <summary data-i18n="euThemes.label">Теми UA–ЄС</summary>
+        <div class="theme-filters" id="eu-theme-filters" role="group" aria-label="Фільтр тем UA–ЄС"></div>
+        <div class="theme-filter-actions">
+          <button type="button" id="eu-themes-all" data-i18n="themes.all">Усі</button>
+          <button type="button" id="eu-themes-none" data-i18n="themes.none">Жодної</button>
+          <button type="button" id="eu-themes-tagged" data-i18n="themes.tagged">Лише з темою</button>
+        </div>
+        <p class="theme-filter-empty" id="eu-theme-filter-empty" hidden data-i18n="euThemes.emptyPick">Оберіть хоча б одну тему — інакше побратими й Interreg сховані.</p>
+        <p class="theme-filter-hint" data-i18n="euThemes.hint">Фільтрує фіолетові побратими та блакитний Interreg. Теми з реєстру 3668 і назв проєктів keep.eu — не форми Закону 1508 і не бірюзові лінії МСС.</p>
+      </details>
       <label>
         <input type="checkbox" id="layer-plich"/>
         <span class="sw plich" aria-hidden="true"></span>
@@ -830,6 +854,8 @@
         <div class="stat"><span data-i18n="stat.explicitAsk">Явних запитів МСС</span><b id="s-explicit-ask">—</b></div>
         <div class="stat"><span data-i18n="stat.twinning">З побратимами ЄС</span><b id="s-twinning">—</b></div>
         <div class="stat"><span data-i18n="stat.twinningCountries">Країн-побратимів (Граф)</span><b id="s-twinning-countries">—</b></div>
+        <div class="stat"><span data-i18n="stat.intl">Угод 3668 (громади)</span><b id="s-intl">—</b></div>
+        <div class="stat"><span data-i18n="stat.interreg">Interreg LPA</span><b id="s-interreg">—</b></div>
         <div class="stat"><span data-i18n="stat.donors">Донорських програм (Граф)</span><b id="s-donors">—</b></div>
         <div class="stat"><span data-i18n="stat.basins">Водозборів (підкладка)</span><b id="s-basins">—</b></div>
       </div>
@@ -860,6 +886,8 @@ document.getElementById('s-complementary').textContent = meta.complementary_edge
 document.getElementById('s-explicit-ask').textContent = meta.explicit_ask_edges ?? 0;
 document.getElementById('s-twinning').textContent = meta.twinning_hromadas ?? 0;
 document.getElementById('s-twinning-countries').textContent = meta.twinning_countries ?? 0;
+document.getElementById('s-intl').textContent = meta.intl_hromadas ?? 0;
+document.getElementById('s-interreg').textContent = meta.interreg_lpa_hromadas ?? 0;
 document.getElementById('s-donors').textContent = meta.donor_programs_count ?? 0;
 document.getElementById('s-basins').textContent = meta.basins ?? 0;
 
@@ -868,7 +896,7 @@ let mode = 'map';
 let layers = {
   universe: true, pin: true,
   thematic: true, operational: false, complementary: false, explicitAsk: false,
-  corpus: false, twinning: false, donors: false, basins: false, plich: false,
+  corpus: false, twinning: false, interreg: false, donors: false, basins: false, plich: false,
 };
 
 // ——— PIN theme filter (registry title heuristics; not legal IMC forms) ———
@@ -970,6 +998,109 @@ document.getElementById('themes-tagged')?.addEventListener('click', () => {
   });
   renderThemeFilters();
   refreshThemeFilterView();
+});
+
+// ——— UA–EU theme filter (3668 + Interreg titles; not Law 1508 PIN) ———
+const euThemeCatalog = DATA.eu_themes || [];
+const selectedEuThemes = new Set(euThemeCatalog.map((t) => t.id));
+
+function nodeEuIds(n) {
+  const ids = n && n.eu_theme_ids;
+  if (ids && ids.length) return ids;
+  return ['other'];
+}
+
+function euThemeOk(nOrEdge) {
+  if (!euThemeCatalog.length) return true;
+  if (selectedEuThemes.size >= euThemeCatalog.length) return true;
+  const ids = (nOrEdge && (nOrEdge.eu_theme_ids || nOrEdge.theme_ids)) || [];
+  const list = ids.length ? ids : ['other'];
+  return list.some((id) => selectedEuThemes.has(id));
+}
+
+function twinningVisible(n) {
+  return !!(layers.twinning && (n.twinning_count || n.c4c_url) && euThemeOk(n));
+}
+
+function interregVisible(n) {
+  return !!(layers.interreg && n.interreg_lpa_count && euThemeOk(n));
+}
+
+function syncSelectedEuThemesFromDom() {
+  const inputs = document.querySelectorAll('#eu-theme-filters input[data-eu-theme-id]');
+  if (!inputs.length) return;
+  selectedEuThemes.clear();
+  inputs.forEach((input) => {
+    if (input.checked) {
+      const id = input.getAttribute('data-eu-theme-id');
+      if (id) selectedEuThemes.add(id);
+    }
+  });
+}
+
+function renderEuThemeFilters() {
+  const root = document.getElementById('eu-theme-filters');
+  if (!root) return;
+  const escLocal = (typeof esc === 'function')
+    ? esc
+    : (s) => String(s || '').replace(/[&<>"']/g, (c) => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
+  const labelFn = (typeof biLabel === 'function')
+    ? biLabel
+    : (_en, uk) => uk;
+  const emptyMsg = (typeof t === 'function') ? t('euThemes.empty') : 'Немає тем UA–ЄС';
+  if (!euThemeCatalog.length) {
+    root.innerHTML = `<p class="theme-filter-hint">${escLocal(emptyMsg)}</p>`;
+    return;
+  }
+  root.innerHTML = euThemeCatalog.map((th) => {
+    const checked = selectedEuThemes.has(th.id) ? 'checked' : '';
+    const label = labelFn(th.label_en, th.label_uk) || th.id;
+    return `<label>
+      <input type="checkbox" data-eu-theme-id="${escLocal(th.id)}" ${checked}/>
+      <span>${escLocal(label)}</span>
+      <span class="theme-n">${escLocal(String(th.n ?? 0))}</span>
+    </label>`;
+  }).join('');
+  root.querySelectorAll('input[data-eu-theme-id]').forEach((input) => {
+    input.addEventListener('change', () => {
+      refreshEuThemeFilterView();
+    });
+  });
+}
+
+function refreshEuThemeFilterView() {
+  syncSelectedEuThemesFromDom();
+  const emptyEl = document.getElementById('eu-theme-filter-empty');
+  if (emptyEl) {
+    emptyEl.hidden = selectedEuThemes.size > 0 || !euThemeCatalog.length;
+  }
+  if (mode === 'graph') {
+    if (typeof drawGraph === 'function') drawGraph();
+  } else if (typeof rebuildMapLayers === 'function') {
+    rebuildMapLayers();
+  }
+}
+
+renderEuThemeFilters();
+document.getElementById('eu-themes-all')?.addEventListener('click', () => {
+  euThemeCatalog.forEach((th) => selectedEuThemes.add(th.id));
+  renderEuThemeFilters();
+  refreshEuThemeFilterView();
+});
+document.getElementById('eu-themes-none')?.addEventListener('click', () => {
+  selectedEuThemes.clear();
+  renderEuThemeFilters();
+  refreshEuThemeFilterView();
+});
+document.getElementById('eu-themes-tagged')?.addEventListener('click', () => {
+  selectedEuThemes.clear();
+  euThemeCatalog.forEach((th) => {
+    if (th.id !== 'other') selectedEuThemes.add(th.id);
+  });
+  renderEuThemeFilters();
+  refreshEuThemeFilterView();
 });
 
 const mapEl = document.getElementById('map');
@@ -1248,6 +1379,42 @@ function themesHtml(item) {
   );
 }
 
+function euThemeLabel(id) {
+  const row = (DATA.eu_themes || []).find((th) => th.id === id);
+  if (!row) return id;
+  return biLabel(row.label_en, row.label_uk) || id;
+}
+
+function euChips(ids) {
+  const list = (ids || []).filter((id) => id && id !== 'other').slice(0, 6);
+  if (!list.length) return '';
+  return `<div class="detail-themes">${list.map((id) =>
+    `<span class="detail-theme">${esc(euThemeLabel(id))}</span>`
+  ).join('')}</div>`;
+}
+
+function euCandidates(n) {
+  const pool = DATA.eu_pool || [];
+  const have = new Set();
+  const norm = (country, name) => `${country || ''}|${String(name || '').toLowerCase()}`;
+  for (const p of n.twinning_partners || []) have.add(norm(p.country, p.name));
+  for (const a of n.intl_agreements || []) have.add(norm(a.partner_country, a.partner_name));
+  const myThemes = new Set(n.eu_theme_ids || []);
+  if (!myThemes.size) return [];
+  const countries = new Set();
+  for (const p of n.twinning_partners || []) if (p.country) countries.add(p.country);
+  for (const a of n.intl_agreements || []) if (a.partner_country) countries.add(a.partner_country);
+  return pool.filter((p) => {
+    if (!p.is_eu) return false;
+    if (have.has(norm(p.country, p.name))) return false;
+    return (p.theme_ids || []).some((tid) => myThemes.has(tid));
+  }).sort((a, b) => {
+    const ac = countries.has(a.country) ? 1 : 0;
+    const bc = countries.has(b.country) ? 1 : 0;
+    return (bc - ac) || ((b.ua_n || 0) - (a.ua_n || 0));
+  }).slice(0, 8);
+}
+
 function packageHtml(item) {
   // Hypothesis IMC package (theme + legal form). Skip on registry PIN edges
   // that already show agreement subjects — still OK on overlays.
@@ -1383,6 +1550,8 @@ function renderDetail(n) {
   if (n.source_quality) badges.push(n.source_quality);
   if (n.degree) badges.push(n.degree + ' ' + t('popup.degreeShort'));
   if (n.twinning_count) badges.push(n.twinning_count + ' ' + t('popup.twinning'));
+  if (n.intl_agreement_count) badges.push(n.intl_agreement_count + ' ' + t('popup.intl'));
+  if (n.interreg_lpa_count) badges.push(n.interreg_lpa_count + ' ' + t('popup.interreg'));
   // Donor programs are graph-only hub nodes (no lat/lon) — keep the badge
   // out of the Мапа detail card too, so "donors only in Граф" holds end-to-end.
   if (mode === 'graph' && n.donor_programs && n.donor_programs.length) badges.push(n.donor_programs.join(', '));
@@ -1464,9 +1633,65 @@ function renderDetail(n) {
         : '';
       return `<div class="detail-twin"><strong>${esc(p.name || '—')}</strong>`
         + (meta ? `<div class="twin-meta">${esc(meta)}</div>` : '')
+        + euChips(p.theme_ids)
         + link
         + `</div>`;
     }).join('')}</div>`;
+  }
+
+  const agrs = n.intl_agreements || [];
+  let intlHtml = '';
+  if (!agrs.length) {
+    intlHtml = `<p class="detail-empty">${esc(t('detail.noIntl'))}</p>`;
+  } else {
+    intlHtml = `<div class="detail-twins">${agrs.map((a) => {
+      const meta = [
+        a.partner_country || null,
+        a.partner_name || null,
+        biLabel(a.kind_en, a.kind) || null,
+        a.signed || null,
+      ].filter(Boolean).join(' · ');
+      return `<div class="detail-twin"><strong>${esc((a.title || '').slice(0, 140) || '—')}</strong>`
+        + (meta ? `<div class="twin-meta">${esc(meta)}</div>` : '')
+        + euChips(a.theme_ids)
+        + `</div>`;
+    }).join('')}</div>`;
+  }
+
+  const ireg = n.interreg_projects || [];
+  let interregHtml = '';
+  if (!ireg.length) {
+    interregHtml = `<p class="detail-empty">${esc(t('detail.noInterreg'))}</p>`;
+  } else {
+    interregHtml = `<div class="detail-twins">${ireg.map((p) => {
+      const meta = [
+        p.is_local_authority ? t('detail.interregLpa') : t('detail.interregTown'),
+        p.acronym || null,
+      ].filter(Boolean).join(' · ');
+      const link = p.url
+        ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">keep.eu</a>`
+        : '';
+      return `<div class="detail-twin"><strong>${esc(p.name || p.acronym || '—')}</strong>`
+        + (meta ? `<div class="twin-meta">${esc(meta)}</div>` : '')
+        + euChips(p.theme_ids)
+        + link
+        + `</div>`;
+    }).join('')}</div>`;
+  }
+
+  const cands = euCandidates(n);
+  let candHtml = '';
+  if (!cands.length) {
+    candHtml = `<p class="detail-empty">${esc(t('detail.noEuCandidates'))}</p>`;
+  } else {
+    candHtml = `<p class="theme-filter-hint">${esc(t('detail.euCandidatesHint'))}</p>`
+      + `<div class="detail-twins">${cands.map((p) => {
+        const meta = [p.country, (p.ua_n ? (p.ua_n + ' ' + t('detail.euUaCount')) : null)].filter(Boolean).join(' · ');
+        return `<div class="detail-twin"><strong>${esc(p.name || '—')}</strong>`
+          + (meta ? `<div class="twin-meta">${esc(meta)}</div>` : '')
+          + euChips(p.theme_ids)
+          + `</div>`;
+      }).join('')}</div>`;
   }
 
   detailBody.innerHTML =
@@ -1477,6 +1702,9 @@ function renderDetail(n) {
       ? `<div class="detail-actions">${links.join('')}</div>`
       : `<p class="detail-empty">${esc(t('popup.noLink'))}</p>`)
     + `<p class="detail-section-label">${esc(t('detail.twinning'))}</p>${twinningHtml}`
+    + `<p class="detail-section-label">${esc(t('detail.intl'))}</p>${intlHtml}`
+    + `<p class="detail-section-label">${esc(t('detail.interreg'))}</p>${interregHtml}`
+    + `<p class="detail-section-label">${esc(t('detail.euCandidates'))}</p>${candHtml}`
     + `<p class="detail-section-label">${esc(t('detail.resources'))}</p>${resourcesHtml}`
     + `<p class="detail-section-label">${esc(t('detail.neighbors'))}</p>${neighborsHtml}`;
 
@@ -1669,7 +1897,8 @@ function rebuildMapLayers() {
     // with whichever of its agreements are actually still visible.
     if (layers.pin && kinds && (kinds.has('pin') || kinds.has('pin_agreement'))) return true;
     if (layers.corpus && n.in_corpus) return true;
-    if (layers.twinning && (n.twinning_count || n.c4c_url)) return true;
+    if (twinningVisible(n)) return true;
+    if (interregVisible(n)) return true;
     if (!kinds) return false;
     if (layers.thematic && (kinds.has('thematic') || kinds.has('hypothesis'))) return true;
     if (layers.operational && kinds.has('operational')) return true;
@@ -1705,12 +1934,14 @@ function rebuildMapLayers() {
     if (n.lat == null) continue;
     const selected = selectedId === n.id;
     const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
+    const interGlow = layers.interreg && n.interreg_lpa_count;
+    const euGlow = (twinGlow || interGlow) && euThemeOk(n);
     const marker = L.circleMarker([n.lat, n.lon], {
-      radius: selected ? 5.5 : (twinGlow ? 4.2 : 2.2),
-      color: selected ? '#f8fafc' : (twinGlow ? '#9085e9' : '#64748b'),
-      fillColor: selected ? '#2563eb' : (twinGlow ? '#9085e9' : (n.in_corpus ? '#94a3b8' : '#475569')),
-      fillOpacity: selected ? 0.95 : (twinGlow ? 0.85 : 0.45),
-      weight: selected ? 2 : (twinGlow ? 1.5 : 0.5),
+      radius: selected ? 5.5 : (euGlow ? 4.2 : 2.2),
+      color: selected ? '#f8fafc' : (twinGlow && euThemeOk(n) ? '#9085e9' : (interGlow && euThemeOk(n) ? '#0ea5e9' : '#64748b')),
+      fillColor: selected ? '#2563eb' : (twinGlow && euThemeOk(n) ? '#9085e9' : (interGlow && euThemeOk(n) ? '#0ea5e9' : (n.in_corpus ? '#94a3b8' : '#475569'))),
+      fillOpacity: selected ? 0.95 : (euGlow ? 0.85 : 0.45),
+      weight: selected ? 2 : (euGlow ? 1.5 : 0.5),
       opacity: selected ? 1 : 0.55,
     });
     bindSelect(marker, n);
@@ -1731,12 +1962,13 @@ function rebuildMapLayers() {
     // lit up for some other reason, e.g. a hypothesis signal).
     const pinActive = layers.pin && kinds && (kinds.has('pin') || kinds.has('pin_agreement'));
     const corpusGlow = layers.corpus && n.in_corpus;
-    const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
-    const r = (selected ? 6.5 : 3) + Math.min(n.degree || 0, 24) * 0.15 + (twinGlow ? 1.2 : 0);
+    const twinGlow = twinningVisible(n);
+    const interGlow = interregVisible(n);
+    const r = (selected ? 6.5 : 3) + Math.min(n.degree || 0, 24) * 0.15 + ((twinGlow || interGlow) ? 1.2 : 0);
     const marker = L.circleMarker([n.lat, n.lon], {
       radius: r,
-      color: selected ? '#f8fafc' : (twinGlow ? '#9085e9' : (corpusGlow ? '#c98500' : (pinActive ? '#199e70' : '#3987e5'))),
-      fillColor: selected ? '#2563eb' : (twinGlow ? '#9085e9' : (corpusGlow ? '#c98500' : (pinActive ? '#199e70' : '#3987e5'))),
+      color: selected ? '#f8fafc' : (twinGlow ? '#9085e9' : (interGlow ? '#0ea5e9' : (corpusGlow ? '#c98500' : (pinActive ? '#199e70' : '#3987e5')))),
+      fillColor: selected ? '#2563eb' : (twinGlow ? '#9085e9' : (interGlow ? '#0ea5e9' : (corpusGlow ? '#c98500' : (pinActive ? '#199e70' : '#3987e5')))),
       fillOpacity: 0.9,
       weight: selected ? 2.5 : 1,
       opacity: 0.95,
@@ -1766,7 +1998,7 @@ function syncLayerVisibility() {
   // network nodes on when any network / corpus highlight layer is on, or
   // when something is selected (e.g. via search) — its marker must render
   // even if every toggle happens to be off.
-  show(nodesLayer, layers.pin || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus || layers.twinning || layers.plich || selectedId != null);
+  show(nodesLayer, layers.pin || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus || layers.twinning || layers.interreg || layers.plich || selectedId != null);
 }
 
 rebuildMapLayers();
@@ -1783,13 +2015,14 @@ function syncLayers() {
   layers.plich = document.getElementById('layer-plich').checked;
   layers.corpus = document.getElementById('layer-corpus').checked;
   layers.twinning = document.getElementById('layer-twinning').checked;
+  layers.interreg = document.getElementById('layer-interreg').checked;
   layers.donors = document.getElementById('layer-donors').checked;
   layers.basins = document.getElementById('layer-basins').checked;
   if (mode === 'map') {
     rebuildMapLayers();
   }
 }
-['layer-pin','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-plich','layer-corpus','layer-twinning','layer-donors','layer-basins'].forEach(id => {
+['layer-pin','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-plich','layer-corpus','layer-twinning','layer-interreg','layer-donors','layer-basins'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
@@ -1944,7 +2177,7 @@ window.addEventListener('resize', () => {
 function networkNodeVisible(n) {
   if (n.kind === 'country' || n.kind === 'donor' || n.kind === 'agreement') return true;
   return layers.pin || layers.thematic || layers.operational || layers.complementary
-    || layers.explicitAsk || layers.corpus || layers.twinning || layers.plich;
+    || layers.explicitAsk || layers.corpus || layers.twinning || layers.interreg || layers.plich;
 }
 
 function edgeVisible(e) {
@@ -1957,7 +2190,7 @@ function edgeVisible(e) {
   if (e.kind === 'complementary') return layers.complementary;
   if (e.kind === 'explicit_ask') return layers.explicitAsk;
   if (e.kind === 'plich_o_plich') return layers.plich;
-  if (e.kind === 'twinning') return layers.twinning;
+  if (e.kind === 'twinning') return layers.twinning && euThemeOk(e);
   if (e.kind === 'donor') return layers.donors;
   return true;
 }
@@ -2055,6 +2288,8 @@ window.addEventListener('mousemove', (ev) => {
     if (hover.in_pin) metaBits.push(t('popup.inPin'));
     if (hover.in_corpus) metaBits.push(t('popup.inCorpus'));
     if (hover.twinning_count) metaBits.push(hover.twinning_count + ' ' + t('popup.twinning'));
+    if (hover.intl_agreement_count) metaBits.push(hover.intl_agreement_count + ' ' + t('popup.intl'));
+    if (hover.interreg_lpa_count) metaBits.push(hover.interreg_lpa_count + ' ' + t('popup.interreg'));
     if (hover.degree) metaBits.push(hover.degree + ' ' + t('popup.degreeShort'));
     const links = [];
     if (hover.portal_url) links.push(t('popup.portal'));
@@ -2225,10 +2460,12 @@ function drawGraph() {
     if (!networkNodeVisible(n)) continue;
     const isHub = n.kind === 'country' || n.kind === 'donor' || n.kind === 'agreement';
     const hubEdgeKind = n.kind === 'country' ? 'twinning' : n.kind === 'donor' ? 'donor' : 'pin_agreement';
-    if (isHub && !edgeVisible({ kind: hubEdgeKind, theme_ids: n.theme_id ? [n.theme_id] : undefined })) continue;
+    if (isHub && n.kind === 'country' && !layers.twinning) continue;
+    if (isHub && n.kind !== 'country' && !edgeVisible({ kind: hubEdgeKind, theme_ids: n.theme_id ? [n.theme_id] : undefined })) continue;
     const hi = hover === n || selectedId === n.id;
     const corpusGlow = layers.corpus && n.in_corpus;
-    const twinGlow = layers.twinning && (n.twinning_count || n.c4c_url);
+    const twinGlow = twinningVisible(n);
+    const interGlow = interregVisible(n);
     // Same idea as the Мапа mode's nodeSignalActive: n.in_pin never changes
     // with the theme filter, graphPinIds does — keeps the dot from staying
     // green once its own agreements are filtered out by theme.
@@ -2246,7 +2483,7 @@ function drawGraph() {
       : n.kind === 'country' ? '#9085e9'
       : n.kind === 'donor' ? '#e66767'
       : n.kind === 'agreement' ? '#199e70'
-      : (twinGlow ? '#9085e9' : (corpusGlow ? '#c98500' : (pinActive ? '#199e70' : '#3987e5')));
+      : (twinGlow ? '#9085e9' : (interGlow ? '#0ea5e9' : (corpusGlow ? '#c98500' : (pinActive ? '#199e70' : '#3987e5'))));
     ctx.fill();
     if (selected) {
       ctx.beginPath();
@@ -2315,6 +2552,8 @@ window.PAGE_I18N = {
     "layer.corpus.desc": "Підсвітити громади, чиї тексти вже в аналізі",
     "layer.twinning.title": "Міста-побратими ЄС",
     "layer.twinning.desc": "Фіолетові — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли",
+    "layer.interreg.title": "Interreg (рада громади)",
+    "layer.interreg.desc": "Блакитні — keep.eu, лише Local public authority; не twinning і не МСС",
     "layer.donors.title": "Донорські програми",
     "layer.donors.desc": "Червоні — у «Графі» донорські програми показані як окремі вузли",
     "layer.basins.title": "Підкладка · водозбори",
@@ -2326,6 +2565,10 @@ window.PAGE_I18N = {
     "themes.hint": "Фільтрує лише бірюзові лінії реєстру — інші сигнали (гіпотези, побратими, Пліч-о-Пліч тощо) від цього фільтра не залежать. «Інше» — назва без розпізнаної теми (часто лише «спільний проєкт»).",
     "themes.empty": "Немає тем угод",
     "themes.emptyPick": "Оберіть хоча б одну тему — інакше угоди на мапі сховані.",
+    "euThemes.label": "Теми UA–ЄС",
+    "euThemes.hint": "Фільтрує фіолетові побратими та блакитний Interreg. Теми з реєстру 3668 і назв проєктів keep.eu — не форми Закону 1508 і не бірюзові лінії МСС.",
+    "euThemes.empty": "Немає тем UA–ЄС",
+    "euThemes.emptyPick": "Оберіть хоча б одну тему — інакше побратими й Interreg сховані.",
     "stats.label": "Цифри",
     "stat.universe": "Громад на мапі",
     "stat.portal": "З посиланням на портал",
@@ -2340,6 +2583,8 @@ window.PAGE_I18N = {
     "stat.plich": "Пар «Пліч-о-Пліч»",
     "stat.twinning": "З побратимами ЄС",
     "stat.twinningCountries": "Країн-побратимів (Граф)",
+    "stat.intl": "Угод 3668 (громади)",
+    "stat.interreg": "Interreg LPA",
     "stat.donors": "Донорських програм (Граф)",
     "stat.basins": "Водозборів (підкладка)",
     "hint.map": "Сірі ноди — усі громади з координатами, не лише ті, чиї стратегії ми вже розібрали. Клац по громаді відкриває картку з деталями.",
@@ -2354,6 +2599,8 @@ window.PAGE_I18N = {
     "popup.degreeShort": "звʼязків у реєстрі",
     "popup.noLink": "Немає посилання на портал або стратегію",
     "popup.twinning": "побратимів",
+    "popup.intl": "угод 3668",
+    "popup.interreg": "Interreg LPA",
     "popup.c4c": "Профіль на Cities4Cities",
     "detail.close": "Закрити",
     "detail.twinning": "Міста-побратими",
@@ -2361,6 +2608,16 @@ window.PAGE_I18N = {
     "detail.twinningSource": "Джерело",
     "detail.since": "з",
     "detail.strategyMention": "згадка в стратегії",
+    "detail.intl": "Зареєстровані угоди з ЄС (3668)",
+    "detail.noIntl": "Немає зареєстрованої угоди 3668, зіставленої з цією громадою",
+    "detail.interreg": "Проєкти Interreg",
+    "detail.noInterreg": "Немає зіставленого проєкту keep.eu",
+    "detail.interregLpa": "місцева влада",
+    "detail.interregTown": "за містом (не обов'язково рада)",
+    "detail.euCandidates": "Кандидати в ЄС за темою",
+    "detail.noEuCandidates": "Немає пулу: потрібна розпізнана тема з угоди 3668 або Interreg",
+    "detail.euCandidatesHint": "Місця в ЄС, які вже співпрацювали з українськими громадами на ту саму тему. Це не «AI знайде близнюка» і не грант.",
+    "detail.euUaCount": "громад UA",
     "detail.resources": "Ресурси та DREAM",
     "detail.neighbors": "Звʼязки на мапі",
     "detail.loading": "Завантаження ресурсів…",
@@ -2430,6 +2687,8 @@ window.PAGE_I18N = {
     "layer.corpus.desc": "Highlight hromadas whose texts are already in the analysis",
     "layer.twinning.title": "EU twin cities",
     "layer.twinning.desc": "Violet — hromadas with UA–EU twinning; countries appear as separate nodes in Graph mode",
+    "layer.interreg.title": "Interreg (local authority)",
+    "layer.interreg.desc": "Cyan — keep.eu Local public authority only; not twinning and not domestic IMC",
     "layer.donors.title": "Donor programs",
     "layer.donors.desc": "Red — in Graph mode, donor programs appear as separate nodes",
     "layer.basins.title": "Underlay · catchments",
@@ -2441,6 +2700,10 @@ window.PAGE_I18N = {
     "themes.hint": "Filters teal registry lines only — other signals (hypotheses, twin cities, Пліч-о-Пліч, etc.) aren't affected by this filter. “Other” = title with no recognised theme (often just “joint project”).",
     "themes.empty": "No agreement themes",
     "themes.emptyPick": "Pick at least one theme — otherwise agreements are hidden on the map.",
+    "euThemes.label": "UA–EU themes",
+    "euThemes.hint": "Filters violet twin cities and cyan Interreg. Themes come from the 3668 register and keep.eu titles — not Law 1508 forms and not teal IMC lines.",
+    "euThemes.empty": "No UA–EU themes",
+    "euThemes.emptyPick": "Pick at least one theme — otherwise twinning and Interreg are hidden.",
     "stats.label": "Figures",
     "stat.universe": "Hromadas on the map",
     "stat.portal": "With a portal link",
@@ -2455,6 +2718,8 @@ window.PAGE_I18N = {
     "stat.plich": "Пліч-о-Пліч pairs",
     "stat.twinning": "With EU twin cities",
     "stat.twinningCountries": "Twin countries (Graph)",
+    "stat.intl": "3668 agreements (hromadas)",
+    "stat.interreg": "Interreg LPA",
     "stat.donors": "Donor programs (Graph)",
     "stat.basins": "Catchments (underlay)",
     "hint.map": "Grey nodes are all hromadas with coordinates, not only those whose strategies we have already parsed. Click a hromada to open a detail card.",
@@ -2469,6 +2734,8 @@ window.PAGE_I18N = {
     "popup.degreeShort": "registry links",
     "popup.noLink": "No portal or strategy link",
     "popup.twinning": "twin cities",
+    "popup.intl": "3668 agreements",
+    "popup.interreg": "Interreg LPA",
     "popup.c4c": "Cities4Cities profile",
     "detail.close": "Close",
     "detail.twinning": "Sister cities",
@@ -2476,6 +2743,16 @@ window.PAGE_I18N = {
     "detail.twinningSource": "Source",
     "detail.since": "since",
     "detail.strategyMention": "mentioned in strategy",
+    "detail.intl": "Registered agreements with the EU (3668)",
+    "detail.noIntl": "No Law 3668 agreement matched to this hromada",
+    "detail.interreg": "Interreg projects",
+    "detail.noInterreg": "No matched keep.eu project",
+    "detail.interregLpa": "local authority",
+    "detail.interregTown": "town-matched (not necessarily the council)",
+    "detail.euCandidates": "EU candidates by theme",
+    "detail.noEuCandidates": "No pool: need a recognised theme from a 3668 agreement or Interreg",
+    "detail.euCandidatesHint": "EU places that already cooperate with Ukrainian hromadas on the same theme. Not “AI finds your twin”, not a grant.",
+    "detail.euUaCount": "UA hromadas",
     "detail.resources": "Resources & DREAM",
     "detail.neighbors": "Links on the map",
     "detail.loading": "Loading resources…",

@@ -1,0 +1,219 @@
+{
+  "generatedAt": "2026-09-16T13:12:52.766513+00:00",
+  "caveat": "Law 3668-IX / CMU 357-2025 register of international territorial cooperation agreements (data.gov.ua). Separate from domestic МСС (Law 1508-VII), from SKEW/C4C twinning, and from Interreg/keep.eu. Sphere text is free-form; theme_ids are heuristics. Many rows are oblast-level or unmatched pre-amalgamation councils. Incomplete vs the Ministry twincities dashboard. Not folded into matching score; never known=true.",
+  "hromadaCount": 107,
+  "agreementsMatched": 197,
+  "euRows": 267,
+  "top": [
+    {
+      "short": "Миколаївська",
+      "oblast": "Миколаївська область",
+      "agreement_count": 8,
+      "themes": [
+        "culture",
+        "economy",
+        "roads",
+        "tourism",
+        "education",
+        "health"
+      ],
+      "partners": [
+        "м.Устрики Долішні (PL)",
+        "м.Щебрешин (PL)",
+        "м. Батумі (GE)",
+        "Місто Баррі (IT)",
+        "Муніципалітет Нарбонна та Великий Нарбонн (FR)"
+      ]
+    },
+    {
+      "short": "Новоселицька",
+      "oblast": "Чернівецька область",
+      "agreement_count": 8,
+      "themes": [
+        "culture",
+        "economy",
+        "governance",
+        "tourism",
+        "borders",
+        "education"
+      ],
+      "partners": [
+        "к.  Сучевіца (RO)",
+        "к. Суліца (RO)",
+        "Ботошанський повіт (RO)",
+        "к.  Сучевіца (RO)",
+        "к. Суліца (RO)"
+      ]
+    },
+    {
+      "short": "Нововолинська",
+      "oblast": "Волинська область",
+      "agreement_count": 6,
+      "themes": [
+        "tourism",
+        "culture",
+        "education",
+        "governance",
+        "security",
+        "roads"
+      ],
+      "partners": [
+        "Повіт Люблінського воєводства (PL)",
+        "Муніципалітет Республіки Польща Грубешів (PL)",
+        "Отвоцький повіт (PL)",
+        "місто Білгорай Люблінського воєводства - Туяк М. (PL)",
+        "гміна Риманув (PL)"
+      ]
+    },
+    {
+      "short": "Пустомитівська",
+      "oblast": "Львівська область",
+      "agreement_count": 6,
+      "themes": [
+        "tourism",
+        "culture",
+        "economy",
+        "borders",
+        "education",
+        "health"
+      ],
+      "partners": [
+        "Ґміна Журавіца (PL)",
+        "Ґміна Риманув (PL)",
+        "Ґміна Журавіца (PL)",
+        "гміна Юзефув-над-Віслою (PL)",
+        "Ґміна Риманув (PL)"
+      ]
+    },
+    {
+      "short": "Старосамбірська",
+      "oblast": "Львівська область",
+      "agreement_count": 6,
+      "themes": [
+        "borders",
+        "tourism",
+        "culture",
+        "education",
+        "social",
+        "roads"
+      ],
+      "partners": [
+        "Гміна Устрики Дольне (PL)",
+        "Гміна Заршин (PL)",
+        "Гміна Блажова (PL)",
+        "Гміна Колбушова (PL)",
+        "Кросненський повіт (PL)"
+      ]
+    },
+    {
+      "short": "Ковельська",
+      "oblast": "Волинська область",
+      "agreement_count": 5,
+      "themes": [
+        "culture",
+        "education",
+        "economy",
+        "governance",
+        "borders"
+      ],
+      "partners": [
+        "м. Хелм (PL)",
+        "м.Легіоново (PL)",
+        "м.Ленчна (PL)",
+        "м.Ленчна (PL)",
+        "гміна Бабошево (PL)"
+      ]
+    },
+    {
+      "short": "Ізмаїльська",
+      "oblast": "Одеська область",
+      "agreement_count": 4,
+      "themes": [
+        "waste",
+        "culture",
+        "education",
+        "economy",
+        "tourism",
+        "social"
+      ],
+      "partners": [
+        "м. Тулча (RO)",
+        "м. Джурджу (RO)",
+        "м. Бухарест (RO)",
+        "Повіт Тулча (RO)"
+      ]
+    },
+    {
+      "short": "Бродівська",
+      "oblast": "Львівська область",
+      "agreement_count": 4,
+      "themes": [],
+      "partners": [
+        "Стрижівський повіт (PL)",
+        "місто Белжице (PL)",
+        "Стрижівський повіт (PL)",
+        "місто Белжице (PL)"
+      ]
+    },
+    {
+      "short": "Любомльська",
+      "oblast": "Волинська область",
+      "agreement_count": 4,
+      "themes": [
+        "economy",
+        "culture",
+        "education",
+        "tourism",
+        "governance"
+      ],
+      "partners": [
+        "Хелмський повіт Люблінського воєводства (PL)",
+        "Люблінське воєводство Парчевського повіт (PL)",
+        "Люблінське воєводство (PL)",
+        "Люблінське воєводство (PL)"
+      ]
+    },
+    {
+      "short": "Самбірська",
+      "oblast": "Львівська область",
+      "agreement_count": 4,
+      "themes": [],
+      "partners": [
+        "місто Бжозув (PL)",
+        "Гміна Ясло (PL)",
+        "селище Заршин (PL)",
+        "місто Ясло (PL)"
+      ]
+    },
+    {
+      "short": "Яворівська",
+      "oblast": "Львівська область",
+      "agreement_count": 4,
+      "themes": [],
+      "partners": [
+        "Місто Любачів (PL)",
+        "Місто Ярослав (PL)",
+        "м. Нароль (PL)",
+        "Місто Чесанів (PL)"
+      ]
+    },
+    {
+      "short": "Володимир-Волинська",
+      "oblast": "Волинська область",
+      "agreement_count": 3,
+      "themes": [
+        "borders",
+        "tourism",
+        "culture",
+        "education",
+        "economy",
+        "governance"
+      ],
+      "partners": [
+        "м.Грубешів (PL)",
+        "м. Грубешув (PL)",
+        "Гміна Грубешув (PL)"
+      ]
+    }
+  ]
+}

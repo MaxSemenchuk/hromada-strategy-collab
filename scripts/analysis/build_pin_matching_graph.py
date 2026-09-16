@@ -21,6 +21,8 @@ Overlay policy (2026-07-24 / layers 2026-07-29 / basins 2026-08-03):
     complementary — resource/DREAM ↔ Challenges (default OFF)
     explicit_ask  — МСС language in strategy text (default OFF)
     twinning      — UA–EU sister cities from SKEW / strategy (node highlight, default OFF)
+    interreg      — keep.eu local-authority Interreg projects (node highlight, default OFF)
+    intl 3668     — registered international territorial agreements (card + EU theme filter)
     plich_o_plich — domestic rear↔forpost pairs, text-mined from news (default OFF;
                     bilateral_confirmed edges only — see docs/plich-o-plich.md)
     basins        — HydroBASINS lev06 underlay (default OFF; not in score)
@@ -41,6 +43,14 @@ sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 sys.path.insert(0, str(ROOT / "scripts" / "analysis" / "legacy"))
 from edge_io import ensure_packages, load_matching_edges  # noqa: E402
 from goal_overlap import explain_goal_overlap  # noqa: E402
+from build_intl_agreements import EU27  # noqa: E402
+from intl_theme import (  # noqa: E402
+    INTL_THEME_LABELS,
+    INTL_THEME_LABELS_EN,
+    classify_intl_themes,
+    names_overlap,
+    partner_name_key,
+)
 from mss_suggest import (  # noqa: E402
     THEME_LABELS,
     THEME_LABELS_EN,
@@ -57,6 +67,8 @@ EDGES = ROOT / "data/releases/matching-edges.json"
 COMPLEMENTARY = ROOT / "data/releases/matching-edges.complementary.json"
 EXPLICIT_ASK = ROOT / "data/releases/matching-edges.explicit-ask.json"
 TWINNING = ROOT / "data/releases/twinning-partners.json"
+INTL_AGREEMENTS = ROOT / "data/releases/intl-agreements.json"
+INTERREG = ROOT / "data/releases/interreg-partners.json"
 PLICH_O_PLICH = ROOT / "data/releases/plich-o-plich.json"
 HROMADAS = ROOT / "data/releases/hromadas.json"
 OBLASTS = ROOT / "docs/geo/ukraine-oblasts.geojson"
@@ -678,6 +690,178 @@ def encode_named_overlay(
     return out
 
 
+def _uniq_theme_ids(*groups: list[str] | None) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+    for group in groups:
+        for tid in group or []:
+            if tid and tid not in seen:
+                seen.add(tid)
+                out.append(tid)
+    return out
+
+
+def load_intl_by_code() -> dict[str, dict]:
+    """Law 3668-IX agreements keyed by KATOTTG (hromada-level matches only)."""
+    out: dict[str, dict] = {}
+    if not INTL_AGREEMENTS.exists():
+        return out
+    payload = json.loads(INTL_AGREEMENTS.read_text(encoding="utf-8"))
+    for h in payload.get("hromadas") or []:
+        code = (h.get("katottg") or "").strip()
+        if not code:
+            continue
+        agrs = []
+        for a in h.get("agreements") or []:
+            agrs.append(
+                {
+                    "title": (a.get("title") or "")[:160],
+                    "kind": a.get("kind"),
+                    "kind_en": a.get("kind_en"),
+                    "kind_id": a.get("kind_id"),
+                    "partner_name": a.get("partner_name"),
+                    "partner_country": a.get("partner_country"),
+                    "theme_ids": (a.get("theme_ids") or [])[:6],
+                    "signed": a.get("signed"),
+                    "is_eu": a.get("partner_country") in EU27,
+                }
+            )
+        out[code] = {
+            "agreements": agrs[:8],
+            "agreement_count": len(h.get("agreements") or agrs),
+            "theme_ids": list(h.get("theme_ids") or []),
+        }
+    return out
+
+
+def load_interreg_by_code() -> dict[str, dict]:
+    """keep.eu projects keyed by KATOTTG; themes from English titles (no re-fetch)."""
+    out: dict[str, dict] = {}
+    if not INTERREG.exists():
+        return out
+    payload = json.loads(INTERREG.read_text(encoding="utf-8"))
+    for h in payload.get("hromadas") or []:
+        code = (h.get("katottg") or "").strip()
+        if not code:
+            continue
+        projects = []
+        theme_ids: list[str] = []
+        lpa = 0
+        seen_proj: set[int | str] = set()
+        for p in h.get("partners") or []:
+            pid = p.get("project_id") or p.get("project_acronym")
+            if pid in seen_proj:
+                continue
+            seen_proj.add(pid)
+            name = p.get("project_name_en") or p.get("project_acronym") or ""
+            tids = classify_intl_themes(name, p.get("project_acronym") or "")
+            is_lpa = bool(p.get("is_local_authority"))
+            if is_lpa:
+                lpa += 1
+            projects.append(
+                {
+                    "acronym": p.get("project_acronym"),
+                    "name": name[:160],
+                    "theme_ids": tids[:6],
+                    "is_local_authority": is_lpa,
+                    "url": p.get("source_url"),
+                    "programme": p.get("programme"),
+                }
+            )
+            theme_ids = _uniq_theme_ids(theme_ids, tids)
+        projects.sort(key=lambda r: (not r["is_local_authority"], r.get("name") or ""))
+        out[code] = {
+            "projects": projects[:6],
+            "project_count": len(projects),
+            "lpa_count": lpa,
+            "theme_ids": theme_ids,
+        }
+    return out
+
+
+def attach_twin_themes(partners: list[dict], agrs: list[dict]) -> None:
+    """Copy 3668 themes onto a twin city when the foreign names overlap."""
+    if not agrs:
+        return
+    for p in partners:
+        hits: list[str] = []
+        for a in agrs:
+            if p.get("country") and a.get("partner_country") and p["country"] != a["partner_country"]:
+                continue
+            if names_overlap(p.get("name"), a.get("partner_name")):
+                hits = _uniq_theme_ids(hits, a.get("theme_ids"))
+        if hits:
+            p["theme_ids"] = hits[:6]
+
+
+def build_eu_pool(
+    intl_by_code: dict[str, dict],
+    twinning_by_code: dict[str, dict],
+) -> list[dict]:
+    """Named EU places that already cooperate with UA hromadas, by theme.
+
+    Revealed-cooperation pool — not an embedding match, not a grant award.
+    """
+    buckets: dict[tuple[str, str], dict] = {}
+
+    def add(name: str | None, country: str | None, theme_ids: list[str], source: str) -> None:
+        if not name or country not in EU27:
+            return
+        key = (country, partner_name_key(name) or name.lower()[:48])
+        row = buckets.get(key)
+        if row is None:
+            row = {
+                "name": name,
+                "country": country,
+                "theme_ids": [],
+                "ua_n": 0,
+                "sources": [],
+                "is_eu": True,
+            }
+            buckets[key] = row
+        row["ua_n"] += 1
+        row["theme_ids"] = _uniq_theme_ids(row["theme_ids"], theme_ids)
+        if source not in row["sources"]:
+            row["sources"].append(source)
+
+    for block in intl_by_code.values():
+        for a in block.get("agreements") or []:
+            add(a.get("partner_name"), a.get("partner_country"), a.get("theme_ids") or [], "law3668")
+    for twin in twinning_by_code.values():
+        for p in twin.get("partners") or []:
+            if p.get("theme_ids"):
+                add(p.get("name"), p.get("country"), p.get("theme_ids"), "twinning")
+
+    pool = sorted(
+        buckets.values(),
+        key=lambda r: (-r["ua_n"], r.get("country") or "", r.get("name") or ""),
+    )
+    return pool[:400]
+
+
+def build_eu_theme_catalog(
+    intl_by_code: dict[str, dict],
+    interreg_by_code: dict[str, dict],
+) -> list[dict]:
+    counts: dict[str, int] = defaultdict(int)
+    for block in list(intl_by_code.values()) + list(interreg_by_code.values()):
+        ids = list(block.get("theme_ids") or [])
+        if not ids:
+            counts["other"] += 1
+            continue
+        for tid in ids:
+            counts[tid] += 1
+    return [
+        {
+            "id": tid,
+            "label_uk": INTL_THEME_LABELS.get(tid, tid),
+            "label_en": INTL_THEME_LABELS_EN.get(tid, tid),
+            "n": counts[tid],
+        }
+        for tid in sorted(counts.keys(), key=lambda t: (-counts[t], INTL_THEME_LABELS.get(t, t)))
+    ]
+
+
 def build_payload() -> dict:
     geo = load_geo()
     mss_registry = load_mss_registry()
@@ -832,7 +1016,7 @@ def build_payload() -> dict:
 
     pin_member = {e["a"] for e in pin_edges} | {e["b"] for e in pin_edges}
 
-    twinning_by_code: dict[str, list[dict]] = {}
+    twinning_by_code: dict[str, dict] = {}
     if TWINNING.exists():
         twin_payload = json.loads(TWINNING.read_text(encoding="utf-8"))
         for h in twin_payload.get("hromadas") or []:
@@ -859,16 +1043,48 @@ def build_payload() -> dict:
                 "c4c_url": h.get("c4c_url"),
             }
 
+    intl_by_code = load_intl_by_code()
+    interreg_by_code = load_interreg_by_code()
+    for code, twin in twinning_by_code.items():
+        attach_twin_themes(twin.get("partners") or [], (intl_by_code.get(code) or {}).get("agreements") or [])
+    eu_pool = build_eu_pool(intl_by_code, twinning_by_code)
+    eu_themes = build_eu_theme_catalog(intl_by_code, interreg_by_code)
+
+    def eu_node_fields(code: str, twin_partners: list[dict]) -> dict:
+        intl = intl_by_code.get(code) or {}
+        ireg = interreg_by_code.get(code) or {}
+        theme_ids = _uniq_theme_ids(intl.get("theme_ids"), ireg.get("theme_ids"))
+        for p in twin_partners:
+            theme_ids = _uniq_theme_ids(theme_ids, p.get("theme_ids"))
+        fields: dict = {
+            "eu_theme_ids": theme_ids[:10],
+            "intl_agreement_count": intl.get("agreement_count") or 0,
+            "interreg_lpa_count": ireg.get("lpa_count") or 0,
+        }
+        if intl.get("agreements"):
+            fields["intl_agreements"] = intl["agreements"]
+        if ireg.get("projects"):
+            fields["interreg_projects"] = ireg["projects"]
+        return fields
+
     # Twinning countries as graph-only hub nodes (Граф view; no lat/lon, so
     # they never enter the Leaflet map layers, which all skip lat==None).
     country_nodes: dict[str, dict] = {}
     twinning_edges: list[dict] = []
     for code, twin in twinning_by_code.items():
         by_country: dict[str, int] = defaultdict(int)
+        themes_by_country: dict[str, list[str]] = defaultdict(list)
         for p in twin.get("partners") or []:
             iso = p.get("country")
             if iso:
                 by_country[iso] += 1
+                themes_by_country[iso] = _uniq_theme_ids(
+                    themes_by_country[iso], p.get("theme_ids")
+                )
+        hromada_themes = _uniq_theme_ids(
+            (intl_by_code.get(code) or {}).get("theme_ids"),
+            (interreg_by_code.get(code) or {}).get("theme_ids"),
+        )
         for iso, count in by_country.items():
             node_id = f"country:{iso}"
             if node_id not in country_nodes:
@@ -885,8 +1101,15 @@ def build_payload() -> dict:
                     "degree": 0,
                 }
             country_nodes[node_id]["degree"] += 1
+            edge_themes = themes_by_country.get(iso) or hromada_themes
             twinning_edges.append(
-                {"a": code, "b": node_id, "kind": "twinning", "partner_count": count}
+                {
+                    "a": code,
+                    "b": node_id,
+                    "kind": "twinning",
+                    "partner_count": count,
+                    "theme_ids": edge_themes[:8],
+                }
             )
 
     # Donor programs as graph-only hub nodes, from hromadas.json DonorsPrograms.
@@ -969,6 +1192,7 @@ def build_payload() -> dict:
             "twinning_partners": twin_partners[:12],
             "donor_programs": meta.get("donor_programs") or [],
         }
+        out.update(eu_node_fields(code, twin_partners))
         if code in basin_by_code:
             out["basin_id"] = basin_by_code[code]
         return out
@@ -1031,6 +1255,7 @@ def build_payload() -> dict:
             "twinning_count": len(twin_partners),
             "twinning_partners": twin_partners[:12],
         }
+        u.update(eu_node_fields(code, twin_partners))
         if code in basin_by_code:
             u["basin_id"] = basin_by_code[code]
         universe.append(u)
@@ -1050,6 +1275,8 @@ def build_payload() -> dict:
 
     portal_on_map = sum(1 for n in universe if n.get("portal_url"))
     twinning_on_map = sum(1 for n in universe if n.get("twinning_count") or n.get("c4c_url"))
+    interreg_on_map = sum(1 for n in universe if n.get("interreg_lpa_count"))
+    intl_on_map = sum(1 for n in universe if n.get("intl_agreement_count"))
 
     return {
         "meta": {
@@ -1064,6 +1291,10 @@ def build_payload() -> dict:
             "cities4cities_listed": sum(1 for v in twinning_by_code.values() if v.get("c4c_url")),
             "twinning_countries": len(country_nodes),
             "twinning_edges": len(twinning_edges),
+            "intl_hromadas": intl_on_map,
+            "intl_agreements": sum(n.get("intl_agreement_count") or 0 for n in universe),
+            "interreg_lpa_hromadas": interreg_on_map,
+            "eu_pool": len(eu_pool),
             "donor_programs_count": len(donor_nodes),
             "donor_edges": len(donor_edges),
             "pin_agreement_hubs": len(agreement_nodes),
@@ -1108,6 +1339,16 @@ def build_payload() -> dict:
                 if twinning_by_code
                 else None
             ),
+            "intl_agreements_source": (
+                "data/releases/intl-agreements.json (Law 3668-IX / CMU 357-2025)"
+                if intl_by_code
+                else None
+            ),
+            "interreg_source": (
+                "data/releases/interreg-partners.json (keep.eu; LPA flag + title themes)"
+                if interreg_by_code
+                else None
+            ),
             "plich_o_plich_source": (
                 "data/releases/plich-o-plich.json (news text-mining; "
                 "bilateral_confirmed edges only)"
@@ -1122,14 +1363,19 @@ def build_payload() -> dict:
                 "thematic=goals_cosine track; operational=geo neighbours; "
                 "complementary=resource/DREAM↔Challenges; explicit_ask=МСС language; "
                 "twinning=UA–EU sister cities (node highlight); "
+                "interreg=keep.eu local-authority projects (node highlight); "
+                "intl 3668=registered international territorial agreements (card + EU theme filter); "
                 "plich_o_plich=domestic rear↔forpost pairs, bilateral_confirmed only; "
                 "basins=HydroBASINS lev06 underlay (not in score); "
                 "pin theme filter=mss_suggest on registry title/form; "
+                "eu theme filter=intl_theme on 3668 sphere + Interreg titles (does not affect PIN); "
                 "no combined-score hyp layer; "
                 "universe=all release rows with KSE geo (metadata layer)"
             ),
         },
         "pin_themes": pin_themes,
+        "eu_themes": eu_themes,
+        "eu_pool": eu_pool,
         "oblasts": oblasts,
         "ukraine_outline": outline,
         "basins": basins,
@@ -1169,6 +1415,9 @@ def main() -> None:
         f"complementary={m['complementary_edges']} explicit_ask={m['explicit_ask_edges']} "
         f"twinning={m.get('twinning_hromadas', 0)} "
         f"(countries={m.get('twinning_countries', 0)}/{m.get('twinning_edges', 0)}e) "
+        f"intl={m.get('intl_hromadas', 0)}/{m.get('intl_agreements', 0)} "
+        f"interreg_lpa={m.get('interreg_lpa_hromadas', 0)} "
+        f"eu_pool={m.get('eu_pool', 0)} "
         f"donors={m.get('donor_programs_count', 0)}/{m.get('donor_edges', 0)}e "
         f"pin_agreement_hubs={m.get('pin_agreement_hubs', 0)}/{m.get('pin_agreement_edges', 0)}e"
     )

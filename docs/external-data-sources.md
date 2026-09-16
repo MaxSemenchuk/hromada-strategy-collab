@@ -296,6 +296,37 @@ codes this source introduces.
 
 ---
 
+## Law 3668-IX — register of international territorial cooperation agreements
+
+- **Reviewed:** 2026-09-16
+- **CKAN:** https://data.gov.ua/dataset/6c460279-bac0-45ba-ab71-b255289a49f2
+- **Law / CMU:** [3668-IX](https://zakon.rada.gov.ua/laws/show/3668-20);
+  registration procedure [357-2025](https://zakon.rada.gov.ua/laws/show/357-2025-%D0%BF)
+
+Open XLSX of agreements whose drafts were cleared by Мінрозвитку. Columns
+include legal **kind** (міжтериторіальне / транскордонне / транснаціональне),
+free-text **sphere**, UA party, foreign state + ATU. This is the international
+analogue of PIN — **not** a twinning list and **not** Interreg.
+
+```bash
+yarn intl-agreements              # fetch CKAN XLSX + build release
+yarn intl-agreements --offline    # rebuild from data/cache/intl-agreements/
+yarn fetch-intl-agreements        # refresh cache only
+yarn test-intl-theme
+```
+
+→ `data/releases/intl-agreements.json`. Snapshot: 312 filled rows, 267 EU-ish
+by country name; **107 hromadas / 197 agreements** after skipping oblast ODA
+and unmatched pre-2014 village councils. `theme_ids` are heuristics
+(`intl_theme.py`) on title+sphere — often boilerplate «культура, освіта,
+економіка». Incomplete vs decentralization.ua/twincities dashboard (~2119).
+Signed PDFs stay at the ministry (CMU 357 §14), not in the XLSX.
+
+Map: card sections + «Теми UA–ЄС» filter + EU candidate pool on
+`yarn graph-pin-matching`. Do not fold into v7 `score`; never `known: true`.
+
+---
+
 ## Own revenues (data.gov.ua) — caveat
 
 CKAN packages titled «Власні доходи громад … на одиницю населення» are often
