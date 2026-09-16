@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-12T23:53:07.762267+00:00",
+  "generatedAt": "2026-09-15T18:10:37.079250+00:00",
   "path": "mss-candidates.json",
-  "registryKnown": 12,
+  "registryKnown": 11,
   "hypotheses": 160,
   "topNPerSlice": 40,
   "sliceOrder": [

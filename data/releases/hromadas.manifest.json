@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-07T14:10:18.635254+00:00",
-  "source": "local:structure-gisrr",
-  "totalRows": 1469,
-  "textMinedRows": 301,
+  "generatedAt": "2026-09-15T19:50:16.048Z",
+  "source": "local:structure-hromada --write-release",
+  "totalRows": 1463,
+  "textMinedRows": 392,
   "schema": "see docs/hromadas-schema.md",
   "license": "CC BY 4.0 — see DATA-LICENSE.md",
   "portalUrlRows": 36,
@@ -16,13 +16,13 @@
     "AFD",
     "STRATEGY LAB"
   ],
-  "lastUpsert": "gisrr-batch:194",
-  "goalsRows": 294,
+  "lastUpsert": "Леськівська сільська територіальна громада",
+  "goalsRows": 385,
   "gisrr": {
-    "upserted": 194,
+    "upserted": 87,
     "meta_only": 0,
-    "skipped_existing_goals": 19,
-    "unmatched": 3,
-    "hierarchy_rows": 194
+    "skipped_existing_goals": 224,
+    "unmatched": 2,
+    "hierarchy_rows": 87
   }
 }

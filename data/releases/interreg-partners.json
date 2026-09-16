@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-12T06:19:32.232052+00:00",
-  "warning": "UA-EU Interreg partnership layer — separate from domestic МСС and from the SKEW/Cities4Cities twinning layer (twinning-partners.json). Sourced from keep.eu (Interact-EU), the official Interreg/ETC project database. IMPORTANT: matching a partner org to a hromada by its registered town does NOT mean that hromada's council has a cooperation tie the way SKEW twinning does — most matched partners are oblast/national/sectoral bodies (regional development agencies, universities, hospitals, NGOs, even a National Guard unit) that merely have a mailing address in that hromada's town, not the hromada government itself. Only 57/734 matched partnerships (organisation_type == 'Local public authority') plausibly ARE the hromada council or a direct department of it — treat coverage.org_type_breakdown as the honest picture, not hromadas_with_partners. SECOND CAVEAT: organisation_type is null on every 2000-2020 ('historical') record observed so far — keep.eu simply didn't capture it for older programming periods — so is_local_authority is a hard false there, not evidence of absence. All 57 confirmed local-authority partnerships come from the 2021-2027 ('current') period; period_breakdown below shows how much of the total is from the less-classified historical periods. Not folded into matching score.",
+  "generatedAt": "2026-09-15T17:15:52.268980+00:00",
+  "warning": "UA-EU Interreg partnership layer — separate from domestic МСС and from the SKEW/Cities4Cities twinning layer (twinning-partners.json). Sourced from keep.eu (Interact-EU), the official Interreg/ETC project database. IMPORTANT: matching a partner org to a hromada by its registered town does NOT mean that hromada's council has a cooperation tie the way SKEW twinning does — most matched partners are oblast/national/sectoral bodies (regional development agencies, universities, hospitals, NGOs, even a National Guard unit) that merely have a mailing address in that hromada's town, not the hromada government itself. Only 57/735 matched partnerships (organisation_type == 'Local public authority') plausibly ARE the hromada council or a direct department of it — treat coverage.org_type_breakdown as the honest picture, not hromadas_with_partners. SECOND CAVEAT: organisation_type is null on every 2000-2020 ('historical') record observed so far — keep.eu simply didn't capture it for older programming periods — so is_local_authority is a hard false there, not evidence of absence. All 57 confirmed local-authority partnerships come from the 2021-2027 ('current') period; period_breakdown below shows how much of the total is from the less-classified historical periods. Not folded into matching score.",
   "sources": [
     {
       "id": "keep.eu",
@@ -26,50 +26,6 @@
         {
           "id": 387,
           "title": "2021 - 2027 Interreg VI-B NEXT Black Sea Basin"
-        },
-        {
-          "id": 76,
-          "title": "2014 - 2020 Poland - Belarus - Ukraine ENI CBC"
-        },
-        {
-          "id": 93,
-          "title": "2014 - 2020 Romania - Ukraine ENI CBC"
-        },
-        {
-          "id": 96,
-          "title": "2014 - 2020 Hungary - Slovakia - Romania - Ukraine ENI CBC"
-        },
-        {
-          "id": 63,
-          "title": "2014 - 2020 INTERREG VB Danube"
-        },
-        {
-          "id": 64,
-          "title": "2014 - 2020 Black Sea Basin ENI CBC"
-        },
-        {
-          "id": 173,
-          "title": "2007 - 2013 Poland-Belarus-Ukraine ENPI CBC"
-        },
-        {
-          "id": 137,
-          "title": "2007 - 2013 Romania-Ukraine-Moldova ENPI CBC"
-        },
-        {
-          "id": 117,
-          "title": "2007 - 2013 Hungary-Slovakia-Romania-Ukraine ENPI CBC"
-        },
-        {
-          "id": 153,
-          "title": "2007 - 2013 Black Sea Basin ENPI CBC"
-        },
-        {
-          "id": 259,
-          "title": "2000 - 2006 Poland - Ukraine - Belarus (PL-UA-BY)"
-        },
-        {
-          "id": 232,
-          "title": "2000 - 2006 Hungary - Slovakia - Ukraine (HU-SK-UA)"
         }
       ]
     }
@@ -80,32 +36,21 @@
       337,
       341,
       369,
-      387,
-      76,
-      93,
-      96,
-      63,
-      64,
-      173,
-      137,
-      117,
-      153,
-      259,
-      232
+      387
     ],
-    "projects_scanned": 1550,
+    "projects_scanned": 1553,
     "hromadas_with_partners": 100,
     "hromadas_with_local_authority_partner": 43,
-    "matched_partnerships": 734,
+    "matched_partnerships": 735,
     "local_authority_partnerships": 57,
-    "unmatched_partnerships": 581,
+    "unmatched_partnerships": 582,
     "resolve_stats": {
-      "town": 664,
+      "town": 665,
       "name_stem": 70,
-      "unmatched": 581
+      "unmatched": 582
     },
     "org_type_breakdown": {
-      "unspecified": 513,
+      "unspecified": 514,
       "Other": 59,
       "Local public authority": 57,
       "Interest groups including NGOs": 27,
@@ -121,7 +66,7 @@
     },
     "period_breakdown": {
       "current": 221,
-      "historical": 513
+      "historical": 514
     }
   },
   "hromadas": [
@@ -9908,6 +9853,24 @@
           "match": "town"
         },
         {
+          "project_id": 24887,
+          "project_acronym": "KEY",
+          "project_name_en": "Communication is the KEY Sighetu Marmatiei Municipal Hospital",
+          "programme": "2014 - 2020 Romania - Ukraine ENI CBC",
+          "programme_id": 93,
+          "period": "historical",
+          "organisation_type": null,
+          "is_local_authority": false,
+          "town": "Solotvyno",
+          "partner_name": "Solotvyno Municipality",
+          "partner_name_en": "Solotvyno Municipality",
+          "budget_eur": "140078.60",
+          "source": "keep.eu",
+          "source_url": "https://keep.eu/projects/Communication-is-the-KEY-Si-EN/",
+          "confidence": "registry",
+          "match": "town"
+        },
+        {
           "project_id": 23901,
           "project_acronym": "HUSKROUA/0901/014",
           "project_name_en": "New Generation – Our “hope” for a better life",
@@ -9980,7 +9943,7 @@
           "match": "town"
         }
       ],
-      "partner_count": 10,
+      "partner_count": 11,
       "local_authority_partner_count": 2
     },
     {

@@ -4,7 +4,7 @@
  *
  * Source: https://gisrr.gov.ua/strategy-local
  * License: CC BY 4.0 (site footer)
- * Note: system is in дослідна експлуатація; coverage is incomplete (~200 ТГ,
+ * Note: system is in дослідна експлуатація; coverage is incomplete (~300 ТГ,
  * not a full national registry). Catalog + detail payloads are SSR-embedded
  * in window.__pinia (no public list API).
  *

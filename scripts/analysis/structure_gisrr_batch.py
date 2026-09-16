@@ -493,13 +493,30 @@ def main() -> None:
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     HIERARCHY_GISRR.parent.mkdir(parents=True, exist_ok=True)
+    existing_h: list[dict] = []
+    if HIERARCHY_GISRR.exists():
+        try:
+            prev = json.loads(HIERARCHY_GISRR.read_text(encoding="utf-8"))
+            existing_h = list(prev.get("hromadas") or [])
+        except json.JSONDecodeError:
+            existing_h = []
+    by_code: dict[str, dict] = {}
+    for item in existing_h:
+        code = item.get("katottg") or item.get("name")
+        if code:
+            by_code[str(code)] = item
+    for item in hierarchy_rows:
+        code = item.get("katottg") or item.get("name")
+        if code:
+            by_code[str(code)] = item
+    merged = sorted(by_code.values(), key=lambda x: str(x.get("name") or ""))
     HIERARCHY_GISRR.write_text(
         json.dumps(
             {
                 "generatedAt": now,
                 "method": "GISRR auto-structure (goals/subgoals)",
-                "hromadaCount": len(hierarchy_rows),
-                "hromadas": hierarchy_rows,
+                "hromadaCount": len(merged),
+                "hromadas": merged,
             },
             ensure_ascii=False,
             indent=2,
