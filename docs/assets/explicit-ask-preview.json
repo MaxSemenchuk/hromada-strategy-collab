@@ -1,9 +1,20 @@
 {
-  "generatedAt": "2026-08-07T14:10:20.563170+00:00",
+  "generatedAt": "2026-09-15T19:50:42.152512+00:00",
   "caveat": "Explicit МСС language in strategy text — not registry-confirmed.",
-  "intentHromadas": 85,
-  "edgeCount": 256,
+  "intentHromadas": 115,
+  "edgeCount": 408,
   "top": [
+    {
+      "a_short": "Біляївська",
+      "b_short": "Біляївська",
+      "explicit_ask_score": 0.95,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "named neighbour in intent: «Явний запит МСС у GISRR-цілях/задачах: ості, зовнішні зв’язки та потенціал для міжмуніципальної співпраці. Візія стратег»"
+      ]
+    },
     {
       "a_short": "Козелецька",
       "b_short": "Парафіївська",
@@ -50,7 +61,29 @@
     },
     {
       "a_short": "Єланецька",
+      "b_short": "Синюхинобрідська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Єланецька",
       "b_short": "Чорноморська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Авдіївська",
+      "b_short": "Лиманська",
       "explicit_ask_score": 0.75,
       "theme": null,
       "suggested_theme": "Інше / не визначено",
@@ -73,6 +106,17 @@
     {
       "a_short": "Байковецька",
       "b_short": "Монастириська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Батуринська",
+      "b_short": "Бахмацька",
       "explicit_ask_score": 0.75,
       "theme": null,
       "suggested_theme": "Інше / не визначено",
@@ -115,6 +159,17 @@
       ]
     },
     {
+      "a_short": "Бахмацька",
+      "b_short": "Сухополов'янська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
       "a_short": "Березівська",
       "b_short": "Буринська",
       "explicit_ask_score": 0.75,
@@ -127,7 +182,29 @@
     },
     {
       "a_short": "Березівська",
+      "b_short": "Ворожбянська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Березівська",
       "b_short": "Дубов’язівська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Березівська",
+      "b_short": "Конотопська",
       "explicit_ask_score": 0.75,
       "theme": null,
       "suggested_theme": "Інше / не визначено",
@@ -181,8 +258,52 @@
       ]
     },
     {
+      "a_short": "Березівська",
+      "b_short": "Хмелівська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Березівська",
+      "b_short": "Хотінська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Богданська",
+      "b_short": "Великоберезнянська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
       "a_short": "Богданська",
       "b_short": "Рахівська",
+      "explicit_ask_score": 0.75,
+      "theme": null,
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "обидві згадують МСС/кооперацію"
+      ]
+    },
+    {
+      "a_short": "Богданська",
+      "b_short": "Углянська",
       "explicit_ask_score": 0.75,
       "theme": null,
       "suggested_theme": "Інше / не визначено",
@@ -205,127 +326,6 @@
     {
       "a_short": "Богданська",
       "b_short": "Ясінянська",
-      "explicit_ask_score": 0.75,
-      "theme": null,
-      "suggested_theme": "Інше / не визначено",
-      "suggested_form": "спільний проєкт",
-      "reasons": [
-        "обидві згадують МСС/кооперацію"
-      ]
-    },
-    {
-      "a_short": "Божедарівська",
-      "b_short": "Вишнівська",
-      "explicit_ask_score": 0.75,
-      "theme": null,
-      "suggested_theme": "Інше / не визначено",
-      "suggested_form": "спільний проєкт",
-      "reasons": [
-        "обидві згадують МСС/кооперацію"
-      ]
-    },
-    {
-      "a_short": "Божедарівська",
-      "b_short": "Дубовиківська",
-      "explicit_ask_score": 0.75,
-      "theme": null,
-      "suggested_theme": "Інше / не визначено",
-      "suggested_form": "спільний проєкт",
-      "reasons": [
-        "обидві згадують МСС/кооперацію"
-      ]
-    },
-    {
-      "a_short": "Божедарівська",
-      "b_short": "Магдалинівська",
-      "explicit_ask_score": 0.75,
-      "theme": null,
-      "suggested_theme": "Інше / не визначено",
-      "suggested_form": "спільний проєкт",
-      "reasons": [
-        "обидві згадують МСС/кооперацію"
-      ]
-    },
-    {
-      "a_short": "Божедарівська",
-      "b_short": "Марганецька",
-      "explicit_ask_score": 0.75,
-      "theme": null,
-      "suggested_theme": "Інше / не визначено",
-      "suggested_form": "спільний проєкт",
-      "reasons": [
-        "обидві згадують МСС/кооперацію"
-      ]
-    },
-    {
-      "a_short": "Божедарівська",
-      "b_short": "Миколаївська",
-      "explicit_ask_score": 0.75,
-      "theme": null,
-      "suggested_theme": "Інше / не визначено",
-      "suggested_form": "спільний проєкт",
-      "reasons": [
-        "обидві згадують МСС/кооперацію"
-      ]
-    },
-    {
-      "a_short": "Борщівська",
-      "b_short": "Монастириська",
-      "explicit_ask_score": 0.75,
-      "theme": "мережа",
-      "suggested_theme": "Інше / не визначено",
-      "suggested_form": "спільний проєкт",
-      "reasons": [
-        "обидві згадують МСС/кооперацію (тема: мережа)"
-      ]
-    },
-    {
-      "a_short": "Буринська",
-      "b_short": "Дубов’язівська",
-      "explicit_ask_score": 0.75,
-      "theme": null,
-      "suggested_theme": "Інше / не визначено",
-      "suggested_form": "спільний проєкт",
-      "reasons": [
-        "обидві згадують МСС/кооперацію"
-      ]
-    },
-    {
-      "a_short": "Буринська",
-      "b_short": "Миколаївська",
-      "explicit_ask_score": 0.75,
-      "theme": null,
-      "suggested_theme": "Інше / не визначено",
-      "suggested_form": "спільний проєкт",
-      "reasons": [
-        "обидві згадують МСС/кооперацію"
-      ]
-    },
-    {
-      "a_short": "Буринська",
-      "b_short": "Путивльська",
-      "explicit_ask_score": 0.75,
-      "theme": null,
-      "suggested_theme": "Інше / не визначено",
-      "suggested_form": "спільний проєкт",
-      "reasons": [
-        "обидві згадують МСС/кооперацію"
-      ]
-    },
-    {
-      "a_short": "Бучанська",
-      "b_short": "Вишнева",
-      "explicit_ask_score": 0.75,
-      "theme": null,
-      "suggested_theme": "Інше / не визначено",
-      "suggested_form": "спільний проєкт",
-      "reasons": [
-        "обидві згадують МСС/кооперацію"
-      ]
-    },
-    {
-      "a_short": "Бучанська",
-      "b_short": "Дмитрівська",
       "explicit_ask_score": 0.75,
       "theme": null,
       "suggested_theme": "Інше / не визначено",
@@ -377,6 +377,11 @@
       "theme": null
     },
     {
+      "short": "Вінницька",
+      "quote": "Обласні громади (координація з регіональною стратегією)",
+      "theme": "мережа"
+    },
+    {
       "short": "Полтавська",
       "quote": "5 підписаних угод про співробітництво — переважно міжнародні партнерства (Калмар, EUACI, ЮНІСЕФ, POLARIS, HELP e.V., Велико-Тирново). Класичного українського МСС із сусідніми грома",
       "theme": null
@@ -405,11 +410,6 @@
       "short": "Галицька",
       "quote": "Ціль 2. Активні мешканці та ефективне управління (цифровізація, міжмуніципальне співробітництво)",
       "theme": null
-    },
-    {
-      "short": "Лохвицька",
-      "quote": "Ціль C. Розумний територіальний розвиток (згуртованість, міжмуніципальне співробітництво, е-демократія, безпека довкілля)",
-      "theme": "безпека"
     }
   ]
 }

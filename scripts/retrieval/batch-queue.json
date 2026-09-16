@@ -640,10 +640,10 @@
     {
       "name": "Городенківська міська територіальна громада",
       "katottg": "UA26080030000014307",
-      "status": "no_strategy",
-      "strategy_url": "",
+      "status": "structured",
+      "strategy_url": "https://gisrr.gov.ua/strategy-local/3875846145464861735",
       "raw_text_path": "",
-      "notes": "priority-corpus-growth: corpusPinLinks=3 pinDegree=21 oblast=Івано-Франківська область; priority search 2026-08-03 waveA: no strategy found"
+      "notes": "GISRR fold-in 2026-08-07 (queue was stale no_strategy); portal also has project page https://hth.gov.ua/proekt-strategii-15-37-24-01-12-2023/"
     },
     {
       "name": "Олешанська сільська територіальна громада",
@@ -757,18 +757,18 @@
       "name": "Надвірнянська міська територіальна громада",
       "katottg": "",
       "status": "no_strategy",
-      "strategy_url": "",
+      "strategy_url": "https://nadrada.gov.ua/strategiya-rozvytku/",
       "raw_text_path": "",
-      "notes": "priority search 2026-08-03 waveB: no strategy found"
+      "notes": "priority search 2026-08-03 waveB + recheck 2026-09-15: working-group page only (surveys/protocols 2023–2027); no approved strategy PDF published"
     },
     {
       "name": "Парафіївська селищна територіальна громада",
       "katottg": "UA74080110000023749",
-      "status": "no_strategy",
-      "strategy_url": "",
+      "status": "structured",
+      "strategy_url": "https://gisrr.gov.ua/strategy-local/3930046925499270602",
       "raw_source_path": "",
       "raw_text_path": "",
-      "notes": "priority search 2026-08-03 waveC: user confirmed not found"
+      "notes": "GISRR fold-in 2026-08-07 (queue was stale no_strategy after waveC miss)"
     },
     {
       "name": "Хотинська міська територіальна громада",
@@ -832,6 +832,54 @@
       "raw_source_path": "scripts/retrieval/raw/рава-руська.pdf",
       "raw_text_path": "scripts/retrieval/raw/рава-руська.extracted.txt",
       "notes": "found 2026-08-03 waveC; scanned strategy to 2027; Goals via vision; structured in-session"
+    },
+    {
+      "name": "Щербанівська сільська територіальна громада",
+      "katottg": "UA53080470000053547",
+      "status": "structured",
+      "strategy_url": "https://gisrr.gov.ua/strategy-local/3841035120681158359",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth PIN hub; GISRR fold-in 2026-09-15; explicit MSS in social-protection tasks"
+    },
+    {
+      "name": "Козельщинська селищна територіальна громада",
+      "katottg": "UA53020090000045206",
+      "status": "structured",
+      "strategy_url": "https://rada.info/upload/users_files/21063513/ee39c7b7dbd6dae9263ad488dbb5c8d6.pdf",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth PIN hub; structured 2026-09-15 in-session from approved Strategy 2024–2027 (session 22.12.2023); explicit task 2.1.3 IMC"
+    },
+    {
+      "name": "Великоберезнянська селищна територіальна громада",
+      "katottg": "UA21100030000089881",
+      "status": "structured",
+      "strategy_url": "https://vberez-rada.gov.ua/lan-zahodiv-na-20262028-roki-z-realizacii-strategii-rozvitku-velikobereznyanskoi-selischnoi-teritorialnoi-gromadi-na-period-do-2027-roku-14-35-12-20-07-2026/",
+      "raw_text_path": "",
+      "notes": "priority-corpus-growth Zakarpattia PIN hub; structured 2026-09-15 from План заходів 2026–2028 (strategy approved 30.08.2026); explicit IMC/twinning task 2.4.4"
+    },
+    {
+      "name": "Боратинська сільська територіальна громада",
+      "katottg": "UA07080030000051738",
+      "status": "structured",
+      "strategy_url": "https://bortg.gov.ua/sites/boratyn.ukraina.org.ua/files/inline-files/strategiya-ta-plan-zakhodiv_boratin.pdf",
+      "raw_text_path": "",
+      "notes": "thin-oblast Volyn 2026-09-16; HOVERLA Strategy to 2027 + Plan 2024–2027; explicit horizontal IMC ask; twinning Sprendlingen-Gensingen (not MSS)"
+    },
+    {
+      "name": "Рожищенська міська територіальна громада",
+      "katottg": "UA07080250000053335",
+      "status": "structured",
+      "strategy_url": "https://rozhrada.gov.ua/sites/rozhrada.gov.ua/files/document_files/strategiya-rozhyshche_01.pdf",
+      "raw_text_path": "",
+      "notes": "thin-oblast Volyn 2026-09-16; HOVERLA Strategy to 2027 (29.12.2023); five 2022 IMC contracts with Доросинівська + Копачівська (strategy-reported, not registry known:true)"
+    },
+    {
+      "name": "Леськівська сільська територіальна громада",
+      "katottg": "UA71080190000038712",
+      "status": "structured",
+      "strategy_url": "https://leskivska-gromada.gov.ua/news/1730378149/",
+      "raw_text_path": "",
+      "notes": "thin-oblast Cherkasy 2026-09-16; Strategy 2024–2027 approved 25.10.2024 №44-55/VIII; explicit IMC asks on out-of-school education and TDF support"
     }
   ]
 }

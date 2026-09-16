@@ -530,10 +530,11 @@ Canonical write-up, with a running decisions log:
       operational neighbours are not an artifact of who got text-mined
       (queue primed: 25 priority `pending` in `batch-queue.json`; see
       [corpus-growth.md](./corpus-growth.md))
-- [ ] **PIN∩corpus growth** — pull top candidates from
-      `corpus-growth-priority.json` (western PIN hubs: Сокирянська,
-      Клішковецька, Борщівська, …) so validation pairs rise from ~10 toward
-      ~25–30; see [Maximal PIN graph read](#maximal-pin-graph-read-2026-07-31)
+- [x] **PIN∩corpus growth (partial, 2026-09-15)** — GISRR +87 and three PIN
+      hubs (Щербанівська, Козельщинська, Великоберезнянська). Remaining
+      western nulls: Слобідсько-Кульчієвецька, Китайгородська,
+      Іване-Пустенська, Надвірнянська. Re-run `yarn report-pin-corpus` after
+      rematch for the new overlap count.
 - [ ] Stakeholder pitch or AIM-CC pilot send on multi-signal packages
       (Чернігівський кластер / Слобожанська–Обухівська / Тульчинська) —
       `internal/aim-cc-field-experiment-prereg.md`
@@ -599,6 +600,60 @@ Canonical write-up, with a running decisions log:
       Full regen run: `yarn match && yarn export-matching-edges` + full test suite green
       (`test-known-pairs` / `test-tracks` / `test-mss-suggest` / `test-template-collision` /
       `test-length-norm` / `test-mss-candidate` / `test-recommend-for` / `test-goals-hierarchy`).
+
+## GISRR second fold-in + PIN-priority structures (2026-09-15)
+
+Re-fetched [gisrr.gov.ua/strategy-local](https://gisrr.gov.ua/strategy-local): catalog grew
+to **315 documents / 313 unique ATU** (21 oblasts). `yarn structure-gisrr` upserted **87**
+new Goals rows (224 already had text). Corpus: **293 → 380** Goals, then **382** after two
+in-session PIN-priority structures.
+
+**Coverage shift (Goals / oblast):** Одеська 3→9; Львівська 6→16; Харківська 5→20;
+Чернігівська 15→24; Донецька 0→5; first Луганська row. Still thin: Волинська 2/53,
+Черкаська 3/66, Житомирська 3/65, Хмельницька 3/60.
+
+**PIN hubs added:** Щербанівська (GISRR; explicit social-protection МСС task),
+Козельщинська (approved Strategy 2024–2027, task 2.1.3 IMC), Великоберезнянська
+(План заходів 2026–2028 quoting strategy; task 2.4.4 transborder/IMC). Queue
+stale `no_strategy` corrected for Городенківська and Парафіївська (already in
+the 2026-08 GISRR wave).
+
+**Honest nulls rechecked:** Надвірнянська — working-group page only; Іване-Пустенська
+and Воловецька — strategy still in drafting (2026); Слобідсько-Кульчієвецька /
+Китайгородська — still no public strategy PDF.
+
+**Partnership layers:** Interreg rebuilt from cache (1553 projects, 735 matched
+partnerships, 100 hromadas — +3 projects vs August). Official МСС registry XLSX
+unchanged (last modified 2023-01-06). Explicit-ask: 85→113 hromadas, 256→407
+edges (regex on the larger GISRR corpus).
+
+**Tooling:** `structure_gisrr_batch.py` now **merges** `gisrr-goals-hierarchy.json`
+by KATOTTG instead of overwriting (the 2026-08 194-row sidecar would have been
+dropped). Hierarchy sidecar: 382 / 312 with operational / 281 GISRR / 38 curated.
+
+**Rematch (v7.1, 382 hromadas):** 72 760 edges; `test-known-pairs` green (4/11 in
+top-50, 7/11 in top-200; CNAP pair still #658 as designed). **PIN∩corpus jumped
+from ~10 to 412** pairs (29 in combined top-50) — the validation-coverage goal
+of the 2026-07-31 graph read. New PIN-neighbour edges include
+Козельщинська↔Щербанівська, Полтавська↔Щербанівська,
+Великоберезнянська↔Дубриницько-Малоберезнянська. Map + matches preview rebuilt.
+Still 111 PIN neighbours without Goals (top remaining: Слобідсько-Кульчієвецька,
+Китайгородська, Іване-Пустенська, Надвірнянська).
+
+## Thin-oblast portals (2026-09-16)
+
+In-session structure of three approved СРТГ that are **not** behind visicom
+Cloudflare geo-blocks: **Боратинська** (Volyn, HOVERLA Strategy to 2027;
+explicit horizontal IMC ask; twinning Sprendlingen-Gensingen ≠ МСС),
+**Рожищенська** (Volyn, HOVERLA 29.12.2023; five 2022 спільний проєкт
+contracts with Доросинівська + Копачівська — strategy-reported, not
+`known: true`), **Леськівська** (Cherkasy, 25.10.2024; explicit IMC asks on
+позашкільна освіта and ТрО). Corpus **382 → 385** Goals (392 text-mined:
+361 full / 24 partial / 7 proxy). Волинь 2→4/53, Черкаси 3→4/66.
+Explicit-ask 113→115 hromadas / 407→408 edges. Hierarchy 385 / 315
+operational. **No rematch yet** — matching-edges still the 382-hromada
+matrix. Zakarpattia PIN cluster (Колочава, Міжгір’я, Синевир…) remains
+blocked (Cloudflare error 1009 from KZ).
 
 ---
 

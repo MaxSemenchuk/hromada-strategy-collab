@@ -58,16 +58,19 @@ signals appears to be genuine whitespace.
 4. **Validate** — curated `known: true` / `status: registry_known` against
    registry-confirmed agreements (`yarn test-known-pairs`).
 
-## Status (as of 2026-08-10)
+## Status (as of 2026-09-16)
 
 - **~1,463 mainland hromadas** in the metadata layer (KATOTTG code, oblast, rayon,
   type, population) — effectively the full universe, not a sample.
-- **~293 hromadas** text-mined for strategy content: **274** full-strategy, **18**
-  partial, **1** proxy-info; all have non-empty `Goals` for matching. Grown from
-  the original 77-hromada pilot via the GISRR batch fold-in, wave-C, and
-  western-PIN-hub extraction passes (see
-  [project-history.md](docs/project-history.md)). (Honest retrieval nulls are
-  recorded separately where no strategy could be found.)
+- **~385 hromadas** with non-empty `Goals` for matching (**392** text-mined:
+  **361** full-strategy, **24** partial, **7** proxy-info). Grown from the
+  original 77-hromada pilot via GISRR fold-ins (194 then +87 on 2026-09-15),
+  wave-C, western PIN-hub extraction, two in-session PIN-priority structures
+  (Козельщинська, Великоберезнянська), and a 2026-09-16 thin-oblast wave
+  (Боратинська, Рожищенська, Леськівська). See
+  [project-history.md](docs/project-history.md). (Honest retrieval nulls are
+  recorded separately where no strategy could be found.) Matching edges are
+  still the 2026-09-15 382-hromada rematch until the next `yarn match`.
 - **181 hromadas** (12%) tagged with at least one donor/technical-assistance
   program (DOBRE, DECIDE, GIZ, ПРООН/UNDP, EGAP, DESPRO, МФ Відродження, U-LEAD,
   Ре:Форм, STRATEGY LAB, JICA, ЄІБ, ЄБРР, AFD) — a floor, not a ceiling (`DonorsPrograms` on
@@ -84,7 +87,7 @@ signals appears to be genuine whitespace.
   funds · resources · PIN map (discovery-signal overlays). Browse sidecar:
   `data/releases/mss-candidates.json`. Still pilot / concept-validation stage.
 
-**Read this before reusing the data:** the ~293-hromada text-mined subset is a
+**Read this before reusing the data:** the ~385-hromada Goals subset is a
 pilot sample, not a completed sweep of the 1,463 — most rows will have no
 strategy content yet. Every candidate is an **unverified hypothesis** unless
 `known: true` / `status: registry_known`.

@@ -20,12 +20,20 @@ Then for each candidate:
 
 ## Target (pilot)
 
-- **Done (GISRR wave):** ~294 Goals in release (`yarn structure-gisrr`). Next prioritize:
-  - high `corpusPinLinks` in `corpus-growth-priority.json`
-  - low-МСС / under-sampled oblasts
+- **Done (GISRR 2026-08 + 2026-09-15 + thin-oblast 2026-09-16):** ~385 Goals
+  in release (GISRR catalog 315 ТГ; second fold-in upserted 87 new; then
+  Боратинська + Рожищенська + Леськівська). Next prioritize:
+  - high `corpusPinLinks` in `corpus-growth-priority.json` (remaining western
+    PIN hubs without a public strategy: Слобідсько-Кульчієвецька,
+    Китайгородська, Іване-Пустенська, Надвірнянська). Zakarpattia PIN
+    cluster portals (Колочава, Міжгір’я, Синевир, Поляна…) are geo-blocked
+    from this environment (Cloudflare 1009 / KZ).
+  - still-thin oblasts (Волинська 4/53, Черкаська 4/66, Житомирська 3/65,
+    Хмельницька 3/60)
   - сільські / селищні (міські зараз надпредставлені)
 
 ## Status
 
-Tooling is ready; bulk structuring remains manual (in-session). Do not claim
-full 1 469 coverage.
+Tooling is ready; GISRR is the cheap bulk path. Remaining PIN-neighbour
+growth is still partly in-session (portal PDFs). Do not claim full 1 469
+coverage.

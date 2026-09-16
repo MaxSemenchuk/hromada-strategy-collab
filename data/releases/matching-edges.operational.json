@@ -4,14 +4,21 @@
     "b": "Красноградська міська територіальна громада",
     "a_katottg": "UA53080190000081150",
     "b_katottg": "UA63060050000033240",
-    "score": 0.469,
-    "goals_cosine": 0.366,
+    "score": 0.451,
+    "goals_cosine": 0.336,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.997,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "2.2. Формування привабливих і функціональних публічних просторів",
+      "b": "В3. Формування комфортного, безпечного та естетично привабливого життєвого середовища",
+      "similarity": 0.567
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.991,
+    "dream_overlap": null,
+    "operational_score": 0.997,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -50,23 +57,88 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.991,
-    "dream_overlap": null
+    "status": "hypothesis"
+  },
+  {
+    "a": "Михайлівська селищна територіальна громада",
+    "b": "Роздольська сільська територіальна громада",
+    "a_katottg": "UA23040170000022547",
+    "b_katottg": "UA23040190000047410",
+    "score": 0.348,
+    "goals_cosine": 0.163,
+    "geo_score": 1.0,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Забезпечення розвитку сільського господарства",
+      "b": "бізнес, розвиток фермерського господарства.",
+      "similarity": 0.666
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.985,
+    "dream_overlap": null,
+    "operational_score": 0.995,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Вишнівська селищна територіальна громада",
     "b": "Саксаганська сільська територіальна громада",
     "a_katottg": "UA12040070000083117",
     "b_katottg": "UA12040230000099388",
-    "score": 0.274,
-    "goals_cosine": 0.04,
+    "score": 0.275,
+    "goals_cosine": 0.041,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.977,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Створення безпечного середовища і охорона довкілля.",
+      "b": "ОЦ 2.4. Підвищення рівня безпеки в громаді, у тому числі - екологічної.",
+      "similarity": 0.472
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.927,
+    "dream_overlap": null,
+    "operational_score": 0.977,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -105,9 +177,7 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.927,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Козинська сільська територіальна громада",
@@ -119,9 +189,16 @@
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.966,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "B.2. Туристично-культурний потенціал",
+      "b": "Розвиток та популяризація туристичного потенціалу громади.",
+      "similarity": 0.525
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.891,
+    "dream_overlap": null,
+    "operational_score": 0.966,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -160,23 +237,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.891,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Гребінківська міська територіальна громада",
     "b": "Пирятинська міська територіальна громада",
     "a_katottg": "UA53040010000091190",
     "b_katottg": "UA53040090000048649",
-    "score": 0.296,
-    "goals_cosine": 0.076,
+    "score": 0.292,
+    "goals_cosine": 0.071,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.965,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "В.4.Ефективне врядування, активна громада",
+      "b": "Підвищення активності та участі громадян у місцевому розвитку та спроможності місцевого самоврядування.",
+      "similarity": 0.546
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.887,
+    "dream_overlap": null,
+    "operational_score": 0.965,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -215,23 +297,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.887,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Брацлавська селищна територіальна громада",
     "b": "Райгородська сільська територіальна громада",
     "a_katottg": "UA05100010000023453",
     "b_katottg": "UA05040190000039450",
-    "score": 0.34,
-    "goals_cosine": 0.15,
+    "score": 0.362,
+    "goals_cosine": 0.187,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.958,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Стратегічна ціль 1: Розвиток малого та середнього підприємництва",
+      "b": "СТРАТЕГІЧНА ЦІЛЬ 1. КОНКУРЕНТОЗДАТНИЙ РЕГІОН НА ОСНОВІ ІННОВАЦІЙНОГО ТА СТАЛОГО РОЗВИТКУ",
+      "similarity": -0.015
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.864,
+    "dream_overlap": null,
+    "operational_score": 0.958,
     "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
@@ -270,23 +357,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.864,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Апостолівська міська територіальна громада",
     "b": "Нивотрудівська сільська територіальна громада",
     "a_katottg": "UA12060010000090992",
     "b_katottg": "UA12060210000077302",
-    "score": 0.516,
-    "goals_cosine": 0.444,
+    "score": 0.524,
+    "goals_cosine": 0.457,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.941,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Якісні та доступні публічні послуги задовольняють потреби усіх груп населення",
+      "b": "Забезпечення населення якісними комунальними послугами, підвищення ефективності роботи житлово-комунального господарства громади",
+      "similarity": 0.542
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.812,
+    "dream_overlap": null,
+    "operational_score": 0.941,
     "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
@@ -325,23 +417,208 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.812,
-    "dream_overlap": null
+    "status": "hypothesis"
+  },
+  {
+    "a": "Козельщинська селищна територіальна громада",
+    "b": "Новогалещинська селищна територіальна громада",
+    "a_katottg": "UA53020090000045206",
+    "b_katottg": "UA53020130000091122",
+    "score": 0.345,
+    "goals_cosine": 0.158,
+    "geo_score": 1.0,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "2.1. Залучення інвестицій та підвищення економічної активності малого і середнього бізнесу",
+      "b": "Впровадження інновацій та розвиток інвестиційної діяльності",
+      "similarity": 0.665
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.805,
+    "dream_overlap": null,
+    "operational_score": 0.939,
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП",
+      "label_en": "Waste management / environment — joint municipal enterprise"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Пісочинська селищна територіальна громада",
+    "b": "Солоницівська селищна територіальна громада",
+    "a_katottg": "UA63120210000075842",
+    "b_katottg": "UA63120250000081463",
+    "score": 0.525,
+    "goals_cosine": 0.458,
+    "geo_score": 1.0,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Операційна ціль 3.2. Розбудова якісної освітньої інфраструктури.",
+      "b": "Оперативна ціль 3.2 Розвиток освітнього середовища",
+      "similarity": 0.794
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.987,
+    "dream_overlap": 0.667,
+    "operational_score": 0.93,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Курилівська сільська територіальна громада",
+    "b": "Петропавлівська сільська територіальна громада",
+    "a_katottg": "UA63080110000021737",
+    "b_katottg": "UA63080130000077600",
+    "score": 0.369,
+    "goals_cosine": 0.198,
+    "geo_score": 1.0,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "В.1. Організація доступної та ефективної системи надання медичних послуг і створення умов для здорового способу життя населення",
+      "b": "Оперативна ціль 1.2. Реалізація комплексної та ефективної соціальної і медичної політики",
+      "similarity": 0.562
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.774,
+    "dream_overlap": null,
+    "operational_score": 0.929,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Білокриницька сільська територіальна громада",
     "b": "Корнинська сільська територіальна громада",
     "a_katottg": "UA56060050000010769",
     "b_katottg": "UA56060330000075139",
-    "score": 0.54,
-    "goals_cosine": 0.483,
+    "score": 0.544,
+    "goals_cosine": 0.491,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.925,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Створення умов для розвитку малого та середнього бізнесу в громаді",
+      "b": "Стимулювання розвитку малого та середнього бізнесу",
+      "similarity": 0.742
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.761,
+    "dream_overlap": null,
+    "operational_score": 0.925,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -380,23 +657,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.761,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Новогалещинська селищна територіальна громада",
     "b": "Пришибська сільська територіальна громада",
     "a_katottg": "UA53020130000091122",
     "b_katottg": "UA53020210000023587",
-    "score": 0.45,
-    "goals_cosine": 0.334,
+    "score": 0.453,
+    "goals_cosine": 0.339,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.925,
     "template_collision": 0.071,
+    "goals_evidence": {
+      "a": "Впровадження сучасних технологій енергоефективності",
+      "b": "Забезпечення енергозбереження та формування енергоефективного середовища.",
+      "similarity": 0.759
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.761,
+    "dream_overlap": null,
+    "operational_score": 0.925,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -435,23 +717,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.761,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "П'ятихатська міська територіальна громада",
     "b": "Саксаганська сільська територіальна громада",
     "a_katottg": "UA12040210000039759",
     "b_katottg": "UA12040230000099388",
-    "score": 0.562,
-    "goals_cosine": 0.519,
+    "score": 0.56,
+    "goals_cosine": 0.517,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.918,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "2.2 Розвиток та покращення дорожньо-транспортної інфраструктури",
+      "b": "ОЦ 2.1. Вдосконалення транспортної системи та модернізація технічної (інженерної) інфраструктури",
+      "similarity": 0.806
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.993,
+    "dream_overlap": 0.6,
+    "operational_score": 0.918,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -490,23 +777,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.993,
-    "dream_overlap": 0.6
+    "status": "hypothesis"
   },
   {
     "a": "Рівненська міська територіальна громада",
     "b": "Олександрійська сільська територіальна громада",
     "a_katottg": "UA56060470000086729",
     "b_katottg": "UA56060430000081857",
-    "score": 0.286,
-    "goals_cosine": 0.06,
+    "score": 0.327,
+    "goals_cosine": 0.128,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.918,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "розвиток підприємництва, залучення інвестицій, створення робочих місць, підтримка стартапів та інновацій.",
+      "b": "Стратегічна ціль 1. Покращення інвестиційного та бізнесклімату в громаді",
+      "similarity": 0.423
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.938,
+    "dream_overlap": 0.667,
+    "operational_score": 0.918,
     "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
@@ -532,36 +824,41 @@
         "strength": "high"
       },
       {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
         "id": "structural",
         "label_uk": "ресурси / DREAM",
         "label_en": "resources / DREAM",
         "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "medium"
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.938,
-    "dream_overlap": 0.667
+    "status": "hypothesis"
   },
   {
     "a": "Лубенська міська територіальна громада",
     "b": "Оржицька селищна територіальна громада",
     "a_katottg": "UA53040030000088898",
     "b_katottg": "UA53040070000083099",
-    "score": 0.315,
-    "goals_cosine": 0.171,
+    "score": 0.324,
+    "goals_cosine": 0.185,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.915,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "В 4. Активізація участі громадськості у житті громади",
+      "b": "Посилити участь громадян в прийнятті управлінських рішень та розвитку громади",
+      "similarity": 0.761
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.991,
+    "dream_overlap": 1.0,
+    "operational_score": 0.915,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -600,23 +897,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.991,
-    "dream_overlap": 1.0
+    "status": "hypothesis"
   },
   {
     "a": "Галицька міська територіальна громада",
     "b": "Більшівцівська селищна територіальна громада",
     "a_katottg": "UA26040090000025932",
     "b_katottg": "UA26040010000011271",
-    "score": 0.493,
-    "goals_cosine": 0.405,
+    "score": 0.49,
+    "goals_cosine": 0.4,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.901,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Ціль 3. Розвинута економіка та туристична пропозиція",
+      "b": "Ціль 1. Сприятливе середовище для економіки (МСБ, с/г переробка, туризм)",
+      "similarity": 0.581
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.684,
+    "dream_overlap": null,
+    "operational_score": 0.901,
     "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
@@ -655,23 +957,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.684,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Рівненська міська територіальна громада",
     "b": "Корнинська сільська територіальна громада",
     "a_katottg": "UA56060470000086729",
     "b_katottg": "UA56060330000075139",
-    "score": 0.443,
-    "goals_cosine": 0.321,
+    "score": 0.438,
+    "goals_cosine": 0.314,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.899,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Стратегічна ціль 2: Комфортна та безпечна громада",
+      "b": "Стратегічна ціль 4. Екологічно чиста громада",
+      "similarity": 0.356
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.677,
+    "dream_overlap": null,
+    "operational_score": 0.899,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -710,23 +1017,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.677,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Боянська сільська територіальна громада",
     "b": "Волоківська сільська територіальна громада",
     "a_katottg": "UA73060010000052133",
     "b_katottg": "UA73060110000070017",
-    "score": 0.353,
-    "goals_cosine": 0.234,
+    "score": 0.36,
+    "goals_cosine": 0.246,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.899,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Модернізація транспортно-логістичної інфраструктури.",
+      "b": "Якісна дорожня інфраструктура та доступні транспортні послуги",
+      "similarity": 0.733
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.924,
+    "dream_overlap": 1.0,
+    "operational_score": 0.899,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -765,23 +1077,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.924,
-    "dream_overlap": 1.0
+    "status": "hypothesis"
   },
   {
     "a": "Васильківська селищна територіальна громада",
     "b": "Дубовиківська сільська територіальна громада",
     "a_katottg": "UA12140030000091432",
     "b_katottg": "UA12140070000025486",
-    "score": 0.452,
-    "goals_cosine": 0.337,
+    "score": 0.44,
+    "goals_cosine": 0.316,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.897,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "3.1. Забезпечення безпеки та захисту громадян і громадянок",
+      "b": "Оперативна ціль 4.4. Створення безпечного середовища у громаді та забезпечення громадської безпеки",
+      "similarity": 0.663
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.986,
+    "dream_overlap": 0.5,
+    "operational_score": 0.897,
     "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
@@ -820,78 +1137,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.986,
-    "dream_overlap": 0.5
-  },
-  {
-    "a": "Єланецька селищна територіальна громада",
-    "b": "Сухоєланецька сільська територіальна громада",
-    "a_katottg": "UA48040130000074078",
-    "b_katottg": "UA48060330000083035",
-    "score": 0.467,
-    "goals_cosine": 0.424,
-    "geo_score": 0.85,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.897,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.999,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Малинська сільська територіальна громада",
     "b": "Полицька сільська територіальна громада",
     "a_katottg": "UA56060370000023028",
     "b_katottg": "UA56020130000066130",
-    "score": 0.465,
-    "goals_cosine": 0.421,
+    "score": 0.479,
+    "goals_cosine": 0.444,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.897,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Розвиток системи управління твердими побутовими відходами",
+      "b": "Вдосконалення системи управління відходами",
+      "similarity": 0.828
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.999,
+    "dream_overlap": null,
+    "operational_score": 0.897,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -930,23 +1197,148 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Єланецька селищна територіальна громада",
+    "b": "Сухоєланецька сільська територіальна громада",
+    "a_katottg": "UA48040130000074078",
+    "b_katottg": "UA48060330000083035",
+    "score": 0.464,
+    "goals_cosine": 0.419,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Оперативна ціль А3. Підтримка розвитку підприємництва та залучення інвестицій",
+      "b": "Оперативна ціль 1.2. Залучення інвестицій та формування позитивного інвестиційного клімату",
+      "similarity": 0.825
+    },
+    "track": "operational",
     "fiscal_similarity": 0.999,
-    "dream_overlap": null
+    "dream_overlap": null,
+    "operational_score": 0.897,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Львівська міська територіальна громада",
+    "b": "Підберізцівська сільська територіальна громада",
+    "a_katottg": "UA46060250000025047",
+    "b_katottg": "UA46060350000036006",
+    "score": 0.402,
+    "goals_cosine": 0.254,
+    "geo_score": 1.0,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Напрям VII. Співпраця з міжнародними партнерами — агломерація, глобальні цілі, інвестиції",
+      "b": "Стратегічна ціль 2. КОНКУРЕНТОСПРОМОЖНА ЕКОНОМІКА",
+      "similarity": 0.376
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.852,
+    "dream_overlap": 0.667,
+    "operational_score": 0.896,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід · агломерація лише з одного боку — не піднято до форми",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Лубенська міська територіальна громада",
     "b": "Чорнухинська селищна територіальна громада",
     "a_katottg": "UA53040030000088898",
     "b_katottg": "UA53040130000097690",
-    "score": 0.417,
-    "goals_cosine": 0.34,
+    "score": 0.419,
+    "goals_cosine": 0.344,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.896,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Б 1. Розвиток житлово-комунального господарства та інфраструктури",
+      "b": "С.1. Комплексний розвиток інфраструктури населених пунктів",
+      "similarity": 0.719
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.996,
+    "dream_overlap": null,
+    "operational_score": 0.896,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -985,23 +1377,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.996,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Боремельська сільська територіальна громада",
     "b": "Острожецька сільська територіальна громада",
     "a_katottg": "UA56040030000031906",
     "b_katottg": "UA56040210000047101",
-    "score": 0.381,
-    "goals_cosine": 0.281,
+    "score": 0.387,
+    "goals_cosine": 0.292,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.896,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Створення сприятливих умов для розвитку малого та середнього бізнесу",
+      "b": "Сприяння розвитку малого та середнього бізнесу",
+      "similarity": 0.838
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.998,
+    "dream_overlap": null,
+    "operational_score": 0.896,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -1040,23 +1437,88 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.998,
-    "dream_overlap": null
+    "status": "hypothesis"
+  },
+  {
+    "a": "Герцаївська міська територіальна громада",
+    "b": "Недобоївська сільська територіальна громада",
+    "a_katottg": "UA73060130000078771",
+    "b_katottg": "UA73040110000040354",
+    "score": 0.473,
+    "goals_cosine": 0.434,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Стратегічна ціль 1. Покращення просторового упорядкування, управління нерухомістю, охорони навколишнього середовища та природи, а також водного господарства",
+      "b": "Стратегічна ціль 1. Стале економічне зростання на основі стратегічного розташування та транспортної доступності громади, місцевої спеціалізації на садівництві та міцних мереж співпраці Включає такі операційні цілі Операційна",
+      "similarity": 0.559
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.993,
+    "dream_overlap": null,
+    "operational_score": 0.895,
+    "suggested_theme": "Пожежна охорона",
+    "suggested_theme_id": "fire",
+    "suggested_form": "спільне утримання",
+    "suggested_form_id": "joint_finance",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Пожежна охорона",
+      "theme_id": "fire",
+      "form": "спільне утримання",
+      "form_id": "joint_finance",
+      "confidence": "medium",
+      "rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
+      "label_uk": "Пожежна охорона — спільне утримання",
+      "label_en": "Fire protection — joint funding / maintenance"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Вишнівська селищна територіальна громада",
     "b": "Жовтоводська міська територіальна громада",
     "a_katottg": "UA12040070000083117",
     "b_katottg": "UA12040110000091524",
-    "score": 0.271,
-    "goals_cosine": 0.098,
+    "score": 0.267,
+    "goals_cosine": 0.092,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.895,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Створення безпечного середовища і охорона довкілля.",
+      "b": "Б1. Створення умов для поліпшення стану довкілля",
+      "similarity": 0.575
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.993,
+    "dream_overlap": null,
+    "operational_score": 0.895,
     "suggested_theme": "Пожежна охорона",
     "suggested_theme_id": "fire",
     "suggested_form": "спільне утримання",
@@ -1095,9 +1557,127 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.993,
-    "dream_overlap": null
+    "status": "hypothesis"
+  },
+  {
+    "a": "Малоданилівська селищна територіальна громада",
+    "b": "Пісочинська селищна територіальна громада",
+    "a_katottg": "UA63120130000010762",
+    "b_katottg": "UA63120210000075842",
+    "score": 0.633,
+    "goals_cosine": 0.638,
+    "geo_score": 1.0,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "ОПЕРАТИВНА ЦІЛЬ 1.5. Протидія військовим і безпековим викликам",
+      "b": "Операційна ціль 2.3. Безпечна і згуртована громада.",
+      "similarity": 0.635
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.895,
+    "dream_overlap": 0.6,
+    "operational_score": 0.894,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Краснолуцька сільська територіальна громада",
+    "b": "Синівська сільська територіальна громада",
+    "a_katottg": "UA53060170000064030",
+    "b_katottg": "UA59060130000041204",
+    "score": 0.429,
+    "goals_cosine": 0.299,
+    "geo_score": 1.0,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "1.3. Підвищення безпеки життя у громаді.",
+      "b": "Підвищення безпеки життєдіяльності",
+      "similarity": 0.663
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.66,
+    "dream_overlap": null,
+    "operational_score": 0.894,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Машівська селищна територіальна громада",
@@ -1109,9 +1689,16 @@
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.894,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Покращення можливостей для розвитку бізнесу та залучення інвестицій.",
+      "b": "Створення конкурентних умов для залучення інвестицій",
+      "similarity": 0.753
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.992,
+    "dream_overlap": null,
+    "operational_score": 0.894,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -1150,23 +1737,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.992,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Заводська міська територіальна громада",
     "b": "Чорнухинська селищна територіальна громада",
     "a_katottg": "UA53060130000040567",
     "b_katottg": "UA53040130000097690",
-    "score": 0.322,
-    "goals_cosine": 0.183,
+    "score": 0.319,
+    "goals_cosine": 0.177,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.894,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "3.3. Підвищення рівня екологічної безпеки та охорона довкілля",
+      "b": "С.3. Безпека довкілля та життєдіяльності",
+      "similarity": 0.592
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.99,
+    "dream_overlap": null,
+    "operational_score": 0.894,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -1205,23 +1797,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.99,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Гребінківська міська територіальна громада",
     "b": "Новооржицька селищна територіальна громада",
     "a_katottg": "UA53040010000091190",
     "b_katottg": "UA53040050000091161",
-    "score": 0.362,
-    "goals_cosine": 0.25,
+    "score": 0.361,
+    "goals_cosine": 0.248,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.893,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "А.2. Підтримка малого та середнього бізнесу",
+      "b": "2.3. Ефективний бізнес та підтримка розвитку МСП",
+      "similarity": 0.752
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.986,
+    "dream_overlap": null,
+    "operational_score": 0.893,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -1260,23 +1857,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.986,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Тисменицька міська територіальна громада",
     "b": "Тлумацька міська територіальна громада",
     "a_katottg": "UA26040330000019235",
     "b_katottg": "UA26040350000024417",
-    "score": 0.424,
-    "goals_cosine": 0.29,
+    "score": 0.429,
+    "goals_cosine": 0.298,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.892,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Збільшення можливостей для розвитку малого і середнього бізнесу",
+      "b": "1.1. Покращення можливостей для розвитку малого бізнесу та залучення інвестицій",
+      "similarity": 0.84
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.968,
+    "dream_overlap": 0.5,
+    "operational_score": 0.892,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -1315,23 +1917,88 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.968,
-    "dream_overlap": 0.5
+    "status": "hypothesis"
+  },
+  {
+    "a": "Білоцерківська сільська територіальна громада",
+    "b": "Шишацька селищна територіальна громада",
+    "a_katottg": "UA53060010000060316",
+    "b_katottg": "UA53060330000036503",
+    "score": 0.412,
+    "goals_cosine": 0.332,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "2.2. Створення привабливих умов для вітчизняних та іноземних інвесторів",
+      "b": "3.2 Створення умов для залучення інвестицій",
+      "similarity": 0.763
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.986,
+    "dream_overlap": null,
+    "operational_score": 0.892,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Герцаївська міська територіальна громада",
     "b": "Лівинецька сільська територіальна громада",
     "a_katottg": "UA73060130000078771",
     "b_katottg": "UA73040070000053425",
-    "score": 0.305,
-    "goals_cosine": 0.154,
+    "score": 0.303,
+    "goals_cosine": 0.15,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.892,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Покращення іміджу громади:",
+      "b": "3.2. Естетика простору громади",
+      "similarity": 0.635
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.983,
+    "dream_overlap": null,
+    "operational_score": 0.892,
     "suggested_theme": "Пожежна охорона",
     "suggested_theme_id": "fire",
     "suggested_form": "спільне утримання",
@@ -1370,23 +2037,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.983,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Бабинська сільська територіальна громада",
     "b": "Корнинська сільська територіальна громада",
     "a_katottg": "UA56060010000018261",
     "b_katottg": "UA56060330000075139",
-    "score": 0.41,
-    "goals_cosine": 0.329,
+    "score": 0.416,
+    "goals_cosine": 0.338,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.891,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Розвиток малого та середнього підприємництва",
+      "b": "Стимулювання розвитку малого та середнього бізнесу",
+      "similarity": 0.926
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.982,
+    "dream_overlap": null,
+    "operational_score": 0.891,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -1425,23 +2097,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.982,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
     "a": "Малинська сільська територіальна громада",
     "b": "Немовицька сільська територіальна громада",
     "a_katottg": "UA56060370000023028",
     "b_katottg": "UA56080130000056682",
-    "score": 0.488,
-    "goals_cosine": 0.459,
+    "score": 0.492,
+    "goals_cosine": 0.465,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.89,
     "template_collision": 0.1,
+    "goals_evidence": {
+      "a": "Розвиток комунального господарства",
+      "b": "Розвиток комунального господарства",
+      "similarity": 1.0
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.977,
+    "dream_overlap": null,
+    "operational_score": 0.89,
     "suggested_theme": "Пожежна охорона",
     "suggested_theme_id": "fire",
     "suggested_form": "спільне утримання",
@@ -1480,23 +2157,88 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.977,
-    "dream_overlap": null
+    "status": "hypothesis"
   },
   {
-    "a": "Журавненська селищна територіальна громада",
-    "b": "Більшівцівська селищна територіальна громада",
-    "a_katottg": "UA46100070000076013",
-    "b_katottg": "UA26040010000011271",
-    "score": 0.365,
-    "goals_cosine": 0.254,
+    "a": "Рокитнянська селищна територіальна громада",
+    "b": "Таращанська міська територіальна громада",
+    "a_katottg": "UA32020130000010013",
+    "b_katottg": "UA32020190000084133",
+    "score": 0.285,
+    "goals_cosine": 0.059,
+    "geo_score": 1.0,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Операційна ціль 1.1. Сприятливий інвестиційний та безпечний і зручний бізнес-клімат в громадіі по залученню інвестицій",
+      "b": "Сприяння розвитку бізнесу та залученню інвестицій",
+      "similarity": 0.652
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.821,
+    "dream_overlap": 0.667,
+    "operational_score": 0.889,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "medium"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Лівинецька сільська територіальна громада",
+    "b": "Недобоївська сільська територіальна громада",
+    "a_katottg": "UA73040070000053425",
+    "b_katottg": "UA73040110000040354",
+    "score": 0.295,
+    "goals_cosine": 0.138,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.887,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Стратегічна ціль 3. Задоволення інфраструктурних потреб жителів і підприємців",
+      "b": "ціль 2.2: Розвиток дорожньої інфраструктури і збільшення мобільності мешканців і мешканок",
+      "similarity": 0.464
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.976,
+    "dream_overlap": null,
+    "operational_score": 0.889,
     "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
@@ -1535,23 +2277,328 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Банилівська сільська територіальна громада",
+    "b": "Ставчанська сільська територіальна громада",
+    "a_katottg": "UA73020010000044067",
+    "b_katottg": "UA73060470000040033",
+    "score": 0.524,
+    "goals_cosine": 0.519,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.333,
+    "goals_evidence": {
+      "a": "2.2. Підвищення якості муніципальних послуг у громаді",
+      "b": "Підвищення якості муніципальних послуг у громаді",
+      "similarity": 0.932
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.973,
+    "dream_overlap": null,
+    "operational_score": 0.888,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Козельщинська селищна територіальна громада",
+    "b": "Омельницька сільська територіальна громада",
+    "a_katottg": "UA53020090000045206",
+    "b_katottg": "UA53020170000049108",
+    "score": 0.431,
+    "goals_cosine": 0.365,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "3.3. Збереження і відтворення довкілля",
+      "b": "А.1.3. Поліпшення стану довкілля та раціонального використання природних ресурсів",
+      "similarity": 0.775
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.972,
+    "dream_overlap": null,
+    "operational_score": 0.888,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Козельщинська селищна територіальна громада",
+    "b": "Новосанжарська селищна територіальна громада",
+    "a_katottg": "UA53020090000045206",
+    "b_katottg": "UA53080310000072384",
+    "score": 0.463,
+    "goals_cosine": 0.417,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "2.1. Залучення інвестицій та підвищення економічної активності малого і середнього бізнесу",
+      "b": "3.1. Розвиток місцевого бізнесу та залучення інвестицій",
+      "similarity": 0.76
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.967,
+    "dream_overlap": null,
+    "operational_score": 0.887,
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП",
+      "label_en": "Waste management / environment — joint municipal enterprise"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Журавненська селищна територіальна громада",
+    "b": "Більшівцівська селищна територіальна громада",
+    "a_katottg": "UA46100070000076013",
+    "b_katottg": "UA26040010000011271",
+    "score": 0.397,
+    "goals_cosine": 0.307,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Ціль 3. Безпечна сучасна інженерна інфраструктура",
+      "b": "Ціль 3. Технічна інфраструктура (дороги, вода, ТПВ)",
+      "similarity": 0.526
+    },
+    "track": "operational",
     "fiscal_similarity": 0.968,
-    "dream_overlap": null
+    "dream_overlap": null,
+    "operational_score": 0.887,
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП",
+      "label_en": "Waste management / environment — joint municipal enterprise"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
+  },
+  {
+    "a": "Боянська сільська територіальна громада",
+    "b": "Недобоївська сільська територіальна громада",
+    "a_katottg": "UA73060010000052133",
+    "b_katottg": "UA73040110000040354",
+    "score": 0.329,
+    "goals_cosine": 0.194,
+    "geo_score": 0.85,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Стратегічна ціль 1. Потужний економічний та логістичний центр з сучасною інфраструктурою",
+      "b": "Стратегічна ціль 1. Стале економічне зростання на основі стратегічного розташування та транспортної доступності громади, місцевої спеціалізації на садівництві та міцних мереж співпраці Включає такі операційні цілі Операційна",
+      "similarity": 0.399
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.88,
+    "dream_overlap": 1.0,
+    "operational_score": 0.887,
+    "suggested_theme": "Поводження з відходами / довкілля",
+    "suggested_theme_id": "waste",
+    "suggested_form": "спільне КП",
+    "suggested_form_id": "joint_enterprise",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "Поводження з відходами / довкілля",
+      "theme_id": "waste",
+      "form": "спільне КП",
+      "form_id": "joint_enterprise",
+      "confidence": "medium",
+      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "Поводження з відходами / довкілля — спільне КП",
+      "label_en": "Waste management / environment — joint municipal enterprise"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Славутицька міська територіальна громада",
     "b": "Ріпкинська селищна територіальна громада",
     "a_katottg": "UA32100130000093505",
     "b_katottg": "UA74100330000029082",
-    "score": 0.297,
-    "goals_cosine": 0.141,
+    "score": 0.299,
+    "goals_cosine": 0.143,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.886,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Оперативна ціль 3. Створення комфортних та безпечних умов для життя",
+      "b": "Створення безпечних умов для життєдіяльності в громаді",
+      "similarity": 0.621
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.875,
+    "dream_overlap": 1.0,
+    "operational_score": 0.886,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -1590,23 +2637,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.875,
-    "dream_overlap": 1.0
+    "status": "hypothesis"
   },
   {
     "a": "Костопільська міська територіальна громада",
     "b": "Малолюбашанська сільська територіальна громада",
     "a_katottg": "UA56060350000045909",
     "b_katottg": "UA56060390000090915",
-    "score": 0.414,
-    "goals_cosine": 0.273,
+    "score": 0.416,
+    "goals_cosine": 0.276,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.885,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Підвищення якості та доступності послуг в галузях освіти, культури, фізичної культури та спорту",
+      "b": "Покращення якості надання соціальних, освітніх, культурних та медичних послуг",
+      "similarity": 0.614
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.7,
+    "dream_overlap": 0.8,
+    "operational_score": 0.885,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -1645,23 +2697,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.7,
-    "dream_overlap": 0.8
+    "status": "hypothesis"
   },
   {
     "a": "Драбинівська сільська територіальна громада",
     "b": "Машівська селищна територіальна громада",
     "a_katottg": "UA53080070000036333",
     "b_katottg": "UA53080250000097618",
-    "score": 0.548,
-    "goals_cosine": 0.56,
+    "score": 0.554,
+    "goals_cosine": 0.57,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.885,
     "template_collision": 0.091,
+    "goals_evidence": {
+      "a": "Цифровізація економічної, суспільної та соціальних сфер громади",
+      "b": "Цифрова трансформація громади.",
+      "similarity": 0.719
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.963,
+    "dream_overlap": null,
+    "operational_score": 0.885,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -1700,23 +2757,88 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.963,
-    "dream_overlap": null
+    "status": "hypothesis"
+  },
+  {
+    "a": "Харківська міська територіальна громада",
+    "b": "Солоницівська селищна територіальна громада",
+    "a_katottg": "UA63120270000028556",
+    "b_katottg": "UA63120250000081463",
+    "score": 0.506,
+    "goals_cosine": 0.427,
+    "geo_score": 1.0,
+    "mss_network": 0.0,
+    "known": false,
+    "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Мета 5. Інвестиційна привабливість",
+      "b": "Оперативна ціль 1.3 Залучення інвестицій",
+      "similarity": 0.726
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.801,
+    "dream_overlap": 0.667,
+    "operational_score": 0.884,
+    "suggested_theme": "ЦНАП / адмінпослуги",
+    "suggested_theme_id": "cnap",
+    "suggested_form": "делегування",
+    "suggested_form_id": "delegation",
+    "suggest_confidence": "medium",
+    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+    "kind": "mss_candidate",
+    "package": {
+      "theme": "ЦНАП / адмінпослуги",
+      "theme_id": "cnap",
+      "form": "делегування",
+      "form_id": "delegation",
+      "confidence": "medium",
+      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
+      "label_uk": "ЦНАП / адмінпослуги — делегування",
+      "label_en": "ASC / admin services — delegation"
+    },
+    "signals": [
+      {
+        "id": "geo",
+        "label_uk": "зручний сусід",
+        "label_en": "convenient neighbour",
+        "strength": "high"
+      },
+      {
+        "id": "strategy_goals",
+        "label_uk": "схожа стратегія",
+        "label_en": "similar strategy",
+        "strength": "high"
+      },
+      {
+        "id": "structural",
+        "label_uk": "ресурси / DREAM",
+        "label_en": "resources / DREAM",
+        "strength": "high"
+      }
+    ],
+    "discovery_primary": "geo",
+    "status": "hypothesis"
   },
   {
     "a": "Лохвицька міська територіальна громада",
     "b": "Сенчанська сільська територіальна громада",
     "a_katottg": "UA53060190000015369",
     "b_katottg": "UA53060290000047345",
-    "score": 0.287,
-    "goals_cosine": 0.062,
+    "score": 0.297,
+    "goals_cosine": 0.078,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.884,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Ціль A. Економічна спроможність (інвестклімат, підприємництво, туризм)",
+      "b": "Стратегічна ціль 1. Економічний розвиток громади і продуктивна зайнятість",
+      "similarity": 0.413
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.804,
+    "dream_overlap": 0.667,
+    "operational_score": 0.884,
     "suggested_theme": "Поводження з відходами / довкілля",
     "suggested_theme_id": "waste",
     "suggested_form": "спільне КП",
@@ -1755,188 +2877,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.804,
-    "dream_overlap": 0.667
+    "status": "hypothesis"
   },
   {
     "a": "Дмитрівська сільська територіальна громада",
     "b": "Коцюбинська селищна територіальна громада",
     "a_katottg": "UA32080130000056481",
     "b_katottg": "UA32080170000086616",
-    "score": 0.406,
-    "goals_cosine": 0.261,
-    "geo_score": 1.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.883,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.799,
-    "dream_overlap": 0.667
-  },
-  {
-    "a": "Мачухівська сільська територіальна громада",
-    "b": "Машівська селищна територіальна громада",
-    "a_katottg": "UA53080230000047239",
-    "b_katottg": "UA53080250000097618",
-    "score": 0.354,
-    "goals_cosine": 0.236,
-    "geo_score": 0.85,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.883,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.957,
-    "dream_overlap": null
-  },
-  {
-    "a": "Лівинецька сільська територіальна громада",
-    "b": "Хотинська міська територіальна громада",
-    "a_katottg": "UA73040070000053425",
-    "b_katottg": "UA73040190000062796",
     "score": 0.392,
     "goals_cosine": 0.237,
     "geo_score": 1.0,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.882,
     "template_collision": 0.0,
-    "suggested_theme": "Поводження з відходами / довкілля",
-    "suggested_theme_id": "waste",
-    "suggested_form": "спільне КП",
-    "suggested_form_id": "joint_enterprise",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Поводження з відходами / довкілля",
-      "theme_id": "waste",
-      "form": "спільне КП",
-      "form_id": "joint_enterprise",
-      "confidence": "medium",
-      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами / довкілля — спільне КП",
-      "label_en": "Waste management / environment — joint municipal enterprise"
+    "goals_evidence": {
+      "a": "1.2.Розвиток підприємництва",
+      "b": "3.1. Сприяння розвитку бізнесу та залученню інвестицій",
+      "similarity": 0.682
     },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.622,
-    "dream_overlap": null
-  },
-  {
-    "a": "Баришівська селищна територіальна громада",
-    "b": "Березанська міська територіальна громада",
-    "a_katottg": "UA32060010000086043",
-    "b_katottg": "UA32060030000048241",
-    "score": 0.33,
-    "goals_cosine": 0.134,
-    "geo_score": 1.0,
-    "mss_network": 0.0,
-    "known": false,
     "track": "operational",
-    "operational_score": 0.882,
-    "template_collision": 0.0,
+    "fiscal_similarity": 0.799,
+    "dream_overlap": 0.667,
+    "operational_score": 0.883,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -1975,78 +2937,28 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.795,
-    "dream_overlap": 0.667
+    "status": "hypothesis"
   },
   {
-    "a": "Корнинська сільська територіальна громада",
-    "b": "Шпанівська сільська територіальна громада",
-    "a_katottg": "UA56060330000075139",
-    "b_katottg": "UA56060510000062151",
-    "score": 0.531,
-    "goals_cosine": 0.469,
-    "geo_score": 1.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.881,
-    "template_collision": 0.133,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.619,
-    "dream_overlap": null
-  },
-  {
-    "a": "Козинська сільська територіальна громада",
-    "b": "Радивилівська міська територіальна громада",
-    "a_katottg": "UA56040130000011543",
-    "b_katottg": "UA56040290000025511",
-    "score": 0.358,
-    "goals_cosine": 0.242,
+    "a": "Матеївецька сільська територіальна громада",
+    "b": "Олешанська сільська територіальна громада",
+    "a_katottg": "UA26080110000076323",
+    "b_katottg": "UA26040250000061081",
+    "score": 0.441,
+    "goals_cosine": 0.38,
     "geo_score": 0.85,
     "mss_network": 0.0,
     "known": false,
-    "track": "operational",
-    "operational_score": 0.881,
     "template_collision": 0.0,
+    "goals_evidence": {
+      "a": "Стратегічна ціль 1. Матеївецька сільська територіальна громада – територія розвинутого підприємництва",
+      "b": "B. Громада розвинутого фермерства, туризму, підприємництва",
+      "similarity": 0.482
+    },
+    "track": "operational",
+    "fiscal_similarity": 0.954,
+    "dream_overlap": null,
+    "operational_score": 0.883,
     "suggested_theme": "ЦНАП / адмінпослуги",
     "suggested_theme_id": "cnap",
     "suggested_form": "делегування",
@@ -2085,668 +2997,6 @@
       }
     ],
     "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.948,
-    "dream_overlap": null
-  },
-  {
-    "a": "Іршавська міська територіальна громада",
-    "b": "Білківська сільська територіальна громада",
-    "a_katottg": "UA21120130000025618",
-    "b_katottg": "UA21120010000011654",
-    "score": 0.453,
-    "goals_cosine": 0.339,
-    "geo_score": 1.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.88,
-    "template_collision": 0.0,
-    "suggested_theme": "Поводження з відходами / довкілля",
-    "suggested_theme_id": "waste",
-    "suggested_form": "спільне КП",
-    "suggested_form_id": "joint_enterprise",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Поводження з відходами / довкілля",
-      "theme_id": "waste",
-      "form": "спільне КП",
-      "form_id": "joint_enterprise",
-      "confidence": "medium",
-      "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "Поводження з відходами / довкілля — спільне КП",
-      "label_en": "Waste management / environment — joint municipal enterprise"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.615,
-    "dream_overlap": null
-  },
-  {
-    "a": "Вапнярська селищна територіальна громада",
-    "b": "Ободівська сільська територіальна громада",
-    "a_katottg": "UA05100030000051497",
-    "b_katottg": "UA05040150000077146",
-    "score": 0.53,
-    "goals_cosine": 0.53,
-    "geo_score": 0.85,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.88,
-    "template_collision": 0.0,
-    "suggested_theme": "Туризм / кластер",
-    "suggested_theme_id": "tourism",
-    "suggested_form": "спільний проєкт",
-    "suggested_form_id": "joint_project",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Туризм / кластер",
-      "theme_id": "tourism",
-      "form": "спільний проєкт",
-      "form_id": "joint_project",
-      "confidence": "medium",
-      "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · зручний сусід",
-      "label_uk": "Туризм / кластер — спільний проєкт",
-      "label_en": "Tourism / cluster — joint project"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.947,
-    "dream_overlap": null
-  },
-  {
-    "a": "Новооржицька селищна територіальна громада",
-    "b": "Чорнухинська селищна територіальна громада",
-    "a_katottg": "UA53040050000091161",
-    "b_katottg": "UA53040130000097690",
-    "score": 0.368,
-    "goals_cosine": 0.259,
-    "geo_score": 0.85,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.88,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.946,
-    "dream_overlap": null
-  },
-  {
-    "a": "Повчанська сільська територіальна громада",
-    "b": "Радивилівська міська територіальна громада",
-    "a_katottg": "UA56040250000064519",
-    "b_katottg": "UA56040290000025511",
-    "score": 0.445,
-    "goals_cosine": 0.388,
-    "geo_score": 0.85,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.879,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.942,
-    "dream_overlap": null
-  },
-  {
-    "a": "Березнегуватська селищна територіальна громада",
-    "b": "Кочубеївська сільська територіальна громада",
-    "a_katottg": "UA48020030000061219",
-    "b_katottg": "UA65020110000081240",
-    "score": 0.412,
-    "goals_cosine": 0.332,
-    "geo_score": 0.85,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.879,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.846,
-    "dream_overlap": 1.0
-  },
-  {
-    "a": "Вишківська селищна територіальна громада",
-    "b": "Горінчівська сільська територіальна громада",
-    "a_katottg": "UA21120030000076462",
-    "b_katottg": "UA21120050000055437",
-    "score": 0.347,
-    "goals_cosine": 0.225,
-    "geo_score": 0.85,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.879,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.943,
-    "dream_overlap": null
-  },
-  {
-    "a": "Лихівська селищна територіальна громада",
-    "b": "П'ятихатська міська територіальна громада",
-    "a_katottg": "UA12040190000056469",
-    "b_katottg": "UA12040210000039759",
-    "score": 0.317,
-    "goals_cosine": 0.174,
-    "geo_score": 0.85,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.879,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.944,
-    "dream_overlap": null
-  },
-  {
-    "a": "Снігурівська міська територіальна громада",
-    "b": "Широківська сільська територіальна громада",
-    "a_katottg": "UA48020190000083597",
-    "b_katottg": "UA48020230000095751",
-    "score": 0.351,
-    "goals_cosine": 0.168,
-    "geo_score": 1.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.877,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.829,
-    "dream_overlap": 0.6
-  },
-  {
-    "a": "Космацька сільська територіальна громада",
-    "b": "Яблунівська селищна територіальна громада",
-    "a_katottg": "UA26100030000012148",
-    "b_katottg": "UA26100090000038366",
-    "score": 0.269,
-    "goals_cosine": 0.032,
-    "geo_score": 1.0,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.877,
-    "template_collision": 0.0,
-    "suggested_theme": "Пожежна охорона",
-    "suggested_theme_id": "fire",
-    "suggested_form": "спільне утримання",
-    "suggested_form_id": "joint_finance",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "Пожежна охорона",
-      "theme_id": "fire",
-      "form": "спільне утримання",
-      "form_id": "joint_finance",
-      "confidence": "medium",
-      "rationale": "тема «Пожежна охорона» · пріор реєстру Мінрегіону · зручний сусід",
-      "label_uk": "Пожежна охорона — спільне утримання",
-      "label_en": "Fire protection — joint funding / maintenance"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "low"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.606,
-    "dream_overlap": null
-  },
-  {
-    "a": "Божедарівська селищна територіальна громада",
-    "b": "Лихівська селищна територіальна громада",
-    "a_katottg": "UA12040010000018960",
-    "b_katottg": "UA12040190000056469",
-    "score": 0.456,
-    "goals_cosine": 0.406,
-    "geo_score": 0.85,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.877,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.937,
-    "dream_overlap": null
-  },
-  {
-    "a": "Лихівська селищна територіальна громада",
-    "b": "Саксаганська сільська територіальна громада",
-    "a_katottg": "UA12040190000056469",
-    "b_katottg": "UA12040230000099388",
-    "score": 0.344,
-    "goals_cosine": 0.219,
-    "geo_score": 0.85,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.877,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.937,
-    "dream_overlap": null
-  },
-  {
-    "a": "Корнинська сільська територіальна громада",
-    "b": "Костопільська міська територіальна громада",
-    "a_katottg": "UA56060330000075139",
-    "b_katottg": "UA56060350000045909",
-    "score": 0.483,
-    "goals_cosine": 0.452,
-    "geo_score": 0.85,
-    "mss_network": 0.0,
-    "known": false,
-    "track": "operational",
-    "operational_score": 0.876,
-    "template_collision": 0.0,
-    "suggested_theme": "ЦНАП / адмінпослуги",
-    "suggested_theme_id": "cnap",
-    "suggested_form": "делегування",
-    "suggested_form_id": "delegation",
-    "suggest_confidence": "medium",
-    "suggest_rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-    "kind": "mss_candidate",
-    "package": {
-      "theme": "ЦНАП / адмінпослуги",
-      "theme_id": "cnap",
-      "form": "делегування",
-      "form_id": "delegation",
-      "confidence": "medium",
-      "rationale": "тема «ЦНАП / адмінпослуги» · у реєстрі для цієї теми частіше «спільний проєкт» · зручний сусід",
-      "label_uk": "ЦНАП / адмінпослуги — делегування",
-      "label_en": "ASC / admin services — delegation"
-    },
-    "signals": [
-      {
-        "id": "geo",
-        "label_uk": "зручний сусід",
-        "label_en": "convenient neighbour",
-        "strength": "high"
-      },
-      {
-        "id": "strategy_goals",
-        "label_uk": "схожа стратегія",
-        "label_en": "similar strategy",
-        "strength": "high"
-      },
-      {
-        "id": "structural",
-        "label_uk": "ресурси / DREAM",
-        "label_en": "resources / DREAM",
-        "strength": "high"
-      }
-    ],
-    "discovery_primary": "geo",
-    "status": "hypothesis",
-    "fiscal_similarity": 0.933,
-    "dream_overlap": null
+    "status": "hypothesis"
   }
 ]

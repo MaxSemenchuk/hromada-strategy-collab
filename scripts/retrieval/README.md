@@ -1,6 +1,6 @@
 # Retrieval batch workflow
 
-Scale strategy extraction beyond the current ~77-hromada pilot without
+Scale strategy extraction beyond the current ~385-hromada Goals corpus without
 burning 60–150k agent tokens per hromada on anti-bot retrieval.
 
 ## Pipeline
@@ -125,4 +125,6 @@ Processes queue entries with `status=downloaded` that already have
 ## Target
 
 Pilot batch: +10–20 hromadas from CKAN hits with clear PDF links.
-Next milestone: 150 text-mined hromadas for meaningful graph validation.
+GISRR catalog is the bulk path (`yarn fetch-gisrr-strategies` then
+`yarn structure-gisrr`). Remaining growth: PIN-neighbour portals and
+low-coverage oblasts.
