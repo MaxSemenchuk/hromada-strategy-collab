@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Extract explicit МСС intents from strategy fields → mss-intents + explicit-ask edges.
 
-Scans Goals / Projects / Challenges / MSSAgreements / PartnersMentioned.
-Does not set known=true. Hypotheses only (even when the quote is clear).
+Scans Goals / Projects / Challenges / Strengths / MSSAgreements / PartnersMentioned
+plus GISRR SWOT/task extras from strategy-entities.json. Neighbour NER feeds
+named explicit-ask edges (social_capital 0.70). Does not set known=true.
 
 Usage:
   yarn extract-mss-intents
@@ -12,7 +13,6 @@ Usage:
 from __future__ import annotations
 
 import json
-import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -22,8 +22,10 @@ sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 from goals_hierarchy import find_mss_intents_in_text, load_hierarchy_index  # noqa: E402
 from mss_candidate import annotate_candidates  # noqa: E402
 from mss_suggest import annotate_edges  # noqa: E402
+from strategy_text import build_name_index, find_named_neighbours, short_name  # noqa: E402
 
 HROMADAS = ROOT / "data" / "releases" / "hromadas.json"
+ENTITIES = ROOT / "data" / "releases" / "strategy-entities.json"
 OUT_INTENTS = ROOT / "data" / "releases" / "mss-intents.json"
 OUT_MANIFEST = ROOT / "data" / "releases" / "mss-intents.manifest.json"
 OUT_EDGES = ROOT / "data" / "releases" / "matching-edges.explicit-ask.json"
@@ -34,37 +36,35 @@ FIELDS = (
     ("Goals", "goals"),
     ("Projects", "projects"),
     ("Challenges", "challenges"),
+    ("Strengths", "strengths"),
     ("PartnersMentioned", "partners"),
 )
 
-# Named neighbour hints inside quotes (short forms)
-NEIGHBOUR_HINT = re.compile(
-    r"([А-ЯІЇЄҐ][а-яіїєґ'’\-]{2,}(?:ська|зька|цька)?)\s+"
-    r"(?:міськ|селищн|сільськ|територіальн)",
-    re.I,
-)
 
-
-def short_name(name: str) -> str:
-    for suffix in (
-        " міська територіальна громада",
-        " селищна територіальна громада",
-        " сільська територіальна громада",
-        " територіальна громада",
-    ):
-        if name.endswith(suffix):
-            return name[: -len(suffix)]
-    return name
+def _load_entity_extras() -> dict[str, dict]:
+    if not ENTITIES.exists():
+        return {}
+    payload = json.loads(ENTITIES.read_text(encoding="utf-8"))
+    out: dict[str, dict] = {}
+    for h in payload.get("hromadas") or []:
+        code = (h.get("katottg") or "").strip()
+        name = (h.get("name") or "").strip()
+        rec = {
+            "intents": list(h.get("gisrr_extra_intents") or []),
+            "neighbours": [n.get("name") for n in (h.get("named_neighbours") or []) if n.get("name")],
+        }
+        if code:
+            out[code] = rec
+        if name:
+            out[name] = rec
+    return out
 
 
 def main() -> None:
     rows = json.loads(HROMADAS.read_text(encoding="utf-8"))
     hierarchy = load_hierarchy_index()
-    by_short: dict[str, dict] = {}
-    for r in rows:
-        name = (r.get("Name") or "").strip()
-        if name:
-            by_short[short_name(name).lower()] = r
+    name_index = build_name_index(rows)
+    entity_extras = _load_entity_extras()
 
     intents_out: list[dict] = []
     for r in rows:
@@ -73,10 +73,12 @@ def main() -> None:
         if not name:
             continue
         found: list[dict] = []
+        field_blobs: list[str] = []
         for field_key, field_label in FIELDS:
             text = (r.get(field_key) or "").strip()
             if not text:
                 continue
+            field_blobs.append(text)
             found.extend(find_mss_intents_in_text(text, field=field_label))
 
         hier = hierarchy.get(name) or hierarchy.get(code)
@@ -93,6 +95,17 @@ def main() -> None:
                 elif isinstance(mi, str):
                     found.append({"quote": mi[:400], "field": "curated", "theme": None})
 
+        extra = entity_extras.get(code) or entity_extras.get(name) or {}
+        for mi in extra.get("intents") or []:
+            if isinstance(mi, dict) and mi.get("quote"):
+                found.append(
+                    {
+                        "quote": mi["quote"][:400],
+                        "field": mi.get("field") or "gisrr-extra",
+                        "theme": mi.get("theme"),
+                    }
+                )
+
         # de-dupe by quote prefix
         seen: set[str] = set()
         uniq: list[dict] = []
@@ -102,18 +115,20 @@ def main() -> None:
                 continue
             seen.add(key)
             uniq.append(item)
-        if not uniq:
-            continue
 
         named: list[str] = []
-        for item in uniq:
-            for m in NEIGHBOUR_HINT.finditer(item["quote"]):
-                hint = m.group(1)
-                # try resolve against corpus shorts
-                for short, row in by_short.items():
-                    if hint.lower() in short and row.get("Name") != name:
-                        named.append(row["Name"])
+        for blob in field_blobs + [it["quote"] for it in uniq]:
+            for nb in find_named_neighbours(
+                blob,
+                speaker_name=name,
+                speaker_oblast=r.get("Oblast") or "",
+                index=name_index,
+            ):
+                named.append(nb["name"])
+        named.extend(extra.get("neighbours") or [])
         named = sorted(set(named))
+        if not uniq and not named:
+            continue
 
         intents_out.append(
             {
@@ -163,7 +178,15 @@ def main() -> None:
                 item["intents"][0].get("theme") if item["intents"] else None,
             )
 
-    # Same-oblast co-intents (both declare МСС language) — soft cluster signal
+    # Same-oblast co-intents (both declare МСС language) — soft cluster signal.
+    # GISRR SWOT leftovers are too generic («розвиток МСС») to join this clique.
+    def field_intents(item: dict) -> list[dict]:
+        return [
+            x
+            for x in item.get("intents") or []
+            if not str(x.get("field") or "").startswith("gisrr")
+        ]
+
     by_oblast: dict[str, list[dict]] = {}
     for item in intents_out:
         ob = (item.get("oblast") or "").strip()
@@ -173,10 +196,16 @@ def main() -> None:
         if len(group) < 2:
             continue
         for i, a in enumerate(group):
+            fa = field_intents(a)
+            if not fa:
+                continue
             for b in group[i + 1 :]:
+                fb = field_intents(b)
+                if not fb:
+                    continue
                 theme = None
-                themes_a = {x.get("theme") for x in a["intents"] if x.get("theme")}
-                themes_b = {x.get("theme") for x in b["intents"] if x.get("theme")}
+                themes_a = {x.get("theme") for x in fa if x.get("theme")}
+                themes_b = {x.get("theme") for x in fb if x.get("theme")}
                 shared = themes_a & themes_b
                 if shared:
                     theme = sorted(shared)[0]
@@ -214,6 +243,9 @@ def main() -> None:
                 "generatedAt": generated,
                 "hromadaCount": len(intents_out),
                 "explicitAskEdges": len(edges),
+                "namedNeighbourEdges": sum(
+                    1 for e in edges if e.get("explicit_ask_score") == 0.95
+                ),
                 "mssSuggest": {
                     "annotated": suggest["annotated"],
                     "withTheme": suggest["with_theme"],
@@ -222,8 +254,12 @@ def main() -> None:
                     "annotated": candidates["annotated"],
                     "withTheme": candidates["with_theme"],
                 },
+                "namedNeighbourHromadas": sum(
+                    1 for h in intents_out if h.get("named_neighbours")
+                ),
                 "method": (
                     "regex МСС/кооперація on strategy fields + curated hierarchy intents "
+                    "+ GISRR SWOT/task extras from strategy-entities + neighbour NER "
                     "+ suggested_theme/form (mss_suggest) + mss_candidate package/signals"
                 ),
             },
@@ -256,8 +292,8 @@ def main() -> None:
                 "samples": [
                     {
                         "short": h["short"],
-                        "quote": h["intents"][0]["quote"][:180],
-                        "theme": h["intents"][0].get("theme"),
+                        "quote": (h["intents"][0]["quote"][:180] if h["intents"] else "; ".join(h.get("named_neighbours") or [])[:180]),
+                        "theme": (h["intents"][0].get("theme") if h["intents"] else None),
                     }
                     for h in intents_out[:15]
                 ],

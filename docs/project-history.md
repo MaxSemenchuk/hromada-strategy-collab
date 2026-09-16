@@ -655,6 +655,42 @@ operational. **No rematch yet** — matching-edges still the 382-hromada
 matrix. Zakarpattia PIN cluster (Колочава, Міжгір’я, Синевир…) remains
 blocked (Cloudflare error 1009 from KZ).
 
+## UA-VPN PIN pack (2026-09-16)
+
+Kyiv VPN unblocked visicom portals (HTTP 200). In-session structure of six
+СРТГ from portal PDFs/DOCX: **Колочавська** (approved 30.10.2025; IMC task
+2.4.2 + Великобичківська as named 1508 partner), **Міжгірська** (HOVERLA
+2023; Google Drive attachment; IMC ask toward former-rayon neighbours),
+**Синевирська** (Strategy 2023–2027 DOCX; task 2.4.3.4), **Полянська**
+(HOVERLA project 2023; strategy-reported 16-hromada waste-plant IMC
+23.02.2021 — not `known: true`), **Ківерцівська** (HOVERLA + 2026 UCORD
+update; horizontal IMC asks on waste/social), **Маневицька** (2026
+Strategy+Plan; U-LEAD IMC questionnaire; Пліч-о-пліч with Глухівська ≠
+МСС). Corpus **385 → 391** Goals (398 text-mined: 367 full / 24 partial /
+7 proxy). Волинь 4→6/53. Explicit-ask 115→121 hromadas / 408→447 edges.
+Hierarchy 391 / 321 operational. **No rematch** — pack is 6, below the
+~8–10 threshold; matching-edges still the 382-hromada matrix.
+
+Second fold of the same VPN session: **Воловецька** (U-LEAD проєкт 2026;
+SWOT O8 IMC/Interreg ask), **Неліпинська** (approved 2026; IMC task 2.4.2),
+**Надвірнянська** (Strategy to 2030 DOCX on nadrada.gov.ua; twinning PL/CZ/RO/DE/IT
+≠ МСС). Жденіївська still drafting; Пилипецька portal DNS dead. Corpus
+**391 → 394** Goals (401 text-mined: 370 full / 24 partial / 7 proxy).
+Hierarchy 394 / 324 operational. Explicit-ask after `yarn extract-mss-intents`
+(GISRR SWOT/task extras + neighbour NER): **218** hromadas / **589** edges.
+
+**Rematch (v7.3, 394 Goals + DREAM-title proxy):** 86 497 slim edges
+(priority_source goals=77 410 mixed=7 487 dream_proxy=1 600). Tracks
+thematic=7 220 / operational=4 522 / mixed=74 755 (goals p90 floor=0.4).
+`test-known-pairs` green (2/11 in top-50, 5/11 in top-200; all 11 flagged
+`known`; gates scaled). PIN∩corpus 933 pairs, 30 in top-50. New VPN-pack
+neighbours rank inside the lab top-100 without `known: true`:
+Великоберезнянська↔Неліпинська #11, Колочавська↔Неліпинська #12,
+Міжгірська↔Синевирська #87, Воловецька↔Полянська #99. Combined-score top
+still geo-heavy (Ківерцівська↔Рожищенська #6 operational) — browse by
+track overlays, not top-N `score`. Complementary 400 edges. Recommend
+preview: 394 seeds × 4 motivations.
+
 ## DREAM title proxy in combined score (v7.2, 2026-09-16)
 
 Hromadas without parsed Goals were previously unmatchable in `match.py`

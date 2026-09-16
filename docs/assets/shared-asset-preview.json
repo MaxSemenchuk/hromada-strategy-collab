@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-09-16T18:22:30.862467+00:00",
+  "caveat": "Shared named object in strategy text — not a registered IMC agreement.",
+  "hromadaCount": 265,
+  "edgeCount": 10,
+  "top": [
+    {
+      "a_short": "Батуринська",
+      "b_short": "Козелецька",
+      "shared_asset_score": 1.0,
+      "asset_name": "Місцями козацької сили",
+      "asset_kind": "cluster",
+      "suggested_theme": "Туризм / кластер",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "спільний обʼєкт «Місцями козацької сили» (cluster) у стратегіях Батуринська і Козелецька"
+      ]
+    },
+    {
+      "a_short": "Вишківська",
+      "b_short": "Дубівська",
+      "shared_asset_score": 1.0,
+      "asset_name": "Тиса",
+      "asset_kind": "river",
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "спільний обʼєкт «Тиса» (river) у стратегіях Вишківська і Дубівська"
+      ]
+    },
+    {
+      "a_short": "Криворізька",
+      "b_short": "Лозуватська",
+      "shared_asset_score": 1.0,
+      "asset_name": "Інгулець",
+      "asset_kind": "river",
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "спільний обʼєкт «Інгулець» (river) у стратегіях Криворізька і Лозуватська"
+      ]
+    },
+    {
+      "a_short": "Кролевецька",
+      "b_short": "Путивльська",
+      "shared_asset_score": 1.0,
+      "asset_name": "Сейм",
+      "asset_kind": "river",
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "спільний обʼєкт «Сейм» (river) у стратегіях Кролевецька і Путивльська"
+      ]
+    },
+    {
+      "a_short": "Миргородська",
+      "b_short": "Сергіївська",
+      "shared_asset_score": 1.0,
+      "asset_name": "Хорол",
+      "asset_kind": "river",
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "спільний обʼєкт «Хорол» (river) у стратегіях Миргородська і Сергіївська"
+      ]
+    },
+    {
+      "a_short": "Новомосковська",
+      "b_short": "Миколаївська",
+      "shared_asset_score": 1.0,
+      "asset_name": "Самара",
+      "asset_kind": "river",
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "спільний обʼєкт «Самара» (river) у стратегіях Новомосковська і Миколаївська"
+      ]
+    },
+    {
+      "a_short": "Ніжинська",
+      "b_short": "Вертіївська",
+      "shared_asset_score": 1.0,
+      "asset_name": "Остер",
+      "asset_kind": "river",
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "спільний обʼєкт «Остер» (river) у стратегіях Ніжинська і Вертіївська"
+      ]
+    },
+    {
+      "a_short": "Яремчанська",
+      "b_short": "Матеївецька",
+      "shared_asset_score": 1.0,
+      "asset_name": "Прут",
+      "asset_kind": "river",
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "спільний обʼєкт «Прут» (river) у стратегіях Яремчанська і Матеївецька"
+      ]
+    },
+    {
+      "a_short": "Батуринська",
+      "b_short": "Кролевецька",
+      "shared_asset_score": 0.95,
+      "asset_name": "Сейм",
+      "asset_kind": "river",
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "спільний обʼєкт «Сейм» (river) у стратегіях Батуринська і Кролевецька"
+      ]
+    },
+    {
+      "a_short": "Батуринська",
+      "b_short": "Путивльська",
+      "shared_asset_score": 0.95,
+      "asset_name": "Сейм",
+      "asset_kind": "river",
+      "suggested_theme": "Інше / не визначено",
+      "suggested_form": "спільний проєкт",
+      "reasons": [
+        "спільний обʼєкт «Сейм» (river) у стратегіях Батуринська і Путивльська"
+      ]
+    }
+  ]
+}

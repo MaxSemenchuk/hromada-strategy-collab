@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-09-16T18:22:30.862467+00:00",
+  "hromadaCount": 265,
+  "withAssets": 60,
+  "withDeficits": 71,
+  "withNamedNeighbours": 9,
+  "withGisrrExtraIntents": 142,
+  "sharedAssetEdges": 10,
+  "mssSuggest": {
+    "annotated": 10,
+    "withTheme": 1
+  },
+  "mssCandidate": {
+    "annotated": 10,
+    "withTheme": 1
+  },
+  "method": "strategy_text named objects + neighbour NER + GISRR SWOT type 3 / task tail; shared-asset pairs by (kind, key); not v7 score",
+  "warning": "МСС candidate hypotheses — not known=true."
+}

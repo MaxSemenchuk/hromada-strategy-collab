@@ -40,6 +40,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+from intl_theme import keep_eu_project_themes  # noqa: E402
+
 CACHE = ROOT / "data" / "cache" / "interreg"
 CACHE_PROJECTS_DIR = CACHE / "projects"
 CACHE_LIST = CACHE / "project-list.json"
@@ -452,6 +454,7 @@ def build_release(details: list[dict], programme_ids: list[int]) -> None:
         translations = proj.get("translations") or {}
         proj_name = ((translations.get("en") or {}).get("name")) or acronym
         source_url = PROJECT_PAGE.format(seo_name=seo_name) if seo_name else None
+        theme_block = keep_eu_project_themes(proj, name_en=proj_name or "", acronym=acronym or "")
         for ship in proj.get("partnerships") or []:
             partner = ship.get("partner") or {}
             country = (partner.get("country") or {}).get("title")
@@ -498,6 +501,13 @@ def build_release(details: list[dict], programme_ids: list[int]) -> None:
                 "source_url": source_url,
                 "confidence": "registry",
                 "match": how,
+                "keep_themes": theme_block["keep_themes"],
+                "theme_ids": theme_block["theme_ids"],
+                "theme_source": theme_block["theme_source"],
+                "policy_objective": theme_block["policy_objective"],
+                "specific_objective": theme_block["specific_objective"],
+                "interreg_specific_objective": theme_block["interreg_specific_objective"],
+                "intervention": theme_block["intervention"],
             }
             if not row:
                 unmatched.append({**entry_common, "oblast_hint": oblast_hint})
@@ -546,6 +556,28 @@ def build_release(details: list[dict], programme_ids: list[int]) -> None:
         1 for h in hromadas if h["local_authority_partner_count"] > 0
     )
 
+    theme_source_projects: dict[str, int] = defaultdict(int)
+    keep_theme_counts: dict[str, int] = defaultdict(int)
+    mapped_theme_counts: dict[str, int] = defaultdict(int)
+    seen_theme_proj: set[int | str] = set()
+    for proj in details:
+        pid = proj.get("id")
+        if pid in seen_theme_proj:
+            continue
+        seen_theme_proj.add(pid)
+        translations = proj.get("translations") or {}
+        proj_name = ((translations.get("en") or {}).get("name")) or proj.get("acronym")
+        block = keep_eu_project_themes(
+            proj, name_en=proj_name or "", acronym=proj.get("acronym") or ""
+        )
+        theme_source_projects[block["theme_source"]] += 1
+        for t in block["keep_themes"]:
+            title = t.get("title")
+            if title:
+                keep_theme_counts[title] += 1
+        for tid in block["theme_ids"]:
+            mapped_theme_counts[tid] += 1
+
     generated = datetime.now(timezone.utc).isoformat()
     payload = {
         "generatedAt": generated,
@@ -568,7 +600,10 @@ def build_release(details: list[dict], programme_ids: list[int]) -> None:
             "programming periods — so is_local_authority is a hard false there, not "
             "evidence of absence. All 57 confirmed local-authority partnerships come "
             "from the 2021-2027 ('current') period; period_breakdown below shows how "
-            "much of the total is from the less-classified historical periods. Not "
+            "much of the total is from the less-classified historical periods. Official "
+            "keep.eu themes[] / policy / intervention fields are copied onto each "
+            "partnership; theme_ids map those titles onto the UA–EU filter catalog "
+            "(title heuristics fill gaps such as border-crossing jargon). Not "
             "folded into matching score."
         ),
         "sources": [
@@ -595,6 +630,13 @@ def build_release(details: list[dict], programme_ids: list[int]) -> None:
                 sorted(org_type_breakdown.items(), key=lambda kv: -kv[1])
             ),
             "period_breakdown": dict(period_breakdown),
+            "theme_source_projects": dict(theme_source_projects),
+            "keep_theme_counts": dict(
+                sorted(keep_theme_counts.items(), key=lambda kv: -kv[1])
+            ),
+            "mapped_theme_counts": dict(
+                sorted(mapped_theme_counts.items(), key=lambda kv: -kv[1])
+            ),
         },
         "hromadas": hromadas,
         "unmatched": unmatched[:300],
@@ -610,9 +652,13 @@ def build_release(details: list[dict], programme_ids: list[int]) -> None:
                 "matchedPartnerships": matched_partnerships,
                 "localAuthorityPartnerships": local_authority_count,
                 "periodBreakdown": dict(period_breakdown),
+                "themeSourceProjects": dict(theme_source_projects),
                 "unmatchedPartnerships": len(unmatched),
                 "programmeIds": programme_ids,
-                "method": "keep.eu public search+detail API; name-stem + town matching, no API key required",
+                "method": (
+                    "keep.eu public search+detail API; name-stem + town matching; "
+                    "official themes[] mapped via intl_theme.keep_eu_project_themes"
+                ),
             },
             ensure_ascii=False,
             indent=2,
@@ -633,6 +679,11 @@ def build_release(details: list[dict], programme_ids: list[int]) -> None:
                 "hromadaCount": len(hromadas),
                 "localAuthorityPartnerships": local_authority_count,
                 "projectsScanned": len(details),
+                "themeSourceProjects": dict(theme_source_projects),
+                "keepThemes": [
+                    {"title": title, "n": n}
+                    for title, n in sorted(keep_theme_counts.items(), key=lambda kv: -kv[1])[:12]
+                ],
                 "top": [
                     {
                         "short": h["short"],
@@ -655,7 +706,7 @@ def build_release(details: list[dict], programme_ids: list[int]) -> None:
     print(
         f"Wrote {OUT.relative_to(ROOT)} — {len(hromadas)} hromadas from "
         f"{len(details)} projects scanned; unmatched={len(unmatched)}; "
-        f"resolve_stats={dict(stats)}"
+        f"resolve_stats={dict(stats)}; theme_source={dict(theme_source_projects)}"
     )
 
 

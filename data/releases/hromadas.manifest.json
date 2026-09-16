@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-15T19:50:16.048Z",
+  "generatedAt": "2026-09-16T18:10:46.523Z",
   "source": "local:structure-hromada --write-release",
   "totalRows": 1463,
-  "textMinedRows": 392,
+  "textMinedRows": 401,
   "schema": "see docs/hromadas-schema.md",
   "license": "CC BY 4.0 — see DATA-LICENSE.md",
   "portalUrlRows": 36,
   "portalUrlEnrichedAt": "2026-07-24T10:48:57.446Z",
-  "donorsProgramsTaggedRows": 181,
+  "donorsProgramsTaggedRows": 185,
   "donorsProgramsVocabExtendedAt": "2026-08-03T13:24:29Z",
   "donorsProgramsAdded": [
     "JICA",
@@ -16,8 +16,8 @@
     "AFD",
     "STRATEGY LAB"
   ],
-  "lastUpsert": "Леськівська сільська територіальна громада",
-  "goalsRows": 385,
+  "lastUpsert": "Надвірнянська міська територіальна громада",
+  "goalsRows": 394,
   "gisrr": {
     "upserted": 87,
     "meta_only": 0,

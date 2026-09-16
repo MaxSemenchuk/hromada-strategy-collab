@@ -8,6 +8,7 @@
  *   - list_tables     tables + row counts + source files
  *   - describe_table  columns + sample rows + the source file's _meta
  *   - query           run read-only SQL against the loaded tables
+ *   - search_chunks   FTS over strategy / DREAM / candidate / twinning text
  *
  * Run directly: tsx mcp-server/index.ts (stdio transport)
  */
@@ -19,12 +20,37 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { z } from "zod";
 import { loadReleasesIntoDb, type TableInfo } from "./db.js";
+import { installTextChunks, searchTextChunks } from "./chunks.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = join(__dirname, "..");
 
 const { db, tables } = loadReleasesIntoDb(REPO_ROOT);
+const chunkStats = installTextChunks(db, REPO_ROOT);
+tables.push({
+  name: "text_chunks",
+  sourceFile: "derived: FTS over release text fields (not a public JSON file)",
+  rowCount: chunkStats.total,
+  columns: [
+    { name: "id", type: "TEXT" },
+    { name: "name", type: "TEXT" },
+    { name: "short", type: "TEXT" },
+    { name: "katottg", type: "TEXT" },
+    { name: "oblast", type: "TEXT" },
+    { name: "field", type: "TEXT" },
+    { name: "theme", type: "TEXT" },
+    { name: "source", type: "TEXT" },
+    { name: "text", type: "TEXT" },
+  ],
+});
 const tablesByName = new Map<string, TableInfo>(tables.map((t) => [t.name, t]));
+console.error(
+  `hromada-data: ${tables.length} tables, ${chunkStats.total} text chunks ` +
+    `(${Object.entries(chunkStats.byField)
+      .sort((a, b) => b[1] - a[1])
+      .map(([k, n]) => `${k}:${n}`)
+      .join(", ")})`,
+);
 
 const DEFAULT_ROW_LIMIT = 200;
 const MAX_ROW_LIMIT = 2000;
@@ -81,6 +107,14 @@ server.registerTool(
       parts.push(
         "# .cursor/rules/hromada-project.mdc\n\n" +
           readFileSync(join(REPO_ROOT, ".cursor/rules/hromada-project.mdc"), "utf-8"),
+      );
+    } catch {
+      /* ignore missing file */
+    }
+    try {
+      parts.push(
+        "# docs/README.md (stakeholder site map)\n\n" +
+          readFileSync(join(REPO_ROOT, "docs/README.md"), "utf-8"),
       );
     } catch {
       /* ignore missing file */
@@ -158,7 +192,9 @@ server.registerTool(
       "dialect, JSON1 available: json_extract, json_each, etc.). Call list_tables/describe_table " +
       "first to see what's available, and get_context to avoid misreading scores/tracks. Results " +
       `are truncated to \`limit\` rows (default ${DEFAULT_ROW_LIMIT}, max ${MAX_ROW_LIMIT}); the ` +
-      "response also reports the true total row count so you know if it was truncated.",
+      "response also reports the true total row count so you know if it was truncated. " +
+      "Prefer search_chunks for 'who writes about X' / quotes; use SQL for counts, joins, and filters. " +
+      "Never SELECT * FROM matching_edges without a tight WHERE — it has tens of thousands of rows.",
     inputSchema: {
       sql: z.string().describe("A single SELECT/WITH statement"),
       limit: z
@@ -186,6 +222,63 @@ server.registerTool(
     } catch (err) {
       return errorResult(`SQL error: ${(err as Error).message}`);
     }
+  },
+);
+
+const CHUNK_FIELDS = [
+  "goals_strategic",
+  "goals_operational",
+  "goals",
+  "strengths",
+  "challenges",
+  "projects",
+  "partners",
+  "mss_agreement",
+  "mss_intent",
+  "donors",
+  "dream_title",
+  "mss_candidate",
+  "twinning",
+  "intl_agreement",
+  "interreg",
+  "site_page",
+  "site_doc",
+].join(", ");
+
+server.registerTool(
+  "search_chunks",
+  {
+    title: "Search strategy and partnership text",
+    description:
+      "Full-text search over structured strategy fields AND the stakeholder site (docs/*.html + docs/*.md). " +
+      "Use this when the user asks who writes about a theme, river, landfill, named object, wants quotes, " +
+      "or asks what the website/pages say (methodology copy, AIM-CC, Tkachuk framing, how a screen works). " +
+      `Fields: ${CHUNK_FIELDS}. ` +
+      "site_page = public HTML; site_doc = markdown research pages under docs/. Cite path (e.g. docs/matches.html). " +
+      "Hits are retrieval evidence — not IMC legal forms, not v7 score, never known:true. " +
+      "Coverage is ~391/1463 hromadas with Goals; do not generalise to all Ukraine. " +
+      "Law 3668 / twinning / Interreg chunks are international layers, not Law 1508 МСС.",
+    inputSchema: {
+      query: z.string().describe("Natural-language or keyword query (Ukrainian or English)"),
+      field: z
+        .string()
+        .optional()
+        .describe(`Optional field filter; comma-separated from: ${CHUNK_FIELDS}`),
+      oblast: z.string().optional().describe("Optional oblast substring, e.g. Чернігівська"),
+      katottg: z.string().optional().describe("Optional exact KATOTTG code"),
+      limit: z.number().int().positive().max(30).optional().describe("Max hits (default 12, max 30)"),
+    },
+  },
+  async ({ query, field, oblast, katottg, limit }) => {
+    const q = query.trim();
+    if (!q) return errorResult("Empty query.");
+    const { query_used, hits } = searchTextChunks(db, { query: q, field, oblast, katottg, limit });
+    return jsonResult({
+      corpus_chunks: chunkStats.total,
+      query_used,
+      hit_count: hits.length,
+      hits,
+    });
   },
 );
 

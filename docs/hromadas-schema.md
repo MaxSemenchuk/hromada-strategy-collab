@@ -49,6 +49,9 @@ In-session / `scripts/hromada-output/*.json` may include:
 `hromadas.json`. Curated gold:
 `data/sources/goals-hierarchy-overrides.json` → `yarn build-goals-hierarchy`.
 Explicit МСС quotes across the corpus: `yarn extract-mss-intents`.
+Named objects / neighbour NER / GISRR SWOT opportunities:
+`yarn extract-strategy-entities` → `strategy-entities.json` (not folded into
+v7 `score`).
 
 See also [strategy-writing-guide.md](./strategy-writing-guide.md).
 

@@ -173,4 +173,11 @@
 
   document.body.classList.add("has-site-nav");
   document.body.insertBefore(nav, document.body.firstChild);
+
+  if (!document.querySelector("script[src$='assets/chat-widget.js']")) {
+    var chat = document.createElement("script");
+    chat.src = "assets/chat-widget.js";
+    chat.defer = true;
+    document.body.appendChild(chat);
+  }
 })();

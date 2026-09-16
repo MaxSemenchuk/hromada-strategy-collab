@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-16T13:39:09.150359+00:00",
-  "pairCount": 83005,
+  "generatedAt": "2026-09-16T19:15:51.467283+00:00",
+  "pairCount": 86497,
   "knownValidationPairs": 11,
   "method": "v7.3: 60% priority (Goals cosine; 10% DREAM-title blend when both exist; DREAM titles proxy when Goals missing) + 25% KSE geo + 15% social_capital (mss_network floor + named/explicit-ask + twinning + shared donors). Complementary DREAM\u2194Challenges and basin stay separate layers.",
   "model": "intfloat/multilingual-e5-small",
@@ -13,24 +13,24 @@
   },
   "warning": "Product unit is an \u041c\u0421\u0421 candidate agreement (package theme\u00b7form), not a strategy twin. Unverified hypotheses unless known=true / status=registry_known. Combined score ranks one discovery signal \u2014 use package + signals / slice files. suggested_theme / suggested_form / package are IMC hypotheses, not registry facts. matching-edges.json is slim (scores); browse packages via mss-candidates / slices.",
   "tracks": {
-    "thematic": "goals_cosine >= p90 (0.401) and geo_score <= 0.35 \u2014 cold-start vision partners",
+    "thematic": "goals_cosine >= p90 (0.4) and geo_score <= 0.35 \u2014 cold-start vision partners",
     "operational": "geo_score >= 0.85 and not thematic \u2014 convenient service co-sharers; slice ranked by operational_score (geo + fiscal_similarity + dream_overlap) when available",
     "mixed": "all other pairs",
     "counts": {
-      "thematic": 6917,
-      "operational": 4502,
-      "mixed": 71586
+      "thematic": 7220,
+      "operational": 4522,
+      "mixed": 74755
     },
-    "goalsFloor": 0.401,
+    "goalsFloor": 0.4,
     "goalsPercentile": 90,
     "geoThematicMax": 0.35,
     "geoOperationalMin": 0.85
   },
   "socialCapital": {
     "note": "0.15 slot is social_capital (readiness). mss_network stays the KSE|\u041f\u043b\u0456\u0447 pairwise field. Never known=true from twinning/donors/named.",
-    "annotated": 83005,
-    "positive": 10121,
-    "aboveMssNetwork": 9252
+    "annotated": 86497,
+    "positive": 11139,
+    "aboveMssNetwork": 10249
   },
   "operationalBoost": {
     "note": "Extra fields on edges; do not fold sector-tag dream_overlap into combined score",
@@ -39,8 +39,8 @@
       "dream_overlap",
       "operational_score"
     ],
-    "enriched": 82737,
-    "withOperationalScore": 4502
+    "enriched": 86224,
+    "withOperationalScore": 4522
   },
   "mssSuggest": {
     "note": "Rule-based theme + legal-form package (mss_suggest.py); does not change score; never sets known=true",
@@ -53,8 +53,8 @@
       "suggest_rationale",
       "suggest_caveat"
     ],
-    "annotated": 83005,
-    "withTheme": 81024,
+    "annotated": 86497,
+    "withTheme": 84558,
     "agglomerationHints": 45,
     "docs": "docs/mss-cooperation-research.md"
   },
@@ -67,13 +67,13 @@
       "discovery_primary",
       "status"
     ],
-    "annotated": 83005,
-    "withTheme": 81024,
+    "annotated": 86497,
+    "withTheme": 84558,
     "registryKnown": 11,
     "sidecar": {
       "path": "mss-candidates.json",
       "registryKnown": 11,
-      "hypotheses": 160
+      "hypotheses": 169
     }
   },
   "slices": {
@@ -100,14 +100,22 @@
     "complementary": {
       "path": "matching-edges.complementary.json",
       "note": "Separate yarn complementary-match \u2014 resource/DREAM \u2194 Challenges"
+    },
+    "explicitAsk": {
+      "path": "matching-edges.explicit-ask.json",
+      "note": "Separate yarn extract-mss-intents \u2014 \u041c\u0421\u0421 language + named neighbours"
+    },
+    "sharedAsset": {
+      "path": "matching-edges.shared-asset.json",
+      "note": "Separate yarn extract-strategy-entities \u2014 same named object in two strategies"
     }
   },
   "dreamPriority": {
     "note": "DREAM project-title cosine fills the 0.60 priority slot when a side lacks Goals (dream_proxy / mixed). Small 10% blend when both have Goals. Not sector-tag Jaccard. Complementary layer unchanged.",
     "counts": {
-      "goals": 73909,
-      "mixed": 7454,
-      "dream_proxy": 1642
+      "goals": 77410,
+      "mixed": 7487,
+      "dream_proxy": 1600
     }
   }
 }

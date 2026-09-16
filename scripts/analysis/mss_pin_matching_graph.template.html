@@ -19,6 +19,7 @@
     --line-ops: #d95926;
     --line-comp: #008300;
     --line-ask: #d55181;
+    --line-asset: #0f766e;
     --line-plich: #b45309;
     --dot-universe: #94a3b8;
     --dot-corpus: #c98500;
@@ -217,6 +218,7 @@
   .sw.ops { border-color: var(--line-ops); border-top-style: dotted; border-top-width: 2.5px; }
   .sw.comp { border-color: var(--line-comp); border-top-style: dashed; border-top-width: 2.5px; }
   .sw.ask { border-color: var(--line-ask); border-top-width: 2.5px; }
+  .sw.asset { border-color: var(--line-asset); border-top-style: dashed; border-top-width: 2.5px; }
   .sw.plich { border-color: var(--line-plich); border-top-width: 2.5px; }
   .sw.universe {
     width: 9px; height: 9px; border-radius: 50%;
@@ -765,7 +767,7 @@
           <button type="button" id="eu-themes-tagged" data-i18n="themes.tagged">Лише з темою</button>
         </div>
         <p class="theme-filter-empty" id="eu-theme-filter-empty" hidden data-i18n="euThemes.emptyPick">Оберіть хоча б одну тему — інакше побратими й Interreg сховані.</p>
-        <p class="theme-filter-hint" data-i18n="euThemes.hint">Фільтрує фіолетові побратими та блакитний Interreg. Теми з реєстру 3668 і назв проєктів keep.eu — не форми Закону 1508 і не бірюзові лінії МСС.</p>
+        <p class="theme-filter-hint" data-i18n="euThemes.hint">Фільтрує фіолетові побратими та блакитний Interreg. Теми з реєстру 3668 і офіційних тем keep.eu — не форми Закону 1508 і не бірюзові лінії МСС.</p>
       </details>
       <label>
         <input type="checkbox" id="layer-plich"/>
@@ -818,6 +820,14 @@
           <span class="layer-desc" data-i18n="layer.explicitAsk.desc">Рожеві — у стратегії прямо згадано кооперацію</span>
         </span>
       </label>
+      <label>
+        <input type="checkbox" id="layer-shared-asset"/>
+        <span class="sw asset" aria-hidden="true"></span>
+        <span class="layer-copy">
+          <span class="layer-title" data-i18n="layer.sharedAsset.title">Спільний обʼєкт</span>
+          <span class="layer-desc" data-i18n="layer.sharedAsset.desc">Бірюзові — та сама річка / кластер / полігон у двох стратегіях</span>
+        </span>
+      </label>
     </div>
     <p class="section-label" data-i18n="layers.group.backdrop">Підкладки</p>
     <div class="layers">
@@ -852,6 +862,7 @@
         <div class="stat"><span data-i18n="stat.operational">Гіпотез «зручний сусід»</span><b id="s-operational">—</b></div>
         <div class="stat"><span data-i18n="stat.complementary">Гіпотез «доповнення»</span><b id="s-complementary">—</b></div>
         <div class="stat"><span data-i18n="stat.explicitAsk">Явних запитів МСС</span><b id="s-explicit-ask">—</b></div>
+        <div class="stat"><span data-i18n="stat.sharedAsset">Спільних обʼєктів</span><b id="s-shared-asset">—</b></div>
         <div class="stat"><span data-i18n="stat.twinning">З побратимами ЄС</span><b id="s-twinning">—</b></div>
         <div class="stat"><span data-i18n="stat.twinningCountries">Країн-побратимів (Граф)</span><b id="s-twinning-countries">—</b></div>
         <div class="stat"><span data-i18n="stat.intl">Угод 3668 (громади)</span><b id="s-intl">—</b></div>
@@ -884,6 +895,7 @@ document.getElementById('s-thematic').textContent = meta.thematic_edges;
 document.getElementById('s-operational').textContent = meta.operational_edges;
 document.getElementById('s-complementary').textContent = meta.complementary_edges ?? 0;
 document.getElementById('s-explicit-ask').textContent = meta.explicit_ask_edges ?? 0;
+document.getElementById('s-shared-asset').textContent = meta.shared_asset_edges ?? 0;
 document.getElementById('s-twinning').textContent = meta.twinning_hromadas ?? 0;
 document.getElementById('s-twinning-countries').textContent = meta.twinning_countries ?? 0;
 document.getElementById('s-intl').textContent = meta.intl_hromadas ?? 0;
@@ -895,7 +907,7 @@ document.getElementById('s-basins').textContent = meta.basins ?? 0;
 let mode = 'map';
 let layers = {
   universe: true, pin: true,
-  thematic: true, operational: false, complementary: false, explicitAsk: false,
+  thematic: true, operational: false, complementary: false, explicitAsk: false, sharedAsset: false,
   corpus: false, twinning: false, interreg: false, donors: false, basins: false, plich: false,
 };
 
@@ -1166,6 +1178,7 @@ function kindLabel(kind) {
     operational: 'layer.operational.title',
     complementary: 'layer.complementary.title',
     explicit_ask: 'layer.explicitAsk.title',
+    shared_asset: 'layer.sharedAsset.title',
     plich_o_plich: 'layer.plich.title',
     twinning: 'layer.twinning.title',
     donor: 'layer.donors.title',
@@ -1179,6 +1192,7 @@ function kindSwClass(kind) {
   if (kind === 'operational') return 'ops';
   if (kind === 'complementary') return 'comp';
   if (kind === 'explicit_ask') return 'ask';
+  if (kind === 'shared_asset') return 'asset';
   if (kind === 'plich_o_plich') return 'plich';
   if (kind === 'twinning') return 'twinning';
   if (kind === 'donor') return 'donor';
@@ -1269,7 +1283,7 @@ function fmtPct(n) {
 
 function neighborsOf(id) {
   const groups = Object.create(null);
-  const order = ['pin', 'pin_agreement', 'thematic', 'operational', 'complementary', 'explicit_ask', 'plich_o_plich', 'hypothesis', 'twinning', 'donor'];
+  const order = ['pin', 'pin_agreement', 'thematic', 'operational', 'complementary', 'explicit_ask', 'shared_asset', 'plich_o_plich', 'hypothesis', 'twinning', 'donor'];
   // A hromada's own twinning partners already have a dedicated detail-card
   // section (per-city name/region/source) — only surface the aggregated
   // "twinning" neighbor group when viewing the country hub itself.
@@ -1328,6 +1342,11 @@ function edgeBlurb(item) {
       ? t('explain.explicitTheme').replace('{t}', biLabel(item.theme_en, item.theme))
       : t('explain.explicit');
   }
+  if (kind === 'shared_asset') {
+    return item.theme
+      ? t('explain.sharedAssetTheme').replace('{t}', biLabel(item.theme_en, item.theme))
+      : t('explain.sharedAsset');
+  }
   if (kind === 'thematic' || kind === 'hypothesis') return t('explain.thematic');
   if (kind === 'operational') return t('explain.operational');
   if (kind === 'pin') {
@@ -1360,6 +1379,7 @@ function edgeSignals(item) {
   if (
     item.theme
     && item.kind !== 'explicit_ask'
+    && item.kind !== 'shared_asset'
     && item.kind !== 'pin'
     && !(item.themes && item.themes.length)
   ) {
@@ -1667,6 +1687,7 @@ function renderDetail(n) {
       const meta = [
         p.is_local_authority ? t('detail.interregLpa') : t('detail.interregTown'),
         p.acronym || null,
+        (p.keep_themes && p.keep_themes.length) ? p.keep_themes.slice(0, 2).join(', ') : null,
       ].filter(Boolean).join(' · ');
       const link = p.url
         ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">keep.eu</a>`
@@ -1827,6 +1848,7 @@ const thematicEdgesLayer = L.layerGroup().addTo(map);
 const operationalEdgesLayer = L.layerGroup(); // default OFF — add on toggle
 const complementaryEdgesLayer = L.layerGroup();
 const explicitAskEdgesLayer = L.layerGroup();
+const sharedAssetEdgesLayer = L.layerGroup();
 const plichEdgesLayer = L.layerGroup();
 const universeLayer = L.layerGroup().addTo(map);
 const nodesLayer = L.layerGroup().addTo(map);
@@ -1837,6 +1859,7 @@ function edgeStyle(kind) {
   if (kind === 'operational') return { color: '#d95926', weight: 2, opacity: 0.7, dashArray: '2 6' };
   if (kind === 'complementary') return { color: '#008300', weight: 2, opacity: 0.75, dashArray: '4 4' };
   if (kind === 'explicit_ask') return { color: '#d55181', weight: 2.5, opacity: 0.9 };
+  if (kind === 'shared_asset') return { color: '#0f766e', weight: 2.2, opacity: 0.85, dashArray: '6 4' };
   if (kind === 'plich_o_plich') return { color: '#b45309', weight: 2, opacity: 0.85 };
   // thematic (and legacy hypothesis)
   return { color: '#3987e5', weight: 2, opacity: 0.75, dashArray: '6 5' };
@@ -1857,6 +1880,7 @@ function rebuildMapLayers() {
   operationalEdgesLayer.clearLayers();
   complementaryEdgesLayer.clearLayers();
   explicitAskEdgesLayer.clearLayers();
+  sharedAssetEdgesLayer.clearLayers();
   plichEdgesLayer.clearLayers();
   universeLayer.clearLayers();
   nodesLayer.clearLayers();
@@ -1879,6 +1903,7 @@ function rebuildMapLayers() {
     else if (e.kind === 'operational') operationalEdgesLayer.addLayer(line);
     else if (e.kind === 'complementary') complementaryEdgesLayer.addLayer(line);
     else if (e.kind === 'explicit_ask') explicitAskEdgesLayer.addLayer(line);
+    else if (e.kind === 'shared_asset') sharedAssetEdgesLayer.addLayer(line);
     else if (e.kind === 'plich_o_plich') plichEdgesLayer.addLayer(line);
     else if (e.kind === 'thematic' || e.kind === 'hypothesis') thematicEdgesLayer.addLayer(line);
     for (const id of [a.id, b.id]) {
@@ -1904,6 +1929,7 @@ function rebuildMapLayers() {
     if (layers.operational && kinds.has('operational')) return true;
     if (layers.complementary && kinds.has('complementary')) return true;
     if (layers.explicitAsk && kinds.has('explicit_ask')) return true;
+    if (layers.sharedAsset && kinds.has('shared_asset')) return true;
     if (layers.plich && kinds.has('plich_o_plich')) return true;
     return false;
   }
@@ -1994,11 +2020,12 @@ function syncLayerVisibility() {
   show(operationalEdgesLayer, layers.operational);
   show(complementaryEdgesLayer, layers.complementary);
   show(explicitAskEdgesLayer, layers.explicitAsk);
+  show(sharedAssetEdgesLayer, layers.sharedAsset);
   show(plichEdgesLayer, layers.plich);
   // network nodes on when any network / corpus highlight layer is on, or
   // when something is selected (e.g. via search) — its marker must render
   // even if every toggle happens to be off.
-  show(nodesLayer, layers.pin || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.corpus || layers.twinning || layers.interreg || layers.plich || selectedId != null);
+  show(nodesLayer, layers.pin || layers.thematic || layers.operational || layers.complementary || layers.explicitAsk || layers.sharedAsset || layers.corpus || layers.twinning || layers.interreg || layers.plich || selectedId != null);
 }
 
 rebuildMapLayers();
@@ -2012,6 +2039,7 @@ function syncLayers() {
   layers.operational = document.getElementById('layer-operational').checked;
   layers.complementary = document.getElementById('layer-complementary').checked;
   layers.explicitAsk = document.getElementById('layer-explicit-ask').checked;
+  layers.sharedAsset = document.getElementById('layer-shared-asset').checked;
   layers.plich = document.getElementById('layer-plich').checked;
   layers.corpus = document.getElementById('layer-corpus').checked;
   layers.twinning = document.getElementById('layer-twinning').checked;
@@ -2022,7 +2050,7 @@ function syncLayers() {
     rebuildMapLayers();
   }
 }
-['layer-pin','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-plich','layer-corpus','layer-twinning','layer-interreg','layer-donors','layer-basins'].forEach(id => {
+['layer-pin','layer-thematic','layer-operational','layer-complementary','layer-explicit-ask','layer-shared-asset','layer-plich','layer-corpus','layer-twinning','layer-interreg','layer-donors','layer-basins'].forEach(id => {
   document.getElementById(id).addEventListener('change', syncLayers);
 });
 syncLayers();
@@ -2177,7 +2205,7 @@ window.addEventListener('resize', () => {
 function networkNodeVisible(n) {
   if (n.kind === 'country' || n.kind === 'donor' || n.kind === 'agreement') return true;
   return layers.pin || layers.thematic || layers.operational || layers.complementary
-    || layers.explicitAsk || layers.corpus || layers.twinning || layers.interreg || layers.plich;
+    || layers.explicitAsk || layers.sharedAsset || layers.corpus || layers.twinning || layers.interreg || layers.plich;
 }
 
 function edgeVisible(e) {
@@ -2189,6 +2217,7 @@ function edgeVisible(e) {
   if (e.kind === 'operational') return layers.operational;
   if (e.kind === 'complementary') return layers.complementary;
   if (e.kind === 'explicit_ask') return layers.explicitAsk;
+  if (e.kind === 'shared_asset') return layers.sharedAsset;
   if (e.kind === 'plich_o_plich') return layers.plich;
   if (e.kind === 'twinning') return layers.twinning && euThemeOk(e);
   if (e.kind === 'donor') return layers.donors;
@@ -2394,6 +2423,10 @@ function strokeEdge(e, ax, ay, bx, by) {
     ctx.strokeStyle = 'rgba(213,81,129,0.9)';
     ctx.lineWidth = 2 / scale;
     ctx.setLineDash([]);
+  } else if (e.kind === 'shared_asset') {
+    ctx.strokeStyle = 'rgba(15,118,110,0.85)';
+    ctx.lineWidth = 1.6 / scale;
+    ctx.setLineDash([6 / scale, 4 / scale]);
   } else if (e.kind === 'plich_o_plich') {
     ctx.strokeStyle = 'rgba(180,83,9,0.85)';
     ctx.lineWidth = 1.8 / scale;
@@ -2446,7 +2479,7 @@ function drawGraph() {
   // (pin/pin_agreement) out at low zoom and let it fade back in as the
   // viewer zooms toward a scale where individual lines are legible.
   const declutter = Math.max(0, Math.min(1, (scale - 0.35) / 0.65));
-  for (const kind of ['pin', 'pin_agreement', 'operational', 'complementary', 'thematic', 'hypothesis', 'explicit_ask', 'plich_o_plich', 'twinning', 'donor']) {
+  for (const kind of ['pin', 'pin_agreement', 'operational', 'complementary', 'thematic', 'hypothesis', 'explicit_ask', 'shared_asset', 'plich_o_plich', 'twinning', 'donor']) {
     const isCore = kind === 'pin' || kind === 'pin_agreement';
     for (const e of edges) {
       if (e.kind !== kind || !edgeVisible(e)) continue;
@@ -2546,6 +2579,8 @@ window.PAGE_I18N = {
     "layer.complementary.desc": "Зелені — сила/DREAM однієї ↔ виклик іншої",
     "layer.explicitAsk.title": "Сигнал · явний запит МСС",
     "layer.explicitAsk.desc": "Рожеві — у стратегії прямо згадано кооперацію",
+    "layer.sharedAsset.title": "Сигнал · спільний обʼєкт",
+    "layer.sharedAsset.desc": "Бірюзові — та сама річка / кластер / полігон у двох стратегіях",
     "layer.plich.title": "Пліч-о-Пліч: тил↔форпост",
     "layer.plich.desc": "Бурштинові — партнерства тилових і прифронтових громад (з новин проєкту)",
     "layer.corpus.title": "Громади зі стратегіями",
@@ -2566,7 +2601,7 @@ window.PAGE_I18N = {
     "themes.empty": "Немає тем угод",
     "themes.emptyPick": "Оберіть хоча б одну тему — інакше угоди на мапі сховані.",
     "euThemes.label": "Теми UA–ЄС",
-    "euThemes.hint": "Фільтрує фіолетові побратими та блакитний Interreg. Теми з реєстру 3668 і назв проєктів keep.eu — не форми Закону 1508 і не бірюзові лінії МСС.",
+    "euThemes.hint": "Фільтрує фіолетові побратими та блакитний Interreg. Теми з реєстру 3668 і офіційних тем keep.eu — не форми Закону 1508 і не бірюзові лінії МСС.",
     "euThemes.empty": "Немає тем UA–ЄС",
     "euThemes.emptyPick": "Оберіть хоча б одну тему — інакше побратими й Interreg сховані.",
     "stats.label": "Цифри",
@@ -2580,6 +2615,7 @@ window.PAGE_I18N = {
     "stat.operational": "Гіпотез «зручний сусід»",
     "stat.complementary": "Гіпотез «доповнення»",
     "stat.explicitAsk": "Явних запитів МСС",
+    "stat.sharedAsset": "Спільних обʼєктів",
     "stat.plich": "Пар «Пліч-о-Пліч»",
     "stat.twinning": "З побратимами ЄС",
     "stat.twinningCountries": "Країн-побратимів (Граф)",
@@ -2633,6 +2669,8 @@ window.PAGE_I18N = {
     "explain.complementary": "Гіпотеза: сила/DREAM однієї ↔ виклик іншої",
     "explain.explicit": "У стратегії прямо згадано міжмуніципальну співпрацю",
     "explain.explicitTheme": "Явний запит МСС · тема: {t}",
+    "explain.sharedAsset": "У стратегіях названо той самий обʼєкт (річка, кластер, полігон)",
+    "explain.sharedAssetTheme": "Спільний обʼєкт · тема: {t}",
     "explain.pin": "Зареєстрована угода МСС",
     "explain.pinMany": "Зареєстровані угоди МСС ({n})",
     "explain.twinning": "Місто-побратим за кордоном (SKEW / стратегія)",
@@ -2681,6 +2719,8 @@ window.PAGE_I18N = {
     "layer.complementary.desc": "Green — one side’s strength/DREAM ↔ the other’s challenge",
     "layer.explicitAsk.title": "Signal · explicit IMC ask",
     "layer.explicitAsk.desc": "Pink — strategy text names inter-municipal cooperation",
+    "layer.sharedAsset.title": "Signal · shared named object",
+    "layer.sharedAsset.desc": "Teal — the same river / cluster / landfill named in two strategies",
     "layer.plich.title": "Пліч-о-Пліч: rear↔forpost",
     "layer.plich.desc": "Amber — partnerships between rear and frontline hromadas (from project news)",
     "layer.corpus.title": "Hromadas with strategies",
@@ -2701,7 +2741,7 @@ window.PAGE_I18N = {
     "themes.empty": "No agreement themes",
     "themes.emptyPick": "Pick at least one theme — otherwise agreements are hidden on the map.",
     "euThemes.label": "UA–EU themes",
-    "euThemes.hint": "Filters violet twin cities and cyan Interreg. Themes come from the 3668 register and keep.eu titles — not Law 1508 forms and not teal IMC lines.",
+    "euThemes.hint": "Filters violet twin cities and cyan Interreg. Themes come from the 3668 register and official keep.eu project themes — not Law 1508 forms and not teal IMC lines.",
     "euThemes.empty": "No UA–EU themes",
     "euThemes.emptyPick": "Pick at least one theme — otherwise twinning and Interreg are hidden.",
     "stats.label": "Figures",
@@ -2715,6 +2755,7 @@ window.PAGE_I18N = {
     "stat.operational": "“Convenient neighbour” hypotheses",
     "stat.complementary": "“Complement” hypotheses",
     "stat.explicitAsk": "Explicit IMC asks",
+    "stat.sharedAsset": "Shared named objects",
     "stat.plich": "Пліч-о-Пліч pairs",
     "stat.twinning": "With EU twin cities",
     "stat.twinningCountries": "Twin countries (Graph)",
@@ -2768,6 +2809,8 @@ window.PAGE_I18N = {
     "explain.complementary": "Hypothesis: one side’s strength/DREAM ↔ the other’s challenge",
     "explain.explicit": "Strategy text explicitly mentions intermunicipal cooperation",
     "explain.explicitTheme": "Explicit IMC ask · theme: {t}",
+    "explain.sharedAsset": "Both strategies name the same object (river, cluster, landfill)",
+    "explain.sharedAssetTheme": "Shared object · theme: {t}",
     "explain.pin": "Registered IMC agreement",
     "explain.pinMany": "Registered IMC agreements ({n})",
     "explain.twinning": "Twin city abroad (SKEW / strategy)",

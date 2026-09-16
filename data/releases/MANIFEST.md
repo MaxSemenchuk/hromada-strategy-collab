@@ -92,9 +92,17 @@ and self-describing, not a growth history.
   - `matching-edges.operational.json` — ranked by `operational_score`
     (geo + fiscal similarity + DREAM sector overlap) when present, else `score`
   - `matching-edges.complementary.json` — **separate** layer
-    (`yarn complementary-match`): DREAM/Strengths/resource of A ↔ Challenges of B
+    (`yarn complementary-match` v3): named deficit↔offer + capped kitchen-sink
+    sectors (освіта/культура/МСБ…); not v7 score
   - `matching-edges.explicit-ask.json` — **separate** layer
     (`yarn extract-mss-intents`): МСС / кооперація language in strategy fields
+    plus named-neighbour NER (`social_capital` 0.70). GISRR SWOT extras stay
+    as quotes; they do not join the same-oblast co-intent clique.
+  - `matching-edges.shared-asset.json` — **separate** layer
+    (`yarn extract-strategy-entities`): two strategies name the same object
+    (річка, кластер, named полігон). Not v7 score, not `known: true`.
+  - `strategy-entities.json` — per-hromada named objects / deficits / neighbours
+    / GISRR SWOT-opportunity extras
   - `goals-hierarchy.json` — strategic / operational goal lines (sidecar for v7)
   - `mss-intents.json` — per-hromada quotes of explicit МСС language
 
@@ -185,9 +193,10 @@ and self-describing, not a growth history.
 
 - **`interreg-partners.json`** — **Interreg / keep.eu** UA-partner projects
   (`yarn interreg`). Map overlay: cyan LPA (local public authority) nodes.
-  Project **titles** are classified with `intl_theme.py` at graph time — keep.eu
-  official `themes[]` / ISO are not yet persisted in the release. Not IMC,
-  not twinning, not Law 3668. Does **not** fold into matching `score`.
+  Official keep.eu `themes[]` / policy / intervention are persisted on each
+  partnership; `theme_ids` map those titles via `intl_theme.py` (English title
+  fills gaps). Not IMC, not twinning, not Law 3668. Does **not** fold into
+  matching `score`. Preview: `docs/assets/interreg-preview.json`.
 
 - **`partnership-map.json`** — **UA↔all-countries municipal partnerships**,
   scraped from Мінрозвитку's own verified partnership pages

@@ -25,6 +25,7 @@ SIGNAL_LABELS: dict[str, str] = {
     "geo": "зручний сусід",
     "complementary": "доповнення ресурсів",
     "explicit_ask": "явний запит МСС",
+    "shared_asset": "спільний обʼєкт",
     "network": "мережа МСС",
     "twinning": "місто-побратим ЄС",
     "donor": "спільна донорська програма",
@@ -37,6 +38,7 @@ SIGNAL_LABELS_EN: dict[str, str] = {
     "geo": "convenient neighbour",
     "complementary": "complementary resources",
     "explicit_ask": "explicit IMC request",
+    "shared_asset": "shared named object",
     "network": "IMC network",
     "twinning": "EU twin city",
     "donor": "shared donor programme",
@@ -51,6 +53,7 @@ TRACK_TO_PRIMARY: dict[str, str] = {
     "complementary": "complementary",
     "explicit-ask": "explicit_ask",
     "explicit_ask": "explicit_ask",
+    "shared_asset": "shared_asset",
 }
 
 STRENGTH_ORDER = {"high": 3, "medium": 2, "low": 1}
@@ -164,6 +167,22 @@ def build_signals(e: dict[str, Any]) -> list[dict[str, str]]:
                     "id": "explicit_ask",
                     "label_uk": SIGNAL_LABELS["explicit_ask"],
                     "label_en": SIGNAL_LABELS_EN["explicit_ask"],
+                    "strength": strength,
+                }
+            )
+
+    shared = e.get("shared_asset_score")
+    if shared is not None or track == "shared_asset":
+        s = float(shared) if shared is not None else 0.0
+        strength = _strength_from_score(s, high=0.9, medium=0.75)
+        if track == "shared_asset" and STRENGTH_ORDER[strength] < STRENGTH_ORDER["medium"]:
+            strength = "medium"
+        if s > 0 or track == "shared_asset":
+            signals.append(
+                {
+                    "id": "shared_asset",
+                    "label_uk": SIGNAL_LABELS["shared_asset"],
+                    "label_en": SIGNAL_LABELS_EN["shared_asset"],
                     "strength": strength,
                 }
             )
@@ -336,6 +355,7 @@ def _short_row(e: dict[str, Any]) -> dict[str, Any]:
         "social_capital",
         "complementary_score",
         "explicit_ask_score",
+        "shared_asset_score",
         "operational_score",
         "suggest_confidence",
     ):
@@ -351,6 +371,7 @@ def write_candidates_sidecar(
     operational: list[dict[str, Any]] | None = None,
     complementary: list[dict[str, Any]] | None = None,
     explicit_ask: list[dict[str, Any]] | None = None,
+    shared_asset: list[dict[str, Any]] | None = None,
     top_n_per_slice: int = 40,
     out_path: Path | None = None,
     manifest_path: Path | None = None,
@@ -379,9 +400,14 @@ def write_candidates_sidecar(
         if explicit_ask is not None
         else _load("matching-edges.explicit-ask.json")
     )
+    shared_asset = (
+        shared_asset
+        if shared_asset is not None
+        else _load("matching-edges.shared-asset.json")
+    )
 
     # Ensure candidate fields exist
-    for collection in (edges, thematic, operational, complementary, explicit_ask):
+    for collection in (edges, thematic, operational, complementary, explicit_ask, shared_asset):
         for e in collection:
             if "package" not in e:
                 annotate_candidate(e)
@@ -419,6 +445,7 @@ def write_candidates_sidecar(
     # (strength of "why talk" signal, not form buckets)
     hypotheses: list[dict[str, Any]] = []
     hypotheses.extend(_take(explicit_ask, source="explicit-ask", limit=top_n_per_slice))
+    hypotheses.extend(_take(shared_asset, source="shared-asset", limit=top_n_per_slice))
     hypotheses.extend(_take(thematic, source="thematic", limit=top_n_per_slice))
     hypotheses.extend(_take(complementary, source="complementary", limit=top_n_per_slice))
     hypotheses.extend(_take(operational, source="operational", limit=top_n_per_slice))
@@ -431,7 +458,7 @@ def write_candidates_sidecar(
             "Кандидати договорів МСС (гіпотези). "
             "package.form — правова форма за правилами, не факт реєстру. "
             "known/registry_known — лише кураторська валідація. "
-            "Стратегії / geo / complementary / explicit-ask — сигнали пошуку."
+            "Стратегії / geo / complementary / explicit-ask / shared-asset — сигнали пошуку."
         ),
         "counts": {
             "registry_known": len(known_rows),
@@ -450,7 +477,7 @@ def write_candidates_sidecar(
         "registryKnown": len(known_rows),
         "hypotheses": len(hypotheses),
         "topNPerSlice": top_n_per_slice,
-        "sliceOrder": ["explicit-ask", "thematic", "complementary", "operational"],
+        "sliceOrder": ["explicit-ask", "shared-asset", "thematic", "complementary", "operational"],
         "note": (
             "Thin sidecar for UI browse — not full pairwise. "
             "Forms are package fields; do not browse primarily by form_id."

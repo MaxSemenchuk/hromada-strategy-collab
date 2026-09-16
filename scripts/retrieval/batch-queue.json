@@ -880,6 +880,78 @@
       "strategy_url": "https://leskivska-gromada.gov.ua/news/1730378149/",
       "raw_text_path": "",
       "notes": "thin-oblast Cherkasy 2026-09-16; Strategy 2024–2027 approved 25.10.2024 №44-55/VIII; explicit IMC asks on out-of-school education and TDF support"
+    },
+    {
+      "name": "Колочавська сільська територіальна громада",
+      "katottg": "UA21120170000080579",
+      "status": "structured",
+      "strategy_url": "https://rada.info/upload/users_files/04350777/",
+      "raw_text_path": "",
+      "notes": "UA-VPN PIN 2026-09-16; approved Strategy to 2027 (30.10.2025 №8); explicit IMC task 2.4.2; named Великобичківська (not known:true)"
+    },
+    {
+      "name": "Міжгірська селищна територіальна громада",
+      "katottg": "UA21120190000082169",
+      "status": "structured",
+      "strategy_url": "https://mizhgirska-gromada.gov.ua/news/1702916825/",
+      "raw_text_path": "",
+      "notes": "UA-VPN PIN 2026-09-16; HOVERLA Strategy to 2027 + Plan 2024–2027 (Google Drive iframe); IMC ask toward former Міжгірський район neighbours"
+    },
+    {
+      "name": "Синевирська сільська територіальна громада",
+      "katottg": "UA21120230000041982",
+      "status": "structured",
+      "strategy_url": "https://synevyr-gromada.gov.ua/",
+      "raw_text_path": "",
+      "notes": "UA-VPN PIN 2026-09-16; full Strategy 2023–2027 DOCX; explicit IMC task 2.4.3.4"
+    },
+    {
+      "name": "Полянська сільська територіальна громада",
+      "katottg": "UA21040210000079273",
+      "status": "structured",
+      "strategy_url": "https://rada.info/upload/users_files/04351587/",
+      "raw_text_path": "",
+      "notes": "UA-VPN PIN 2026-09-16; HOVERLA project Strategy to 2027; strategy-reported 16-hromada waste-plant IMC 23.02.2021 (not known:true)"
+    },
+    {
+      "name": "Ківерцівська міська територіальна громада",
+      "katottg": "UA07080110000043895",
+      "status": "structured",
+      "strategy_url": "https://kivertsi-rada.gov.ua/",
+      "raw_text_path": "",
+      "notes": "UA-VPN PIN 2026-09-16; HOVERLA Strategy to 2027 + 2026 UCORD update; explicit horizontal IMC asks on waste/social/culture"
+    },
+    {
+      "name": "Маневицька селищна територіальна громада",
+      "katottg": "UA07040050000080830",
+      "status": "structured",
+      "strategy_url": "https://manevytska-gromada.gov.ua/",
+      "raw_text_path": "",
+      "notes": "UA-VPN PIN 2026-09-16; 2026 Strategy+Plan (U-LEAD); IMC questionnaire; Пліч-о-пліч with Глухівська ≠ Law 1508"
+    },
+    {
+      "name": "Воловецька селищна територіальна громада",
+      "katottg": "UA21040050000032164",
+      "status": "structured",
+      "strategy_url": "https://volovec-miskrada.gov.ua/strategiya-rozvitku-15-16-14-06-08-2025/",
+      "raw_text_path": "",
+      "notes": "UA-VPN PIN 2026-09-16; ПРОЄКТ Strategy to 2027 (U-LEAD 2026); SWOT O8 IMC/Interreg ask; not known:true"
+    },
+    {
+      "name": "Неліпинська сільська територіальна громада",
+      "katottg": "UA21040170000092506",
+      "status": "structured",
+      "strategy_url": "https://nelipynska-gromada.gov.ua/news/1787310184/",
+      "raw_text_path": "",
+      "notes": "UA-VPN PIN 2026-09-16; approved Strategy to 2027 (2026); explicit IMC task 2.4.2"
+    },
+    {
+      "name": "Надвірнянська міська територіальна громада",
+      "katottg": "UA26120070000067596",
+      "status": "structured",
+      "strategy_url": "https://nadrada.gov.ua/wp-content/uploads/2024/10/00_strategiya_rozvytku_nadvirnyanskoyi_gromady_do_2030_roku_2_3_1.docx",
+      "raw_text_path": "",
+      "notes": "UA-VPN PIN 2026-09-16; Strategy to 2030 DOCX; twinning Prudnik/Krnov/etc ≠ MSS"
     }
   ]
 }

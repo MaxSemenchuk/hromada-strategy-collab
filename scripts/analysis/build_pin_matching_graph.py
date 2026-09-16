@@ -20,6 +20,7 @@ Overlay policy (2026-07-24 / layers 2026-07-29 / basins 2026-08-03):
     operational   — high geo           → «зручний сусід»   (default OFF)
     complementary — resource/DREAM ↔ Challenges (default OFF)
     explicit_ask  — МСС language in strategy text (default OFF)
+    shared_asset  — same named object (річка, кластер, …) in two strategies (default OFF)
     twinning      — UA–EU sister cities from SKEW / strategy (node highlight, default OFF)
     interreg      — keep.eu local-authority Interreg projects (node highlight, default OFF)
     intl 3668     — registered international territorial agreements (card + EU theme filter)
@@ -66,6 +67,7 @@ MSS_REGISTRY = ROOT / "data/cache/mss/mss_registry.xlsx"
 EDGES = ROOT / "data/releases/matching-edges.json"
 COMPLEMENTARY = ROOT / "data/releases/matching-edges.complementary.json"
 EXPLICIT_ASK = ROOT / "data/releases/matching-edges.explicit-ask.json"
+SHARED_ASSET = ROOT / "data/releases/matching-edges.shared-asset.json"
 TWINNING = ROOT / "data/releases/twinning-partners.json"
 INTL_AGREEMENTS = ROOT / "data/releases/intl-agreements.json"
 INTERREG = ROOT / "data/releases/interreg-partners.json"
@@ -82,6 +84,7 @@ TOP_THEMATIC = 40
 TOP_OPERATIONAL = 40
 TOP_COMPLEMENTARY = 40
 TOP_EXPLICIT_ASK = 40
+TOP_SHARED_ASSET = 40
 MAX_AGREEMENTS_PER_EDGE = 6
 AGREEMENT_TITLE_MAX = 140
 
@@ -735,7 +738,7 @@ def load_intl_by_code() -> dict[str, dict]:
 
 
 def load_interreg_by_code() -> dict[str, dict]:
-    """keep.eu projects keyed by KATOTTG; themes from English titles (no re-fetch)."""
+    """keep.eu projects keyed by KATOTTG; official themes[] preferred over titles."""
     out: dict[str, dict] = {}
     if not INTERREG.exists():
         return out
@@ -754,15 +757,23 @@ def load_interreg_by_code() -> dict[str, dict]:
                 continue
             seen_proj.add(pid)
             name = p.get("project_name_en") or p.get("project_acronym") or ""
-            tids = classify_intl_themes(name, p.get("project_acronym") or "")
+            tids = list(p.get("theme_ids") or [])
+            if not tids:
+                tids = classify_intl_themes(name, p.get("project_acronym") or "")
             is_lpa = bool(p.get("is_local_authority"))
             if is_lpa:
                 lpa += 1
+            keep_titles = [
+                t.get("title") if isinstance(t, dict) else str(t)
+                for t in (p.get("keep_themes") or [])
+            ]
             projects.append(
                 {
                     "acronym": p.get("project_acronym"),
                     "name": name[:160],
                     "theme_ids": tids[:6],
+                    "keep_themes": [t for t in keep_titles if t][:4],
+                    "theme_source": p.get("theme_source"),
                     "is_local_authority": is_lpa,
                     "url": p.get("source_url"),
                     "programme": p.get("programme"),
@@ -973,6 +984,17 @@ def build_payload() -> dict:
             limit=TOP_EXPLICIT_ASK,
         )
 
+    shared_asset_edges: list[dict] = []
+    if SHARED_ASSET.exists():
+        shared_asset_edges = encode_named_overlay(
+            json.loads(SHARED_ASSET.read_text(encoding="utf-8")),
+            kind="shared_asset",
+            name_to_code=all_name_to_code,
+            score_key="shared_asset_score",
+            limit=TOP_SHARED_ASSET,
+            prefer_same_oblast=True,
+        )
+
     # Domestic Пліч-о-Пліч rear↔forpost pairs, text-mined from project news
     # (see docs/plich-o-plich.md). Only bilateral_confirmed edges — the
     # source release also carries co-mention-only edges from multi-hromada
@@ -1005,6 +1027,7 @@ def build_payload() -> dict:
         + operational_edges
         + complementary_edges
         + explicit_ask_edges
+        + shared_asset_edges
         + plich_o_plich_edges
     ):
         for code in (e["a"], e["b"]):
@@ -1303,6 +1326,7 @@ def build_payload() -> dict:
             "operational_edges": len(operational_edges),
             "complementary_edges": len(complementary_edges),
             "explicit_ask_edges": len(explicit_ask_edges),
+            "shared_asset_edges": len(shared_asset_edges),
             "plich_o_plich_edges": len(plich_o_plich_edges),
             # legacy alias: thematic only (combined-score hyp layer removed)
             "hypothesis_edges": len(thematic_edges),
@@ -1345,7 +1369,7 @@ def build_payload() -> dict:
                 else None
             ),
             "interreg_source": (
-                "data/releases/interreg-partners.json (keep.eu; LPA flag + title themes)"
+                "data/releases/interreg-partners.json (keep.eu; LPA flag + official themes)"
                 if interreg_by_code
                 else None
             ),
@@ -1359,16 +1383,18 @@ def build_payload() -> dict:
             "top_operational": TOP_OPERATIONAL,
             "top_complementary": TOP_COMPLEMENTARY,
             "top_explicit_ask": TOP_EXPLICIT_ASK,
+            "top_shared_asset": TOP_SHARED_ASSET,
             "overlay_policy": (
                 "thematic=goals_cosine track; operational=geo neighbours; "
                 "complementary=resource/DREAM↔Challenges; explicit_ask=МСС language; "
+                "shared_asset=same named object in two strategies; "
                 "twinning=UA–EU sister cities (node highlight); "
                 "interreg=keep.eu local-authority projects (node highlight); "
                 "intl 3668=registered international territorial agreements (card + EU theme filter); "
                 "plich_o_plich=domestic rear↔forpost pairs, bilateral_confirmed only; "
                 "basins=HydroBASINS lev06 underlay (not in score); "
                 "pin theme filter=mss_suggest on registry title/form; "
-                "eu theme filter=intl_theme on 3668 sphere + Interreg titles (does not affect PIN); "
+                "eu theme filter=intl_theme on 3668 sphere + keep.eu official themes (does not affect PIN); "
                 "no combined-score hyp layer; "
                 "universe=all release rows with KSE geo (metadata layer)"
             ),
@@ -1387,6 +1413,7 @@ def build_payload() -> dict:
             + operational_edges
             + complementary_edges
             + explicit_ask_edges
+            + shared_asset_edges
             + plich_o_plich_edges
             + twinning_edges
             + donor_edges
@@ -1413,6 +1440,7 @@ def main() -> None:
         f"oblasts={m['oblasts']} · basins={m.get('basins', 0)} · "
         f"thematic={m['thematic_edges']} operational={m['operational_edges']} "
         f"complementary={m['complementary_edges']} explicit_ask={m['explicit_ask_edges']} "
+        f"shared_asset={m.get('shared_asset_edges', 0)} "
         f"twinning={m.get('twinning_hromadas', 0)} "
         f"(countries={m.get('twinning_countries', 0)}/{m.get('twinning_edges', 0)}e) "
         f"intl={m.get('intl_hromadas', 0)}/{m.get('intl_agreements', 0)} "

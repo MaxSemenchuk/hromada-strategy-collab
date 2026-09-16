@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-09-16T13:39:09.126620+00:00",
+  "generatedAt": "2026-09-16T19:15:51.452492+00:00",
   "path": "mss-candidates.json",
   "registryKnown": 11,
-  "hypotheses": 160,
+  "hypotheses": 169,
   "topNPerSlice": 40,
   "sliceOrder": [
     "explicit-ask",
+    "shared-asset",
     "thematic",
     "complementary",
     "operational"
