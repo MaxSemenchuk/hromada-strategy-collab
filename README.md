@@ -266,7 +266,7 @@ yarn test-strategy-text && yarn test-complementary-match
 yarn build-goals-hierarchy
 yarn extract-mss-intents
 yarn complementary-match
-yarn twinning                    # UA–EU twinning overlay; also feeds social_capital
+yarn twinning                    # UA–EU twinning overlay (SKEW + AFCCRE + …); feeds social_capital
 yarn twinning --offline          # rebuild from data/cache/twinning/ only
 yarn intl-agreements             # Law 3668-IX international agreement register
 yarn intl-agreements --offline

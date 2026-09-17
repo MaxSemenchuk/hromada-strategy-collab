@@ -32,6 +32,7 @@
     "fetch-intl-agreements": "python3 scripts/analysis/build_intl_agreements.py --fetch-only",
     "intl-agreements": "python3 scripts/analysis/build_intl_agreements.py",
     "test-intl-theme": "python3 scripts/analysis/test_intl_theme.py",
+    "test-afccre-twinning": "python3 scripts/analysis/test_afccre_twinning.py",
     "plich-o-plich": "python3 scripts/analysis/build_plich_o_plich.py",
     "complementary-match": "python3 scripts/analysis/complementary_match.py",
     "extract-mss-intents": "python3 scripts/analysis/extract_mss_intents.py",

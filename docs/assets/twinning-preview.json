@@ -1,27 +1,28 @@
 {
-  "generatedAt": "2026-09-02T13:25:54.544074+00:00",
-  "caveat": "UA–EU twinning — SKEW + Cities4Cities news + strategy. Not domestic МСС.",
-  "hromadaCount": 366,
+  "generatedAt": "2026-09-17T19:09:16.524292+00:00",
+  "caveat": "UA–EU twinning — SKEW + AFCCRE + Cities4Cities news + strategy. Not domestic МСС.",
+  "hromadaCount": 372,
   "skewLinked": 179,
+  "afccrePartners": 56,
   "cities4citiesPartners": 11,
   "cities4citiesListed": 90,
   "top": [
     {
       "short": "Одеська",
       "oblast": "Одеська область",
-      "partner_count": 40,
+      "partner_count": 41,
       "partners": [
         "Regensburg (DE)",
         "Bremen (DE)",
         "Berlin-Lichtenberg (DE)",
         "Mainz (DE)",
-        "Відень (AT)"
+        "Marseille (FR)"
       ]
     },
     {
       "short": "Івано-Франківська",
       "oblast": "Івано-Франківська область",
-      "partner_count": 30,
+      "partner_count": 31,
       "partners": [
         "Dorsten (DE)",
         "Potsdam (DE)",
@@ -91,6 +92,18 @@
       ]
     },
     {
+      "short": "Чернівецька",
+      "oblast": "Чернівецька область",
+      "partner_count": 21,
+      "partners": [
+        "Schwaben (Bezirk) (DE)",
+        "Mannheim (DE)",
+        "Düsseldorf (DE)",
+        "Metz (FR)",
+        "Rueil Malmaison (FR)"
+      ]
+    },
+    {
       "short": "Хмельницька",
       "oblast": "Хмельницька область",
       "partner_count": 20,
@@ -103,27 +116,27 @@
       ]
     },
     {
-      "short": "Чернівецька",
-      "oblast": "Чернівецька область",
-      "partner_count": 19,
-      "partners": [
-        "Schwaben (Bezirk) (DE)",
-        "Mannheim (DE)",
-        "Düsseldorf (DE)",
-        "Вольфсбурґ (AT)",
-        "Клагенфурт-ам-Вертерзе (AT)"
-      ]
-    },
-    {
       "short": "Вінницька",
       "oblast": "Вінницька область",
-      "partner_count": 17,
+      "partner_count": 18,
       "partners": [
+        "Nancy (FR)",
         "Пітерборо (GB)",
         "Руставі (GE)",
         "Бат Ям (IL)",
-        "Панявежис (LT)",
-        "Карлсруе (DE)"
+        "Панявежис (LT)"
+      ]
+    },
+    {
+      "short": "Миколаївська",
+      "oblast": "Миколаївська область",
+      "partner_count": 18,
+      "partners": [
+        "Hannover (DE)",
+        "Bedburg (DE)",
+        "Sindelfingen (DE)",
+        "Berlin Tempelhof-Schöneberg (DE)",
+        "Montpellier (FR)"
       ]
     },
     {
@@ -151,18 +164,6 @@
       ]
     },
     {
-      "short": "Миколаївська",
-      "oblast": "Миколаївська область",
-      "partner_count": 15,
-      "partners": [
-        "Hannover (DE)",
-        "Bedburg (DE)",
-        "Sindelfingen (DE)",
-        "Berlin Tempelhof-Schöneberg (DE)",
-        "Бургас (BG)"
-      ]
-    },
-    {
       "short": "Мукачівська",
       "oblast": "Закарпатська область",
       "partner_count": 15,
@@ -184,6 +185,42 @@
         "Obertshausen (DE)",
         "Кельме (LT)",
         "Радвилішкіс (LT)"
+      ]
+    },
+    {
+      "short": "Хотинська",
+      "oblast": "Чернівецька область",
+      "partner_count": 15,
+      "partners": [
+        "Teltow (DE)",
+        "Ahlen (DE)",
+        "Eslöv",
+        "La Couronne (FR)",
+        "Тельтов (DE)"
+      ]
+    },
+    {
+      "short": "Броварська",
+      "oblast": "Київська область",
+      "partner_count": 14,
+      "partners": [
+        "Jena (DE)",
+        "Erlangen (DE)",
+        "Fontenay Sous Bois (FR)",
+        "Сілламяе (EE)",
+        "Санта-Маринелла (IT)"
+      ]
+    },
+    {
+      "short": "Дрогобицька",
+      "oblast": "Львівська область",
+      "partner_count": 14,
+      "partners": [
+        "Greifswald (DE)",
+        "Communaute De Communes Du Pays Sabolien (FR)",
+        "Смілтене (LV)",
+        "Грайфсвальд (DE)",
+        "Округ Хам’ян (KR)"
       ]
     },
     {
@@ -211,42 +248,6 @@
       ]
     },
     {
-      "short": "Хотинська",
-      "oblast": "Чернівецька область",
-      "partner_count": 14,
-      "partners": [
-        "Teltow (DE)",
-        "Ahlen (DE)",
-        "Eslöv",
-        "Тельтов (DE)",
-        "Валч (PL)"
-      ]
-    },
-    {
-      "short": "Броварська",
-      "oblast": "Київська область",
-      "partner_count": 13,
-      "partners": [
-        "Jena (DE)",
-        "Erlangen (DE)",
-        "Сілламяе (EE)",
-        "Санта-Маринелла (IT)",
-        "Хенян (CN)"
-      ]
-    },
-    {
-      "short": "Дрогобицька",
-      "oblast": "Львівська область",
-      "partner_count": 13,
-      "partners": [
-        "Greifswald (DE)",
-        "Смілтене (LV)",
-        "Грайфсвальд (DE)",
-        "Округ Хам’ян (KR)",
-        "Битом (PL)"
-      ]
-    },
-    {
       "short": "Ковельська",
       "oblast": "Волинська область",
       "partner_count": 13,
@@ -256,6 +257,30 @@
         "Saarbrücken (DE)",
         "Утена (LT)",
         "Барзінгхаузен (DE)"
+      ]
+    },
+    {
+      "short": "Маріупольська",
+      "oblast": "Донецька область",
+      "partner_count": 13,
+      "partners": [
+        "Le Havre (FR)",
+        "Калімнос (GR)",
+        "Кітнос (GR)",
+        "Пірей (GR)",
+        "Салоніки (GR)"
+      ]
+    },
+    {
+      "short": "Чернігівська",
+      "oblast": "Чернігівська область",
+      "partner_count": 13,
+      "partners": [
+        "Memmingen (DE)",
+        "Aachen (DE)",
+        "Reims (FR)",
+        "Габрово (BG)",
+        "Петах-Тіква (IL)"
       ]
     },
     {
@@ -271,39 +296,15 @@
       ]
     },
     {
-      "short": "Маріупольська",
-      "oblast": "Донецька область",
+      "short": "Коломийська",
+      "oblast": "Івано-Франківська область",
       "partner_count": 12,
       "partners": [
-        "Калімнос (GR)",
-        "Кітнос (GR)",
-        "Пірей (GR)",
-        "Салоніки (GR)",
-        "Зугдіді (GE)"
-      ]
-    },
-    {
-      "short": "Чернігівська",
-      "oblast": "Чернігівська область",
-      "partner_count": 12,
-      "partners": [
-        "Memmingen (DE)",
-        "Aachen (DE)",
-        "Габрово (BG)",
-        "Петах-Тіква (IL)",
-        "Огре (LV)"
-      ]
-    },
-    {
-      "short": "Білгород-Дністровська",
-      "oblast": "Одеська область",
-      "partner_count": 11,
-      "partners": [
-        "Ulm / Neu Ulm (DE)",
-        "Вагаршапат (AM)",
-        "Бобінген (DE)",
-        "Зіндельфінген (DE)",
-        "Сопот (PL)"
+        "Lüdinghausen (DE)",
+        "Ingelheim am Rhein (DE)",
+        "Nogent Sur Marne (FR)",
+        "Панявежис (LT)",
+        "Дрокія (MD)"
       ]
     }
   ]

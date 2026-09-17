@@ -565,6 +565,12 @@ Canonical write-up, with a running decisions log:
 - [x] UA–EU twinning format insights saved — how partnerships work, SKEW/C4C
       channels, cases (Poltava–Kalmar, Kamianske–Wuppertal, …) —
       [ua-eu-twinning.md](./ua-eu-twinning.md) (2026-08-03)
+- [x] **AFCCRE French jumelage directory folded into `yarn twinning` (2026-09-17).**
+      FR analogue of SKEW: PDF annuaire + nouveaux 2025, `confidence: registry`,
+      never `known: true`. 63 raw → 56 linked / 7 skipped (Kyiv city/districts,
+      Yalta, no-KATOTTG). 10 Ministry FR rows tagged `duplicate_of_afccre`.
+      Docs: [ua-eu-twinning.md](./ua-eu-twinning.md),
+      [external-data-sources.md](./external-data-sources.md#afccre--french-municipal-jumelages-twinning).
 - [ ] Stronger «навіщо» on candidate cards (budget / grant / image rationale),
       not only theme + signal chips
 - [ ] Association outreach: send ВА ОТГ → ВАГ drafts (`outreach-messages.md` §6)

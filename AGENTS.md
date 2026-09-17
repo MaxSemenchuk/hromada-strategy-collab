@@ -31,8 +31,9 @@ command list; only non-obvious environment caveats are documented here.
 
 ### Python analysis (optional, runs offline — no secrets needed)
 - Deps are in `requirements.txt`. Set up once: `python3 -m venv .venv && . .venv/bin/activate
-  && pip install -r requirements.txt` (`sentence-transformers` pulls a large `torch`; the
+  && pip install -r requirements.txt`   (`sentence-transformers` pulls a large `torch`; the
   embedding scripts also download `intfloat/multilingual-e5-small` from HuggingFace on first run).
+  `yarn twinning` needs `pypdf` to extract AFCCRE jumelage PDFs.
   Legacy research scripts under `scripts/analysis/legacy/` may additionally need `scipy`,
   `networkx`, and `openpyxl`.
 - **Canonical commands** (self-contained — they resolve their own paths, no scratch dir needed):

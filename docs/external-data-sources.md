@@ -173,6 +173,39 @@ titles; `c4c_url` means «listed in C4C municipality DB» (seeking partners).
 
 ---
 
+## AFCCRE — French municipal jumelages (twinning)
+
+- **Reviewed:** 2026-09-17
+- **Annuaire:** https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf
+- **Nouveaux 2025:** https://www.afccre.org/sites/default/files/Nouveaux%20jumelages%202025.pdf
+- **Operator:** AFCCRE (French section of CEMR)
+
+Authoritative **FR↔UA** jumelage list from the French local-government
+association. No CSV/API — PDF directory (~50 UA rows) plus a yearly «nouveaux»
+list. Same integration path as SKEW (`yarn twinning`; `pypdf`; cache under
+`data/cache/twinning/afccre-*.pdf`). Not Law 1508 МСС; not `known: true`;
+weak `social_capital` when *both* sides have registry twinning.
+
+Resolution uses `twinning-fr-aliases.json` (KATOTTG) because French spellings
+and Ukrainian homonyms collide (Миколаїв, Долина, Городок, Семенівка). Skip
+Kyiv city/districts and Crimea Yalta; skip Луганськ/Торез (no KATOTTG in
+`hromadas.json`). Occupied TGs *with* KATOTTG are kept. Ministry FR rows that
+are the same commune are tagged `duplicate_of_afccre` (curated 10 pairs) —
+Діжон vs Nancy, two Rocheforts, Ла-Мотт-Серволе stay distinct.
+
+MEAE/CNCD Atlas (`pastel.diplomatie.gouv.fr/cncdext`) was down for
+maintenance the day we looked; Cités Unies France publishes a solidarity-fund
+donor list, not pairs. Do not treat AFCCRE as complete: the Ministry map still
+has FR pairs AFCCRE misses (Луцьк–Пон-сюр-Сен, Бишів–Везуль, …).
+
+```bash
+yarn twinning                 # also fetches AFCCRE PDFs when cache missing
+yarn twinning --offline       # rebuild from data/cache/twinning/
+yarn test-afccre-twinning
+```
+
+---
+
 ## keep.eu — Interreg / ETC project & partner database
 
 - **Reviewed:** 2026-08-12
