@@ -64,7 +64,8 @@ Goals, DREAM project titles fill that same 0.60 slot (0.90×, mixed or
 registry UA–EU twinning, and shared donor programmes add at lower weight (capped at 1.0).
 One-sided twinning is not a pair signal. Never `known: true` from those extras.
 After changes, run `yarn test-length-norm`,
-`yarn test-known-pairs`, `yarn test-social-capital`, `yarn test-dream-proxy`
+`yarn test-known-pairs`, `yarn test-social-capital`, `yarn test-dream-proxy`,
+`yarn test-afccre-twinning` when touching the FR jumelage layer,
 and `yarn report-pin-corpus`.
 
 Still separate (do **not** fold into combined `score`):
@@ -82,7 +83,11 @@ PIN map (`yarn graph-pin-matching`): paint **thematic**, **operational**,
 **complementary**, **explicit_ask**, and **shared_asset** overlays separately —
 never top-N by combined `score` (sparse corpus → geo bias). **Twinning** stays a node highlight
 layer (EU sister cities in the hromada card + indigo glow) *and* a weak
-pairwise input to `social_capital`. **Interreg** (keep.eu LPA) is a separate
+pairwise input to `social_capital`. **SKEW = DE registry; AFCCRE = FR
+registry** (PDF jumelage directory, `yarn twinning`, 2026-09-17: 63 raw →
+56 linked / 7 skipped; never `known: true`). Ministry FR rows that match
+AFCCRE are tagged `duplicate_of_afccre`. Skip Kyiv city/districts and Crimea
+Yalta. MEAE Atlas was not scrapeable. **Interreg** (keep.eu LPA) is a separate
 cyan node highlight; official keep.eu `themes[]` also feed the «Теми UA–ЄС»
 filter. **Law 3668-IX** registered international agreements feed the card +
 that same filter + a revealed EU-place pool — not v7 `score`,
@@ -102,7 +107,7 @@ not a distant-EU twin finder. Analytics canvas:
 
 ## Hard rules
 
-1. Matching scores are **hypotheses** unless `known: true` (curated registry-confirmed). Do not set `known: true` on all PIN edges — use `matching-edges.pin-corpus.json` for the broader overlap. Do not set `known: true` on twinning links either (SKEW is foreign twinning, not domestic МСС).
+1. Matching scores are **hypotheses** unless `known: true` (curated registry-confirmed). Do not set `known: true` on all PIN edges — use `matching-edges.pin-corpus.json` for the broader overlap. Do not set `known: true` on twinning links either (SKEW / AFCCRE are foreign twinning, not domestic МСС).
 2. Sector-tag overlap is **not** a matching signal.
 3. `edem_total`: use `edem-data.csv`; missing hromadas ≠ zero.
 4. Batch growth: `scripts/retrieval/` + in-session structuring → `yarn structure-hromada --json … --write-release`. Prefer `yarn priority-corpus-growth` when expanding PIN∩corpus validation coverage. See [docs/corpus-growth.md](../../docs/corpus-growth.md).

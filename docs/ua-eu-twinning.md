@@ -83,9 +83,37 @@ often municipal NGOs / volunteer networks.
 - Many large cities hold **several** German partners at once
   (Lviv, Odesa, Ivano-Frankivsk, Mykolaiv, …).
 
-**Coverage honesty:** German twinning is the only bulk open registry we have.
-SE / FR / PL / others appear as cases and news, not a complete catalogue.
+**Coverage honesty:** German SKEW is still the only *HTML map* registry.
+France now has a bulk PDF analogue (AFCCRE, below). SE / PL / others still
+appear as Ministry-map rows, cases, and news, not a complete catalogue.
 See also «we have not found all partnerships» below.
+
+---
+
+## AFCCRE — French jumelage directory (2026-09-17)
+
+French-side analogue of SKEW. Operator: Association Française du Conseil des
+Communes et Régions d'Europe (AFCCRE / CEMR). No public CSV/API — two PDFs:
+
+- [Annuaire des communes jumelées](https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf) (snapshot used: 2025-09-02)
+- [Nouveaux jumelages 2025](https://www.afccre.org/sites/default/files/Nouveaux%20jumelages%202025.pdf)
+
+`yarn twinning` fetches both into `data/cache/twinning/` (`pypdf` text extract)
+and merges `source: afccre` / `confidence: registry` into
+`twinning-partners.json`. Aliases: `data/sources/twinning-fr-aliases.json`
+(KATOTTG, because Миколаїв / Долина / Городок collide). Cyrillic Ministry FR
+rows that are the same commune are tagged `duplicate_of_afccre`
+(`twinning-fr-duplicate-pairs.json`, 10 pairs) — not deleted.
+
+**This run:** 63 raw edges → 56 linked / 44 hromadas; 7 skipped (Kyiv city +
+districts, Crimea Yalta, Луганськ/Торез without KATOTTG). Occupied TGs that
+*have* a KATOTTG stay (Мелітополь, Бердянськ, Маріуполь, Нова Каховка). Two
+generations: pre-2022 Soviet-era twins and post-2022 solidarity jumelages.
+MEAE/CNCD Atlas was in maintenance (not scraped). Cités Unies France is a
+solidarity fund, not a pair registry.
+
+Do **not** set `known: true`. Same weak `social_capital` input as SKEW
+(both-sides registry twinning).
 
 ---
 
@@ -247,7 +275,8 @@ forums) — our matching layer does not replace that brokerage.
 ### Coverage gaps (do not overclaim)
 
 1. Non-DE EU countries: no SKEW equivalent in our pipeline — **closed
-   2026-09-02** via decentralization.ua's Ministry partnership map, see below
+   2026-09-02** via decentralization.ua's Ministry partnership map; France
+   additionally got a French-side bulk source **2026-09-17** (AFCCRE PDFs)
 2. C4C: news pairs only (~11), not all ~100 claimed partnerships
 3. Pre-2022 twinning outside SKEW/C4C: often only on municipal websites
 4. Kyiv city / raions / utilities: intentionally skipped
@@ -290,11 +319,12 @@ year.
 
 **Merged 2026-09-02** into `twinning-partners.json` (`yarn twinning
 --offline` now also reads `partnership-map.json`): the release went from
-114 confirmed-partner hromadas to **366**, and the map/graph
-(`yarn graph-pin-matching`) now shows `twinning=364` hromadas across **48
-country hub nodes / 763 edges** (Граф view) — up from ~15 countries. Total
-partner rows: 1303 (skew 179, decentralization_ua 1109, cities4cities 11,
-strategy 4). Per-source counts (`coverage.decentralization_ua_partners_added`
+114 confirmed-partner hromadas to **366**. **AFCCRE fold-in 2026-09-17**
+raised that to **372** hromadas (56 FR jumelage rows; 10 Ministry FR rows
+tagged `duplicate_of_afccre`). The map/graph (`yarn graph-pin-matching`,
+rebuilt 2026-09-17) shows `twinning=370` hromadas across **48 country hub
+nodes / 795 edges**. Per-source counts
+(`coverage.decentralization_ua_partners_added`
 = 1109 of 1134; the other 25 lost to KATOTTG rows twinning-partners.json's
 own index doesn't carry) are the trustworthy per-source number.
 

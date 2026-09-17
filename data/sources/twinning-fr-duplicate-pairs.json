@@ -1,0 +1,65 @@
+{
+  "_comment": "Manually verified (2026-09-17): decentralization.ua FR-country partner rows that are the SAME French commune as an AFCCRE jumelage for that hromada (Cyrillic Ministry spelling vs AFCCRE Latin). Tagged duplicate_of_afccre at yarn twinning; not deleted. Left untagged when the French places differ (Діжон vs Nancy, Мец vs a second partner, Рошфор-сюр-Бревон vs Rochefort-sur-la-Côte, Ла-Мотт-Серволе extra on Хотин).",
+  "pairs": [
+    {
+      "katottg": "UA51100270000073549",
+      "short": "Одеська",
+      "dm_name": "Марсель",
+      "afccre_name": "Marseille"
+    },
+    {
+      "katottg": "UA73040190000062796",
+      "short": "Хотинська",
+      "dm_name": "Ла-Куронн",
+      "afccre_name": "La Couronne"
+    },
+    {
+      "katottg": "UA32060050000030591",
+      "short": "Броварська",
+      "dm_name": "Фонтене-су-Буа",
+      "afccre_name": "Fontenay Sous Bois"
+    },
+    {
+      "katottg": "UA26060130000047466",
+      "short": "Долинська",
+      "dm_name": "Монтіньї-ле-Бретонне",
+      "afccre_name": "Montigny Le Bretonneux"
+    },
+    {
+      "katottg": "UA23060070000082704",
+      "short": "Запорізька",
+      "dm_name": "Бельфор",
+      "afccre_name": "Belfort"
+    },
+    {
+      "katottg": "UA61060430000094264",
+      "short": "Чортківська",
+      "dm_name": "Безьє",
+      "afccre_name": "Beziers"
+    },
+    {
+      "katottg": "UA71080150000071745",
+      "short": "Канівська",
+      "dm_name": "Ламберсар",
+      "afccre_name": "Lambersart"
+    },
+    {
+      "katottg": "UA18060090000061708",
+      "short": "Коростенська",
+      "dm_name": "Бурж",
+      "afccre_name": "Bourges"
+    },
+    {
+      "katottg": "UA23080070000068953",
+      "short": "Мелітопольська",
+      "dm_name": "Брив-ла-Гаярд",
+      "afccre_name": "Brive La Gaillarde"
+    },
+    {
+      "katottg": "UA73060610000066784",
+      "short": "Чернівецька",
+      "dm_name": "Мец",
+      "afccre_name": "Metz"
+    }
+  ]
+}

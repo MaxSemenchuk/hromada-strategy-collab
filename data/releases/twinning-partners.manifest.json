@@ -1,11 +1,14 @@
 {
-  "generatedAt": "2026-09-02T13:25:54.544074+00:00",
-  "hromadasWithPartners": 366,
+  "generatedAt": "2026-09-17T19:09:16.524292+00:00",
+  "hromadasWithPartners": 372,
   "skewEdgesLinked": 179,
   "skewEdgesRaw": 268,
-  "strategyPartnersAdded": 4,
+  "strategyPartnersAdded": 14,
   "cities4citiesPartnersAdded": 11,
   "cities4citiesListed": 90,
   "unmatchedSkew": 88,
-  "method": "SKEW + Cities4Cities news/markers + strategy mentions; aliases in twinning-name-aliases.json"
+  "afccrePartnersAdded": 56,
+  "afccreUnmatched": 7,
+  "frDuplicatesTagged": 10,
+  "method": "SKEW + AFCCRE jumelages + Cities4Cities news/markers + strategy mentions + decentralization.ua"
 }

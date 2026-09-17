@@ -2,7 +2,8 @@
 """UA–EU municipal twinning layer (separate from domestic МСС matching).
 
 Primary source: SKEW (Engagement Global) German–Ukrainian municipal partnership
-list + map (HTML; ~250–300 links). Secondary: Cities4Cities news titles naming
+list + map (HTML; ~250–300 links). French analogue: AFCCRE jumelage directory
+(PDF annuaire + nouveaux 2025). Secondary: Cities4Cities news titles naming
 signed UA–EU pairs + markers.json profile URLs. Tertiary: named foreign city
 partners in strategy extractions (PartnersMentioned / Projects / MSSAgreements).
 
@@ -28,6 +29,18 @@ from datetime import datetime, timezone
 from html import unescape
 from pathlib import Path
 
+from afccre_twinning import (  # noqa: E402
+    AFCCRE_ANNUAIRE_URL,
+    AFCCRE_HOME,
+    AFCCRE_NOUVEAUX_URL,
+    CACHE_ANNUAIRE_PDF,
+    extract_afccre_edges,
+    fetch_afccre,
+    load_fr_aliases,
+    norm_key as afccre_norm_key,
+    skip_reason as afccre_skip_reason,
+)
+
 ROOT = Path(__file__).resolve().parents[2]
 CACHE = ROOT / "data" / "cache" / "twinning"
 CACHE_MAP = CACHE / "skew-map.html"
@@ -39,6 +52,7 @@ HROMADAS = ROOT / "data" / "releases" / "hromadas.json"
 ALIASES = ROOT / "data" / "sources" / "twinning-name-aliases.json"
 PARTNERSHIP_MAP = ROOT / "data" / "releases" / "partnership-map.json"
 DE_DUPLICATE_PAIRS = ROOT / "data" / "sources" / "twinning-de-duplicate-pairs.json"
+FR_DUPLICATE_PAIRS = ROOT / "data" / "sources" / "twinning-fr-duplicate-pairs.json"
 OUT = ROOT / "data" / "releases" / "twinning-partners.json"
 MANIFEST = ROOT / "data" / "releases" / "twinning-partners.manifest.json"
 PREVIEW = ROOT / "docs" / "assets" / "twinning-preview.json"
@@ -278,23 +292,25 @@ def _ssl_context() -> ssl.SSLContext:
         return ctx
 
 
-def http_get(url: str) -> str:
+def http_get_bytes(url: str) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": UA_HDR})
     try:
         with urllib.request.urlopen(req, context=_ssl_context(), timeout=90) as resp:
-            return resp.read().decode("utf-8", errors="replace")
+            return resp.read()
     except Exception as exc:
-        # Fallback: system curl (same path as manual research fetches)
         import subprocess
 
         try:
-            out = subprocess.check_output(
+            return subprocess.check_output(
                 ["curl", "-sL", "-A", UA_HDR, url],
                 timeout=90,
             )
-            return out.decode("utf-8", errors="replace")
         except Exception as curl_exc:
             raise RuntimeError(f"fetch failed ({exc}); curl fallback: {curl_exc}") from exc
+
+
+def http_get(url: str) -> str:
+    return http_get_bytes(url).decode("utf-8", errors="replace")
 
 
 # News-title patterns that name an UA↔foreign municipal pair.
@@ -709,12 +725,14 @@ def is_skip_ua_name(ua_name: str) -> str | None:
         return "rajon"
     if any(x in low for x in ("vodokanal", "stadtwerke", "entwässerung", "wasserbetrieb")):
         return "non_hromada"
-    if low.startswith("kyjiw-") or low.startswith("kijiw-") or low.startswith("kyiv-"):
+    if low.startswith("kyjiw-") or low.startswith("kijiw-") or low.startswith("kyiv-") or low.startswith("kiev-"):
         return "non_hromada"
     if "industrialnyj" in low:
         return "non_hromada"
-    if low in {"kyjiw", "kiew", "kyiv"}:
+    if low in {"kyjiw", "kiew", "kyiv", "kiev"}:
         return "kyiv_city"
+    if low == "yalta":
+        return "crimea"
     return None
 
 
@@ -840,7 +858,7 @@ def extract_strategy_partners(rows: list[dict]) -> dict[str, list[dict]]:
     return out
 
 
-def build_release(edges: list[dict]) -> None:
+def build_release(edges: list[dict], afccre_edges: list[dict] | None = None) -> None:
     by_name, by_katottg, by_stem = load_hromada_index()
     aliases = load_aliases(by_name)
     rows = list(by_name.values())
@@ -1007,6 +1025,98 @@ def build_release(edges: list[dict]) -> None:
         elif link:
             entry.setdefault("c4c_url", link)
 
+    # AFCCRE French jumelage directory (yarn twinning fetches the PDFs).
+    # Same role as SKEW for Germany: registry-confidence FR–UA pairs, never
+    # known=true. Kyiv city/districts + Crimea Yalta skipped in afccre_twinning.
+    afccre_added = 0
+    afccre_unmatched: list[dict] = []
+    afccre_stats: dict[str, int] = defaultdict(int)
+    fr_aliases = load_fr_aliases()
+    for e in afccre_edges or []:
+        ua = e.get("ua_name_fr") or ""
+        skip = afccre_skip_reason(ua) or is_skip_ua_name(ua)
+        if skip:
+            afccre_stats[skip] += 1
+            afccre_unmatched.append(
+                {
+                    "ua_name_fr": ua,
+                    "fr_name": e.get("fr_name"),
+                    "reason": skip,
+                    "list": e.get("list"),
+                }
+            )
+            continue
+        row = None
+        how = "unmatched"
+        alias = fr_aliases.get(afccre_norm_key(ua))
+        if alias:
+            code = (alias.get("katottg") or "").strip()
+            name = alias.get("name")
+            if code:
+                row = by_katottg.get(code)
+                how = "fr_alias"
+            elif name:
+                row = by_name.get(norm_apos(name))
+                how = "fr_alias"
+            if not row:
+                how = "fr_alias_miss"
+        if not row:
+            row, how = resolve_ua(ua, None, aliases, by_stem, by_katottg)
+        if row and not (row.get("Katottg") or "").strip():
+            afccre_stats["no_katottg"] += 1
+            afccre_unmatched.append(
+                {
+                    "ua_name_fr": ua,
+                    "fr_name": e.get("fr_name"),
+                    "reason": "no_katottg",
+                    "list": e.get("list"),
+                }
+            )
+            continue
+        if not row:
+            afccre_stats[how] += 1
+            afccre_unmatched.append(
+                {
+                    "ua_name_fr": ua,
+                    "fr_name": e.get("fr_name"),
+                    "reason": how,
+                    "list": e.get("list"),
+                }
+            )
+            continue
+        afccre_stats[how] += 1
+        hcode = (row.get("Katottg") or row["Name"]).strip()
+        entry = by_hromada.setdefault(
+            hcode,
+            {
+                "name": row["Name"],
+                "short": short_name(row["Name"]),
+                "katottg": row.get("Katottg"),
+                "oblast": row.get("Oblast"),
+                "partners": [],
+            },
+        )
+        partner = {
+            "partner_name": e.get("fr_name"),
+            "partner_country": "FR",
+            "partner_region": e.get("fr_cp"),
+            "type": e.get("type") or "Jumelage",
+            "since": e.get("since"),
+            "source": "afccre",
+            "source_url": e.get("source_url"),
+            "confidence": "registry",
+            "ua_name_fr": ua,
+            "match": how,
+        }
+        if any(
+            p.get("source") == "afccre"
+            and (p.get("partner_name") or "").lower() == (partner["partner_name"] or "").lower()
+            for p in entry["partners"]
+        ):
+            continue
+        entry["partners"].append(partner)
+        afccre_added += 1
+
     # decentralization.ua Ministry partnership map (yarn partnership-map) —
     # merged additively. SKEW's German partner names are Latin/German-spelled;
     # decentralization.ua's are Cyrillic transliterations of ALL countries —
@@ -1024,10 +1134,15 @@ def build_release(edges: list[dict]) -> None:
     decentralization_added = 0
     hromadas_in_both = 0
     de_duplicates_tagged = 0
+    fr_duplicates_tagged = 0
     de_dupe_lookup: dict[tuple[str, str], str] = {}
+    fr_dupe_lookup: dict[tuple[str, str], str] = {}
     if DE_DUPLICATE_PAIRS.exists():
         for pair in json.loads(DE_DUPLICATE_PAIRS.read_text(encoding="utf-8"))["pairs"]:
             de_dupe_lookup[(pair["katottg"], pair["dm_name"])] = pair["skew_name"]
+    if FR_DUPLICATE_PAIRS.exists():
+        for pair in json.loads(FR_DUPLICATE_PAIRS.read_text(encoding="utf-8"))["pairs"]:
+            fr_dupe_lookup[(pair["katottg"], pair["dm_name"])] = pair["afccre_name"]
     if PARTNERSHIP_MAP.exists():
         dm_payload = json.loads(PARTNERSHIP_MAP.read_text(encoding="utf-8"))
         for h in dm_payload.get("hromadas") or []:
@@ -1052,6 +1167,7 @@ def build_release(edges: list[dict]) -> None:
             )
             for p in h.get("partners") or []:
                 dupe_of = de_dupe_lookup.get((code, p.get("partner_name")))
+                dupe_fr = fr_dupe_lookup.get((code, p.get("partner_name")))
                 partner = {
                     "partner_name": p.get("partner_name"),
                     "partner_country": p.get("partner_country"),
@@ -1068,6 +1184,9 @@ def build_release(edges: list[dict]) -> None:
                 if dupe_of:
                     partner["duplicate_of_skew"] = dupe_of
                     de_duplicates_tagged += 1
+                if dupe_fr:
+                    partner["duplicate_of_afccre"] = dupe_fr
+                    fr_duplicates_tagged += 1
                 entry["partners"].append(partner)
                 decentralization_added += 1
 
@@ -1078,11 +1197,14 @@ def build_release(edges: list[dict]) -> None:
     for h in hromadas:
         h["partner_count"] = len(h["partners"])
         h["distinct_partner_count"] = sum(
-            1 for p in h["partners"] if not p.get("duplicate_of_skew")
+            1
+            for p in h["partners"]
+            if not p.get("duplicate_of_skew") and not p.get("duplicate_of_afccre")
         )
 
     generated = datetime.now(timezone.utc).isoformat()
     linked_edges = sum(1 for h in hromadas for p in h["partners"] if p["source"] == "skew")
+    afccre_rows = sum(1 for h in hromadas for p in h["partners"] if p["source"] == "afccre")
     c4c_partner_rows = sum(
         1 for h in hromadas for p in h["partners"] if p["source"] == "cities4cities"
     )
@@ -1090,17 +1212,16 @@ def build_release(edges: list[dict]) -> None:
         "generatedAt": generated,
         "warning": (
             "UA–EU twinning layer — separate from domestic МСС. "
-            "SKEW links are registry-sourced (DE–UA); Cities4Cities pairs come from "
+            "SKEW links are registry-sourced (DE–UA); AFCCRE jumelages are "
+            "registry-sourced (FR–UA, PDF directory); Cities4Cities pairs come from "
             "news titles (hypotheses); strategy mentions are hypotheses; "
-            "decentralization_ua entries are Ministry-verified. Non-DE decentralization_ua "
-            "rows are additive (SKEW is DE-only, so no overlap is possible). DE-country "
-            "decentralization_ua rows ARE checked against SKEW via a manually-curated "
-            "pair list (data/sources/twinning-de-duplicate-pairs.json, 38 pairs) — a "
-            "matched row carries partner.duplicate_of_skew (the SKEW name it duplicates); "
+            "decentralization_ua entries are Ministry-verified. Non-DE/non-FR "
+            "decentralization_ua rows are additive. DE-country decentralization_ua "
+            "rows ARE checked against SKEW via twinning-de-duplicate-pairs.json; "
+            "FR-country rows against AFCCRE via twinning-fr-duplicate-pairs.json. "
+            "Matched rows carry partner.duplicate_of_skew / duplicate_of_afccre; "
             "use hromada.distinct_partner_count, not partner_count, when you need a "
-            "non-inflated total. Un-tagged DE rows are genuinely additional partners not "
-            "yet checked/confirmed either way for a handful of low-confidence cases — see "
-            "docs/ua-eu-twinning.md. None of the sources here is complete on its own — "
+            "non-inflated total. None of the sources here is complete on its own — "
             "each has confirmed cases the others miss. "
             "c4c_url marks listing in the C4C municipality database (seeking partners), "
             "not a confirmed twinning. Not folded into matching score."
@@ -1111,6 +1232,13 @@ def build_release(edges: list[dict]) -> None:
                 "name": "SKEW German–Ukrainian municipal partnerships",
                 "url": SKEW_MAP_URL,
                 "list_url": SKEW_LIST_URL,
+            },
+            {
+                "id": "afccre",
+                "name": "AFCCRE French jumelage directory (annuaire + nouveaux 2025)",
+                "url": AFCCRE_HOME,
+                "annuaire_url": AFCCRE_ANNUAIRE_URL,
+                "nouveaux_url": AFCCRE_NOUVEAUX_URL,
             },
             {
                 "id": "cities4cities",
@@ -1142,13 +1270,20 @@ def build_release(edges: list[dict]) -> None:
             "cities4cities_news_unmatched": len(c4c_unmatched),
             "unmatched_skew": len(unmatched),
             "resolve_stats": dict(stats),
+            "afccre_edges_raw": len(afccre_edges or []),
+            "afccre_partners_added": afccre_added,
+            "afccre_partner_rows": afccre_rows,
+            "afccre_unmatched": len(afccre_unmatched),
+            "afccre_resolve_stats": dict(afccre_stats),
             "decentralization_ua_partners_added": decentralization_added,
             "hromadas_in_both_skew_and_decentralization": hromadas_in_both,
             "decentralization_ua_de_duplicates_tagged": de_duplicates_tagged,
+            "decentralization_ua_fr_duplicates_tagged": fr_duplicates_tagged,
         },
         "hromadas": hromadas,
         "unmatched": unmatched[:200],
         "unmatched_cities4cities": c4c_unmatched[:50],
+        "unmatched_afccre": afccre_unmatched[:80],
     }
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     MANIFEST.write_text(
@@ -1162,7 +1297,10 @@ def build_release(edges: list[dict]) -> None:
                 "cities4citiesPartnersAdded": c4c_added,
                 "cities4citiesListed": c4c_listed,
                 "unmatchedSkew": len(unmatched),
-                "method": "SKEW + Cities4Cities news/markers + strategy mentions; aliases in twinning-name-aliases.json",
+                "afccrePartnersAdded": afccre_added,
+                "afccreUnmatched": len(afccre_unmatched),
+                "frDuplicatesTagged": fr_duplicates_tagged,
+                "method": "SKEW + AFCCRE jumelages + Cities4Cities news/markers + strategy mentions + decentralization.ua",
             },
             ensure_ascii=False,
             indent=2,
@@ -1174,9 +1312,10 @@ def build_release(edges: list[dict]) -> None:
         json.dumps(
             {
                 "generatedAt": generated,
-                "caveat": "UA–EU twinning — SKEW + Cities4Cities news + strategy. Not domestic МСС.",
+                "caveat": "UA–EU twinning — SKEW + AFCCRE + Cities4Cities news + strategy. Not domestic МСС.",
                 "hromadaCount": len(hromadas),
                 "skewLinked": linked_edges,
+                "afccrePartners": afccre_added,
                 "cities4citiesPartners": c4c_added,
                 "cities4citiesListed": c4c_listed,
                 "top": [
@@ -1203,17 +1342,20 @@ def build_release(edges: list[dict]) -> None:
         f"Wrote {OUT.relative_to(ROOT)} — {len(hromadas)} hromadas, "
         f"{linked_edges}/{len(edges)} SKEW edges linked, "
         f"+{strategy_added} strategy, +{c4c_added} C4C news, "
+        f"+{afccre_added} AFCCRE, "
         f"+{decentralization_added} decentralization.ua "
-        f"({de_duplicates_tagged} tagged duplicate_of_skew; "
+        f"({de_duplicates_tagged} tagged duplicate_of_skew, "
+        f"{fr_duplicates_tagged} tagged duplicate_of_afccre; "
         f"{hromadas_in_both} hromadas overlap with SKEW/strategy/C4C); "
-        f"C4C listed={c4c_listed}; unmatched_skew={len(unmatched)}"
+        f"C4C listed={c4c_listed}; unmatched_skew={len(unmatched)}; "
+        f"unmatched_afccre={len(afccre_unmatched)}"
     )
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--offline", action="store_true", help="Do not fetch; use HTML cache")
-    ap.add_argument("--fetch-only", action="store_true", help="Only refresh SKEW cache")
+    ap.add_argument("--offline", action="store_true", help="Do not fetch; use HTML/PDF cache")
+    ap.add_argument("--fetch-only", action="store_true", help="Only refresh SKEW/C4C/AFCCRE cache")
     ap.add_argument("--force-fetch", action="store_true", help="Re-download even if cache exists")
     args = ap.parse_args()
 
@@ -1222,12 +1364,22 @@ def main() -> None:
             raise SystemExit(
                 "No SKEW HTML under data/cache/twinning/ — run without --offline first"
             )
+        if not CACHE_ANNUAIRE_PDF.exists():
+            print("WARN no AFCCRE PDF cache — FR jumelages skipped this run")
     else:
         fetch_skew(force=args.force_fetch)
         fetch_cities4cities(force=args.force_fetch)
+        fetch_afccre(http_get_bytes, force=args.force_fetch)
 
     edges = extract_skew_edges()
     print(f"Parsed {len(edges)} SKEW edges → {CACHE_EDGES.relative_to(ROOT)}")
+    afccre_edges: list[dict] = []
+    if CACHE_ANNUAIRE_PDF.exists():
+        afccre_edges = extract_afccre_edges()
+        print(
+            f"Parsed {len(afccre_edges)} AFCCRE edges → "
+            f"{(CACHE / 'afccre-edges.json').relative_to(ROOT)}"
+        )
     if CACHE_C4C_MARKERS.exists() or CACHE_C4C_NEWS.exists():
         print(
             f"C4C cache: markers="
@@ -1237,7 +1389,7 @@ def main() -> None:
 
     if args.fetch_only:
         return
-    build_release(edges)
+    build_release(edges, afccre_edges)
 
 
 if __name__ == "__main__":

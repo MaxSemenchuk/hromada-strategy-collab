@@ -1359,7 +1359,7 @@ def build_payload() -> dict:
             "matching_source": "data/releases/matching-edges.json",
             "hromadas_source": "data/releases/hromadas.json (PortalUrl/StrategyUrl)",
             "twinning_source": (
-                "data/releases/twinning-partners.json (SKEW + strategy)"
+                "data/releases/twinning-partners.json (SKEW + AFCCRE + strategy)"
                 if twinning_by_code
                 else None
             ),
