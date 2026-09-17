@@ -205,13 +205,11 @@ JSON text columns — query them with SQLite's `json_extract`/`json_each`.
 Always call `get_context` before interpreting results — it surfaces the
 methodology caveats above (score vs. `known: true`, `track` semantics, etc.).
 
-**Browser chat:** `yarn mcp-test-ui` (alias `yarn chat`) serves the stakeholder
-site at `http://localhost:5175/` with a floating corpus chat (bottom-right).
-The model routes to SQL (`query`), full-text `search_chunks` (strategy fields
-**and** `docs/*.html` / `docs/*.md` site copy), and IMC packages — not a dump
-of raw PDFs into v7 `score`. API key: `OPENAI_API_KEY` in `.env` or paste in
-the widget gear. MCP lab UI (tool traces): `http://localhost:5175/lab`.
-GitHub Pages cannot call localhost; use the local server for chat.
+**Browser chat:** floating button on every stakeholder page. On GitHub Pages it
+runs in the browser: paste an OpenAI key in the gear; it searches
+`docs/assets/chat-index.json` (rebuild with `yarn build-chat-index`). Locally,
+`yarn mcp-test-ui` at `http://localhost:5175/` adds full SQL over the release
+(`OPENAI_API_KEY` in `.env` or the same gear). MCP lab UI: `/lab`.
 
 ## License & data
 

@@ -235,6 +235,52 @@
     }
     .agent-cards .chip.high { border-color: #93c5fd; color: #1d4ed8; }
     .agent-cards .why { margin: 0; font-size: 0.88rem; color: var(--site-muted); }
+
+    /* Graph teaser: animated network preview linking to the full MSS map */
+    .graph-teaser {
+      display: block; position: relative; overflow: hidden;
+      border-radius: 18px; margin: 0 0 2.6rem;
+      background: #0d1116; border: 1px solid rgba(56, 189, 248, 0.18);
+      box-shadow: 0 18px 44px -22px rgba(15, 23, 42, 0.55);
+      text-decoration: none; cursor: pointer;
+      aspect-ratio: 16 / 6.2; min-height: 230px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    @media (max-width: 640px) { .graph-teaser { aspect-ratio: 4 / 5; min-height: 320px; } }
+    .graph-teaser:hover, .graph-teaser:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, 0.45);
+      box-shadow: 0 26px 60px -22px rgba(15, 23, 42, 0.65);
+      outline: none;
+    }
+    .graph-teaser canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .graph-teaser .gt-scrim {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(180deg, rgba(13,17,22,0.05) 0%, rgba(13,17,22,0.18) 42%, rgba(13,17,22,0.9) 100%);
+    }
+    .graph-teaser .gt-overlay {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 1.3rem 1.5rem 1.5rem;
+      display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem 1.4rem;
+    }
+    .graph-teaser .gt-text { max-width: 46ch; }
+    .graph-teaser .gt-kicker {
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #38bdf8; font-weight: 750; margin: 0 0 0.4rem; display: block;
+    }
+    .graph-teaser .gt-title {
+      font-family: var(--site-font); font-weight: 800; letter-spacing: -0.02em;
+      font-size: clamp(1.15rem, 2.6vw, 1.55rem); line-height: 1.25;
+      color: #f8fafc; margin: 0 0 0.35rem; text-wrap: balance;
+    }
+    .graph-teaser .gt-sub { font-size: 0.85rem; color: #cbd5e1; margin: 0; }
+    .graph-teaser .gt-cta {
+      display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap;
+      font-size: 0.88rem; font-weight: 750; color: #0d1116;
+      background: #38bdf8; padding: 0.6rem 1.05rem; border-radius: 999px;
+      box-shadow: 0 8px 20px -8px rgba(56, 189, 248, 0.6);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .graph-teaser:hover .gt-cta, .graph-teaser:focus-visible .gt-cta { background: #7dd3fc; transform: translateX(2px); }
   </style>
 </head>
 <body>
@@ -312,6 +358,19 @@
         </a>
       </div>
     </section>
+
+    <a class="graph-teaser" href="mss-pin-matching-graph.html" aria-label="Відкрити інтерактивну мапу мережі МСС">
+      <canvas id="gt-canvas" aria-hidden="true"></canvas>
+      <div class="gt-scrim"></div>
+      <div class="gt-overlay">
+        <div class="gt-text">
+          <span class="gt-kicker" data-i18n="graph.kicker">Уся мережа на одній карті</span>
+          <h2 class="gt-title" data-i18n="graph.title">965 громад, 524 угоди МСС і тисячі партнерств — як живий граф</h2>
+          <p class="gt-sub" data-i18n="graph.sub">Відомі угоди, кандидати-гіпотези, побратимство з ЄС і донорські програми — усі зв'язки одразу, можна наближати й фільтрувати.</p>
+        </div>
+        <span class="gt-cta" data-i18n="graph.cta">Відкрити мапу →</span>
+      </div>
+    </a>
 
     <section>
       <p class="section-kicker" data-i18n="explore.kicker">Дослідити самостійно</p>
@@ -721,6 +780,10 @@ window.PAGE_I18N = {
     "roles.researcher.h2": "Для дослідника",
     "roles.researcher.p": "Методологія, сигнали пошуку й дані — що можна перевірити й відтворити самостійно.",
     "roles.researcher.go": "Відкрити →",
+    "graph.kicker": "Уся мережа на одній карті",
+    "graph.title": "965 громад, 524 угоди МСС і тисячі партнерств — як живий граф",
+    "graph.sub": "Відомі угоди, кандидати-гіпотези, побратимство з ЄС і донорські програми — усі зв'язки одразу, можна наближати й фільтрувати.",
+    "graph.cta": "Відкрити мапу →",
     "explore.kicker": "Дослідити самостійно",
     "explore.aria": "Розділи сайту",
     "explore.matches": "Кандидати",
@@ -916,6 +979,10 @@ window.PAGE_I18N = {
     "roles.researcher.h2": "For a researcher",
     "roles.researcher.p": "Methodology, discovery signals and data — what you can check and reproduce yourself.",
     "roles.researcher.go": "Open →",
+    "graph.kicker": "The whole network, one map",
+    "graph.title": "965 hromadas, 524 IMC agreements, thousands of partnerships — as a living graph",
+    "graph.sub": "Known agreements, candidate hypotheses, EU twinning and donor programmes — every connection at once, zoomable and filterable.",
+    "graph.cta": "Open the map →",
     "explore.kicker": "Explore it yourself",
     "explore.aria": "Site sections",
     "explore.matches": "Candidates",
@@ -1249,6 +1316,118 @@ window.PAGE_I18N = {
   });
 
   showTab(idFromHash());
+})();
+  </script>
+  <script>
+(function () {
+  var canvas = document.getElementById("gt-canvas");
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext("2d");
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var DOT_COLORS = ["#94a3b8", "#94a3b8", "#94a3b8", "#c98500", "#9085e9", "#0ea5e9", "#e66767"];
+  var EDGE_COLORS = ["rgba(56,189,248,0.32)", "rgba(25,158,112,0.35)", "rgba(56,189,248,0.18)"];
+  var N = 70;
+  var nodes = [];
+  var edges = [];
+  var w = 0, h = 0, dpr = 1;
+  var running = false;
+  var rafId = null;
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  function resize() {
+    var rect = canvas.getBoundingClientRect();
+    w = Math.max(1, rect.width);
+    h = Math.max(1, rect.height);
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function buildNetwork() {
+    nodes = [];
+    for (var i = 0; i < N; i++) {
+      var isHub = i < 6;
+      nodes.push({
+        x: rand(0, w), y: rand(0, h),
+        vx: rand(-0.09, 0.09), vy: rand(-0.07, 0.07),
+        r: isHub ? rand(3.2, 4.2) : rand(1.3, 2.6),
+        hub: isHub,
+        color: DOT_COLORS[Math.floor(Math.random() * DOT_COLORS.length)],
+        phase: rand(0, Math.PI * 2)
+      });
+    }
+    edges = [];
+    nodes.forEach(function (n, i) {
+      var links = n.hub ? 7 : (Math.random() < 0.55 ? 1 : 2);
+      for (var k = 0; k < links; k++) {
+        var j = Math.floor(Math.random() * N);
+        if (j === i) continue;
+        edges.push({ a: i, b: j, color: EDGE_COLORS[Math.floor(Math.random() * EDGE_COLORS.length)] });
+      }
+    });
+  }
+
+  function step(t) {
+    ctx.clearRect(0, 0, w, h);
+    nodes.forEach(function (n) {
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < -10) n.x = w + 10; else if (n.x > w + 10) n.x = -10;
+      if (n.y < -10) n.y = h + 10; else if (n.y > h + 10) n.y = -10;
+    });
+    edges.forEach(function (e) {
+      var a = nodes[e.a], b = nodes[e.b];
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = e.color;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+    nodes.forEach(function (n) {
+      var pulse = n.hub ? (0.75 + 0.25 * Math.sin(t / 900 + n.phase)) : 1;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r * pulse, 0, Math.PI * 2);
+      ctx.fillStyle = n.color;
+      ctx.globalAlpha = n.hub ? 0.95 : 0.75;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    });
+    if (running) rafId = requestAnimationFrame(step);
+  }
+
+  function start() {
+    if (running) return;
+    running = true;
+    rafId = requestAnimationFrame(step);
+  }
+  function stop() {
+    running = false;
+    if (rafId) cancelAnimationFrame(rafId);
+  }
+
+  resize();
+  buildNetwork();
+  step(0);
+
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) start(); else stop();
+      });
+    }, { threshold: 0.1 });
+    io.observe(canvas);
+  } else if (!reduceMotion) {
+    start();
+  }
+
+  window.addEventListener("resize", function () {
+    resize();
+    buildNetwork();
+    if (!running) step(0);
+  });
 })();
   </script>
 </body>
