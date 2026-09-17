@@ -39,17 +39,14 @@ Shared chrome: [`assets/site.css`](assets/site.css), [`assets/nav.js`](assets/na
 Repo **Settings → Pages → Deploy from a branch**: `main` / `/docs`
 (or GitHub Actions via `.github/workflows/deploy-pages.yml`).
 
-Local preview (static only, no chat):
+The floating chat works on this static site (GitHub Pages too): paste an OpenAI
+key in the gear. It searches `assets/chat-index.json` (rebuild:
+`yarn build-chat-index` from the repo root). Full SQL over the release still
+needs the local MCP server:
 
 ```bash
-cd docs && python3 -m http.server 8765
-# open http://127.0.0.1:8765/
-```
-
-Site + corpus chat (SQL + strategy FTS + these pages indexed):
-
-```bash
-yarn mcp-test-ui   # http://localhost:5175/
+yarn mcp-test-ui   # http://localhost:5175/  — SQL + FTS
+cd docs && python3 -m http.server 8765   # static pages + in-browser corpus
 ```
 
 Markdown files in this folder (`*.md`) are research docs for the repo, not
