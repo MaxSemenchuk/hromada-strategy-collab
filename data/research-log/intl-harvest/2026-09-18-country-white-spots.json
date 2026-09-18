@@ -60,8 +60,8 @@
       "law3668_matched": 0,
       "interreg_lpa": 0,
       "giz_harvest": 4,
-      "harvest": "ie-lu-mt found no public LU roster; GIZ map later named 4 LU partners still in research-log.",
-      "evidence": "Not a true zero worldwide — GIZ has LU, our twinning join does not."
+      "harvest": "ie-lu-mt found no public LU roster; GIZ named 4 LU partners. 2026-09-18 confirm: Bucha–Strassen signed 15.11.2024; Esch–Stryi jumelage 28.10.2022 (SYVICOL). Morshyn–Esch is likely Stryi-raion bleed. Leudelange–Vasylkiv unverified (LUkraine kids camp only). Extra Strassen LOI: Skadovsk + Lviv. None of the confirmed pairs are in the 15–35k first outreach list (Bucha 57k, Stryi 93k). See 2026-09-18-lu-giz-confirm.jsonl.",
+      "evidence": "LU is not a true zero. Two confirmed named pairs sit above the 40k band; two GIZ rows should not be treated as pairs."
     },
     {
       "id": "eu-thin-no-association-roster",
