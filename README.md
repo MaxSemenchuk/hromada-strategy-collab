@@ -142,6 +142,7 @@ internal/
 REFERENCES.md                     # theoretical grounding — network governance, IMC, institutional diversity
 docs/mss-cooperation-research.md  # DOBRE bottleneck thesis, МСС forms/procedure, ЗП 11412, theme/form roadmap
 docs/ua-eu-twinning.md            # UA–EU sister cities: format, SKEW/C4C, cases (≠ МСС)
+docs/eu-imc.md                    # EU–EU municipal cooperation (domestic IMC / EGTC / Interreg / twinning) — context, not a matcher
 docs/donor-programs.md            # donor/fund cheat-sheet (DOBRE, EGAP, U-LEAD, GIZ, USAID…)
 LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see License & data below
 ```

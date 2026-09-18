@@ -565,6 +565,10 @@ Canonical write-up, with a running decisions log:
 - [x] UA–EU twinning format insights saved — how partnerships work, SKEW/C4C
       channels, cases (Poltava–Kalmar, Kamianske–Wuppertal, …) —
       [ua-eu-twinning.md](./ua-eu-twinning.md) (2026-08-03)
+- [x] **EU–EU municipal cooperation briefing (2026-09-18).** Three stacks
+      (domestic IMC / EGTC–Interreg / CEMR twinning) as context beside UA
+      Law 1508, SKEW, 3668 — not a matcher, not v7 `score`.
+      [eu-imc.md](./eu-imc.md).
 - [x] **AFCCRE French jumelage directory folded into `yarn twinning` (2026-09-17).**
       FR analogue of SKEW: PDF annuaire + nouveaux 2025, `confidence: registry`,
       never `known: true`. 63 raw → 56 linked / 7 skipped (Kyiv city/districts,
@@ -741,6 +745,33 @@ stay out (benefit and hydrology, not trust).
 
 Apply without rematch: `yarn export-matching-edges` (rescores existing
 goals+geo). Gate: `yarn test-social-capital`.
+
+## EU–EU municipal cooperation briefing (2026-09-18)
+
+Complement to UA layers (Law 1508, SKEW/AFCCRE, 3668, Interreg NEXT): how EU
+municipalities cooperate *with each other*. Three stacks, same product
+discipline as twinning (context, not a matcher; never `known: true`; never
+fold into v7 `score`). Full EU↔EU matching stays Phase 3
+([internal/interreg-proposal.md](../internal/interreg-proposal.md)).
+
+1. **Domestic IMC** — the bulk. 27 national laws; no EU-wide registry.
+   Mandatory-coverage systems (France 1 252 EPCI on 1.1.2026; Portugal CIM
+   via funds; Hungary joint offices if <2 000 inh.) are not partner-search
+   markets. Voluntary menus (Poland `związki`, Czech DSO, Spain
+   mancomunidades, German Zweckverband) are the Law 1508 cousins. Typical
+   tasks: water, waste, fire, back-office — our `зручний сусід` track.
+2. **Cross-border** — Madrid Outline Convention (1980) → Euroregions → EGTC
+   (CoR: 93 listed / 7 closed) → Interreg projects (€8.05 bn 2021–27; 72%
+   strand A internal CBC; keep.eu ~6 637 projects this period). EGTC is a
+   legal wrapper, not a grant. Same LPA filter as our UA Interreg layer.
+3. **Soft** — CEMR twinning last full census 2010 ~34k (FR–DE densest);
+   LEADER ~2 678 LAGs. People-to-people / rural CLLD, not a shared utility.
+
+OECD 2026 IMC report confirms DOBRE's partner-search bottleneck is not
+Ukraine-specific; Tkachuk's trust / «навіщо» / association-intro mechanism
+travels. Frozen elections remain the Ukrainian twist (sticky vs fragile heads).
+
+Canonical write-up: [eu-imc.md](./eu-imc.md). Canvas: `eu-imc.canvas.tsx`.
 
 ---
 

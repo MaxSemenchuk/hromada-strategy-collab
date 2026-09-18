@@ -115,6 +115,9 @@ combined signal, easy to mis-sell.**
    systems — a reality check on how much of real-world IMC is thematic/strategic
    (findable via this project's method) versus purely operational cost-sharing
    (which the project's own findings suggest text-similarity is poorly suited to).
+   Country-scale update (EPCI, Zweckverband, Unioni, związki, EGTC, Interreg
+   A/B/C, CEMR twinning) and the mapping onto Law 1508:
+   [docs/eu-imc.md](docs/eu-imc.md).
 
 ## Network structure
 
