@@ -1,0 +1,159 @@
+{
+  "_comment": "Country white spots after the 2026-09-18 worldwide harvest queue. Evidence from current release layers plus research-log JSONL. Not a release, not known=true, not v7 score. Harvest candidates are not folded into twinning-partners / intl-agreements.",
+  "as_of": "2026-09-18",
+  "queue": {
+    "file": "data/sources/intl-harvest-queue.json",
+    "all_items_done": true,
+    "items": 15
+  },
+  "layers": {
+    "twinning": {
+      "file": "data/releases/twinning-partners.json",
+      "generatedAt": "2026-09-18T09:10:36.536105+00:00",
+      "hromadas_with_partners": 329,
+      "distinct_partner_rows": 1318,
+      "iso_codes": 49,
+      "note": "Distinct after skipping duplicate_of_skew / duplicate_of_afccre. 11 C4C news rows have empty partner_country (Swedish/French cities) and are not in the 49."
+    },
+    "law3668": {
+      "file": "data/releases/intl-agreements.json",
+      "generatedAt": "2026-09-16T13:12:52.766513+00:00",
+      "hromadas_matched": 107,
+      "agreements_matched": 197,
+      "iso_in_matched": 18,
+      "pl_ro_md_share_all_312_rows": 0.78
+    },
+    "interreg_lpa": {
+      "file": "data/releases/interreg-partners.json",
+      "generatedAt": "2026-09-16T13:58:36.775511+00:00",
+      "local_authority_partnerships": 57,
+      "hromadas": 43,
+      "programmes": {
+        "Interreg VI-A NEXT Romania-Ukraine": 28,
+        "Interreg VI-A NEXT Poland-Ukraine": 27,
+        "Interreg VI-B Danube": 1,
+        "Interreg VI-B NEXT Black Sea Basin": 1
+      }
+    },
+    "giz_urc_harvest": {
+      "file": "data/research-log/intl-harvest/2026-09-18-ulead-giz-map.jsonl",
+      "new_candidates": 2416,
+      "iso_codes": 63,
+      "note": "Best public compiled worldwide directory found (U-LEAD/GIZ URC map, June 2026). Not folded into releases this harvest."
+    }
+  },
+  "white_spots": [
+    {
+      "id": "eu27-zero",
+      "isos": ["IE", "MT"],
+      "twinning": 0,
+      "law3668_matched": 0,
+      "interreg_lpa": 0,
+      "giz_harvest": 0,
+      "harvest": "ie-lu-mt done: C4C WP search Ireland/Irish/Luxembourg/Malta = 0 posts; twinning and partnership-map also 0 for IE/LU/MT.",
+      "evidence": "Only EU-27 with zero named municipal pairs in every layer we hold, including GIZ URC."
+    },
+    {
+      "id": "luxembourg-giz-only",
+      "isos": ["LU"],
+      "twinning": 0,
+      "law3668_matched": 0,
+      "interreg_lpa": 0,
+      "giz_harvest": 4,
+      "harvest": "ie-lu-mt found no public LU roster; GIZ map later named 4 LU partners still in research-log.",
+      "evidence": "Not a true zero worldwide — GIZ has LU, our twinning join does not."
+    },
+    {
+      "id": "eu-thin-no-association-roster",
+      "isos": ["NL", "BE", "PT", "ES", "CY", "SE"],
+      "counts": {
+        "NL": {"twinning": 2, "giz": 9, "3668": 0},
+        "BE": {"twinning": 1, "giz": 7, "3668": 1},
+        "PT": {"twinning": 4, "giz": 8, "3668": 0},
+        "ES": {"twinning": 5, "giz": 27, "3668": 0},
+        "CY": {"twinning": 2, "giz": 4, "3668": 0},
+        "SE": {"twinning": 2, "giz": 29, "3668": 2, "nordic_pairs_skruv": 34}
+      },
+      "harvest": "VNG NL: SDLG names 15 unnamed gemeenten, no twinning roster. SKR/SALAR: programme copy, «30 kommuner» unnamed; Skruv 33 already in twinning-nordic-pairs.json (not merged into twinning-partners). LGA UK: no named directory (GB twinning 5 / GIZ 24).",
+      "evidence": "Association homepages did not yield named extra pairs. Layer gap is fold-in (Skruv, GIZ) plus missing national directories."
+    },
+    {
+      "id": "nordics-harvest-not-folded",
+      "isos": ["NO", "FI", "DK", "SE", "IS"],
+      "twinning_now": {"NO": 1, "FI": 6, "DK": 3, "SE": 2, "IS": 0},
+      "giz": {"NO": 11, "FI": 19, "DK": 15, "SE": 29, "IS": 1},
+      "harvest_new": {
+        "no-ks": 16,
+        "fi-kuntaliitto": 12,
+        "kl-dk": 1,
+        "auc-ua-intl": 5,
+        "salar-se": 0
+      },
+      "evidence": "KS official roster and Kuntaliitto /aihealue/ukraina are named directories sitting in research-log. twinning-partners still shows NO=1 FI=6 because yarn twinning was not rerun with those logs. IS only on GIZ (1)."
+    },
+    {
+      "id": "us-ca-not-folded",
+      "isos": ["US", "CA"],
+      "twinning": {"US": 21, "CA": 9},
+      "law3668_matched": {"US": 0, "CA": 0},
+      "giz": {"US": 77, "CA": 20},
+      "harvest_new": {"auucp-us": 9, "sci-membership": 10, "fcm-canada": 0},
+      "evidence": "SCI membership directory (27 UA lines) and AUUCP linked-cities are named US pairs. FCM publishes no CA↔hromada roster (PLEDDG 16 unnamed cities). Langford–Volyn cluster is already in twinning from Ministry/GIZ, not from FCM."
+    },
+    {
+      "id": "giz-iso-absent-from-twinning",
+      "isos": ["RS", "ME", "BA", "AL", "LU", "IS", "BR", "TN", "AR", "SN", "KE", "CL", "ID", "AO", "JO"],
+      "giz_counts": {
+        "RS": 9, "ME": 5, "BA": 4, "LU": 4, "AL": 3, "IS": 1, "BR": 1,
+        "TN": 1, "AR": 1, "SN": 1, "KE": 1, "CL": 1, "ID": 1, "AO": 1, "JO": 1
+      },
+      "evidence": "15 ISO codes appear as named GIZ URC partners but not as distinct twinning partner_country. Western Balkans (RS/ME/BA/AL) is the only multi-row cluster; the rest are singles except LU=4."
+    },
+    {
+      "id": "distant-thin",
+      "isos": ["JP", "KR", "AU", "NZ", "CN"],
+      "counts": {
+        "JP": {"twinning": 1, "giz": 3, "3668": 0},
+        "KR": {"twinning": 1, "giz": 3, "3668": 0},
+        "AU": {"twinning": 2, "giz": 3, "3668": 0},
+        "NZ": {"twinning": 0, "giz": 0, "3668": 0},
+        "CN": {"twinning": 14, "giz": 42, "3668": 0}
+      },
+      "evidence": "No JP/KR/AU/NZ municipal-association directory was in the harvest queue. AU two rows are manual news. NZ is zero in every layer including GIZ. CN is present on the Ministry/GIZ maps, absent from Law 3668 matched rows."
+    },
+    {
+      "id": "3668-western-corridor-vs-twinning",
+      "note": "Law 3668 matched ISO=18 vs twinning ISO=49. Matched 3668 is PL 109 / RO 35 / MD 12 (79% of 197). HU twinning 87 vs 3668 matched 0 (HU rows stayed at ODA). US/CA/CN/TR/BG/GR/IL/ES/NL/FI/DK = 0 in matched 3668.",
+      "evidence": "3668 is a registered-agreement corridor (PL/RO/MD), not a worldwide twin finder. Incomplete vs Ministry ~2119 dashboard (Tableau export skipped by harvest rule)."
+    },
+    {
+      "id": "interreg-lpa-pl-ro",
+      "evidence": "57 Local public authority partnerships are 28 RO–UA + 27 PL–UA + 1 Danube + 1 Black Sea Basin. No FR/DE/SE/US LPA in keep.eu filter. Interreg ≠ twinning; organisation_type is null on 2000–2020 records."
+    },
+    {
+      "id": "ministry-tableau-gap",
+      "ministry_dashboard": {"hromadas": 490, "agreements": 2119, "countries": 64},
+      "our_twinning_iso": 49,
+      "giz_iso": 63,
+      "evidence": "Ministry /twincities claims 64 countries; harvest skipped Tableau export. GIZ 63 ISO is the closest public worldwide count we actually hold. 16 Ministry countries remain unproven in our join."
+    },
+    {
+      "id": "c4c-country-blank",
+      "n": 11,
+      "evidence": "C4C news partners Luleå, Ronneby, Kalmar, Eslöv, Kristianstad, Uppsala, Norrköping, Danderyd, Franconville, Bures-sur-Yvette, Chaumont sit in twinning-partners with empty partner_country. Harvest c4c-news added 3 title hypotheses; 598 C4C profile bios were not scraped."
+    }
+  ],
+  "blocked_high_value_sources": [
+    "Ministry Tableau /twincities export (harvest skip list)",
+    "AUC claimed twinning database 140 cities / 727 twins (not a public URL)",
+    "MEAE Atlas CNCD (not scrapeable; AFCCRE PDF already in twinning)",
+    "Cities4Cities ~598 seeking bios (skip)",
+    "Wikipedia twin-town lists (skip)",
+    "FCM / VNG / SKR / UBC / LGA: hubs without named pair directories"
+  ],
+  "not_done_on_purpose": [
+    "Fold harvest JSONL into twinning-nordic-pairs / twinning-name-aliases / yarn twinning (needs a separate explicit request)",
+    "Law 3668 join fixes (Mykolaiv stem, raion skip)",
+    "C4C latin+region resolve of 578 unmatched seeking profiles"
+  ]
+}
