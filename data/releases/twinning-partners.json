@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-17T19:09:16.524292+00:00",
-  "warning": "UA–EU twinning layer — separate from domestic МСС. SKEW links are registry-sourced (DE–UA); AFCCRE jumelages are registry-sourced (FR–UA, PDF directory); Cities4Cities pairs come from news titles (hypotheses); strategy mentions are hypotheses; decentralization_ua entries are Ministry-verified. Non-DE/non-FR decentralization_ua rows are additive. DE-country decentralization_ua rows ARE checked against SKEW via twinning-de-duplicate-pairs.json; FR-country rows against AFCCRE via twinning-fr-duplicate-pairs.json. Matched rows carry partner.duplicate_of_skew / duplicate_of_afccre; use hromada.distinct_partner_count, not partner_count, when you need a non-inflated total. None of the sources here is complete on its own — each has confirmed cases the others miss. c4c_url marks listing in the C4C municipality database (seeking partners), not a confirmed twinning. Not folded into matching score.",
+  "generatedAt": "2026-09-18T09:10:36.536105+00:00",
+  "warning": "UA–EU twinning layer — separate from domestic МСС. SKEW links are registry-sourced (DE–UA); AFCCRE jumelages are registry-sourced (FR–UA, PDF directory); Cities4Cities pairs come from news titles (hypotheses); strategy mentions are hypotheses; decentralization_ua entries are Ministry-verified. Non-DE/non-FR decentralization_ua rows are additive. DE-country decentralization_ua rows ARE checked against SKEW via twinning-de-duplicate-pairs.json; FR-country rows against AFCCRE via twinning-fr-duplicate-pairs.json. Matched rows carry partner.duplicate_of_skew / duplicate_of_afccre; use hromada.distinct_partner_count, not partner_count, when you need a non-inflated total. None of the sources here is complete on its own — each has confirmed cases the others miss. c4c_url marks listing in the C4C municipality database (seeking partners), not a confirmed twinning. manual entries are hand-curated from news for countries with no bulk registry (e.g. Australia); see data/sources/twinning-manual-pairs.json. Not folded into matching score.",
   "sources": [
     {
       "id": "skew",
@@ -31,12 +31,17 @@
       "name": "Ministry of Communities and Territories Development — partnership map",
       "url": "https://decentralization.ua/twincities",
       "path": "data/releases/partnership-map.json"
+    },
+    {
+      "id": "manual",
+      "name": "Hand-curated news-sourced pairs (no bulk registry, e.g. Australia)",
+      "path": "data/sources/twinning-manual-pairs.json"
     }
   ],
   "coverage": {
     "skew_edges_raw": 268,
     "skew_edges_linked": 179,
-    "hromadas_with_partners": 372,
+    "hromadas_with_partners": 374,
     "strategy_partners_added": 14,
     "cities4cities_partners_added": 11,
     "cities4cities_partner_rows": 11,
@@ -65,7 +70,8 @@
     "decentralization_ua_partners_added": 1109,
     "hromadas_in_both_skew_and_decentralization": 102,
     "decentralization_ua_de_duplicates_tagged": 38,
-    "decentralization_ua_fr_duplicates_tagged": 10
+    "decentralization_ua_fr_duplicates_tagged": 10,
+    "manual_partners_added": 2
   },
   "hromadas": [
     {
@@ -15430,6 +15436,27 @@
       "distinct_partner_count": 1
     },
     {
+      "name": "Бородянська селищна територіальна громада",
+      "short": "Бородянська",
+      "katottg": "UA32080030000070006",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "City of Tea Tree Gully",
+          "partner_country": "AU",
+          "partner_region": "South Australia",
+          "type": "Sister city",
+          "since": "2023",
+          "source": "manual",
+          "source_url": "https://www.teatreegully.sa.gov.au/__data/assets/pdf_file/0015/1610610/sister-city-agreement-city-of-tea-tree-gully-and-borodyanka.pdf",
+          "confidence": "news_mention",
+          "quote": "Signed 22 May 2023."
+        }
+      ],
+      "partner_count": 1,
+      "distinct_partner_count": 1
+    },
+    {
       "name": "Буська міська територіальна громада",
       "short": "Буська",
       "katottg": "UA46040030000058332",
@@ -16335,6 +16362,27 @@
           "source": "decentralization_ua",
           "source_url": "https://decentralization.ua/newgromada/2023",
           "confidence": "registry"
+        }
+      ],
+      "partner_count": 1,
+      "distinct_partner_count": 1
+    },
+    {
+      "name": "Лозівська міська територіальна громада",
+      "short": "Лозівська",
+      "katottg": "UA63100050000079487",
+      "oblast": "Харківська область",
+      "partners": [
+        {
+          "partner_name": "Edward River Council (Deniliquin), NSW",
+          "partner_country": "AU",
+          "partner_region": "New South Wales",
+          "type": "Sister city",
+          "since": "2023",
+          "source": "manual",
+          "source_url": "https://www.abc.net.au/news/2023-10-31/deniliquin-sister-cities-ukraine-lozova-bill-hetherington/103038268",
+          "confidence": "news_mention",
+          "quote": "Signed 17 Oct 2023, ceremony via video conference; initiated by Deniliquin resident Bill Hetherington's push at a council meeting."
         }
       ],
       "partner_count": 1,
