@@ -10,6 +10,10 @@ mechanics, and cases:
 [ua-eu-twinning.md](./ua-eu-twinning.md). Data: `yarn twinning` /
 `twinning-partners.json`.
 
+**EU–EU municipal cooperation** (how EU municipalities work with *each
+other* — domestic IMC, EGTC/Interreg, CEMR twinning) is a third briefing,
+not a matcher: [eu-imc.md](./eu-imc.md). Do not fold into v7 `score`.
+
 ---
 
 ## Strong thesis (stakeholder-facing)

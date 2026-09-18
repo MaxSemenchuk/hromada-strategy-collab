@@ -36,6 +36,7 @@ networks as permanent. Write-up:
 - [docs/hromadas-schema.md](../../docs/hromadas-schema.md) — field schema
 - [docs/kse-synergy.md](../../docs/kse-synergy.md) — KSE join rules
 - [docs/ua-eu-twinning.md](../../docs/ua-eu-twinning.md) — UA–EU sister cities (format ≠ МСС)
+- [docs/eu-imc.md](../../docs/eu-imc.md) — EU–EU municipal cooperation (domestic IMC / EGTC–Interreg / CEMR twinning); context, not a matcher
 - Stakeholder site (GitHub Pages root): [docs/index.html](../../docs/index.html) — keep coverage numbers in sync with `data/releases/*.manifest.json`
 
 ## Data boundaries
@@ -105,6 +106,19 @@ KATOTTG. Incomplete vs Ministry ~2119 dashboard. Western PL/RO corridor,
 not a distant-EU twin finder. Analytics canvas:
 `canvases/law-3668-agreements.canvas.tsx` (Cursor canvases folder).
 
+**EU–EU IMC briefing (2026-09-18):** how EU municipalities cooperate *with
+each other* — three stacks to keep apart from UA layers. (1) Domestic IMC
+under 27 national laws (bulk: water/waste/fire/back-office). France EPCI =
+mandatory coverage (1 252 on 1.1.2026), not a partner-search market; Poland
+`związki` is the closest legal cousin of Law 1508. No EU-wide IMC registry.
+(2) Cross-border: Madrid Convention → Euroregion → EGTC (~86 active; CoR
+93 listed / 7 closed) → Interreg project (€8.05 bn 2021–27, 72% internal
+CBC). EGTC ≠ grant. keep.eu still needs `Local public authority` filter.
+(3) Soft: CEMR twinning last census 2010 ~34k; LEADER ~2 678 LAGs. Same
+product discipline as SKEW: never `known: true`, never v7 `score`. Full
+EU↔EU matching stays Phase 3. Write-up: [docs/eu-imc.md](../../docs/eu-imc.md).
+Canvas: `canvases/eu-imc.canvas.tsx`.
+
 ## Hard rules
 
 1. Matching scores are **hypotheses** unless `known: true` (curated registry-confirmed). Do not set `known: true` on all PIN edges — use `matching-edges.pin-corpus.json` for the broader overlap. Do not set `known: true` on twinning links either (SKEW / AFCCRE are foreign twinning, not domestic МСС).
@@ -151,3 +165,15 @@ not a distant-EU twin finder. Analytics canvas:
   [docs/donor-programs.md](../../docs/donor-programs.md) (section STRATEGY LAB).
 - **Association outreach order:** ВА ОТГ → ВАГ; АМУ not first cold contact
   (large cities more autonomous per Tkachuk).
+
+**Outreach size prior (2026-09-18, from PIN × Population):** prioritize
+hromadas of **10–40 thousand** (~631 / 1432 with `Population`; mixed
+міська / селищна / сільська). Enough capacity to sign Law 1508, still
+need partners (DOBRE bottleneck), matches ВА ОТГ not АМУ. Second wave:
+**5–10k сільські** in Poltava / Rivne / Vinnytsia / Dnipro (already sign
+bilateral МСС). Deprioritize **100k+** for the 1508 product (twinning /
+donor track). Skip **<5k** unless explicit-ask or already in a named
+cluster. Median hromada ~11k; селищні 10–20k are an underserved gap.
+PIN degree ≥10 is almost always one multi-party clique — rank by distinct
+agreements, not unique partners. Canvas:
+`canvases/hromada-size-stats.canvas.tsx` / `connected-hromadas.canvas.tsx`.

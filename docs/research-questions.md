@@ -87,6 +87,9 @@ item to project-history.md once it has a concrete plan and starts moving.
 - Existing bridge asset: the [UA–EU twinning layer](ua-eu-twinning.md)
   (176 nodes via SKEW/C4C) already reaches across the border — closer to
   shovel-ready than a new EU-only product built from nothing.
+  Comparative briefing on how EU municipalities cooperate *with each other*
+  (not UA–EU): [eu-imc.md](eu-imc.md). Confirms Phase 3 (full EU↔EU matching)
+  stays deferred: no single IMC registry, three stacks to keep apart.
 - What has to hold up before the claim survives scrutiny (which parts of the
   method are universal vs Ukraine-specific plumbing, which EU instrument to
   target first, what validation dataset would play the KSE-PIN-registry
