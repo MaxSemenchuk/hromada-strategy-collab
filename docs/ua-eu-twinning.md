@@ -345,3 +345,29 @@ deleted, just flagged, so the audit trail stays intact. Use
 `partner_count`, for a non-inflated total. The other 16 looked similar by
 crude transliteration but are genuinely different cities (e.g. Kelln/Köln vs
 Kassel, Augsburg vs Bedburg) and were left as distinct additional partners.
+
+---
+
+## Manual pairs — non-EU, no bulk registry (2026-09-18)
+
+Some pairs exist with countries that have **no SKEW/AFCCRE/decentralization.ua
+analogue** — no bulk registry to scrape, only individual news stories.
+Curated by hand into `data/sources/twinning-manual-pairs.json` (keyed by
+KATOTTG, verified against `hromadas.json`), merged additively at build time
+(`source: "manual"`, `confidence: "news_mention"`).
+
+**Australia (2026-09-18 research)**: searched broadly for AU–UA municipal
+partnerships — found only **2 pairs**, both regional/suburban councils, both
+grassroots-initiated (not a national program like SKEW):
+
+| Hromada | KATOTTG | AU partner | Since |
+|---|---|---|---|
+| Лозівська (Харківська обл.) | UA63100050000079487 | Edward River Council (Deniliquin), NSW | 2023-10-17 |
+| Бородянська (Київська обл.) | UA32080030000070006 | City of Tea Tree Gully, SA | 2023-05-22 |
+
+Neither pair appears in Wikipedia's twin-town lists for Ukraine or Australia
+— same "registry lags reality" pattern as SE/PL. No major Australian metro
+(Melbourne, Sydney, Brisbane, Perth) has adopted a Ukrainian sister city;
+Melbourne only terminated its St. Petersburg tie (2023-05-30) without a
+replacement. Treat this as **not exhaustive** — worth a fresh pass if the
+Australia angle becomes relevant again.

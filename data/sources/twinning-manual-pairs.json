@@ -1,0 +1,25 @@
+{
+  "_comment": "Curated non-EU sister-city pairs with no bulk registry (no SKEW/AFCCRE/decentralization.ua analogue yet). Added manually from news, verified against katottg in hromadas.json. See docs/ua-eu-twinning.md.",
+  "pairs": [
+    {
+      "katottg": "UA63100050000079487",
+      "partner_name": "Edward River Council (Deniliquin), NSW",
+      "partner_country": "AU",
+      "partner_region": "New South Wales",
+      "type": "Sister city",
+      "since": "2023",
+      "source_url": "https://www.abc.net.au/news/2023-10-31/deniliquin-sister-cities-ukraine-lozova-bill-hetherington/103038268",
+      "note": "Signed 17 Oct 2023, ceremony via video conference; initiated by Deniliquin resident Bill Hetherington's push at a council meeting."
+    },
+    {
+      "katottg": "UA32080030000070006",
+      "partner_name": "City of Tea Tree Gully",
+      "partner_country": "AU",
+      "partner_region": "South Australia",
+      "type": "Sister city",
+      "since": "2023",
+      "source_url": "https://www.teatreegully.sa.gov.au/__data/assets/pdf_file/0015/1610610/sister-city-agreement-city-of-tea-tree-gully-and-borodyanka.pdf",
+      "note": "Signed 22 May 2023."
+    }
+  ]
+}

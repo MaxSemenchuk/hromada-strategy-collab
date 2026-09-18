@@ -53,6 +53,7 @@ ALIASES = ROOT / "data" / "sources" / "twinning-name-aliases.json"
 PARTNERSHIP_MAP = ROOT / "data" / "releases" / "partnership-map.json"
 DE_DUPLICATE_PAIRS = ROOT / "data" / "sources" / "twinning-de-duplicate-pairs.json"
 FR_DUPLICATE_PAIRS = ROOT / "data" / "sources" / "twinning-fr-duplicate-pairs.json"
+MANUAL_PAIRS = ROOT / "data" / "sources" / "twinning-manual-pairs.json"
 OUT = ROOT / "data" / "releases" / "twinning-partners.json"
 MANIFEST = ROOT / "data" / "releases" / "twinning-partners.manifest.json"
 PREVIEW = ROOT / "docs" / "assets" / "twinning-preview.json"
@@ -1190,6 +1191,46 @@ def build_release(edges: list[dict], afccre_edges: list[dict] | None = None) -> 
                 entry["partners"].append(partner)
                 decentralization_added += 1
 
+    # Manual/curated pairs — non-EU or otherwise-uncovered pairs with no bulk
+    # registry (e.g. AU sister cities, news-sourced only). See
+    # data/sources/twinning-manual-pairs.json and docs/ua-eu-twinning.md.
+    manual_added = 0
+    if MANUAL_PAIRS.exists():
+        for pair in json.loads(MANUAL_PAIRS.read_text(encoding="utf-8"))["pairs"]:
+            row = by_katottg.get(pair["katottg"])
+            if not row:
+                continue
+            hcode = (row.get("Katottg") or row["Name"]).strip()
+            entry = by_hromada.setdefault(
+                hcode,
+                {
+                    "name": row["Name"],
+                    "short": short_name(row["Name"]),
+                    "katottg": row.get("Katottg"),
+                    "oblast": row.get("Oblast"),
+                    "partners": [],
+                },
+            )
+            if any(
+                p["partner_name"].lower() == pair["partner_name"].lower()
+                for p in entry["partners"]
+            ):
+                continue
+            entry["partners"].append(
+                {
+                    "partner_name": pair["partner_name"],
+                    "partner_country": pair.get("partner_country"),
+                    "partner_region": pair.get("partner_region"),
+                    "type": pair.get("type") or "Sister city",
+                    "since": pair.get("since"),
+                    "source": "manual",
+                    "source_url": pair.get("source_url"),
+                    "confidence": "news_mention",
+                    "quote": pair.get("note"),
+                }
+            )
+            manual_added += 1
+
     hromadas = sorted(
         by_hromada.values(),
         key=lambda h: (-len(h["partners"]), h["short"]),
@@ -1224,7 +1265,9 @@ def build_release(edges: list[dict], afccre_edges: list[dict] | None = None) -> 
             "non-inflated total. None of the sources here is complete on its own — "
             "each has confirmed cases the others miss. "
             "c4c_url marks listing in the C4C municipality database (seeking partners), "
-            "not a confirmed twinning. Not folded into matching score."
+            "not a confirmed twinning. manual entries are hand-curated from news for "
+            "countries with no bulk registry (e.g. Australia); see "
+            "data/sources/twinning-manual-pairs.json. Not folded into matching score."
         ),
         "sources": [
             {
@@ -1257,6 +1300,11 @@ def build_release(edges: list[dict], afccre_edges: list[dict] | None = None) -> 
                 "url": "https://decentralization.ua/twincities",
                 "path": "data/releases/partnership-map.json",
             },
+            {
+                "id": "manual",
+                "name": "Hand-curated news-sourced pairs (no bulk registry, e.g. Australia)",
+                "path": "data/sources/twinning-manual-pairs.json",
+            },
         ],
         "coverage": {
             "skew_edges_raw": len(edges),
@@ -1279,6 +1327,7 @@ def build_release(edges: list[dict], afccre_edges: list[dict] | None = None) -> 
             "hromadas_in_both_skew_and_decentralization": hromadas_in_both,
             "decentralization_ua_de_duplicates_tagged": de_duplicates_tagged,
             "decentralization_ua_fr_duplicates_tagged": fr_duplicates_tagged,
+            "manual_partners_added": manual_added,
         },
         "hromadas": hromadas,
         "unmatched": unmatched[:200],
@@ -1347,6 +1396,7 @@ def build_release(edges: list[dict], afccre_edges: list[dict] | None = None) -> 
         f"({de_duplicates_tagged} tagged duplicate_of_skew, "
         f"{fr_duplicates_tagged} tagged duplicate_of_afccre; "
         f"{hromadas_in_both} hromadas overlap with SKEW/strategy/C4C); "
+        f"+{manual_added} manual; "
         f"C4C listed={c4c_listed}; unmatched_skew={len(unmatched)}; "
         f"unmatched_afccre={len(afccre_unmatched)}"
     )
