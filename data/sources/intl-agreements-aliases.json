@@ -1,0 +1,113 @@
+{
+  "_comment": "Law 3668-IX UA-party → KATOTTG. Pre-amalgamation village councils map to the successor hromada; executive-committee abbreviations (ЛМР) map to the city. Do NOT map raion RDA/райрада/ODA onto the host city. yarn intl-agreements. Never known=true.",
+  "rules": [
+    {
+      "contains": "Виконавчий комітет ЛМР",
+      "field": "subject",
+      "katottg": "UA07080170000013585",
+      "note": "Lutsk city executive committee abbreviation"
+    },
+    {
+      "contains": "Івано-Франківський Виконавчий комітет",
+      "field": "subject",
+      "katottg": "UA26040190000081578",
+      "note": "Ivano-Frankivsk city executive committee"
+    },
+    {
+      "contains": "Володимирська міська рада",
+      "field": "subject",
+      "katottg": "UA07020010000096841",
+      "note": "Volodymyr-Volynskyi; register omits the hyphenated name"
+    },
+    {
+      "contains": "Новояворівська територіальна громада",
+      "field": "subject",
+      "katottg": "UA46140050000054478",
+      "note": "No міська in the register string"
+    },
+    {
+      "contains": "Шацькою селищною радою",
+      "field": "title",
+      "katottg": "UA07060450000051170",
+      "note": "Title names the settlement council even when the subject cell is the old RDA"
+    },
+    {
+      "contains": "Попаснянська міська військова",
+      "field": "subject",
+      "katottg": "UA44120070000073915",
+      "note": "Popasna city military administration"
+    },
+    {
+      "contains": "Старобільська міська військова",
+      "field": "subject",
+      "katottg": "UA44140110000056578",
+      "note": "Starobilsk city military administration"
+    },
+    {
+      "contains": "Вільшанська",
+      "field": "subject",
+      "katottg": "UA05100050000038768",
+      "note": "Pre-amalgamation Vilshanka (Kryzhopil raion) → Horodkivska"
+    },
+    {
+      "contains": "Заболотненська",
+      "field": "subject",
+      "katottg": "UA05100070000035159",
+      "note": "Pre-amalgamation Zabolotne → Kryzhopilska"
+    },
+    {
+      "contains": "Бронницька сільська рада",
+      "field": "subject",
+      "katottg": "UA05080050000023603",
+      "note": "Pre-amalgamation Bronytsia → Mohyliv-Podilskyi"
+    },
+    {
+      "contains": "Озаринецька сільська рада",
+      "field": "subject",
+      "katottg": "UA05080050000023603",
+      "note": "Pre-amalgamation Ozaryntsi → Mohyliv-Podilskyi"
+    },
+    {
+      "contains": "Серебрійська сільська рада",
+      "field": "subject",
+      "katottg": "UA05080050000023603",
+      "note": "Pre-amalgamation Serebriia → Mohyliv-Podilskyi"
+    },
+    {
+      "contains": "Сугаківська сільська рада",
+      "field": "subject",
+      "katottg": "UA05080030000089348",
+      "note": "Pre-amalgamation Suhaky → Vendychanska"
+    },
+    {
+      "contains": "Клембівська сільська рада",
+      "field": "subject",
+      "katottg": "UA05080110000056824",
+      "note": "Pre-amalgamation Klembivka → Yampil city"
+    },
+    {
+      "contains": "Хотешівська сільська рада",
+      "field": "subject",
+      "katottg": "UA07040010000033507",
+      "note": "Pre-amalgamation Khoteshiv → Kamin-Kashyrskyi"
+    },
+    {
+      "contains": "Полапівська сільська рада",
+      "field": "subject",
+      "katottg": "UA07060330000052414",
+      "note": "Pre-amalgamation Polapy → Rivnenska rural (Volyn), not Rivne city"
+    },
+    {
+      "contains": "Згоранська сільська рада",
+      "field": "subject",
+      "katottg": "UA07060050000091514",
+      "note": "Pre-amalgamation Zhorany → Vyshnivska (planned successor; less certain)"
+    },
+    {
+      "contains": "Куснищанська сільська рада",
+      "field": "subject",
+      "katottg": "UA07060050000091514",
+      "note": "Pre-amalgamation Kusnyscha → Vyshnivska (planned successor; less certain)"
+    }
+  ]
+}

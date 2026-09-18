@@ -1,0 +1,1261 @@
+{
+  "as_of": "2026-09-18",
+  "task": "Outreach-band international delta (GIZ/harvest minus twinning)",
+  "not": [
+    "known=true",
+    "v7 score",
+    "release fold-in",
+    "Law 1508 form"
+  ],
+  "matcher": "NFKD + UA translit with г as h|g and х as kh|h; containment / token subset; skip duplicate_of_skew|afccre; cross-source dedupe on (katottg, ISO, folded partner). Manual drop: Горохівська↔Langford already twinning Ленгфорд (е/a translit miss).",
+  "caveat_pl_de": "PL/DE/HU 'new' counts stay inflated: Ministry twinning names are Ukrainian and often miss Latin GIZ spellings even after translit. Use the thin-country shortlist, not the PL pile.",
+  "universe": {
+    "hromadas_10_40k_with_katottg": 628,
+    "first_practical": 196,
+    "habit_oblasts": [
+      "Івано-Франківська область",
+      "Волинська область",
+      "Вінницька область",
+      "Дніпропетровська область",
+      "Закарпатська область",
+      "Львівська область",
+      "Полтавська область",
+      "Рівненська область",
+      "Тернопільська область",
+      "Чернівецька область"
+    ],
+    "first_practical_rule": "міські/селищні 15–35k in habit oblasts; сільські 8–15k with explicit-ask or PIN degree 1–9 (not ≥10 clique)."
+  },
+  "harvest_join": {
+    "rows_non_skip": 2517,
+    "stats": {
+      "new_vs_twinning": 2159,
+      "no_hromada": 57,
+      "matched_twinning": 254,
+      "dup_cross_source": 47
+    },
+    "new_vs_twinning_after_dedupe": 2159,
+    "thin_country_in_10_40k_not_clique": 250,
+    "thin_first_practical_pairs": 77,
+    "thin_first_practical_hromadas": 42,
+    "by_country_thin_first": [
+      [
+        "LT",
+        12
+      ],
+      [
+        "CZ",
+        11
+      ],
+      [
+        "MD",
+        11
+      ],
+      [
+        "SI",
+        7
+      ],
+      [
+        "LV",
+        6
+      ],
+      [
+        "BG",
+        4
+      ],
+      [
+        "DK",
+        4
+      ],
+      [
+        "US",
+        3
+      ],
+      [
+        "SE",
+        3
+      ],
+      [
+        "IT",
+        3
+      ],
+      [
+        "CA",
+        2
+      ],
+      [
+        "TR",
+        2
+      ],
+      [
+        "AT",
+        1
+      ],
+      [
+        "ES",
+        1
+      ],
+      [
+        "FI",
+        1
+      ],
+      [
+        "EE",
+        1
+      ],
+      [
+        "PT",
+        1
+      ],
+      [
+        "AL",
+        1
+      ],
+      [
+        "NO",
+        1
+      ],
+      [
+        "GB",
+        1
+      ],
+      [
+        "BA",
+        1
+      ]
+    ],
+    "by_source_thin_first": [
+      [
+        "ulead-giz-map",
+        77
+      ],
+      [
+        "no-ks",
+        1
+      ]
+    ]
+  },
+  "lu_audit": {
+    "giz_rows": 4,
+    "twinning_release_lu": 0,
+    "confirmed": [
+      {
+        "ua": "Бучанська",
+        "katottg": "UA32080070000050759",
+        "pop": 57085,
+        "partner": "Strassen (Stroossen)",
+        "note": "Signed cooperation 15.11.2024. GIZ spelling Stroossen = LB Strassen. 40–100k rayon centre — not first outreach list.",
+        "urls": [
+          "https://decentralization.gov.ua/news/18909",
+          "https://www.strassen.lu/fr/actualites"
+        ]
+      },
+      {
+        "ua": "Стрийська",
+        "katottg": "UA46100230000047305",
+        "pop": 93396,
+        "partner": "Esch-sur-Alzette",
+        "note": "First LU–UA jumelage, signed 28.10.2022 (SYVICOL). 40–100k — not first outreach list.",
+        "urls": [
+          "https://www.syvicol.lu/fr/actualites/ficheactualites/2022-10-31/signature-du-premier-jumelage-luxo-ukrainien-entre-esch-sur-alzette-et-stryi"
+        ]
+      }
+    ],
+    "do_not_treat_as_pair": [
+      {
+        "ua": "Моршинська",
+        "katottg": "UA46100130000048262",
+        "pop": 14922,
+        "partner": "Esch-sur-Alzette",
+        "reason": "neighbour_bleed",
+        "note": "Morshyn sits in Stryi raion. SYVICOL/Paperjam name Stryi only. GIZ likely attached the spa town to the same LU city."
+      },
+      {
+        "ua": "Васильківська",
+        "katottg": "UA32120030000030458",
+        "pop": 46533,
+        "partner": "Leudelange",
+        "reason": "unverified_giz",
+        "note": "Leudelange.lu documents a LUkraine children's summer camp, no named Vasylkiv jumelage. Vasylkiv's documented partners are Sundbyberg (SE) and Oberursel (DE). Homonym: Kyiv-oblast city, not Dnipro rural namesake."
+      }
+    ],
+    "extra_named_from_strassen_confirm": [
+      {
+        "ua": "Скадовська",
+        "partner": "Strassen",
+        "confidence": "news_mention",
+        "note": "Strassen magazine + Le Quotidien: letters of intent with Bucha, Skadovsk, Lviv (Nov 2024). Occupied Kherson — not outreach band."
+      },
+      {
+        "ua": "Львівська",
+        "partner": "Strassen",
+        "confidence": "news_mention",
+        "note": "Same LOI pack. Lviv city is 100k+ / not Law 1508 first user."
+      }
+    ]
+  },
+  "homonym_watch_on_shortlist": [
+    {
+      "ua": "Ямпільська міська",
+      "katottg": "UA05080110000056824",
+      "oblast": "Вінницька область",
+      "pop": 33191,
+      "note": "Vinnytsia city Yampil (33k), not Sumy/Khmelnytskyi rural Yampil. Partner SE Vänersborg from GIZ."
+    },
+    {
+      "ua": "Слобожанська селищна",
+      "katottg": "UA12020250000010438",
+      "note": "Dnipro oblast sealy; do not attach Kharkiv Слобожанське."
+    },
+    {
+      "ua": "Івано-Франківська селищна",
+      "katottg": "UA46140010000081849",
+      "note": "Lviv-oblast Івано-Франкове / Yaniv — not Ivano-Frankivsk city. IT Zero Branco."
+    }
+  ],
+  "shortlist_hromadas": [
+    {
+      "ua_name": "Дубенська міська",
+      "katottg": "UA56040110000061997",
+      "oblast": "Рівненська область",
+      "type": "міська",
+      "population": 33970,
+      "pin_degree": 3,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Trakai",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Rokiškis",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Oxford",
+          "country": "US",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Uničov",
+          "country": "CZ",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Belogradchik",
+          "country": "BG",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Ямпільська міська",
+      "katottg": "UA05080110000056824",
+      "oblast": "Вінницька область",
+      "type": "міська",
+      "population": 33191,
+      "pin_degree": 1,
+      "explicit_ask": false,
+      "homonym_risk": true,
+      "partners": [
+        {
+          "name": "Vänersborg",
+          "country": "SE",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Жовківська міська",
+      "katottg": "UA46060130000059055",
+      "oblast": "Львівська область",
+      "type": "міська",
+      "population": 33083,
+      "pin_degree": 3,
+      "explicit_ask": true,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Elektrėnai",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Чортківська міська",
+      "katottg": "UA61060430000094264",
+      "oblast": "Тернопільська область",
+      "type": "міська",
+      "population": 33008,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Caravaggio",
+          "country": "IT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Căuşeni",
+          "country": "MD",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Grosuplje",
+          "country": "SI",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Karlskrona",
+          "country": "SE",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Whitehorse",
+          "country": "CA",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Здолбунівська міська",
+      "katottg": "UA56060250000052338",
+      "oblast": "Рівненська область",
+      "type": "міська",
+      "population": 31787,
+      "pin_degree": 1,
+      "explicit_ask": true,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Marshalltown",
+          "country": "US",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Пирятинська міська",
+      "katottg": "UA53040090000048649",
+      "oblast": "Полтавська область",
+      "type": "міська",
+      "population": 31167,
+      "pin_degree": 4,
+      "explicit_ask": true,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Jēkabpils",
+          "country": "LV",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Новоселицька міська",
+      "katottg": "UA73060410000077092",
+      "oblast": "Чернівецька область",
+      "type": "міська",
+      "population": 29006,
+      "pin_degree": 5,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Joniškis",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Ungheni",
+          "country": "MD",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Făleşti",
+          "country": "MD",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Guldborgsund",
+          "country": "DK",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Свалявська міська",
+      "katottg": "UA21040230000091606",
+      "oblast": "Закарпатська область",
+      "type": "міська",
+      "population": 28970,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Židlochovice",
+          "country": "CZ",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Guldborgsund",
+          "country": "DK",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Слобожанська селищна",
+      "katottg": "UA12020250000010438",
+      "oblast": "Дніпропетровська область",
+      "type": "селищна",
+      "population": 28368,
+      "pin_degree": 2,
+      "explicit_ask": true,
+      "homonym_risk": true,
+      "partners": [
+        {
+          "name": "Kupiškis District Municipality",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Šakiai District Municipality",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Ādaži",
+          "country": "LV",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Vännäs",
+          "country": "SE",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Глобинська міська",
+      "katottg": "UA53020010000035494",
+      "oblast": "Полтавська область",
+      "type": "міська",
+      "population": 28351,
+      "pin_degree": 3,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Grafenwörth",
+          "country": "AT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Маневицька селищна",
+      "katottg": "UA07040050000080830",
+      "oblast": "Волинська область",
+      "type": "селищна",
+      "population": 27185,
+      "pin_degree": 0,
+      "explicit_ask": true,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Kupiškis",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Підгородненська міська",
+      "katottg": "UA12020210000032285",
+      "oblast": "Дніпропетровська область",
+      "type": "міська",
+      "population": 26492,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Soria",
+          "country": "ES",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Кобеляцька міська",
+      "katottg": "UA53080130000014699",
+      "oblast": "Полтавська область",
+      "type": "міська",
+      "population": 25558,
+      "pin_degree": 2,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Strazhitsa",
+          "country": "BG",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Рава-Руська міська",
+      "katottg": "UA46060390000035967",
+      "oblast": "Львівська область",
+      "type": "міська",
+      "population": 24067,
+      "pin_degree": 3,
+      "explicit_ask": true,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Jelgava",
+          "country": "LV",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Ладижинська міська",
+      "katottg": "UA05040130000025322",
+      "oblast": "Вінницька область",
+      "type": "міська",
+      "population": 23822,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": true,
+      "partners": [
+        {
+          "name": "Slovenj Gradec",
+          "country": "SI",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Турківська міська",
+      "katottg": "UA46080190000096121",
+      "oblast": "Львівська область",
+      "type": "міська",
+      "population": 23184,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Hranice",
+          "country": "CZ",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Тячівська міська",
+      "katottg": "UA21080150000014443",
+      "oblast": "Закарпатська область",
+      "type": "міська",
+      "population": 23004,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Jablunkov",
+          "country": "CZ",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Chotěboř",
+          "country": "CZ",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Náchod",
+          "country": "CZ",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Murska Sobota",
+          "country": "SI",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Новосанжарська селищна",
+      "katottg": "UA53080310000072384",
+      "oblast": "Полтавська область",
+      "type": "селищна",
+      "population": 22836,
+      "pin_degree": 3,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Pliska",
+          "country": "BG",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Апостолівська міська",
+      "katottg": "UA12060010000090992",
+      "oblast": "Дніпропетровська область",
+      "type": "міська",
+      "population": 22082,
+      "pin_degree": 1,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Haapajärvi",
+          "country": "FI",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Томашпільська селищна",
+      "katottg": "UA05100130000061386",
+      "oblast": "Вінницька область",
+      "type": "селищна",
+      "population": 21859,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Săuca",
+          "country": "MD",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Івано-Франківська селищна",
+      "katottg": "UA46140010000081849",
+      "oblast": "Львівська область",
+      "type": "селищна",
+      "population": 20332,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": true,
+      "partners": [
+        {
+          "name": "Zero Branco",
+          "country": "IT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Липовецька міська",
+      "katottg": "UA05020110000052014",
+      "oblast": "Вінницька область",
+      "type": "міська",
+      "population": 20278,
+      "pin_degree": 0,
+      "explicit_ask": true,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Edineț",
+          "country": "MD",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Jõhvi",
+          "country": "EE",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Крижопільська селищна",
+      "katottg": "UA05100070000035159",
+      "oblast": "Вінницька область",
+      "type": "селищна",
+      "population": 19777,
+      "pin_degree": 3,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Molovata",
+          "country": "MD",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Хотинська міська",
+      "katottg": "UA73040190000062796",
+      "oblast": "Чернівецька область",
+      "type": "міська",
+      "population": 19504,
+      "pin_degree": 5,
+      "explicit_ask": true,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Kazlų Rūda",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Aluksne",
+          "country": "LV",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Buca",
+          "country": "TR",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Çeşme",
+          "country": "TR",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Guldborgsund",
+          "country": "DK",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Estremoz",
+          "country": "PT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Berat",
+          "country": "AL",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Криничанська селищна",
+      "katottg": "UA12040170000019083",
+      "oblast": "Дніпропетровська область",
+      "type": "селищна",
+      "population": 19365,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Logatec",
+          "country": "SI",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Гніванська міська",
+      "katottg": "UA05020070000010139",
+      "oblast": "Вінницька область",
+      "type": "міська",
+      "population": 19145,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Cologno al Serio",
+          "country": "IT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Rîșcani",
+          "country": "MD",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Domžale",
+          "country": "SI",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Глибоцька селищна",
+      "katottg": "UA73060150000088691",
+      "oblast": "Чернівецька область",
+      "type": "селищна",
+      "population": 18958,
+      "pin_degree": 1,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Guldborgsund",
+          "country": "DK",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Перещепинська міська",
+      "katottg": "UA12100090000022751",
+      "oblast": "Дніпропетровська область",
+      "type": "міська",
+      "population": 18848,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Idrija",
+          "country": "SI",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Східницька селищна",
+      "katottg": "UA46020070000056149",
+      "oblast": "Львівська область",
+      "type": "селищна",
+      "population": 18841,
+      "pin_degree": 2,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Akmenė",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Auce",
+          "country": "LV",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Šmarješke Toplice",
+          "country": "SI",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Дубівська селищна",
+      "katottg": "UA21080070000025254",
+      "oblast": "Закарпатська область",
+      "type": "селищна",
+      "population": 18794,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": true,
+      "partners": [
+        {
+          "name": "Kostelec nad Orlicí",
+          "country": "CZ",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Dražice",
+          "country": "CZ",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Зборівська міська",
+      "katottg": "UA61040170000086062",
+      "oblast": "Тернопільська область",
+      "type": "міська",
+      "population": 18158,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Bjerkreim",
+          "country": "NO",
+          "source": "no-ks",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Joniškis",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Velká Bystřice",
+          "country": "CZ",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Новояричівська селищна",
+      "katottg": "UA46060290000052876",
+      "oblast": "Львівська область",
+      "type": "селищна",
+      "population": 17880,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Lysá nad Labem",
+          "country": "CZ",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Жидачівська міська",
+      "katottg": "UA46100050000053848",
+      "oblast": "Львівська область",
+      "type": "міська",
+      "population": 17842,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Viesīte",
+          "country": "LV",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Towcester",
+          "country": "GB",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Prnjavor",
+          "country": "BA",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Тересвянська селищна",
+      "katottg": "UA21080130000093757",
+      "oblast": "Закарпатська область",
+      "type": "селищна",
+      "population": 16270,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Nový Bydžov",
+          "country": "CZ",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Шацька селищна",
+      "katottg": "UA07060450000051170",
+      "oblast": "Волинська область",
+      "type": "селищна",
+      "population": 16104,
+      "pin_degree": 0,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Birštonas",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Красносільська сільська",
+      "katottg": "UA51100190000060999",
+      "oblast": "Одеська область",
+      "type": "сільська",
+      "population": 14080,
+      "pin_degree": 2,
+      "explicit_ask": true,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Zvezditsa",
+          "country": "BG",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Недобоївська сільська",
+      "katottg": "UA73040110000040354",
+      "oblast": "Чернівецька область",
+      "type": "сільська",
+      "population": 12451,
+      "pin_degree": 2,
+      "explicit_ask": true,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Lamont",
+          "country": "CA",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Білокриницька сільська",
+      "katottg": "UA56060050000010769",
+      "oblast": "Рівненська область",
+      "type": "сільська",
+      "population": 11458,
+      "pin_degree": 1,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Somerset (Ohio)",
+          "country": "US",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Городківська сільська",
+      "katottg": "UA05100050000038768",
+      "oblast": "Вінницька область",
+      "type": "сільська",
+      "population": 10474,
+      "pin_degree": 0,
+      "explicit_ask": true,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Doroţcaia",
+          "country": "MD",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        },
+        {
+          "name": "Molovata",
+          "country": "MD",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Ободівська сільська",
+      "katottg": "UA05040150000077146",
+      "oblast": "Вінницька область",
+      "type": "сільська",
+      "population": 8947,
+      "pin_degree": 1,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Mărculești",
+          "country": "MD",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Брусницька сільська",
+      "katottg": "UA73020050000061546",
+      "oblast": "Чернівецька область",
+      "type": "сільська",
+      "population": 8634,
+      "pin_degree": 0,
+      "explicit_ask": true,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Tețcani",
+          "country": "MD",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    },
+    {
+      "ua_name": "Коблівська сільська",
+      "katottg": "UA48060090000097375",
+      "oblast": "Миколаївська область",
+      "type": "сільська",
+      "population": 8257,
+      "pin_degree": 1,
+      "explicit_ask": false,
+      "homonym_risk": false,
+      "partners": [
+        {
+          "name": "Neringa",
+          "country": "LT",
+          "source": "ulead-giz-map",
+          "already_3668": false,
+          "confidence": "directory"
+        }
+      ]
+    }
+  ]
+}

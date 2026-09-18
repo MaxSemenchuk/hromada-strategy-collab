@@ -173,7 +173,12 @@ need partners (DOBRE bottleneck), matches ВА ОТГ not АМУ. Second wave:
 **5–10k сільські** in Poltava / Rivne / Vinnytsia / Dnipro (already sign
 bilateral МСС). Deprioritize **100k+** for the 1508 product (twinning /
 donor track). Skip **<5k** unless explicit-ask or already in a named
-cluster. Median hromada ~11k; селищні 10–20k are an underserved gap.
-PIN degree ≥10 is almost always one multi-party clique — rank by distinct
-agreements, not unique partners. Canvas:
+cluster. Rayon centres 40–100k: optional operational МСС, not first outreach.
+Median hromada ~11k; селищні 10–20k are an underserved gap.
+**First practical list** (narrower than the whole 10–40k band):
+міські + селищні **15–35k** in oblasts with an МСС signing habit; сільські
+**8–15k** with explicit-ask or a live PIN tie — but **not** members of one
+tourism/waste mega-clique (Dnister canyon, Zakarpattia ТПВ, Hutsul) as cold
+leads. PIN degree ≥10 is almost always one multi-party clique — rank by
+distinct agreements, not unique partners. Canvas:
 `canvases/hromada-size-stats.canvas.tsx` / `connected-hromadas.canvas.tsx`.
