@@ -1,0 +1,203 @@
+{
+  "_comment": "Bounded UA–EU cooperation harvest. One pending item per agent tick; 30% unused Auto-token cap. Candidates go to data/research-log/intl-harvest/ — not the release, not known=true. Skip Wikipedia twin lists, C4C profile HTML, Kyiv city, raion RDA→city.",
+  "budget": {
+    "unused_token_share": 0.3,
+    "max_sources_per_tick": 1,
+    "max_fetches_per_tick": 8
+  },
+  "write_dir": "data/research-log/intl-harvest",
+  "skip": [
+    "wikipedia-twin-towns",
+    "c4c-598-profile-html",
+    "kyiv-city",
+    "crimea-yalta",
+    "raion-rda-to-city",
+    "ministry-tableau-export"
+  ],
+  "items": [
+    {
+      "id": "c4c-news",
+      "status": "done",
+      "layer": "twinning",
+      "title": "Cities4Cities WP news (pair hypotheses from titles, not seeking bios)",
+      "urls": [
+        "https://cities4cities.eu/wp-json/wp/v2/posts?per_page=20"
+      ],
+      "note": "Already cached under data/cache/twinning/cities4cities-news.json. Refresh if stale; extract UA–foreign names from titles only.",
+      "last_run": "2026-09-18T09:30:00+00:00",
+      "stats": {
+        "fetches": 8,
+        "posts": 140,
+        "regex_pairs": 13,
+        "new_candidates": 3,
+        "skipped_already_in_twinning": 11,
+        "skipped_oblast": 1
+      }
+    },
+    {
+      "id": "kl-dk",
+      "status": "done",
+      "layer": "twinning",
+      "title": "KL Denmark — municipal Ukraine partnerships beyond Aalborg/Aarhus/Ikast-Brande",
+      "urls": [
+        "https://www.kl.dk/kommunale-opgaver/internationalt/ukraine"
+      ],
+      "note": "Skip Copenhagen/Odense–Kyiv. Do not invent pairs from programme blurbs without two named municipalities. Listed URL 404; recovered via KL Jan 2024 twinning list + venskabsbyer seeking page.",
+      "last_run": "2026-09-18T09:35:00+00:00",
+      "stats": {
+        "fetches": 8,
+        "listed_url": "404",
+        "new_candidates": 1,
+        "skipped_kyiv_city": 2,
+        "skipped_already_curated_nordic": 3,
+        "seeking_unpaired_ua": 18
+      }
+    },
+    {
+      "id": "salar-se",
+      "status": "done",
+      "layer": "twinning",
+      "title": "SKR/SALAR International — Swedish municipal Ukraine partnerships not on Skruv",
+      "urls": [
+        "https://skr.se/",
+        "https://skruv.nu/anslag/svenska-kommuner-med-vanorter-i-ukraina/"
+      ],
+      "note": "Skruv 33 kommuner already curated in twinning-nordic-pairs.json (2026-08-14). Harvest only deltas. SKR Ukraine hub/PDF is programme copy (Polaris/WM4U/C4C), not an extra pair roster. «30 kommuner» on SKR is not a named list.",
+      "last_run": "2026-09-18T09:38:00+00:00",
+      "stats": {
+        "fetches": 6,
+        "skruv_pairs_seen": 33,
+        "new_candidates": 0,
+        "skipped_already_curated": 33
+      }
+    },
+    {
+      "id": "vng-nl",
+      "status": "done",
+      "layer": "twinning",
+      "title": "VNG International NL–UA municipal partnerships",
+      "urls": [
+        "https://www.vng-international.nl/"
+      ],
+      "note": "Named gemeente ↔ hromada only. Programme pages without a UA place are not pairs. SDLG Ukraine names 15 unnamed municipalities + a Kyiv conference; no twinning roster. Vysokopillia MVA quoted without a Dutch gemeente.",
+      "last_run": "2026-09-18T09:40:00+00:00",
+      "stats": {
+        "fetches": 6,
+        "new_candidates": 0,
+        "skipped_programme_unnamed": 1,
+        "skipped_kyiv_conference": 1
+      }
+    },
+    {
+      "id": "ubc-baltic",
+      "status": "done",
+      "layer": "twinning",
+      "title": "Union of the Baltic Cities — UA members / twins",
+      "urls": [
+        "https://ubc.net/"
+      ],
+      "note": "Membership ≠ twinning. Record named sister-city claims only. Homepage lists UA members (Kolomyia, Kamianets-Podilskyi, associated Vilnyansk/Pokrovsk/Zaporizhzhia) plus Rivne oblast (skipped) and a frontline-cities association. City cards and the refugee-help page have no sister-city roster.",
+      "last_run": "2026-09-18T09:42:00+00:00",
+      "stats": {
+        "fetches": 4,
+        "new_candidates": 0,
+        "ua_members_seen": 5,
+        "skipped_oblast": 1,
+        "skipped_membership_not_twin": 5
+      }
+    },
+    {
+      "id": "ie-lu-mt",
+      "status": "done",
+      "layer": "twinning",
+      "title": "EU-27 holes: Ireland, Luxembourg, Malta municipal news",
+      "urls": [
+        "https://cities4cities.eu/"
+      ],
+      "note": "Search municipal sites / C4C news for IE/LU/MT. Empty result is a valid done. C4C WP search Ireland/Irish/Luxembourg/Malta = 0 posts; twinning-partners and partnership-map also 0 rows for IE/LU/MT.",
+      "last_run": "2026-09-18T09:44:00+00:00",
+      "stats": {
+        "fetches": 4,
+        "new_candidates": 0,
+        "c4c_search_hits": 0
+      }
+    },
+    {
+      "id": "no-ks",
+      "status": "done",
+      "layer": "twinning",
+      "title": "KS Norway — kommune partnerships beyond Lier–Pavlohrad",
+      "urls": [
+        "https://www.ks.no/"
+      ],
+      "note": "Homepage had no Ukraine links; recovered via KS search → official roster «Norske samarbeidspartnere i Ukraina» (edited 2025-12-04; table includes Suldal 2026-02-04). 16 table rows. Skip Oslo–Kyiv and Akershus fylke–Poltava. Time is a 3-name UA cluster (Vysoke katottg left null). Lier–Pavlohrad, Karmøy–Korosten, AUC Bergen–Lviv and Hamar–Rivne are not on this KS roster — do not invent them here. Kristiansand–Mykolaiv is the southern city.",
+      "last_run": "2026-09-18T09:48:00+00:00",
+      "stats": {
+        "fetches": 5,
+        "listed_url": "hub_no_ukraine",
+        "roster_rows": 16,
+        "new_candidates": 16,
+        "skipped_kyiv_city": 1,
+        "skipped_fylkeskommune": 1,
+        "not_on_ks_roster": ["Lier-Pavlohrad", "Karmoy-Korosten", "Bergen-Lviv", "Hamar-Rivne"]
+      }
+    },
+    {
+      "id": "fi-kuntaliitto",
+      "status": "done",
+      "layer": "twinning",
+      "title": "Kuntaliitto / Finnish municipal Ukraine twins beyond Imatra–Nizhyn",
+      "urls": [
+        "https://www.kuntaliitto.fi/"
+      ],
+      "note": "Official roster https://www.kuntaliitto.fi/aihealue/ukraina (19 FI–UA ystävyyskunta rows). Turku–Kharkiv was not in partnership-map, so harvested. Skip Helsinki/Tampere–Kyiv. Dedup Imatra/Lahti/Lappeenranta/Loviisa/Oulu already in twinning-partners. Kotka–Mykolajiv left katottg null (homonym). Kajaani–Uzhhorod and Suomussalmi–Zviahel are in our layers but not on this Kuntaliitto page — not invented here.",
+      "last_run": "2026-09-18T09:52:00+00:00",
+      "stats": {
+        "fetches": 5,
+        "roster_rows": 19,
+        "new_candidates": 12,
+        "skipped_already_in_twinning": 5,
+        "skipped_kyiv_city": 2
+      }
+    },
+    {
+      "id": "gb-lga",
+      "status": "done",
+      "layer": "twinning",
+      "title": "UK LGA / council friendship agreements beyond BANES–Oleksandriia",
+      "urls": [
+        "https://www.local.gov.uk/"
+      ],
+      "note": "Homepage has no Ukraine links. /our-support/international is CEMR/Congress membership, not a UK–UA pair roster (0 Ukraine mentions). Site search is POST and did not return hits from the query-string URL. /topics/communities/ukrainian-refugees 404. Direct HTTP 403 without a browser. Empty result is valid: LGA does not publish a named council↔hromada directory. BANES–Oleksandriia stays in nordic-pairs from Bath Echo, not from this LGA pass. Do not invent Liverpool/Sheffield/etc. from our twinning layer onto this source.",
+      "last_run": "2026-09-18T09:55:00+00:00",
+      "stats": {
+        "fetches": 4,
+        "listed_url": "hub_no_ukraine",
+        "new_candidates": 0,
+        "skipped_programme_unnamed": 0,
+        "http_403_without_browser": true,
+        "refugees_path": "404"
+      }
+    },
+    {
+      "id": "skew-unmatched",
+      "status": "done",
+      "layer": "twinning",
+      "title": "Remaining SKEW unmatched UA spellings → aliases",
+      "urls": [],
+      "note": "Offline: 88 unmatched rows (60 unmatched / 19 rajon / 5 non_hromada / 4 kyiv_city). 60 unmatched processed into JSONL. 43 unique cheap alias keys with KATOTTG (use _katottg — Trostjanez/Trostjanets and Schyroke collide on name). Skip Crimea (Jalta/Yevpatoriia/Simferopol), 5 already in twinning-name-aliases.json pending rebuild, Semenivka-Odesa homonym, Tairov missing Katottg, Chornomorsk city missing from hromadas.json, 4 villages without a hromada. Did not write aliases into the release file this tick.",
+      "last_run": "2026-09-18T09:58:00+00:00",
+      "stats": {
+        "fetches": 0,
+        "unmatched_rows": 60,
+        "new_candidates": 45,
+        "unique_alias_keys": 43,
+        "skipped_already_in_aliases": 5,
+        "skipped_crimea": 3,
+        "skipped_ambiguous": 1,
+        "skipped_village": 4,
+        "skipped_missing_katottg": 2
+      }
+    }
+  ]
+}
