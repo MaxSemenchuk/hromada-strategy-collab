@@ -91,14 +91,24 @@ surfaced yet:
   scientific/impact/commercial attractiveness. Not a decision — filed for
   later use (paper generalizability section, or a side-market pitch), and
   explicitly doesn't change Brief 1–3's sequencing below.
+- **EU–EU municipal cooperation briefing (2026-09-18)**
+  ([docs/eu-imc.md](../docs/eu-imc.md)): how EU municipalities cooperate *with
+  each other* (domestic IMC / EGTC–Interreg / CEMR twinning). Does **not**
+  reopen Brief 3 or open Phase 3 EU↔EU matching. Use: armor the Interreg
+  pitch against "opportunistic EU platform" readings, filter who to talk to,
+  and give Interreg-card copy a European form vocabulary. See
+  [Brief 3 addendum](#brief-3-addendum-2026-09-18-eu-internal-stacks).
 
 ## Рай (heaven)
 
 What was in the working note, plus what should be added given the above:
 
 - Funded programme matching hromadas + IT/cooperation projects — **specifically
-  anchored to one named EU instrument** (Interreg first candidate) with a real
-  validation dataset behind it, not "EU funding" in the abstract.
+  anchored to one named EU instrument** (Interreg NEXT CBC, product (b)
+  UA→EU partner — locked 2026-09-16) with a real validation dataset behind
+  it, not "EU funding" in the abstract. Pitch names the three EU-internal
+  stacks and refuses the wrong ones (mandatory EPCI coverage, CEMR twinning
+  marketplace, full EU↔EU cosine).
 - Many МСС collaborations result, **and** the forward-test confirms the model
   had genuine predictive power, not just retrospective pattern-matching — this
   is the difference between "useful" and "would have happened anyway."
@@ -128,7 +138,10 @@ What was in the working note, plus what should be added:
 - Weak science / credible criticism — **specifically named failure mode**:
   pitching the EU-instrument reframing without first naming the instrument and
   validation dataset reads as opportunistic repackaging of a Ukraine project,
-  not a new system (the one-pager's own stated risk).
+  not a new system (the one-pager's own stated risk). A 2026-09-18 variant of
+  the same hell: treating the EU–EU briefing as license to "pivot to an EU
+  platform" — opening France EPCI / full EU↔EU matching in parallel with the
+  Interreg card, or skipping Brief 2 because we now "know how Europe works."
 - **Added risks not in the working note:**
   - Product indecision becomes permanent — the open-data/matchmaking/internal
     decision never gets made, and the project drifts as a research artifact
@@ -352,9 +365,9 @@ was built and tuned on, porting the pitch to Europe before that's settled
 compounds the "opportunistic repackaging" risk the one-pager itself names,
 rather than mitigating it.
 
-**Owner / next step**: Max + whoever holds the EU/funder relationship decides
-instrument + product framing (a vs b); a research task then confirms the
-concrete validation dataset for whichever is chosen.
+**Owner / next step**: superseded 2026-09-16 — instrument + product locked
+(see status update below). Remaining work is the Interreg readiness-card MVP
+and Brief 2 gating before a big funder pitch, not another a-vs-b debate.
 
 **Country candidates for a strategy-text corpus (desk research, 2026-08-11)**:
 independent of the instrument/product decision above, checked whether EU
@@ -400,6 +413,63 @@ Poland as the lead candidate if/when a raw-corpus-building phase is
 scoped, but this doesn't change the Brief 3 recommendation or sequencing —
 it's a data-source note for whichever instrument/product gets picked, filed
 here so it doesn't get re-derived later.
+
+**Status update (2026-09-16):** instrument + product are no longer a running
+list. Locked in [internal/interreg-proposal.md](interreg-proposal.md):
+**Interreg** (NEXT CBC covering UA; Interreg Europe later) × product **(b)**
+UA hromada → EU partner / Interreg readiness — *not* (a). Validation:
+keep.eu LPA-confirmed edges (43 hromadas / 57 partnerships), not town-hits.
+MVP = Interreg readiness card from existing releases. Phase 3 (EU↔EU / EGTC
+/ LEADER matching) stays closed. Sequencing vs Brief 2 is unchanged: do not
+claim predictive validity on Interreg until a forward-test is pre-registered;
+domestic Brief 2 still preferred before a big EU funder pitch.
+
+<a id="brief-3-addendum-2026-09-18-eu-internal-stacks"></a>
+
+**Addendum (2026-09-18) — EU-internal stacks, audience filter, card copy.**
+Comparative briefing: [docs/eu-imc.md](../docs/eu-imc.md). Does **not**
+change the 2026-09-16 lock or Brief 2 sequencing. What it adds:
+
+1. **Three stacks to keep apart** (same discipline as UA layers: never
+   `known: true`, never v7 `score`):
+   - *Domestic IMC* under 27 national laws — the bulk (water, waste, fire,
+     back-office). No EU-wide registry. Mandatory-coverage systems (France
+     1 252 EPCI; Portugal CIM via funds; Hungary joint offices if <2 000
+     inh.) are **not** a partner-search market. Voluntary menus (Poland
+     `związki`, Czech DSO, German Zweckverband, Spanish mancomunidades) are
+     the Law 1508 cousins. Closest legal analogue for a later port:
+     **Polish związki**, not French EPCI.
+   - *Cross-border* — Madrid Convention → Euroregion → EGTC (~86 active) →
+     Interreg project (€8.05 bn 2021–27, 72% internal CBC). EGTC is a legal
+     wrapper, not a grant. keep.eu still needs the LPA filter.
+   - *Soft* — CEMR twinning (last census 2010 ~34k) and LEADER LAGs (~2 678).
+     People-to-people / rural CLLD, analogue of SKEW, not a shared utility.
+2. **Audience filter** (who Brief 3 is for, and who it is not):
+
+   | Talk to | Why |
+   |---------|-----|
+   | Interreg NEXT JTS / national contact (PL–UA first) | readiness cards: eligible · theme · past LPA partners · concrete ask |
+   | Polish gminas / związki | legal cousin of 1508; later `strategia rozwoju gminy` corpus if Phase 2 |
+   | GIZ / SKEW | twinning as warm intro *into* a later Interreg concept |
+   | ВА ОТГ / ВАГ (western oblasts) | same cards, association warm intros |
+
+   | Not first | Why |
+   |-----------|-----|
+   | France EPCI / Portugal CIM | mandatory coverage, no discovery market |
+   | CEMR as a twinning marketplace | wrong stack, wrong buyer |
+   | «AI finds your EU twin» | forbidden pitch; brokerage still required |
+
+3. **Operational extract, not a new track.** Use the form mapping (1508
+   delegation ≈ *Vereinbarung* / *porozumienie*; joint enterprise ≈
+   Zweckverband / IDA; joint body ≈ Unione / EGTC) in Interreg-card copy so
+   a JTS hears a familiar «навіщо». Do not start EU↔EU cosine, a French
+   corpus, or Phase 3 in parallel — that is the two-half-finished-efforts
+   hell already named above.
+4. **Paper / science.** OECD 2026 confirms the DOBRE partner-search
+   bottleneck is not Ukraine-specific; Tkachuk's trust / «навіщо» /
+   association-intro mechanism travels. Frozen elections remain the
+   Ukrainian twist. Use as Study-1 generalizability background, not as a
+   substitute for AIM-CC (Brief 2).
 
 ## Decisions log
 
@@ -487,3 +557,19 @@ Append an entry here whenever one of the above gets decided — keep it short
   is a draft revision, not a deviation requiring a §11 log entry in the
   prereg itself. **Owner / next step**: unchanged — still gated on Brief 2's
   launch decision above.
+- **2026-09-16 — Brief 3 instrument + product locked** (does not skip Brief
+  2). [internal/interreg-proposal.md](interreg-proposal.md): Interreg NEXT
+  CBC covering UA (Interreg Europe later) × product **(b)** UA hromada → EU
+  partner / Interreg readiness card — *not* (a) EU↔EU matching. Validation
+  dataset = keep.eu LPA-confirmed 43 hromadas / 57 partnerships. Phase 3
+  (EGTC / LEADER / full EU↔EU) closed until a broker actually uses the
+  cards. Owner / next step in the 2026-08-10 Brief 3 text is superseded by
+  this lock.
+- **2026-09-18 — Brief 3 armored, not reopened.** EU–EU municipal
+  cooperation briefing ([docs/eu-imc.md](../docs/eu-imc.md)) filed as
+  comparative context: three stacks (domestic IMC / EGTC–Interreg / CEMR
+  twinning), audience filter (JTS PL–UA and Polish związki yes; France EPCI
+  / CEMR marketplace / «AI twin» no), Interreg-card form vocabulary.
+  Confirms (a) stays Phase 3. Does **not** change Brief 2 gating, does
+  **not** start a new matcher. Hell-mode to avoid: using the briefing as
+  license to pivot to an "EU platform" in parallel with the Interreg card.

@@ -74,6 +74,14 @@ UI: block on map/card + short export for brokers. Label: discovery evidence, not
 
 **Message discipline (Tkachuk):** motivation and benefit clarity > venue; AI lowers search cost, does not replace trust or Monitoring Committee rules.
 
+**EU-internal context (2026-09-18, does not change the lock above):**
+[docs/eu-imc.md](../docs/eu-imc.md) — three stacks (domestic IMC / EGTC–Interreg /
+CEMR twinning). Talk to JTS PL–UA and Polish *związki*; do not pitch France
+EPCI or a CEMR twinning marketplace. Form mapping (1508 ↔ Zweckverband /
+*porozumienie* / Unione / EGTC) is for card copy, not a new matcher. Phase 3
+stays closed. Strategy addendum:
+[project-strategy-future-backwards.md § Brief 3](project-strategy-future-backwards.md#brief-3-addendum-2026-09-18-eu-internal-stacks).
+
 ---
 
 ## Success criteria (go / no-go)
