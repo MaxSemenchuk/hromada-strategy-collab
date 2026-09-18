@@ -1,5 +1,5 @@
 {
-  "_comment": "Bounded UA–EU cooperation harvest. One pending item per agent tick; 30% unused Auto-token cap. Candidates go to data/research-log/intl-harvest/ — not the release, not known=true. Skip Wikipedia twin lists, C4C profile HTML, Kyiv city, raion RDA→city.",
+  "_comment": "Bounded UA worldwide municipal-cooperation harvest. One pending item per agent tick. Candidates go to data/research-log/intl-harvest/ — not the release, not known=true. Skip Wikipedia twin lists, C4C profile HTML, Kyiv city, raion RDA→city, Ministry Tableau export. Best compiled public directory so far: U-LEAD/GIZ URC map (June 2026).",
   "budget": {
     "unused_token_share": 0.3,
     "max_sources_per_tick": 1,
@@ -197,6 +197,108 @@
         "skipped_ambiguous": 1,
         "skipped_village": 4,
         "skipped_missing_katottg": 2
+      }
+    },
+    {
+      "id": "ulead-giz-map",
+      "status": "done",
+      "layer": "twinning",
+      "title": "U-LEAD/GIZ URC map — 2810 worldwide municipal partnerships (June 2026)",
+      "urls": [
+        "https://gizuacitymap.netlify.app/"
+      ],
+      "note": "Best public compiled directory found. GeoJSON carddata 592 hromadas. Skip Kyiv city (72 partners). Not a Ministry Tableau scrape. Latin partner spellings rarely collide with Ukrainian twinning names so overlap looks small (153). Do not fold into releases this tick.",
+      "last_run": "2026-09-18T11:50:00+00:00",
+      "stats": {
+        "fetches": 3,
+        "places": 591,
+        "pairs": 2569,
+        "new_candidates": 2416,
+        "skipped_kyiv_city_partners": 72,
+        "skipped_already_twinning": 153,
+        "katottg_filled": 2365
+      }
+    },
+    {
+      "id": "auucp-us",
+      "status": "done",
+      "layer": "twinning",
+      "title": "Alliance of US-Ukraine City Partnerships — linked-cities roster",
+      "urls": [
+        "https://www.auucp.org/linked-cities"
+      ],
+      "note": "SCI-derived roster on AUUCP (page cites 22 US cities; 15 named pair headings). Skip Chicago–Kyiv and Santa Cruz–Alushta (Crimea). Six already in twinning under Ukrainian partner spellings. Horlivka/Krasnodon rows have null Katottg in hromadas.json. Did not follow per-city Read More pages.",
+      "last_run": "2026-09-18T11:52:00+00:00",
+      "stats": {
+        "fetches": 1,
+        "roster_headings": 15,
+        "new_candidates": 9,
+        "skipped_already_in_twinning": 6,
+        "skipped_kyiv_city": 1,
+        "skipped_crimea": 1
+      }
+    },
+    {
+      "id": "sci-membership",
+      "status": "done",
+      "layer": "twinning",
+      "title": "Sister Cities International membership directory — Ukraine partners",
+      "urls": [
+        "https://sistercities.org/membership/membership-directory/"
+      ],
+      "note": "Listed URL 403 via urllib; recovered the same directory from an earlier successful fetch of that URL (27 US city → Ukraine lines). Skip Chicago–Kyiv and Highlands–Hodinovka (village, no hromada). Membership ≠ always a signed pair; confidence stays directory. Did not follow per-city pages. AUUCP overlap tagged already_in_auucp; Ministry twinning overlap tagged already_in_twinning. Several of the 10 new-vs-twinning rows also sit on the GIZ URC map — independent SCI confirmation, not folded into releases.",
+      "last_run": "2026-09-18T11:55:00+00:00",
+      "stats": {
+        "fetches": 1,
+        "listed_url": "403",
+        "roster_rows": 27,
+        "new_candidates": 10,
+        "skipped_already_in_twinning": 8,
+        "skipped_already_in_auucp": 7,
+        "skipped_kyiv_city": 1,
+        "skipped_village": 1
+      }
+    },
+    {
+      "id": "fcm-canada",
+      "status": "done",
+      "layer": "twinning",
+      "title": "FCM Canada — municipal Ukraine partnerships beyond Langford cluster",
+      "urls": [
+        "https://fcm.ca/"
+      ],
+      "note": "Homepage is a hub with no Ukraine links. /en/programs/international 404. International focus + current International Programs list Tunisia/Viet Nam/Africa-Asia gender programmes — no live Ukraine roster. Closed PLEDDG (2015–2021) names 16 unnamed UA cities; older MLED news names 12 unnamed cities in Lviv and Dnipropetrovsk oblasts. 2022 solidarity statement names no municipality. Empty result is valid: FCM does not publish a named CA↔hromada directory. Langford–Volyn cluster stays in twinning from Ministry/GIZ, not from this FCM pass. Do not invent Winnipeg/Toronto/Vancouver from our layers onto this source.",
+      "last_run": "2026-09-18T12:00:00+00:00",
+      "stats": {
+        "fetches": 6,
+        "listed_url": "hub_no_ukraine",
+        "new_candidates": 0,
+        "skipped_programme_unnamed": 2,
+        "skipped_solidarity_unnamed": 1,
+        "current_ukraine_programme": false
+      }
+    },
+    {
+      "id": "auc-ua-intl",
+      "status": "done",
+      "layer": "twinning",
+      "title": "Association of Ukrainian Cities — international partnership news",
+      "urls": [
+        "https://auc.org.ua/"
+      ],
+      "note": "Homepage hub had no pair roster; /novyny 404. Claimed AUC twinning database (140 cities / 727 twins) is not a public URL. Bridges of Trust «36 partnerships» unnamed. Harvested three in-domain news pages (KS/AUC Norway track). Official agreements: Lviv–Bergen, Pavlohrad–Lier (already nordic), Rivne–Hamar, Mykolaiv–Kristiansand (already KS, southern city), Zaporizhzhia OVA–Trøndelag (skipped). Keep Rivne–Hamar distinct from Rivne–Fredrikstad. Horodok is Lviv oblast, not Khmelnytskyi. Did not invent C4C/Wikipedia pairs or mix oblast with city.",
+      "last_run": "2026-09-18T12:05:00+00:00",
+      "stats": {
+        "fetches": 5,
+        "listed_url": "hub_no_roster",
+        "news_pages": 3,
+        "new_candidates": 5,
+        "skipped_already_in_ks": 9,
+        "skipped_already_curated_nordic": 1,
+        "skipped_oblast_ova": 3,
+        "skipped_fylkeskommune": 3,
+        "skipped_kyiv_city": 1,
+        "public_twinning_db": false
       }
     }
   ]
