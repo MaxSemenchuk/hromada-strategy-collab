@@ -1133,6 +1133,14 @@ const tip = document.getElementById('tooltip');
 const hint = document.getElementById('hint');
 const detailEl = document.getElementById('detail');
 const wrapEl = document.querySelector('.wrap');
+
+// Opening/closing the detail column resizes the map/graph pane without a
+// window 'resize' event, so the canvas drawing buffer (and Leaflet's tile
+// layout) must be refreshed by hand or the graph renders squished.
+function syncViewportAfterDetailToggle() {
+  if (mode === 'graph') resizeCanvas();
+  else setTimeout(() => { map.invalidateSize(); }, 50);
+}
 const detailTitle = document.getElementById('detail-title');
 const detailBody = document.getElementById('detail-body');
 const searchInput = document.getElementById('hromada-search');
@@ -1565,6 +1573,7 @@ function renderDetail(n) {
     detailEl.classList.remove('open');
     detailEl.hidden = true;
     wrapEl.classList.remove('has-detail');
+    syncViewportAfterDetailToggle();
     detailTitle.textContent = '—';
     detailBody.innerHTML = '';
     return;
@@ -1745,6 +1754,7 @@ function renderDetail(n) {
   detailEl.hidden = false;
   detailEl.classList.add('open');
   wrapEl.classList.add('has-detail');
+  syncViewportAfterDetailToggle();
   detailBody.querySelectorAll('.detail-neighbor').forEach((btn) => {
     btn.addEventListener('click', () => selectHromada(btn.getAttribute('data-id')));
   });
