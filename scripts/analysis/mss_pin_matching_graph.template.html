@@ -41,6 +41,11 @@
     grid-template-columns: minmax(300px, 340px) 1fr;
     min-height: calc(100vh - var(--site-nav-h, 56px));
   }
+  /* Third column: only reserved once a node is selected (.has-detail),
+     so the graph gets the full width back when nothing is picked. */
+  .wrap.has-detail {
+    grid-template-columns: minmax(300px, 340px) 1fr minmax(300px, 340px);
+  }
   aside {
     padding: 1.35rem 1.2rem 1.6rem;
     border-right: 1px solid var(--site-border);
@@ -345,11 +350,10 @@
   }
   .detail {
     display: none;
-    margin: 0 0 1.15rem;
-    border: 1px solid var(--site-border);
-    border-radius: 12px;
-    background: var(--site-bg);
-    overflow: hidden;
+    border-left: 1px solid var(--site-border);
+    background: var(--site-surface);
+    overflow-y: auto;
+    max-height: calc(100vh - var(--site-nav-h, 56px));
   }
   .detail.open { display: block; }
   .detail-head {
@@ -667,7 +671,7 @@
      this rule must stay after the base .wrap/aside/main rules above so it
      wins the cascade at equal specificity. */
   @media (max-width: 900px) {
-    .wrap { grid-template-columns: 1fr; }
+    .wrap, .wrap.has-detail { grid-template-columns: 1fr; }
     main { order: 1; min-height: 62vh; }
     aside {
       order: 2;
@@ -675,6 +679,13 @@
       overflow-y: visible;
       border-right: 0;
       border-bottom: 1px solid var(--site-border);
+    }
+    .detail {
+      order: 3;
+      max-height: none;
+      overflow-y: visible;
+      border-left: 0;
+      border-top: 1px solid var(--site-border);
     }
   }
 </style>
@@ -707,13 +718,6 @@
         </span>
       </label>
     </div>
-    <section class="detail" id="detail" aria-live="polite" hidden>
-      <div class="detail-head">
-        <h2 id="detail-title">—</h2>
-        <button type="button" class="detail-close" id="detail-close" data-i18n-aria="detail.close" aria-label="Закрити">×</button>
-      </div>
-      <div class="detail-body" id="detail-body"></div>
-    </section>
     <p class="section-label" data-i18n="layers.label">Сигнали пошуку</p>
     <!-- Split the flat checkbox list into "is this a real, already-signed
          tie, or a search hypothesis, or just backdrop context" — the single
@@ -878,6 +882,13 @@
     <canvas id="c"></canvas>
     <div id="tooltip"></div>
   </main>
+  <section class="detail" id="detail" aria-live="polite" hidden>
+    <div class="detail-head">
+      <h2 id="detail-title">—</h2>
+      <button type="button" class="detail-close" id="detail-close" data-i18n-aria="detail.close" aria-label="Закрити">×</button>
+    </div>
+    <div class="detail-body" id="detail-body"></div>
+  </section>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -1121,6 +1132,7 @@ const ctx = canvas.getContext('2d');
 const tip = document.getElementById('tooltip');
 const hint = document.getElementById('hint');
 const detailEl = document.getElementById('detail');
+const wrapEl = document.querySelector('.wrap');
 const detailTitle = document.getElementById('detail-title');
 const detailBody = document.getElementById('detail-body');
 const searchInput = document.getElementById('hromada-search');
@@ -1552,6 +1564,7 @@ function renderDetail(n) {
   if (!n) {
     detailEl.classList.remove('open');
     detailEl.hidden = true;
+    wrapEl.classList.remove('has-detail');
     detailTitle.textContent = '—';
     detailBody.innerHTML = '';
     return;
@@ -1731,6 +1744,7 @@ function renderDetail(n) {
 
   detailEl.hidden = false;
   detailEl.classList.add('open');
+  wrapEl.classList.add('has-detail');
   detailBody.querySelectorAll('.detail-neighbor').forEach((btn) => {
     btn.addEventListener('click', () => selectHromada(btn.getAttribute('data-id')));
   });
