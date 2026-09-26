@@ -634,12 +634,33 @@
     width: 100%;
     height: 100%;
     cursor: grab;
+    touch-action: none;
   }
   canvas#c.visible { display: block; }
   canvas#c:active { cursor: grabbing; }
   .leaflet-container { background: var(--map-bg); font: inherit; }
   /* Esri's dark-gray tiles read too light against our near-black theme; darken to match. */
   .leaflet-tile-pane { filter: brightness(0.22) saturate(0.85); }
+  .city-label {
+    color: #9aa4b2;
+    font-size: 11px;
+    line-height: 1;
+    white-space: nowrap;
+    text-shadow: 0 0 3px #14181d, 0 0 3px #14181d;
+    pointer-events: none;
+  }
+  .city-label::before {
+    content: '';
+    display: inline-block;
+    width: 4px; height: 4px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background: #9aa4b2;
+    vertical-align: middle;
+  }
+  .city-label.capital { color: #cbd5e1; font-size: 12.5px; font-weight: 600; }
+  .city-label.capital::before { width: 6px; height: 6px; background: #cbd5e1; }
+  .city-labels-sparse .city-label:not(.capital) { display: none; }
   .leaflet-popup-content-wrapper {
     background: #ffffff;
     color: #0f172a;
@@ -1148,6 +1169,16 @@ const searchList = document.getElementById('hromada-search-list');
 
 let width = 0, height = 0, dpr = 1;
 let camX = 0, camY = 0, scale = 0.55;
+// scale=0.55 was tuned against a wide desktop canvas; on a phone-width
+// canvas the same scale only shows a sliver of the R=900 oblast ring, so the
+// graph reads as nearly empty. Refit it to the canvas size instead, but only
+// until the visitor takes control (pan/zoom/search) — after that, resizing
+// (e.g. rotating the phone) shouldn't yank their view back to the default.
+let userAdjustedView = false;
+function fitScaleFor(w, h) {
+  const dim = Math.min(w, h) || 800;
+  return Math.min(1.5, Math.max(0.2, dim / 1500));
+}
 let dragging = null, panning = false, lastX = 0, lastY = 0;
 let pointerDown = false, dragMoved = false, pendingSelect = null;
 let downX = 0, downY = 0;
@@ -1807,17 +1838,77 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_D
 }).addTo(map);
 refreshTileAttribution();
 // Base has no admin boundaries or place labels (only sparse country names at
-// low zoom) — Esri's companion Reference layer adds oblast borders + city
-// labels. It needs its own pane: the default tile pane is crushed to 22%
-// brightness below (to match Base's photographic tone to our dark theme),
-// which would make Reference's already-dark-mode-styled labels unreadable.
+// low zoom). We draw both ourselves rather than using Esri's companion
+// Reference tiles: those bake the outdated "Kiev" spelling into the raster
+// (all Esri raster label layers do; keyless CARTO labels now need an API key),
+// and our own labels can follow the page language (Київ / Kyiv).
+// Own pane: the default tile pane is crushed to 22% brightness below.
 const referencePane = map.createPane('referencePane');
 referencePane.style.zIndex = 250; // above tilePane (200), below overlayPane (400) — the outside-UA mask still covers it there
-L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
-  attribution: '&copy; Esri',
-  maxZoom: 18,
-  pane: 'referencePane',
-}).addTo(map);
+if (DATA.oblasts && DATA.oblasts.features && DATA.oblasts.features.length) {
+  L.geoJSON(DATA.oblasts, {
+    pane: 'referencePane',
+    interactive: false,
+    style: () => ({ color: '#6b7684', weight: 0.7, opacity: 0.55, fill: false }),
+  }).addTo(map);
+}
+const cityLabelsPane = map.createPane('cityLabelsPane');
+cityLabelsPane.style.zIndex = 450; // above nodes/edges (overlayPane 400) so labels stay readable; pointer-events off below lets clicks through
+cityLabelsPane.style.pointerEvents = 'none';
+// Oblast centres + Kyiv (+ Crimea's two cities). [lat, lon, uk, en, capital?]
+const CITY_LABELS = [
+  [50.4501, 30.5234, 'Київ', 'Kyiv', true],
+  [49.8397, 24.0297, 'Львів', 'Lviv'],
+  [50.7472, 25.3254, 'Луцьк', 'Lutsk'],
+  [50.6199, 26.2516, 'Рівне', 'Rivne'],
+  [50.2547, 28.6587, 'Житомир', 'Zhytomyr'],
+  [48.6208, 22.2879, 'Ужгород', 'Uzhhorod'],
+  [48.2921, 25.9358, 'Чернівці', 'Chernivtsi'],
+  [48.9226, 24.7111, 'Івано-Франківськ', 'Ivano-Frankivsk'],
+  [49.5535, 25.5948, 'Тернопіль', 'Ternopil'],
+  [49.4229, 26.9871, 'Хмельницький', 'Khmelnytskyi'],
+  [49.2331, 28.4682, 'Вінниця', 'Vinnytsia'],
+  [46.4825, 30.7233, 'Одеса', 'Odesa'],
+  [46.9750, 31.9946, 'Миколаїв', 'Mykolaiv'],
+  [46.6354, 32.6169, 'Херсон', 'Kherson'],
+  [47.8388, 35.1396, 'Запоріжжя', 'Zaporizhzhia'],
+  [48.4647, 35.0462, 'Дніпро', 'Dnipro'],
+  [48.5079, 32.2623, 'Кропивницький', 'Kropyvnytskyi'],
+  [49.4444, 32.0598, 'Черкаси', 'Cherkasy'],
+  [49.5883, 34.5514, 'Полтава', 'Poltava'],
+  [49.9935, 36.2304, 'Харків', 'Kharkiv'],
+  [50.9077, 34.7981, 'Суми', 'Sumy'],
+  [51.4982, 31.2893, 'Чернігів', 'Chernihiv'],
+  [48.0159, 37.8028, 'Донецьк', 'Donetsk'],
+  [48.5740, 39.3078, 'Луганськ', 'Luhansk'],
+  [44.9521, 34.1024, 'Сімферополь', 'Simferopol'],
+  [44.6166, 33.5254, 'Севастополь', 'Sevastopol'],
+];
+const cityLabelsLayer = L.layerGroup().addTo(map);
+function renderCityLabels() {
+  cityLabelsLayer.clearLayers();
+  const en = isEnLang();
+  for (const [lat, lon, uk, enName, capital] of CITY_LABELS) {
+    L.marker([lat, lon], {
+      pane: 'cityLabelsPane',
+      interactive: false,
+      keyboard: false,
+      icon: L.divIcon({
+        className: '',
+        html: `<span class="city-label${capital ? ' capital' : ''}">${esc(en ? enName : uk)}</span>`,
+        iconSize: null,
+        iconAnchor: [capital ? 3 : 2, capital ? 7 : 6],
+      }),
+    }).addTo(cityLabelsLayer);
+  }
+}
+renderCityLabels();
+// At country-wide zoom on small screens 26 labels collide — keep only Kyiv.
+function refreshCityLabelDensity() {
+  map.getContainer().classList.toggle('city-labels-sparse', map.getZoom() < 6);
+}
+map.on('zoomend', refreshCityLabelDensity);
+refreshCityLabelDensity();
 
 // Mask everything outside Ukraine (world ring + UA outline as hole)
 function outlineHoles(fc) {
@@ -2139,6 +2230,7 @@ document.getElementById('btn-map').onclick = () => setMode('map');
 function onLangChange() {
   refreshHint();
   refreshTileAttribution();
+  renderCityLabels();
   if (typeof renderThemeFilters === 'function') renderThemeFilters();
   if (mode === 'map' && typeof rebuildMapLayers === 'function') rebuildMapLayers();
   if (mode === 'graph' && typeof drawGraph === 'function') drawGraph();
@@ -2181,6 +2273,7 @@ function goToHromadaId(id) {
   if (mode === 'map' && n.lat != null) {
     map.setView([n.lat, n.lon], Math.max(map.getZoom(), 10));
   } else if (mode === 'graph' && hasGraphPos) {
+    userAdjustedView = true;
     camX = n.x; camY = n.y; scale = Math.max(scale, 1.6);
   }
 }
@@ -2216,6 +2309,7 @@ function resizeCanvas() {
   canvas.width = Math.floor(width * dpr);
   canvas.height = Math.floor(height * dpr);
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  if (!userAdjustedView) scale = fitScaleFor(width, height);
 }
 window.addEventListener('resize', () => {
   if (mode === 'graph') resizeCanvas();
@@ -2287,8 +2381,8 @@ function endGraphPointer() {
   dragMoved = false;
 }
 
-canvas.addEventListener('mousedown', (ev) => {
-  if (mode !== 'graph' || ev.button !== 0) return;
+canvas.addEventListener('pointerdown', (ev) => {
+  if (mode !== 'graph' || ev.button !== 0 || pointerDown) return;
   pointerDown = true;
   dragMoved = false;
   dragging = null;
@@ -2298,12 +2392,13 @@ canvas.addEventListener('mousedown', (ev) => {
   const w = worldFromEvent(ev);
   pendingSelect = findNode(w.x, w.y) || null;
 });
-window.addEventListener('mouseup', (ev) => {
+window.addEventListener('pointerup', (ev) => {
   if (!pointerDown) return;
   if (ev.button != null && ev.button !== 0) return;
   endGraphPointer();
 });
-window.addEventListener('mousemove', (ev) => {
+window.addEventListener('pointercancel', () => endGraphPointer());
+window.addEventListener('pointermove', (ev) => {
   if (mode !== 'graph') return;
   const w = worldFromEvent(ev);
   if (pointerDown && !dragMoved) {
@@ -2322,9 +2417,11 @@ window.addEventListener('mousemove', (ev) => {
     }
   }
   if (dragging) {
+    userAdjustedView = true;
     dragging.fx = w.x; dragging.fy = w.y;
     dragging.x = w.x; dragging.y = w.y;
   } else if (panning) {
+    userAdjustedView = true;
     camX += ev.clientX - lastX;
     camY += ev.clientY - lastY;
     lastX = ev.clientX; lastY = ev.clientY;
@@ -2356,6 +2453,7 @@ window.addEventListener('mousemove', (ev) => {
 canvas.addEventListener('wheel', (ev) => {
   if (mode !== 'graph') return;
   ev.preventDefault();
+  userAdjustedView = true;
   scale = Math.min(6, Math.max(0.25, scale * (ev.deltaY < 0 ? 1.08 : 0.92)));
 }, { passive: false });
 
@@ -2862,6 +2960,9 @@ window.PAGE_I18N = {
 <script>
 if (window.HromadaI18n && window.PAGE_I18N) window.HromadaI18n.apply(window.PAGE_I18N);
 if (typeof refreshHint === 'function') refreshHint();
+// Map init ran before i18n.js loaded, so t()/isEnLang() saw the defaults there.
+if (typeof refreshTileAttribution === 'function') refreshTileAttribution();
+if (typeof renderCityLabels === 'function') renderCityLabels();
 </script>
 <script src="assets/nav.js" data-active="map"></script>
 </body>
