@@ -7,7 +7,7 @@ the public URL is:
 
 Coverage reflected on the site (2026-07-29 release): **1,469** metadata rows,
 **77** text-mined strategies (**68** with Goals), **2,278** matching-edges (v7),
-known МСС ranks **#6–#14**. Extra layers: complementary, explicit-ask, resources/DREAM
+known ММС ranks **#6–#14**. Extra layers: complementary, explicit-ask, resources/DREAM
 (~1,000 hromadas with DREAM projects; KSE resource proxies).
 PIN map: **~459** PIN nodes / **918** edges from KSE; underlay **~1 418** mainland
 hromadas with coordinates (metadata — not the strategy corpus). Click a point for
@@ -22,8 +22,8 @@ hromadas with coordinates (metadata — not the strategy corpus). Click a point 
 | [`resources.html`](resources.html) | KSE resource proxies × DREAM revealed priorities |
 | [`mss-pin-matching-graph.html`](mss-pin-matching-graph.html) | Full PIN map + four hypothesis overlays |
 | [`aim-cc-field-experiment.html`](aim-cc-field-experiment.html) | AIM-CC 2026 pre-registration summary (bilingual) — links to the full technical prereg on GitHub |
-| [`strategy-writing-guide.md`](strategy-writing-guide.md) | How to write strategies that surface МСС signals |
-| [`mss-cooperation-research.md`](mss-cooperation-research.md) | DOBRE + Tkachuk / ІГС practitioner framing, МСС forms |
+| [`strategy-writing-guide.md`](strategy-writing-guide.md) | How to write strategies that surface ММС signals |
+| [`mss-cooperation-research.md`](mss-cooperation-research.md) | DOBRE + Tkachuk / ІГС practitioner framing, ММС forms |
 | [`ua-eu-twinning.md`](ua-eu-twinning.md) | UA–EU sister cities: format, SKEW/AFCCRE/C4C, how partners are found, cases |
 | [`eu-imc.md`](eu-imc.md) | EU–EU municipal cooperation: domestic IMC, EGTC/Interreg, CEMR twinning (context, not a matcher) |
 | [`donor-programs.md`](donor-programs.md) | DOBRE, EGAP, U-LEAD, GIZ, USAID… — what each programme is |

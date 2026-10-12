@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-16T19:15:51.452492+00:00",
+  "generatedAt": "2026-10-12T16:23:22.086612+00:00",
   "kind": "mss_candidates",
-  "caveat": "Кандидати договорів МСС (гіпотези). package.form — правова форма за правилами, не факт реєстру. known/registry_known — лише кураторська валідація. Стратегії / geo / complementary / explicit-ask / shared-asset — сигнали пошуку.",
+  "caveat": "Кандидати договорів ММС (гіпотези). package.form — правова форма за правилами, не факт реєстру. known/registry_known — лише кураторська валідація. Стратегії / geo / complementary / explicit-ask / shared-asset — сигнали пошуку.",
   "counts": {
     "registry_known": 11,
     "hypotheses": 169
@@ -39,7 +39,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -63,7 +63,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -83,7 +83,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -126,7 +126,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -152,7 +152,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -200,7 +200,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -218,7 +218,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         },
@@ -238,7 +238,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -287,7 +287,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -311,7 +311,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -325,7 +325,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -374,13 +374,13 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -424,13 +424,13 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -466,7 +466,7 @@
       "signals": [
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -490,7 +490,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         },
@@ -504,7 +504,7 @@
       "signal_chips": [
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -558,7 +558,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -576,7 +576,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         },
@@ -596,7 +596,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -645,7 +645,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -671,7 +671,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -719,7 +719,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -751,7 +751,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -793,13 +793,13 @@
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -837,13 +837,13 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -885,7 +885,7 @@
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
@@ -897,7 +897,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -917,7 +917,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
@@ -929,7 +929,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -961,14 +961,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -976,7 +976,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1001,14 +1001,14 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "high",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит ММС",
         "label_uk": "Поводження з відходами / довкілля — спільне КП",
         "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1016,7 +1016,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1041,14 +1041,14 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "high",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит ММС",
         "label_uk": "Поводження з відходами / довкілля — спільне КП",
         "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1056,7 +1056,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1081,14 +1081,14 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "high",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит ММС",
         "label_uk": "Поводження з відходами / довкілля — спільне КП",
         "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1096,7 +1096,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1121,14 +1121,14 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "high",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит ММС",
         "label_uk": "Поводження з відходами / довкілля — спільне КП",
         "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1136,7 +1136,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1161,14 +1161,14 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "high",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит ММС",
         "label_uk": "Поводження з відходами / довкілля — спільне КП",
         "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1176,7 +1176,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1201,14 +1201,14 @@
         "form": "спільне утримання",
         "form_id": "joint_finance",
         "confidence": "low",
-        "rationale": "тема «Соціальні послуги» · пріор реєстру Мінрегіону · явний запит МСС",
+        "rationale": "тема «Соціальні послуги» · пріор реєстру Мінрегіону · явний запит ММС",
         "label_uk": "Соціальні послуги — спільне утримання",
         "label_en": "Social services — joint funding / maintenance"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1216,7 +1216,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1241,14 +1241,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит ММС",
         "label_uk": "Туризм / кластер — спільний проєкт",
         "label_en": "Tourism / cluster — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1256,7 +1256,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1281,14 +1281,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "high",
-        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит МСС",
+        "rationale": "тема «Туризм / кластер» · пріор реєстру Мінрегіону · явний запит ММС",
         "label_uk": "Туризм / кластер — спільний проєкт",
         "label_en": "Tourism / cluster — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1296,7 +1296,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1321,14 +1321,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1336,7 +1336,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1361,14 +1361,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1376,7 +1376,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1401,14 +1401,14 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "high",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит ММС",
         "label_uk": "Поводження з відходами / довкілля — спільне КП",
         "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1416,7 +1416,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1441,14 +1441,14 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "high",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит ММС",
         "label_uk": "Поводження з відходами / довкілля — спільне КП",
         "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1456,7 +1456,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1481,14 +1481,14 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "high",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит ММС",
         "label_uk": "Поводження з відходами / довкілля — спільне КП",
         "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1496,7 +1496,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1521,14 +1521,14 @@
         "form": "спільне КП",
         "form_id": "joint_enterprise",
         "confidence": "high",
-        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит МСС",
+        "rationale": "тема «Поводження з відходами / довкілля» · у реєстрі для цієї теми частіше «спільний проєкт» · явний запит ММС",
         "label_uk": "Поводження з відходами / довкілля — спільне КП",
         "label_en": "Waste management / environment — joint municipal enterprise"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1536,7 +1536,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         }
@@ -1561,14 +1561,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1576,7 +1576,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1601,14 +1601,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1616,7 +1616,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1641,14 +1641,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1656,7 +1656,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1681,14 +1681,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1696,7 +1696,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1721,14 +1721,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1736,7 +1736,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1761,14 +1761,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1776,7 +1776,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1801,14 +1801,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1816,7 +1816,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1841,14 +1841,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1856,7 +1856,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1881,14 +1881,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1896,7 +1896,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1921,14 +1921,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1936,7 +1936,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1961,14 +1961,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -1976,7 +1976,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2001,14 +2001,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2016,7 +2016,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2041,14 +2041,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2056,7 +2056,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2081,14 +2081,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2096,7 +2096,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2121,14 +2121,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2136,7 +2136,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2161,14 +2161,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2176,7 +2176,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2201,14 +2201,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2216,7 +2216,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2241,14 +2241,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2256,7 +2256,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2281,14 +2281,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2296,7 +2296,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2321,14 +2321,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2336,7 +2336,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2361,14 +2361,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2376,7 +2376,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2401,14 +2401,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2416,7 +2416,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2441,14 +2441,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2456,7 +2456,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2481,14 +2481,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2496,7 +2496,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2521,14 +2521,14 @@
         "form": "спільний проєкт",
         "form_id": "joint_project",
         "confidence": "low",
-        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит МСС",
+        "rationale": "тема «Інше / не визначено» · правило за темою · явний запит ММС",
         "label_uk": "Інше / не визначено — спільний проєкт",
         "label_en": "Other / unspecified — joint project"
       },
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -2536,7 +2536,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -8763,7 +8763,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -9415,7 +9415,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -9773,7 +9773,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }

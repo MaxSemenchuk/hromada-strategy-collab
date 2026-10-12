@@ -14,7 +14,7 @@ covers ALL partner countries, not just Germany. Trade-off: no per-partner
 "since" date or partnership type — just a verified country+city pair.
 
 Does NOT fold into v7 combined `score`. Does NOT set known=true (that flag
-is for curated domestic registry МСС only). Separate release layer, joined
+is for curated domestic registry ММС only). Separate release layer, joined
 with — but not merged into — twinning-partners.json (different source,
 different fields; cross-checking the two is future work).
 

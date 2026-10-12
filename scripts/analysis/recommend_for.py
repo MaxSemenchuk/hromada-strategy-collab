@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Agent-centric МСС recommendations for one seed hromada.
+"""Agent-centric ММС recommendations for one seed hromada.
 
 Re-ranks existing release edges for seed A by motivation / job-to-be-done.
 Does NOT rematch the corpus, change v7.2 lab weights, or set known:true.
@@ -700,7 +700,7 @@ def recommend_payload(
             "Гіпотези, доки known: true. Global v7.1 score лишається lab-валідацією."
             if seed_has_goals
             else "Ця громада без розібраних цілей стратегії — пріоритети з DREAM-проєктів "
-            "(якщо є в матриці) або гео / мережа МСС / доповнення ресурсів. "
+            "(якщо є в матриці) або гео / мережа ММС / доповнення ресурсів. "
             "Гіпотези, доки known: true."
         ),
         "caveat_en": (
@@ -709,7 +709,7 @@ def recommend_payload(
             "Hypotheses until known: true. Global v7.1 score remains lab validation."
             if seed_has_goals
             else "This hromada has no parsed strategy Goals — DREAM project titles "
-            "fill the priority slot when present, else geography / MSS network / "
+            "fill the priority slot when present, else geography / IMC network / "
             "complementary need. Hypotheses until known: true."
         ),
         "seed": {**resolved, "goals_available": seed_has_goals},

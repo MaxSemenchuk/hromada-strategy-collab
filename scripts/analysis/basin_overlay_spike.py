@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Spike: HydroBASINS lev06 ∩ hromada centroids × PIN / water МСС.
+"""Spike: HydroBASINS lev06 ∩ hromada centroids × PIN / water ММС.
 
 Does NOT fold into match.py score. Writes provenance JSON under
 data/research-log/basin-overlay-spike.json.

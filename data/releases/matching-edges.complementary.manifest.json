@@ -11,7 +11,7 @@
     "withTheme": 400
   },
   "method": "complementary v3: named deficit↔offer + capped kitchen-sink sectors; weighted DREAM/Strengths/resource → Challenges; prefer named-deficit then same-oblast shortlist; + suggested_theme/form (mss_suggest) + mss_candidate package/signals",
-  "warning": "МСС candidate hypotheses (complementary signal) — not v7 strategy matching, not known=true. Keyword hit ≠ verified МСС plan.",
+  "warning": "ММС candidate hypotheses (complementary signal) — not v7 strategy matching, not known=true. Keyword hit ≠ verified ММС plan.",
   "inputs": [
     "hromadas.json (Challenges/Strengths)",
     "dream-priorities.json",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""UA–EU municipal twinning layer (separate from domestic МСС matching).
+"""UA–EU municipal twinning layer (separate from domestic ММС matching).
 
 Primary source: SKEW (Engagement Global) German–Ukrainian municipal partnership
 list + map (HTML; ~250–300 links). French analogue: AFCCRE jumelage directory
@@ -8,7 +8,7 @@ signed UA–EU pairs + markers.json profile URLs. Tertiary: named foreign city
 partners in strategy extractions (PartnersMentioned / Projects / MSSAgreements).
 
 Does NOT fold into v7 combined `score`. Does NOT set known=true (that flag is
-for curated domestic registry МСС only).
+for curated domestic registry ММС only).
 
 Usage:
   yarn twinning                 # fetch SKEW if cache stale/missing + build release
@@ -1252,7 +1252,7 @@ def build_release(edges: list[dict], afccre_edges: list[dict] | None = None) -> 
     payload = {
         "generatedAt": generated,
         "warning": (
-            "UA–EU twinning layer — separate from domestic МСС. "
+            "UA–EU twinning layer — separate from domestic ММС. "
             "SKEW links are registry-sourced (DE–UA); AFCCRE jumelages are "
             "registry-sourced (FR–UA, PDF directory); Cities4Cities pairs come from "
             "news titles (hypotheses); strategy mentions are hypotheses; "
@@ -1361,7 +1361,7 @@ def build_release(edges: list[dict], afccre_edges: list[dict] | None = None) -> 
         json.dumps(
             {
                 "generatedAt": generated,
-                "caveat": "UA–EU twinning — SKEW + AFCCRE + Cities4Cities news + strategy. Not domestic МСС.",
+                "caveat": "UA–EU twinning — SKEW + AFCCRE + Cities4Cities news + strategy. Not domestic ММС.",
                 "hromadaCount": len(hromadas),
                 "skewLinked": linked_edges,
                 "afccrePartners": afccre_added,

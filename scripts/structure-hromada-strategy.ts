@@ -14,7 +14,7 @@
  * Schema keys (snake_case in JSON file):
  *   goals | strategic_goals[] | operational_goals[]  (goals flattened for release)
  *   projects, strengths, challenges, partners_mentioned, mss_agreements,
- *   mss_intents[] (quotes of explicit МСС language),
+ *   mss_intents[] (quotes of explicit ММС language),
  *   source_quality ("full-strategy"|"partial"|"proxy-info"), confidence_notes,
  *   donors_programs (string[])
  *

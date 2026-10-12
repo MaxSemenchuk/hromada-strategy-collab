@@ -183,7 +183,7 @@ titles; `c4c_url` means «listed in C4C municipality DB» (seeking partners).
 Authoritative **FR↔UA** jumelage list from the French local-government
 association. No CSV/API — PDF directory (~50 UA rows) plus a yearly «nouveaux»
 list. Same integration path as SKEW (`yarn twinning`; `pypdf`; cache under
-`data/cache/twinning/afccre-*.pdf`). Not Law 1508 МСС; not `known: true`;
+`data/cache/twinning/afccre-*.pdf`). Not Law 1508 ММС; not `known: true`;
 weak `social_capital` when *both* sides have registry twinning.
 
 Resolution uses `twinning-fr-aliases.json` (KATOTTG) because French spellings
@@ -417,5 +417,5 @@ gaps that *do* have subject text in quotes (ПМСД, трудовий архі�
 дамби, теплопостачання…). Honest residual: leave as `other`; do not invent
 themes from party geography alone.
 
-**Map:** sidebar «Теми угод МСС» filters PIN / pin∩corpus edges by `theme_ids`
+**Map:** sidebar «Теми угод ММС» filters PIN / pin∩corpus edges by `theme_ids`
 (not the five legal forms — form filter remains secondary).

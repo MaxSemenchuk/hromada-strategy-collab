@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build PIN + matching overlay viz: full МСС network + Leaflet map / force graph.
+"""Build PIN + matching overlay viz: full ММС network + Leaflet map / force graph.
 
 Sources:
   - data/cache/kse/partnerships-hromadas-network.csv
@@ -19,7 +19,7 @@ Overlay policy (2026-07-24 / layers 2026-07-29 / basins 2026-08-03):
     thematic      — high goals_cosine  → «схожа стратегія» (default ON)
     operational   — high geo           → «зручний сусід»   (default OFF)
     complementary — resource/DREAM ↔ Challenges (default OFF)
-    explicit_ask  — МСС language in strategy text (default OFF)
+    explicit_ask  — ММС language in strategy text (default OFF)
     shared_asset  — same named object (річка, кластер, …) in two strategies (default OFF)
     twinning      — UA–EU sister cities from SKEW / strategy (node highlight, default OFF)
     interreg      — keep.eu local-authority Interreg projects (node highlight, default OFF)
@@ -359,11 +359,11 @@ def agreement_essence(title: str, form: str = "") -> str:
         if form_short:
             short = form_short
 
-    return _cap(_clip(short or form or raw or "Угода МСС"))
+    return _cap(_clip(short or form or raw or "Угода ММС"))
 
 
 def load_mss_registry() -> dict[str, dict]:
-    """register_number → {title, form} from MinRegion MSS registry XLSX."""
+    """register_number → {title, form} from MinRegion IMC registry XLSX."""
     if not MSS_REGISTRY.exists():
         return {}
     try:
@@ -1386,7 +1386,7 @@ def build_payload() -> dict:
             "top_shared_asset": TOP_SHARED_ASSET,
             "overlay_policy": (
                 "thematic=goals_cosine track; operational=geo neighbours; "
-                "complementary=resource/DREAM↔Challenges; explicit_ask=МСС language; "
+                "complementary=resource/DREAM↔Challenges; explicit_ask=ММС language; "
                 "shared_asset=same named object in two strategies; "
                 "twinning=UA–EU sister cities (node highlight); "
                 "interreg=keep.eu local-authority projects (node highlight); "

@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Hromada Strategy Collaboration Mapping
 
-**Product:** candidate МСС agreements (pair · theme · one of 5 Law 1508-VII forms).
+**Product:** candidate ММС agreements (pair · theme · one of 5 Law 1508-VII forms).
 Strategy NLP, geo, complementary, explicit-ask, network (and basin underlay) are
 **discovery signals**, not IMC types. Spin-out from w3i-network (2026-07-23).
 Canonical store: `data/releases/` (local JSON). NocoDB sync archived under
@@ -30,12 +30,12 @@ networks as permanent. Write-up:
 
 - [README.md](../../README.md) — status, setup, commands
 - [docs/project-history.md](../../docs/project-history.md) — full methodology history (replaces Claude memory)
-- [docs/mss-cooperation-research.md](../../docs/mss-cooperation-research.md) — DOBRE + Tkachuk framing, МСС forms/procedure, frozen-elections context
+- [docs/mss-cooperation-research.md](../../docs/mss-cooperation-research.md) — DOBRE + Tkachuk framing, ММС forms/procedure, frozen-elections context
 - [internal/tkachuk-interview-2026-08.md](../../internal/tkachuk-interview-2026-08.md) — canonical expert interview (trust · water · associations)
 - [docs/donor-programs.md](../../docs/donor-programs.md) — DOBRE / EGAP / U-LEAD / GIZ / USAID… programme cheat-sheet
 - [docs/hromadas-schema.md](../../docs/hromadas-schema.md) — field schema
 - [docs/kse-synergy.md](../../docs/kse-synergy.md) — KSE join rules
-- [docs/ua-eu-twinning.md](../../docs/ua-eu-twinning.md) — UA–EU sister cities (format ≠ МСС)
+- [docs/ua-eu-twinning.md](../../docs/ua-eu-twinning.md) — UA–EU sister cities (format ≠ ММС)
 - [docs/eu-imc.md](../../docs/eu-imc.md) — EU–EU municipal cooperation (domestic IMC / EGTC–Interreg / CEMR twinning); context, not a matcher
 - Stakeholder site (GitHub Pages root): [docs/index.html](../../docs/index.html) — keep coverage numbers in sync with `data/releases/*.manifest.json`
 
@@ -47,7 +47,7 @@ networks as permanent. Write-up:
 - **Not public:** `internal/` — outreach drafts (`outreach-messages.md`;
   optional convenience HTML `internal/outreach.html` is gitignored and must
   not be published under `docs/`).
-- **Local source caches (gitignored):** `scripts/retrieval/raw/` (strategy PDFs) via `yarn download-raw`; `data/cache/mss/` (МСС registry XLSX) via `yarn fetch-mss-registry`; `data/cache/twinning/` (SKEW HTML) via `yarn twinning` — for re-analysis, not the release
+- **Local source caches (gitignored):** `scripts/retrieval/raw/` (strategy PDFs) via `yarn download-raw`; `data/cache/mss/` (ММС registry XLSX) via `yarn fetch-mss-registry`; `data/cache/twinning/` (SKEW HTML) via `yarn twinning` — for re-analysis, not the release
 - **KSE covariates:** fetch at analysis time via `enrich_from_kse.py`; do not vendor KSE CSVs
 - **Archived (do not run day-to-day):** `scripts/analysis/legacy/` (early matching
   passes); `scripts/legacy/nocodb/` (former shared CRM sync)
@@ -121,13 +121,13 @@ Canvas: `canvases/eu-imc.canvas.tsx`.
 
 ## Hard rules
 
-1. Matching scores are **hypotheses** unless `known: true` (curated registry-confirmed). Do not set `known: true` on all PIN edges — use `matching-edges.pin-corpus.json` for the broader overlap. Do not set `known: true` on twinning links either (SKEW / AFCCRE are foreign twinning, not domestic МСС).
+1. Matching scores are **hypotheses** unless `known: true` (curated registry-confirmed). Do not set `known: true` on all PIN edges — use `matching-edges.pin-corpus.json` for the broader overlap. Do not set `known: true` on twinning links either (SKEW / AFCCRE are foreign twinning, not domestic ММС).
 2. Sector-tag overlap is **not** a matching signal.
 3. `edem_total`: use `edem-data.csv`; missing hromadas ≠ zero.
 4. Batch growth: `scripts/retrieval/` + in-session structuring → `yarn structure-hromada --json … --write-release`. Prefer `yarn priority-corpus-growth` when expanding PIN∩corpus validation coverage. See [docs/corpus-growth.md](../../docs/corpus-growth.md).
 5. Do not inflate CKAN "123 strategies" — mostly unrelated datasets.
 6. Minimize scope; match existing TS/Python conventions in `scripts/`.
-7. Product unit is an **МСС candidate agreement** (`package` theme·form +
+7. Product unit is an **ММС candidate agreement** (`package` theme·form +
    `signals[]`). Do not present combined `score` as «strategy match». Signal
    labels (`схожа стратегія` / `зручний сусід` / `доповнення` / `явний запит` /
    `спільний обʼєкт` / `місто-побратим ЄС` / `схожі проєкти DREAM`) are discovery evidence — **not** the five legal IMC forms.
@@ -171,7 +171,7 @@ hromadas of **10–40 thousand** (~631 / 1432 with `Population`; mixed
 міська / селищна / сільська). Enough capacity to sign Law 1508, still
 need partners (DOBRE bottleneck), matches ВА ОТГ not АМУ. Second wave:
 **5–10k сільські** in Poltava / Rivne / Vinnytsia / Dnipro (already sign
-bilateral МСС). Deprioritize **100k+** for the 1508 product (twinning /
+bilateral ММС). Deprioritize **100k+** for the 1508 product (twinning /
 donor track). Skip **<5k** unless explicit-ask or already in a named
 cluster. Median hromada ~11k; селищні 10–20k are an underserved gap.
 PIN degree ≥10 is almost always one multi-party clique — rank by distinct

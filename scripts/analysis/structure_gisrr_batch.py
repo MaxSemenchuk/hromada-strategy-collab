@@ -37,7 +37,7 @@ OUT_DIR = ROOT / "scripts" / "hromada-output"
 HIERARCHY_GISRR = ROOT / "data" / "sources" / "gisrr-goals-hierarchy.json"
 
 MSS_RE = re.compile(
-    r"міжмуніцип\w*|міжтериторіальн\w*|\bМСС\b|сусідн\w+\s+громад",
+    r"міжмуніцип\w*|міжтериторіальн\w*|\bММС\b|сусідн\w+\s+громад",
     re.I,
 )
 SWOT_STRENGTH = {"1"}
@@ -193,7 +193,7 @@ def convert_detail(detail: dict, catalog_entry: dict) -> dict | None:
     ]
     projects_lines = [f"- {t}" for t in (head + extra)[:40]]
 
-    # MSS intents from goals/subgoals/tasks
+    # IMC intents from goals/subgoals/tasks
     mss_intents: list[dict] = []
     scan_lines = (
         opportunities
@@ -275,7 +275,7 @@ def convert_detail(detail: dict, catalog_entry: dict) -> dict | None:
 
     mss_note = ""
     if uniq_intents:
-        mss_note = "Явний запит МСС у GISRR-цілях/задачах: " + uniq_intents[0]["quote"][:220]
+        mss_note = "Явний запит ММС у GISRR-цілях/задачах: " + uniq_intents[0]["quote"][:220]
 
     return {
         "goals": goals_flat,

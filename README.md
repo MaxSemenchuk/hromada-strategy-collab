@@ -4,10 +4,10 @@
 [![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE)
 [![Data license: CC BY 4.0](https://img.shields.io/badge/data%20license-CC%20BY%204.0-lightgrey.svg)](DATA-LICENSE.md)
 
-**Product unit:** candidate **МСС** (inter-municipal cooperation) agreements —
+**Product unit:** candidate **ММС** (inter-municipal cooperation) agreements —
 pair · theme · legal form (one of five under Law 1508-VII) — instead of ad-hoc,
 relationship-based matchmaking. Strategy-text NLP is **one discovery signal**
-among geography, complementary resources/DREAM, explicit МСС language, and the
+among geography, complementary resources/DREAM, explicit ММС language, and the
 existing partnership network.
 
 Spun out from the W3I ecosystem project (`w3i-network`) on 2026-07-23 as its own
@@ -39,14 +39,14 @@ permanent. Write-up:
 [docs/mss-cooperation-research.md#frozen-elections-otg](docs/mss-cooperation-research.md#frozen-elections-otg).
 
 Prior-art check (2026-07-20/21) found no public product doing this specific
-thing. Adjacent efforts are single-hromada monitoring (U-LEAD) or manual МСС
+thing. Adjacent efforts are single-hromada monitoring (U-LEAD) or manual ММС
 matchmaking. Combining registry/network topology with strategy and resource
 signals appears to be genuine whitespace.
 
 ## Method
 
 1. **Gather signals** — strategy Goals (retrieve + structure), KSE geography /
-   existing МСС network, complementary resource↔Challenges, explicit МСС language,
+   existing ММС network, complementary resource↔Challenges, explicit ММС language,
    DREAM/fiscal covariates. Strategy scan is signal #1, not the whole product.
 2. **Package** — rule-based `suggested_theme` / `suggested_form` (`mss_suggest.py`)
    normalized to `package` + `signals[]` (`mss_candidate.py`). Five Law 1508-VII
@@ -122,14 +122,14 @@ scripts/
 data/
 ├── sources/       # reference registries (KATOTTG classifier extract, Tags table dump, hierarchy overrides)
 ├── releases/      # THE dataset — canonical, current, CC BY 4.0 (see data/releases/MANIFEST.md)
-├── cache/         # gitignored re-fetchable sources (KSE pulls, МСС registry XLSX, …)
+├── cache/         # gitignored re-fetchable sources (KSE pulls, ММС registry XLSX, …)
 └── research-log/  # dated growth snapshots (7→13→23→30→46→54 hromadas) — provenance, not the dataset
 docs/                             # GitHub Pages site root (see docs/README.md)
 ├── index.html                    # landing «О проєкті» (all stakeholder audiences)
 ├── matches.html                  # known pairs + thematic/operational/complementary/explicit-ask
 ├── funds.html                    # donor portfolio: shared next grant / bridges / hubs
 ├── resources.html                # KSE resource proxies × DREAM priorities
-├── strategy-writing-guide.md     # how to write strategies that surface МСС signals
+├── strategy-writing-guide.md     # how to write strategies that surface ММС signals
 ├── donor-programs.md             # DOBRE / EGAP / U-LEAD / GIZ / USAID… reference
 ├── corpus-growth.md              # priority corpus growth checklist
 ├── mss-pin-matching-graph.html   # full PIN map + matching overlays
@@ -140,8 +140,8 @@ docs/                             # GitHub Pages site root (see docs/README.md)
 internal/
 └── outreach-messages.md          # draft stakeholder outreach copy — not part of the dataset, not for public reuse
 REFERENCES.md                     # theoretical grounding — network governance, IMC, institutional diversity
-docs/mss-cooperation-research.md  # DOBRE bottleneck thesis, МСС forms/procedure, ЗП 11412, theme/form roadmap
-docs/ua-eu-twinning.md            # UA–EU sister cities: format, SKEW/C4C, cases (≠ МСС)
+docs/mss-cooperation-research.md  # DOBRE bottleneck thesis, ММС forms/procedure, ЗП 11412, theme/form roadmap
+docs/ua-eu-twinning.md            # UA–EU sister cities: format, SKEW/C4C, cases (≠ ММС)
 docs/eu-imc.md                    # EU–EU municipal cooperation (domestic IMC / EGTC / Interreg / twinning) — context, not a matcher
 docs/donor-programs.md            # donor/fund cheat-sheet (DOBRE, EGAP, U-LEAD, GIZ, USAID…)
 LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see License & data below
@@ -150,7 +150,7 @@ LICENSE / DATA-LICENSE.md         # MIT (code) / CC BY 4.0 (data) — see Licens
 ## Stakeholder site (GitHub Pages)
 
 Static site in [`docs/`](docs/) — landing («О проєкті»), matching candidates, fund
-portfolio view, МСС map, shared top menu.
+portfolio view, ММС map, shared top menu.
 
 **URL (after Pages is enabled):** https://maxsemenchuk.github.io/hromada-strategy-collab/
 
@@ -160,7 +160,7 @@ One-time setup: repo **Settings → Pages → Source: GitHub Actions**, then pus
 > The repository is currently private — public Pages needs a public repo (or GitHub Pro
 > for private Pages). Collaborators with repo access can still use the workflow URL once enabled.
 
-Raw strategy PDFs/DOC/HTML and the МСС registry XLSX are kept as a **local
+Raw strategy PDFs/DOC/HTML and the ММС registry XLSX are kept as a **local
 cache** for re-extraction and alternate analyses — not committed, not part of
 the public release. Populate with:
 
@@ -216,7 +216,7 @@ runs in the browser: paste an OpenAI key in the gear; it searches
 
 Code (`scripts/`) is MIT. The dataset in [data/releases/](data/releases/) is
 **CC BY 4.0** — see [DATA-LICENSE.md](DATA-LICENSE.md) for attribution
-requirements and upstream source credits (data.gov.ua, DREAM, the МСС
+requirements and upstream source credits (data.gov.ua, DREAM, the ММС
 registry). [data/research-log/](data/research-log/) is provenance material,
 not the maintained dataset — read its README before building on it.
 [internal/](internal/) holds private outreach drafts (`outreach-messages.md`;
@@ -261,7 +261,7 @@ yarn recommend-for --seed "Галицька" --motivation water_basin
 yarn test-recommend-for && yarn build-recommend-preview
 # docs: agent-centric vs global score → docs/agent-centric-recommendations.md
 
-# Hierarchy + explicit МСС language + complementary / named objects (not score)
+# Hierarchy + explicit ММС language + complementary / named objects (not score)
 yarn extract-strategy-entities   # named objects, neighbour NER, GISRR SWOT/tasks
 yarn test-strategy-text && yarn test-complementary-match
 yarn build-goals-hierarchy
@@ -336,7 +336,7 @@ yarn match
   (`yarn test-length-norm`). Same release also restores true pairwise cosine
   (`A @ B.T`); v4–v7 accidentally sliced embedding coordinates via `np.ix_`.
 - **Goals-cosine similarity finds thematic/strategic-vision matches, not operational
-  ones.** A real, confirmed МСС pair cooperating on a shared CNAP office scored only
+  ones.** A real, confirmed ММС pair cooperating on a shared CNAP office scored only
   rank #132 of 253 on pure cosine — that kind of back-office cooperation needs a
   proximity/capacity signal, not text similarity. A disclosed weighted combination
   (60% goals-cosine + 40% oblast/rayon-adjacency) recovered it to rank #6.
@@ -366,7 +366,7 @@ This project deliberately **does not duplicate** hromada-level covariate work
 already done elsewhere. The primary complement is
 **[KSE-Loc-Data-Hub](https://github.com/kse-ua/KSE-Loc-Data-Hub)** (KSE
 Institute; Zenodo [10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573)) —
-budget, geography, e-dem, existing МСС agreements, war status, and ~130 other
+budget, geography, e-dem, existing ММС agreements, war status, and ~130 other
 vars for all 1,469 mainland hromadas. We join on **KATOTTG** and consume those
 covariates at analysis time; KSE does not publish strategy-text extractions or
 goals-similarity candidate pairs — that is what this repo adds.

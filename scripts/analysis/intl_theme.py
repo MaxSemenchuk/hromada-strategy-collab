@@ -1,4 +1,4 @@
-"""UA–EU cooperation themes — separate from domestic МСС (Law 1508) packaging.
+"""UA–EU cooperation themes — separate from domestic ММС (Law 1508) packaging.
 
 Used on the MinRegion international-agreement register (Law 3668-IX) and
 Interreg. Keep.eu official `themes[]` map into the same ids; English titles

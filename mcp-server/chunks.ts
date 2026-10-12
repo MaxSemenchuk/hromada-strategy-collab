@@ -56,7 +56,7 @@ const SYNONYMS: { test: RegExp; extra: string[] }[] = [
   { test: /тпв|смітт|полігон|відход|waste|landfill/i, extra: ["ТПВ", "відходи", "сміття", "полігон"] },
   { test: /туризм|спадщин|побратим|tourism|heritage/i, extra: ["туризм", "спадщина"] },
   { test: /цнап|е-уряд|цифров|cnap|digital/i, extra: ["ЦНАП", "цифровізація", "е-урядування"] },
-  { test: /мсс|міжмуніцип|співроб|коопер/i, extra: ["МСС", "міжмуніципальне"] },
+  { test: /мсс|міжмуніцип|співроб|коопер/i, extra: ["ММС", "міжмуніципальне"] },
 ];
 
 function readJson(path: string): unknown {
@@ -256,7 +256,7 @@ function addCandidates(add: Adder, repoRoot: string): void {
           .join(", ")
       : "";
     const text = [
-      `Кандидат МСС: ${shortName(a)} ↔ ${shortName(b)}`,
+      `Кандидат ММС: ${shortName(a)} ↔ ${shortName(b)}`,
       status ? `статус: ${status}` : "",
       label,
       rationale,
@@ -300,7 +300,7 @@ function addTwinning(add: Adder, repoRoot: string): void {
         field: "twinning",
         theme: country,
         source: "twinning-partners.json",
-        text: `Місто-побратим ЄС: ${partner}${country ? ` (${country})` : ""}${src ? `, джерело ${src}` : ""} — не договір МСС за Законом 1508-VII`,
+        text: `Місто-побратим ЄС: ${partner}${country ? ` (${country})` : ""}${src ? `, джерело ${src}` : ""} — не договір ММС за Законом 1508-VII`,
       });
     }
   }
@@ -327,7 +327,7 @@ function addIntl(add: Adder, repoRoot: string): void {
         field: "intl_agreement",
         theme: str(rec.partner_country),
         source: "intl-agreements.json",
-        text: `Закон 3668-IX: ${title}. Партнер: ${str(rec.partner_name)} (${str(rec.partner_country)}). Сфера: ${str(rec.sphere)}. Не форма МСС 1508 і не known:true.`,
+        text: `Закон 3668-IX: ${title}. Партнер: ${str(rec.partner_name)} (${str(rec.partner_country)}). Сфера: ${str(rec.sphere)}. Не форма ММС 1508 і не known:true.`,
       });
     }
   }
@@ -501,7 +501,7 @@ function addSitePages(add: Adder, repoRoot: string): void {
       `Сторінки стейкхолдерського сайту (GitHub Pages, папка docs/): ${catalog}. ` +
       "HTML — публічний інтерфейс; markdown у docs/ — методичні сторінки, теж відкриваються за URL. " +
       "Навігація: Про проєкт (index.html), Кандидати (matches.html), Фонди (funds.html), " +
-      "Ресурси (resources.html), Мапа угод МСС (mss-pin-matching-graph.html), AIM-CC експеримент.",
+      "Ресурси (resources.html), Мапа угод ММС (mss-pin-matching-graph.html), AIM-CC експеримент.",
   });
 
   for (const file of files) {

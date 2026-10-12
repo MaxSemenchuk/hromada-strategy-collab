@@ -1,6 +1,6 @@
 # Priority corpus growth
 
-Grow strategy text where it adds **PIN ∩ corpus** validation pairs (KSE МСС
+Grow strategy text where it adds **PIN ∩ corpus** validation pairs (KSE ММС
 neighbours of hromadas that already have `Goals`).
 
 ## Commands

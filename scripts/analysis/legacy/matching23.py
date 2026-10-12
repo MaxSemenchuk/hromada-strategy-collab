@@ -41,7 +41,7 @@ edges.sort(key=lambda e: -e['goals_cosine'])
 print(f"Total pairs: {len(edges)}\n")
 print("=== TOP 20 ===")
 for idx, e in enumerate(edges[:20], 1):
-    tag = '✓ KNOWN МСС' if e['known'] else ''
+    tag = '✓ KNOWN ММС' if e['known'] else ''
     print(f"{idx:>2}. {e['a'][:30]:<30} <-> {e['b'][:30]:<30} {e['goals_cosine']:>6} {'SAME-OBLAST' if e['same_oblast'] else ''} {tag}")
 
 print("\n=== Where do known pairs rank? ===")

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Normalize matching edges into МСС candidate packages + evidence signals.
+"""Normalize matching edges into ММС candidate packages + evidence signals.
 
 Product unit: candidate agreement (theme · form), not strategy similarity.
 Does not change v7 combined `score` or set known=true.
@@ -24,9 +24,9 @@ SIGNAL_LABELS: dict[str, str] = {
     "strategy_goals": "схожа стратегія",
     "geo": "зручний сусід",
     "complementary": "доповнення ресурсів",
-    "explicit_ask": "явний запит МСС",
+    "explicit_ask": "явний запит ММС",
     "shared_asset": "спільний обʼєкт",
-    "network": "мережа МСС",
+    "network": "мережа ММС",
     "twinning": "місто-побратим ЄС",
     "donor": "спільна донорська програма",
     "structural": "ресурси / DREAM",
@@ -455,7 +455,7 @@ def write_candidates_sidecar(
         "generatedAt": generated,
         "kind": "mss_candidates",
         "caveat": (
-            "Кандидати договорів МСС (гіпотези). "
+            "Кандидати договорів ММС (гіпотези). "
             "package.form — правова форма за правилами, не факт реєстру. "
             "known/registry_known — лише кураторська валідація. "
             "Стратегії / geo / complementary / explicit-ask / shared-asset — сигнали пошуку."

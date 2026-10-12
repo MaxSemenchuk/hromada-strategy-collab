@@ -23,7 +23,7 @@
     {
       href: "mss-pin-matching-graph.html",
       id: "map",
-      label: { uk: "Мапа угод МСС", en: "IMC map" }
+      label: { uk: "Мапа угод ММС", en: "IMC map" }
     },
     {
       href: "aim-cc-field-experiment.html",
@@ -33,7 +33,7 @@
   ];
 
   var BRAND = {
-    uk: 'Партнери <span>для МСС</span>',
+    uk: 'Партнери <span>для ММС</span>',
     en: 'IMC <span>partners</span>'
   };
   var MENU = { uk: "Меню", en: "Menu" };

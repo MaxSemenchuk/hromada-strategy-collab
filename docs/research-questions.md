@@ -7,23 +7,23 @@ item to project-history.md once it has a concrete plan and starts moving.
 
 ## 1. Predictive validity (method is currently retrospective-only)
 
-- **Forward-test**: take an earlier snapshot of the МСС registry and check
+- **Forward-test**: take an earlier snapshot of the ММС registry and check
   whether pairs the model would have matched *then* went on to sign an
   agreement *later*. Does `goals_cosine` / combined `score` have predictive
   power, or only retrospective pattern-matching on already-known pairs?
 - Temporal precedence: do pairs with `explicit-ask` language in their
-  strategy text sign a МСС *sooner* than pairs without it? Checkable against
+  strategy text sign a ММС *sooner* than pairs without it? Checkable against
   strategy publication dates vs registry registration dates.
 
 ## 2. Frozen elections / head-tenure dynamics
 
 - Does **head tenure length** (years without local elections — "sticky
-  head") correlate with МСС signing frequency/speed? Turns the hypothesis in
+  head") correlate with ММС signing frequency/speed? Turns the hypothesis in
   [mss-cooperation-research.md § frozen elections](mss-cooperation-research.md#frozen-elections-otg)
   into a testable regression.
 - "Fragile heads" risk score: can we predict which existing partnerships are
   most exposed to a future change of head — i.e. which relationships most
-  need institutionalizing into a formal МСС now, before relying further on
+  need institutionalizing into a formal ММС now, before relying further on
   personal trust?
 
 ## 3. Multi-party clusters (method is currently pairwise-only)
@@ -37,7 +37,7 @@ item to project-history.md once it has a concrete plan and starts moving.
 
 ## 4. Water/basin thematic focus (flagged as "next" by Tkachuk)
 
-- Direct test: among registered water-themed МСС, what share of pairs share
+- Direct test: among registered water-themed ММС, what share of pairs share
   a HydroBASINS lev06 basin — is that a stronger signal than the
   rayon/oblast adjacency already in `geo_score`?
 - Can a "basin urgency" variable (shared water body + explicit-ask in text)
@@ -47,7 +47,7 @@ item to project-history.md once it has a concrete plan and starts moving.
 
 - Does shared participation in one donor program (DOBRE/GIZ/U-LEAD/…) act
   as an instrument that lowers transaction costs — i.e. do pairs with a
-  shared donor sign МСС faster/more often than pairs with equal
+  shared donor sign ММС faster/more often than pairs with equal
   `goals_cosine` but no shared donor? Operationalizes Tkachuk's "AI lowers
   uncertainty, doesn't replace trust" claim.
 
@@ -68,8 +68,8 @@ item to project-history.md once it has a concrete plan and starts moving.
   does the same product class (pair · theme · form + signals) transfer to
   university↔hromada cooperation, and is there an analog of "explicit ask"
   in that text?
-- UA–EU twinning × domestic МСС: do hromadas with an active sister-city
-  partnership (SKEW/C4C) have a higher rate of domestic МСС on the same
+- UA–EU twinning × domestic ММС: do hromadas with an active sister-city
+  partnership (SKEW/C4C) have a higher rate of domestic ММС on the same
   theme (external cooperation experience lowering the barrier to internal
   cooperation)?
 

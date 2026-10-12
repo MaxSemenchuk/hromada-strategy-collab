@@ -344,7 +344,7 @@ def main() -> None:
                     "strategy_text named objects + neighbour NER + GISRR SWOT type 3 / "
                     "task tail; shared-asset pairs by (kind, key); not v7 score"
                 ),
-                "warning": "МСС candidate hypotheses — not known=true.",
+                "warning": "ММС candidate hypotheses — not known=true.",
             },
             ensure_ascii=False,
             indent=2,

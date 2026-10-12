@@ -1,5 +1,5 @@
 /**
- * Fetch the official МСС (inter-municipal cooperation) agreements registry
+ * Fetch the official ММС (inter-municipal cooperation) agreements registry
  * from data.gov.ua into data/cache/mss/ — local cache for known-pair validation
  * and alternate analyses. Gitignored (under data/cache/).
  *
@@ -92,7 +92,7 @@ function resourceSortKey(r: CkanResource): number {
 function pickResource(resources: CkanResource[]): CkanResource {
   const xlsx = resources.filter((r) => r.url && isXlsx(r));
   if (!xlsx.length) {
-    throw new Error("No XLSX resources found on МСС registry package");
+    throw new Error("No XLSX resources found on ММС registry package");
   }
 
   const healthy = xlsx.filter((r) => r.archiver?.is_broken !== true);

@@ -12,5 +12,5 @@
     "withTheme": 23
   },
   "namedNeighbourHromadas": 9,
-  "method": "regex МСС/кооперація on strategy fields + curated hierarchy intents + GISRR SWOT/task extras from strategy-entities + neighbour NER + suggested_theme/form (mss_suggest) + mss_candidate package/signals"
+  "method": "regex ММС/кооперація on strategy fields + curated hierarchy intents + GISRR SWOT/task extras from strategy-entities + neighbour NER + suggested_theme/form (mss_suggest) + mss_candidate package/signals"
 }

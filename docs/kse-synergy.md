@@ -3,7 +3,7 @@
 This project and [KSE-Loc-Data-Hub](https://github.com/kse-ua/KSE-Loc-Data-Hub)
 cover the same 1,469 mainland Ukrainian hromadas but answer different questions.
 We join on **KATOTTG** and treat KSE as the authoritative covariate layer; this
-repo adds strategy-text semantics and МСС candidate hypotheses KSE does not
+repo adds strategy-text semantics and ММС candidate hypotheses KSE does not
 produce.
 
 For a deep dive on KSE's structure, edem data quality, and publication record,
@@ -18,8 +18,8 @@ see [external-data-sources.md](external-data-sources.md#kse-loc-data-hub).
 | **Question** | What structural/administrative factors explain hromada resilience and decentralization outcomes? | Which hromadas *should* be talking to each other (or to W3I) based on what their own strategy documents say? |
 | **Primary data** | ~130 hromada-level covariates (budget, geography, elections, edem, partnerships, war status, …) compiled for academic research | LLM-structured extractions from official development-strategy documents + pairwise goals-similarity scores |
 | **Method** | Econometric / GIS analysis (R pipeline in `src/manipulation/`) | Corpus NLP: mean-centered sub-goal embeddings on `Goals` text |
-| **МСС output** | Counts and attributes of *existing* registered partnership agreements (`partnerships-hromadas.csv`) | Ranked *candidate* pairs — unverified hypotheses unless marked `known: true` against the registry |
-| **Audience** | KSE research group, policy papers, VoxUkraine, Hromada Dashboard | W3I Civic Tech Lab outreach, МСС matchmaking pilots, open-data researchers |
+| **ММС output** | Counts and attributes of *existing* registered partnership agreements (`partnerships-hromadas.csv`) | Ranked *candidate* pairs — unverified hypotheses unless marked `known: true` against the registry |
+| **Audience** | KSE research group, policy papers, VoxUkraine, Hromada Dashboard | W3I Civic Tech Lab outreach, ММС matchmaking pilots, open-data researchers |
 
 **Rule of thumb:** if a variable exists in KSE's derived CSVs, we fetch and join
 it at analysis time — we do not copy those files into this repo or re-derive
@@ -52,7 +52,7 @@ do not vend copies of KSE CSVs in `data/releases/`.
 
 | KSE file | Fields used | Role in this project |
 |----------|-------------|----------------------|
-| `geography.csv` | Distance to Russia/Belarus/EU border, frontline proximity, travel time to oblast center | Proximity signal alongside oblast/rayon adjacency in weighted matching (operational/back-office МСС pairs need geography, not just text similarity) |
+| `geography.csv` | Distance to Russia/Belarus/EU border, frontline proximity, travel time to oblast center | Proximity signal alongside oblast/rayon adjacency in weighted matching (operational/back-office ММС pairs need geography, not just text similarity) |
 | `edem-data.csv` | `edem_petitions`, `edem_consultations`, `edem_participatory_budget`, `edem_open_hromada`, `edem_total` (0–4) | Civic-tech maturity proxy for W3I outreach prioritization (see [W3I use case](#w3i-use-case-civic-tech-lab-outreach) below) |
 | `partnerships-hromadas.csv` | Existing inter-municipal agreement counts and partner lists | Curated ground-truth (`known: true`) **and** broader PIN∩corpus report (`mss_network>0` → `matching-edges.pin-corpus.json`); sanity-check against hypotheses |
 | `minregion-war-status.csv` | Occupation / frontline / LMA status | Context for missing or stale strategy documents; filter or annotate hromadas where retrieval is impossible or misleading |
@@ -101,7 +101,7 @@ Items KSE does not currently publish that we can cross-link or share on request:
 | **Matching edges (hypotheses)** | `data/releases/matching-edges.json` | Pairwise goals-cosine scores over the text-mined corpus; `known: true` marks a curated registry-confirmed subset for method regression; `matching-edges.pin-corpus.json` lists all `mss_network>0` overlaps; other pairs are *candidates*, not facts |
 | **Retrieval nulls** | `SourceQuality = none` rows | Honest record of hromadas where no findable strategy exists — useful when interpreting gaps in text-based outcomes |
 
-We do **not** claim our candidate pairs are real МСС plans. KSE's
+We do **not** claim our candidate pairs are real ММС plans. KSE's
 `partnerships-hromadas.csv` remains authoritative for *existing* agreements;
 our edges are leads for further verification.
 

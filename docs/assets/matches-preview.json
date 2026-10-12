@@ -40,7 +40,7 @@
   "candidatesSidecar": {
     "registryKnown": 11,
     "hypotheses": 169,
-    "caveat": "Кандидати договорів МСС (гіпотези). package.form — правова форма за правилами, не факт реєстру. known/registry_known — лише кураторська валідація. Стратегії / geo / complementary / explicit-ask / shared-asset — сигнали пошуку."
+    "caveat": "Кандидати договорів ММС (гіпотези). package.form — правова форма за правилами, не факт реєстру. known/registry_known — лише кураторська валідація. Стратегії / geo / complementary / explicit-ask / shared-asset — сигнали пошуку."
   },
   "candidateStats": {
     "total": 180,
@@ -180,7 +180,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -204,7 +204,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -224,7 +224,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -273,7 +273,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -299,7 +299,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -355,7 +355,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -373,7 +373,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         },
@@ -393,7 +393,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -448,7 +448,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -472,7 +472,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -486,7 +486,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -541,13 +541,13 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -591,13 +591,13 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -640,7 +640,7 @@
       "signals": [
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -664,7 +664,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         },
@@ -678,7 +678,7 @@
       "signal_chips": [
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -739,7 +739,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -757,7 +757,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         },
@@ -777,7 +777,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -832,7 +832,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -858,7 +858,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -913,7 +913,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -945,7 +945,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -994,13 +994,13 @@
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -1038,13 +1038,13 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -1093,7 +1093,7 @@
       "signals": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
@@ -1105,7 +1105,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -1125,7 +1125,7 @@
       "signal_chips": [
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "high"
         },
@@ -1137,7 +1137,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -14340,7 +14340,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -14366,7 +14366,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -14387,8 +14387,8 @@
       "suggested_theme": "Агломерація / метрополія",
       "suggested_form": "агломерація",
       "suggest_confidence": "medium",
-      "suggest_rationale": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС",
-      "suggest_caveat": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС",
+      "suggest_rationale": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне ММС",
+      "suggest_caveat": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне ММС",
       "kind": "mss_candidate",
       "discovery_primary": "geo",
       "status": "hypothesis",
@@ -14398,10 +14398,10 @@
         "form": "агломерація",
         "form_id": "agglomeration",
         "confidence": "medium",
-        "rationale": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС",
+        "rationale": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне ММС",
         "label_uk": "Агломерація / метрополія — агломерація",
         "label_en": "Agglomeration / metro area — agglomeration",
-        "caveat": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС"
+        "caveat": "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне ММС"
       },
       "signals": [
         {
@@ -14418,7 +14418,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -14456,7 +14456,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -14517,7 +14517,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         },
@@ -14599,7 +14599,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -14625,7 +14625,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -14745,7 +14745,7 @@
       "signals": [
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -14757,7 +14757,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         },
@@ -14777,7 +14777,7 @@
       "signal_chips": [
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -14789,7 +14789,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         }
@@ -14845,7 +14845,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -14877,7 +14877,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -14932,7 +14932,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -14944,7 +14944,7 @@
         },
         {
           "id": "explicit_ask",
-          "label_uk": "явний запит МСС",
+          "label_uk": "явний запит ММС",
           "label_en": "explicit IMC request",
           "strength": "medium"
         },
@@ -14970,7 +14970,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -15195,7 +15195,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "medium"
         }
@@ -15265,7 +15265,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -15291,7 +15291,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -15423,7 +15423,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -15455,7 +15455,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -15505,7 +15505,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -15531,7 +15531,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -15581,7 +15581,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -15607,7 +15607,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -15657,7 +15657,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -15689,7 +15689,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }
@@ -15739,7 +15739,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         },
@@ -15771,7 +15771,7 @@
         },
         {
           "id": "network",
-          "label_uk": "мережа МСС",
+          "label_uk": "мережа ММС",
           "label_en": "IMC network",
           "strength": "high"
         }

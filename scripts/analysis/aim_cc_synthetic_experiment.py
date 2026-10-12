@@ -185,7 +185,7 @@ def load_historical_rates(total_pairs: int) -> dict[str, Any]:
     from the corpus itself instead of a live random-pair outreach arm:
       - network_tie: any real KSE-observed partnership signal (mss_network>0,
         PIN∩corpus) between the pair, ever — data/releases/matching-edges.pin-corpus.json
-      - signed_known: a curated, confirmed МСС agreement between the pair, ever
+      - signed_known: a curated, confirmed ММС agreement between the pair, ever
 
     CAVEAT (load-bearing): both measure "did these two ever show any tie,
     over unknown history" — a totally different construct from "replied to

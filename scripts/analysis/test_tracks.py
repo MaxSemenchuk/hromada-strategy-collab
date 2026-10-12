@@ -72,7 +72,7 @@ def test_release_files() -> None:
     if any(e.get("known") for e in thematic + operational):
         raise SystemExit("slice files must exclude known=true validation pairs")
     if any(float(e.get("mss_network") or 0) > 0 for e in operational):
-        raise SystemExit("operational slice must exclude existing МСС-network links")
+        raise SystemExit("operational slice must exclude existing ММС-network links")
     if any(e.get("track") != TRACK_THEMATIC for e in thematic):
         raise SystemExit("thematic slice contains non-thematic rows")
     if any(e.get("track") != TRACK_OPERATIONAL for e in operational):

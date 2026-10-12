@@ -562,7 +562,7 @@
       },
       {
         "id": "explicit_ask",
-        "label_uk": "явний запит МСС",
+        "label_uk": "явний запит ММС",
         "label_en": "explicit IMC request",
         "strength": "medium"
       },
@@ -3036,7 +3036,7 @@
       },
       {
         "id": "explicit_ask",
-        "label_uk": "явний запит МСС",
+        "label_uk": "явний запит ММС",
         "label_en": "explicit IMC request",
         "strength": "medium"
       },
