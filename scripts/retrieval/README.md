@@ -81,7 +81,7 @@ yarn structure-gisrr --limit 10
 yarn extract-strategy-entities && yarn extract-mss-intents && yarn complementary-match && yarn export-matching-edges && yarn graph-pin-matching
 ```
 
-## МСС registry (ground truth)
+## ММС registry (ground truth)
 
 ```bash
 yarn fetch-mss-registry            # → data/cache/mss/mss_registry.xlsx

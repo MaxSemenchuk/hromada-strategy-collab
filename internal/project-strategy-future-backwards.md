@@ -58,7 +58,7 @@ surfaced yet:
 - **A draft EU-instrument pivot already exists**
   ([internal/eu-transfer-one-pager.md](eu-transfer-one-pager.md)): reposition as
   a system for EU cooperation instruments (Interreg looks structurally closest
-  to Law 1508 МСС), with the Ukraine rollout as the *validation experiment*,
+  to Law 1508 ММС), with the Ukraine rollout as the *validation experiment*,
   not the target market. It explicitly flags its own risk: without picking one
   instrument + a validation dataset first, this reads as grant-chasing
   repackaging to any funder who's seen that move before.
@@ -109,7 +109,7 @@ What was in the working note, plus what should be added given the above:
   it, not "EU funding" in the abstract. Pitch names the three EU-internal
   stacks and refuses the wrong ones (mandatory EPCI coverage, CEMR twinning
   marketplace, full EU↔EU cosine).
-- Many МСС collaborations result, **and** the forward-test confirms the model
+- Many ММС collaborations result, **and** the forward-test confirms the model
   had genuine predictive power, not just retrospective pattern-matching — this
   is the difference between "useful" and "would have happened anyway."
 - Better democracy + EU integration outcomes.
@@ -309,7 +309,7 @@ smaller side task on that new branch.
 
 **Decide, don't leave as "candidate"**: `internal/eu-transfer-one-pager.md`
 already names Interreg as the lead candidate (funded, multi-year,
-application-based, structurally closest to Law 1508 МСС), with LEADER, EGTC,
+application-based, structurally closest to Law 1508 ММС), with LEADER, EGTC,
 and twinning (SKEW/C4C) as alternates. This needs to become one instrument on
 a date, not a running list.
 
@@ -321,15 +321,15 @@ bridge dataset), or
 existing 178-node UA–EU twinning layer (SKEW/C4C data already collected).
 
 **New evidence that sharpens this (2026-08-10 cross-tab of the twinning layer
-against the domestic МСС network)**: (b) is not just "closer to shovel-ready"
+against the domestic ММС network)**: (b) is not just "closer to shovel-ready"
 in the abstract — it is concretely a **different market segment**, not a
 resize of the same one:
 - EU-twinned hromadas skew big/urban (median population 46,533, 87.6%
-  «міська»); domestic МСС-network hromadas skew small/rural (median
+  «міська»); domestic ММС-network hromadas skew small/rural (median
   population 12,178, only 37.9% «міська»). Porting the matching *engine*
   wholesale to (a) would be applying weights tuned on small-rural dynamics to
   a structurally different actor type.
-- Theme overlap between the two layers is thin: domestic МСС candidates are
+- Theme overlap between the two layers is thin: domestic ММС candidates are
   dominated by tourism/clusters, ЦНАП/admin services, waste management;
   EU-twinning priorities are energy (near-absent domestically), civil
   defence/resilience, education/youth (almost zero domestically). Only
@@ -338,7 +338,7 @@ resize of the same one:
   also have a confirmed EU twin, ~10x enrichment vs baseline) — a concrete,
   named channel if pursuing (b).
 - Institutional capacity correlates across both layers (44% of curated
-  domestic МСС hromadas also have a confirmed EU twin, vs 7.7% base rate,
+  domestic ММС hromadas also have a confirmed EU twin, vs 7.7% base rate,
   ~5-6x enrichment) — general cooperation capacity, not domain-specific,
   which is a supporting argument *for* (b) even though the specific themes
   don't overlap much.

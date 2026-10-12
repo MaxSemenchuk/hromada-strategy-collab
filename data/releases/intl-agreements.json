@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-09-16T13:12:52.766513+00:00",
-  "warning": "Law 3668-IX / CMU 357-2025 register of international territorial cooperation agreements (data.gov.ua). Separate from domestic МСС (Law 1508-VII), from SKEW/C4C twinning, and from Interreg/keep.eu. Sphere text is free-form; theme_ids are heuristics. Many rows are oblast-level or unmatched pre-amalgamation councils. Incomplete vs the Ministry twincities dashboard. Not folded into matching score; never known=true.",
+  "warning": "Law 3668-IX / CMU 357-2025 register of international territorial cooperation agreements (data.gov.ua). Separate from domestic ММС (Law 1508-VII), from SKEW/C4C twinning, and from Interreg/keep.eu. Sphere text is free-form; theme_ids are heuristics. Many rows are oblast-level or unmatched pre-amalgamation councils. Incomplete vs the Ministry twincities dashboard. Not folded into matching score; never known=true.",
   "source": {
     "id": "law3668",
     "name": "Перелік зареєстрованих угод про міжнародне територіальне співробітництво",

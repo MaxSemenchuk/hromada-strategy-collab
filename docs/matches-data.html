@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Таблиці даних МСС</title>
+  <title>Таблиці даних ММС</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -107,11 +107,11 @@
 <body>
   <div class="page">
     <a class="back-link" href="matches.html" data-i18n="back">← Дашборд кандидатів</a>
-    <span class="eyebrow" data-i18n="eyebrow">Кандидати договорів МСС · дані</span>
+    <span class="eyebrow" data-i18n="eyebrow">Кандидати договорів ММС · дані</span>
     <h1 data-i18n="h1">Повні таблиці кандидатів і ground truth</h1>
     <p class="lede" data-i18n-html="lede">
       Сирі шари, з яких зібрано дашборд: кураторський ground truth, ширша KSE-перевірка,
-      комплементарні пари та явні запити МСС у текстах. Огляд у цифрах і графіках —
+      комплементарні пари та явні запити ММС у текстах. Огляд у цифрах і графіках —
       на <a href="matches.html">сторінці кандидатів</a>.
     </p>
 
@@ -124,7 +124,7 @@
 
     <section id="known">
       <p class="kicker" data-i18n="known.kicker">Валідація</p>
-      <h2 data-i18n="known.h2">Known МСС у matching-edges</h2>
+      <h2 data-i18n="known.h2">Known ММС у matching-edges</h2>
       <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem" data-i18n-html="known.lede">
         Кураторський ground truth для регресії матчера (<code>known: true</code>) —
         не всі угоди з реєстру KSE.
@@ -149,7 +149,7 @@
       <p class="kicker" data-i18n="pin.kicker">Ширша KSE-перевірка</p>
       <h2 data-i18n-html="pin.h2">PIN ∩ корпус (<code>mss_network&gt;0</code>)</h2>
       <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem" data-i18n-html="pin.lede">
-        Усі пари з Goals з обох боків, які вже є в мережі МСС KSE.
+        Усі пари з Goals з обох боків, які вже є в мережі ММС KSE.
         Rank — місце за combined score; score вже містить 15% <code>mss_network</code>
         (частково циклічно). Не замінює known-регресію.
       </p>
@@ -184,7 +184,7 @@
             <tr>
               <th data-i18n="th.pair">Пара</th>
               <th class="num" data-i18n="th.compScore">Comp.</th>
-              <th data-i18n="th.mssTheme">Тема МСС</th>
+              <th data-i18n="th.mssTheme">Тема ММС</th>
               <th data-i18n="th.mssForm">Форма</th>
               <th data-i18n="th.why">Чому</th>
             </tr>
@@ -196,9 +196,9 @@
 
     <section id="ask">
       <p class="kicker" data-i18n="ask.kicker">Сигнал · явний запит</p>
-      <h2 data-i18n="ask.h2">Явний запит МСС у тексті стратегії</h2>
+      <h2 data-i18n="ask.h2">Явний запит ММС у тексті стратегії</h2>
       <p class="lede" style="margin-bottom:0.8rem;font-size:0.9rem" data-i18n-html="ask.lede">
-        У документі прямо згадано міжмуніципальну кооперацію / МСС — сильний сигнал для кандидата договору.
+        У документі прямо згадано міжмуніципальну кооперацію / ММС — сильний сигнал для кандидата договору.
         Не реєстрова угода. Джерело: <code>mss-intents.json</code>.
       </p>
       <div class="table-wrap">
@@ -243,37 +243,37 @@
 
   <p class="site-footer-note" data-i18n-html="footer.note">
     Див. також <a href="matches.html">Дашборд кандидатів</a>
-    і <a href="mss-pin-matching-graph.html">мапу МСС</a>.
+    і <a href="mss-pin-matching-graph.html">мапу ММС</a>.
   </p>
 
   <script>
 window.PAGE_I18N = {
   uk: {
-    "doc.title": "Таблиці даних МСС",
+    "doc.title": "Таблиці даних ММС",
     "back": "← Дашборд кандидатів",
-    "eyebrow": "Кандидати договорів МСС · дані",
+    "eyebrow": "Кандидати договорів ММС · дані",
     "h1": "Повні таблиці кандидатів і ground truth",
-    "lede": "Сирі шари, з яких зібрано дашборд: кураторський ground truth, ширша KSE-перевірка, комплементарні пари та явні запити МСС у текстах. Огляд у цифрах і графіках — на <a href=\"matches.html\">сторінці кандидатів</a>.",
+    "lede": "Сирі шари, з яких зібрано дашборд: кураторський ground truth, ширша KSE-перевірка, комплементарні пари та явні запити ММС у текстах. Огляд у цифрах і графіках — на <a href=\"matches.html\">сторінці кандидатів</a>.",
     "filter.form": "Форма договору (фільтр):",
     "filter.all": "Усі",
     "known.kicker": "Валідація",
-    "known.h2": "Known МСС у matching-edges",
+    "known.h2": "Known ММС у matching-edges",
     "known.lede": "Кураторський ground truth для регресії (<code>known: true</code> / <code>registry_known</code>) — не всі угоди з реєстру KSE.",
     "pin.kicker": "Ширша KSE-перевірка",
     "pin.h2": "PIN ∩ корпус (<code>mss_network&gt;0</code>)",
-    "pin.lede": "Усі пари з Goals з обох боків, які вже є в мережі МСС KSE. Rank — місце за combined score (частково циклічно з <code>mss_network</code>). Не замінює known-регресію.",
+    "pin.lede": "Усі пари з Goals з обох боків, які вже є в мережі ММС KSE. Rank — місце за combined score (частково циклічно з <code>mss_network</code>). Не замінює known-регресію.",
     "comp.kicker": "Сигнал · доповнення",
     "comp.h2": "Ресурс / DREAM однієї ↔ виклик іншої",
     "comp.lede": "Один зі способів знайти кандидата договору (не Goals-cosine): сила або портфель DREAM громади A збігається з <code>Challenges</code> громади B. Гіпотези; див. також <a href=\"resources.html\">Ресурси</a>.",
     "ask.kicker": "Сигнал · явний запит",
-    "ask.h2": "Явний запит МСС у тексті стратегії",
-    "ask.lede": "У документі прямо згадано міжмуніципальну кооперацію / МСС — сильний сигнал для кандидата договору. Не реєстрова угода. Джерело: <code>mss-intents.json</code>.",
+    "ask.h2": "Явний запит ММС у тексті стратегії",
+    "ask.lede": "У документі прямо згадано міжмуніципальну кооперацію / ММС — сильний сигнал для кандидата договору. Не реєстрова угода. Джерело: <code>mss-intents.json</code>.",
     "ask.section.pairs": "Пари з найвищим score",
     "ask.section.samples": "Приклади цитат (одна громада)",
     "th.compScore": "Comp.",
     "th.why": "Чому",
     "th.theme": "Тема",
-    "th.mssTheme": "Тема МСС",
+    "th.mssTheme": "Тема ММС",
     "th.mssForm": "Форма",
     "th.package": "Пакет",
     "th.signals": "Сигнали",
@@ -298,10 +298,10 @@ window.PAGE_I18N = {
     "track.operational": "зручний сусід",
     "track.mixed": "mixed",
     "track.complementary": "доповнення ресурсів",
-    "track.explicit-ask": "явний запит МСС",
+    "track.explicit-ask": "явний запит ММС",
     "tag.pinCorpus": "PIN∩корпус",
     "caveat": "Пакет (тема · форма) і сигнали — гіпотези, не готовність до угоди. Combined score — внутрішній ранг одного шляху пошуку. Browse: <code>mss-candidates.json</code>; повний шар: <code>matching-edges.json</code>.",
-    "footer.note": "Див. також <a href=\"matches.html\">Дашборд кандидатів</a> і <a href=\"mss-pin-matching-graph.html\">мапу МСС</a>."
+    "footer.note": "Див. також <a href=\"matches.html\">Дашборд кандидатів</a> і <a href=\"mss-pin-matching-graph.html\">мапу ММС</a>."
   },
   en: {
     "doc.title": "IMC data tables",

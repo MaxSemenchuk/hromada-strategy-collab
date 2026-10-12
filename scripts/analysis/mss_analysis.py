@@ -80,7 +80,7 @@ for n, c in sorted(n_parties_dist.items()):
     label = f"{n}+" if n == 6 else str(n)
     print(f"  {label} сторін: {c} договорів")
 
-print("\n=== ТОП-20 ГРОМАД ЗА КІЛЬКІСТЮ УГОД (найактивніші учасники МСС) ===")
+print("\n=== ТОП-20 ГРОМАД ЗА КІЛЬКІСТЮ УГОД (найактивніші учасники ММС) ===")
 for name, cnt in party_counter.most_common(20):
     print(f"  {name:<35} {cnt} угод")
 

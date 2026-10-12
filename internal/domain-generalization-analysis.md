@@ -4,7 +4,7 @@
 answer "could this method work for universities/GitHub/etc." with an actual
 framework instead of a hand-wave, and to log it for later (e.g. if a
 generalizability section is useful for the paper, or if the project ever
-needs a side-market to pitch alongside the domestic МСС work). Does not
+needs a side-market to pitch alongside the domestic ММС work). Does not
 modify `match.py`, [aim-cc-field-experiment-prereg.md](aim-cc-field-experiment-prereg.md),
 or any Decision brief in
 [project-strategy-future-backwards.md](project-strategy-future-backwards.md) —
@@ -52,7 +52,7 @@ skill is picking the *correct* game per domain, not reusing one.
 | Universities / research labs | grant abstracts, faculty bios, explicit "seeking collaborators" language | co-authorship graph (OpenAlex/DBLP) — already rich, no proxy needed | Stag Hunt at the "should we talk" stage; Prisoner's-Dilemma-like credit-sharing once collaborating | not needed — network is direct |
 | GitHub / OSS | README/roadmap text, "help wanted" issues (cleanest explicit-ask signal of any domain) | dependency graph + contributor overlap — already rich | Public-goods / free-rider game, not pairwise Stag Hunt | tech-stack / release-cadence compatibility |
 | Grantmakers ↔ recipients | grant call vs. mission statement — same text genre as hromada strategies | historical funder–recipient graph (Candid) — already rich | **Screening/signaling game** (asymmetric information), not Stag Hunt | funder's programmatic/regional mandate |
-| City twinning / municipal diplomacy | development strategies — near 1:1 with current corpus | twinning registries (Sister Cities Intl., SKEW) — sparse, similar to domestic МСС | Stag Hunt + an added diplomatic sign-off cost term (`c_i`) | development-stage / EU-accession-track similarity, not physical distance |
+| City twinning / municipal diplomacy | development strategies — near 1:1 with current corpus | twinning registries (Sister Cities Intl., SKEW) — sparse, similar to domestic ММС | Stag Hunt + an added diplomatic sign-off cost term (`c_i`) | development-stage / EU-accession-track similarity, not physical distance |
 | NGO / civil-society coalitions | theory-of-change documents | coalition-membership data — sparse | Closer to Prisoner's Dilemma (competing for the same donor pool) than Stag Hunt | target-beneficiary-population overlap |
 | Startups / accelerators (co-founder or partnership matching) | pitch decks / product descriptions | cap-table / investor-overlap (Crunchbase) — already rich, and *is* the donor-overlap signal directly | Cleanest Stag Hunt outside hromadas (co-founder trust) | not needed — investor overlap is direct |
 
@@ -63,7 +63,7 @@ skill is picking the *correct* game per domain, not reusing one.
 | Universities | **High** — public ground truth (OpenAlex) lets accuracy get checked without building a new dataset from scratch; clean paper angle ("does explicit-ask + thematic matching increase novel cross-lab collaboration") | Medium — value is diffuse and long-horizon vs. a concrete shared ЦНАП saving money | Medium — "academic LinkedIn" plays have historically failed (ResearchGate); a narrower B2B sell to university grant offices is more plausible |
 | GitHub / OSS | Medium — data is the richest of all domains but also the most already-mined (MSR community); novelty would have to come from the game-theoretic framing, not the data | Medium — reduces duplicated effort, but maintainer time is exactly the scarce resource (`c_i`) that makes adoption hard | Low–Medium — GitHub/Socket/Snyk occupy adjacent niches; no clear payer for a "should we merge" matcher |
 | Grantmakers ↔ recipients | **High** — the game form genuinely differs (screening, not Stag Hunt), which is a more interesting theoretical contribution than a straight port | **High** — misallocated philanthropic capital is a well-documented problem; better matching moves real money to better-fit orgs | **Highest** — Candid, Instrumentl, Submittable already monetize this; proven willingness to pay on both sides |
-| City twinning | Medium — harder sample access (multi-country ethics/logistics), but design replicates cleanly | Medium — twinning is often more symbolic than domestic МСС's hard budget savings | Low — not a funded market; a grant-funded pilot, not a product |
+| City twinning | Medium — harder sample access (multi-country ethics/logistics), but design replicates cleanly | Medium — twinning is often more symbolic than domestic ММС's hard budget savings | Low — not a funded market; a grant-funded pilot, not a product |
 | NGO coalitions | Medium — closest analog domain, easy to replicate the AIM-CC design, but little that's genuinely new | Medium–High — coalition efficiency has real downstream effects on advocacy outcomes in an under-tooled sector | Low — nonprofits classically don't pay for tools; would need a donor-funded model, not self-sustaining SaaS |
 | Startups / accelerators | Low–Medium — already heavily productized (YC matching, Cofounders Lab); hard to claim novelty | Low–Medium — individual startup outcomes are high-variance and hard to attribute to matching quality | Medium–High — proven market but crowded, and VCs guard deal flow rather than buying a third-party matcher |
 

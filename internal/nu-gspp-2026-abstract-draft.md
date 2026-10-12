@@ -90,7 +90,7 @@ development, field experiment, Ukraine
    later, something else has to be cut first.
 2. **Null-finding interpretation (2026-08-31, Max's framing)**: rewrote the
    goals_cosine paragraph so it doesn't read as "the thematic-similarity
-   signal is useless." The actual claim: almost every observed МСС
+   signal is useless." The actual claim: almost every observed ММС
    partnership traces to hromada heads who already had personal contact,
    which itself tracks physical proximity — so geography dominating the
    retrospective model is a symptom of the *discovery channel*, not
@@ -119,7 +119,7 @@ development, field experiment, Ukraine
 4. **Terminology fixes**: title now says "Municipalities" instead of
    "Hromadas" (opaque to a non-Ukraine-specialist audience at first
    glance); the term is introduced properly in the abstract's first
-   sentence instead. The Cyrillic acronym "(МСС)" was dropped from the
+   sentence instead. The Cyrillic acronym "(ММС)" was dropped from the
    opening sentence — it was never reused anywhere else in the abstract,
    so it added confusion (mismatched script) without doing any work.
 5. **Kazakhstan sentence**: I'm not fully confident on Kazakhstan's exact

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression: curated known МСС pairs must exist and rank reasonably under v7.1.
+"""Regression: curated known ММС pairs must exist and rank reasonably under v7.1.
 
 Hard gates are calibrated to the ~5k-edge Goals corpus (wave C, 2026-08) and
 scale with edge count after corpus growth (GISRR wave → ~43k edges). Absolute

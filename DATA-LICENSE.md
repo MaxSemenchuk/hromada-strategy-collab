@@ -14,7 +14,7 @@ If you use this data, credit:
 
 > Hromada Strategy Collaboration Mapping (W3I), derived in part from
 > data.gov.ua (CC BY 4.0), the DREAM public API, and the Мінрегіон
-> inter-municipal cooperation (МСС) agreement registry.
+> inter-municipal cooperation (ММС) agreement registry.
 
 Upstream sources this data draws on:
 
@@ -23,7 +23,7 @@ Upstream sources this data draws on:
 - **[DREAM](https://dream.gov.ua)** (`public-api.dream.gov.ua`) — public
   reconstruction-project registry; aggregated hromada priorities in
   `dream-priorities.json`.
-- **МСС (inter-municipal cooperation) agreement registry** — dataset
+- **ММС (inter-municipal cooperation) agreement registry** — dataset
   `912c1ea4-38ea-4648-8306-59fc1df8b51b` on data.gov.ua.
 - **[KSE-Loc-Data-Hub](https://github.com/kse-ua/KSE-Loc-Data-Hub)**
   (Zenodo [10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573),

@@ -449,8 +449,8 @@ def main() -> None:
                     "+ suggested_theme/form (mss_suggest) + mss_candidate package/signals"
                 ),
                 "warning": (
-                    "МСС candidate hypotheses (complementary signal) — not v7 strategy matching, "
-                    "not known=true. Keyword hit ≠ verified МСС plan."
+                    "ММС candidate hypotheses (complementary signal) — not v7 strategy matching, "
+                    "not known=true. Keyword hit ≠ verified ММС plan."
                 ),
                 "inputs": [
                     "hromadas.json (Challenges/Strengths)",

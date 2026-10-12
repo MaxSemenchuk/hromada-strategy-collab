@@ -374,7 +374,7 @@ def build_release(rows: list[dict]) -> None:
         "generatedAt": generated,
         "warning": (
             "Law 3668-IX / CMU 357-2025 register of international territorial "
-            "cooperation agreements (data.gov.ua). Separate from domestic МСС "
+            "cooperation agreements (data.gov.ua). Separate from domestic ММС "
             "(Law 1508-VII), from SKEW/C4C twinning, and from Interreg/keep.eu. "
             "Sphere text is free-form; theme_ids are heuristics. Many rows are "
             "oblast-level or unmatched pre-amalgamation councils. Incomplete vs "

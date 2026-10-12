@@ -839,7 +839,7 @@
       "status": "structured",
       "strategy_url": "https://gisrr.gov.ua/strategy-local/3841035120681158359",
       "raw_text_path": "",
-      "notes": "priority-corpus-growth PIN hub; GISRR fold-in 2026-09-15; explicit MSS in social-protection tasks"
+      "notes": "priority-corpus-growth PIN hub; GISRR fold-in 2026-09-15; explicit IMC in social-protection tasks"
     },
     {
       "name": "Козельщинська селищна територіальна громада",
@@ -863,7 +863,7 @@
       "status": "structured",
       "strategy_url": "https://bortg.gov.ua/sites/boratyn.ukraina.org.ua/files/inline-files/strategiya-ta-plan-zakhodiv_boratin.pdf",
       "raw_text_path": "",
-      "notes": "thin-oblast Volyn 2026-09-16; HOVERLA Strategy to 2027 + Plan 2024–2027; explicit horizontal IMC ask; twinning Sprendlingen-Gensingen (not MSS)"
+      "notes": "thin-oblast Volyn 2026-09-16; HOVERLA Strategy to 2027 + Plan 2024–2027; explicit horizontal IMC ask; twinning Sprendlingen-Gensingen (not IMC)"
     },
     {
       "name": "Рожищенська міська територіальна громада",
@@ -951,7 +951,7 @@
       "status": "structured",
       "strategy_url": "https://nadrada.gov.ua/wp-content/uploads/2024/10/00_strategiya_rozvytku_nadvirnyanskoyi_gromady_do_2030_roku_2_3_1.docx",
       "raw_text_path": "",
-      "notes": "UA-VPN PIN 2026-09-16; Strategy to 2030 DOCX; twinning Prudnik/Krnov/etc ≠ MSS"
+      "notes": "UA-VPN PIN 2026-09-16; Strategy to 2030 DOCX; twinning Prudnik/Krnov/etc ≠ IMC"
     }
   ]
 }

@@ -9,7 +9,7 @@ Primary sort: # of PIN links into the corpus (more overlaps for the PIN∩corpus
 report). Secondary: PIN degree. Writes data/releases/corpus-growth-priority.json
 and prints a short table.
 
-Note: project-history also recommends low-МСС oblasts for *discovery* whitespace;
+Note: project-history also recommends low-ММС oblasts for *discovery* whitespace;
 this list optimises for *validation coverage*, not cold-start matchmaking.
 """
 
@@ -132,7 +132,7 @@ def main() -> None:
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "purpose": (
             "Grow strategy corpus where it adds PIN∩corpus validation pairs "
-            "(neighbours of current Goals corpus in the KSE МСС network)."
+            "(neighbours of current Goals corpus in the KSE ММС network)."
         ),
         "corpusSize": len(corpus_codes),
         "pinEdges": len(pin_pairs),

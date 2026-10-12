@@ -54,7 +54,7 @@ pitch doesn't overclaim and so there's a concrete list of what porting actually 
 ## What has to be decided before the EU claim survives scrutiny
 
 - **Pick one EU instrument to target first.** Interreg looks structurally
-  closest to Law 1508 МСС (funded, multi-year, application-based) —
+  closest to Law 1508 ММС (funded, multi-year, application-based) —
   probably the easiest analogy to defend. LEADER, EGTC, and twinning
   (SKEW/C4C) are alternates with different feasibility and audiences.
 - **Confirm a validation dataset exists** for that instrument — i.e. some

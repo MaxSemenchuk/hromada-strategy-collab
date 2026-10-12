@@ -48,7 +48,7 @@ edges.sort(key=lambda e: -e['goals_cosine'])
 print(f"{'#':<3}{'Pair':<66} {'Cosine':>7} {'Jaccard':>8}  {'Oblast':<6} {'Known'}")
 for idx, e in enumerate(edges, 1):
     pair = f"{e['a'][:32]:<32} <-> {e['b'][:32]}"
-    print(f"{idx:<3}{pair:<66} {e['goals_cosine']:>7} {e['sector_jaccard']:>8}  {'SAME' if e['same_oblast'] else '':<6} {'✓ known МСС' if e['known'] else ''}")
+    print(f"{idx:<3}{pair:<66} {e['goals_cosine']:>7} {e['sector_jaccard']:>8}  {'SAME' if e['same_oblast'] else '':<6} {'✓ known ММС' if e['known'] else ''}")
 
 json.dump(edges, open('matching_edges13.json', 'w'), ensure_ascii=False, indent=2)
 

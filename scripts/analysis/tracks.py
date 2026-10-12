@@ -6,7 +6,7 @@ Dual-track labels for matching edges (v6 scores unchanged).
   mixed      — everything else (incl. high goals+high geo, or mid scores)
 
 Combined `score` is NOT a pure strategy match — see docs/project-history.md
-(МСС registry section, 2026-07-24).
+(ММС registry section, 2026-07-24).
 """
 
 from __future__ import annotations
@@ -101,7 +101,7 @@ def thematic_slice(edges: list[dict], *, limit: int | None = None) -> list[dict]
 
 def operational_slice(edges: list[dict], *, limit: int | None = None) -> list[dict]:
     """
-    Convenient neighbours not already linked in the МСС network.
+    Convenient neighbours not already linked in the ММС network.
     track=operational, mss_network == 0, exclude known validation pairs.
     Rank by operational_score when present (fiscal + DREAM overlap boost),
     else fall back to combined v6 score.

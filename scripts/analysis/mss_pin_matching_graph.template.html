@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
 <meta charset="utf-8"/>
-<title>Мапа МСС — матчинг громад</title>
+<title>Мапа ММС — матчинг громад</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -716,7 +716,7 @@
   <aside>
     <span class="eyebrow" data-i18n="sidebar.eyebrow">Матчинг · мапа</span>
     <h1 data-i18n="sidebar.h1">Міжмуніципальна співпраця на мапі</h1>
-    <p class="lede" data-i18n="sidebar.lede">Зареєстровані угоди МСС поруч із кандидатами договорів (тема · форма). Оверлеї — сигнали пошуку, не типи МСС. Клац по громаді — картка з деталями.</p>
+    <p class="lede" data-i18n="sidebar.lede">Зареєстровані угоди ММС поруч із кандидатами договорів (тема · форма). Оверлеї — сигнали пошуку, не типи ММС. Клац по громаді — картка з деталями.</p>
     <div class="sticky-controls">
       <div class="toggle" role="tablist" data-i18n-aria="mode.aria" aria-label="Режим перегляду">
         <button type="button" id="btn-map" class="active" role="tab" aria-selected="true" data-i18n="mode.map">Мапа</button>
@@ -752,12 +752,12 @@
         <input type="checkbox" id="layer-pin" checked/>
         <span class="sw pin" aria-hidden="true"></span>
         <span class="layer-copy">
-          <span class="layer-title" data-i18n="layer.pin.title">Зареєстровані угоди МСС</span>
+          <span class="layer-title" data-i18n="layer.pin.title">Зареєстровані угоди ММС</span>
           <span class="layer-desc" data-i18n="layer.pin.desc">Бірюзові лінії — вже укладені договори між громадами</span>
         </span>
       </label>
       <details class="theme-subfilter">
-        <summary data-i18n="themes.label">Теми угод МСС</summary>
+        <summary data-i18n="themes.label">Теми угод ММС</summary>
         <div class="theme-filters" id="theme-filters" role="group" aria-label="Фільтр тем угод"></div>
         <div class="theme-filter-actions">
           <button type="button" id="themes-all" data-i18n="themes.all">Усі</button>
@@ -780,7 +780,7 @@
         <span class="sw interreg" aria-hidden="true"></span>
         <span class="layer-copy">
           <span class="layer-title" data-i18n="layer.interreg.title">Interreg (рада громади)</span>
-          <span class="layer-desc" data-i18n="layer.interreg.desc">Блакитні — keep.eu, лише Local public authority; не twinning і не МСС</span>
+          <span class="layer-desc" data-i18n="layer.interreg.desc">Блакитні — keep.eu, лише Local public authority; не twinning і не ММС</span>
         </span>
       </label>
       <details class="theme-subfilter">
@@ -792,7 +792,7 @@
           <button type="button" id="eu-themes-tagged" data-i18n="themes.tagged">Лише з темою</button>
         </div>
         <p class="theme-filter-empty" id="eu-theme-filter-empty" hidden data-i18n="euThemes.emptyPick">Оберіть хоча б одну тему — інакше побратими й Interreg сховані.</p>
-        <p class="theme-filter-hint" data-i18n="euThemes.hint">Фільтрує фіолетові побратими та блакитний Interreg. Теми з реєстру 3668 і офіційних тем keep.eu — не форми Закону 1508 і не бірюзові лінії МСС.</p>
+        <p class="theme-filter-hint" data-i18n="euThemes.hint">Фільтрує фіолетові побратими та блакитний Interreg. Теми з реєстру 3668 і офіційних тем keep.eu — не форми Закону 1508 і не бірюзові лінії ММС.</p>
       </details>
       <label>
         <input type="checkbox" id="layer-plich"/>
@@ -841,7 +841,7 @@
         <input type="checkbox" id="layer-explicit-ask"/>
         <span class="sw ask" aria-hidden="true"></span>
         <span class="layer-copy">
-          <span class="layer-title" data-i18n="layer.explicitAsk.title">Явний запит МСС</span>
+          <span class="layer-title" data-i18n="layer.explicitAsk.title">Явний запит ММС</span>
           <span class="layer-desc" data-i18n="layer.explicitAsk.desc">Рожеві — у стратегії прямо згадано кооперацію</span>
         </span>
       </label>
@@ -878,7 +878,7 @@
       <div class="stats">
         <div class="stat"><span data-i18n="stat.universe">Громад на мапі</span><b id="s-universe">—</b></div>
         <div class="stat"><span data-i18n="stat.portal">З посиланням на портал</span><b id="s-portal">—</b></div>
-        <div class="stat"><span data-i18n="stat.nodes">Громад з угодами МСС</span><b id="s-nodes">—</b></div>
+        <div class="stat"><span data-i18n="stat.nodes">Громад з угодами ММС</span><b id="s-nodes">—</b></div>
         <div class="stat"><span data-i18n="stat.pin">Зареєстрованих угод</span><b id="s-pin">—</b></div>
         <div class="stat"><span data-i18n="stat.geo">Угод із координатами</span><b id="s-geo">—</b></div>
         <div class="stat"><span data-i18n="stat.corpus">Стратегій у корпусі</span><b id="s-corpus">—</b></div>
@@ -886,7 +886,7 @@
         <div class="stat"><span data-i18n="stat.thematic">Гіпотез «схожа стратегія»</span><b id="s-thematic">—</b></div>
         <div class="stat"><span data-i18n="stat.operational">Гіпотез «зручний сусід»</span><b id="s-operational">—</b></div>
         <div class="stat"><span data-i18n="stat.complementary">Гіпотез «доповнення»</span><b id="s-complementary">—</b></div>
-        <div class="stat"><span data-i18n="stat.explicitAsk">Явних запитів МСС</span><b id="s-explicit-ask">—</b></div>
+        <div class="stat"><span data-i18n="stat.explicitAsk">Явних запитів ММС</span><b id="s-explicit-ask">—</b></div>
         <div class="stat"><span data-i18n="stat.sharedAsset">Спільних обʼєктів</span><b id="s-shared-asset">—</b></div>
         <div class="stat"><span data-i18n="stat.twinning">З побратимами ЄС</span><b id="s-twinning">—</b></div>
         <div class="stat"><span data-i18n="stat.twinningCountries">Країн-побратимів (Граф)</span><b id="s-twinning-countries">—</b></div>
@@ -2675,10 +2675,10 @@ setMode('map');
 <script>
 window.PAGE_I18N = {
   uk: {
-    "doc.title": "Мапа МСС — матчинг громад",
+    "doc.title": "Мапа ММС — матчинг громад",
     "sidebar.eyebrow": "Кандидати договорів · мапа",
     "sidebar.h1": "Міжмуніципальна співпраця на мапі",
-    "sidebar.lede": "Зареєстровані угоди МСС поруч із кандидатами договорів (тема · форма). Оверлеї — сигнали пошуку, не типи МСС. Клац по громаді — картка з деталями.",
+    "sidebar.lede": "Зареєстровані угоди ММС поруч із кандидатами договорів (тема · форма). Оверлеї — сигнали пошуку, не типи ММС. Клац по громаді — картка з деталями.",
     "mode.aria": "Режим перегляду",
     "mode.map": "Мапа",
     "mode.graph": "Граф",
@@ -2691,7 +2691,7 @@ window.PAGE_I18N = {
     "layers.group.confirmed": "Підтверджені зв'язки",
     "layers.group.hypotheses": "Гіпотези пошуку",
     "layers.group.backdrop": "Підкладки",
-    "layer.pin.title": "Зареєстровані угоди МСС",
+    "layer.pin.title": "Зареєстровані угоди ММС",
     "layer.pin.desc": "Бірюзові лінії — вже укладені договори між громадами",
     "layer.thematic.title": "Сигнал · схожа стратегія",
     "layer.thematic.desc": "Пунктир — кандидат знайдено за схожістю цілей",
@@ -2699,7 +2699,7 @@ window.PAGE_I18N = {
     "layer.operational.desc": "Крапкові — кандидат для спільних послуг із сусідами",
     "layer.complementary.title": "Сигнал · доповнення ресурсів",
     "layer.complementary.desc": "Зелені — сила/DREAM однієї ↔ виклик іншої",
-    "layer.explicitAsk.title": "Сигнал · явний запит МСС",
+    "layer.explicitAsk.title": "Сигнал · явний запит ММС",
     "layer.explicitAsk.desc": "Рожеві — у стратегії прямо згадано кооперацію",
     "layer.sharedAsset.title": "Сигнал · спільний обʼєкт",
     "layer.sharedAsset.desc": "Бірюзові — та сама річка / кластер / полігон у двох стратегіях",
@@ -2710,12 +2710,12 @@ window.PAGE_I18N = {
     "layer.twinning.title": "Міста-побратими ЄС",
     "layer.twinning.desc": "Фіолетові — громади з UA–EU twinning; у «Графі» країни показані як окремі вузли",
     "layer.interreg.title": "Interreg (рада громади)",
-    "layer.interreg.desc": "Блакитні — keep.eu, лише Local public authority; не twinning і не МСС",
+    "layer.interreg.desc": "Блакитні — keep.eu, лише Local public authority; не twinning і не ММС",
     "layer.donors.title": "Донорські програми",
     "layer.donors.desc": "Червоні — у «Графі» донорські програми показані як окремі вузли",
     "layer.basins.title": "Підкладка · водозбори",
     "layer.basins.desc": "HydroBASINS lev06 — гідрологічні басейни (не юридичні RBD DAVR)",
-    "themes.label": "Теми угод МСС",
+    "themes.label": "Теми угод ММС",
     "themes.all": "Усі",
     "themes.none": "Жодної",
     "themes.tagged": "Лише з темою",
@@ -2723,20 +2723,20 @@ window.PAGE_I18N = {
     "themes.empty": "Немає тем угод",
     "themes.emptyPick": "Оберіть хоча б одну тему — інакше угоди на мапі сховані.",
     "euThemes.label": "Теми UA–ЄС",
-    "euThemes.hint": "Фільтрує фіолетові побратими та блакитний Interreg. Теми з реєстру 3668 і офіційних тем keep.eu — не форми Закону 1508 і не бірюзові лінії МСС.",
+    "euThemes.hint": "Фільтрує фіолетові побратими та блакитний Interreg. Теми з реєстру 3668 і офіційних тем keep.eu — не форми Закону 1508 і не бірюзові лінії ММС.",
     "euThemes.empty": "Немає тем UA–ЄС",
     "euThemes.emptyPick": "Оберіть хоча б одну тему — інакше побратими й Interreg сховані.",
     "stats.label": "Цифри",
     "stat.universe": "Громад на мапі",
     "stat.portal": "З посиланням на портал",
-    "stat.nodes": "Громад з угодами МСС",
+    "stat.nodes": "Громад з угодами ММС",
     "stat.pin": "Зареєстрованих угод",
     "stat.geo": "Угод із координатами",
     "stat.corpus": "Стратегій у корпусі",
     "stat.thematic": "Гіпотез «схожа стратегія»",
     "stat.operational": "Гіпотез «зручний сусід»",
     "stat.complementary": "Гіпотез «доповнення»",
-    "stat.explicitAsk": "Явних запитів МСС",
+    "stat.explicitAsk": "Явних запитів ММС",
     "stat.sharedAsset": "Спільних обʼєктів",
     "stat.plich": "Пар «Пліч-о-Пліч»",
     "stat.twinning": "З побратимами ЄС",
@@ -2750,10 +2750,10 @@ window.PAGE_I18N = {
     "popup.people": "осіб",
     "popup.portal": "Портал громади",
     "popup.strategy": "Стратегія / джерело",
-    "popup.inPin": "є угода МСС",
+    "popup.inPin": "є угода ММС",
     "popup.inCorpus": "стратегія в корпусі",
     "popup.basin": "водозбір",
-    "popup.degree": "звʼязків у реєстрі МСС",
+    "popup.degree": "звʼязків у реєстрі ММС",
     "popup.degreeShort": "звʼязків у реєстрі",
     "popup.noLink": "Немає посилання на портал або стратегію",
     "popup.twinning": "побратимів",
@@ -2790,19 +2790,19 @@ window.PAGE_I18N = {
     "explain.operational": "Гіпотеза: зручні сусіди для спільних послуг",
     "explain.complementary": "Гіпотеза: сила/DREAM однієї ↔ виклик іншої",
     "explain.explicit": "У стратегії прямо згадано міжмуніципальну співпрацю",
-    "explain.explicitTheme": "Явний запит МСС · тема: {t}",
+    "explain.explicitTheme": "Явний запит ММС · тема: {t}",
     "explain.sharedAsset": "У стратегіях названо той самий обʼєкт (річка, кластер, полігон)",
     "explain.sharedAssetTheme": "Спільний обʼєкт · тема: {t}",
-    "explain.pin": "Зареєстрована угода МСС",
-    "explain.pinMany": "Зареєстровані угоди МСС ({n})",
+    "explain.pin": "Зареєстрована угода ММС",
+    "explain.pinMany": "Зареєстровані угоди ММС ({n})",
     "explain.twinning": "Місто-побратим за кордоном (SKEW / стратегія)",
     "explain.donor": "Учасниця тієї ж донорської програми",
-    "explain.pinAgreement": "Учасниця багатосторонньої угоди МСС",
+    "explain.pinAgreement": "Учасниця багатосторонньої угоди ММС",
     "explain.plich": "Пліч-о-Пліч: партнерство тил↔форпост",
     "explain.plichMany": "Пліч-о-Пліч: партнерство тил↔форпост ({n} статей)",
     "explain.regNo": "№{n}",
     "explain.sharedThemes": "Спільні теми стратегій",
-    "explain.mssPackage": "Кандидат договору МСС (тема · форма)",
+    "explain.mssPackage": "Кандидат договору ММС (тема · форма)",
     "explain.mssPackageShort": "Кандидат: {p}",
     "explain.sharedGoal": "Спільна ціль: {g}",
     "explain.goalApprox": "схожі формулювання",

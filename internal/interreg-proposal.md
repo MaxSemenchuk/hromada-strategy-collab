@@ -12,16 +12,16 @@ Brief 3 · existing `yarn interreg` → `data/releases/interreg-partners.json`
 
 | Axis | Choice | Why |
 |------|--------|-----|
-| **Instrument** | **Interreg** (NEXT CBC + related programmes covering UA; Interreg Europe as secondary track later) | Funded, multi-year, application-based — closest structural analogue to Law 1508 МСС among EU instruments. Validation dataset already exists ([keep.eu](https://keep.eu)). |
+| **Instrument** | **Interreg** (NEXT CBC + related programmes covering UA; Interreg Europe as secondary track later) | Funded, multi-year, application-based — closest structural analogue to Law 1508 ММС among EU instruments. Validation dataset already exists ([keep.eu](https://keep.eu)). |
 | **Product** | **(b)** UA hromada → EU partner / Interreg readiness — *not* (a) EU↔EU municipal matching | Bridge data already in-repo (SKEW/C4C twinning + Interreg partners). (a) needs a new EU corpus + agreement registry; defer. |
-| **Role of UA work** | Domestic МСС = **validation experiment** for the method; Interreg = **programme-shaped product** for border / eligible hromadas | Matches prior lean (funding form = embedded in a real programme, not standalone Ukraine-only research). |
+| **Role of UA work** | Domestic ММС = **validation experiment** for the method; Interreg = **programme-shaped product** for border / eligible hromadas | Matches prior lean (funding form = embedded in a real programme, not standalone Ukraine-only research). |
 
 **Explicit non-goals for v1**
 
 - Do not fold Interreg into v7 combined `score`.
-- Do not set `known: true` on Interreg edges (flag stays domestic curated МСС).
+- Do not set `known: true` on Interreg edges (flag stays domestic curated ММС).
 - Do not sell “AI finds your EU twin” — pitch is **eligibility · theme · existing partners · concrete ask**, with brokerage (JSCs / national contact / associations) still required.
-- Do not conflate Interreg with municipal twinning (SKEW/C4C) or domestic МСС — three separate layers.
+- Do not conflate Interreg with municipal twinning (SKEW/C4C) or domestic ММС — three separate layers.
 
 ---
 

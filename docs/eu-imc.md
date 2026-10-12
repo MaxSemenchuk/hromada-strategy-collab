@@ -1,7 +1,7 @@
 # EU–EU municipal cooperation (complement to this study)
 
 Research briefing (2026-09-18). **Not** UA–EU twinning, **not** Law 1508-VII
-МСС, **not** Law 3668-IX. How EU municipalities cooperate *with each other* —
+ММС, **not** Law 3668-IX. How EU municipalities cooperate *with each other* —
 domestically and across internal EU borders.
 
 Product rule (already locked in
@@ -41,7 +41,7 @@ OECD (2026) treats IMC as the pragmatic alternative to mergers when
 municipalities are small: EU average municipal size ~5 300 inhabitants; ~29% of
 EU municipalities have fewer than 2 000 residents (Czechia, France, Slovakia
 >80%). That is the same scale problem Ukraine solved by amalgamation into ОТГ
-— then reopened as МСС among the amalgamated units.
+— then reopened as ММС among the amalgamated units.
 
 ---
 
@@ -133,7 +133,7 @@ networks:
 - **Transport / planning** at metropolitan or NUTS-3 scale
 - **Not usually:** schools and elderly care in Nordics (too politically
   salient) — contrast Ukraine, where education/health/social ~20% of titled
-  МСС (DECIDE)
+  ММС (DECIDE)
 
 OECD (2026) enabling conditions map onto our product almost 1:1: incremental
 trust path; data/monitoring; sector fit (capital networks + cross-boundary

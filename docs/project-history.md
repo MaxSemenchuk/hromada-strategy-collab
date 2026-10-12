@@ -3,7 +3,7 @@
 Chronological record of methodology decisions, validation results, and honest
 negative findings. Migrated from Claude Code project memory
 (`project_hromada_strategy_collab.md`, w3i-network phase) on spin-out
-(2026-07-23) and updated through KSE integration and the 2026-07-24 МСС
+(2026-07-23) and updated through KSE integration and the 2026-07-24 ММС
 registry geography/types read. **Prefer this file over Claude memory** — it
 stays in-repo and tracks post-spin-out work.
 
@@ -16,11 +16,11 @@ see [hromadas-schema.md](hromadas-schema.md). For KSE division of labor, see
 ## Origin (2026-07-20/21)
 
 Exploring corpus-level NLP on Ukrainian hromada **development strategies** to
-surface МСС (inter-municipal cooperation) candidates and hromada↔W3I alignment
+surface ММС (inter-municipal cooperation) candidates and hromada↔W3I alignment
 — instead of ad-hoc, relationship-based matchmaking.
 
 **Prior-art check:** no public product does corpus-level strategy-text matching.
-Adjacent work: U-LEAD single-hromada dashboards, manual МСС matchmaking (~762
+Adjacent work: U-LEAD single-hromada dashboards, manual ММС matchmaking (~762
 registered agreements as of Jan 2026).
 
 **Confirmed data sources:**
@@ -29,7 +29,7 @@ registered agreements as of Jan 2026).
   datasets" headline is mostly noise (~95% unrelated admin datasets; maybe 2–5
   usable strategy docs in that result set).
 - DREAM public API — reconstruction/development project proxy.
-- МСС registry (data.gov.ua) — ground truth for validation.
+- ММС registry (data.gov.ua) — ground truth for validation.
 - No centralized machine-readable strategy repository — retrieval stays partly
   manual; strategies follow a standard Мінрегіон/SURGe template.
 
@@ -42,11 +42,11 @@ registered agreements as of Jan 2026).
 
 ### Pass 1 — 7 hromadas, TF-IDF (2026-07-21)
 
-**Selection:** Nizhyn/Baturyn/Kozelets (real registered МСС tourism cluster
+**Selection:** Nizhyn/Baturyn/Kozelets (real registered ММС tourism cluster
 ground truth) + Kryvyi Rih/Dnipro/Ternopil/Uzhhorod (top Мінцифри digital-index
 hromadas).
 
-**Result:** known МСС trio ranked **#1/#2/#3** of 21 pairs by goals-cosine.
+**Result:** known ММС trio ranked **#1/#2/#3** of 21 pairs by goals-cosine.
 Concept validated — model rediscovered real collaboration from goal text alone.
 
 **Negative finding:** sector-tag Jaccard is useless — every pair scores 0.75–1.0
@@ -66,7 +66,7 @@ partners in Dnipro's text — declared partnerships ≠ goals-language overlap.
 
 ### Pass 3 — 23 hromadas (2026-07-21)
 
-Added Slobozhanske↔Obukhivka (real МСС: shared CNAP / archbudcontrol) + 8 oblast
+Added Slobozhanske↔Obukhivka (real ММС: shared CNAP / archbudcontrol) + 8 oblast
 capitals.
 
 **Result:** tourism trio still #1/#2/#4. **Honest failure:** Slobozhanske↔Obukhivka
@@ -166,7 +166,7 @@ on highly shared subgoal lines. KSE covariates fetched lazily via
 
 | Pair | Type | Expected behavior |
 |------|------|-------------------|
-| Nizhyn ↔ Kozelets ↔ Baturyn | Registered МСС tourism cluster | Top ranks on every pass |
+| Nizhyn ↔ Kozelets ↔ Baturyn | Registered ММС tourism cluster | Top ranks on every pass |
 | Slobozhanske ↔ Obukhivka | Registered operational (CNAP) | Low on pure cosine; recovered with geo weight |
 | Dnipro ↔ Kamianske/Novomoskovsk | Named in strategy text | Low cosine — limitation, not bug |
 
@@ -181,7 +181,7 @@ partly circular; use this as coverage diagnostics, not as a second known set.
 
 **Corpus growth for more overlap:** `yarn priority-corpus-growth` lists PIN
 neighbours of the Goals corpus that still lack strategy text
-(`data/releases/corpus-growth-priority.json`). Distinct from low-МСС oblast
+(`data/releases/corpus-growth-priority.json`). Distinct from low-ММС oblast
 prioritisation for *discovery* whitespace (see § Practical conclusions).
 
 ---
@@ -200,7 +200,7 @@ prioritisation for *discovery* whitespace (see § Practical conclusions).
 
 ---
 
-## МСС registry geography & types → matching implications (2026-07-24)
+## ММС registry geography & types → matching implications (2026-07-24)
 
 One-off read of the official registry (Мінрегіон XLSX via `yarn fetch-mss-registry`,
 899 agreements as of Dec 2022) joined with KSE
@@ -226,7 +226,7 @@ parties** — a distinct class (clusters / shared utilities), not noise.
 - ~82% of edges same-oblast; of those, ~78% same-raion.
 - Cross-oblast ~18% — almost all along natural corridors (Dnister canyon
   IF–Chernivtsi; Carpathian / Hutsul ethnos), not random long-range pairs.
-- Coverage uneven: Poltava ~90% of hromadas have ≥1 МСС, Lviv ~85%, Vinnytsia
+- Coverage uneven: Poltava ~90% of hromadas have ≥1 ММС, Lviv ~85%, Vinnytsia
   ~75% vs Odesa ~18% and frontline oblasts in single digits.
 - High-degree “hubs” are often members of **one large multi-party agreement**,
   not star brokers: e.g. reg#721 «Дністровський каньйон» (22 parties), #696
@@ -236,7 +236,7 @@ parties** — a distinct class (clusters / shared utilities), not noise.
 ### Practical conclusions (plain language)
 
 **1. “Similar strategies” ≠ “good CNAP neighbours.”**  
-Most real МСС is operational back-office next door (CNAP, fire, waste, shared
+Most real ММС is operational back-office next door (CNAP, fire, waste, shared
 school/social facility). Strategies rarely describe that. Goals-cosine targets
 a rarer class: shared *development vision* (tourism, clusters). Do not sell one
 score as answering both questions.
@@ -258,9 +258,9 @@ same-oblast and 9/50 already linked.
 
 List A = “who thinks like us.” List B = “who is convenient to share a service with.”
 
-**4. Tourism / cluster МСС is rare in the registry but where NLP adds the most.**  
+**4. Tourism / cluster ММС is rare in the registry but where NLP adds the most.**  
 Few tourism contracts, yet they are the large multi-party (sometimes
-cross-oblast) deals. Pairwise matching is enough for bilateral operational МСС;
+cross-oblast) deals. Pairwise matching is enough for bilateral operational ММС;
 clusters need multi-way / community view (the Nizhyn “trio” is really five
 parties in KSE). **Sell tourism as `схожа стратегія` / joint product** (route,
 DMO, grant) — not as neighbour convenience. Contrast: **water/utilities are
@@ -270,7 +270,7 @@ Full IMC-ladder mapping (handshake → single-purpose → multi-purpose → NAO-
 lives in [REFERENCES.md](../REFERENCES.md#how-imc-typologies-map-onto-this-projects-method).
 
 **5. Where the whitespace is.**  
-Dense МСС oblasts (Poltava, Lviv, Vinnytsia) mostly yield “already
+Dense ММС oblasts (Poltava, Lviv, Vinnytsia) mostly yield “already
 cooperating.” More matchmaking value in low-coverage oblasts (Odesa, Kyiv
 oblast, frontline) — grow the strategy corpus there first.
 
@@ -279,14 +279,14 @@ oblast, frontline) — grow the strategy corpus there first.
 - Label outputs `схожа стратегія` vs `зручний сусід`.  
 - Keep `known: true` for method validation only — not as “new recommendations.”  
 - Surface 3+ clusters, not only pairs.  
-- Prioritise retrieval in low-МСС-coverage oblasts.
+- Prioritise retrieval in low-ММС-coverage oblasts.
 
 One line: **strategies find like-minded partners; geography finds service
 co-sharers. v6 mixes them — strong signal, easy to misread.**
 
 ---
 
-## DOBRE bottleneck thesis + МСС procedure notes (2026-07-30)
+## DOBRE bottleneck thesis + ММС procedure notes (2026-07-30)
 
 Full write-up: [mss-cooperation-research.md](./mss-cooperation-research.md).
 
@@ -341,7 +341,7 @@ payload / release sidecars at the time of the read.
 
 | Kind | Count (graph) | Role |
 |------|---------------|------|
-| PIN registry edges | **918** (~87%) | Already-signed МСС (KSE network) |
+| PIN registry edges | **918** (~87%) | Already-signed ММС (KSE network) |
 | Thematic / operational / complementary | 40 + 40 + 40 | Hypothesis overlays (top-N) |
 | Explicit-ask | 13 | Strategy language → named peers |
 | Known + pin∩corpus | 4 + 6 | Validation only |
@@ -352,7 +352,7 @@ discovery shortlist: the hairball is dominated by existing agreements, not by
 our matcher.
 
 Graph topology (PIN + overlays): ~89 components; largest ~31% of PIN nodes —
-МСС is dense locally, fragmented nationally.
+ММС is dense locally, fragmented nationally.
 
 ### Layers are orthogonal (do not fold into one score)
 
@@ -372,7 +372,7 @@ Graph topology (PIN + overlays): ~89 components; largest ~31% of PIN nodes —
 
 ~23 pairs sit on **2+ hypothesis layers** (multi-signal). Those are better IMC
 packages than single-layer top-N. Long-haul thematic pairs (e.g. Одеса–Яремче)
-are closer to peer-learning / donor exchange than classic Law 1508 МСС.
+are closer to peer-learning / donor exchange than classic Law 1508 ММС.
 
 ### Validation gap (loudest graph finding)
 
@@ -396,11 +396,11 @@ are closer to peer-learning / donor exchange than classic Law 1508 МСС.
    partnership itself.
 2. **Слобожанська–Обухівська** — `known` operational (ЦНАП); also on
    explicit-ask.
-3. **Тульчинська** — hyp hub + MSS intents (туризм), weak/no PIN — candidate
+3. **Тульчинська** — hyp hub + IMC intents (туризм), weak/no PIN — candidate
    for new cooperation, not validation.
 4. **Twinning × corpus × intent** (8 at read time): Галицька, Козелецька,
    Ніжинська, Одеська, Полтавська, Ужгородська, Черкаська, Чернігівська —
-   donor narrative («already do UA–EU → easier domestic МСС»), separate from
+   donor narrative («already do UA–EU → easier domestic ММС»), separate from
    Law 1508 edges.
 
 ### Work implications (agreed direction after this read)
@@ -459,7 +459,7 @@ elections since Oct 2020 under martial law, read against the trust-between-heads
 mechanism. Canonical write-up:
 [mss-cooperation-research.md § frozen elections](./mss-cooperation-research.md#frozen-elections-otg).
 
-**Core claim:** postponed elections freeze the **personal** layer of МСС more
+**Core claim:** postponed elections freeze the **personal** layer of ММС more
 than the formal one. Same heads longer → denser bilateral trust (*sticky
 heads*); post-war / next local elections → possible mass head turnover
 (*fragile heads*). Asymmetric regimes (elected head vs VCA/VA) complicate
@@ -480,7 +480,7 @@ German SKEW mechanics, themes, coverage gaps, and cases (Poltava–Kalmar,
 Kamianske–Wuppertal, Zhytomyr–Kassel, Kherson–Norrköping, Mykolaiv).
 
 Canonical write-up: [ua-eu-twinning.md](./ua-eu-twinning.md). Data layer from
-2026-07-29 (`yarn twinning`); do not conflate with Law 1508-VII МСС.
+2026-07-29 (`yarn twinning`); do not conflate with Law 1508-VII ММС.
 
 ## Candidate new research questions (2026-08-09)
 
@@ -524,9 +524,9 @@ Canonical write-up, with a running decisions log:
       `yarn graph-pin-matching` / `build_pin_matching_graph.py` — 2026-07-24
 - [x] Complementary layer + resources/DREAM releases + `resources.html` — 2026-07-29
 - [x] Goals hierarchy sidecar (`goals-hierarchy.json`) + matching v7 blend — 2026-07-29
-- [x] Explicit MSS intents (`mss-intents.json` / explicit-ask edges + map layer) — 2026-07-29
+- [x] Explicit IMC intents (`mss-intents.json` / explicit-ask edges + map layer) — 2026-07-29
 - [x] Strategy writing guide + corpus-growth checklist — 2026-07-29
-- [ ] Densify strategy corpus in low-МСС / under-sampled oblasts so
+- [ ] Densify strategy corpus in low-ММС / under-sampled oblasts so
       operational neighbours are not an artifact of who got text-mined
       (queue primed: 25 priority `pending` in `batch-queue.json`; see
       [corpus-growth.md](./corpus-growth.md))
@@ -553,7 +553,7 @@ Canonical write-up, with a running decisions log:
       site «Практика»)
 - [x] HydroBASINS lev06 underlay + basin assignment (discovery context only;
       not in v7 `score`) — 2026-08-03; see [external-data-sources](./external-data-sources.md)
-- [ ] **Water as product focus (next):** validate water-themed МСС in registry;
+- [ ] **Water as product focus (next):** validate water-themed ММС in registry;
       surface same-basin + water candidates more clearly in UI (still not fold
       into `score`) — Tkachuk thematic window
 - [x] Reframe stakeholder messaging: reduce uncertainty / surface benefit,
@@ -622,7 +622,7 @@ in-session PIN-priority structures.
 Чернігівська 15→24; Донецька 0→5; first Луганська row. Still thin: Волинська 2/53,
 Черкаська 3/66, Житомирська 3/65, Хмельницька 3/60.
 
-**PIN hubs added:** Щербанівська (GISRR; explicit social-protection МСС task),
+**PIN hubs added:** Щербанівська (GISRR; explicit social-protection ММС task),
 Козельщинська (approved Strategy 2024–2027, task 2.1.3 IMC), Великоберезнянська
 (План заходів 2026–2028 quoting strategy; task 2.4.4 transborder/IMC). Queue
 stale `no_strategy` corrected for Городенківська and Парафіївська (already in
@@ -633,7 +633,7 @@ and Воловецька — strategy still in drafting (2026); Слобідсь
 Китайгородська — still no public strategy PDF.
 
 **Partnership layers:** Interreg rebuilt from cache (1553 projects, 735 matched
-partnerships, 100 hromadas — +3 projects vs August). Official МСС registry XLSX
+partnerships, 100 hromadas — +3 projects vs August). Official ММС registry XLSX
 unchanged (last modified 2023-01-06). Explicit-ask: 85→113 hromadas, 256→407
 edges (regex on the larger GISRR corpus).
 
@@ -654,7 +654,7 @@ Still 111 PIN neighbours without Goals (top remaining: Слобідсько-Ку
 
 In-session structure of three approved СРТГ that are **not** behind visicom
 Cloudflare geo-blocks: **Боратинська** (Volyn, HOVERLA Strategy to 2027;
-explicit horizontal IMC ask; twinning Sprendlingen-Gensingen ≠ МСС),
+explicit horizontal IMC ask; twinning Sprendlingen-Gensingen ≠ ММС),
 **Рожищенська** (Volyn, HOVERLA 29.12.2023; five 2022 спільний проєкт
 contracts with Доросинівська + Копачівська — strategy-reported, not
 `known: true`), **Леськівська** (Cherkasy, 25.10.2024; explicit IMC asks on
@@ -676,7 +676,7 @@ Kyiv VPN unblocked visicom portals (HTTP 200). In-session structure of six
 23.02.2021 — not `known: true`), **Ківерцівська** (HOVERLA + 2026 UCORD
 update; horizontal IMC asks on waste/social), **Маневицька** (2026
 Strategy+Plan; U-LEAD IMC questionnaire; Пліч-о-пліч with Глухівська ≠
-МСС). Corpus **385 → 391** Goals (398 text-mined: 367 full / 24 partial /
+ММС). Corpus **385 → 391** Goals (398 text-mined: 367 full / 24 partial /
 7 proxy). Волинь 4→6/53. Explicit-ask 115→121 hromadas / 408→447 edges.
 Hierarchy 391 / 321 operational. **No rematch** — pack is 6, below the
 ~8–10 threshold; matching-edges still the 382-hromada matrix.
@@ -684,7 +684,7 @@ Hierarchy 391 / 321 operational. **No rematch** — pack is 6, below the
 Second fold of the same VPN session: **Воловецька** (U-LEAD проєкт 2026;
 SWOT O8 IMC/Interreg ask), **Неліпинська** (approved 2026; IMC task 2.4.2),
 **Надвірнянська** (Strategy to 2030 DOCX on nadrada.gov.ua; twinning PL/CZ/RO/DE/IT
-≠ МСС). Жденіївська still drafting; Пилипецька portal DNS dead. Corpus
+≠ ММС). Жденіївська still drafting; Пилипецька portal DNS dead. Corpus
 **391 → 394** Goals (401 text-mined: 370 full / 24 partial / 7 proxy).
 Hierarchy 394 / 324 operational. Explicit-ask after `yarn extract-mss-intents`
 (GISRR SWOT/task extras + neighbour NER): **218** hromadas / **589** edges.
@@ -732,7 +732,7 @@ social capital for the *pair*:
 | KSE PIN or Пліч-о-пліч bilateral | 1.00 | same as old `mss_network` floor |
 | Пліч comention | 0.50 | already in `mss_network` |
 | Named neighbour in strategy (explicit-ask 0.95) | 0.70 | «хтось назвав» — not a registry fact |
-| Both use МСС language, same oblast | 0.40 | co-intent, weaker |
+| Both use ММС language, same oblast | 0.40 | co-intent, weaker |
 | Both have registry UA–EU twinning | 0.30 | practiced international partnership |
 | One side twinning | — | dropped (hub bias / too dense) |
 | Shared donor programme (not STRATEGY LAB / Ре:Форм) | 0.25 | same cohort rooms |

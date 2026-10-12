@@ -7,7 +7,7 @@ reasonable one, and where its limits are likely to sit.
 
 ## Ukraine / decentralization context
 
-Empirical notes on the Ukrainian МСС registry, DOBRE survey (partner-search
+Empirical notes on the Ukrainian ММС registry, DOBRE survey (partner-search
 bottleneck), «light» joint-project procedure, and ЗП 11412 live in
 [docs/mss-cooperation-research.md](docs/mss-cooperation-research.md) — use that
 file for stakeholder framing; keep this list for the theoretical stack.
@@ -39,7 +39,7 @@ Short programme/fund cheat-sheet (DOBRE, EGAP, U-LEAD, GIZ, USAID status…):
    Presentation PDF on decentralization.ua (attachment/document/1442). Feeds
    legislative concept → bill **№11412**.
 
-2b. **DECIDE — аналіз реєстру договорів МСС (2023).** Why ~61% of deals use
+2b. **DECIDE — аналіз реєстру договорів ММС (2023).** Why ~61% of deals use
    joint projects (Law art. 11 simplified procedure). 
    https://www.decentralization.ua/news/16570
 
@@ -54,7 +54,7 @@ competing frameworks — one describes **depth of the arrangement**, the other
 
 | Form | What it is | Example in our corpus | Which signal finds it |
 |------|------------|------------------------|------------------------|
-| Handshake / ad hoc | Informal coordination, no contract | Peer learning Дніпро↔Львів (innovation institution) | Soft thematic; not in МСС registry |
+| Handshake / ad hoc | Informal coordination, no contract | Peer learning Дніпро↔Львів (innovation institution) | Soft thematic; not in ММС registry |
 | Single-purpose | One shared service or asset | Слобожанська↔Обухівська (shared ЦНАП); planned water network Галич–Бурштин–Маріямпіль | Mostly **geo / neighbourhood** (`зручний сусід`); text only if the strategy names the shared asset |
 | Multi-purpose / thematic cluster | Several linked products or a joint development agenda | Tourism: Ніжин–Батурин–Козелець («Місцями козацької сили»); candidate Ужгород↔Мукачево | **Goals-cosine** (`схожа стратегія`); geo optional — can be same corridor, not always next door |
 | NAO-like / dedicated body | Separate admin entity for the network | Асоціація «Львівська агломерація»; large multi-party PIN deals (Дністровський каньйон, 22 parties) | Matching finds *candidates*; Provan & Kenis (below) says what governance form should follow |

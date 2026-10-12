@@ -257,7 +257,7 @@ server.registerTool(
       "site_page = public HTML; site_doc = markdown research pages under docs/. Cite path (e.g. docs/matches.html). " +
       "Hits are retrieval evidence — not IMC legal forms, not v7 score, never known:true. " +
       "Coverage is ~391/1463 hromadas with Goals; do not generalise to all Ukraine. " +
-      "Law 3668 / twinning / Interreg chunks are international layers, not Law 1508 МСС.",
+      "Law 3668 / twinning / Interreg chunks are international layers, not Law 1508 ММС.",
     inputSchema: {
       query: z.string().describe("Natural-language or keyword query (Ukrainian or English)"),
       field: z

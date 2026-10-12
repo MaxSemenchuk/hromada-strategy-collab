@@ -224,7 +224,7 @@ THEME_DEFAULT_FORM: dict[str, str] = {
 }
 
 AGGLOMERATION_CAVEAT = (
-    "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне МСС"
+    "окремий закон про агломерації ще не активний — поки асоціація ОМС / звичайне ММС"
 )
 
 _FORM_FROM_REGISTRY_TEXT = [
@@ -408,7 +408,7 @@ def suggest_form(
     elif track == "complementary":
         rationale_parts.append("доповнення ресурсів")
     elif track in ("explicit-ask", "explicit_ask"):
-        rationale_parts.append("явний запит МСС")
+        rationale_parts.append("явний запит ММС")
 
     return form_id, " · ".join(rationale_parts)
 

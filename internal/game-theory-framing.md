@@ -1,4 +1,4 @@
-# Game-theoretic framing for the МСС cooperation mechanism
+# Game-theoretic framing for the ММС cooperation mechanism
 
 **Status:** analytical note, not a method change. Written to give the paper's
 mechanism section (Study 2 / AIM-CC) a formal theoretical frame, and to log
@@ -293,7 +293,7 @@ randomness being modeled in this script.
 
 Дністровський каньйон is a real geographic-corridor cluster, not a random
 grouping — [docs/mss-cooperation-research.md:185](../docs/mss-cooperation-research.md#L185)
-already notes MSS clusters follow corridors, not far-apart pairs. So the
+already notes IMC clusters follow corridors, not far-apart pairs. So the
 value function uses the corpus's own `geo_score` as a "corridor synergy"
 proxy instead of inventing an unrelated number:
 

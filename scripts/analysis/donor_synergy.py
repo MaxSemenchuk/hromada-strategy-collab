@@ -2,7 +2,7 @@
 """Build donor/fund portfolio synergy slices from DonorsPrograms + matching edges.
 
 For each tagged donor program, surface:
-  - within_portfolio: both ends tagged with the program (shared next grant / МСС)
+  - within_portfolio: both ends tagged with the program (shared next grant / ММС)
   - bridge: one end in portfolio, one outside (structural-hole / network leverage)
   - coverage: how many tagged hromadas have Goals in the matching corpus
 

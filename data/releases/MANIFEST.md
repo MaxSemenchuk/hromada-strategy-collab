@@ -26,7 +26,7 @@ and self-describing, not a growth history.
 
 - **`mss-candidates.json`** — thin **product browse** sidecar: curated
   `registry_known` pairs + top hypotheses from explicit-ask / thematic /
-  complementary / operational slices. Each row is an **МСС candidate agreement**
+  complementary / operational slices. Each row is an **ММС candidate agreement**
   with `package` (theme · legal form · `label_uk`) and `signals` (discovery
   evidence). Not a full pairwise dump; do not browse primarily by `form_id`.
   Built by `yarn export-matching-edges` via `mss_candidate.py`.
@@ -86,7 +86,7 @@ and self-describing, not a growth history.
   | `mixed` | everything else | browse / combined ranking |
 
   Ranked slices (top 50, exclude `known`; operational also excludes pairs
-  already in the KSE МСС network):
+  already in the KSE ММС network):
 
   - `matching-edges.thematic.json` — ranked by `goals_cosine`
   - `matching-edges.operational.json` — ranked by `operational_score`
@@ -95,7 +95,7 @@ and self-describing, not a growth history.
     (`yarn complementary-match` v3): named deficit↔offer + capped kitchen-sink
     sectors (освіта/культура/МСБ…); not v7 score
   - `matching-edges.explicit-ask.json` — **separate** layer
-    (`yarn extract-mss-intents`): МСС / кооперація language in strategy fields
+    (`yarn extract-mss-intents`): ММС / кооперація language in strategy fields
     plus named-neighbour NER (`social_capital` 0.70). GISRR SWOT extras stay
     as quotes; they do not join the same-oblast co-intent clique.
   - `matching-edges.shared-asset.json` — **separate** layer
@@ -104,7 +104,7 @@ and self-describing, not a growth history.
   - `strategy-entities.json` — per-hromada named objects / deficits / neighbours
     / GISRR SWOT-opportunity extras
   - `goals-hierarchy.json` — strategic / operational goal lines (sidecar for v7)
-  - `mss-intents.json` — per-hromada quotes of explicit МСС language
+  - `mss-intents.json` — per-hromada quotes of explicit ММС language
 
   Operational boost fields on every edge (`fiscal_similarity`, `dream_overlap`,
   `operational_score`) do **not** change v7 combined `score` weights
@@ -161,7 +161,7 @@ and self-describing, not a growth history.
   See [docs/edem-barometer.md](../../docs/edem-barometer.md).
 
 - **`twinning-partners.json`** — **UA–EU municipal twinning** (separate from
-  domestic МСС). Sources: SKEW German–Ukrainian registry (`yarn twinning`,
+  domestic ММС). Sources: SKEW German–Ukrainian registry (`yarn twinning`,
   cache `data/cache/twinning/`); Cities4Cities news-title pairs + municipality
   `markers.json` (`c4c_url` = listed for matchmaking); strategy named cities;
   **`partnership-map.json`** (decentralization.ua, merged in — see below).

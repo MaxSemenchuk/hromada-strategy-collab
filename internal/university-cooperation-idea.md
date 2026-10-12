@@ -1,4 +1,4 @@
-# Idea: university cooperation candidates (same product class as МСС)
+# Idea: university cooperation candidates (same product class as ММС)
 
 Parked 2026-07-31. Not in scope for the current hromada pilot — adjacent
 spin-out / reuse of the **agreement-candidate** framing.
@@ -16,12 +16,12 @@ registry-confirmed pairs). Do **not** reuse hromada geo weights or Law
 
 ## Mapping
 
-| Hromada / МСС | Universities |
+| Hromada / ММС | Universities |
 |---|---|
 | Hromada | University / faculty / research group |
 | Development strategy | Strategy · research agenda · intl office programme |
 | Five Law 1508-VII forms | MoU · dual degree · joint programme · research consortium · mobility (Erasmus) · joint lab/centre |
-| МСС registry = ground truth | Erasmus+ / Horizon / CORDIS · published MoU lists · existing consortia |
+| ММС registry = ground truth | Erasmus+ / Horizon / CORDIS · published MoU lists · existing consortia |
 | DOBRE bottleneck: partner search | Same bottleneck for intl offices & research offices |
 | Discovery signals ≠ legal form | «similar themes» ≠ dual degree |
 
@@ -45,7 +45,7 @@ confirmed partnerships; complementary > pure similarity; validation against
 known pairs.
 
 **Must redesign:** atomic unit (faculty/group, not brand only); multi-party
-consortia; form taxonomy; data sources (no single «МСС registry»); drop
+consortia; form taxonomy; data sources (no single «ММС registry»); drop
 neighbourhood-heavy scoring.
 
 ## Minimal pilot (if ever)
@@ -58,4 +58,4 @@ neighbourhood-heavy scoring.
 ## Status
 
 Idea only. No scripts, schema, or release work. Parent product remains
-hromada МСС candidates in this repo.
+hromada ММС candidates in this repo.

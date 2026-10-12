@@ -16,10 +16,10 @@ const OUT = join(ROOT, "docs/assets/chat-index.json");
 const SKIP = new Set(["dream_title"]);
 const MAX_TEXT = 900;
 
-const CONTEXT = `Партнери для МСС — стейкхолдерський сайт + корпус стратегій.
-Product unit = candidate IMC/МСС agreement (pair · theme · one of 5 Law 1508-VII forms).
+const CONTEXT = `Партнери для ММС — стейкхолдерський сайт + корпус стратегій.
+Product unit = candidate IMC/ММС agreement (pair · theme · one of 5 Law 1508-VII forms).
 Discovery signals ≠ legal forms. Matching score is a hypothesis unless known=true / registry_known.
-Do not treat twinning, Interreg, Law 3668, complementary, or basin as МСС forms or known:true.
+Do not treat twinning, Interreg, Law 3668, complementary, or basin as ММС forms or known:true.
 Goals coverage is a sample (~394 / 1463 hromadas) — do not generalise to all Ukraine.
 This static chat has search_chunks over strategy fields + site pages; it does not run SQL over matching-edges.
 Cite hromada name + field, or docs/*.html path for site copy. Never invent quotes.`;

@@ -1,6 +1,6 @@
 # Agent-centric recommendations vs global score
 
-**Product unit stays the same:** candidate МСС agreement =
+**Product unit stays the same:** candidate ММС agreement =
 partner · package (theme · one of five Law 1508-VII forms) · 1–3 signal chips ·
 short «чому це вам допомагає». Discovery signals ≠ legal forms.
 
@@ -12,7 +12,7 @@ short «чому це вам допомагає». Discovery signals ≠ legal f
 | **Agent-conditioned policy** | When municipality **A** opens the tool, re-rank *A’s* candidate edges by motivation / job-to-be-done. Output cards for A — never «у вас високий score». |
 
 `mss_network` in the lab score is partly circular for registry recovery — fine for
-validation. In agent UX it is only a **signal chip** («мережа МСС»), not proof.
+validation. In agent UX it is only a **signal chip** («мережа ММС»), not proof.
 The 0.15 slot is `social_capital` (readiness): named neighbour / explicit-ask,
 registry UA–EU twinning, and shared donor programmes add at lower weight — never
 `known: true`. Complementary / DREAM-*need* matching may inform agent policies;
@@ -68,5 +68,5 @@ method transparency and validation.
 
 ## Out of scope (MVP)
 
-Training weights on the full MSS registry; multi-agent simulation; replacing
+Training weights on the full IMC registry; multi-agent simulation; replacing
 v7.1; setting `known: true` from packages.

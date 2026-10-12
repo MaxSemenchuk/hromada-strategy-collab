@@ -2,7 +2,7 @@
   "name": "hromada-strategy-collab",
   "version": "0.1.0",
   "private": true,
-  "description": "МСС candidate agreements for Ukrainian hromadas (theme · legal form); strategy NLP is one discovery signal among geo, complementary, explicit-ask, and network.",
+  "description": "ММС candidate agreements for Ukrainian hromadas (theme · legal form); strategy NLP is one discovery signal among geo, complementary, explicit-ask, and network.",
   "engines": {
     "node": "20.x"
   },

@@ -95,7 +95,7 @@ def partnerships_network_pairs() -> set[frozenset[str]]:
 
 @lru_cache(maxsize=1)
 def plich_o_plich_pairs() -> dict[frozenset[str], float]:
-    """Domestic МСС network signal from Пліч-о-пліч news-mention mining
+    """Domestic ММС network signal from Пліч-о-пліч news-mention mining
     (data/releases/plich-o-plich.json) — separate from the KSE academic
     partnerships snapshot above, same kind of signal (a real, ongoing
     domestic hromada-to-hromada cooperation program). bilateral_confirmed
@@ -180,7 +180,7 @@ def geo_score(
 
 
 def mss_network_score(katottg_a: str | None, katottg_b: str | None) -> float:
-    """Domestic МСС network-tie signal — KSE academic snapshot OR'd with
+    """Domestic ММС network-tie signal — KSE academic snapshot OR'd with
     Пліч-о-пліч (higher of the two when both have a row for this pair)."""
     if not katottg_a or not katottg_b:
         return 0.0

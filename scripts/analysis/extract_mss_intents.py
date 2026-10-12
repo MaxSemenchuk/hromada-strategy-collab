@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract explicit МСС intents from strategy fields → mss-intents + explicit-ask edges.
+"""Extract explicit ММС intents from strategy fields → mss-intents + explicit-ask edges.
 
 Scans Goals / Projects / Challenges / Strengths / MSSAgreements / PartnersMentioned
 plus GISRR SWOT/task extras from strategy-entities.json. Neighbour NER feeds
@@ -178,8 +178,8 @@ def main() -> None:
                 item["intents"][0].get("theme") if item["intents"] else None,
             )
 
-    # Same-oblast co-intents (both declare МСС language) — soft cluster signal.
-    # GISRR SWOT leftovers are too generic («розвиток МСС») to join this clique.
+    # Same-oblast co-intents (both declare ММС language) — soft cluster signal.
+    # GISRR SWOT leftovers are too generic («розвиток ММС») to join this clique.
     def field_intents(item: dict) -> list[dict]:
         return [
             x
@@ -210,7 +210,7 @@ def main() -> None:
                 if shared:
                     theme = sorted(shared)[0]
                 reason = (
-                    f"обидві згадують МСС/кооперацію"
+                    f"обидві згадують ММС/кооперацію"
                     + (f" (тема: {theme})" if theme else "")
                 )
                 add_edge(a["name"], b["name"], reason, theme)
@@ -258,7 +258,7 @@ def main() -> None:
                     1 for h in intents_out if h.get("named_neighbours")
                 ),
                 "method": (
-                    "regex МСС/кооперація on strategy fields + curated hierarchy intents "
+                    "regex ММС/кооперація on strategy fields + curated hierarchy intents "
                     "+ GISRR SWOT/task extras from strategy-entities + neighbour NER "
                     "+ suggested_theme/form (mss_suggest) + mss_candidate package/signals"
                 ),
@@ -274,7 +274,7 @@ def main() -> None:
         json.dumps(
             {
                 "generatedAt": generated,
-                "caveat": "Explicit МСС language in strategy text — not registry-confirmed.",
+                "caveat": "Explicit ММС language in strategy text — not registry-confirmed.",
                 "intentHromadas": len(intents_out),
                 "edgeCount": len(edges),
                 "top": [

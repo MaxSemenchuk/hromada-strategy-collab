@@ -122,7 +122,7 @@ def main() -> None:
             ),
         },
         "warning": (
-            "Product unit is an МСС candidate agreement (package theme·form), not a strategy twin. "
+            "Product unit is an ММС candidate agreement (package theme·form), not a strategy twin. "
             "Unverified hypotheses unless known=true / status=registry_known. "
             "Combined score ranks one discovery signal — use package + signals / slice files. "
             "suggested_theme / suggested_form / package are IMC hypotheses, not registry facts. "
@@ -215,7 +215,7 @@ def main() -> None:
                 "count": len(operational),
                 "rankBy": "operational_score|score",
                 "excludes": ["known=true", "mss_network>0"],
-                "note": "Neighbours not already linked in the KSE МСС network",
+                "note": "Neighbours not already linked in the KSE ММС network",
             },
             "complementary": {
                 "path": "matching-edges.complementary.json",
@@ -223,7 +223,7 @@ def main() -> None:
             },
             "explicitAsk": {
                 "path": "matching-edges.explicit-ask.json",
-                "note": "Separate yarn extract-mss-intents — МСС language + named neighbours",
+                "note": "Separate yarn extract-mss-intents — ММС language + named neighbours",
             },
             "sharedAsset": {
                 "path": "matching-edges.shared-asset.json",

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Shapley-value estimator for a real multi-party МСС coalition (e.g. register
+Shapley-value estimator for a real multi-party ММС coalition (e.g. register
 #721 "Дністровський каньйон", 22 parties) — see internal/game-theory-framing.md
 §6/§7 (hedonic coalition formation games).
 

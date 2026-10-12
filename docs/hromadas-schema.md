@@ -28,7 +28,7 @@ in parentheses where useful.)
 | Challenges | string \| null | Проблеми / виклики |
 | PartnersMentioned | string \| null | Донори, сусідні громади, згадані в стратегії. Для UA–EU twinning див. окремий шар `twinning-partners.json` (`yarn twinning`) |
 | DonorsPrograms | string[] | Контрольований словник: DOBRE, DECIDE, GIZ, U-LEAD, EGAP, DESPRO, ПРООН/UNDP, МФ Відродження, Ре:Форм, JICA, ЄІБ, ЄБРР, AFD, STRATEGY LAB. Відсутність ≠ «немає програми» (підлога покриття). Опис програм: [donor-programs.md](donor-programs.md). |
-| MSSAgreements | string \| null | Існуючі договори МСС (если найдены) |
+| MSSAgreements | string \| null | Існуючі договори ММС (если найдены) |
 | SourceQuality | string \| null | full-strategy / dfrr-proxy / partial / none |
 | ExtractedAt | string \| null | Когда прогнали extraction |
 
@@ -48,7 +48,7 @@ In-session / `scripts/hromada-output/*.json` may include:
 `yarn structure-hromada --write-release` flattens hierarchy into `Goals` on
 `hromadas.json`. Curated gold:
 `data/sources/goals-hierarchy-overrides.json` → `yarn build-goals-hierarchy`.
-Explicit МСС quotes across the corpus: `yarn extract-mss-intents`.
+Explicit ММС quotes across the corpus: `yarn extract-mss-intents`.
 Named objects / neighbour NER / GISRR SWOT opportunities:
 `yarn extract-strategy-entities` → `strategy-entities.json` (not folded into
 v7 `score`).
@@ -97,7 +97,7 @@ CONTROLLED VOCABULARY: <inject sector list>
 Edge types:
 1. shared-priority — cosine(goals_embedding) high OR sector overlap ≥2 → joint grant / procurement / peer-exchange
 2. complementary — strength(A) matches challenge(B) via rule table
-3. geo-cluster — соседние (adjacency by oblast/rayon) + sector overlap → МСС candidate
+3. geo-cluster — соседние (adjacency by oblast/rayon) + sector overlap → ММС candidate
 Layer 2 (громада↔W3I): match громада sectors/goals vs W3I services, RxC, Lab themes, донори.
 Render into react-force-graph; each edge carries a "why" explanation string.
 
@@ -105,7 +105,7 @@ Render into react-force-graph; each edge carries a "why" explanation string.
 
 - **data.gov.ua CKAN API** — works. `package_search?q=стратегія+розвитку+громади` → 123 datasets. Endpoint: `https://data.gov.ua/api/3/action/package_search`. License CC-BY 4.0.
 - **DREAM public API** — works. Base `https://public-api.dream.gov.ua`, endpoint `/marketplace/public/dream/ideas` returns live project records (JSON, id/code/timestamps). Full schema: https://open-contracting.github.io/dream-api-docs/ (raw spec at github raw openapi.yaml). Confirmed ~87% hromada coverage per secondary source (unverified count, but API itself is real and live).
-- **MCC (МСС) registry** — dataset `912c1ea4-38ea-4648-8306-59fc1df8b51b` on data.gov.ua, XLSX format, no API beyond CKAN metadata — download the file directly.
+- **MCC (ММС) registry** — dataset `912c1ea4-38ea-4648-8306-59fc1df8b51b` on data.gov.ua, XLSX format, no API beyond CKAN metadata — download the file directly.
 - No centralized machine-readable strategy-text repository exists (Мінрозвитку's own catalogue has none) — data.gov.ua CKAN search is the best aggregator, but full coverage requires supplementing with individual hromada websites.
 
 ## PoC extraction run — Ніжинська громада (real strategy, 143pp PDF)
@@ -115,7 +115,7 @@ Result: [poc-extraction.json](poc-extraction.json)
 
 Key confirmations:
 - Document structure matches the hypothesized state template exactly: Профіль громади → SWOT → Стратегічне бачення → Цілі (стратегічні → оперативні → завдання → заходи). This means the extraction prompt can rely on structural anchors ("СТРАТЕГІЧНА ЦІЛЬ N", "Оперативна ціль N.M") instead of freeform parsing.
-- Found an EXPLICIT inter-municipal cooperation signal inside the text itself (task 3.5.3: "Кооперація з іншими громадами у спільному вирішенні проблеми розчищення річки Остер") — hromadas sometimes state collaboration intent directly, which the extraction prompt should capture even without a formal МСС agreement existing yet. This is a real-world case for the "shared-priority becomes explicit ask" edge type.
+- Found an EXPLICIT inter-municipal cooperation signal inside the text itself (task 3.5.3: "Кооперація з іншими громадами у спільному вирішенні проблеми розчищення річки Остер") — hromadas sometimes state collaboration intent directly, which the extraction prompt should capture even without a formal ММС agreement existing yet. This is a real-world case for the "shared-priority becomes explicit ask" edge type.
 - Sector vocabulary needed 2 additions after just 1 document (Просторове планування/урбаністика, Е-врядування) — confirms vocabulary will keep growing through the pilot; the `sectors_new` escape valve in the prompt works as intended.
 
 ## Open questions still unresolved

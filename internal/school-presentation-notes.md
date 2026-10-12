@@ -8,7 +8,7 @@ Pacing target: ~150 words/min → ~750 words total. Notes below are bullets, not
 
 ## 1. Research question (~30-40s)
 
-- Among Ukrainian *hromadas* (municipalities) with structured development-strategy documents, can text-derived matching **causally increase** inter-municipal cooperation (МСС) — not just correlate with it?
+- Among Ukrainian *hromadas* (municipalities) with structured development-strategy documents, can text-derived matching **causally increase** inter-municipal cooperation (ММС) — not just correlate with it?
 - Framed as three matching *signals* competing head-to-head: **thematic** (strategy-goal similarity) vs **operational** (geographic proximity) vs **random control**.
 - Working paper title: *"Collaboration Matchmaking by Public Strategies: Evidence from a Field Experiment with Ukraine's Municipalities."*
 

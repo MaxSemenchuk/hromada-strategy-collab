@@ -34,7 +34,7 @@ TWINNING = RELEASES / "twinning-partners.json"
 
 # Direct domestic floor is whatever mss_network_score already returns (0 / 0.5 / 1).
 W_NAMED = 0.70  # strategy named this exact neighbour
-W_COINTENT = 0.40  # both use МСС language, same oblast, not named
+W_COINTENT = 0.40  # both use ММС language, same oblast, not named
 W_TWINNING_BOTH = 0.30  # both have registry-confidence UA–EU twinning
 W_SHARED_DONOR = 0.25  # shared DOBRE / U-LEAD / … cohort
 

@@ -41,7 +41,7 @@ def test_dnipro_is_common_hydronym() -> None:
 
 
 def test_named_cluster() -> None:
-    text = "Договір МСС «Створення туристичного кластеру «Місцями козацької сили»»"
+    text = "Договір ММС «Створення туристичного кластеру «Місцями козацької сили»»"
     assets = find_assets(text, field="mss_agreements")
     clusters = [a for a in assets if a["kind"] == "cluster"]
     assert clusters
@@ -96,7 +96,7 @@ def test_neighbour_kozelets_cluster() -> None:
     ]
     index = build_name_index(rows)
     text = (
-        "Договір МСС «Створення туристичного кластеру» з Ніжинською, "
+        "Договір ММС «Створення туристичного кластеру» з Ніжинською, "
         "Батуринською та Парафіївською громадами"
     )
     found = find_named_neighbours(

@@ -1,11 +1,11 @@
 # UA–EU municipal twinning — format insights
 
 Research notes (2026-07-29 layer build; narrative insights 2026-08-03).
-**Separate from domestic МСС** (Law 1508-VII). Data: `yarn twinning` →
+**Separate from domestic ММС** (Law 1508-VII). Data: `yarn twinning` →
 [`twinning-partners.json`](../data/releases/twinning-partners.json).
 Sources: [external-data-sources.md](./external-data-sources.md#skew--germanukrainian-municipal-partnerships-twinning).
 
-Do **not** treat twinning as Law 1508-VII МСС, and never set `known: true` from
+Do **not** treat twinning as Law 1508-VII ММС, and never set `known: true` from
 it. Registry-confidence twinning (SKEW / decentralization.gov.ua) is a **weak
 pairwise input** to `social_capital` (the 0.15 readiness slot: both sides
 practiced an international partnership). Product overlay label stays
@@ -137,7 +137,7 @@ equipment + first contacts (Jan 2024) → visits, generators for utilities/healt
 kindergartens → joint work with emergency / health services → sister-city
 memorandum at URC 2025. Swedish side explicitly frames learning crisis
 preparedness from Poltava; waste management is a next track. In Poltava’s
-strategy extract: international agreements present; **classical UA–UA МСС with
+strategy extract: international agreements present; **classical UA–UA ММС with
 neighbours largely absent** — useful product contrast.
 
 ### Kamianske ↔ Wuppertal (DE, SKEW, 2025)
@@ -261,14 +261,14 @@ only fill gaps (e.g. BCP jargon that keep.eu tagged as Safety/Infrastructure).
 
 ## Implications for this project
 
-| Domestic МСС matching | UA–EU twinning |
+| Domestic ММС matching | UA–EU twinning |
 |----------------------|----------------|
 | Law 1508-VII, registry PIN | Foreign municipal partners |
 | Strategy / geo / network scores | SKEW registry + C4C news + strategy mentions |
 | Labels: схожа стратегія / зручний сусід / … | Label: місто-побратим ЄС |
 | Hypothesis unless `known: true` | SKEW ≈ registry; C4C news / strategy = hypotheses |
 
-Bottleneck analogy (DOBRE on МСС partner search) partially applies: finding and
+Bottleneck analogy (DOBRE on ММС partner search) partially applies: finding and
 warming up a foreign partner is also relational and brokered (SKEW, C4C,
 forums) — our matching layer does not replace that brokerage.
 

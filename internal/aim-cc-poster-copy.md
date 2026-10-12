@@ -50,7 +50,7 @@ Max Semenchuk builds open civic-tech tools with Ukrainian municipalities (W3I Ci
 
 ## Introduction *(medium)*
 
-Ukraine’s **decentralization** shifted powers to amalgamated municipalities (**hromadas**, ~**1,469** mainland). Mandatory development strategies encode local goals; **inter-municipal cooperation (IMC / МСС)** offers five legal forms under Law 1508-VII. DOBRE surveys find the hardest stage is **partner search & communication**, not drafting the contract.
+Ukraine’s **decentralization** shifted powers to amalgamated municipalities (**hromadas**, ~**1,469** mainland). Mandatory development strategies encode local goals; **inter-municipal cooperation (IMC / ММС)** offers five legal forms under Law 1508-VII. DOBRE surveys find the hardest stage is **partner search & communication**, not drafting the contract.
 
 Partner discovery remains mostly **relational** (head-to-head contact, associations, donors). Expert input for this study (Tkachuk / ІГС, 2026-08) stresses that tools do not replace trust — they should reduce uncertainty, surface mutual benefit, and prepare a safer first talk. Under martial law, frozen local elections make current head networks *sticky* but *fragile* after future votes — another reason not to treat personal ties as permanent ground truth.
 

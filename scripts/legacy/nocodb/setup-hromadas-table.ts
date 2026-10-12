@@ -2,7 +2,7 @@
  * Create NocoDB "Hromadas" table for the hromada strategy collaboration pilot.
  *
  * Stores extracted strategy data per territorial community (hromada): goals,
- * sectors (linked to Tags), projects, strengths/challenges, partners, MSS intents.
+ * sectors (linked to Tags), projects, strengths/challenges, partners, IMC intents.
  *
  * Usage: yarn setup-hromadas
  *

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""UA–EU Interreg partnership layer (separate from domestic МСС matching).
+"""UA–EU Interreg partnership layer (separate from domestic ММС matching).
 
 Source: keep.eu (Interact/EU public database of Interreg/ETC projects and
 partner organisations). Uses keep.eu's public browse API — POST
@@ -18,7 +18,7 @@ country pairs, ~1,100 more projects total) are known programme IDs
 include them.
 
 Does NOT fold into v7 combined `score`. Does NOT set known=true (that flag is
-for curated domestic registry МСС only).
+for curated domestic registry ММС only).
 
 Usage:
   yarn interreg                 # fetch + build release (current period only)
@@ -582,7 +582,7 @@ def build_release(details: list[dict], programme_ids: list[int]) -> None:
     payload = {
         "generatedAt": generated,
         "warning": (
-            "UA-EU Interreg partnership layer — separate from domestic МСС and from "
+            "UA-EU Interreg partnership layer — separate from domestic ММС and from "
             "the SKEW/Cities4Cities twinning layer (twinning-partners.json). Sourced "
             "from keep.eu (Interact-EU), the official Interreg/ETC project database. "
             "IMPORTANT: matching a partner org to a hromada by its registered town "
@@ -671,7 +671,7 @@ def build_release(details: list[dict], programme_ids: list[int]) -> None:
             {
                 "generatedAt": generated,
                 "caveat": (
-                    "UA-EU Interreg partnerships (keep.eu) — separate from domestic МСС "
+                    "UA-EU Interreg partnerships (keep.eu) — separate from domestic ММС "
                     "and SKEW/C4C twinning. Most matches are oblast/national bodies "
                     "headquartered in the hromada's town, not the hromada council "
                     "itself — see local_authority_partner_count per hromada."
