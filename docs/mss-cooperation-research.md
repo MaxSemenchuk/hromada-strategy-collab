@@ -1,7 +1,7 @@
 # ММС: що кажуть реєстр, DOBRE і як це підпирає наш matching
 
 Research notes (2026-07-30). Complements the registry geography/types read in
-[project-history.md](./project-history.md#мсс-registry-geography--types--matching-implications-2026-07-24)
+[project-history.md](./project-history.md#ммс-registry-geography--types--matching-implications-2026-07-24)
 and the OECD/IMC ladder in [REFERENCES.md](../REFERENCES.md).
 
 **UA–EU twinning** (SKEW / Cities4Cities) is a separate legal and data layer —
