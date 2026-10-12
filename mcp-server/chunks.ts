@@ -56,7 +56,7 @@ const SYNONYMS: { test: RegExp; extra: string[] }[] = [
   { test: /тпв|смітт|полігон|відход|waste|landfill/i, extra: ["ТПВ", "відходи", "сміття", "полігон"] },
   { test: /туризм|спадщин|побратим|tourism|heritage/i, extra: ["туризм", "спадщина"] },
   { test: /цнап|е-уряд|цифров|cnap|digital/i, extra: ["ЦНАП", "цифровізація", "е-урядування"] },
-  { test: /мсс|міжмуніцип|співроб|коопер/i, extra: ["ММС", "міжмуніципальне"] },
+  { test: /ммс|міжмуніцип|співроб|коопер/i, extra: ["ММС", "міжмуніципальне"] },
 ];
 
 function readJson(path: string): unknown {
