@@ -1,182 +1,273 @@
-# Дві мережі співпраці: хто в Україні має міста-побратими в ЄС, а хто — договори ММС
+# Two Networks of Cooperation: Which Ukrainian Hromadas Have EU Twin Cities and Which Have Inter-Municipal Cooperation Agreements
 
-**Автор:** Max Semenchuk (W3I) · **Дата:** 2026-10-17 · **Версія:** препринт v1
-**Дані й код:** [Hromada Strategy Collaboration Mapping](https://github.com/MaxSemenchuk/hromada-strategy-collab),
-[DOI 10.5281/zenodo.22552879](https://doi.org/10.5281/zenodo.22552879) · CC BY 4.0
+**Max Semenchuk** (W3I) · max.semenchuk@gmail.com
+Preprint, version 1 · 17 October 2026 · [Ukrainian version](twinning-vs-mms.uk.md)
+Data and code: [Hromada Strategy Collaboration Mapping](https://github.com/MaxSemenchuk/hromada-strategy-collab), DOI [10.5281/zenodo.22552879](https://doi.org/10.5281/zenodo.22552879) (CC BY 4.0)
 
-## Abstract (English)
+## Abstract
 
-Ukrainian territorial communities (hromadas) cooperate through two largely
-separate channels: twinning with EU municipalities and inter-municipal
-cooperation agreements (ММС, Law 1508-VII) with domestic neighbours. Joining
-registry data for all 1,463 hromadas on the KATOTTG code, we find that 326 have
-a registry-confirmed EU partner and 415 were party to an ММС agreement active on
-24 Feb 2022, but only 111 have both (φ = 0.07). Twinning rises steeply with
-population (2.6% of hromadas under 5,000 inhabitants vs 70.5% above 50,000);
-ММС participation does not (31.7% vs 25.3%). In a logistic model with oblast
-fixed effects, population has opposite effects (OR per 10× population: 46.8 for
-twinning, 0.46 for ММС), while own income per capita and donor-programme
-participation raise the odds of both. Twinning is a weak, borderline-significant
-predictor of ММС once these are controlled (OR 1.36, 95% CI 0.95–1.95).
-Support instruments aimed at one network should not be assumed to reach the
-other. Limitations include a pre-war ММС snapshot, incomplete twinning
-registries, and free-text theme classification.
+Ukrainian territorial communities (hromadas) cooperate through at least two
+channels that policy discussions often treat as one: twinning with municipalities
+in the European Union, and inter-municipal cooperation (IMC) agreements with
+domestic neighbours under Law 1508-VII. Joining open registry data for all 1,463
+hromadas on the KATOTTG administrative code, we find that 326 hromadas have a
+registry-confirmed EU partner, 415 were party to an IMC agreement active on
+24 February 2022, and only 111 are in both groups (φ = 0.07). Twinning rises
+steeply with population (2.6% of hromadas under 5,000 inhabitants; 70.5% of
+those above 50,000), whereas IMC participation does not (31.7% and 25.3%). In
+logistic models with oblast fixed effects, population has opposite effects on
+the two outcomes (odds ratio per tenfold increase: 46.8 for twinning, 0.46 for
+IMC), while own income per capita and participation in donor programmes raise
+the odds of both. Controlling for these factors, twinning is at most a weak
+predictor of IMC (OR 1.36, 95% CI 0.95–1.95). Support instruments designed for
+one network therefore cannot be assumed to reach communities active in the
+other. Limitations include a pre-war IMC snapshot, incomplete twinning
+registries and keyword-based theme classification.
 
-## Коротко
+**Keywords:** inter-municipal cooperation; municipal twinning; Ukraine; decentralisation; hromada; open data
 
-Українські громади співпрацюють у двох майже незалежних «мережах»: **з
-європейськими містами-побратимами** та **з сусідніми громадами за законом про
-співробітництво територіальних громад (ММС)**. З 1 463 громад побратимів у
-реєстрах має **326**, договір ММС, чинний на 24.02.2022, — **415**, обидва —
-лише **111**. Перша мережа сильно залежить від розміру громади, друга — ні.
+## 1. Introduction
 
-## 1. Питання
+Since the amalgamation reform that began in 2015, Ukraine's local self-government has been
+organised around roughly 1,450 territorial communities (hromadas). Two forms of
+cooperation between hromadas and other municipalities are especially visible in
+donor programming. The first is *inter-municipal cooperation* (IMC) between
+Ukrainian communities, regulated by the Law "On Cooperation of Territorial
+Communities" (1508-VII), which provides five legal forms — among them delegation
+of tasks, joint municipal enterprises, joint projects and joint financing of
+institutions — and a state registry of agreements. The second is *twinning* and
+solidarity partnerships with municipalities abroad, which surged after February
+2022, supported by networks such as the German Service Agency Communities in One
+World (SKEW) and by donor matchmaking.
 
-Донори й міністерства часто говорять про «співробітництво громад» як про одне
-явище. Але побратимство з німецьким чи шведським містом і спільне комунальне
-підприємство із сусіднім селом — різні речі: інші партнери, інші ресурси, інша
-логіка. Чи допомагає досвід однієї мережі в іншій, і хто взагалі в кожну з них
-потрапляє?
+Policy documents frequently refer to both under the umbrella of "municipal
+cooperation" [1, 2]. Yet the two differ in partners, resources and purpose: a
+shared administrative-services centre between two villages and a partnership
+with a German city that delivers generators and training are different
+activities, probably available to different kinds of communities. A survey of 546
+hromadas by USAID DOBRE found that the hardest stage of domestic IMC is partner
+search and communication (30% of respondents) rather than legal form [3],
+suggesting that how communities find partners may shape who participates.
 
-## 2. Дані
+This paper asks two descriptive questions. (1) Which hromadas take part in each
+network? (2) Do the networks overlap beyond what shared community characteristics
+would predict? We answer them by joining registry data on both networks with
+community-level covariates through a common administrative key.
 
-Універсум — 1 463 громади з [відкритого датасету](https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/data/releases/DATASET.md);
-ключ для з’єднання — код КАТОТТГ.
+## 2. Data and methods
 
-- **Twinning.** Громада має щонайменше одного партнера з рівнем довіри
-  `registry`: реєстр SKEW (Німеччина; 110 громад), каталог AFCCRE (Франція; 44),
-  карта партнерств на decentralization.ua (282; громади можуть бути в кількох
-  джерелах). Слабші сигнали (новини, згадки в стратегіях) — лише 27 зв’язків із
-  1 371 — у підрахунок не входять.
-- **ММС.** Громада є стороною договору з реєстру договорів про співробітництво
-  територіальних громад (data.gov.ua, стан на 28.12.2022), чинного на
-  24.02.2022: 306 договорів, 415 громад. Зв’язок договорів із громадами береться
-  з таблиці партнерств KSE-Loc-Data-Hub ([Zenodo 10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573)).
-- **Коваріати.** Населення; власні доходи на жителя (KSE); рівень активності на
-  платформі e-dem; участь у донорських програмах (DOBRE, GIZ, U-LEAD та ін.,
-  поле `DonorsPrograms` — нижня межа охоплення).
+### 2.1 Unit of analysis and key
 
-## 3. Хто бере участь
+The universe is the 1,463 hromadas of the open dataset *Hromada Strategy
+Collaboration Mapping* (government-controlled territory plus hromadas listed as
+occupied). All joins use the KATOTTG code, which is unique across the universe;
+hromada names are not unique and were not used as keys.
 
-| Населення громади | Громад | Мають twinning | Мають ММС |
+### 2.2 Twinning
+
+A hromada is classified as *twinned* if it has at least one partner with
+confidence level "registry" in the dataset's twinning layer. Registry sources
+are the SKEW list of German–Ukrainian municipal partnerships (110 hromadas), the
+AFCCRE directory of French *jumelages* (44) and the partnership map of the
+Ukrainian ministry on decentralization.ua (282); hromadas may appear in several
+sources. Weaker evidence (news items, mentions in hromada strategies) accounts
+for 27 of 1,371 partner links and is excluded.
+
+### 2.3 Inter-municipal cooperation
+
+A hromada is classified as *IMC-active* if it is a party to an agreement in the
+Ukrainian registry of cooperation agreements (data.gov.ua, file dated
+28 December 2022) that was in force on 24 February 2022. This yields 306
+agreements and 415 hromadas. The mapping from agreements to hromadas is taken
+from the KSE-Loc-Data-Hub network table [4]. The flag is therefore a pre-invasion
+snapshot, whereas twinning data include partnerships formed later.
+
+### 2.4 Covariates
+
+Population (2022) and own budget income per capita come from KSE data [4].
+Digital-participation level is derived from the e-dem.ua platform statistics
+(tiers: high, medium, low, not connected). Participation in donor or technical
+assistance programmes (DOBRE, DECIDE, GIZ, U-LEAD, EGAP, DESPRO, UNDP, among
+others) is recorded in the dataset's `DonorsPrograms` field and is a lower bound
+on actual participation.
+
+### 2.5 Analysis
+
+We report shares with 95% Wilson intervals across population bands, settlement
+type, oblast, income quartile, e-dem tier and donor participation, and the φ
+coefficient for overlap, overall and within population bands. We then fit
+logistic regressions for (a) twinning, (b) IMC and (c) IMC with twinning as an
+additional predictor. Predictors are log₁₀ population, log₁₀ own income per
+capita, e-dem tier (reference: not connected), any donor programme and oblast
+fixed effects; 1,415 hromadas with known population and income enter the models.
+Odds ratios for population and income refer to a tenfold increase.
+
+For topics, we classified the titles and forms of 899 registry IMC agreements and
+the 196 foreign agreements in the Law 3668-IX register [5] with one keyword
+vocabulary, allowing multiple topics per agreement. Because the 3668-IX register
+records formal international agreements rather than twinning as such, this
+comparison is indicative only.
+
+All numbers are produced by a single script (Section 7).
+
+## 3. Results
+
+### 3.1 Who takes part
+
+Overall, 326 hromadas (22.3%) are twinned and 415 (28.4%) are IMC-active.
+Table 1 shows participation by population band.
+
+**Table 1.** Share of hromadas with twinning and IMC by population (95% Wilson CI).
+
+| Population | Hromadas | Twinned | IMC-active |
 |---|---|---|---|
-| до 5 тис. | 265 | 2,6% (1,3–5,4) | 31,7% (26,4–37,5) |
-| 5–10 тис. | 417 | 9,8% (7,3–13,1) | 29,0% (24,9–33,5) |
-| 10–20 тис. | 383 | 20,1% (16,4–24,4) | 27,7% (23,4–32,4) |
-| 20–50 тис. | 299 | 44,8% (39,3–50,5) | 26,8% (22,1–32,0) |
-| понад 50 тис. | 95 | 70,5% (60,7–78,8) | 25,3% (17,6–34,8) |
+| < 5,000 | 265 | 2.6% (1.3–5.4) | 31.7% (26.4–37.5) |
+| 5,000–10,000 | 417 | 9.8% (7.3–13.1) | 29.0% (24.9–33.5) |
+| 10,000–20,000 | 383 | 20.1% (16.4–24.4) | 27.7% (23.4–32.4) |
+| 20,000–50,000 | 299 | 44.8% (39.3–50.5) | 26.8% (22.1–32.0) |
+| > 50,000 | 95 | 70.5% (60.7–78.8) | 25.3% (17.6–34.8) |
 
-(У дужках — 95% інтервал Вілсона. Для 4 громад населення невідоме.) Twinning
-зростає майже вертикально; частка ММС по групах майже однакова, у малих громад
-трохи вища. За типом: twinning мають 51% міських, 15% селищних і 9% сільських
-громад; ММС — 28%, 22% і 33%.
+(Four hromadas with unknown population are omitted.) Twinning rises
+monotonically with size; IMC participation is nearly flat and slightly higher in
+the smallest communities. By settlement type, 51% of urban, 15% of settlement
+and 9% of rural hromadas are twinned, versus 28%, 22% and 33% for IMC.
 
-**Географія розходиться.** Twinning лідирує на заході: Львівська область 62%,
-Закарпатська 58%, Волинська 50%. ММС — Рівненська (59%), де twinning лише 6%;
-далі Львівська (58%), Полтавська (57%), Івано-Франківська (47%). Київська
-область — 32% twinning і 14% ММС.
+Geography also differs. Twinning is concentrated in the west — Lviv (62%),
+Zakarpattia (58%) and Volyn (50%) oblasts — while IMC participation is highest in
+Rivne (59%), where only 6% of hromadas are twinned, followed by Lviv (58%),
+Poltava (57%) and Ivano-Frankivsk (47%). Kyiv oblast has 32% twinned and 14%
+IMC-active hromadas.
 
-## 4. Наскільки мережі перетинаються
+### 3.2 Overlap
 
-З 415 громад із ММС побратимів у реєстрах має 111 (26,7%). Коефіцієнт кореляції
-φ для двох ознак — **0,07**. Це не лише наслідок розміру: усередині кожної
-групи за населенням φ лишається в межах 0,04–0,13. Зв’язок є, але слабкий.
+Of 415 IMC-active hromadas, 111 (26.7%) are also twinned; 215 are twinned only,
+304 IMC-active only, and 833 in neither group. The φ coefficient is 0.07. Overlap
+is not merely a size effect: within population bands φ ranges from 0.04 to 0.13,
+a small positive association.
 
-## 5. Що стоїть за кожною мережею
+### 3.3 Correlates of participation
 
-Логістична регресія (1 415 громад з відомими населенням і доходом; фіксовані
-ефекти за областями) дає такі відношення шансів (OR, 95% ДІ):
+**Table 2.** Odds ratios (95% CI) from logistic regressions with oblast fixed
+effects (n = 1,415).
 
-| Чинник | Twinning | ММС |
+| Predictor | Twinning | IMC |
 |---|---|---|
-| Населення, ×10 | 46,8 (24,5–89,4) | 0,46 (0,31–0,66) |
-| Власний дохід на жителя, ×10 | 2,8 (1,5–5,2) | 2,0 (1,3–3,2) |
-| Є донорська програма | 1,75 (1,09–2,81) | 1,90 (1,30–2,78) |
-| e-dem «високий» проти «не підключено» | 1,77 (1,05–2,98) | 1,39 (0,88–2,21) |
+| Population, ×10 | 46.8 (24.5–89.4) | 0.46 (0.31–0.66) |
+| Own income per capita, ×10 | 2.80 (1.51–5.19) | 2.02 (1.29–3.17) |
+| Any donor programme | 1.75 (1.09–2.81) | 1.90 (1.30–2.78) |
+| e-dem "high" vs not connected | 1.77 (1.05–2.98) | 1.39 (0.88–2.21) |
 
-Розмір працює у протилежних напрямках: за інших рівних умов великі громади
-значно частіше мають побратимів, але рідше — договори ММС. Дохід і участь у
-донорських програмах підвищують шанси в обох мережах приблизно однаково
-(довірчі інтервали перекриваються). Цифрова активність значущо пов’язана лише з
-twinning (p = 0,03), для ММС зв’язок не значущий.
+Population acts in opposite directions: conditional on the other covariates and
+oblast, larger hromadas are far more likely to be twinned and somewhat less likely
+to be IMC-active. Income and donor participation raise the odds in both networks
+by similar amounts (confidence intervals overlap). High digital participation is
+associated with twinning (p = 0.03) but not significantly with IMC. When twinning
+is added to the IMC model, its odds ratio is 1.36 (0.95–1.95; p = 0.09).
 
-Додавши twinning як чинник у модель для ММС, отримуємо OR = 1,36
-(0,95–1,95; p = 0,09): після контролю розміру, доходу, донорів і області
-зв’язок між мережами лишається слабким і на межі значущості.
+Donor-programme patterns differ by programme, though subsamples are small. Of 20
+hromadas tagged with GIZ, 16 (80%) have a German partner in SKEW, compared with
+7.5% of all hromadas; GIZ is consistent with its role as operator of the German
+partnership scheme. DOBRE hromadas are more often IMC-active (40%) than twinned
+(24%), as are U-LEAD hromadas (81% and 56%).
 
-**Донорський міст — GIZ.** З 20 громад із позначкою GIZ 16 (80%) мають
-німецького партнера в SKEW проти 7,5% у середньому; twinning (будь-який) мають
-90% з них. DOBRE пов’язана з ММС частіше (40%), ніж із twinning (24%); U-LEAD — 81%
-проти 56%. Підвибірки малі (GIZ — 20 громад, U-LEAD — 16), інтервали широкі
-(див. файл результатів).
+### 3.4 Topics
 
-## 6. Про що співпрацюють
+**Table 3.** Most frequent topics (share of agreements; multi-label).
 
-Прямого порівняння «twinning проти ММС» за темами зробити не можна. Для боку
-ЄС є реєстр міжнародних угод за законом 3668-IX (196 угод, сфера — вільний
-текст), а не самі SKEW/AFCCRE. Для ММС — назви й форми 899 договорів реєстру.
-Обидва набори класифіковано одним словником тем (мультитеги: угода враховується
-в усіх темах, що їй підходять).
+| Domestic IMC registry (n = 899; 37% unclassified) | | Foreign agreements, Law 3668-IX (n = 196; 14% unclassified) | |
+|---|---|---|---|
+| Roads and infrastructure | 21% | Culture | 72% |
+| Education | 14% | Education | 55% |
+| Administrative-services centres | 11% | Economy | 53% |
+| Health | 9% | Tourism | 47% |
+| Social services | 6% | Governance | 32% |
+| Waste | 5% | Roads | 26% |
+| Fire protection | 4% | Cross-border cooperation | 22% |
 
-- **ММС вимірюється послугами:** дороги й інфраструктура 21%, освіта 14%, ЦНАП
-  11%, охорона здоров’я 9%, соціальні послуги 6%, відходи 5%, пожежна охорона
-  4%. Для 37% договорів (типові «спільний проєкт», спільне КП) тему
-  визначити не вдалося.
-- **Угоди з ЄС вимірюються обміном:** культура 72%, освіта 55%, економіка 53%,
-  туризм 47%, врядування 32%, транскордонність 22%. ЦНАП, пожежна охорона й
-  комунальні послуги майже відсутні. Широкий текст «торговельно-економічне,
-  науково-технічне та культурне співробітництво» завищує частки кількох тем
-  одночасно.
-- **Енергетика майже відсутня в обох реєстрах (≤1%)**, хоча її часто називають
-  пріоритетом у програмах партнерства. Імовірно, вона живе в проєктах і
-  гуманітарній допомозі, а не в підписаних угодах.
+Domestic agreements are dominated by service delivery; foreign agreements by
+broad cultural, educational and economic exchange. The latter frequently use
+generic wording ("trade-economic, scientific-technical and cultural
+cooperation"), which assigns several topics to one agreement and inflates their
+shares. Energy appears in under 1% of both registers, although it is frequently
+cited as a priority of partnership programmes; plausibly, it is realised through
+projects and humanitarian assistance rather than signed agreements.
 
-## 7. Що з цього випливає
+## 4. Discussion
 
-- **Для донорів і міністерства.** Підтримка міжнародних побратимств і
-  міжмуніципального співробітництва охоплює різні громади. Програма, розрахована
-  на один із каналів, не гарантує охоплення іншого.
-- **Для малих громад.** ММС — переважна форма формалізованої співпраці: серед
-  громад до 5 тис. її мають 32%, twinning — 3%.
-- **Для дослідників.** З’єднання двох реєстрів за КАТОТТГ відкриває питання,
-  які тут лише позначені: чи прискорює досвід twinning укладання ММС і чи
-  змінилася ця картина після 2022 року.
+The two networks recruit different communities. Twinning behaves like a resource
+that scales with the size and administrative capacity of a municipality; IMC
+is consistent with a response to local needs that is, if anything, at least as common where
+communities are small and may be unable to provide services alone. That donor participation
+and income matter for both networks suggests that some general capacity to
+cooperate exists, but its effect on the odds is similar and modest, and being in
+one network adds little to the odds of being in the other once these factors are
+controlled.
 
-## 8. Обмеження
+Three implications follow, each as a hypothesis rather than a finding. First,
+programmes that fund international partnerships and programmes that fund
+inter-municipal cooperation reach largely different communities; coordination
+should not assume that the former builds capacity for the latter. Second, small
+rural hromadas are well represented in IMC but rarely appear in twinning
+registries, so any new instrument for connecting them with EU peers faces a
+distinct starting point. Third, the strong western concentration of twinning, and
+the Rivne–Poltava concentration of IMC, indicate regional ecosystems — donors,
+facilitators and associations — worth studying directly.
 
-1. **Різні дати.** Реєстр ММС зафіксовано станом на 24.02.2022 (файл — 28.12.2022),
-   а twinning включає чимало партнерств, створених після повномасштабного
-   вторгнення. Це може впливати на різницю за розміром; сучасного реєстру ММС
-   у відкритому доступі ми не маємо.
-2. **Неповні реєстри twinning.** SKEW — лише Німеччина, AFCCRE — Франція; інші
-   країни — з карти на decentralization.ua. Реальних побратимств більше, а
-   охоплення нерівномірне за країнами.
-3. **Кореляція, не причинність.** Зокрема, великі громади, ймовірно, мають
-   спроможність вести міжнародну роботу, але це припущення, не результат.
-4. **Теми.** Класифікація за ключовими словами з вільного тексту; 37% договорів
-   ММС і 14% міжнародних угод без теми. Реєстр 3668-IX не збігається з
-   twinning.
-5. **Окуповані громади.** Для частини громад на окупованих територіях населення
-   взято з оцінки KSE 2022, а для чотирьох воно невідоме; коди КАТОТТГ — з
-   довідника KSE.
-6. **Назви.** Назви громад не унікальні; усі з’єднання виконано за КАТОТТГ.
+DOBRE's finding that partner search is the main obstacle to IMC [3] fits with
+these observations: twinning has dedicated matchmaking mechanisms (SKEW and
+similar schemes), whereas domestic IMC has no comparable national scheme. We
+did not test whether differences in partner search explain these patterns.
 
-## Відтворюваність
+## 5. Limitations
 
-```bash
-yarn fetch-mss-registry      # data/cache/mss/ (реєстр ММС)
-# таблиця KSE data/cache/kse/ — KSE-Loc-Data-Hub (Zenodo 10.5281/zenodo.15267573)
-python3 scripts/analysis/twinning_vs_mms.py
-```
+1. **Timing.** The IMC flag is a pre-invasion snapshot; twinning includes
+   partnerships formed after 2022. This may amplify the difference by
+   size. A current public IMC registry would be needed to check.
+2. **Incomplete twinning registries.** SKEW covers Germany, AFCCRE France; other
+   countries come from the ministry's map. True twinning is more extensive and
+   coverage varies by country.
+3. **Association, not causation.** The models adjust for observed
+   characteristics only. Interpretations such as international-relations capacity
+   in large municipalities are conjectures.
+4. **Topics.** Classification uses keywords on free text; a large share of IMC
+   agreements (generic joint projects and enterprises) remains unclassified, and the
+   3668-IX register differs from twinning.
+5. **Measurement.** Donor participation is a lower bound; population for
+   some occupied hromadas is a 2022 estimate and unknown for four.
+6. **Single snapshot.** No temporal dynamics are examined.
 
-Скрипт [twinning_vs_mms.py](../scripts/analysis/twinning_vs_mms.py) записує всі
-наведені числа в `internal/twinning-vs-mms-results.json`; блок регресії потребує
-`pandas` і `statsmodels`. Кеші `data/cache/` не входять до релізу
-(завантажуються з першоджерел), решту даних — `data/releases/` — див.
-[DATASET.md](https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/data/releases/DATASET.md).
+## 6. Conclusion
 
-## Як цитувати
+In Ukraine, EU twinning and domestic inter-municipal cooperation are largely
+separate networks recruiting different kinds of communities. Size is the main
+dividing line, with opposite effects; income and donor engagement favour both.
+Treating them as one phenomenon in policy design, evaluation or support
+programmes risks missing most of the communities in the other network.
 
-Semenchuk, M. (2026). *Дві мережі співпраці: хто в Україні має міста-побратими
-в ЄС, а хто — договори ММС.* Hromada Strategy Collaboration Mapping,
-препринт v1. https://doi.org/10.5281/zenodo.22552879
+## 7. Data and code availability
+
+All inputs except two re-fetchable caches are released in
+[`data/releases/`](https://github.com/MaxSemenchuk/hromada-strategy-collab/tree/main/data/releases)
+(CC BY 4.0; dataset card: `DATASET.md`; CSV mirrors in `csv/`). The IMC registry
+(`yarn fetch-mss-registry`) and the KSE network table [4] are cached under
+`data/cache/` and are not redistributed. The script
+[`scripts/analysis/twinning_vs_mms.py`](../scripts/analysis/twinning_vs_mms.py)
+reproduces every number in this paper and writes
+`internal/twinning-vs-mms-results.json`; the regression block requires `pandas`
+and `statsmodels`.
+
+## References
+
+1. OECD. *How to Make Inter-Municipal Co-operation Work.* OECD, 2026.
+2. OECD. *Rebuilding Ukraine by Reinforcing Regional and Municipal Governance.* OECD Publishing, 2022.
+3. USAID DOBRE. *Inter-municipal cooperation of territorial communities: research results* (survey of 546 hromadas and analysis of post-2020 agreements). Presentation, 2024, decentralization.ua.
+4. KSE Institute. *KSE-Loc-Data-Hub* (v1.0.1). Zenodo, 2025. https://doi.org/10.5281/zenodo.15267573
+5. Law of Ukraine 3668-IX and Resolution of the Cabinet of Ministers 357-2025: register of agreements on international territorial cooperation, data.gov.ua.
+6. Law of Ukraine "On Cooperation of Territorial Communities", No. 1508-VII (2014).
+7. Engagement Global / SKEW. List of German–Ukrainian municipal partnerships. https://skew.engagement-global.de
+8. AFCCRE. *Annuaire des communes jumelées* (snapshot 2 September 2025).
+
+**Suggested citation.** Semenchuk, M. (2026). Two networks of cooperation: which
+Ukrainian hromadas have EU twin cities and which have inter-municipal
+cooperation agreements. Preprint v1. Hromada Strategy Collaboration Mapping.
+https://doi.org/10.5281/zenodo.22552879
