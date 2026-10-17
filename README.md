@@ -17,6 +17,8 @@ codebase. **Canonical data store is local JSON** under [`data/releases/`](data/r
 Code is MIT-licensed; the dataset in [data/releases/](data/releases/) is
 CC BY 4.0 — see [License & data](#license--data) below.
 
+**Using the data?** Start with the dataset card [data/releases/DATASET.md](data/releases/DATASET.md) (coverage, limits, join key); CSV mirrors are in [data/releases/csv/](data/releases/csv/).
+
 ## Why
 
 DOBRE (2024): the hardest IMC stage is **partner search & communication**, not
