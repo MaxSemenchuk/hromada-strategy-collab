@@ -15,6 +15,7 @@ Definitions
   includes post-2022 solidarity partnerships — a timing asymmetry.
 
 Usage: python3 scripts/analysis/twinning_vs_mms.py   (writes internal/twinning-vs-mms-results.json)
+  The logistic-regression block needs pandas + statsmodels (skipped if missing).
 """
 
 import csv
@@ -69,6 +70,46 @@ def share(sets, groups):
             k = len(members & s)
             n = len(members)
             res[name][label] = [k, n, round(100 * k / n, 1) if n else None, wilson(k, n)]
+    return res
+
+
+def logit_models(H, tw, mms, R, E):
+    """Odds ratios controlling for size, income, e-dem, donors, oblast fixed effects."""
+    try:
+        import numpy as np
+        import pandas as pd
+        import statsmodels.formula.api as smf
+    except ImportError:
+        return {"skipped": "pandas/statsmodels not installed"}
+    rows = []
+    for r in H:
+        k = r["Katottg"]
+        inc = (R.get(k) or {}).get("own_income_per_capita")
+        if not r["Population"] or not inc:
+            continue
+        rows.append({
+            "twin": int(k in tw), "mms": int(k in mms),
+            "logpop": math.log10(r["Population"]), "loginc": math.log10(inc),
+            "edem": (E.get(k) or {}).get("tier", "не підключено"),
+            "donor": int(bool(r["DonorsPrograms"])), "oblast": r["Oblast"],
+        })
+    df = pd.DataFrame(rows)
+    df["edem"] = df["edem"].map({"високий": "high", "середній": "mid", "низький": "low"}).fillna("none")
+    res = {"n": len(df)}
+    base = "logpop + loginc + C(edem, Treatment('none')) + donor + C(oblast)"
+    for name, formula in {
+        "twinning": f"twin ~ {base}",
+        "mms": f"mms ~ {base}",
+        "mms_given_twinning": f"mms ~ twin + {base}",
+    }.items():
+        m = smf.logit(formula, df).fit(disp=0, maxiter=200)
+        ci = m.conf_int()
+        keep = [t for t in m.params.index if not t.startswith(("C(oblast)", "Intercept"))]
+        res[name] = {t: {"OR": round(float(np.exp(m.params[t])), 2),
+                         "ci95": [round(float(np.exp(ci.loc[t, 0])), 2), round(float(np.exp(ci.loc[t, 1])), 2)],
+                         "p": round(float(m.pvalues[t]), 4)} for t in keep}
+    res["note"] = ("OR per 10x population / 10x own income per capita (log10 scale); "
+                   "edem vs not connected; oblast fixed effects; rows without population or income dropped")
     return res
 
 
@@ -177,6 +218,8 @@ def main():
         "domestic_registry": {"n": dom_n, "unclassified": dom_none, "pct": pct(dom, dom_n), "unclassified_sample": dom_sample},
         "intl_agreements": {"n": eu_n, "unclassified": eu_none, "pct": pct(eu, eu_n)},
     }
+
+    out["logit"] = logit_models(H, tw, mms, R, E)
 
     json.dump(out, open(OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"wrote {OUT.relative_to(ROOT)}")

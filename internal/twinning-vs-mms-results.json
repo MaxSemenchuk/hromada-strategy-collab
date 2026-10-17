@@ -1162,5 +1162,167 @@
     "energy": 0.5
    }
   }
+ },
+ "logit": {
+  "n": 1415,
+  "twinning": {
+   "C(edem, Treatment('none'))[T.high]": {
+    "OR": 1.77,
+    "ci95": [
+     1.05,
+     2.98
+    ],
+    "p": 0.0325
+   },
+   "C(edem, Treatment('none'))[T.low]": {
+    "OR": 1.11,
+    "ci95": [
+     0.65,
+     1.9
+    ],
+    "p": 0.702
+   },
+   "C(edem, Treatment('none'))[T.mid]": {
+    "OR": 1.34,
+    "ci95": [
+     0.84,
+     2.14
+    ],
+    "p": 0.2226
+   },
+   "logpop": {
+    "OR": 46.76,
+    "ci95": [
+     24.46,
+     89.39
+    ],
+    "p": 0.0
+   },
+   "loginc": {
+    "OR": 2.8,
+    "ci95": [
+     1.51,
+     5.19
+    ],
+    "p": 0.001
+   },
+   "donor": {
+    "OR": 1.75,
+    "ci95": [
+     1.09,
+     2.81
+    ],
+    "p": 0.0204
+   }
+  },
+  "mms": {
+   "C(edem, Treatment('none'))[T.high]": {
+    "OR": 1.39,
+    "ci95": [
+     0.88,
+     2.21
+    ],
+    "p": 0.1593
+   },
+   "C(edem, Treatment('none'))[T.low]": {
+    "OR": 0.72,
+    "ci95": [
+     0.47,
+     1.09
+    ],
+    "p": 0.1226
+   },
+   "C(edem, Treatment('none'))[T.mid]": {
+    "OR": 1.02,
+    "ci95": [
+     0.69,
+     1.52
+    ],
+    "p": 0.9203
+   },
+   "logpop": {
+    "OR": 0.46,
+    "ci95": [
+     0.31,
+     0.66
+    ],
+    "p": 0.0
+   },
+   "loginc": {
+    "OR": 2.02,
+    "ci95": [
+     1.29,
+     3.17
+    ],
+    "p": 0.0022
+   },
+   "donor": {
+    "OR": 1.9,
+    "ci95": [
+     1.3,
+     2.78
+    ],
+    "p": 0.0009
+   }
+  },
+  "mms_given_twinning": {
+   "C(edem, Treatment('none'))[T.high]": {
+    "OR": 1.32,
+    "ci95": [
+     0.83,
+     2.1
+    ],
+    "p": 0.2437
+   },
+   "C(edem, Treatment('none'))[T.low]": {
+    "OR": 0.72,
+    "ci95": [
+     0.47,
+     1.09
+    ],
+    "p": 0.1242
+   },
+   "C(edem, Treatment('none'))[T.mid]": {
+    "OR": 1.0,
+    "ci95": [
+     0.67,
+     1.49
+    ],
+    "p": 0.9875
+   },
+   "twin": {
+    "OR": 1.36,
+    "ci95": [
+     0.95,
+     1.95
+    ],
+    "p": 0.0907
+   },
+   "logpop": {
+    "OR": 0.41,
+    "ci95": [
+     0.27,
+     0.61
+    ],
+    "p": 0.0
+   },
+   "loginc": {
+    "OR": 1.96,
+    "ci95": [
+     1.25,
+     3.08
+    ],
+    "p": 0.0034
+   },
+   "donor": {
+    "OR": 1.86,
+    "ci95": [
+     1.27,
+     2.73
+    ],
+    "p": 0.0013
+   }
+  },
+  "note": "OR per 10x population / 10x own income per capita (log10 scale); edem vs not connected; oblast fixed effects; rows without population or income dropped"
  }
 }
