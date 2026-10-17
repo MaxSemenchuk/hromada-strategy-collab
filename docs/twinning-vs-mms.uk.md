@@ -2,7 +2,7 @@
 
 **Автор:** Max Semenchuk (W3I) · **Дата:** 2026-10-17 · **Версія:** препринт v1
 **Дані й код:** [Hromada Strategy Collaboration Mapping](https://github.com/MaxSemenchuk/hromada-strategy-collab),
-[DOI 10.5281/zenodo.22552879](https://doi.org/10.5281/zenodo.22552879) · CC BY 4.0
+[DOI 10.5281/zenodo.22552878](https://doi.org/10.5281/zenodo.22552878) · CC BY 4.0
 
 ## Abstract (English)
 
@@ -179,4 +179,4 @@ python3 scripts/analysis/twinning_vs_mms.py
 
 Semenchuk, M. (2026). *Дві мережі співпраці: хто в Україні має міста-побратими
 в ЄС, а хто — договори ММС.* Hromada Strategy Collaboration Mapping,
-препринт v1. https://doi.org/10.5281/zenodo.22552879
+препринт v1. https://doi.org/10.5281/zenodo.22552878

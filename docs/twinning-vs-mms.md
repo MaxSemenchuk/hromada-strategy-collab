@@ -2,7 +2,7 @@
 
 **Max Semenchuk** (W3I) · max.semenchuk@gmail.com
 Preprint, version 1 · 17 October 2026 · [Ukrainian version](twinning-vs-mms.uk.md)
-Data and code: [Hromada Strategy Collaboration Mapping](https://github.com/MaxSemenchuk/hromada-strategy-collab), DOI [10.5281/zenodo.22552879](https://doi.org/10.5281/zenodo.22552879) (CC BY 4.0)
+Data and code: [Hromada Strategy Collaboration Mapping](https://github.com/MaxSemenchuk/hromada-strategy-collab), DOI [10.5281/zenodo.22552878](https://doi.org/10.5281/zenodo.22552878) (CC BY 4.0)
 
 ## Abstract
 
@@ -270,4 +270,4 @@ and `statsmodels`.
 **Suggested citation.** Semenchuk, M. (2026). Two networks of cooperation: which
 Ukrainian hromadas have EU twin cities and which have inter-municipal
 cooperation agreements. Preprint v1. Hromada Strategy Collaboration Mapping.
-https://doi.org/10.5281/zenodo.22552879
+https://doi.org/10.5281/zenodo.22552878
