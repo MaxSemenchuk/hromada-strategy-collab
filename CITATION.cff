@@ -13,9 +13,9 @@ authors:
 repository-code: "https://github.com/MaxSemenchuk/hromada-strategy-collab"
 url: "https://github.com/MaxSemenchuk/hromada-strategy-collab"
 license: MIT
-version: 0.2.0
+version: 0.2.1
 date-released: "2026-10-17"
-doi: 10.5281/zenodo.22552879
+doi: 10.5281/zenodo.22552878
 keywords:
   - inter-municipal cooperation
   - hromada

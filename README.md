@@ -1,6 +1,6 @@
 # Hromada Strategy Collaboration Mapping
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22552879.svg)](https://doi.org/10.5281/zenodo.22552879)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22552878.svg)](https://doi.org/10.5281/zenodo.22552878)
 [![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE)
 [![Data license: CC BY 4.0](https://img.shields.io/badge/data%20license-CC%20BY%204.0-lightgrey.svg)](DATA-LICENSE.md)
 
@@ -239,7 +239,7 @@ button from it. Data reuse follows [DATA-LICENSE.md](DATA-LICENSE.md) (CC BY
 4.0), code follows [LICENSE](LICENSE) (MIT). This repo is archived on Zenodo,
 same as [KSE-Loc-Data-Hub](https://github.com/kse-ua/KSE-Loc-Data-Hub)
 ([10.5281/zenodo.15267573](https://doi.org/10.5281/zenodo.15267573)):
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22552879.svg)](https://doi.org/10.5281/zenodo.22552879)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22552878.svg)](https://doi.org/10.5281/zenodo.22552878)
 
 ## Usage
 
