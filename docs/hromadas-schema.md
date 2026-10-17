@@ -22,7 +22,7 @@ in parentheses where useful.)
 | StrategyYear | number \| null | Горизонт/год принятия стратегии |
 | StrategyPeriod | string \| null | напр. 2021–2027 |
 | Goals | string \| null | 3–5 стратегічних цілей (і опційно оперативні рядки `N.M`); для matching v7 краще також sidecar `goals-hierarchy.json` |
-| Sectors | string[] | Контрольований словник секторів (колишній LinkToTags) |
+| ~~Sectors~~ | – | **Прибрано з релізу** (ніколи не заповнювалось). Секторний сигнал — `dream-priorities.json` (`sector_counts`) |
 | Projects | string \| null | Конкретні проєкти из стратегии + ДФРР/Prozorro |
 | Strengths | string \| null | Сильні сторони / ресурси |
 | Challenges | string \| null | Проблеми / виклики |

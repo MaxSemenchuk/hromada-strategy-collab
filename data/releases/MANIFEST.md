@@ -5,6 +5,8 @@ This is the canonical, redistributable data — CC BY 4.0, see
 [data/research-log/](../research-log/), files here are meant to stay current
 and self-describing, not a growth history.
 
+**Start with [DATASET.md](DATASET.md)** — dataset card (coverage, limits, join key). CSV mirrors of the main layers: [`csv/`](csv/) (`yarn export-csv`).
+
 ## Contents
 
 - **`hromadas.json`** — canonical hromada rows (metadata + LLM-extracted strategy
