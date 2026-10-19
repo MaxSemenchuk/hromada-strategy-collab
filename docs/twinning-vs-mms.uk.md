@@ -1,6 +1,6 @@
 # Дві мережі співпраці: хто в Україні має міста-побратими в ЄС, а хто — договори ММС
 
-**Автор:** Max Semenchuk (W3I) · **Дата:** 2026-10-17 · **Версія:** препринт v1
+**Автор:** Max Semenchuk, Web3 Institute (W3I) · **Дата:** 2026-10-17 · **Версія:** препринт v1
 **Дані й код:** [Hromada Strategy Collaboration Mapping](https://github.com/MaxSemenchuk/hromada-strategy-collab),
 [DOI 10.5281/zenodo.22552878](https://doi.org/10.5281/zenodo.22552878) · CC BY 4.0
 

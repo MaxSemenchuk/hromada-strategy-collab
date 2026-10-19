@@ -1,7 +1,7 @@
 # Two Networks of Cooperation: Which Ukrainian Hromadas Have EU Twin Cities and Which Have Inter-Municipal Cooperation Agreements
 
-**Max Semenchuk** (W3I) · max.semenchuk@gmail.com
-Preprint, version 1 · 17 October 2026 · [Ukrainian version](twinning-vs-mms.uk.md)
+**Max Semenchuk**, Web3 Institute (W3I) · max.semenchuk@gmail.com  
+Preprint, version 1 · 17 October 2026 · [Ukrainian version](twinning-vs-mms.uk.md)  
 Data and code: [Hromada Strategy Collaboration Mapping](https://github.com/MaxSemenchuk/hromada-strategy-collab), DOI [10.5281/zenodo.22552878](https://doi.org/10.5281/zenodo.22552878) (CC BY 4.0)
 
 ## Abstract

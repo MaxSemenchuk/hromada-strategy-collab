@@ -8,7 +8,7 @@ type: software
 authors:
   - family-names: Semenchuk
     given-names: Max
-    affiliation: W3I
+    affiliation: Web3 Institute (W3I)
     email: max.semenchuk@gmail.com
 repository-code: "https://github.com/MaxSemenchuk/hromada-strategy-collab"
 url: "https://github.com/MaxSemenchuk/hromada-strategy-collab"
