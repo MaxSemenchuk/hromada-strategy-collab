@@ -23,3 +23,13 @@ keywords:
   - decentralization
   - open data
   - municipal twinning
+preferred-citation:
+  type: generic
+  title: "Two Networks of Cooperation: Which Ukrainian Hromadas Have EU Twin Cities and Which Have Inter-Municipal Cooperation Agreements"
+  authors:
+    - family-names: Semenchuk
+      given-names: Max
+      affiliation: Web3 Institute (W3I)
+  year: 2026
+  doi: 10.5281/zenodo.23467394
+  notes: "Preprint (Zenodo concept DOI; v1 is 10.5281/zenodo.23467395). Data and code: 10.5281/zenodo.22552878."

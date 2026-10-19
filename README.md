@@ -17,7 +17,7 @@ codebase. **Canonical data store is local JSON** under [`data/releases/`](data/r
 Code is MIT-licensed; the dataset in [data/releases/](data/releases/) is
 CC BY 4.0 — see [License & data](#license--data) below.
 
-**Preprint using the data:** [Two networks of cooperation: EU twinning vs inter-municipal cooperation](docs/twinning-vs-mms.md) (English; [Ukrainian version](docs/twinning-vs-mms.uk.md)).
+**Preprint using the data:** [Two networks of cooperation: EU twinning vs inter-municipal cooperation](docs/twinning-vs-mms.md) — also on Zenodo: [10.5281/zenodo.23467394](https://doi.org/10.5281/zenodo.23467394) (English; [Ukrainian version](docs/twinning-vs-mms.uk.md)).
 
 **Using the data?** Start with the dataset card [data/releases/DATASET.md](data/releases/DATASET.md) (coverage, limits, join key); CSV mirrors are in [data/releases/csv/](data/releases/csv/).
 
