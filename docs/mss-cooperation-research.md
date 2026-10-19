@@ -39,7 +39,7 @@ evidence, не типи ММС. Форма угоди — шар пакета н
 ## Practitioner correction — Ткачук / ІГС (2026-08)
 
 **Canonical expert interview for this study** (top practitioner input to date):
-[internal/tkachuk-interview-2026-08.md](../internal/tkachuk-interview-2026-08.md).
+`internal/tkachuk-interview-2026-08.md` (private, not published).
 Also summarized in [project-history](./project-history.md#tkachuk--ігс-interview-2026-08).
 
 DOBRE explains *where* the bottleneck is (partner search). Ткачук уточнює

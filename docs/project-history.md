@@ -410,7 +410,7 @@ are closer to peer-learning / donor exchange than classic Law 1508 ММС.
 1. Grow Goals corpus into PIN-neighbour hubs (+15–20 toward denser
    PIN∩corpus), not more complementary volume.
 2. One field/stakeholder move on multi-signal packages (Чернігів showcase +
-   known operational; AIM-CC prereg in `internal/aim-cc-field-experiment-prereg.md`
+   known operational; AIM-CC prereg in `docs/aim-cc-field-experiment-prereg.md`
    when ready to send).
 3. Keep all-layers-on for pitch; discovery = one overlay or multi-signal
    filter.
@@ -425,7 +425,7 @@ are closer to peer-learning / donor exchange than classic Law 1508 ММС.
 
 **Top practitioner expert for this study.** Conversation with **Анатолій Ткачук**
 (Інститут громадянського суспільства). Canonical notes:
-[`internal/tkachuk-interview-2026-08.md`](../internal/tkachuk-interview-2026-08.md).
+`internal/tkachuk-interview-2026-08.md` (private, not published).
 Also in [mss-cooperation-research](./mss-cooperation-research.md#practitioner-correction--ткачук--ігс-2026-08)
 and workspace rule (product framing hard rules 9–10).
 
@@ -496,7 +496,7 @@ Product/funding-direction reference (Было · Сейчас · Рай · Ад 
 distinct from this file's methodology chronicle and from
 [research-questions.md](research-questions.md)'s open method questions.
 Canonical write-up, with a running decisions log:
-[internal/project-strategy-future-backwards.md](../internal/project-strategy-future-backwards.md).
+`internal/project-strategy-future-backwards.md` (private, not published).
 
 ## Open threads (as of 2026-08-03)
 
@@ -537,7 +537,7 @@ Canonical write-up, with a running decisions log:
       rematch for the new overlap count.
 - [ ] Stakeholder pitch or AIM-CC pilot send on multi-signal packages
       (Чернігівський кластер / Слобожанська–Обухівська / Тульчинська) —
-      `internal/aim-cc-field-experiment-prereg.md`
+      `docs/aim-cc-field-experiment-prereg.md`
 - [ ] Multi-way / community view for 3+ party clusters (Nizhyn-5, Dnister-22)
 - [ ] Expand curated hierarchy gold beyond 5 hromadas (re-structure from PDFs)
 - [ ] **Adjacent idea (parked):** university cooperation candidates — same
@@ -752,7 +752,7 @@ Complement to UA layers (Law 1508, SKEW/AFCCRE, 3668, Interreg NEXT): how EU
 municipalities cooperate *with each other*. Three stacks, same product
 discipline as twinning (context, not a matcher; never `known: true`; never
 fold into v7 `score`). Full EU↔EU matching stays Phase 3
-([internal/interreg-proposal.md](../internal/interreg-proposal.md)).
+(`internal/interreg-proposal.md` (private, not published)).
 
 1. **Domestic IMC** — the bulk. 27 national laws; no EU-wide registry.
    Mandatory-coverage systems (France 1 252 EPCI on 1.1.2026; Portugal CIM

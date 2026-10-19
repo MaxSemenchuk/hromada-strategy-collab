@@ -170,7 +170,7 @@ python3 scripts/analysis/twinning_vs_mms.py
 ```
 
 Скрипт [twinning_vs_mms.py](../scripts/analysis/twinning_vs_mms.py) записує всі
-наведені числа в `internal/twinning-vs-mms-results.json`; блок регресії потребує
+наведені числа в `docs/twinning-vs-mms-results.json`; блок регресії потребує
 `pandas` і `statsmodels`. Кеші `data/cache/` не входять до релізу
 (завантажуються з першоджерел), решту даних — `data/releases/` — див.
 [DATASET.md](https://github.com/MaxSemenchuk/hromada-strategy-collab/blob/main/data/releases/DATASET.md).

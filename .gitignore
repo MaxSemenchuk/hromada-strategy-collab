@@ -16,8 +16,6 @@ data/cache/
 scripts/retrieval/raw/**
 !scripts/retrieval/raw/.gitkeep
 
-# Local convenience only — not published on GitHub Pages
-internal/outreach.html
 
 # Draft manuscript — unconfirmed co-authorship, real names/emails; keep local
 # until authorship + content are confirmed for submission
@@ -27,3 +25,7 @@ internal/legacy/
 # Personal contact details (phone numbers etc.) — private, never in git
 internal/private-contacts.md
 .playwright-mcp/
+
+# internal/ is a separate PRIVATE repo (MaxSemenchuk/hromada-internal) cloned here.
+# Partner conversations, outreach, strategy — never in this public repo or Zenodo releases.
+internal/

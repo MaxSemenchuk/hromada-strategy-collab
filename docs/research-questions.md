@@ -64,7 +64,7 @@ item to project-history.md once it has a concrete plan and starts moving.
 ## 7. Domain extension
 
 - The parked idea in
-  [internal/university-cooperation-idea.md](../internal/university-cooperation-idea.md) —
+  `internal/university-cooperation-idea.md` (private, not published) —
   does the same product class (pair · theme · form + signals) transfer to
   university↔hromada cooperation, and is there an analog of "explicit ask"
   in that text?
@@ -79,7 +79,7 @@ item to project-history.md once it has a concrete plan and starts moving.
   (Interreg/EGTC/LEADER, or UA–EU twinning), with the Ukraine rollout
   positioned as the pilot/validation experiment rather than the target
   market. This also resolves a stats problem in the
-  [AIM-CC field experiment](../internal/aim-cc-field-experiment-prereg.md):
+  [AIM-CC field experiment](aim-cc-field-experiment-prereg.md):
   its pilot sample is self-selected/initiative-taking hromadas — too small
   and non-random to support a "our data creates market value in Ukraine"
   claim, but a fine basis for "mechanism validated on live cases," which is
@@ -93,7 +93,7 @@ item to project-history.md once it has a concrete plan and starts moving.
 - What has to hold up before the claim survives scrutiny (which parts of the
   method are universal vs Ukraine-specific plumbing, which EU instrument to
   target first, what validation dataset would play the KSE-PIN-registry
-  role): [internal/eu-transfer-one-pager.md](../internal/eu-transfer-one-pager.md).
+  role): `internal/eu-transfer-one-pager.md` (private, not published).
 - Follow-on for **#1** (predictive validity): if this direction is pursued,
   the retrospective forward-test should eventually run against whichever EU
   dataset gets picked too, not just the UA registry — same logic ("did the

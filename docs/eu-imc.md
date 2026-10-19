@@ -5,7 +5,7 @@ Research briefing (2026-09-18). **Not** UA–EU twinning, **not** Law 1508-VII
 domestically and across internal EU borders.
 
 Product rule (already locked in
-[internal/interreg-proposal.md](../internal/interreg-proposal.md)): this is
+`internal/interreg-proposal.md` (private, not published)): this is
 **context**, not a new matcher. Do not fold into v7 `score`. Do not set
 `known: true`. Full EU↔EU matching remains Phase 3.
 
@@ -305,4 +305,4 @@ Copied from the Interreg decision draft, restated for this briefing:
 UA-side counterparts:
 [mss-cooperation-research.md](./mss-cooperation-research.md),
 [ua-eu-twinning.md](./ua-eu-twinning.md),
-[internal/eu-transfer-one-pager.md](../internal/eu-transfer-one-pager.md).
+`internal/eu-transfer-one-pager.md` (private, not published).

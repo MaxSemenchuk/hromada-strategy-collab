@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Synthetic (simulated) dry-run of the AIM-CC field-experiment design —
-internal/aim-cc-field-experiment-prereg.md.
+docs/aim-cc-field-experiment-prereg.md.
 
 **This does not contact any hromada.** No email/Telegram is sent. It is a
 pre-launch check of the *design*, not a substitute for it:
@@ -60,7 +60,7 @@ COMPLEMENTARY_PATH = ROOT / "data" / "releases" / "matching-edges.complementary.
 PIN_CORPUS_PATH = ROOT / "data" / "releases" / "matching-edges.pin-corpus.json"
 OUT_JSON = ROOT / "internal" / "aim-cc-synthetic-experiment-results.json"
 
-PREREG_PATH = "internal/aim-cc-field-experiment-prereg.md"
+PREREG_PATH = "docs/aim-cc-field-experiment-prereg.md"
 
 # --- §4 candidate pilot sizes (pairs per arm) ------------------------------
 PILOT_SIZES = {"minimum": 8, "preferred": 12, "stretch": 20}

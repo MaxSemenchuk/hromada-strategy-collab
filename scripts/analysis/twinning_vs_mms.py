@@ -14,7 +14,7 @@ Definitions
   Both are registry snapshots, but the ММС flag is pre-war while twinning
   includes post-2022 solidarity partnerships — a timing asymmetry.
 
-Usage: python3 scripts/analysis/twinning_vs_mms.py   (writes internal/twinning-vs-mms-results.json)
+Usage: python3 scripts/analysis/twinning_vs_mms.py   (writes docs/twinning-vs-mms-results.json)
   The logistic-regression block needs pandas + statsmodels (skipped if missing).
 """
 
@@ -30,7 +30,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from intl_theme import classify_intl_themes  # noqa: E402
 
 REL = ROOT / "data" / "releases"
-OUT = ROOT / "internal" / "twinning-vs-mms-results.json"
+OUT = ROOT / "docs" / "twinning-vs-mms-results.json"
 TIERS = ["<5k", "5-10k", "10-20k", "20-50k", "50k+"]
 
 

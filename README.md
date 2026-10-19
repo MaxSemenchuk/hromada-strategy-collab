@@ -33,7 +33,7 @@ for this study):** most agreements still follow contact between hromada heads;
 tools do not replace that trust. Stronger product claim — reduce uncertainty,
 surface mutual benefit («навіщо»), and prepare a safer first talk. Near-term
 thematic window he flagged: **water / shared basins**. Full notes:
-[internal/tkachuk-interview-2026-08.md](internal/tkachuk-interview-2026-08.md).
+`internal/tkachuk-interview-2026-08.md` (private, not published).
 
 **Institutional context (2026-08):** no local elections since Oct 2020 under
 martial law → *sticky heads* (denser personal trust networks now) but
@@ -223,8 +223,9 @@ Code (`scripts/`) is MIT. The dataset in [data/releases/](data/releases/) is
 requirements and upstream source credits (data.gov.ua, DREAM, the ММС
 registry). [data/research-log/](data/research-log/) is provenance material,
 not the maintained dataset — read its README before building on it.
-[internal/](internal/) holds private outreach drafts (`outreach-messages.md`;
-optional local `outreach.html` is gitignored — not on GitHub Pages).
+`internal/` (partner conversations, outreach drafts, internal strategy) is a
+separate private repository, cloned locally and gitignored here — it is not
+part of this repo, GitHub Pages, or any Zenodo release.
 
 If this repo becomes public: this section, the license files, and the
 `data/releases/` split exist specifically so the repo can be opened as an

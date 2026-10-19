@@ -17,7 +17,7 @@ be worth flagging as risky.
 
 **All q priors and S/F/N/c payoffs below are elicited placeholders, not
 fitted from data.** There is no real AIM-CC funnel data yet (pilot not
-launched — see internal/aim-cc-field-experiment-prereg.md) and no real
+launched — see docs/aim-cc-field-experiment-prereg.md) and no real
 hromada budget data in this corpus. Replace TRACK_Q_PRIOR / PROJECT_PARAMS
 with real numbers as they become available (AIM-CC reply/call/signing
 rates by arm for q; actual ЦНАП budgets / grant sizes for S/F/N/c). Until

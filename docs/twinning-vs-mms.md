@@ -253,7 +253,7 @@ All inputs except two re-fetchable caches are released in
 `data/cache/` and are not redistributed. The script
 [`scripts/analysis/twinning_vs_mms.py`](../scripts/analysis/twinning_vs_mms.py)
 reproduces every number in this paper and writes
-`internal/twinning-vs-mms-results.json`; the regression block requires `pandas`
+`docs/twinning-vs-mms-results.json`; the regression block requires `pandas`
 and `statsmodels`.
 
 ## References
