@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-18T09:10:36.536105+00:00",
-  "hromadasWithPartners": 374,
+  "generatedAt": "2026-10-29T15:29:52.349308+00:00",
+  "hromadasWithPartners": 380,
   "skewEdgesLinked": 179,
   "skewEdgesRaw": 268,
   "strategyPartnersAdded": 14,
-  "cities4citiesPartnersAdded": 11,
+  "cities4citiesPartnersAdded": 10,
   "cities4citiesListed": 90,
   "unmatchedSkew": 88,
   "afccrePartnersAdded": 56,

@@ -1,5 +1,5 @@
 {
-  "_comment": "Curated non-EU sister-city pairs with no bulk registry (no SKEW/AFCCRE/decentralization.ua analogue yet). Added manually from news, verified against katottg in hromadas.json. See docs/ua-eu-twinning.md.",
+  "_comment": "Curated non-EU sister-city pairs (AU; FI from the Kuntaliitto list of 24.02.2026) with no bulk registry (no SKEW/AFCCRE/decentralization.ua analogue yet). Added manually from news, verified against katottg in hromadas.json. See docs/ua-eu-twinning.md.",
   "pairs": [
     {
       "katottg": "UA63100050000079487",
@@ -20,6 +20,196 @@
       "since": "2023",
       "source_url": "https://www.teatreegully.sa.gov.au/__data/assets/pdf_file/0015/1610610/sister-city-agreement-city-of-tea-tree-gully-and-borodyanka.pdf",
       "note": "Signed 22 May 2023."
+    },
+    {
+      "katottg": "UA80000000000093317",
+      "partner_name": "Tampere",
+      "partner_country": "FI",
+      "partner_region": "Pirkanmaa",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "1954",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026. Kyiv city is not a row in hromadas.json, so the twinning builder skips this pair until the city is added to the corpus. Pirkanmaa–Kyiv Oblast letter of intent 26.01.2026."
+    },
+    {
+      "katottg": "UA80000000000093317",
+      "partner_name": "Helsinki",
+      "partner_country": "FI",
+      "partner_region": "Uusimaa",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "1993",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026. Kyiv city is not a row in hromadas.json, so the twinning builder skips this pair until the city is added to the corpus."
+    },
+    {
+      "katottg": "UA63120270000028556",
+      "partner_name": "Turku",
+      "partner_country": "FI",
+      "partner_region": "Southwest Finland",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2022",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026."
+    },
+    {
+      "katottg": "UA12060170000091033",
+      "partner_name": "Espoo",
+      "partner_country": "FI",
+      "partner_region": "Uusimaa",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2023",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026."
+    },
+    {
+      "katottg": "UA12020010000033698",
+      "partner_name": "Helsinki",
+      "partner_country": "FI",
+      "partner_region": "Uusimaa",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2023",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026."
+    },
+    {
+      "katottg": "UA32080070000050759",
+      "partner_name": "Hyvinkää",
+      "partner_country": "FI",
+      "partner_region": "Uusimaa",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2023",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026. Bucha has two Finnish partners (Hyvinkää, Kerava)."
+    },
+    {
+      "katottg": "UA23080070000068953",
+      "partner_name": "Seinäjoki",
+      "partner_country": "FI",
+      "partner_region": "South Ostrobothnia",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2023",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026. City under Russian occupation; cooperation with the exiled administration."
+    },
+    {
+      "katottg": "UA63120210000075842",
+      "partner_name": "Taipalsaari",
+      "partner_country": "FI",
+      "partner_region": "South Karelia",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2023",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026. Kuntaliitto spells the partner 'Pesochin' (Pisochyn)."
+    },
+    {
+      "katottg": "UA65100150000057191",
+      "partner_name": "Vaasa",
+      "partner_country": "FI",
+      "partner_region": "Ostrobothnia",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2023",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026. Vaasa donated a vehicle and EUR 60k for generators (2026); other Ostrobothnia municipalities matched it."
+    },
+    {
+      "katottg": "UA32040010000010116",
+      "partner_name": "Vantaa",
+      "partner_country": "FI",
+      "partner_region": "Uusimaa",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2023",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026."
+    },
+    {
+      "katottg": "UA59080270000073662",
+      "partner_name": "Hämeenlinna",
+      "partner_country": "FI",
+      "partner_region": "Kanta-Häme",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2024",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026."
+    },
+    {
+      "katottg": "UA32080070000050759",
+      "partner_name": "Kerava",
+      "partner_country": "FI",
+      "partner_region": "Uusimaa",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2024",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026. Bucha has two Finnish partners (Hyvinkää, Kerava)."
+    },
+    {
+      "katottg": "UA48060150000071713",
+      "partner_name": "Kotka",
+      "partner_country": "FI",
+      "partner_region": "Kymenlaakso",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2024",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026."
+    },
+    {
+      "katottg": "UA53080370000025447",
+      "partner_name": "Kouvola",
+      "partner_country": "FI",
+      "partner_region": "Kymenlaakso",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2024",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026."
+    },
+    {
+      "katottg": "UA14120090000098500",
+      "partner_name": "Pori",
+      "partner_country": "FI",
+      "partner_region": "Satakunta",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2024",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026. Front-line city."
+    },
+    {
+      "katottg": "UA56040270000014394",
+      "partner_name": "Ruokolahti",
+      "partner_country": "FI",
+      "partner_region": "South Karelia",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2024",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026. Rural hromada near Dubno. Also in Ruokolahti council minutes 27.05.2024."
+    },
+    {
+      "katottg": "UA12060010000090992",
+      "partner_name": "Haapajärvi",
+      "partner_country": "FI",
+      "partner_region": "North Ostrobothnia",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2025",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026."
+    },
+    {
+      "katottg": "UA23060330000027462",
+      "partner_name": "Nivala",
+      "partner_country": "FI",
+      "partner_region": "North Ostrobothnia",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2025",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026. Shyroke rural hromada, Zaporizhzhia raion, per the Ministry agreements registry (intl-agreements.json: agreement with Nivala). A same-named settlement hromada in Kryvyi Rih raion, Dnipropetrovsk Oblast (UA12060290000039013) exists; not verified which one Kuntaliitto means."
+    },
+    {
+      "katottg": "UA46100230000047305",
+      "partner_name": "Salo",
+      "partner_country": "FI",
+      "partner_region": "Southwest Finland",
+      "type": "Twin municipality (ystävyyskunta)",
+      "since": "2025",
+      "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+      "note": "Kuntaliitto list 24.02.2026."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T09:10:36.536105+00:00",
+  "generatedAt": "2026-10-29T15:29:52.349308+00:00",
   "warning": "UA–EU twinning layer — separate from domestic ММС. SKEW links are registry-sourced (DE–UA); AFCCRE jumelages are registry-sourced (FR–UA, PDF directory); Cities4Cities pairs come from news titles (hypotheses); strategy mentions are hypotheses; decentralization_ua entries are Ministry-verified. Non-DE/non-FR decentralization_ua rows are additive. DE-country decentralization_ua rows ARE checked against SKEW via twinning-de-duplicate-pairs.json; FR-country rows against AFCCRE via twinning-fr-duplicate-pairs.json. Matched rows carry partner.duplicate_of_skew / duplicate_of_afccre; use hromada.distinct_partner_count, not partner_count, when you need a non-inflated total. None of the sources here is complete on its own — each has confirmed cases the others miss. c4c_url marks listing in the C4C municipality database (seeking partners), not a confirmed twinning. manual entries are hand-curated from news for countries with no bulk registry (e.g. Australia); see data/sources/twinning-manual-pairs.json. Not folded into matching score.",
   "sources": [
     {
@@ -41,12 +41,12 @@
   "coverage": {
     "skew_edges_raw": 268,
     "skew_edges_linked": 179,
-    "hromadas_with_partners": 374,
+    "hromadas_with_partners": 380,
     "strategy_partners_added": 14,
-    "cities4cities_partners_added": 11,
-    "cities4cities_partner_rows": 11,
+    "cities4cities_partners_added": 10,
+    "cities4cities_partner_rows": 10,
     "cities4cities_listed": 90,
-    "cities4cities_news_pairs_raw": 14,
+    "cities4cities_news_pairs_raw": 13,
     "cities4cities_news_unmatched": 1,
     "unmatched_skew": 88,
     "resolve_stats": {
@@ -67,11 +67,11 @@
       "kyiv_city": 4,
       "crimea": 1
     },
-    "decentralization_ua_partners_added": 1109,
-    "hromadas_in_both_skew_and_decentralization": 102,
+    "decentralization_ua_partners_added": 1123,
+    "hromadas_in_both_skew_and_decentralization": 103,
     "decentralization_ua_de_duplicates_tagged": 38,
     "decentralization_ua_fr_duplicates_tagged": 10,
-    "manual_partners_added": 2
+    "manual_partners_added": 19
   },
   "hromadas": [
     {
@@ -2577,198 +2577,6 @@
       "distinct_partner_count": 20
     },
     {
-      "name": "Вінницька міська територіальна громада",
-      "short": "Вінницька",
-      "katottg": "UA05020030000031457",
-      "oblast": "Вінницька область",
-      "partners": [
-        {
-          "partner_name": "Nancy",
-          "partner_country": "FR",
-          "partner_region": "54035",
-          "type": "Jumelage",
-          "since": "2023",
-          "source": "afccre",
-          "source_url": "https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf",
-          "confidence": "registry",
-          "ua_name_fr": "VINNYTSYA",
-          "match": "fr_alias"
-        },
-        {
-          "partner_name": "Пітерборо",
-          "partner_country": "GB",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Руставі",
-          "partner_country": "GE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Бат Ям",
-          "partner_country": "IL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Панявежис",
-          "partner_country": "LT",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Карлсруе",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Вишкув",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Гміна Коморники",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Кельце",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Люблін",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Радом",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Сташовський повіт",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Тарнів",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Бірмінгем",
-          "partner_country": "US",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Бурса",
-          "partner_country": "TR",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Діжон",
-          "partner_country": "FR",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Цюріх",
-          "partner_country": "CH",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Виниця",
-          "partner_country": "MK",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/2003",
-          "confidence": "registry"
-        }
-      ],
-      "partner_count": 18,
-      "distinct_partner_count": 18
-    },
-    {
       "name": "Миколаївська міська територіальна громада",
       "short": "Миколаївська",
       "katottg": "UA48060150000071713",
@@ -2969,11 +2777,411 @@
           "source": "decentralization_ua",
           "source_url": "https://decentralization.ua/newgromada/4283",
           "confidence": "registry"
+        },
+        {
+          "partner_name": "Kotka",
+          "partner_country": "FI",
+          "partner_region": "Kymenlaakso",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2024",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026."
         }
       ],
       "c4c_url": "https://cities4cities.eu/community/mykolaiv-territorial-community/",
+      "partner_count": 19,
+      "distinct_partner_count": 17
+    },
+    {
+      "name": "Вінницька міська територіальна громада",
+      "short": "Вінницька",
+      "katottg": "UA05020030000031457",
+      "oblast": "Вінницька область",
+      "partners": [
+        {
+          "partner_name": "Nancy",
+          "partner_country": "FR",
+          "partner_region": "54035",
+          "type": "Jumelage",
+          "since": "2023",
+          "source": "afccre",
+          "source_url": "https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf",
+          "confidence": "registry",
+          "ua_name_fr": "VINNYTSYA",
+          "match": "fr_alias"
+        },
+        {
+          "partner_name": "Пітерборо",
+          "partner_country": "GB",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Руставі",
+          "partner_country": "GE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Бат Ям",
+          "partner_country": "IL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Панявежис",
+          "partner_country": "LT",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Карлсруе",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Вишкув",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Гміна Коморники",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Кельце",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Люблін",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Радом",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Сташовський повіт",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Тарнів",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Бірмінгем",
+          "partner_country": "US",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Бурса",
+          "partner_country": "TR",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Діжон",
+          "partner_country": "FR",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Цюріх",
+          "partner_country": "CH",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Виниця",
+          "partner_country": "MK",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/2003",
+          "confidence": "registry"
+        }
+      ],
       "partner_count": 18,
-      "distinct_partner_count": 16
+      "distinct_partner_count": 18
+    },
+    {
+      "name": "Полтавська міська територіальна громада",
+      "short": "Полтавська",
+      "katottg": "UA53080370000025447",
+      "oblast": "Полтавська область",
+      "partners": [
+        {
+          "partner_name": "Leinfelden-Echterdingen",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "1988",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
+          "confidence": "registry",
+          "ua_name_de": "Poltawa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Filderstadt",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "1988",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
+          "confidence": "registry",
+          "ua_name_de": "Poltawa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Ostfildern",
+          "partner_country": "DE",
+          "partner_region": "Baden-Württemberg",
+          "type": "Kommunalpartnerschaft",
+          "since": "1988",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
+          "confidence": "registry",
+          "ua_name_de": "Poltawa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Mönchengladbach",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
+          "confidence": "registry",
+          "ua_name_de": "Poltawa",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Калмар",
+          "partner_country": "SE",
+          "partner_region": null,
+          "type": "strategy_mention",
+          "since": null,
+          "source": "strategy",
+          "source_url": "https://rada-poltava.gov.ua/strapi/uploads/strat_1157b9a322.pdf",
+          "confidence": "strategy_mention",
+          "quote": "м. Калмар"
+        },
+        {
+          "partner_name": "Велико-Тирново",
+          "partner_country": "BG",
+          "partner_region": null,
+          "type": "strategy_mention",
+          "since": null,
+          "source": "strategy",
+          "source_url": "https://rada-poltava.gov.ua/strapi/uploads/strat_1157b9a322.pdf",
+          "confidence": "strategy_mention",
+          "quote": "\nм. Велико-Тирново"
+        },
+        {
+          "partner_name": "Kalmar",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2025",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/poltava-and-kalmar-a-partnership-success-story/",
+          "confidence": "news_mention",
+          "quote": "Poltava and Kalmar: a partnership success story",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Баку",
+          "partner_country": "AZ",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4445",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Гянджа",
+          "partner_country": "AZ",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4445",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Сумгаїт",
+          "partner_country": "AZ",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4445",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Боржомі",
+          "partner_country": "GE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4445",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Пескара",
+          "partner_country": "IT",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4445",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Фільдерштадт",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4445",
+          "confidence": "registry",
+          "duplicate_of_skew": "Filderstadt"
+        },
+        {
+          "partner_name": "Остфільдерн",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4445",
+          "confidence": "registry",
+          "duplicate_of_skew": "Ostfildern"
+        },
+        {
+          "partner_name": "Ляйнфельден-Ехтердінген",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4445",
+          "confidence": "registry",
+          "duplicate_of_skew": "Leinfelden-Echterdingen"
+        },
+        {
+          "partner_name": "Скаржисько-Каменна",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4445",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Kouvola",
+          "partner_country": "FI",
+          "partner_region": "Kymenlaakso",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2024",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026."
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/poltava-territorial-community/",
+      "partner_count": 17,
+      "distinct_partner_count": 14
     },
     {
       "name": "Тернопільська міська територіальна громада",
@@ -3160,192 +3368,6 @@
       ],
       "partner_count": 17,
       "distinct_partner_count": 17
-    },
-    {
-      "name": "Полтавська міська територіальна громада",
-      "short": "Полтавська",
-      "katottg": "UA53080370000025447",
-      "oblast": "Полтавська область",
-      "partners": [
-        {
-          "partner_name": "Leinfelden-Echterdingen",
-          "partner_country": "DE",
-          "partner_region": "Baden-Württemberg",
-          "type": "Kommunalpartnerschaft",
-          "since": "1988",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
-          "confidence": "registry",
-          "ua_name_de": "Poltawa",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Filderstadt",
-          "partner_country": "DE",
-          "partner_region": "Baden-Württemberg",
-          "type": "Kommunalpartnerschaft",
-          "since": "1988",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
-          "confidence": "registry",
-          "ua_name_de": "Poltawa",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Ostfildern",
-          "partner_country": "DE",
-          "partner_region": "Baden-Württemberg",
-          "type": "Kommunalpartnerschaft",
-          "since": "1988",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
-          "confidence": "registry",
-          "ua_name_de": "Poltawa",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Mönchengladbach",
-          "partner_country": "DE",
-          "partner_region": "Nordrhein-Westfalen",
-          "type": "Kommunalpartnerschaft",
-          "since": "2024",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=80",
-          "confidence": "registry",
-          "ua_name_de": "Poltawa",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Калмар",
-          "partner_country": "SE",
-          "partner_region": null,
-          "type": "strategy_mention",
-          "since": null,
-          "source": "strategy",
-          "source_url": "https://rada-poltava.gov.ua/strapi/uploads/strat_1157b9a322.pdf",
-          "confidence": "strategy_mention",
-          "quote": "м. Калмар"
-        },
-        {
-          "partner_name": "Велико-Тирново",
-          "partner_country": "BG",
-          "partner_region": null,
-          "type": "strategy_mention",
-          "since": null,
-          "source": "strategy",
-          "source_url": "https://rada-poltava.gov.ua/strapi/uploads/strat_1157b9a322.pdf",
-          "confidence": "strategy_mention",
-          "quote": "\nм. Велико-Тирново"
-        },
-        {
-          "partner_name": "Kalmar",
-          "partner_country": null,
-          "partner_region": null,
-          "type": "Cities4Cities partnership",
-          "since": "2025",
-          "source": "cities4cities",
-          "source_url": "https://cities4cities.eu/poltava-and-kalmar-a-partnership-success-story/",
-          "confidence": "news_mention",
-          "quote": "Poltava and Kalmar: a partnership success story",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Баку",
-          "partner_country": "AZ",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4445",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Гянджа",
-          "partner_country": "AZ",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4445",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Сумгаїт",
-          "partner_country": "AZ",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4445",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Боржомі",
-          "partner_country": "GE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4445",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Пескара",
-          "partner_country": "IT",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4445",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Фільдерштадт",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4445",
-          "confidence": "registry",
-          "duplicate_of_skew": "Filderstadt"
-        },
-        {
-          "partner_name": "Остфільдерн",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4445",
-          "confidence": "registry",
-          "duplicate_of_skew": "Ostfildern"
-        },
-        {
-          "partner_name": "Ляйнфельден-Ехтердінген",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4445",
-          "confidence": "registry",
-          "duplicate_of_skew": "Leinfelden-Echterdingen"
-        },
-        {
-          "partner_name": "Скаржисько-Каменна",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4445",
-          "confidence": "registry"
-        }
-      ],
-      "c4c_url": "https://cities4cities.eu/community/poltava-territorial-community/",
-      "partner_count": 16,
-      "distinct_partner_count": 13
     },
     {
       "name": "Мукачівська міська територіальна громада",
@@ -3681,176 +3703,6 @@
       "distinct_partner_count": 14
     },
     {
-      "name": "Хотинська міська територіальна громада",
-      "short": "Хотинська",
-      "katottg": "UA73040190000062796",
-      "oblast": "Чернівецька область",
-      "partners": [
-        {
-          "partner_name": "Teltow",
-          "partner_country": "DE",
-          "partner_region": "Brandenburg",
-          "type": "Kommunalpartnerschaft",
-          "since": "2022",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=271",
-          "confidence": "registry",
-          "ua_name_de": "Chotyn",
-          "match": "translit"
-        },
-        {
-          "partner_name": "Ahlen",
-          "partner_country": "DE",
-          "partner_region": "Nordrhein-Westfalen",
-          "type": "Kommunalpartnerschaft",
-          "since": "2024",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=271",
-          "confidence": "registry",
-          "ua_name_de": "Chotyn",
-          "match": "translit"
-        },
-        {
-          "partner_name": "Eslöv",
-          "partner_country": null,
-          "partner_region": null,
-          "type": "Cities4Cities partnership",
-          "since": "2025",
-          "source": "cities4cities",
-          "source_url": "https://cities4cities.eu/khotyn-and-eslov-become-sister-cities-a-new-swedish-ukrainian-partnership/",
-          "confidence": "news_mention",
-          "quote": "Khotyn and Eslöv become sister cities: a new Swedish-Ukrainian partnership",
-          "match": "alias"
-        },
-        {
-          "partner_name": "La Couronne",
-          "partner_country": "FR",
-          "partner_region": "16400",
-          "type": "Jumelage",
-          "since": "2022",
-          "source": "afccre",
-          "source_url": "https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf",
-          "confidence": "registry",
-          "ua_name_fr": "KHOTYN",
-          "match": "fr_alias"
-        },
-        {
-          "partner_name": "Тельтов",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4916",
-          "confidence": "registry",
-          "duplicate_of_skew": "Teltow"
-        },
-        {
-          "partner_name": "Валч",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4916",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Гміна Корчина",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4916",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Жаґань",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4916",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Опочно",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4916",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Ештремош",
-          "partner_country": "PT",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4916",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Хорезу",
-          "partner_country": "RO",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4916",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Ґурагумора",
-          "partner_country": "RO",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4916",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Тиргу-Нямц",
-          "partner_country": "RO",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4916",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Ла-Куронн",
-          "partner_country": "FR",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4916",
-          "confidence": "registry",
-          "duplicate_of_afccre": "La Couronne"
-        },
-        {
-          "partner_name": "Ла-Мотт-Серволе",
-          "partner_country": "FR",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4916",
-          "confidence": "registry"
-        }
-      ],
-      "partner_count": 15,
-      "distinct_partner_count": 13
-    },
-    {
       "name": "Броварська міська територіальна громада",
       "short": "Броварська",
       "katottg": "UA32060050000030591",
@@ -4002,6 +3854,161 @@
           "source": "decentralization_ua",
           "source_url": "https://decentralization.ua/newgromada/4038",
           "confidence": "registry"
+        }
+      ],
+      "partner_count": 14,
+      "distinct_partner_count": 13
+    },
+    {
+      "name": "Бучанська міська територіальна громада",
+      "short": "Бучанська",
+      "katottg": "UA32080070000050759",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Bergisch-Gladbach",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=28",
+          "confidence": "registry",
+          "ua_name_de": "Butscha",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Бергамо",
+          "partner_country": "IT",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4039",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Паланга",
+          "partner_country": "LT",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4039",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Бергіш Гладбах",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4039",
+          "confidence": "registry",
+          "duplicate_of_skew": "Bergisch-Gladbach"
+        },
+        {
+          "partner_name": "Дрезден",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4039",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Катовіце",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4039",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Пщина",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4039",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Тушин",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4039",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Кашкайш",
+          "partner_country": "PT",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4039",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Кочев&#39;є",
+          "partner_country": "SI",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4039",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Шкофя Лока",
+          "partner_country": "SI",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4039",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Олбані",
+          "partner_country": "US",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4039",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Hyvinkää",
+          "partner_country": "FI",
+          "partner_region": "Uusimaa",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2023",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026. Bucha has two Finnish partners (Hyvinkää, Kerava)."
+        },
+        {
+          "partner_name": "Kerava",
+          "partner_country": "FI",
+          "partner_region": "Uusimaa",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2024",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026. Bucha has two Finnish partners (Hyvinkää, Kerava)."
         }
       ],
       "partner_count": 14,
@@ -4471,6 +4478,164 @@
       "distinct_partner_count": 14
     },
     {
+      "name": "Хотинська міська територіальна громада",
+      "short": "Хотинська",
+      "katottg": "UA73040190000062796",
+      "oblast": "Чернівецька область",
+      "partners": [
+        {
+          "partner_name": "Teltow",
+          "partner_country": "DE",
+          "partner_region": "Brandenburg",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=271",
+          "confidence": "registry",
+          "ua_name_de": "Chotyn",
+          "match": "translit"
+        },
+        {
+          "partner_name": "Ahlen",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=271",
+          "confidence": "registry",
+          "ua_name_de": "Chotyn",
+          "match": "translit"
+        },
+        {
+          "partner_name": "La Couronne",
+          "partner_country": "FR",
+          "partner_region": "16400",
+          "type": "Jumelage",
+          "since": "2022",
+          "source": "afccre",
+          "source_url": "https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf",
+          "confidence": "registry",
+          "ua_name_fr": "KHOTYN",
+          "match": "fr_alias"
+        },
+        {
+          "partner_name": "Тельтов",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4916",
+          "confidence": "registry",
+          "duplicate_of_skew": "Teltow"
+        },
+        {
+          "partner_name": "Валч",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4916",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Гміна Корчина",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4916",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Жаґань",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4916",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Опочно",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4916",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Ештремош",
+          "partner_country": "PT",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4916",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Хорезу",
+          "partner_country": "RO",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4916",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Ґурагумора",
+          "partner_country": "RO",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4916",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Тиргу-Нямц",
+          "partner_country": "RO",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4916",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Ла-Куронн",
+          "partner_country": "FR",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4916",
+          "confidence": "registry",
+          "duplicate_of_afccre": "La Couronne"
+        },
+        {
+          "partner_name": "Ла-Мотт-Серволе",
+          "partner_country": "FR",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4916",
+          "confidence": "registry"
+        }
+      ],
+      "partner_count": 14,
+      "distinct_partner_count": 12
+    },
+    {
       "name": "Ковельська міська територіальна громада",
       "short": "Ковельська",
       "katottg": "UA07060190000036342",
@@ -4908,139 +5073,6 @@
         }
       ],
       "partner_count": 13,
-      "distinct_partner_count": 11
-    },
-    {
-      "name": "Бучанська міська територіальна громада",
-      "short": "Бучанська",
-      "katottg": "UA32080070000050759",
-      "oblast": "Київська область",
-      "partners": [
-        {
-          "partner_name": "Bergisch-Gladbach",
-          "partner_country": "DE",
-          "partner_region": "Nordrhein-Westfalen",
-          "type": "Kommunalpartnerschaft",
-          "since": "2022",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=28",
-          "confidence": "registry",
-          "ua_name_de": "Butscha",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Бергамо",
-          "partner_country": "IT",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4039",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Паланга",
-          "partner_country": "LT",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4039",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Бергіш Гладбах",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4039",
-          "confidence": "registry",
-          "duplicate_of_skew": "Bergisch-Gladbach"
-        },
-        {
-          "partner_name": "Дрезден",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4039",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Катовіце",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4039",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Пщина",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4039",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Тушин",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4039",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Кашкайш",
-          "partner_country": "PT",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4039",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Кочев&#39;є",
-          "partner_country": "SI",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4039",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Шкофя Лока",
-          "partner_country": "SI",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4039",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Олбані",
-          "partner_country": "US",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4039",
-          "confidence": "registry"
-        }
-      ],
-      "partner_count": 12,
       "distinct_partner_count": 11
     },
     {
@@ -6613,6 +6645,123 @@
       "distinct_partner_count": 9
     },
     {
+      "name": "Сумська міська територіальна громада",
+      "short": "Сумська",
+      "katottg": "UA59080270000073662",
+      "oblast": "Сумська область",
+      "partners": [
+        {
+          "partner_name": "Celle",
+          "partner_country": "DE",
+          "partner_region": "Niedersachsen",
+          "type": "Kommunalpartnerschaft",
+          "since": "1990",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=201",
+          "confidence": "registry",
+          "ua_name_de": "Sumy",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Orleans",
+          "partner_country": "FR",
+          "partner_region": "45040",
+          "type": "Jumelage",
+          "since": "2025",
+          "source": "afccre",
+          "source_url": "https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf",
+          "confidence": "registry",
+          "ua_name_fr": "SOUMY",
+          "match": "fr_alias"
+        },
+        {
+          "partner_name": "Враца",
+          "partner_country": "BG",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4573",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Мажейкяй",
+          "partner_country": "LT",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4573",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Зіндельфінген",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4573",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Целле",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4573",
+          "confidence": "registry",
+          "duplicate_of_skew": "Celle"
+        },
+        {
+          "partner_name": "Люблін",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4573",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Го́жув-Великопо́льський",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4573",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Банска Бистріца",
+          "partner_country": "SK",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4573",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Hämeenlinna",
+          "partner_country": "FI",
+          "partner_region": "Kanta-Häme",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2024",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026."
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/sumy-territorial-community/",
+      "partner_count": 10,
+      "distinct_partner_count": 9
+    },
+    {
       "name": "Ізмаїльська міська територіальна громада",
       "short": "Ізмаїльська",
       "katottg": "UA51080030000048246",
@@ -6914,6 +7063,108 @@
       "distinct_partner_count": 9
     },
     {
+      "name": "Звягельська міська територіальна громада",
+      "short": "Звягельська",
+      "katottg": "UA18080150000022496",
+      "oblast": "Житомирська область",
+      "partners": [
+        {
+          "partner_name": "Ludwigshafen am Rhein",
+          "partner_country": "DE",
+          "partner_region": "Rheinland-Pfalz",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=267",
+          "confidence": "registry",
+          "ua_name_de": "Swjahel",
+          "match": "translit"
+        },
+        {
+          "partner_name": "Хашурі",
+          "partner_country": "GE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3806",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Рига",
+          "partner_country": "LV",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3806",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Зіндельфінген",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3806",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Белхатув",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3806",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Опочно",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3806",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Ломжа",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3806",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Пясечинський повіт",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3806",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Суомуссалмі",
+          "partner_country": "FI",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3806",
+          "confidence": "registry"
+        }
+      ],
+      "partner_count": 9,
+      "distinct_partner_count": 9
+    },
+    {
       "name": "Новоселицька міська територіальна громада",
       "short": "Новоселицька",
       "katottg": "UA73060410000077092",
@@ -7117,112 +7368,6 @@
       "c4c_url": "https://cities4cities.eu/community/sambir-territorial-community/",
       "partner_count": 9,
       "distinct_partner_count": 9
-    },
-    {
-      "name": "Сумська міська територіальна громада",
-      "short": "Сумська",
-      "katottg": "UA59080270000073662",
-      "oblast": "Сумська область",
-      "partners": [
-        {
-          "partner_name": "Celle",
-          "partner_country": "DE",
-          "partner_region": "Niedersachsen",
-          "type": "Kommunalpartnerschaft",
-          "since": "1990",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=201",
-          "confidence": "registry",
-          "ua_name_de": "Sumy",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Orleans",
-          "partner_country": "FR",
-          "partner_region": "45040",
-          "type": "Jumelage",
-          "since": "2025",
-          "source": "afccre",
-          "source_url": "https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf",
-          "confidence": "registry",
-          "ua_name_fr": "SOUMY",
-          "match": "fr_alias"
-        },
-        {
-          "partner_name": "Враца",
-          "partner_country": "BG",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4573",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Мажейкяй",
-          "partner_country": "LT",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4573",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Зіндельфінген",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4573",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Целле",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4573",
-          "confidence": "registry",
-          "duplicate_of_skew": "Celle"
-        },
-        {
-          "partner_name": "Люблін",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4573",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Го́жув-Великопо́льський",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4573",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Банска Бистріца",
-          "partner_country": "SK",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4573",
-          "confidence": "registry"
-        }
-      ],
-      "c4c_url": "https://cities4cities.eu/community/sumy-territorial-community/",
-      "partner_count": 9,
-      "distinct_partner_count": 8
     },
     {
       "name": "Хустська міська територіальна громада",
@@ -8335,6 +8480,176 @@
       "distinct_partner_count": 5
     },
     {
+      "name": "Криворізька міська територіальна громада",
+      "short": "Криворізька",
+      "katottg": "UA12060170000091033",
+      "oblast": "Дніпропетровська область",
+      "partners": [
+        {
+          "partner_name": "Duisburg",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=283",
+          "confidence": "registry",
+          "ua_name_de": "Krywyj Rih",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Amiens",
+          "partner_country": "FR",
+          "partner_region": null,
+          "type": "Jumelage",
+          "since": "2025",
+          "source": "afccre",
+          "source_url": "https://www.afccre.org/sites/default/files/Nouveaux%20jumelages%202025.pdf",
+          "confidence": "registry",
+          "ua_name_fr": "KRYVYÏ RIH",
+          "match": "fr_alias"
+        },
+        {
+          "partner_name": "Ханьдань",
+          "partner_country": "CN",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3644",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Люблін",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3644",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Кошице",
+          "partner_country": "SK",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3644",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Мішкольц",
+          "partner_country": "HU",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3644",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Espoo",
+          "partner_country": "FI",
+          "partner_region": "Uusimaa",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2023",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026."
+        }
+      ],
+      "partner_count": 7,
+      "distinct_partner_count": 7
+    },
+    {
+      "name": "Мелітопольська міська територіальна громада",
+      "short": "Мелітопольська",
+      "katottg": "UA23080070000068953",
+      "oblast": "Запорізька область",
+      "partners": [
+        {
+          "partner_name": "Brive La Gaillarde",
+          "partner_country": "FR",
+          "partner_region": "19312",
+          "type": "Jumelage",
+          "since": "1967",
+          "source": "afccre",
+          "source_url": "https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf",
+          "confidence": "registry",
+          "ua_name_fr": "MELITOPOL",
+          "match": "fr_alias"
+        },
+        {
+          "partner_name": "Слівен",
+          "partner_country": "BG",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3929",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Ґорі",
+          "partner_country": "GE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3929",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Кедайняйський район",
+          "partner_country": "LT",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3929",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Гайденгайм-на-Бренці",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3929",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Брив-ла-Гаярд",
+          "partner_country": "FR",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3929",
+          "confidence": "registry",
+          "duplicate_of_afccre": "Brive La Gaillarde"
+        },
+        {
+          "partner_name": "Seinäjoki",
+          "partner_country": "FI",
+          "partner_region": "South Ostrobothnia",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2023",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026. City under Russian occupation; cooperation with the exiled administration."
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/melitopol-territorial-community/",
+      "partner_count": 7,
+      "distinct_partner_count": 6
+    },
+    {
       "name": "Свалявська міська територіальна громада",
       "short": "Свалявська",
       "katottg": "UA21040230000091606",
@@ -9235,80 +9550,6 @@
       "distinct_partner_count": 5
     },
     {
-      "name": "Криворізька міська територіальна громада",
-      "short": "Криворізька",
-      "katottg": "UA12060170000091033",
-      "oblast": "Дніпропетровська область",
-      "partners": [
-        {
-          "partner_name": "Duisburg",
-          "partner_country": "DE",
-          "partner_region": "Nordrhein-Westfalen",
-          "type": "Kommunalpartnerschaft",
-          "since": "2023",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=283",
-          "confidence": "registry",
-          "ua_name_de": "Krywyj Rih",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Amiens",
-          "partner_country": "FR",
-          "partner_region": null,
-          "type": "Jumelage",
-          "since": "2025",
-          "source": "afccre",
-          "source_url": "https://www.afccre.org/sites/default/files/Nouveaux%20jumelages%202025.pdf",
-          "confidence": "registry",
-          "ua_name_fr": "KRYVYÏ RIH",
-          "match": "fr_alias"
-        },
-        {
-          "partner_name": "Ханьдань",
-          "partner_country": "CN",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/3644",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Люблін",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/3644",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Кошице",
-          "partner_country": "SK",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/3644",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Мішкольц",
-          "partner_country": "HU",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/3644",
-          "confidence": "registry"
-        }
-      ],
-      "partner_count": 6,
-      "distinct_partner_count": 6
-    },
-    {
       "name": "Львівська міська територіальна громада",
       "short": "Львівська",
       "katottg": "UA46060250000025047",
@@ -9391,78 +9632,86 @@
       "distinct_partner_count": 6
     },
     {
-      "name": "Мелітопольська міська територіальна громада",
-      "short": "Мелітопольська",
-      "katottg": "UA23080070000068953",
-      "oblast": "Запорізька область",
+      "name": "Херсонська міська територіальна громада",
+      "short": "Херсонська",
+      "katottg": "UA65100150000057191",
+      "oblast": "Херсонська область",
       "partners": [
         {
-          "partner_name": "Brive La Gaillarde",
-          "partner_country": "FR",
-          "partner_region": "19312",
-          "type": "Jumelage",
-          "since": "1967",
-          "source": "afccre",
-          "source_url": "https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf",
+          "partner_name": "Bonn",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=281",
           "confidence": "registry",
-          "ua_name_fr": "MELITOPOL",
+          "ua_name_de": "Cherson",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Kiel",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2024",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=281",
+          "confidence": "registry",
+          "ua_name_de": "Cherson",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Norrköping",
+          "partner_country": null,
+          "partner_region": null,
+          "type": "Cities4Cities partnership",
+          "since": "2025",
+          "source": "cities4cities",
+          "source_url": "https://cities4cities.eu/kherson-and-norrkoping-deepen-cooperation-from-innovation-to-inclusion/",
+          "confidence": "news_mention",
+          "quote": "Kherson and Norrköping deepen cooperation: from innovation to inclusion",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Nantes Metropole",
+          "partner_country": "FR",
+          "partner_region": null,
+          "type": "Jumelage",
+          "since": "2025",
+          "source": "afccre",
+          "source_url": "https://www.afccre.org/sites/default/files/Nouveaux%20jumelages%202025.pdf",
+          "confidence": "registry",
+          "ua_name_fr": "KHERSON",
           "match": "fr_alias"
         },
         {
-          "partner_name": "Слівен",
-          "partner_country": "BG",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/3929",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Ґорі",
-          "partner_country": "GE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/3929",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Кедайняйський район",
-          "partner_country": "LT",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/3929",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Гайденгайм-на-Бренці",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/3929",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Брив-ла-Гаярд",
+          "partner_name": "Saint Nazaire Agglo",
           "partner_country": "FR",
           "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/3929",
+          "type": "Jumelage",
+          "since": "2025",
+          "source": "afccre",
+          "source_url": "https://www.afccre.org/sites/default/files/Nouveaux%20jumelages%202025.pdf",
           "confidence": "registry",
-          "duplicate_of_afccre": "Brive La Gaillarde"
+          "ua_name_fr": "KHERSON",
+          "match": "fr_alias"
+        },
+        {
+          "partner_name": "Vaasa",
+          "partner_country": "FI",
+          "partner_region": "Ostrobothnia",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2023",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026. Vaasa donated a vehicle and EUR 60k for generators (2026); other Ostrobothnia municipalities matched it."
         }
       ],
-      "c4c_url": "https://cities4cities.eu/community/melitopol-territorial-community/",
+      "c4c_url": "https://cities4cities.eu/community/kherson-territorial-community/",
       "partner_count": 6,
-      "distinct_partner_count": 5
+      "distinct_partner_count": 6
     },
     {
       "name": "Баранівська міська територіальна громада",
@@ -9579,6 +9828,69 @@
           "source": "decentralization_ua",
           "source_url": "https://decentralization.ua/newgromada/4183",
           "confidence": "registry"
+        }
+      ],
+      "partner_count": 5,
+      "distinct_partner_count": 5
+    },
+    {
+      "name": "Бориспільська міська територіальна громада",
+      "short": "Бориспільська",
+      "katottg": "UA32040010000010116",
+      "oblast": "Київська область",
+      "partners": [
+        {
+          "partner_name": "Flensburg",
+          "partner_country": "DE",
+          "partner_region": "Schleswig-Holstein",
+          "type": "Kommunalpartnerschaft",
+          "since": "2023",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=321",
+          "confidence": "registry",
+          "ua_name_de": "Boryspil",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Каяо",
+          "partner_country": "PE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4034",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Красник",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4034",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Гопкінс",
+          "partner_country": "US",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4034",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Vantaa",
+          "partner_country": "FI",
+          "partner_region": "Uusimaa",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2023",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026."
         }
       ],
       "partner_count": 5,
@@ -10448,77 +10760,6 @@
       "distinct_partner_count": 5
     },
     {
-      "name": "Херсонська міська територіальна громада",
-      "short": "Херсонська",
-      "katottg": "UA65100150000057191",
-      "oblast": "Херсонська область",
-      "partners": [
-        {
-          "partner_name": "Bonn",
-          "partner_country": "DE",
-          "partner_region": "Nordrhein-Westfalen",
-          "type": "Kommunalpartnerschaft",
-          "since": "2023",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=281",
-          "confidence": "registry",
-          "ua_name_de": "Cherson",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Kiel",
-          "partner_country": "DE",
-          "partner_region": "Schleswig-Holstein",
-          "type": "Kommunalpartnerschaft",
-          "since": "2024",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=281",
-          "confidence": "registry",
-          "ua_name_de": "Cherson",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Norrköping",
-          "partner_country": null,
-          "partner_region": null,
-          "type": "Cities4Cities partnership",
-          "since": "2025",
-          "source": "cities4cities",
-          "source_url": "https://cities4cities.eu/kherson-and-norrkoping-deepen-cooperation-from-innovation-to-inclusion/",
-          "confidence": "news_mention",
-          "quote": "Kherson and Norrköping deepen cooperation: from innovation to inclusion",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Nantes Metropole",
-          "partner_country": "FR",
-          "partner_region": null,
-          "type": "Jumelage",
-          "since": "2025",
-          "source": "afccre",
-          "source_url": "https://www.afccre.org/sites/default/files/Nouveaux%20jumelages%202025.pdf",
-          "confidence": "registry",
-          "ua_name_fr": "KHERSON",
-          "match": "fr_alias"
-        },
-        {
-          "partner_name": "Saint Nazaire Agglo",
-          "partner_country": "FR",
-          "partner_region": null,
-          "type": "Jumelage",
-          "since": "2025",
-          "source": "afccre",
-          "source_url": "https://www.afccre.org/sites/default/files/Nouveaux%20jumelages%202025.pdf",
-          "confidence": "registry",
-          "ua_name_fr": "KHERSON",
-          "match": "fr_alias"
-        }
-      ],
-      "c4c_url": "https://cities4cities.eu/community/kherson-territorial-community/",
-      "partner_count": 5,
-      "distinct_partner_count": 5
-    },
-    {
       "name": "Хмільницька міська територіальна громада",
       "short": "Хмільницька",
       "katottg": "UA05120170000013778",
@@ -10682,58 +10923,6 @@
       "c4c_url": "https://cities4cities.eu/community/boratyn-territorial-community/",
       "partner_count": 4,
       "distinct_partner_count": 3
-    },
-    {
-      "name": "Бориспільська міська територіальна громада",
-      "short": "Бориспільська",
-      "katottg": "UA32040010000010116",
-      "oblast": "Київська область",
-      "partners": [
-        {
-          "partner_name": "Flensburg",
-          "partner_country": "DE",
-          "partner_region": "Schleswig-Holstein",
-          "type": "Kommunalpartnerschaft",
-          "since": "2023",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=321",
-          "confidence": "registry",
-          "ua_name_de": "Boryspil",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Каяо",
-          "partner_country": "PE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4034",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Красник",
-          "partner_country": "PL",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4034",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Гопкінс",
-          "partner_country": "US",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/4034",
-          "confidence": "registry"
-        }
-      ],
-      "partner_count": 4,
-      "distinct_partner_count": 4
     },
     {
       "name": "Борщівська міська територіальна громада",
@@ -11863,6 +12052,56 @@
           "since": null,
           "source": "decentralization_ua",
           "source_url": "https://decentralization.ua/newgromada/3616",
+          "confidence": "registry"
+        }
+      ],
+      "partner_count": 4,
+      "distinct_partner_count": 4
+    },
+    {
+      "name": "Шептицька міська територіальна громада",
+      "short": "Шептицька",
+      "katottg": "UA46120130000026331",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Маріямполе",
+          "partner_country": "LT",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4252",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Дорогочин",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4252",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Писковіце",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4252",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Княжпіль",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4252",
           "confidence": "registry"
         }
       ],
@@ -13116,6 +13355,51 @@
       "distinct_partner_count": 3
     },
     {
+      "name": "Харківська міська територіальна громада",
+      "short": "Харківська",
+      "katottg": "UA63120270000028556",
+      "oblast": "Харківська область",
+      "partners": [
+        {
+          "partner_name": "Nürnberg",
+          "partner_country": "DE",
+          "partner_region": "Bayern",
+          "type": "Kommunalpartnerschaft",
+          "since": "1990",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=44",
+          "confidence": "registry",
+          "ua_name_de": "Charkiw",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Lille",
+          "partner_country": "FR",
+          "partner_region": "59033",
+          "type": "Jumelage",
+          "since": "1978",
+          "source": "afccre",
+          "source_url": "https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf",
+          "confidence": "registry",
+          "ua_name_fr": "KHARKIV",
+          "match": "fr_alias"
+        },
+        {
+          "partner_name": "Turku",
+          "partner_country": "FI",
+          "partner_region": "Southwest Finland",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2022",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026."
+        }
+      ],
+      "partner_count": 3,
+      "distinct_partner_count": 3
+    },
+    {
       "name": "Холмківська сільська територіальна громада",
       "short": "Холмківська",
       "katottg": "UA21100250000028639",
@@ -13193,6 +13477,47 @@
           "source": "decentralization_ua",
           "source_url": "https://decentralization.ua/newgromada/4798",
           "confidence": "registry"
+        }
+      ],
+      "partner_count": 3,
+      "distinct_partner_count": 3
+    },
+    {
+      "name": "Широківська сільська територіальна громада",
+      "short": "Широківська",
+      "katottg": "UA23060330000027462",
+      "oblast": "Запорізька область",
+      "partners": [
+        {
+          "partner_name": "Барлебен",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3964",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Штокельсдорф",
+          "partner_country": "DE",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/3964",
+          "confidence": "registry"
+        },
+        {
+          "partner_name": "Nivala",
+          "partner_country": "FI",
+          "partner_region": "North Ostrobothnia",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2025",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026. Shyroke rural hromada, Zaporizhzhia raion, per the Ministry agreements registry (intl-agreements.json: agreement with Nivala). A same-named settlement hromada in Kryvyi Rih raion, Dnipropetrovsk Oblast (UA12060290000039013) exists; not verified which one Kuntaliitto means."
         }
       ],
       "partner_count": 3,
@@ -13829,6 +14154,40 @@
           "confidence": "registry"
         }
       ],
+      "partner_count": 2,
+      "distinct_partner_count": 2
+    },
+    {
+      "name": "Дніпровська міська територіальна громада",
+      "short": "Дніпровська",
+      "katottg": "UA12020010000033698",
+      "oblast": "Дніпропетровська область",
+      "partners": [
+        {
+          "partner_name": "Köln",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2022",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=186",
+          "confidence": "registry",
+          "ua_name_de": "Dnipro",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Helsinki",
+          "partner_country": "FI",
+          "partner_region": "Uusimaa",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2023",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026."
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/dnipro-territorial-community-2/",
       "partner_count": 2,
       "distinct_partner_count": 2
     },
@@ -14955,6 +15314,39 @@
       "distinct_partner_count": 2
     },
     {
+      "name": "Стрийська міська територіальна громада",
+      "short": "Стрийська",
+      "katottg": "UA46100230000047305",
+      "oblast": "Львівська область",
+      "partners": [
+        {
+          "partner_name": "Düren",
+          "partner_country": "DE",
+          "partner_region": "Nordrhein-Westfalen",
+          "type": "Kommunalpartnerschaft",
+          "since": "2001",
+          "source": "skew",
+          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=197",
+          "confidence": "registry",
+          "ua_name_de": "Stryj",
+          "match": "alias"
+        },
+        {
+          "partner_name": "Salo",
+          "partner_country": "FI",
+          "partner_region": "Southwest Finland",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2025",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026."
+        }
+      ],
+      "partner_count": 2,
+      "distinct_partner_count": 2
+    },
+    {
       "name": "Судововишнянська міська територіальна громада",
       "short": "Судововишнянська",
       "katottg": "UA46140070000010135",
@@ -15047,40 +15439,6 @@
       "distinct_partner_count": 2
     },
     {
-      "name": "Харківська міська територіальна громада",
-      "short": "Харківська",
-      "katottg": "UA63120270000028556",
-      "oblast": "Харківська область",
-      "partners": [
-        {
-          "partner_name": "Nürnberg",
-          "partner_country": "DE",
-          "partner_region": "Bayern",
-          "type": "Kommunalpartnerschaft",
-          "since": "1990",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=44",
-          "confidence": "registry",
-          "ua_name_de": "Charkiw",
-          "match": "alias"
-        },
-        {
-          "partner_name": "Lille",
-          "partner_country": "FR",
-          "partner_region": "59033",
-          "type": "Jumelage",
-          "since": "1978",
-          "source": "afccre",
-          "source_url": "https://www.afccre.org/sites/default/files/Annuaire%20des%20communes%20jumel%C3%A9es_1.pdf",
-          "confidence": "registry",
-          "ua_name_fr": "KHARKIV",
-          "match": "fr_alias"
-        }
-      ],
-      "partner_count": 2,
-      "distinct_partner_count": 2
-    },
-    {
       "name": "Чигиринська міська територіальна громада",
       "short": "Чигиринська",
       "katottg": "UA71080510000028067",
@@ -15142,36 +15500,6 @@
           "confidence": "news_mention",
           "quote": "Chuhuiv and Danderyd become partners: a new Ukrainian-Swedish municipal partnership",
           "match": "alias"
-        }
-      ],
-      "partner_count": 2,
-      "distinct_partner_count": 2
-    },
-    {
-      "name": "Широківська сільська територіальна громада",
-      "short": "Широківська",
-      "katottg": "UA23060330000027462",
-      "oblast": "Запорізька область",
-      "partners": [
-        {
-          "partner_name": "Барлебен",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/3964",
-          "confidence": "registry"
-        },
-        {
-          "partner_name": "Штокельсдорф",
-          "partner_country": "DE",
-          "partner_region": null,
-          "type": "Municipal partnership",
-          "since": null,
-          "source": "decentralization_ua",
-          "source_url": "https://decentralization.ua/newgromada/3964",
-          "confidence": "registry"
         }
       ],
       "partner_count": 2,
@@ -15248,6 +15576,27 @@
           "source": "decentralization_ua",
           "source_url": "https://decentralization.ua/newgromada/3705",
           "confidence": "registry"
+        }
+      ],
+      "partner_count": 1,
+      "distinct_partner_count": 1
+    },
+    {
+      "name": "Апостолівська міська територіальна громада",
+      "short": "Апостолівська",
+      "katottg": "UA12060010000090992",
+      "oblast": "Дніпропетровська область",
+      "partners": [
+        {
+          "partner_name": "Haapajärvi",
+          "partner_country": "FI",
+          "partner_region": "North Ostrobothnia",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2025",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026."
         }
       ],
       "partner_count": 1,
@@ -15788,29 +16137,6 @@
       "distinct_partner_count": 1
     },
     {
-      "name": "Дніпровська міська територіальна громада",
-      "short": "Дніпровська",
-      "katottg": "UA12020010000033698",
-      "oblast": "Дніпропетровська область",
-      "partners": [
-        {
-          "partner_name": "Köln",
-          "partner_country": "DE",
-          "partner_region": "Nordrhein-Westfalen",
-          "type": "Kommunalpartnerschaft",
-          "since": "2022",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=186",
-          "confidence": "registry",
-          "ua_name_de": "Dnipro",
-          "match": "alias"
-        }
-      ],
-      "c4c_url": "https://cities4cities.eu/community/dnipro-territorial-community-2/",
-      "partner_count": 1,
-      "distinct_partner_count": 1
-    },
-    {
       "name": "Дніпрорудненська міська територіальна громада",
       "short": "Дніпрорудненська",
       "katottg": "UA23040090000031823",
@@ -15976,28 +16302,6 @@
       "distinct_partner_count": 1
     },
     {
-      "name": "Звягельська міська територіальна громада",
-      "short": "Звягельська",
-      "katottg": null,
-      "oblast": "Житомирська область",
-      "partners": [
-        {
-          "partner_name": "Ludwigshafen am Rhein",
-          "partner_country": "DE",
-          "partner_region": "Rheinland-Pfalz",
-          "type": "Kommunalpartnerschaft",
-          "since": "2022",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=267",
-          "confidence": "registry",
-          "ua_name_de": "Swjahel",
-          "match": "translit"
-        }
-      ],
-      "partner_count": 1,
-      "distinct_partner_count": 1
-    },
-    {
       "name": "Кагарлицька міська територіальна громада",
       "short": "Кагарлицька",
       "katottg": "UA32120050000067577",
@@ -16032,6 +16336,26 @@
           "since": null,
           "source": "decentralization_ua",
           "source_url": "https://decentralization.ua/newgromada/2016",
+          "confidence": "registry"
+        }
+      ],
+      "partner_count": 1,
+      "distinct_partner_count": 1
+    },
+    {
+      "name": "Карапачівська сільська територіальна громада",
+      "short": "Карапачівська",
+      "katottg": "UA73060270000016588",
+      "oblast": "Чернівецька область",
+      "partners": [
+        {
+          "partner_name": "Балківці",
+          "partner_country": "RO",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4888",
           "confidence": "registry"
         }
       ],
@@ -16137,6 +16461,28 @@
           "confidence": "registry"
         }
       ],
+      "partner_count": 1,
+      "distinct_partner_count": 1
+    },
+    {
+      "name": "Краматорська міська територіальна громада",
+      "short": "Краматорська",
+      "katottg": "UA14120090000098500",
+      "oblast": "Донецька область",
+      "partners": [
+        {
+          "partner_name": "Pori",
+          "partner_country": "FI",
+          "partner_region": "Satakunta",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2024",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026. Front-line city."
+        }
+      ],
+      "c4c_url": "https://cities4cities.eu/community/kramatorsk-city-territorial-community/",
       "partner_count": 1,
       "distinct_partner_count": 1
     },
@@ -17004,6 +17350,27 @@
       "distinct_partner_count": 1
     },
     {
+      "name": "Привільненська сільська територіальна громада",
+      "short": "Привільненська",
+      "katottg": "UA56040270000014394",
+      "oblast": "Рівненська область",
+      "partners": [
+        {
+          "partner_name": "Ruokolahti",
+          "partner_country": "FI",
+          "partner_region": "South Karelia",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2024",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026. Rural hromada near Dubno. Also in Ruokolahti council minutes 27.05.2024."
+        }
+      ],
+      "partner_count": 1,
+      "distinct_partner_count": 1
+    },
+    {
       "name": "Прилісненська сільська територіальна громада",
       "short": "Прилісненська",
       "katottg": "UA07040070000058434",
@@ -17040,6 +17407,27 @@
           "confidence": "registry",
           "ua_name_de": "Pidkamin",
           "match": "translit"
+        }
+      ],
+      "partner_count": 1,
+      "distinct_partner_count": 1
+    },
+    {
+      "name": "Пісочинська селищна територіальна громада",
+      "short": "Пісочинська",
+      "katottg": "UA63120210000075842",
+      "oblast": "Харківська область",
+      "partners": [
+        {
+          "partner_name": "Taipalsaari",
+          "partner_country": "FI",
+          "partner_region": "South Karelia",
+          "type": "Twin municipality (ystävyyskunta)",
+          "since": "2023",
+          "source": "manual",
+          "source_url": "https://www.kuntaliitto.fi/tiedotteet/2026/suomen-ukrainan-ystavyyskuntien-maara-kuusinkertaistunut-venajan-hyokkayssodan",
+          "confidence": "news_mention",
+          "quote": "Kuntaliitto list 24.02.2026. Kuntaliitto spells the partner 'Pesochin' (Pisochyn)."
         }
       ],
       "partner_count": 1,
@@ -17181,6 +17569,26 @@
           "since": null,
           "source": "decentralization_ua",
           "source_url": "https://decentralization.ua/newgromada/3818",
+          "confidence": "registry"
+        }
+      ],
+      "partner_count": 1,
+      "distinct_partner_count": 1
+    },
+    {
+      "name": "Русько-Полянська сільська територіальна громада",
+      "short": "Русько-Полянська",
+      "katottg": "UA71080350000033809",
+      "oblast": "Черкаська область",
+      "partners": [
+        {
+          "partner_name": "Дебжно",
+          "partner_country": "PL",
+          "partner_region": null,
+          "type": "Municipal partnership",
+          "since": null,
+          "source": "decentralization_ua",
+          "source_url": "https://decentralization.ua/newgromada/4850",
           "confidence": "registry"
         }
       ],
@@ -17368,28 +17776,6 @@
           "source": "decentralization_ua",
           "source_url": "https://decentralization.ua/newgromada/4788",
           "confidence": "registry"
-        }
-      ],
-      "partner_count": 1,
-      "distinct_partner_count": 1
-    },
-    {
-      "name": "Стрийська міська територіальна громада",
-      "short": "Стрийська",
-      "katottg": "UA46100230000047305",
-      "oblast": "Львівська область",
-      "partners": [
-        {
-          "partner_name": "Düren",
-          "partner_country": "DE",
-          "partner_region": "Nordrhein-Westfalen",
-          "type": "Kommunalpartnerschaft",
-          "since": "2001",
-          "source": "skew",
-          "source_url": "https://skew.engagement-global.de/Liste-deutsch-ukrainischer-kommunalbeziehungen.html?partner=197",
-          "confidence": "registry",
-          "ua_name_de": "Stryj",
-          "match": "alias"
         }
       ],
       "partner_count": 1,
@@ -17906,16 +18292,6 @@
       "distinct_partner_count": 0
     },
     {
-      "name": "Краматорська міська територіальна громада",
-      "short": "Краматорська",
-      "katottg": "UA14120090000098500",
-      "oblast": "Донецька область",
-      "partners": [],
-      "c4c_url": "https://cities4cities.eu/community/kramatorsk-city-territorial-community/",
-      "partner_count": 0,
-      "distinct_partner_count": 0
-    },
-    {
       "name": "Красноградська міська територіальна громада",
       "short": "Красноградська",
       "katottg": "UA63060050000033240",
@@ -18008,7 +18384,7 @@
     {
       "name": "Пролісненська селищна територіальна громада",
       "short": "Пролісненська",
-      "katottg": null,
+      "katottg": "UA63140150000093944",
       "oblast": "Харківська область",
       "partners": [],
       "c4c_url": "https://cities4cities.eu/community/prolisne-territorial-community/",
