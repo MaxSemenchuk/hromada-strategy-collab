@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-18T09:10:36.536105+00:00",
+  "generatedAt": "2026-10-29T15:29:52.349308+00:00",
   "caveat": "UA–EU twinning — SKEW + AFCCRE + Cities4Cities news + strategy. Not domestic ММС.",
-  "hromadaCount": 374,
+  "hromadaCount": 380,
   "skewLinked": 179,
   "afccrePartners": 56,
-  "cities4citiesPartners": 11,
+  "cities4citiesPartners": 10,
   "cities4citiesListed": 90,
   "top": [
     {
@@ -116,6 +116,18 @@
       ]
     },
     {
+      "short": "Миколаївська",
+      "oblast": "Миколаївська область",
+      "partner_count": 19,
+      "partners": [
+        "Hannover (DE)",
+        "Bedburg (DE)",
+        "Sindelfingen (DE)",
+        "Berlin Tempelhof-Schöneberg (DE)",
+        "Montpellier (FR)"
+      ]
+    },
+    {
       "short": "Вінницька",
       "oblast": "Вінницька область",
       "partner_count": 18,
@@ -128,15 +140,15 @@
       ]
     },
     {
-      "short": "Миколаївська",
-      "oblast": "Миколаївська область",
-      "partner_count": 18,
+      "short": "Полтавська",
+      "oblast": "Полтавська область",
+      "partner_count": 17,
       "partners": [
-        "Hannover (DE)",
-        "Bedburg (DE)",
-        "Sindelfingen (DE)",
-        "Berlin Tempelhof-Schöneberg (DE)",
-        "Montpellier (FR)"
+        "Leinfelden-Echterdingen (DE)",
+        "Filderstadt (DE)",
+        "Ostfildern (DE)",
+        "Mönchengladbach (DE)",
+        "Калмар (SE)"
       ]
     },
     {
@@ -149,18 +161,6 @@
         "Ronneby",
         "Вільянді (EE)",
         "Вільявісіоса-де-Одон (ES)"
-      ]
-    },
-    {
-      "short": "Полтавська",
-      "oblast": "Полтавська область",
-      "partner_count": 16,
-      "partners": [
-        "Leinfelden-Echterdingen (DE)",
-        "Filderstadt (DE)",
-        "Ostfildern (DE)",
-        "Mönchengladbach (DE)",
-        "Калмар (SE)"
       ]
     },
     {
@@ -188,18 +188,6 @@
       ]
     },
     {
-      "short": "Хотинська",
-      "oblast": "Чернівецька область",
-      "partner_count": 15,
-      "partners": [
-        "Teltow (DE)",
-        "Ahlen (DE)",
-        "Eslöv",
-        "La Couronne (FR)",
-        "Тельтов (DE)"
-      ]
-    },
-    {
       "short": "Броварська",
       "oblast": "Київська область",
       "partner_count": 14,
@@ -209,6 +197,18 @@
         "Fontenay Sous Bois (FR)",
         "Сілламяе (EE)",
         "Санта-Маринелла (IT)"
+      ]
+    },
+    {
+      "short": "Бучанська",
+      "oblast": "Київська область",
+      "partner_count": 14,
+      "partners": [
+        "Bergisch-Gladbach (DE)",
+        "Бергамо (IT)",
+        "Паланга (LT)",
+        "Бергіш Гладбах (DE)",
+        "Дрезден (DE)"
       ]
     },
     {
@@ -248,6 +248,18 @@
       ]
     },
     {
+      "short": "Хотинська",
+      "oblast": "Чернівецька область",
+      "partner_count": 14,
+      "partners": [
+        "Teltow (DE)",
+        "Ahlen (DE)",
+        "La Couronne (FR)",
+        "Тельтов (DE)",
+        "Валч (PL)"
+      ]
+    },
+    {
       "short": "Ковельська",
       "oblast": "Волинська область",
       "partner_count": 13,
@@ -281,18 +293,6 @@
         "Reims (FR)",
         "Габрово (BG)",
         "Петах-Тіква (IL)"
-      ]
-    },
-    {
-      "short": "Бучанська",
-      "oblast": "Київська область",
-      "partner_count": 12,
-      "partners": [
-        "Bergisch-Gladbach (DE)",
-        "Бергамо (IT)",
-        "Паланга (LT)",
-        "Бергіш Гладбах (DE)",
-        "Дрезден (DE)"
       ]
     },
     {

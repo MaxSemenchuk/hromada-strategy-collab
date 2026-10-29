@@ -371,3 +371,24 @@ Neither pair appears in Wikipedia's twin-town lists for Ukraine or Australia
 Melbourne only terminated its St. Petersburg tie (2023-05-30) without a
 replacement. Treat this as **not exhaustive** — worth a fresh pass if the
 Australia angle becomes relevant again.
+
+**Finland (2026-10-29)**: Kuntaliitto (Association of Finnish Local and
+Regional Authorities) published a list of **24 Finnish–Ukrainian twin
+municipalities** on 2026-02-24 — four existed before 2022, so the number has
+grown about sixfold during the war. Before this fold-in the corpus held only 5
+of the 24 (Lahti, Oulu, Imatra, Lappeenranta, Loviisa, all from
+decentralization.ua). The other 19 were added as manual pairs
+(`source_url`: the Kuntaliitto release).
+
+- **Skipped by the builder**: Tampere–Kyiv (1954) and Helsinki–Kyiv (1993).
+  Kyiv city is deliberately not a row in `hromadas.json`, so these two sit in
+  the manual file but do not reach `twinning-partners.json`.
+- **Ambiguous**: Nivala–Shyroke is attached to Широківська сільська громада
+  (Zaporizhzhia raion), per the Ministry agreements registry
+  (`intl-agreements.json`). A same-named settlement hromada exists in Kryvyi
+  Rih raion (Dnipropetrovsk); Kuntaliitto names no oblast. Unconfirmed.
+- **Not in Kuntaliitto's list**: Kajaani–Uzhhorod and Suomussalmi–Zvyahel
+  appear only on decentralization.ua — possibly older or dormant links.
+- Two formal region-to-region partnerships exist (Päijät-Häme–Zaporizhzhia
+  Oblast, 2024; Pirkanmaa–Kyiv Oblast, letter of intent 2026). They are not
+  modelled in the twinning layer, which is city-level only.
