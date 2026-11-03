@@ -40,10 +40,7 @@ Shared chrome: [`assets/site.css`](assets/site.css), [`assets/nav.js`](assets/na
 Repo **Settings → Pages → Deploy from a branch**: `main` / `/docs`
 (or GitHub Actions via `.github/workflows/deploy-pages.yml`).
 
-The floating chat works on this static site (GitHub Pages too): paste an OpenAI
-key in the gear. It searches `assets/chat-index.json` (rebuild:
-`yarn build-chat-index` from the repo root). Full SQL over the release still
-needs the local MCP server:
+Full SQL over the release needs the local MCP server:
 
 ```bash
 yarn mcp-test-ui   # http://localhost:5175/  — SQL + FTS
